@@ -1,0 +1,29 @@
+{
+  "name": "truffle-site",
+  "version": "0.0.1",
+  "description": "The truffle website",
+  "private": true,
+  "main": "public/index.ejs",
+  "author": "John McDowall <john@kantan.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.9.8",
+    "csslint-cli": "0.0.3",
+    "harp": "sintaxi/harp#v0.21.0-pre",
+    "imagemin-cli": "^3.0.0",
+    "jshint": "^2.9.1",
+    "recursive-uglifyjs": "^1.0.0"
+  },
+  "scripts": {
+    "test": "jshint ./public/**/*.js & csslint-cli ./www/styles/",
+    "dev": "harp server & browser-sync start --no-open --proxy 'localhost:9000' --files './public/**/*.ejs, public/**/*.jade, ./harp.json, ./public/**/*.js, public/**/*.md, ./public/**/*.scss, public/**/*.sass, ./public/**/*.less, ./public/**/*.css, ./public/**/_data.json'",
+    "uglify": "recursive-uglifyjs ./www/",
+    "compile": "harp compile . ../ && npm test",
+    "postcompile": "npm run uglify && npm run imagemin",
+    "imagemin": "imagemin ./public/images/ ./www/images/ --optimizationLevel 3 --progressive"
+  },
+  "engines": {
+    "node": "6.5.x",
+    "npm": "3.3.x"
+  }
+}

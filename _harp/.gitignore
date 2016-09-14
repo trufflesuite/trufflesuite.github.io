@@ -1,0 +1,9 @@
+node_modules
+public/vendor
+www
+.tmp
+.idea
+.idea/workspace.xml
+.DS_store
+bower_components
+client_id.json

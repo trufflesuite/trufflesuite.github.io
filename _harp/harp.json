@@ -1,0 +1,34 @@
+{
+  "globals": {
+    "name": "Truffle.io",
+    "title": "Truffle.io",
+    "url": "http://truffle.io",
+    "description": "Dapp Development Superpowers",
+    "keywords": "solidity, dapps, contracts, smart contracts",
+    "domain": "surge.sh",
+    "authors": {
+      "firstlast": {
+        "name": "John McDowall",
+        "email": "john@kantan.io"
+      }
+    },
+    "service": {
+      "analytics": "UA-XXXXXX-1",
+      "service": "example",
+      "googlefonts": ["Oswald:300,400,700", "Open+Sans:400,700"],
+      "googleverification": null,
+      "facebookid": null,
+      "socialimage": "images/social-image.jpg",
+      "appleid": null,
+      "twitter": "thatianrose",
+      "disqus": false
+    },
+    "thanks": {
+      "firstlast": {
+       "name": "First Last",
+       "url": "firstlast.com"
+      }
+    }
+  },
+  "domains": []
+}

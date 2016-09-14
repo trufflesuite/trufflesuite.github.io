@@ -1,0 +1,88 @@
+.Tutorials {
+  background: white;
+  .nav {
+    a {
+      text-transform: uppercase;
+    }
+
+  }
+
+  .navbar {
+    min-height: 100px; //* or whatever height you require
+  }
+
+  .navbar-brand,
+  .navbar-nav li a {
+    line-height: 100px;
+    height: 100px;
+    padding-top: 0;
+    svg {
+      width: 100px;
+      padding-top: 15px;
+    }
+  }
+
+
+  .MainContent {
+    @extend .p-b-4;
+
+    > .container-fluid > .row > h1,
+    > .container-fluid > .row > h2,
+    > .container-fluid > .row > h3,
+    > .container-fluid > .row > h4,
+    > .container-fluid > .row > p {
+      @extend .col-xs-12;
+      @extend .col-md-6;
+      @extend .col-md-offset-6;
+      @extend .col-md-pull-5;
+    }
+
+    h1 {
+      @extend .m-t-3;
+      @extend .m-b-3;
+      text-transform: uppercase;
+    }
+
+    p {
+      line-height: 1.6rem;
+      margin-bottom: 1.6rem;
+    }
+
+    img {
+      @extend .m-t-3;
+      @extend .m-b-3;
+      width: auto;
+      max-width: 100%;
+    }
+
+    table {
+      @extend .table;
+      @extend .col-xs-12;
+      @extend .col-md-6;
+      @extend .col-md-offset-6;
+      @extend .col-md-pull-5;
+    }
+
+    pre {
+      border-radius: 0;
+      background: #EDEDED;
+      max-width: 100%;
+
+      @extend .m-t-3;
+      @extend .m-b-3;
+      @extend .p-t-3;
+      @extend .p-b-3;
+      @extend .col-md-12;
+      padding-left: 0;
+
+      code {
+        @extend .col-xs-12;
+        @extend .col-md-6;
+        @extend .col-md-offset-6;
+        @extend .col-md-pull-5;
+      }
+    }
+
+  }
+
+}

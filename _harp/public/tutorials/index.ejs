@@ -1,0 +1,4 @@
+<% for(var slug in public.tutorials._data){ %>
+  <h2><a href="/tutorials/<%= slug %>"><%= public.tutorials._data[slug].title %></a></h2>
+  <%- partial("tutorials/" + slug) %>
+<% }; %>
