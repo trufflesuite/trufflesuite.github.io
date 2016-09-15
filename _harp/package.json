@@ -20,7 +20,7 @@
     "uglify": "recursive-uglifyjs ./www/",
     "compile": "harp compile . ../ && npm test",
     "postcompile": "npm run uglify && npm run imagemin",
-    "imagemin": "imagemin ./public/images/ ./www/images/ --optimizationLevel 3 --progressive"
+    "imagemin": "imagemin ./public/images/ ../images/ --optimizationLevel 3 --progressive"
   },
   "engines": {
     "node": "6.5.x",
