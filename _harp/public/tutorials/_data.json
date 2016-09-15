@@ -1,22 +1,22 @@
 {
   "all-about-truffle-networks": {
     "title": "All about Truffle Networks",
-    "date": "July 13th, 2016",
+    "date": "2018-07-13",
     "author": "John McDowall"
   },
   "using-infura-custom-provider": {
     "title": "Using Infura (or a custom provider)",
-    "date": "September 15th, 2016",
+    "date": "2016-09-16",
     "author": "Tim Coulter"
   },
   "truffle-and-metamask": {
     "title": "Truffle and Metamask",
-    "date": "July 1st, 2016",
-    "author": "Dan Finlay"
+    "date": "2016-07-01",
+    "author": "Tim Coulter"
   },
   "solidity-unit-tests": {
     "title": "Beta: Solidity Unit Tests",
-    "date": "September 1st, 2016",
+    "date": "2016-09-01",
     "author": "Tim Coulter"
   }
 }

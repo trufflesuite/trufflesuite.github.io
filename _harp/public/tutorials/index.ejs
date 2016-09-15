@@ -1,4 +1,10 @@
-<% for(var slug in public.tutorials._data){ %>
-  <h2><a href="/tutorials/<%= slug %>"><%= public.tutorials._data[slug].title %></a></h2>
-  <%- partial("tutorials/" + slug) %>
+<%
+  var slugs = Object.keys(public.tutorials._data);
+  var tutorials = _.map(slugs, function(i) { return { 'slug': i, 'author': public.tutorials._data[i].author, 'title': public.tutorials._data[i].title, 'date': public.tutorials._data[i].date}})
+  tutorials = _.sortBy(tutorials, 'date').reverse()
+%>
+<% for(var tutorial of tutorials){ %>
+  <h2><a href="/tutorials/<%= tutorial.slug %>"><%= tutorial.title %></a></h2>
+  <%- partial("tutorials/" + tutorial.slug) %>
 <% }; %>
+
