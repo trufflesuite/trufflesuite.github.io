@@ -3,5 +3,10 @@
     "title": "All about Truffle Networks",
     "date": "July 13th, 2016",
     "author": "John McDowall"
+  },
+  "using-infura-custom-provider": {
+    "title": "Using Infura (or a custom provider)",
+    "date": "July 15th, 2016",
+    "author": "Tim Coulter"
   }
 }
