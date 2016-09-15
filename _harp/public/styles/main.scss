@@ -1,6 +1,6 @@
 @import "base/colors";
 @import "abstracts/variables";
-@import "vendors/bootstrap";
+@import "../vendor/styles/bootstrap";
 
 @import "base/spacing";
 @import "base/typography";
@@ -11,4 +11,4 @@
 @import "pages/landing";
 @import "pages/tutorials";
 
-@import "vendors/prism.css";
+@import "../vendor/styles/prism.css";
