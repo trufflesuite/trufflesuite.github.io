@@ -30,14 +30,14 @@
     
     <meta property="og:site_name" content="Truffle.io" />
     <meta property="og:description" content="Dapp Development Superpowers" />
-    <meta property="og:title" content="All about Truffle Networks - Truffle.io" />
+    <meta property="og:title" content="Using Infura (or a custom provider) - Truffle.io" />
     <meta property="og:url" content="http://truffle.io" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="images/social-image.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle.io" />
-    <meta name="twitter:title" content="All about Truffle Networks - Truffle.io" />
+    <meta name="twitter:title" content="Using Infura (or a custom provider) - Truffle.io" />
     <meta name="twitter:description" content="Dapp Development Superpowers" />
     <meta name="twitter:creator" content="Truffle.io" />
     <meta name="twitter:domain" content="surge.sh" />
@@ -46,7 +46,7 @@
     
     
 
-    <title>All about Truffle Networks | Truffle.io</title>
+    <title>Using Infura (or a custom provider) | Truffle.io</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -138,70 +138,104 @@
       <section class="MainContent">
         <div class="container-fluid">
           <div class="row">
-            <h1>All About Truffle Networks and Cats and Dogs and Rabbits and Deer</h1><p>A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.</p>
-<p>Most commonly, forks are used to either propose changes to someone else&#39;s project or to use someone else&#39;s project as a starting point for your own idea.</p>
-<pre><code class="language-javascript">var TaskError = require(&quot;./errors/taskerror&quot;);
-var yargs = require(&quot;yargs&quot;);
-var _ = require(&quot;lodash&quot;);
-
-function Command(tasks) {
-  this.tasks = tasks;
-};
-
-Command.prototype.getTask = function(command) {
-  var argv = yargs.parse(command);
-
-  if (argv._.length == 0) {
-    return null;
+            <h1>Using Infura (or any custom provider)</h1><p><a href="https://infura.io/">Infura</a> is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet. For security reasons Infura does not manage users&#39; private keys, which means they cannot sign transactions on your behalf (or your users&#39; behalf). Similarly, Truffle doesn&#39;t intuitively know how to sign your transactions -- it usually hands that task over to the Ethereum node -- so if you&#39;d like to deploy your contracts using Infura, you must first tell Truffle how you&#39;d like these transactions signed.</p>
+<p>Fortunately libraries can help us along. In this example we&#39;ll use an <a href="https://en.bitcoin.it/wiki/Deterministic_wallet">hd wallet mnemonic</a> to generate our list of wallets, and we&#39;ll use the <a href="https://github.com/MetaMask/provider-engine">web3-provider-engine</a> to provide us with built-in signing functionality.</p>
+<h3>Getting Started</h3><p>First install the required dependencies:</p>
+<pre><code>$ npm install ethereumjs-wallet bip39 web3-provider-engine web3
+</code></pre><p>We recommend you run the above command with the <code>--save</code> flag to save this configuration in your project&#39;s <code>package.json</code> file.</p>
+<h3>Editing Your Project&#39;s Configuration</h3><p>We can use your project&#39;s <code>truffle.js</code> configuration file to tell Truffle how to sign our transactions. To start, we should first require all of our dependencies used for signing transactions:</p>
+<pre><code class="language-javascript">var bip39 = require(&quot;bip39&quot;);
+var hdkey = require(&#39;ethereumjs-wallet/hdkey&#39;);
+var ProviderEngine = require(&quot;web3-provider-engine&quot;);
+var WalletSubprovider = require(&#39;web3-provider-engine/subproviders/wallet.js&#39;);
+var Web3Subprovider = require(&quot;web3-provider-engine/subproviders/web3.js&quot;);
+var Web3 = require(&quot;web3&quot;);
+</code></pre>
+<p>These dependencies are used for the following things:</p>
+<ul>
+<li><code>bip39</code>: Used to create a seed from hd wallet mnemonics (more on that later).</li>
+<li><code>hdkey</code>: Used to derive addresses from seeds using complex math.</li>
+<li><code>ProviderEngine</code>: The basic framework that will be used to wrangle all transactions that need to be signed.</li>
+<li><code>WalletSubprovider</code>: Part of the provider engine framework that will handle wallet signing.</li>
+<li><code>Web3Subprovider</code>: Part of the provider engine framework that handles everything <em>other than</em> transaction signing.</li>
+<li><code>Web3</code>: What we used to communicate with the Ethereum network. Here, we&#39;re using it solely to create a provider.</li>
+</ul>
+<p>After setting up are dependencies, we&#39;ll then need to create an hd wallet from a mnemonic. A mnemonic is a twelve word string that represents a secure random seed (warning: don&#39;t just create a mnemonic yourself; use the bip39 library to do this if you don&#39;t have one). From this seed we can create an unlimited number of Ethereum addresses and private keys. Because this is a seed, we can always use this mnemonic to find those addresses again.</p>
+<pre><code class="language-javascript">// Get our mnemonic and create an hdwallet
+var mnemonic = &quot;couch solve unique spirit wine fine occur rhythm foot feature glory away&quot;;
+var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
+</code></pre>
+<p>From here we can use the hdwallet to derive the first account. We do so using something called an &quot;hd path&quot;, which is a way of telling the complex mathematics what we&#39;re attempting to derive. The most important bit is when we add &quot;0&quot; on the end of the hd path. This means we want to find the first account that we can derive from this hd wallet. It&#39;s zero based, so if we wanted the second address we&#39;d derive <code>wallet_hdpath + &quot;1&quot;</code>, and for the third address <code>wallet_hdpath + &quot;2&quot;</code>, etc.</p>
+<pre><code class="language-javascript">// Get the first account using the standard hd path.
+var wallet_hdpath = &quot;m/44&#39;/60&#39;/0&#39;/0/&quot;;
+var wallet = hdwallet.derivePath(wallet_hdpath + &quot;0&quot;).getWallet();
+var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
+</code></pre>
+<p>Next, we need to set up the Provider Engine, telling it that we&#39;d like to use our wallet to sign transactions, and use the morden network on infura for everything else:</p>
+<pre><code class="language-javascript">var providerUrl = &quot;https://morden.infura.io:8545&quot;;
+var engine = new ProviderEngine();
+engine.addProvider(new WalletSubprovider(wallet, {}));
+engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
+engine.start(); // Required by the provider engine.
+</code></pre>
+<p>Finally, we want to export our Truffle configuration. Here we use this wallet only when we want to deploy to the morden network:</p>
+<pre><code class="language-javascript">module.exports = {
+  networks: {
+    &quot;morden&quot;: {
+      network_id: 2,    // Official morden network id
+      provider: engine, // Use our custom provider
+      from: address     // Use the address we derived
+    }
+  },
+  rpc: {
+    // Use the default host and port when not using morden
+    host: &quot;localhost&quot;,
+    port: 8545
   }
-
-  var task_name = argv._[0];
-  var task = this.tasks[task_name];
-
-  return task;
 };
 </code></pre>
-<p><img src="images/sudden_laugh.gif" alt="The Sudden Laugh"></p>
-<ul>
-<li>Cats</li>
-<li>Dogs</li>
-<li>Rabbits</li>
-<li>Deer</li>
-</ul>
-<hr>
-<p>Is your first thought to pass Taco some props? It’s my first instinct. Isn’t that what you do to child components in React?</p>
-<p>The issue is that you’re passing a component class instead of a child element to <route>. The <route> instantiates Taco, not you. This means that the Taco component knows nothing about the outside world besides what React Router tells it (params, query strings, etc). The Taco component class is between a rock and a hard place: it needs to pass props to its children, but it gets no help from its parent component.</route></route></p>
-<p>Why don’t route components participate in the normal top-to-bottom-flow of props to children? It turns out that the authors of React Router view this restriction as an architectural decision.</p>
-<p>Maintainer Ryan Florence says that “you should think of your route components as entry points into the app that don’t know or care about the parent, and the parent shouldn’t know/care about the children.”</p>
-<p>Maintainer Jimmy Jia (taion) agrees: “the actual anti-pattern is passing props through route boundaries – in general you just shouldn’t be doing this.”</p>
-<p>Maintainer Tim Dorr believes that this boundary enforces the Single Responsibility Principle: “I’d try to keep route components aware of only router-provided props and try to maintain SRP.”</p>
-<p>These architectural decisions might make sense when you distinguish “smart” or “container” components from “dumb” ones. Smart components are “entry points” that can independently bootstrap their children’s props. “Dumb” components are presentational; they take props and return UI.</p>
-<p>Everything changes when you use a state container like Redux. If you treat your Redux application as a pure function that accepts state and returns a UI, every component is a dumb component. Like heat, your state rises to the top, and your state container absorbs it and manages its logic. What’s the point of a container component if Redux controls all of your state?</p>
-<p>In fact, a container component violates the Single Responsibility Principle when it assumes responsibilities of the state container. It couples your view layer to your state layer.</p>
-<p>In a world of dumb components, the React Router architecture stops making sense.</p>
-<p>Besides issues of route boundaries and container components, the top-level <router> component hogs all of the routing state: URL, parameters, query strings, etc. Your state container can’t talk to this second source of truth (!) without interacting with the view layer. This has real consequences for the viability of pure-functional patterns in Redux.</router></p>
-<table>
-<thead>
-<tr>
-<th>First Header</th>
-<th>Second Header</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-</tbody>
-</table>
+<h3>Discussion</h3><p>In general, this is a lot of work in order to use an hd wallet with Truffle. This is a very early feature, and we&#39;d highly encourage anyone to create a new library that encapsulates the above code.</p>
+<h3>Full Code</h3><pre><code class="language-javascript">var bip39 = require(&quot;bip39&quot;);
+var hdkey = require(&#39;ethereumjs-wallet/hdkey&#39;);
+var ProviderEngine = require(&quot;web3-provider-engine&quot;);
+var WalletSubprovider = require(&#39;web3-provider-engine/subproviders/wallet.js&#39;);
+var Web3Subprovider = require(&quot;web3-provider-engine/subproviders/web3.js&quot;);
+var Web3 = require(&quot;web3&quot;);
+
+// Get our mnemonic and create an hdwallet
+var mnemonic = &quot;couch solve unique spirit wine fine occur rhythm foot feature glory away&quot;;
+var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
+
+// Get the first account using the standard hd path.
+var wallet_hdpath = &quot;m/44&#39;/60&#39;/0&#39;/0/&quot;;
+var wallet = hdwallet.derivePath(wallet_hdpath + &quot;0&quot;).getWallet();
+var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
+
+var providerUrl = &quot;https://morden.infura.io:8545&quot;;
+var engine = new ProviderEngine();
+engine.addProvider(new WalletSubprovider(wallet, {}));
+engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
+engine.start(); // Required by the provider engine.
+
+module.exports = {
+  networks: {
+    &quot;morden&quot;: {
+      network_id: 2,    // Official morden network id
+      provider: engine, // Use our custom provider
+      from: address     // Use the address we derived
+    }
+  },
+  rpc: {
+    // Use the default host and port when not using morden
+    host: &quot;localhost&quot;,
+    port: 8545
+  }
+};
+</code></pre>
           </div>
         </div>
         <footer class="container">
-          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/all-about-truffle-networks.md">Edit here &rarr;</a></p>
+          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/using-infura-custom-provider.md">Edit here &rarr;</a></p>
         </footer>
       </section>
     </section>

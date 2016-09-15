@@ -30,14 +30,14 @@
     
     <meta property="og:site_name" content="Truffle.io" />
     <meta property="og:description" content="Dapp Development Superpowers" />
-    <meta property="og:title" content="All about Truffle Networks - Truffle.io" />
+    <meta property="og:title" content="Beta: Package Management - Truffle.io" />
     <meta property="og:url" content="http://truffle.io" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="images/social-image.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle.io" />
-    <meta name="twitter:title" content="All about Truffle Networks - Truffle.io" />
+    <meta name="twitter:title" content="Beta: Package Management - Truffle.io" />
     <meta name="twitter:description" content="Dapp Development Superpowers" />
     <meta name="twitter:creator" content="Truffle.io" />
     <meta name="twitter:domain" content="surge.sh" />
@@ -46,7 +46,7 @@
     
     
 
-    <title>All about Truffle Networks | Truffle.io</title>
+    <title>Beta: Package Management | Truffle.io</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -138,70 +138,73 @@
       <section class="MainContent">
         <div class="container-fluid">
           <div class="row">
-            <h1>All About Truffle Networks and Cats and Dogs and Rabbits and Deer</h1><p>A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.</p>
-<p>Most commonly, forks are used to either propose changes to someone else&#39;s project or to use someone else&#39;s project as a starting point for your own idea.</p>
-<pre><code class="language-javascript">var TaskError = require(&quot;./errors/taskerror&quot;);
-var yargs = require(&quot;yargs&quot;);
-var _ = require(&quot;lodash&quot;);
+            <h1>In Beta: Package Management</h1><p>This is a beta document and refers to the <code>beta</code> version of Truffle. The following features will not work unless you are using Truffle Beta.</p>
+<h2>Get the Beta Version</h2><p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
+<pre><code>$ npm uninstall -g truffle
+</code></pre><p>And then install the beta version:</p>
+<pre><code>$ npm install -g truffle@beta
+</code></pre><h2>Overview</h2><p>Truffle Beta comes standard with <code>npm</code> integration, and is aware of the <code>node_modules</code> directory in your project if it exists. This means you can use and distribute contracts, dapps and Ethereum-enabled libraries via <code>npm</code>, making your code available to others and other&#39;s code available to you.</p>
+<h2>Package Layout</h2><p>Projects created with Truffle have a specific layout by default which enables them to be used as packages. This layout isn&#39;t required, but if used as a common convention -- or &quot;de-facto standard&quot; -- then distributing contracts and dapps through package management will become much easier.</p>
+<p>The most important directories in a Truffle package are the following:</p>
+<ul>
+<li><code>/contracts</code></li>
+<li><code>/build</code> (which includes <code>/build/contracts</code>, created by Truffle)</li>
+</ul>
+<p>The first directory is your contracts directory, which includes your raw Solidity contracts. The second directory is the build directory, and more specifically <code>/build/contracts</code>, which holds build artifacts in the form of <code>.sol.js</code> files. Including raw contracts in your package will allow others to import those contracts within their own solidity code. Similarly, including your <code>.sol.js</code> build artifacts in your package will allow others to seamlessly interact with your contracts from Javascript, which can be used in dapps, scripts and migrations.</p>
+<h2>Using a Package</h2><p>When using a package within your own project, it is important to note that there are two places where you might be interested in using other&#39;s contract code: within your contracts (<code>.sol</code> files) and within your Javascript code (<code>.sol.js</code> files). The following provides an example of each case, and discusses techniques for making the most of other&#39;s contracts and build artifacts.</p>
+<h3>Installing</h3><p>For this example, we&#39;re going to use the <a href="https://github.com/ConsenSys/example-truffle-library">Example Truffle Library</a>, which provides a simple name registry that is deployed to the Morden test network. In order to use it as a dependency, we must first install it within our project through <code>npm</code>:</p>
+<pre><code>$ cd my_project
+$ npm install example-truffle-library
+</code></pre><p>Note that the last command above downloads the package and places it in <code>my_project/node_modules</code> directory, which is important for the examples below. See the <a href="https://docs.npmjs.com/">npm documentation</a> for help using <code>npm</code> to install packages.</p>
+<h3>Within Your Contracts</h3><p>To use a package&#39;s contracts within your contracts, this can be as simple as Solidity&#39;s <a href="http://solidity.readthedocs.io/en/develop/layout-of-source-files.html?#importing-other-source-files">import</a> statement. When your import path isn&#39;t explicitly relative or absolute, this signifies to Truffle that you&#39;re looking for a file from a specific named package. Consider this example using the Example Truffle Library mentioned above:</p>
+<pre><code class="language-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
+</code></pre>
+<p>Since the path didn&#39;t start with <code>./</code>, Truffle knows to look in your project&#39;s <code>node_modules</code> directory for the <code>example-truffle-library</code> folder. From there, it resolves the path to provide you the contract you requested.</p>
+<h3>Within Javascript Code</h3><p>To interact with package&#39;s contracts within Javascript code, you simply need to <code>require</code> that package&#39;s <code>.sol.js</code> files like so:</p>
+<pre><code class="language-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
+</code></pre>
+<p>These files are provided by <a href="https://github.com/ConsenSys/ether-pudding">EtherPudding</a>, which Truffle uses internally. See EtherPudding&#39;s documentation for more information.</p>
+<h3>Package&#39;s Deployed Addresses</h3><p>Sometimes you want your contracts to interact with the package&#39;s previously deployed contracts. Since the deployed addresses exist within the package&#39;s <code>.sol.js</code> files, you must perform an extra step to get those addresses into your contracts. To do so, make your contract accept the address of the dependency contract, and then use migrations. The following is an example contract that exists within your project as well as an example migration:</p>
+<p>Contract: MyContract.sol</p>
+<pre><code class="language-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
 
-function Command(tasks) {
-  this.tasks = tasks;
-};
+contract MyContract {
+  SimpleNameRegistry registry;
+  address public owner;
 
-Command.prototype.getTask = function(command) {
-  var argv = yargs.parse(command);
-
-  if (argv._.length == 0) {
-    return null;
+  function MyContract {
+    owner = msg.sender;
   }
 
-  var task_name = argv._[0];
-  var task = this.tasks[task_name];
+  // Simple example that uses the deployed registry from the package.
+  function getModule(bytes32 name) returns (address) {
+    return registry.names(name);
+  }
 
-  return task;
+  // Set the registry if you&#39;re the owner.
+  function setRegistry(address addr) {
+    if (msg.sender != owner) throw;
+
+    registry = SimpleNameRegistry(addr);
+  }
+}
+</code></pre>
+<p>Migration: 3_hook_up_example_library.js</p>
+<pre><code class="language-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
+
+module.exports = function(deployer) {
+  // Deploy our contract, then set the address of the registry.
+  deployer.deploy(MyContract).then(function() {
+    MyContract.deployed().setRegistry(SimpleNameRegistry.address);
+  });
 };
 </code></pre>
-<p><img src="images/sudden_laugh.gif" alt="The Sudden Laugh"></p>
-<ul>
-<li>Cats</li>
-<li>Dogs</li>
-<li>Rabbits</li>
-<li>Deer</li>
-</ul>
-<hr>
-<p>Is your first thought to pass Taco some props? It’s my first instinct. Isn’t that what you do to child components in React?</p>
-<p>The issue is that you’re passing a component class instead of a child element to <route>. The <route> instantiates Taco, not you. This means that the Taco component knows nothing about the outside world besides what React Router tells it (params, query strings, etc). The Taco component class is between a rock and a hard place: it needs to pass props to its children, but it gets no help from its parent component.</route></route></p>
-<p>Why don’t route components participate in the normal top-to-bottom-flow of props to children? It turns out that the authors of React Router view this restriction as an architectural decision.</p>
-<p>Maintainer Ryan Florence says that “you should think of your route components as entry points into the app that don’t know or care about the parent, and the parent shouldn’t know/care about the children.”</p>
-<p>Maintainer Jimmy Jia (taion) agrees: “the actual anti-pattern is passing props through route boundaries – in general you just shouldn’t be doing this.”</p>
-<p>Maintainer Tim Dorr believes that this boundary enforces the Single Responsibility Principle: “I’d try to keep route components aware of only router-provided props and try to maintain SRP.”</p>
-<p>These architectural decisions might make sense when you distinguish “smart” or “container” components from “dumb” ones. Smart components are “entry points” that can independently bootstrap their children’s props. “Dumb” components are presentational; they take props and return UI.</p>
-<p>Everything changes when you use a state container like Redux. If you treat your Redux application as a pure function that accepts state and returns a UI, every component is a dumb component. Like heat, your state rises to the top, and your state container absorbs it and manages its logic. What’s the point of a container component if Redux controls all of your state?</p>
-<p>In fact, a container component violates the Single Responsibility Principle when it assumes responsibilities of the state container. It couples your view layer to your state layer.</p>
-<p>In a world of dumb components, the React Router architecture stops making sense.</p>
-<p>Besides issues of route boundaries and container components, the top-level <router> component hogs all of the routing state: URL, parameters, query strings, etc. Your state container can’t talk to this second source of truth (!) without interacting with the view layer. This has real consequences for the viability of pure-functional patterns in Redux.</router></p>
-<table>
-<thead>
-<tr>
-<th>First Header</th>
-<th>Second Header</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-</tbody>
-</table>
+<h2>Recommendation: Use the TestRPC</h2><p>The <a href="https://github.com/ethereumjs/testrpc">ethereumjs-testrpc</a> is wildly useful for packages that were previously deployed to the live network. The TestRPC includes a <code>--fork</code> feature which allows you to fork from the main chain while developing your application. What this means for you is that you can develop and test against packages that are deployed live, using <strong>real data</strong>, without having to worry about deploying your dependency&#39;s contracts yourself.</p>
+<h2>The Future: Where do we go from here?</h2><p>Node&#39;s <code>npm</code> is, of course, a centralized service, and the packages that exist there are on a centralized network. As Ethereum becomes more widespread, so will the urge to decentralize all of our tools and packages. The ideal package management system for Ethereum is one where the package registry exists on the live chain and the package data exists on a decentralized file storage network like IPFS or Swarm; however, that ideal is going to take time to develop and reach critical mass. Until that time, we can use <code>npm</code> to distribute our contracts and applications like the rest of the Javascript community.</p>
           </div>
         </div>
         <footer class="container">
-          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/all-about-truffle-networks.md">Edit here &rarr;</a></p>
+          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/package-management.md">Edit here &rarr;</a></p>
         </footer>
       </section>
     </section>

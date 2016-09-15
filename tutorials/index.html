@@ -50,6 +50,9 @@
 
     <link rel="author" href="humans.txt" />
 
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Truffle.io">
@@ -65,10 +68,6 @@
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#3372DF">
 
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
     <link rel="stylesheet" href="/styles/main.css">
     
       <noscript>
@@ -128,10 +127,10 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Home</a></li>
-              <li><a class="active" href="#">Tutorials</a></li>
-              <li><a href="#">Github</a></li>
-              <li><a href="#">Community</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a class="active" href="/tutorials">Tutorials</a></li>
+              <li><a href="https://github.com/truffleframework">Github</a></li>
+              <li><a href="/community">Community</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -139,9 +138,73 @@
       <section class="MainContent">
         <div class="container-fluid">
           <div class="row">
-            <h2><a href="/tutorials/all-about-truffle-networks">All about Truffle Networks</a></h2>
+            <div class="container-fluid">
+    <div class="row">
+      <section class="TutorialIndex">
+        <h1>TRUFFLE TUTORIAL INDEX</h1>
+        <ol class="list-unstyled">
+    
+        
+    
+        
+          <li>
+          <a href="/tutorials/using-infura-custom-provider">
+            <h2>Using Infura (or a custom provider)</h2>
+            <span>
+              <date>2016-09-16</date> &bull; <span>BY Tim Coulter</span>
+            </span>
+            <div>Read Article &rarr;</div>
+          </a>
+        </li>
+      
+    
+        
+          <li>
+          <a href="/tutorials/package-management">
+            <h2>Beta: Package Management</h2>
+            <span>
+              <date>2016-09-15</date> &bull; <span>BY Tim Coulter</span>
+            </span>
+            <div>Read Article &rarr;</div>
+          </a>
+        </li>
+      
+    
+        
+          <li>
+          <a href="/tutorials/solidity-unit-tests">
+            <h2>Beta: Solidity Unit Tests</h2>
+            <span>
+              <date>2016-09-01</date> &bull; <span>BY Tim Coulter</span>
+            </span>
+            <div>Read Article &rarr;</div>
+          </a>
+        </li>
+      
+    
+        
+          <li>
+          <a href="/tutorials/truffle-and-metamask">
+            <h2>Truffle and Metamask</h2>
+            <span>
+              <date>2016-07-01</date> &bull; <span>BY Tim Coulter</span>
+            </span>
+            <div>Read Article &rarr;</div>
+          </a>
+        </li>
+      
+    
+    </ol>
+    </section>
+
+
+    </div>
+  </div>
           </div>
         </div>
+        <footer class="container">
+          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/index.md">Edit here &rarr;</a></p>
+        </footer>
       </section>
     </section>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -155,7 +218,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-XXXXXX-1', 'auto');
+    ga('create', 'UA-83874933-3', 'auto');
     ga('send', 'pageview');
   </script>
 

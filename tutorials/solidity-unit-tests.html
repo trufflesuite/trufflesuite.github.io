@@ -30,14 +30,14 @@
     
     <meta property="og:site_name" content="Truffle.io" />
     <meta property="og:description" content="Dapp Development Superpowers" />
-    <meta property="og:title" content="All about Truffle Networks - Truffle.io" />
+    <meta property="og:title" content="Beta: Solidity Unit Tests - Truffle.io" />
     <meta property="og:url" content="http://truffle.io" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="images/social-image.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle.io" />
-    <meta name="twitter:title" content="All about Truffle Networks - Truffle.io" />
+    <meta name="twitter:title" content="Beta: Solidity Unit Tests - Truffle.io" />
     <meta name="twitter:description" content="Dapp Development Superpowers" />
     <meta name="twitter:creator" content="Truffle.io" />
     <meta name="twitter:domain" content="surge.sh" />
@@ -46,7 +46,7 @@
     
     
 
-    <title>All about Truffle Networks | Truffle.io</title>
+    <title>Beta: Solidity Unit Tests | Truffle.io</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -138,70 +138,92 @@
       <section class="MainContent">
         <div class="container-fluid">
           <div class="row">
-            <h1>All About Truffle Networks and Cats and Dogs and Rabbits and Deer</h1><p>A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.</p>
-<p>Most commonly, forks are used to either propose changes to someone else&#39;s project or to use someone else&#39;s project as a starting point for your own idea.</p>
-<pre><code class="language-javascript">var TaskError = require(&quot;./errors/taskerror&quot;);
-var yargs = require(&quot;yargs&quot;);
-var _ = require(&quot;lodash&quot;);
+            <h1>In Beta: Solidity Unit Tests</h1><p>This is a beta document and refers to the <code>beta</code> version of Truffle. The following features will not work unless you are using Truffle Beta.</p>
+<h2>Get the Beta Version</h2><p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
+<pre><code>$ npm uninstall -g truffle
+</code></pre><p>And then install the beta version:</p>
+<pre><code>$ npm install -g truffle@beta
+</code></pre><h2>Overview</h2><p>Solidity test contracts live alongside Javascript tests as <code>.sol</code> files. When <code>truffle test</code> is run, they will be included in the mocha run with a separate test suite per test contract. These contracts maintain all the benefits of the Javascript tests: namely a clean slate per test suite, access to deployed contracts via migrations, runnable on any Ethereum client, and usage of snapshot/revert features (if supported by your Ethereum client) for increased speed. An example solidity unit test looks like this:</p>
+<pre><code class="language-solidity">import &quot;truffle/Assert.sol&quot;;
+import &quot;truffle/DeployedAddresses.sol&quot;;
+import &quot;../contracts/MetaCoin.sol&quot;;
 
-function Command(tasks) {
-  this.tasks = tasks;
-};
+contract TestMetacoin {
+  function testInitialBalanceUsingDeployedContract() {
+    MetaCoin meta = MetaCoin(DeployedAddresses.MetaCoin());
 
-Command.prototype.getTask = function(command) {
-  var argv = yargs.parse(command);
+    uint expected = 10000;
 
-  if (argv._.length == 0) {
-    return null;
+    Assert.equal(meta.getBalance(tx.origin), expected, &quot;Owner should have 10000 MetaCoin initially&quot;);
   }
 
-  var task_name = argv._[0];
-  var task = this.tasks[task_name];
+  function testInitialBalanceWithNewMetaCoin() {
+    MetaCoin meta = new MetaCoin();
 
-  return task;
-};
+    uint expected = 10000;
+
+    Assert.equal(meta.getBalance(tx.origin), expected, &quot;Owner should have 10000 MetaCoin initially&quot;);
+  }
+}
 </code></pre>
-<p><img src="images/sudden_laugh.gif" alt="The Sudden Laugh"></p>
+<p>And when running the test:</p>
+<pre><code>$ truffle test
+Compiling ConvertLib.sol...
+Compiling MetaCoin.sol...
+Compiling ../test/TestMetacoin.sol...
+
+  TestMetacoin
+    ✓ testInitialBalanceUsingDeployedContract (61ms)
+    ✓ testInitialBalanceWithNewMetaCoin (69ms)
+
+  2 passing (3s)
+</code></pre><p>There are some very important structural items to discuss:</p>
 <ul>
-<li>Cats</li>
-<li>Dogs</li>
-<li>Rabbits</li>
-<li>Deer</li>
+<li><p>First, your assertion functions are provided by the <code>truffle/Assert.sol</code> library. This is the default assertion library, however you can include your own assertion library so long as the library outputs the correct events to the test runner. You can find all available assertion functions in <a href="https://github.com/ConsenSys/truffle/blob/solidity-tests/lib/testing/Assert.sol">Assert.sol</a>. These functions are meant to mimic those available in your Javascript tests, and more documentation will be written about each function in the future.</p>
+</li>
+<li><p>The addresses of your deployed contracts (contracts that were deployed in your migration) are available through the <code>truffle/DeployedAddresses.sol</code> library. This is provided by Truffle and is recompiled and relinked before each suite is run to provide your tests with a clean slate deployment. This library provides functions for all of your deployed contracts, in the form of:</p>
+<pre><code class="language-solidity">DeployedAddresses.&lt;contract name&gt;();
+</code></pre>
+<p>This will return an address that you can then use to access that contract.</p>
+</li>
+<li><p>In order to use the deployed contract, you&#39;ll have to import the contract code first. Notice <code>import &quot;../contracts/MetaCoin.sol&quot;;</code> in the example. This import is relative to the test contract, which exists in the <code>./test</code> directory, and it goes outside of the test directory in order to find the MetaCoin contract. It then uses that contract in a test function below to cast the address to the <code>MetaCoin</code> type.</p>
+</li>
+<li><p>All test contracts must start with <code>Test</code>, using an uppercase <code>T</code>. This distinguishes this contract apart from test helpers and project contracts, letting the test runner know it represents a test contract.</p>
+</li>
+<li><p>Like test contract names, all test functions must start with <code>test</code>, all lowercase. Each test function is executed as a single transaction, in order of appearance in the test file (like your Javascript tests). Assertion functions provided by <code>truffle/Assert.sol</code> trigger events that the test runner evaluates to determine the result of the test. Assertion functions return a boolean representing the outcome of the assertion which you can use to return from the test early to prevent execution errors (i.e, errors that the TestRPC will expose).</p>
+</li>
+<li><p>You are provided many test hooks, shown in the example below. These hooks are <code>beforeAll</code>, <code>beforeEach</code>, <code>afterAll</code> and <code>afterEach</code>, which are the same hooks provided by mocha in your Javascript tests. You can use these hooks to perform setup and teardown actions before and after each test, or before and after each suite is run. Like test functions, each hook is executed as a single transaction. Note that some complex tests will need to perform a significant amount of setup that might overflow the gas limit of a single transaction; you can get around this limitation by creating many hooks with different suffixes, like in the example test below:</p>
+<pre><code class="language-solidity">import &quot;truffle/Assert.sol&quot;;
+
+contract TestHooks {
+  uint someValue;
+
+  function beforeEach() {
+    someValue = 5;
+  }
+
+  function beforeEachAgain() {
+    someValue += 1;
+  }
+
+  function testSomeValueIsSix() {
+    uint expected = 6;
+
+    Assert.equal(someValue, expected, &quot;someValue should have been 6&quot;);
+  }
+}
+</code></pre>
+<p>This test contract also shows that your test functions and hook functions all share the same contract state. You can setup contract data before the test, use that data during the test, and reset it afterward in preparation for the next one. Note that just like your Javascript tests, your next test function will continue from the state of the previous test function that ran.</p>
+</li>
+<li><p>You <strong>do not</strong> need to extend from any <code>Test</code> contract like in other solidity testing frameworks. This is to make writing solidity unit tests easier, and should allow for more extensibility in the future with less hassle.</p>
+</li>
+<li><p>Like Javascript tests, failing tests return the events that were fired (minus assertion events) so you can get a better sense of how your contracts-under-test performed.</p>
+</li>
 </ul>
-<hr>
-<p>Is your first thought to pass Taco some props? It’s my first instinct. Isn’t that what you do to child components in React?</p>
-<p>The issue is that you’re passing a component class instead of a child element to <route>. The <route> instantiates Taco, not you. This means that the Taco component knows nothing about the outside world besides what React Router tells it (params, query strings, etc). The Taco component class is between a rock and a hard place: it needs to pass props to its children, but it gets no help from its parent component.</route></route></p>
-<p>Why don’t route components participate in the normal top-to-bottom-flow of props to children? It turns out that the authors of React Router view this restriction as an architectural decision.</p>
-<p>Maintainer Ryan Florence says that “you should think of your route components as entry points into the app that don’t know or care about the parent, and the parent shouldn’t know/care about the children.”</p>
-<p>Maintainer Jimmy Jia (taion) agrees: “the actual anti-pattern is passing props through route boundaries – in general you just shouldn’t be doing this.”</p>
-<p>Maintainer Tim Dorr believes that this boundary enforces the Single Responsibility Principle: “I’d try to keep route components aware of only router-provided props and try to maintain SRP.”</p>
-<p>These architectural decisions might make sense when you distinguish “smart” or “container” components from “dumb” ones. Smart components are “entry points” that can independently bootstrap their children’s props. “Dumb” components are presentational; they take props and return UI.</p>
-<p>Everything changes when you use a state container like Redux. If you treat your Redux application as a pure function that accepts state and returns a UI, every component is a dumb component. Like heat, your state rises to the top, and your state container absorbs it and manages its logic. What’s the point of a container component if Redux controls all of your state?</p>
-<p>In fact, a container component violates the Single Responsibility Principle when it assumes responsibilities of the state container. It couples your view layer to your state layer.</p>
-<p>In a world of dumb components, the React Router architecture stops making sense.</p>
-<p>Besides issues of route boundaries and container components, the top-level <router> component hogs all of the routing state: URL, parameters, query strings, etc. Your state container can’t talk to this second source of truth (!) without interacting with the view layer. This has real consequences for the viability of pure-functional patterns in Redux.</router></p>
-<table>
-<thead>
-<tr>
-<th>First Header</th>
-<th>Second Header</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-</tbody>
-</table>
           </div>
         </div>
         <footer class="container">
-          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/all-about-truffle-networks.md">Edit here &rarr;</a></p>
+          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/solidity-unit-tests.md">Edit here &rarr;</a></p>
         </footer>
       </section>
     </section>

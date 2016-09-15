@@ -50,6 +50,9 @@
 
     <link rel="author" href="humans.txt" />
 
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Truffle.io">
@@ -65,10 +68,6 @@
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#3372DF">
 
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
     <link rel="stylesheet" href="/styles/main.css">
     
       <noscript>
@@ -119,7 +118,7 @@
     </g>
 </svg>
 
-      <div class="m-t-4 m-b-4">
+      <div class="m-t-2 m-b-4">
         <a class="github-button" href="https://github.com/consensys/truffle" data-icon="octicon-star" data-count-href="/consensys/truffle/stargazers" data-count-api="/repos/consensys/truffle#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star consensys/truffle on GitHub">Star</a>
         <a class="github-button" href="https://github.com/consensys/truffle/fork" data-icon="octicon-repo-forked" data-count-href="/consensys/truffle/network" data-count-api="/repos/consensys/truffle#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork consensys/truffle on GitHub">Fork</a>
 				<a href="https://gitter.im/consensys/truffle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg"></a>
@@ -136,15 +135,15 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <p class="text-center">Truffle is a development environment, testing framework and asset pipeline for Ethereum, aiming to make life as an Ethereum developer easier. </p>
+      <p class="text-center">Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier. </p>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3 p-t-3">
+    <div class="col-xs-12 col-md-6 col-md-offset-3 p-t-1">
       <section class="InstallInstruction">
         <h5>INSTALL VIA NPM</h5>
         <div class="Box">
-          <code>$ npm install --g truffle</code>
+          <code>$ npm install -g truffle</code>
         </div>
       </section>
     </div>
@@ -203,75 +202,49 @@
         <ol class="FeatureList list-unstyled">
           <li>
             <h4>Built-in smart contract compilation, linking, deployment and binary management.</h4>
-            <p>Truffle takes care of compiling your Solidity contracts to a Javascript wrapper, which will automatically link and include any additional contracts, provisioning them with addresses on the network, and deploying them.</p>
+            <p>Truffle takes care of managing your contract artifacts so you don&#8217;t have to. Includes support for custom deployments, library linking and complex Ethereum applications.</p>
             <div class="LinkSection">
-              <a href="#">Learn More</a>
-              <a href="#">Examples</a>
+              <a href="http://truffle.readthedocs.io/en/latest/getting_started/compile/" target="_blank">Learn More</a>
             </div>
           </li>
           <li>
             <h4>Automated contract testing with Mocha and Chai.</h4>
-            <p>Truffle takes care of compiling your Solidity contracts to a Javascript wrapper, which will automatically link and include any additional contracts, provisioning them with addresses on the network, and deploying them.</p>
+            <p>Bring your dapp development to the 21st century. Write automated tests for your contracts that will run on any Ethereum client, giving you the assurance you need.</p>
             <div class="LinkSection">
-              <a href="#">Learn More</a>
-              <a href="#">Examples</a>
-            </div>
-          </li>
-          <li>
-            <h4>Configurable build pipeline with support for custom build processes.</h4>
-            <p>Truffle takes care of compiling your Solidity contracts to a Javascript wrapper, which will automatically link and include any additional contracts, provisioning them with addresses on the network, and deploying them.</p>
-            <div class="LinkSection">
-              <a href="#">Learn More</a>
-              <a href="#">Examples</a>
+              <a href="http://truffle.readthedocs.io/en/latest/getting_started/testing/" target="_blank">Learn More</a>
             </div>
           </li>
           <li>
             <h4>Scriptable deployment &amp; migrations framework.</h4>
-            <p>Truffle takes care of compiling your Solidity contracts to a Javascript wrapper, which will automatically link and include any additional contracts, provisioning them with addresses on the network, and deploying them.</p>
+            <p>Write simple, manageable deployment scripts that acknowledge your application will change over time. These scripts are managed across networks, so you can be sure your application&#8217;s updated on every network you deploy to.</p>
             <div class="LinkSection">
-              <a href="#">Learn More</a>
-              <a href="#">Examples</a>
+              <a href="http://truffle.readthedocs.io/en/latest/getting_started/migrations/" target="_blank">Learn More</a>
             </div>
           </li>
           <li>
             <h4>Network management for deploying to many public &amp; private networks.</h4>
-            <p>Truffle takes care of compiling your Solidity contracts to a Javascript wrapper, which will automatically link and include any additional contracts, provisioning them with addresses on the network, and deploying them.</p>
+            <p>Don&#8217;t manage network artifacts ever again. Let Truffle do it for you, and put your focus on dapp development where it belongs.</p>
             <div class="LinkSection">
-              <a href="#">Learn More</a>
-              <a href="#">Examples</a>
+              <a href="http://truffle.readthedocs.io/en/latest/advanced/networks/" target="_blank">Learn More</a>
             </div>
           </li>
           <li>
             <h4>Interactive console for direct contract communication.</h4>
-            <p>Truffle takes care of compiling your Solidity contracts to a Javascript wrapper, which will automatically link and include any additional contracts, provisioning them with addresses on the network, and deploying them.</p>
+            <p>Need instant interaction with your contracts? Use the Truffle console to save time and talk to your contracts via a REPL interface. As an added bonus, all truffle commands are supported as well.</p>
             <div class="LinkSection">
-              <a href="#">Learn More</a>
-              <a href="#">Examples</a>
-            </div>
-          </li>
-          <li>
-            <h4>Instant rebuilding of assets during development.</h4>
-            <p>Truffle takes care of compiling your Solidity contracts to a Javascript wrapper, which will automatically link and include any additional contracts, provisioning them with addresses on the network, and deploying them.</p>
-            <div class="LinkSection">
-              <a href="#">Learn More</a>
-              <a href="#">Examples</a>
+              <a href="http://truffle.readthedocs.io/en/latest/getting_started/console/" target="_blank">Learn More</a>
             </div>
           </li>
           <li>
             <h4>External script runner that executes scripts within a Truffle environment.</h4>
-            <p>Truffle takes care of compiling your Solidity contracts to a Javascript wrapper, which will automatically link and include any additional contracts, provisioning them with addresses on the network, and deploying them.</p>
+            <p>Use Truffle to bootstrap your contracts and run a network-aware script, without hassle. </p>
             <div class="LinkSection">
-              <a href="#">Learn More</a>
-              <a href="#">Examples</a>
+              <a href="http://truffle.readthedocs.io/en/latest/getting_started/scripts/" target="_blank">Learn More</a>
             </div>
           </li>
           <li>
-            <h4>Support for JavaScript, SASS, ES6 and JSX built-in.</h4>
-            <p>Truffle takes care of compiling your Solidity contracts to a Javascript wrapper, which will automatically link and include any additional contracts, provisioning them with addresses on the network, and deploying them.</p>
-            <div class="LinkSection">
-              <a href="#">Learn More</a>
-              <a href="#">Examples</a>
-            </div>
+            <h4>Built for speed.</h4>
+            <p>Whether you&#8217;re compiling contracts or running unit tests, Truffle includes clever optimizations to ensure you only compile what you have to and your tests run as quickly as possible. Along with the <a href="https://github.com/ethereumjs/testrpc">EthereumJS TestRPC</a>, you can develop your dapps quickly and get real code deployed, fast.</p>
           </li>
         </ol>
       </div>
@@ -279,8 +252,8 @@
         <section class="FeatureCard">
           <div class="FeatureBody">
             <h6>MODULAR FROM THE GROUND UP</h6>
-            <p>Truffle is written Javascript in a completely modular fashion, allowing you to pick and choose which functionality you&#8217;d like to use elsewhere.</p>
-            <p>For example, you could use Truffle as a library in your own tool, only using the modules that you need. This allows you to take advantage of powerful tools like Truffle Migrations in your own command line tools.</p>
+            <p>Truffle is written in Javascript in a completely modular fashion, allowing you to pick and choose the functionality you&#8217;d like to use.</p>
+            <p>For example, you could use Truffle as a library in your own tool, using only the modules that you need. This lets you to take advantage of powerful features like Truffle Migrations in your own command line tools.</p>
             <p>Check out the source code on Guthub!</p>
           </div>
 					<footer>
@@ -296,6 +269,7 @@
 </section>
 
   
+
 <section class="Tutorials p-t-4 p-b-4">
   <div class="container">
     <div class="row">
@@ -303,19 +277,66 @@
         <h3 class="WithDash m-b-4">LATEST TUTORIALS</h3>
         <ol class="list-unstyled">
           
+            
+          
+            
             <li>
-              <a href="/tutorials/all-about-truffle-networks">
-                <h2>All about Truffle Networks</h2>
+              <a href="/tutorials/using-infura-custom-provider">
+                <h2>Using Infura (or a custom provider)</h2>
                 <span>
-                  <date>July 13th, 2016</date> &bull; <span>BY John McDowall</span>
+                  <date>2016-09-16</date> &bull; <span>BY Tim Coulter</span>
                 </span>
                 <div>Read Article &rarr;</div>
               </a>
             </li>
+            
+          
+            
+            <li>
+              <a href="/tutorials/package-management">
+                <h2>Beta: Package Management</h2>
+                <span>
+                  <date>2016-09-15</date> &bull; <span>BY Tim Coulter</span>
+                </span>
+                <div>Read Article &rarr;</div>
+              </a>
+            </li>
+            
+          
+            
+            <li>
+              <a href="/tutorials/solidity-unit-tests">
+                <h2>Beta: Solidity Unit Tests</h2>
+                <span>
+                  <date>2016-09-01</date> &bull; <span>BY Tim Coulter</span>
+                </span>
+                <div>Read Article &rarr;</div>
+              </a>
+            </li>
+            
+          
+            
+            <li>
+              <a href="/tutorials/truffle-and-metamask">
+                <h2>Truffle and Metamask</h2>
+                <span>
+                  <date>2016-07-01</date> &bull; <span>BY Tim Coulter</span>
+                </span>
+                <div>Read Article &rarr;</div>
+              </a>
+            </li>
+            
           
         </ol>
       </div>
       <p class="text-center">Can&#8217;t find what you&#8217;re looking for? <a href="#">Suggest an article.</a></p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <p><a href="/tutorials">See All Tutorials &rarr;</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -328,8 +349,8 @@
         <h3 class="WithDash m-b-4">AWESOME COMPANIES USING TRUFFLE IN PRODUCTION</h3>
         <ol class="list-unstyled list-inline w-100 text-center">
           <li><img src="images/bitgo.png"></li>
-          <li><img src="images/bitgo.png"></li>
-          <li><img src="images/bitgo.png"></li>
+          <li><img src="images/upchain_logo.png"></li>
+          <li><img src="images/melonport_logo.png"></li>
         </ol>
       </div>
     </div>
@@ -591,7 +612,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-XXXXXX-1', 'auto');
+    ga('create', 'UA-83874933-3', 'auto');
     ga('send', 'pageview');
   </script>
 
