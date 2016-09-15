@@ -1,4 +1,4 @@
-# Using Infura <br>(or any custom provider)
+# Using Infura (or any custom provider)
 
 [Infura](https://infura.io/) is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet. For security reasons Infura does not manage users' private keys, which means they cannot sign transactions on your behalf (or your users' behalf). Similarly, Truffle doesn't intuitively know how to sign your transactions -- it usually hands that task over to the Ethereum node -- so if you'd like to deploy your contracts using Infura, you must first tell Truffle how you'd like these transactions signed.
 

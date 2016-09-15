@@ -138,4 +138,40 @@
 
   }
 
+  .TutorialIndex {
+
+    h1 {
+      @extend .col-xs-12;
+      @extend .col-md-6;
+      @extend .col-md-offset-6;
+      @extend .col-md-pull-5;
+    }
+
+    li {
+
+      a {
+        display: block;
+        background-color: #94D6E2;
+        text-transform: uppercase;
+        @extend .p-a-3;
+        @extend .m-b-4;
+        transition: all .3s;
+
+        h2 {
+          margin: 0 0 1rem 0;
+          padding: 0;
+          letter-spacing: 1px;
+        }
+
+        &:hover {
+          color: white;
+          text-decoration: none;
+
+          h2 {
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }
