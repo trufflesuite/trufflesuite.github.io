@@ -1,10 +1,12 @@
 <%
   var slugs = Object.keys(public.tutorials._data);
-  var tutorials = _.map(slugs, function(i) { return { 'slug': i, 'author': public.tutorials._data[i].author, 'title': public.tutorials._data[i].title, 'date': public.tutorials._data[i].date}})
+  var tutorials = _.map(slugs, function(i) { return { 'slug': i, 'author': public.tutorials._data[i].author, 'title': public.tutorials._data[i].title, 'date': public.tutorials._data[i].date, 'published': public.tutorials._data[i].published }})
   tutorials = _.sortBy(tutorials, 'date').reverse()
 %>
 <% for(var tutorial of tutorials){ %>
+            <% if(!!tutorial.published) { %>
   <h2><a href="/tutorials/<%= tutorial.slug %>"><%= tutorial.title %></a></h2>
   <%- partial("tutorials/" + tutorial.slug) %>
+<% } %>
 <% }; %>
 
