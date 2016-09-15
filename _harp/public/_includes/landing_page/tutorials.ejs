@@ -5,36 +5,17 @@
       <div class="col-xs-12">
         <h3 class="WithDash m-b-4">LATEST TUTORIALS</h3>
         <ol class="list-unstyled">
-          <li>
-            <a href="#">
-              <h4>EVERYTHING ABOUT TRUFFLE NETWORKS</h4>
-              <date>July 23rd 2016</date>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h4>EVERYTHING ABOUT TRUFFLE NETWORKS</h4>
-              <date>July 23rd 2016</date>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h4>EVERYTHING ABOUT TRUFFLE NETWORKS</h4>
-              <date>July 23rd 2016</date>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h4>EVERYTHING ABOUT TRUFFLE NETWORKS</h4>
-              <date>July 23rd 2016</date>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h4>EVERYTHING ABOUT TRUFFLE NETWORKS</h4>
-              <date>July 23rd 2016</date>
-            </a>
-          </li>
+          <% for(var slug in public.tutorials._data){ %>
+            <li>
+              <a href="/tutorials/<%= slug %>">
+                <h2><%= public.tutorials._data[slug].title %></h2>
+                <span>
+                  <date><%= public.tutorials._data[slug].date %></date> &bull; <span>BY <%= public.tutorials._data[slug].author %></span>
+                </span>
+                <div>Read Article &rarr;</div>
+              </a>
+            </li>
+          <% }; %>
         </ol>
       </div>
       <p class="text-center">Can't find what you're looking for? <a href="#">Suggest an article.</a></p>
