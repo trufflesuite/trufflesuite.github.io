@@ -8,7 +8,7 @@ Fortunately libraries can help us along. In this example we'll use an [hd wallet
 
 First install the required dependencies:
 
-```javascript
+```
 $ npm install ethereumjs-wallet bip39 web3-provider-engine web3
 ```
 
