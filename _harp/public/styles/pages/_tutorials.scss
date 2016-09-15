@@ -74,9 +74,19 @@
       @extend .col-md-offset-6;
       @extend .col-md-pull-5;
 
-      @extend .m-t-1;
-      @extend .m-b-3;
+      @extend .m-b-2;
       font-family: $font-family-serif;
+
+      li {
+        pre {
+          code {
+            @extend .col-xs-12;
+            @extend .col-md-6;
+            @extend .col-md-offset-5;
+            @extend .col-md-pull-5;
+          }
+        }
+      }
     }
 
     hr {
