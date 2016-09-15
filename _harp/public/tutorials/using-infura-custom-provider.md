@@ -7,7 +7,8 @@ Fortunately libraries can help us along. In this example we'll use an [hd wallet
 ### Getting Started
 
 First install the required dependencies:
-```
+
+```javascript
 $ npm install ethereumjs-wallet bip39 web3-provider-engine web3
 ```
 
@@ -17,7 +18,7 @@ We recommend you run the above command with the `--save` flag to save this confi
 
 We can use your project's `truffle.js` configuration file to tell Truffle how to sign our transactions. To start, we should first require all of our dependencies used for signing transactions:
 
-```
+```javascript
 var bip39 = require("bip39");
 var hdkey = require('ethereumjs-wallet/hdkey');
 var ProviderEngine = require("web3-provider-engine");
@@ -37,7 +38,7 @@ These dependencies are used for the following things:
 
 After setting up are dependencies, we'll then need to create an hd wallet from a mnemonic. A mnemonic is a twelve word string that represents a secure random seed (warning: don't just create a mnemonic yourself; use the bip39 library to do this if you don't have one). From this seed we can create an unlimited number of Ethereum addresses and private keys. Because this is a seed, we can always use this mnemonic to find those addresses again.
 
-```
+```javascript
 // Get our mnemonic and create an hdwallet
 var mnemonic = "couch solve unique spirit wine fine occur rhythm foot feature glory away";
 var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
@@ -45,7 +46,7 @@ var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
 
 From here we can use the hdwallet to derive the first account. We do so using something called an "hd path", which is a way of telling the complex mathematics what we're attempting to derive. The most important bit is when we add "0" on the end of the hd path. This means we want to find the first account that we can derive from this hd wallet. It's zero based, so if we wanted the second address we'd derive `wallet_hdpath + "1"`, and for the third address `wallet_hdpath + "2"`, etc.
 
-```
+```javascript
 // Get the first account using the standard hd path.
 var wallet_hdpath = "m/44'/60'/0'/0/";
 var wallet = hdwallet.derivePath(wallet_hdpath + "0").getWallet();
@@ -54,7 +55,7 @@ var address = "0x" + wallet.getAddress().toString("hex");
 
 Next, we need to set up the Provider Engine, telling it that we'd like to use our wallet to sign transactions, and use the morden network on infura for everything else:
 
-```
+```javascript
 var providerUrl = "https://morden.infura.io:8545";
 var engine = new ProviderEngine();
 engine.addProvider(new WalletSubprovider(wallet, {}));
@@ -64,7 +65,7 @@ engine.start(); // Required by the provider engine.
 
 Finally, we want to export our Truffle configuration. Here we use this wallet only when we want to deploy to the morden network:
 
-```
+```javascript
 module.exports = {
   networks: {
     "morden": {
@@ -87,7 +88,7 @@ In general, this is a lot of work in order to use an hd wallet with Truffle. Thi
 
 ### Full Code
 
-```
+```javascript
 var bip39 = require("bip39");
 var hdkey = require('ethereumjs-wallet/hdkey');
 var ProviderEngine = require("web3-provider-engine");
