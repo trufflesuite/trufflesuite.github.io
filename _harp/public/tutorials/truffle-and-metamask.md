@@ -26,11 +26,11 @@ You're going to need to have installed [node.js](https://nodejs.org/).
 
 From there, you need to install truffle (`npm install -g truffle`).
 
-Also, you're going to need to run a local blockchain RPC server to test and develop against. I recommend using [testrpc](https://github.com/ethereumjs/testrpc), which you install by running `npm install -g ethereumjs-testrpc`.
+Also, you're going to need to run a local blockchain RPC server to test and develop against. I recommend using [TestRPC](https://github.com/ethereumjs/testrpc), which you install by running `npm install -g ethereumjs-testrpc`.
 
 Next let's make sure we have our `testrpc` running in the background.  Open your terminal and run the command `testrpc`. That's all!  It runs on port `8545` by default, just like most Ethereum RPCs, and so does Truffle.
 
-## A quick note on RPCs
+## Quick Note on RPCs
 
 Ethereum RPCs can run in a pre-authenticated mode, that allows you to perform transactions without providing any additional credentials. Obviously this would be a dangerous thing to do on the open web, but for local development, it's the default method that `testrpc` provides.
 
@@ -38,7 +38,7 @@ When you first start `testrpc`, You get a list of initial accounts. These accoun
 
 When you open a normal Truffle Dapp, it takes advantage of your local authenticated rpc, and has access to its account list. The default Truffle dapp just uses the first account in the list.
 
-## Setting up a simple Truffle Dapp
+## Setting up a Simple Truffle Dapp
 
 Next, let's generate a basic Truffle dapp. The default result of `truffle init` is a simple example currency.
 
@@ -57,7 +57,7 @@ We just deployed a simple alt-coin called `MetaCoin` to our local blockchain, an
 
 If you visit it, you'll see that by default this new Dapp template signs you in with the first account on your `testrpc` account list, which happens to be the same account that got pre-populated with 10k shiny new Metacoins! That's because when you ran `truffle deploy`, Truffle used your first account as the contract publisher, and the contract says to fund the creator's account with 10k coins.
 
-*If you don't see any Metacoin in this account, it may be because you have Metamask already installed. Jump down to "Switching between testrpc and Metamask accounts" below.*
+*If you don't see any Metacoin in this account, it may be because you have Metamask already installed. Jump down to "Switching between TestRPC and Metamask accounts" below.*
 
 You can now send those coins to any account you want, so let's now set up some Metamask accounts, and then we can fund them!
 
@@ -100,7 +100,7 @@ To copy a Metamask account's address:
 
 You now you have a copy of your address to send to!
 
-## Switching between testrpc and Metamask accounts
+## Switching Between TestRPC and Metamask Accounts
 
 When Metamask is installed, it intercepts calls and transactions to the Ethereum blockchain, and forwards them to its own RPC (which is currently on the test-network by default).
 
@@ -108,11 +108,11 @@ Since Metamask is managing ethereum connections when it's installed, our Chrome 
 
 The easiest way to do this is to open an incognito window.  You can also open another browser.
 
-## Funding your Metamask account
+## Funding Your Metamask Account
 
 Once you're connected to your `testrpc` accounts again, you can send your Metacoin to whoever you please, including your new Metamask accounts.
 
-You might also notice that your new Metamask accounts don't have any ether in them. The `testrpc` initializes the blockchain with just its starting accounts having any balance, so to fund a Metamask account, you need to send some Ether to those accounts from one of your `testrpc` accounts. (In a future version of testrpc [there will probably be better ways to do this](https://github.com/ethereumjs/testrpc/issues/23)).
+You might also notice that your new Metamask accounts don't have any ether in them. The `testrpc` initializes the blockchain with just its starting accounts having any balance, so to fund a Metamask account, you need to send some Ether to those accounts from one of your `testrpc` accounts. (In a future version of TestRPC [there will probably be better ways to do this](https://github.com/ethereumjs/testrpc/issues/23)).
 
 Here's a simple shell command to tell your `testrpc` to send 1 ether to your Metamask account.  Let's assume `0x0f91747e3a5df28d81ab30b2d8216c93263c0cf3` is the first account in your `testrpc` list, and `0xbbd220f66e989a493c4d48531ea1e283abc385de` is one of your Metamask accounts.
 
