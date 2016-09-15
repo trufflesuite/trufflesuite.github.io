@@ -21,7 +21,8 @@
       "socialimage": "images/social-image.jpg",
       "appleid": null,
       "twitter": "thatianrose",
-      "disqus": false
+      "disqus": false,
+      "contributing": "truffleframework/truffleframework.github.io"
     },
     "thanks": {
       "firstlast": {

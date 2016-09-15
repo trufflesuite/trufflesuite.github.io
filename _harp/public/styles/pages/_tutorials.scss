@@ -49,6 +49,10 @@
       margin-bottom: 1.6rem;
     }
 
+    a {
+      cursor: pointer;
+    }
+
     img {
       @extend .m-t-3;
       width: auto;
@@ -70,16 +74,19 @@
       @extend .col-md-offset-6;
       @extend .col-md-pull-5;
 
+      @extend .m-t-1;
+      @extend .m-b-3;
       font-family: $font-family-serif;
     }
 
     pre {
       border-radius: 0;
-      background: #EDEDED;
+      background: #f7f7f7;
       max-width: 100%;
+      word-break: break-word;
 
       @extend .m-t-1;
-      @extend .m-b-1;
+      @extend .m-b-3;
       @extend .p-t-3;
       @extend .p-b-3;
       @extend .col-md-12;
