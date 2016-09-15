@@ -40,6 +40,7 @@
     h1 {
       @extend .m-t-3;
       @extend .m-b-3;
+      width: 90% !important;
       text-transform: uppercase;
     }
 
@@ -68,6 +69,8 @@
       @extend .col-md-6;
       @extend .col-md-offset-6;
       @extend .col-md-pull-5;
+
+      font-family: $font-family-serif;
     }
 
     pre {
@@ -87,6 +90,7 @@
         @extend .col-md-6;
         @extend .col-md-offset-6;
         @extend .col-md-pull-5;
+        width: 90% important;
       }
     }
 
