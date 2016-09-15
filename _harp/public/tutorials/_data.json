@@ -18,5 +18,10 @@
     "title": "Beta: Solidity Unit Tests",
     "date": "September 1st, 2016",
     "author": "Tim Coulter"
+  },
+  "package-management": {
+    "title": "Beta: Package Management",
+    "date": "2016-09-15",
+    "author": "Tim Coulter"
   }
 }
