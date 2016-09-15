@@ -245,10 +245,24 @@
 
   }
 
+  .NotableUsers {
+    li + li {
+      margin-left: 4rem;
+    }
+  }
 
   .BuiltWith {
+    background-color: #fff;
     .Left {
       background-color: #D8D8D8;
+
+      text-transform: uppercase;
+      text-shadow: none;
+
+      img {
+        border: 4px solid white;
+        border-radius: 50%;
+      }
     }
     .Right {
       background-color: #fff;
@@ -259,6 +273,16 @@
     position: relative;
     overflow: hidden;
     background-color: #F7F7F7;
+    padding-bottom: 6rem;
+
+    .Logo {
+      width: 100px;
+      height: 100px;
+    }
+
+    strong {
+      @extend .p-t-3;
+    }
 
     .BetaSignup {
       background: transparent;
@@ -275,7 +299,7 @@
       }
     }
 
-    svg {
+   .container > svg {
       position:absolute;
       bottom: -115px;
     }
