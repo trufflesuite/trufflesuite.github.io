@@ -13,7 +13,7 @@
       }
     },
     "service": {
-      "analytics": "UA-XXXXXX-1",
+      "analytics": "UA-83874933-3",
       "service": "example",
       "googlefonts": ["Oswald:300,400,700", "Open+Sans:400,700"],
       "googleverification": null,
