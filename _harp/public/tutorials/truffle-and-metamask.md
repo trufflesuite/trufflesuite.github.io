@@ -1,4 +1,4 @@
-![Truffle and Metamask](http://i.imgur.com/hivuwcF.gif)
+# Truffle and Metamask
 
 This article was originally written by Dan Finlay and published as a [github gist](https://gist.github.com/flyswatter/aea93752fb90322bbe11). Dan has kindly allowed us to republish it here!
 
