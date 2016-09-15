@@ -79,6 +79,20 @@
       font-family: $font-family-serif;
     }
 
+    hr {
+      @extend .col-xs-12;
+      @extend .col-md-6;
+      @extend .col-md-offset-6;
+      @extend .col-md-pull-5;
+
+      @extend .m-t-1;
+      @extend .m-b-3;
+      border: none;
+      border-bottom: 1px solid;
+      display: block;
+      height: 1px;
+    }
+
     pre {
       border-radius: 0;
       background: #f7f7f7;
