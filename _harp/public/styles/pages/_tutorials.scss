@@ -50,7 +50,6 @@
 
     img {
       @extend .m-t-3;
-      @extend .m-b-3;
       width: auto;
       max-width: 100%;
     }
@@ -63,13 +62,21 @@
       @extend .col-md-pull-5;
     }
 
+    ul,
+    ol {
+      @extend .col-xs-12;
+      @extend .col-md-6;
+      @extend .col-md-offset-6;
+      @extend .col-md-pull-5;
+    }
+
     pre {
       border-radius: 0;
       background: #EDEDED;
       max-width: 100%;
 
-      @extend .m-t-3;
-      @extend .m-b-3;
+      @extend .m-t-1;
+      @extend .m-b-1;
       @extend .p-t-3;
       @extend .p-b-3;
       @extend .col-md-12;

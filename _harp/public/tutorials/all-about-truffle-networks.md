@@ -29,6 +29,12 @@ Command.prototype.getTask = function(command) {
 
 ![The Sudden Laugh](images/sudden_laugh.gif)
 
+
+- Cats
+- Dogs
+- Rabbits
+- Deer
+
 Is your first thought to pass Taco some props? It’s my first instinct. Isn’t that what you do to child components in React?
 
 The issue is that you’re passing a component class instead of a child element to <Route>. The <Route> instantiates Taco, not you. This means that the Taco component knows nothing about the outside world besides what React Router tells it (params, query strings, etc). The Taco component class is between a rock and a hard place: it needs to pass props to its children, but it gets no help from its parent component.
