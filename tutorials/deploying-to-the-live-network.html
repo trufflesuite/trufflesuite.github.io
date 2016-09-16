@@ -30,14 +30,14 @@
     
     <meta property="og:site_name" content="Truffle.io" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Beta: Package Management - Truffle.io" />
+    <meta property="og:title" content="Deploying to the Live Network - Truffle.io" />
     <meta property="og:url" content="http://truffle.io" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="images/social-image.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle.io" />
-    <meta name="twitter:title" content="Beta: Package Management - Truffle.io" />
+    <meta name="twitter:title" content="Deploying to the Live Network - Truffle.io" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle.io" />
     <meta name="twitter:domain" content="surge.sh" />
@@ -46,7 +46,7 @@
     
     
 
-    <title>Beta: Package Management | Truffle.io</title>
+    <title>Deploying to the Live Network | Truffle.io</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -138,73 +138,49 @@
       <section class="MainContent">
         <div class="container-fluid">
           <div class="row">
-            <h1>In Beta: Package Management</h1><p>This is a beta document and refers to the <code>beta</code> version of Truffle. The following features will not work unless you are using Truffle Beta.</p>
-<h2>Get the Beta Version</h2><p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
-<pre><code>$ npm uninstall -g truffle
-</code></pre><p>And then install the beta version:</p>
-<pre><code>$ npm install -g truffle@beta
-</code></pre><h2>Overview</h2><p>Truffle Beta comes standard with <code>npm</code> integration, and is aware of the <code>node_modules</code> directory in your project if it exists. This means you can use and distribute contracts, dapps and Ethereum-enabled libraries via <code>npm</code>, making your code available to others and other&#39;s code available to you.</p>
-<h2>Package Layout</h2><p>Projects created with Truffle have a specific layout by default which enables them to be used as packages. This layout isn&#39;t required, but if used as a common convention -- or &quot;de-facto standard&quot; -- then distributing contracts and dapps through package management will become much easier.</p>
-<p>The most important directories in a Truffle package are the following:</p>
+            <h1>Deploying to the Live Network</h1><p>When you&#39;re finished developing your contracts and would like others to use them, the next step is to deploy them to the live network. By now you will have been working on a development network like the <a href="https://github.com/ethereumjs/testrpc">TestRPC</a>, and you will have noticed Truffle is set up to support that by default. Deploying to the live network -- or any other network -- will require that you first connect one of the <a href="http://ethdocs.org/en/latest/ethereum-clients/">many Ethereum clients</a> to your network of choice, as well as configure Truffle correctly.</p>
+<h2>Setting Up Your Ethereum client</h2><p>There are <a href="http://ethdocs.org/en/latest/ethereum-clients/">many Ethereum clients</a> to choose from. The most popular are <a href="https://github.com/ethereum/go-ethereum">go-ethereum</a> and <a href="https://github.com/ethereum/cpp-ethereum">cpp-ethereum</a>. This tutorial cannot go into the details of setting up each client for each operating system, but be sure your desired client is installed and configured to perform the following:</p>
 <ul>
-<li><code>/contracts</code></li>
-<li><code>/build</code> (which includes <code>/build/contracts</code>, created by Truffle)</li>
+<li>Your client is completely synced with the live network</li>
+<li>Your client is hosting an RPC server on <code>localhost</code> and port <code>8546</code> (for this tutorial)</li>
+<li>Your client has at least one account registered and can sign transactions for that account</li>
+<li>The registered account contains enough Ether to deploy your contracts</li>
 </ul>
-<p>The first directory is your contracts directory, which includes your raw Solidity contracts. The second directory is the build directory, and more specifically <code>/build/contracts</code>, which holds build artifacts in the form of <code>.sol.js</code> files. Including raw contracts in your package will allow others to import those contracts within their own solidity code. Similarly, including your <code>.sol.js</code> build artifacts in your package will allow others to seamlessly interact with your contracts from Javascript, which can be used in dapps, scripts and migrations.</p>
-<h2>Using a Package</h2><p>When using a package within your own project, it is important to note that there are two places where you might be interested in using other&#39;s contract code: within your contracts (<code>.sol</code> files) and within your Javascript code (<code>.sol.js</code> files). The following provides an example of each case, and discusses techniques for making the most of other&#39;s contracts and build artifacts.</p>
-<h3>Installing</h3><p>For this example, we&#39;re going to use the <a href="https://github.com/ConsenSys/example-truffle-library">Example Truffle Library</a>, which provides a simple name registry that is deployed to the Morden test network. In order to use it as a dependency, we must first install it within our project through <code>npm</code>:</p>
-<pre><code>$ cd my_project
-$ npm install example-truffle-library
-</code></pre><p>Note that the last command above downloads the package and places it in <code>my_project/node_modules</code> directory, which is important for the examples below. See the <a href="https://docs.npmjs.com/">npm documentation</a> for help using <code>npm</code> to install packages.</p>
-<h3>Within Your Contracts</h3><p>To use a package&#39;s contracts within your contracts, this can be as simple as Solidity&#39;s <a href="http://solidity.readthedocs.io/en/develop/layout-of-source-files.html?#importing-other-source-files">import</a> statement. When your import path isn&#39;t explicitly relative or absolute, this signifies to Truffle that you&#39;re looking for a file from a specific named package. Consider this example using the Example Truffle Library mentioned above:</p>
-<pre><code class="language-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
-</code></pre>
-<p>Since the path didn&#39;t start with <code>./</code>, Truffle knows to look in your project&#39;s <code>node_modules</code> directory for the <code>example-truffle-library</code> folder. From there, it resolves the path to provide you the contract you requested.</p>
-<h3>Within Javascript Code</h3><p>To interact with package&#39;s contracts within Javascript code, you simply need to <code>require</code> that package&#39;s <code>.sol.js</code> files like so:</p>
-<pre><code class="language-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
-</code></pre>
-<p>These files are provided by <a href="https://github.com/ConsenSys/ether-pudding">EtherPudding</a>, which Truffle uses internally. See EtherPudding&#39;s documentation for more information.</p>
-<h3>Package&#39;s Deployed Addresses</h3><p>Sometimes you want your contracts to interact with the package&#39;s previously deployed contracts. Since the deployed addresses exist within the package&#39;s <code>.sol.js</code> files, you must perform an extra step to get those addresses into your contracts. To do so, make your contract accept the address of the dependency contract, and then use migrations. The following is an example contract that exists within your project as well as an example migration:</p>
-<p>Contract: MyContract.sol</p>
-<pre><code class="language-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
-
-contract MyContract {
-  SimpleNameRegistry registry;
-  address public owner;
-
-  function MyContract {
-    owner = msg.sender;
+<p>If you don&#39;t want to set up an Ethereum client yourself, you can alternatively use <a href="https://infura.io/">Infura</a>. This will require you <a href="/tutorials/using-infura-custom-provider">configure Truffle correctly for Infura</a> before proceeding.</p>
+<h2>Configuring Truffle</h2><p>The default Truffle configuration without any bells and whistles looks like this:</p>
+<pre><code class="language-javascript">module.exports = {
+  rpc: {
+    host: &quot;localhost&quot;,
+    port: 8545
   }
-
-  // Simple example that uses the deployed registry from the package.
-  function getModule(bytes32 name) returns (address) {
-    return registry.names(name);
-  }
-
-  // Set the registry if you&#39;re the owner.
-  function setRegistry(address addr) {
-    if (msg.sender != owner) throw;
-
-    registry = SimpleNameRegistry(addr);
-  }
-}
-</code></pre>
-<p>Migration: 3_hook_up_example_library.js</p>
-<pre><code class="language-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
-
-module.exports = function(deployer) {
-  // Deploy our contract, then set the address of the registry.
-  deployer.deploy(MyContract).then(function() {
-    MyContract.deployed().setRegistry(SimpleNameRegistry.address);
-  });
 };
 </code></pre>
-<h2>Recommendation: Use the TestRPC</h2><p>The <a href="https://github.com/ethereumjs/testrpc">ethereumjs-testrpc</a> is wildly useful for packages that were previously deployed to the live network. The TestRPC includes a <code>--fork</code> feature which allows you to fork from the main chain while developing your application. What this means for you is that you can develop and test against packages that are deployed live, using <strong>real data</strong>, without having to worry about deploying your dependency&#39;s contracts yourself.</p>
-<h2>The Future: Where do we go from here?</h2><p>Node&#39;s <code>npm</code> is, of course, a centralized service, and the packages that exist there are on a centralized network. As Ethereum becomes more widespread, so will the urge to decentralize all of our tools and packages. The ideal package management system for Ethereum is one where the package registry exists on the live chain and the package data exists on a decentralized file storage network like IPFS or Swarm; however, that ideal is going to take time to develop and reach critical mass. Until that time, we can use <code>npm</code> to distribute our contracts and applications like the rest of the Javascript community.</p>
+<p>This tells Truffle that by default it should connect to an Ethereum client at host <code>localhost</code> and port <code>8545</code>. You <strong>could</strong> keep this configuration and simply stop your development client and run the live network at the same host and port; however, Truffle won&#39;t know how to distinguish deployment artifacts on the development network from those same artifacts on the live network (like deployed addresses, for instance). To ensure Truffle knows the network you want to deploy to, we can add a specific configuration for the live network:</p>
+<pre><code class="language-javascript">module.exports = {
+  networks: {
+    &quot;live&quot;: {
+      network_id: 1,
+      host: &quot;localhost&quot;,
+      port: 8546   // Different than the default below
+    }
+  },
+  rpc: {
+    host: &quot;localhost&quot;,
+    port: 8545
+  }
+};
+</code></pre>
+<p>Notice we set up our live Ethereum client to run on a different port to ensure we don&#39;t inadvertently deploy to the wrong network.</p>
+<p>One important configuration option to pay attention to is <code>network_id</code>. Here, we set the network id to <code>1</code> to signify that the  network named <code>&quot;live&quot;</code> within the configuration represents only the network identified by an id of <code>1</code>. Since only the live Ethereum network has that id (all other networks do not), we can be sure this configuration will only apply to the live Ethereum network. Private networks will have their own network id, for example, and the <a href="https://github.com/ethereum/wiki/wiki/Morden">Morden testnet</a> -- a publically shared network used only for testing -- has a network id of <code>2</code>.</p>
+<h2>Deploying to the Live Network</h2><p>Now that our configuration is set up, we can now deploy to the live network. When deploying, we must specifically ask for the live network or else Truffle will fall back to the default configuration. To do so, we can deploy with the following command:</p>
+<pre><code>$ truffle migrate --network live
+</code></pre><p>Notice that we asked for the <code>&quot;live&quot;</code> network, which is the name we defined in the configuration, and Truffle will connect to the specified host and port -- in this case <code>http://localhost:8546</code> -- to deploy our contracts.</p>
+<p>Your <a href="http://truffle.readthedocs.io/en/latest/getting_started/migrations/">migrations</a> are run on this network just as they&#39;d run on any other network. If you had previously deployed to the live network before, <code>truffle migrate --network live</code> will check which migration was last run and only start deploying from there.</p>
+<h2>And That&#39;s it!</h2><p>Congrats! You have now deployed your contracts to the live network. For more details on network configuration and deployment, be sure to check out the <a href="http://truffle.readthedocs.io">Truffle documentation</a>.</p>
           </div>
         </div>
         <footer class="container">
-          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/package-management.md">Edit here &rarr;</a></p>
+          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/deploying-to-the-live-network.md">Edit here &rarr;</a></p>
         </footer>
       </section>
     </section>

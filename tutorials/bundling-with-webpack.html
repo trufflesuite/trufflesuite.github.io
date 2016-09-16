@@ -30,14 +30,14 @@
     
     <meta property="og:site_name" content="Truffle.io" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Beta: Package Management - Truffle.io" />
+    <meta property="og:title" content="Bundling with Webpack - Truffle.io" />
     <meta property="og:url" content="http://truffle.io" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="images/social-image.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle.io" />
-    <meta name="twitter:title" content="Beta: Package Management - Truffle.io" />
+    <meta name="twitter:title" content="Bundling with Webpack - Truffle.io" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle.io" />
     <meta name="twitter:domain" content="surge.sh" />
@@ -46,7 +46,7 @@
     
     
 
-    <title>Beta: Package Management | Truffle.io</title>
+    <title>Bundling with Webpack | Truffle.io</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -138,73 +138,107 @@
       <section class="MainContent">
         <div class="container-fluid">
           <div class="row">
-            <h1>In Beta: Package Management</h1><p>This is a beta document and refers to the <code>beta</code> version of Truffle. The following features will not work unless you are using Truffle Beta.</p>
-<h2>Get the Beta Version</h2><p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
-<pre><code>$ npm uninstall -g truffle
-</code></pre><p>And then install the beta version:</p>
-<pre><code>$ npm install -g truffle@beta
-</code></pre><h2>Overview</h2><p>Truffle Beta comes standard with <code>npm</code> integration, and is aware of the <code>node_modules</code> directory in your project if it exists. This means you can use and distribute contracts, dapps and Ethereum-enabled libraries via <code>npm</code>, making your code available to others and other&#39;s code available to you.</p>
-<h2>Package Layout</h2><p>Projects created with Truffle have a specific layout by default which enables them to be used as packages. This layout isn&#39;t required, but if used as a common convention -- or &quot;de-facto standard&quot; -- then distributing contracts and dapps through package management will become much easier.</p>
-<p>The most important directories in a Truffle package are the following:</p>
-<ul>
-<li><code>/contracts</code></li>
-<li><code>/build</code> (which includes <code>/build/contracts</code>, created by Truffle)</li>
-</ul>
-<p>The first directory is your contracts directory, which includes your raw Solidity contracts. The second directory is the build directory, and more specifically <code>/build/contracts</code>, which holds build artifacts in the form of <code>.sol.js</code> files. Including raw contracts in your package will allow others to import those contracts within their own solidity code. Similarly, including your <code>.sol.js</code> build artifacts in your package will allow others to seamlessly interact with your contracts from Javascript, which can be used in dapps, scripts and migrations.</p>
-<h2>Using a Package</h2><p>When using a package within your own project, it is important to note that there are two places where you might be interested in using other&#39;s contract code: within your contracts (<code>.sol</code> files) and within your Javascript code (<code>.sol.js</code> files). The following provides an example of each case, and discusses techniques for making the most of other&#39;s contracts and build artifacts.</p>
-<h3>Installing</h3><p>For this example, we&#39;re going to use the <a href="https://github.com/ConsenSys/example-truffle-library">Example Truffle Library</a>, which provides a simple name registry that is deployed to the Morden test network. In order to use it as a dependency, we must first install it within our project through <code>npm</code>:</p>
-<pre><code>$ cd my_project
-$ npm install example-truffle-library
-</code></pre><p>Note that the last command above downloads the package and places it in <code>my_project/node_modules</code> directory, which is important for the examples below. See the <a href="https://docs.npmjs.com/">npm documentation</a> for help using <code>npm</code> to install packages.</p>
-<h3>Within Your Contracts</h3><p>To use a package&#39;s contracts within your contracts, this can be as simple as Solidity&#39;s <a href="http://solidity.readthedocs.io/en/develop/layout-of-source-files.html?#importing-other-source-files">import</a> statement. When your import path isn&#39;t explicitly relative or absolute, this signifies to Truffle that you&#39;re looking for a file from a specific named package. Consider this example using the Example Truffle Library mentioned above:</p>
-<pre><code class="language-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
+            <h1>Bundling with Webpack</h1><p><a href="https://webpack.github.io/">Webpack</a> is a powerful module bundler that helps turn your code into static assets you can deploy to the web. With the <a href="https://github.com/ConsenSys/truffle-solidity-loader">Truffle Solidity loader</a>, we&#39;ll show you how you can use Webpack with your existing Truffle project.</p>
+<h2>Intended Audience</h2><p>This tutorial is for Truffle users who are familiar with Webpack already. Since Webpack requires considerable knowledge to use effectively, we recommend checking out the <a href="http://webpack.github.io/docs/">Webpack documentation</a> as well as the <a href="https://github.com/ConsenSys/truffle-webpack-demo">Truffle + Webpack Demo application</a> before proceeding.</p>
+<h2>Getting Started</h2><p>Navigate to your project in the command line, and then install the required dependencies. These dependencies are in addition to any other Webpack-related dependencies your project might have.</p>
+<pre><code>$ npm install webpack webpack-dev-server truffle-solidity-loader --save-dev
+</code></pre><h2>Set up Your Webpack Configuration</h2><p>You should already have a webpack configuration for your project. If you don&#39;t, an example configuration file is provided at the bottom of this tutorial. To enable Solidity support, add the <code>truffle-solidity-loader</code> as a plugin within your project:</p>
+<pre><code class="language-javascript">// your webpack configuration...
+module: {
+  loaders: [
+    // ...,
+    { test: /\.sol/, loader: &#39;truffle-solidity&#39; }
+  ]
+}
 </code></pre>
-<p>Since the path didn&#39;t start with <code>./</code>, Truffle knows to look in your project&#39;s <code>node_modules</code> directory for the <code>example-truffle-library</code> folder. From there, it resolves the path to provide you the contract you requested.</p>
-<h3>Within Javascript Code</h3><p>To interact with package&#39;s contracts within Javascript code, you simply need to <code>require</code> that package&#39;s <code>.sol.js</code> files like so:</p>
-<pre><code class="language-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
-</code></pre>
-<p>These files are provided by <a href="https://github.com/ConsenSys/ether-pudding">EtherPudding</a>, which Truffle uses internally. See EtherPudding&#39;s documentation for more information.</p>
-<h3>Package&#39;s Deployed Addresses</h3><p>Sometimes you want your contracts to interact with the package&#39;s previously deployed contracts. Since the deployed addresses exist within the package&#39;s <code>.sol.js</code> files, you must perform an extra step to get those addresses into your contracts. To do so, make your contract accept the address of the dependency contract, and then use migrations. The following is an example contract that exists within your project as well as an example migration:</p>
-<p>Contract: MyContract.sol</p>
-<pre><code class="language-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
-
-contract MyContract {
-  SimpleNameRegistry registry;
-  address public owner;
-
-  function MyContract {
-    owner = msg.sender;
-  }
-
-  // Simple example that uses the deployed registry from the package.
-  function getModule(bytes32 name) returns (address) {
-    return registry.names(name);
-  }
-
-  // Set the registry if you&#39;re the owner.
-  function setRegistry(address addr) {
-    if (msg.sender != owner) throw;
-
-    registry = SimpleNameRegistry(addr);
+<h2>Remove Default Build Configuration</h2><p>Since you&#39;re using Webpack to build your frontend, you won&#39;t want to use the default Truffle build process as the two processes will conflict. To ensure there are no issues if you or your teammates run <code>truffle build</code>, go ahead and delete the <code>build</code> configuration in your <code>truffle.js</code> file, if it exists.</p>
+<pre><code class="language-javascript">module.exports = {
+  build: {      // Delete this.
+    // ...      // and this.
+  },            // and this too.
+  rpc: {
+    host: &quot;localhost&quot;,
+    port: 8545
   }
 }
 </code></pre>
-<p>Migration: 3_hook_up_example_library.js</p>
-<pre><code class="language-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
+<h2>Bootstrapping Your Application</h2><p>Since you&#39;re bundling the frontend yourself and not using Truffle&#39;s default build process, certain &quot;magic&quot; provided by Truffle needs to be handled in order to get your application running properly. This includes:</p>
+<ol>
+<li>Detecting the <code>web3</code> object provided to you by the user&#39;s Ethereum client, which as of this writing will likely be either <a href="https://metamask.io/">Metamask</a> or <a href="https://github.com/ethereum/mist">Mist</a>.</li>
+<li>Provisioning your contract abstractions so they can communicate with your user&#39;s Ethereum client.</li>
+</ol>
+<h3>Detecting Web3</h3><p>In the past, Truffle bootstrapped applications to look for an open Ethereum node running at <code>http://localhost:8545</code>, but this has proven to be insecure for the user as well as highly unlikely in a real world scenario. Instead, users are most likely to use Metamask or Mist to interact with web applications on the Ethereum network, and you should build your application to support that. Both Metamask and Mist inject a <code>web3</code> object when the page is loading so you can hook into their transaction signing processes. Detecting this <code>web3</code> object easy:</p>
+<pre><code class="language-javascript">var Web3 = require(&quot;web3&quot;);
 
-module.exports = function(deployer) {
-  // Deploy our contract, then set the address of the registry.
-  deployer.deploy(MyContract).then(function() {
-    MyContract.deployed().setRegistry(SimpleNameRegistry.address);
-  });
+window.addEventListener(&#39;load&#39;, function() {                    
+  // Supports Metamask and Mist, and other wallets that provide &#39;web3&#39;.      
+  if (typeof web3 !== &#39;undefined&#39;) {                            
+    // Use the Mist/wallet provider.                            
+    window.web3 = new Web3(web3.currentProvider);               
+  } else {                                                      
+    // No web3 detected. Show an error to the user or use Infura: https://infura.io/
+  }                                                                                                                       
+});
+</code></pre>
+<p>Notice we only use the wallet&#39;s provider and not the whole <code>web3</code> object provided to us. This ensures our application is not dependent on the wallet&#39;s version of Web3, and reduces the surface area in which version errors might occur.</p>
+<h3>Provisioning Your Contract Abstractions</h3><p>Provisioning your contract abstractions requires two things: 1) that you include your contracts in your project, and 2) that you set up the Javascript abstractions so that they&#39;re correctly talking to the Ethereum client via Web3.</p>
+<p>When including contracts in your application, the Solidity Loader will resolve all <code>.sol</code> files to their associated contract abstraction, so importing your contracts is simply a matter of performing one of the following within your frontend:</p>
+<pre><code class="language-javascript">// ES5:
+var MyContract = require(&quot;contracts/MyContract.sol&quot;);
+
+// ES6:
+import MyContract from &quot;contracts/MyContract.sol&quot;;
+</code></pre>
+<p>After making sure your contract is imported, you now need to hook up the <code>web3</code> object you detected above with the contract abstraction provided:</p>
+<pre><code class="language-javascript">MyContract.setProvider(window.web3.currentProvider);
+</code></pre>
+<p>Finally, you can use the contract abstraction as described within the <a href="http://truffle.readthedocs.io/en/latest/getting_started/contracts/">Truffle documentation</a>.</p>
+<p>You can prevent having to perform this provisioning more than once per contract dependency by either setting your contract abstractions to the global object, like <code>window</code>, and provisioning them once when your application loads; or using something like the <a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin">ProvidePlugin</a> to ensure your contract abstractions are available to every file within the bundle (recommended).</p>
+<h2>Running Wepback</h2><p>From here you can run webpack like normal, via the normal <code>webpack</code> command or the <code>webpack-dev-server</code>, if you have those installed globally on your machine:</p>
+<pre><code>$ webpack
+$ webpack-dev-server --hot
+</code></pre><p>Alternatively, you can edit your project&#39;s <code>package.json</code> file to run Wepback from the versions you installed at the beginning of this tutorial:</p>
+<pre><code class="language-javascript">&quot;scripts&quot;: {
+  &quot;build&quot;: &quot;webpack&quot;,
+  &quot;dev&quot;: &quot;webpack-dev-server --hot&quot;
+}
+</code></pre>
+<h2>Example Webpack Config</h2><p>Here&#39;s a very simple Webpack configuration file that uses the Truffle Solidity Loader as well as other plugins. This configration file exists within a React application where its source files exist within the <code>./app</code> directory, and CSS is pulled out using the <code>copy-webpack-plugin</code>. Of course, your dapp&#39;s layout and structure will be different, but this should give you a good example of how the Solidity Loader fits within a simple application.</p>
+<pre><code class="language-javascript">var webpack = require(&quot;webpack&quot;);
+var CopyWebpackPlugin = require(&#39;copy-webpack-plugin&#39;);
+var ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;);
+
+module.exports = {
+  entry: &#39;./app/javascripts/app.jsx&#39;,
+  output: {
+    path: &quot;./build&quot;,
+    filename: &#39;app.js&#39;
+  },
+  module: {
+    loaders: [
+      { test: /\.(js|jsx|es6)$/, exclude: /node_modules/, loader: &quot;babel-loader&quot;},
+      { test: /\.scss$/i, loader: ExtractTextPlugin.extract([&quot;css&quot;, &quot;sass&quot;])},
+      { test: /\.json$/i, loader: &quot;json-loader&quot;},
+      { test: /\.sol/, loader: &#39;truffle-solidity&#39; }
+    ]
+  },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: &#39;./app/index.html&#39;, to: &quot;index.html&quot; },
+      { from: &#39;./app/images&#39;, to: &quot;images&quot; },
+      { from: &#39;./app/fonts&#39;, to: &quot;fonts&quot; }
+    ]),
+    new ExtractTextPlugin(&quot;app.css&quot;)
+  ],
+  devServer: {
+    stats: &#39;errors-only&#39;,
+  }
 };
 </code></pre>
-<h2>Recommendation: Use the TestRPC</h2><p>The <a href="https://github.com/ethereumjs/testrpc">ethereumjs-testrpc</a> is wildly useful for packages that were previously deployed to the live network. The TestRPC includes a <code>--fork</code> feature which allows you to fork from the main chain while developing your application. What this means for you is that you can develop and test against packages that are deployed live, using <strong>real data</strong>, without having to worry about deploying your dependency&#39;s contracts yourself.</p>
-<h2>The Future: Where do we go from here?</h2><p>Node&#39;s <code>npm</code> is, of course, a centralized service, and the packages that exist there are on a centralized network. As Ethereum becomes more widespread, so will the urge to decentralize all of our tools and packages. The ideal package management system for Ethereum is one where the package registry exists on the live chain and the package data exists on a decentralized file storage network like IPFS or Swarm; however, that ideal is going to take time to develop and reach critical mass. Until that time, we can use <code>npm</code> to distribute our contracts and applications like the rest of the Javascript community.</p>
           </div>
         </div>
         <footer class="container">
-          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/package-management.md">Edit here &rarr;</a></p>
+          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/bundling-with-webpack.md">Edit here &rarr;</a></p>
         </footer>
       </section>
     </section>
