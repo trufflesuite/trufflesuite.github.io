@@ -4,6 +4,8 @@
   border: none;
   color: $body-text-color;
 
+  font-family: $font-family-sans-serif;
+
   text-transform: uppercase;
   font-weight: 400;
   box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);
@@ -15,6 +17,12 @@
 
 .btn-primary {
   background-color: $body-primary-color;
+  background-image: -webkit-gradient(linear, left center, right center, from(rgb(49, 225, 197)), to(rgb(87, 221, 193)));
+  background-image: -webkit-linear-gradient(left, rgb(49, 225, 197), rgb(87, 221, 193));
+  background-image: -moz-linear-gradient(left, rgb(49, 225, 197), rgb(87, 221, 193));
+  background-image: -o-linear-gradient(left, rgb(49, 225, 197), rgb(87, 221, 193));
+  background-image: -ms-linear-gradient(left, rgb(49, 225, 197), rgb(87, 221, 193));
+  background-image: linear-gradient(left, rgb(49, 225, 197), rgb(87, 221, 193));
 
 	&:hover,
   &:focus,
@@ -27,6 +35,12 @@
 
 .btn-secondary {
   background-color: $body-secondary-color;
+  background-image: -webkit-gradient(linear, left center, right center, from(rgb(59, 200, 226)), to(rgb(130, 211, 226)));
+  background-image: -webkit-linear-gradient(left, rgb(59, 200, 226), rgb(130, 211, 226));
+  background-image: -moz-linear-gradient(left, rgb(59, 200, 226), rgb(130, 211, 226));
+  background-image: -o-linear-gradient(left, rgb(59, 200, 226), rgb(130, 211, 226));
+  background-image: -ms-linear-gradient(left, rgb(59, 200, 226), rgb(130, 211, 226));
+  background-image: linear-gradient(left, rgb(59, 200, 226), rgb(130, 211, 226));
 
   &:hover,
   &:focus,
