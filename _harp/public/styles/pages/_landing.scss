@@ -280,8 +280,11 @@
       height: 100px;
     }
 
+    ul {
+      text-transform: uppercase;
+    }
+
     strong {
-      @extend .p-t-3;
     }
 
     .BetaSignup {
