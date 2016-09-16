@@ -146,9 +146,21 @@
     .FeatureList {
       li {
         @extend .m-b-3;
+        counter-increment: step-counter;
+
+        &:before {
+          content: "0" counter(step-counter) ".";
+          margin-left: -26px;
+          margin-top: -1px;
+          font-size: 20px;
+          padding: 0px 12px;
+          position: absolute;
+          left: -10px;
+          line-height: 1.2;
+        }
 
         .LinkSection {
-          margin-top: 2rem;
+          margin-top: 1rem;
           a {
             margin-right: 1rem;
             font-family: $font-family-serif;
