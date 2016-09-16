@@ -222,10 +222,10 @@
       position: absolute;
       left: 0;
       right: 0;
-      bottom: -100px;
-      height: 250px;
+      bottom: -1000px;
+      height: 1000px;
       background: #e2e2e2;
-      transform: skew(0,6deg);
+      transform: skew(0,45deg);
     }
 
     li {
@@ -248,7 +248,7 @@
         &:hover {
           color: white;
           text-decoration: none;
-          transform: scale(1.1);
+          transform: scale(1.02);
 
           h2 {
             color: white;
