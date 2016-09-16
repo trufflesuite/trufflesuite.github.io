@@ -69,7 +69,7 @@
     .FormWrapper {
       background: rgba(255, 255, 255, 0.3);
       border: 4px solid white;
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.03);
       display: flex;
       margin: 50px 0;
 
@@ -242,11 +242,13 @@
           margin: 0 0 1rem 0;
           padding: 0;
           letter-spacing: 1px;
+          text-shadow: none;
         }
 
         &:hover {
           color: white;
           text-decoration: none;
+          transform: scale(1.1);
 
           h2 {
             color: white;
