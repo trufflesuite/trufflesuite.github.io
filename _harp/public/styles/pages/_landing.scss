@@ -1,6 +1,18 @@
 
 .LandingPage {
 
+  ul,
+  ol {
+    font-family: $font-family-serif;
+    line-height: 1.8em;
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 1.2em;
+    }
+  }
+
   header {
     background: url('../images/header_bg.jpg') no-repeat;
     background-size: cover;
@@ -266,6 +278,10 @@
       }
     }
 
+  }
+
+  .Contributing {
+    background: #3fe0c5;
   }
 
   .NotableUsers {

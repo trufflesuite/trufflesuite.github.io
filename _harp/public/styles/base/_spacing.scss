@@ -39,3 +39,12 @@
   left: 0;
   z-index: $zindex-navbar-fixed;
 }
+
+.Flex {
+  display: flex;
+}
+
+.FlexVerticalCenter {
+  align-items: center;
+  justify-content: center;
+}
