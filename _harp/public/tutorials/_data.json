@@ -28,5 +28,11 @@
     "date": "2016-09-15",
     "author": "Tim Coulter",
     "published": true
+  },
+  "bundling-with-webpack": {
+    "title": "Bundling with Webpack",
+    "date": "2016-09-16",
+    "author": "Tim Coulter",
+    "published": true
   }
 }
