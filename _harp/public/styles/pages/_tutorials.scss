@@ -45,8 +45,8 @@
     }
 
     p {
-      line-height: 1.6rem;
-      margin-bottom: 1.6rem;
+      line-height: 1.9rem;
+      margin-bottom: 1.9rem;
     }
 
     a {
@@ -74,10 +74,11 @@
       @extend .col-md-offset-6;
       @extend .col-md-pull-5;
 
-      @extend .m-b-2;
+      margin-bottom: 1.9rem;
       font-family: $font-family-serif;
 
       li {
+        line-height: 1.9rem;
         pre {
           code {
             @extend .col-xs-12;
