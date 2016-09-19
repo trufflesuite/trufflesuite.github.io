@@ -313,6 +313,14 @@
       margin-left: 2rem;
       margin-right: 2rem;
     }
+
+
+    @media (max-width: 590px) {
+      li {
+        margin: 2rem auto;
+        display: block;
+      }
+    }
   }
 
   .BuiltWith {
