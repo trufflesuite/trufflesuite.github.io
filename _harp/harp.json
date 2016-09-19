@@ -1,8 +1,8 @@
 {
   "globals": {
-    "name": "Truffle.io",
-    "title": "Truffle.io",
-    "url": "http://truffle.io",
+    "name": "Truffle Framework",
+    "title": "TruffleFramework.com",
+    "url": "http://truffleframwork.com",
     "description": "Your Ethereum Swiss Army Knife",
     "keywords": "solidity, dapps, contracts, smart contracts",
     "domain": "surge.sh",
