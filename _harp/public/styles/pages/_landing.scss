@@ -337,6 +337,12 @@
         margin-left: 2em;
         margin-right: 2em;
       }
+
+      @media (max-width: 590px) {
+        img {
+          margin: 0px auto;
+        }
+      }
     }
     .Right {
       background-color: #fff;
