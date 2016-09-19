@@ -39,3 +39,9 @@ i {
 .Uppercase {
   text-transform: uppercase;
 }
+
+
+code {
+  // word-break: break-all;
+  word-wrap: break-word;
+}
