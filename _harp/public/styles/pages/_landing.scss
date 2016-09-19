@@ -94,14 +94,6 @@
         flex: 2;
       }
 
-      @media (max-width: 590px) {
-        .mc-field-group:first-child {
-          border-right: none;
-          border-bottom: 4px solid white;
-        }
-      }
-
-
       label {
         position: absolute;
         z-index: 2;
@@ -135,6 +127,19 @@
         height: 70px;
         width: 100%;
         border: 0;
+      }
+    }
+  }
+
+  @media (max-width: 590px) {
+    .BetaSignup {
+      .FormWrapper {
+        display: block;
+
+        .mc-field-group:first-child {
+          border-right: none;
+          border-bottom: 4px solid white;
+        }
       }
     }
   }
@@ -180,6 +185,16 @@
           a {
             margin-right: 1rem;
             font-family: $font-family-serif;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 590px) {
+      .FeatureList {
+        li {
+          &:before {
+            display: none;
           }
         }
       }
@@ -287,6 +302,10 @@
 
   .Contributing {
     background: #3fe0c5;
+
+    ol {
+      margin-left: 1rem;
+    }
   }
 
   .NotableUsers {
