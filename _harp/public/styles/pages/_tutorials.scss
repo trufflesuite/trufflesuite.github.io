@@ -51,6 +51,11 @@
 
     a {
       cursor: pointer;
+      border-bottom: 1px solid;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
 
     img {
@@ -161,10 +166,14 @@
         transition: all .3s;
 
         h2 {
-          margin: 0 0 1rem 0;
+          margin: 0;
           padding: 0;
           letter-spacing: 1px;
           text-shadow: none;
+        }
+
+        div {
+          margin-top: 1.2rem;
         }
 
         &:hover {
