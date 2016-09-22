@@ -20,9 +20,10 @@
       "facebookid": null,
       "socialimage": "images/social-image.jpg",
       "appleid": null,
-      "twitter": "thatianrose",
+      "twitter": "",
       "disqus": false,
-      "contributing": "truffleframework/truffleframework.github.io"
+      "contributing": "truffleframework/truffleframework.github.io",
+      "socialimage": "https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg"
     },
     "thanks": {
       "firstlast": {
