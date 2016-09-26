@@ -18,7 +18,7 @@
     "test": "jshint ./public/**/*.js & csslint-cli ./public/styles",
     "dev": "harp server & browser-sync start --no-open --proxy 'localhost:9000' --files './public/**/*.ejs, public/**/*.jade, ./harp.json, ./public/**/*.js, public/**/*.md, ./public/**/*.scss, public/**/*.sass, ./public/**/*.css, ./public/**/_data.json' ./public/vendor/**/*.js",
     "uglify": "recursive-uglifyjs ../scripts",
-    "compile": "npm test && harp compile . ../",
+    "compile": "harp compile --output ../ .",
     "postcompile": "npm run uglify && npm run imagemin && cp CNAME ../",
     "imagemin": "imagemin ./public/images/ ../images/ --optimizationLevel 3 --progressive"
   },
