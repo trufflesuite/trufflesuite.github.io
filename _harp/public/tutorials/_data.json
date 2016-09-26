@@ -5,6 +5,12 @@
     "author": "John McDowall",
     "published": false
   },
+  "chain-forking-exploiting-the-dao": {
+    "title": "Chain Forking and Exploiting The DAO",
+    "date": "2016-09-26",
+    "author": "Tim Coulter",
+    "published": false
+  },
   "using-infura-custom-provider": {
     "title": "Using Infura (or a custom provider)",
     "date": "2016-09-16",
