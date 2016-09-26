@@ -2,12 +2,12 @@
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
     <loc>http://truffleframework.io/community</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2016-09-26T20:35:48.639Z</lastmod>
+    <lastmod>2016-09-26T23:49:41.377Z</lastmod>
 </url>
 <url>
     <loc>http://truffleframework.io/</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2016-09-26T20:35:48.639Z</lastmod>
+    <lastmod>2016-09-26T23:49:41.378Z</lastmod>
 </url>
 <url>
     <loc>http://truffleframework.io/tutorials/all-about-truffle-networks</loc>
@@ -32,7 +32,7 @@
 <url>
     <loc>http://truffleframework.io/tutorials/</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2016-09-26T20:35:48.639Z</lastmod>
+    <lastmod>2016-09-26T23:49:41.379Z</lastmod>
 </url>
 <url>
     <loc>http://truffleframework.io/tutorials/package-management</loc>
