@@ -6,10 +6,10 @@
     "published": false
   },
   "chain-forking-exploiting-the-dao": {
-    "title": "Chain Forking and Exploiting The DAO",
+    "title": "Chain Forking and Dynamic Analysis: Exploiting The DAO",
     "date": "2016-09-26",
     "author": "Tim Coulter",
-    "published": false
+    "published": true
   },
   "using-infura-custom-provider": {
     "title": "Using Infura (or a custom provider)",
