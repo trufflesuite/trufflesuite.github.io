@@ -139,6 +139,15 @@
         @extend .col-md-pull-5;
         width: 90% important;
       }
+
+      &.language-shell {
+        background-color: #272727;
+
+        code {
+          color: white;
+          text-shadow: none;
+        }
+      }
     }
 
     footer {
