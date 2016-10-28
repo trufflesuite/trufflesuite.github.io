@@ -1,12 +1,30 @@
 .Documentation {
-  .navbar {
-    margin-bottom: 0;
+  @media (min-width: 992px) {
+    .navbar {
+      position: fixed;
+      right: 0;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+
+  .navbar-brand {
+    height: 100px;
+    width: 100px;
+    margin-left: 0!important;
+  }
+
+  .navbar-nav li a {
+    line-height: 100px;
+    height: 100px;
+    padding-top: 0;
   }
 
   @media (min-width: 992px) {
     .SubNav {
       position: fixed;
-      top: 52px;
+      top: 100px;
       left: 0;
       bottom: 0;
       z-index: 1000;
@@ -17,13 +35,32 @@
 
   .SubNav {
     background: #5e464d;
-
+    padding-top: 2rem;
     color: #3fe0c5;
 
     h2 {
       text-shadow: none;
       text-transform: uppercase;
       color: #3FE0C5;
+      padding-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 15px;
+
+      li {
+        padding-bottom: 1rem;
+      }
+    }
+
+    a {
+      color: desaturate(#3FE0C5, 30%);
+      transition: all .2s;
+
+      &:hover {
+        text-decoration: none;
+        color: white;
+      }
     }
 
     ul > li > ul {
@@ -33,5 +70,11 @@
 
   .ContentPage {
     padding: 2rem 4rem;
+  }
+
+  @media (min-width: 992px) {
+    .ContentPage {
+      margin-top: 100px;
+    }
   }
 }
