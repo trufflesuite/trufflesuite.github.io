@@ -3,10 +3,35 @@
     margin-bottom: 0;
   }
 
+  @media (min-width: 992px) {
+    .SubNav {
+      position: fixed;
+      top: 52px;
+      left: 0;
+      bottom: 0;
+      z-index: 1000;
+      display: block;
+      background-color: #CCCCCC;
+    }
+  }
+
   .SubNav {
     background: #5e464d;
-    min-height: 100vh;
 
     color: #3fe0c5;
+
+    h2 {
+      text-shadow: none;
+      text-transform: uppercase;
+      color: #3FE0C5;
+    }
+
+    ul > li > ul {
+      margin-left: 1rem;
+    }
+  }
+
+  .ContentPage {
+    padding: 2rem 4rem;
   }
 }
