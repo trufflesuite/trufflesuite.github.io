@@ -42,7 +42,8 @@
                 <li>
                   <ul class="list-unstyled">
                     <% for(article_key of group_data) { -%>
-                      <li><a href="/docs/<%- group['slug'] %>/<%- article_key.slug %>"><%- article_key.title %></a></li>
+                      <% active = current.path[1] == group['slug'] && current.path[2] == article_key.slug ? 'active' : '' %>
+                    <li class="<%= active %>"><a href="/docs/<%- group['slug'] %>/<%- article_key.slug %>"><%- article_key.title %></a></li>
                     <% } -%>
                   </ul>
                 </li>
@@ -51,7 +52,7 @@
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
               <%- yield %>
-              <footer class="container">
+              <footer class="container-fluid">
                 <p class="text-center">See a way to make this page better? <a href="<%="https://github.com/" + service.contributing + "/edit/master/_harp/public/" + current.path.join('/') + ".md" %>">Edit here &rarr;</a></p>
               </footer>
             </div>

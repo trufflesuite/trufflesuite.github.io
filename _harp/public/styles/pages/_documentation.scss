@@ -9,6 +9,10 @@
     }
   }
 
+  .navbar {
+    margin-bottom: 0;
+  }
+
   .navbar-brand {
     height: 100px;
     width: 100px;
@@ -36,6 +40,7 @@
   .SubNav {
     background: #5e464d;
     padding-top: 2rem;
+    padding-right: 0;
     color: #3fe0c5;
 
     h2 {
@@ -49,7 +54,15 @@
       margin-left: 15px;
 
       li {
-        padding-bottom: 1rem;
+        margin-bottom: .5rem;
+        &.active {
+          background: #F8F5F0;
+          padding: .5rem;
+
+          a {
+            color: #5e464d;
+          }
+        }
       }
     }
 
@@ -75,6 +88,18 @@
   @media (min-width: 992px) {
     .ContentPage {
       margin-top: 100px;
+    }
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+
+    p {
+      margin: 0;
+      padding: 0;
     }
   }
 }
