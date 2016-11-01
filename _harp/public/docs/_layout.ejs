@@ -31,6 +31,11 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-12 col-md-3 SubNav">
+              <form action='/docs/search' method='get'>
+                <label for="search-box">Search</label>
+                <input type="text" id="search-box" name="query">
+                <input type="submit" value="search">
+              </form>
               <% top_level_groups = Object.keys(public.docs._data) %>
               <% top_level_groups = _.map(top_level_groups, function(group) { return { "title": public.docs._data[group].title, "order": public.docs._data[group].order, "slug":group } }) %>
 
