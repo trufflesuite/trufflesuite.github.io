@@ -20,6 +20,7 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="/">Home</a></li>
+              <li><a href="/docs">Documentation</a></li>
               <li><a class="active" href="/tutorials">Tutorials</a></li>
               <li><a href="https://github.com/truffleframework">Github</a></li>
               <li><a href="/community">Community</a></li>
@@ -31,25 +32,27 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-12 col-md-3 SubNav">
-              <form action='/docs/search' method='get'>
-                <label for="search-box">Search</label>
-                <input type="text" id="search-box" name="query">
-                <input type="submit" value="search">
+              <form class="DocSearchForm form-inline" action='/docs/search' method='get'>
+                <div class="form-group">
+                  <label for="search-box" class="sr-only">Search</label>
+                  <input class="form-control" type="text" id="search-box" name="query" placeholder='search the docs'>
+                </div>
+                <input class="btn btn-primary btn-sm" type="submit" value="search">
               </form>
               <% top_level_groups = Object.keys(public.docs._data) %>
               <% top_level_groups = _.map(top_level_groups, function(group) { return { "title": public.docs._data[group].title, "order": public.docs._data[group].order, "slug":group } }) %>
 
               <ul class="list-unstyled">
-              <% for( group of top_level_groups) { -%>
+                <% for( group of top_level_groups) { -%>
                   <h2><%- group['title'] -%></h2>
-                  <% group_data = public.docs[group.slug]._data -%>
-                  <% group_data = _.sortBy(_.map(Object.keys(group_data), function(i) { return { "title": group_data[i].title, "order": group_data[i].order, "slug": i} }), "order") -%>
+                <% group_data = public.docs[group.slug]._data -%>
+                <% group_data = _.sortBy(_.map(Object.keys(group_data), function(i) { return { "title": group_data[i].title, "order": group_data[i].order, "slug": i} }), "order") -%>
                 <li>
                   <ul class="list-unstyled">
                     <% for(article_key of group_data) { -%>
                       <% active = current.path[1] == group['slug'] && current.path[2] == article_key.slug ? 'active' : '' %>
                     <li class="<%= active %>"><a href="/docs/<%- group['slug'] %>/<%- article_key.slug %>"><%- article_key.title %></a></li>
-                    <% } -%>
+                  <% } -%>
                   </ul>
                 </li>
               <% } %>

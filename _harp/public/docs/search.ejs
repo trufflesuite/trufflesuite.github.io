@@ -1,3 +1,4 @@
+<p>Here are the following matches for: <span class="queryTerm"></span></p>
 <ul id="search-results"></ul>
 
 <%
@@ -12,10 +13,9 @@
         "id": article_key.slug,
         "title": article_key.title,
         "path" : group['slug'] + "/" + article_key.slug,
-        "content": partial('./' + group['slug'] + "/" + article_key.slug).replace(/<\/?[^>]+(>|$)/g, "").replace(/\n/, " ")
+        "content": partial('./' + group['slug'] + "/" + article_key.slug).replace(/<\/h1>/," ").replace(/<\/?[^>]+(>|$)/g, "")
       }
     }
-
   }
 %>
 
