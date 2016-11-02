@@ -35,6 +35,17 @@
     }
   }
 
+  @media (max-width: 1390px) {
+    .DocSearchForm {
+      flex-direction: column;
+      margin-right: 1rem;
+
+      input[type='text'] {
+        margin: 0 0 .2rem 0;
+      }
+    }
+  }
+
   .navbar {
     margin-bottom: 0;
     text-transform: uppercase;
@@ -42,7 +53,7 @@
 
   .navbar-brand {
     height: 100px;
-    width: 100px;
+    width: 102px;
     margin-left: 0!important;
   }
 
