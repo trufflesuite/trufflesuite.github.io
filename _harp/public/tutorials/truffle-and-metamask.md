@@ -122,6 +122,30 @@ Here's a simple shell command to tell your `testrpc` to send 1 ether to your Met
 curl -d '{"jsonrpc":"2.0","method":"eth_sendTransaction","params": [{"from":"0x0f91747e3a5df28d81ab30b2d8216c93263c0cf3", "to":"0xbbd220f66e989a493c4d48531ea1e283abc385de", "value": 1e18}], "id":1}' -X POST http://localhost:8545/
 ```
 
+### Synchronizing Accounts Between Metamask And Testrpc
+If you want to use testrpc/Metamask combination for development purposes, another route to get the accounts in Metamask to be useful with testrpc is to use the HD wallet generation that both support. If you start testrpc it creates 10 different addresses that can be recovered by the supplied mnemonic. The ``testrpc` output show the 10 inital accounts, the 10 private keys for the accounts and the mnemonic to recreate those accounts. 
+
+```
+Available Accounts
+==================
+(0) 0x0b488d56e55996ea868e6bc640a59d10c71ff4e7
+...
+(9) 0x4decace9430b32cfd72ed99656adf80ebf23931d
+
+Private Keys
+==================
+(0) cb99e7dfaf138af48dde4e863f6dca0ab0acfad29f95954f08796f962656d5c8
+...
+(9) 29f734be35466ed5a62d0c7387412bc73d533bc24197cdcf2b8bbac8a982b198
+
+HD Wallet
+==================
+Mnemonic:      rubber negative firm purity helmet barely six asset imitate nephew october pluck
+Base HD Path:  m/44'/60'/0'/0/{account_index}
+```
+
+If you use that mnemonic in Metamask to *restore an existing vault* instead of creating a new one Metamask will use the same accounts. Testrpc also support a command line option to supply the mnemonic instead of using a random one. Starting it with `testrpc -m "rubber negative firm purity helmet barely six asset imitate nephew october pluck"` will give you the same accounts each time. That way you don't have to setup Metamask every time to use a new mnemonic.
+
 ## Sending Metacoin from Metamask: So Meta!
 
 Now if we connect to our Dapp via Metamask, we should see we have some MetaCoin, and if we look in our Metamask plugin, we should have 1 ether too!
