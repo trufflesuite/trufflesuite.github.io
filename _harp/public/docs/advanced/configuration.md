@@ -33,7 +33,7 @@ The default configuration ships with two options specified: `build` and `rpc`. T
 
 ### build
 
-Build configuration of your frontend. By default this configuration invokes the default builder, described in the [Build](/getting_started/build) section, but you can use custom build processes as well. See the [advanced build processes](/advanced/build_processes) section for details.
+Build configuration of your frontend. By default this configuration invokes the default builder, described in the [Build](/docs/getting_started/build) section, but you can use custom build processes as well. See the [advanced build processes](/advanced/build_processes) section for details.
 
 **Example:**
 
@@ -62,7 +62,7 @@ The network name is used for user interface purposes, such as when running your 
 $ truffle migrate --network live
 ```
 
-You can optionally specify rpc information for each network. Examples below.  
+You can optionally specify rpc information for each network. Examples below.
 
 **Example:**
 
@@ -80,7 +80,7 @@ networks: {
   "morden": {
     network_id: 2,        // Official Ethereum test network
     host: "178.25.19.88", // Random IP for example purposes (do not use)
-    port: 80             
+    port: 80
   },
   "staging": {
     network_id: 1337 // custom private network
@@ -98,7 +98,7 @@ Details about how to connect to your ethereum client. The `host` and `port` keys
 
 * `host`: Hostname pointing to the network location of your Ethereum client (usually "localhost" for development).
 * `port`: Port number where your Etheruem client accepts requests. Default is `8545`.
-* `gas`: Gas limit used for deploys. Default is `4712388`.  
+* `gas`: Gas limit used for deploys. Default is `4712388`.
 * `gasPrice`: Gas price used for deploys. Default is `100000000000` (100 Shannon).
 * `from`: From address used during migrations. If not specified, defaults to the first available account provided by your Ethereum client.
 
@@ -122,13 +122,3 @@ mocha: {
   useColors: true
 }
 ```
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-83874933-1', 'auto');
-  ga('send', 'pageview');
-</script>

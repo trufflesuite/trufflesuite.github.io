@@ -121,6 +121,34 @@
 
   .ContentPage {
     padding: 2rem 4rem;
+
+    h1,
+    h2,
+    h3,
+    h5
+    {
+      text-transform: uppercase;
+    }
+
+    p {
+
+      margin-bottom: 2rem;
+    }
+
+    pre {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      li {
+        font-weight: normal;
+        font-family: $font-family-serif;
+        margin-bottom: 1rem;
+      }
+    }
   }
 
   @media (min-width: 992px) {

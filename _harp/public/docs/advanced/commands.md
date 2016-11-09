@@ -18,7 +18,7 @@ Optional parameters:
 
 * `--dist`: Build a distributable version of the app. Only applicable when using the default builder.
 
-See the [Building your application](/getting_started/build) section for more details.
+See the [Building your application](/docs/getting_started/build) section for more details.
 
 ##### console
 
@@ -35,7 +35,7 @@ Optional parameters:
 * `--network name`: Specify the network to use.
 * `--verbose-rpc`: Log communication between Truffle and the RPC.
 
-See the [Using the console](/getting_started/console) section for more details.
+See the [Using the console](/docs/getting_started/console) section for more details.
 
 ##### compile
 
@@ -68,7 +68,7 @@ $ truffle create:test MyTest
 
 ##### migrate
 
-Run your project's migrations. See the [Migrations](/getting_started/migrations) section for more details.
+Run your project's migrations. See the [Migrations](/docs/getting_started/migrations) section for more details.
 
 ```none
 $ truffle migrate
@@ -84,7 +84,7 @@ Optional parameters:
 
 ##### exec
 
-Execute a Javascript file within the Truffle environment. This will include `web3`, set the default provider based on the network specified (if any), and include your contracts as global objects while executing the script. Your script must export a function that Truffle can run. See the [Writing external scripts](/getting_started/scripts) section for more details.
+Execute a Javascript file within the Truffle environment. This will include `web3`, set the default provider based on the network specified (if any), and include your contracts as global objects while executing the script. Your script must export a function that Truffle can run. See the [Writing external scripts](/docs/getting_started/scripts) section for more details.
 
 ```none
 $ truffle exec /path/to/my/script.js
@@ -153,12 +153,3 @@ Watch for changes to contracts, app and configuration files. When there's a chan
 $ truffle watch
 ```
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-83874933-1', 'auto');
-  ga('send', 'pageview');
-</script>

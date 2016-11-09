@@ -1,6 +1,6 @@
 # Custom Build Processes
 
-Throughout Truffle's history, it's clear that the [default builder](/getting_started/build) is not for everybody. It has some obvious caveats and is less mature than other build systems. With that in mind, Truffle provides you three ways to override the build system in order to get the most out of Truffle while also using your build process of choice.
+Throughout Truffle's history, it's clear that the [default builder](/docs/getting_started/build) is not for everybody. It has some obvious caveats and is less mature than other build systems. With that in mind, Truffle provides you three ways to override the build system in order to get the most out of Truffle while also using your build process of choice.
 
 ### Running an External Command
 
@@ -13,7 +13,7 @@ module.exports = {
   // The following environment variables will be set when running the command:
   // WORKING_DIRECTORY: root location of the project
   // BUILD_DESTINATION_DIRECTORY: expected destination of built assets (important for `truffle serve`)
-  // BUILD_CONTRACTS_DIRECTORY: root location of your build contract files (.sol.js)  
+  // BUILD_CONTRACTS_DIRECTORY: root location of your build contract files (.sol.js)
   // WEB3_PROVIDER_LOCATION: rpc configuration as a string, as a URL needed for web3's http provider.
   //
   build: "webpack"
@@ -71,12 +71,3 @@ MyContract.setProvider(web3.currentProvider);
 
 We're still working on having tighter integration with Webpack. However, checkout [this example](https://github.com/ConsenSys/truffle/wiki/Using-Truffle-and-Webpack-(beta)) and let us know how it works for you.
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-83874933-1', 'auto');
-  ga('send', 'pageview');
-</script>

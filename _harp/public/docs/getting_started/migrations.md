@@ -27,7 +27,7 @@ Note that the filename is prefixed with a number and is suffixed by a descriptio
 
 The function exported by each migration accepts a `deployer` object as a first parameter. This object aides in deployment by both providing a clear syntax as well as performing some of the more mundane duties of contract deployments, such as saving deployed artifacts for later use. The `deployer` object is your main interface for staging deployment tasks, and its API is described at the bottom of this page.
 
-Like all code within Truffle, your [contract abstractions](/getting_started/contracts/) are provided and initialized for you so you can easily interact with the Ethereum network. These abstractions are an integral part of the deployment process, as you'll see below.
+Like all code within Truffle, your [contract abstractions](/docs/getting_started/contracts/) are provided and initialized for you so you can easily interact with the Ethereum network. These abstractions are an integral part of the deployment process, as you'll see below.
 
 # Initial Migration
 
@@ -98,7 +98,7 @@ It is possible to write your deployment as a single promise chain if you find th
 
 # Network Considerations
 
-It is possible to run deployment steps conditionally based on the network being deployed to. This is an advanced feature, so see the [Networks](/advanced/networks) section first before continuing.
+It is possible to run deployment steps conditionally based on the network being deployed to. This is an advanced feature, so see the [Networks](/docs/advanced/networks) section first before continuing.
 
 To conditionally stage deployment steps, write your migrations so that they accept a second parameter, called `network`. Example:
 
@@ -199,7 +199,7 @@ deployer.then(function() {
 
 ##### deployer.exec(pathToFile)
 
-Execute a file meant to be run with `truffle exec` as part of the deployment. See the [Writing external scripts](/getting_started/scripts/) section for more information.
+Execute a file meant to be run with `truffle exec` as part of the deployment. See the [Writing external scripts](/docs/getting_started/scripts/) section for more information.
 
 Example:
 
@@ -208,12 +208,3 @@ Example:
 deployer.exec("../path/to/file/demo_data.js");
 ```
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-83874933-1', 'auto');
-  ga('send', 'pageview');
-</script>
