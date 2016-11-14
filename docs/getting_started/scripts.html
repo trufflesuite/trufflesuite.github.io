@@ -30,14 +30,14 @@
     
     <meta property="og:site_name" content="Truffle Framework" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Beta: Package Management - Truffle Framework" />
+    <meta property="og:title" content="Writing external scripts - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
-    <meta name="twitter:title" content="Beta: Package Management - Truffle Framework" />
+    <meta name="twitter:title" content="Writing external scripts - Truffle Framework" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
@@ -46,7 +46,7 @@
     
     
 
-    <title>Beta: Package Management | Truffle Framework</title>
+    <title>Writing external scripts | Truffle Framework</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -78,7 +78,7 @@
   </head>
 
   <body>
-    <section class="Tutorials">
+    <section class="Documentation">
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -139,74 +139,77 @@
       <section class="MainContent">
         <div class="container-fluid">
           <div class="row">
-            <h1>In Beta: Package Management</h1><p>This is a beta document and refers to the <code>beta</code> version of Truffle. The following features will not work unless you are using Truffle Beta.</p>
-<h2>Get the Beta Version</h2><p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
-<pre><code>$ npm uninstall -g truffle
-</code></pre><p>And then install the beta version:</p>
-<pre><code>$ npm install -g truffle@beta
-</code></pre><h2>Overview</h2><p>Truffle Beta comes standard with <code>npm</code> integration, and is aware of the <code>node_modules</code> directory in your project if it exists. This means you can use and distribute contracts, dapps and Ethereum-enabled libraries via <code>npm</code>, making your code available to others and other&#39;s code available to you.</p>
-<h2>Package Layout</h2><p>Projects created with Truffle have a specific layout by default which enables them to be used as packages. This layout isn&#39;t required, but if used as a common convention -- or &quot;de-facto standard&quot; -- then distributing contracts and dapps through package management will become much easier.</p>
-<p>The most important directories in a Truffle package are the following:</p>
-<ul>
-<li><code>/contracts</code></li>
-<li><code>/build</code> (which includes <code>/build/contracts</code>, created by Truffle)</li>
-</ul>
-<p>The first directory is your contracts directory, which includes your raw Solidity contracts. The second directory is the build directory, and more specifically <code>/build/contracts</code>, which holds build artifacts in the form of <code>.sol.js</code> files. Including raw contracts in your package will allow others to import those contracts within their own solidity code. Similarly, including your <code>.sol.js</code> build artifacts in your package will allow others to seamlessly interact with your contracts from Javascript, which can be used in dapps, scripts and migrations.</p>
-<h2>Using a Package</h2><p>When using a package within your own project, it is important to note that there are two places where you might be interested in using other&#39;s contract code: within your contracts (<code>.sol</code> files) and within your Javascript code (<code>.sol.js</code> files). The following provides an example of each case, and discusses techniques for making the most of other&#39;s contracts and build artifacts.</p>
-<h3>Installing</h3><p>For this example, we&#39;re going to use the <a href="https://github.com/ConsenSys/example-truffle-library">Example Truffle Library</a>, which provides a simple name registry that is deployed to the Morden test network. In order to use it as a dependency, we must first install it within our project through <code>npm</code>:</p>
-<pre><code>$ cd my_project
-$ npm install example-truffle-library
-</code></pre><p>Note that the last command above downloads the package and places it in <code>my_project/node_modules</code> directory, which is important for the examples below. See the <a href="https://docs.npmjs.com/">npm documentation</a> for help using <code>npm</code> to install packages.</p>
-<h3>Within Your Contracts</h3><p>To use a package&#39;s contracts within your contracts, this can be as simple as Solidity&#39;s <a href="http://solidity.readthedocs.io/en/develop/layout-of-source-files.html?#importing-other-source-files">import</a> statement. When your import path isn&#39;t explicitly relative or absolute, this signifies to Truffle that you&#39;re looking for a file from a specific named package. Consider this example using the Example Truffle Library mentioned above:</p>
-<pre><code class="language-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
-</code></pre>
-<p>Since the path didn&#39;t start with <code>./</code>, Truffle knows to look in your project&#39;s <code>node_modules</code> directory for the <code>example-truffle-library</code> folder. From there, it resolves the path to provide you the contract you requested.</p>
-<h3>Within Javascript Code</h3><p>To interact with package&#39;s contracts within Javascript code, you simply need to <code>require</code> that package&#39;s <code>.sol.js</code> files like so:</p>
-<pre><code class="language-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
-</code></pre>
-<p>These files are provided by <a href="https://github.com/ConsenSys/ether-pudding">EtherPudding</a>, which Truffle uses internally. See EtherPudding&#39;s documentation for more information.</p>
-<h3>Package&#39;s Deployed Addresses</h3><p>Sometimes you want your contracts to interact with the package&#39;s previously deployed contracts. Since the deployed addresses exist within the package&#39;s <code>.sol.js</code> files, you must perform an extra step to get those addresses into your contracts. To do so, make your contract accept the address of the dependency contract, and then use migrations. The following is an example contract that exists within your project as well as an example migration:</p>
-<p>Contract: MyContract.sol</p>
-<pre><code class="language-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
+            <div class="col-xs-12 col-md-3 SubNav">
+              <form class="DocSearchForm form-inline" action='/docs/search#results' method='get'>
+                <div class="form-group">
+                  <label for="search-box" class="sr-only">Search</label>
+                  <input class="form-control" type="text" id="search-box" name="query" placeholder='search the docs'>
+                </div>
+                <input class="btn btn-primary btn-sm" type="submit" value="search">
+              </form>
+              
+              
 
-contract MyContract {
-  SimpleNameRegistry registry;
-  address public owner;
-
-  function MyContract {
-    owner = msg.sender;
-  }
-
-  // Simple example that uses the deployed registry from the package.
-  function getModule(bytes32 name) returns (address) {
-    return registry.names(name);
-  }
-
-  // Set the registry if you&#39;re the owner.
-  function setRegistry(address addr) {
-    if (msg.sender != owner) throw;
-
-    registry = SimpleNameRegistry(addr);
-  }
+              <ul class="list-unstyled">
+                                  <h2>Getting Started</h2>                                                <li>
+                  <ul class="list-unstyled">
+                                          
+                    <li class=""><a href="/docs/getting_started/installation">Installation</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/client">Choosing an Ethereum client</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/project">Creating a project</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/compile">Compiling contracts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/migrations">Running migrations</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/build">Building your application</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/contracts">Interacting with your contracts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/console">Using the console</a></li>
+                                        
+                    <li class="active"><a href="/docs/getting_started/scripts">Writing external scripts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/workflow">Improving your workflow</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/contact">Contact the developers</a></li>
+                                    </ul>
+                </li>
+                                <h2>Advanced</h2>                                                <li>
+                  <ul class="list-unstyled">
+                                          
+                    <li class=""><a href="/docs/advanced/configuration">Configuration</a></li>
+                                        
+                    <li class=""><a href="/docs/advanced/networks">Networks &amp; App Deployment</a></li>
+                                        
+                    <li class=""><a href="/docs/advanced/build_processes">Build Processes</a></li>
+                                        
+                    <li class=""><a href="/docs/advanced/commands">Command Reference</a></li>
+                                    </ul>
+                </li>
+              
+              </ul>
+            </div>
+            <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
+              <h1>Background</h1><p>Often you may want to run external scripts that interact with your contracts. Truffle provides an easy way to do this, bootstrapping your contracts based on your desired network and connecting to your Ethereum client automatically per your <a href="/docs/advanced/configuration">project configuration</a>.</p>
+<h1>Command</h1><p>To run an external script, perform the following:</p>
+<pre><code>$ truffle exec &lt;path/to/file.js&gt;
+</code></pre><h1>File Structure</h1><p>In order for external scripts to be run correctly, Truffle expects them to export a function that takes a single parameter as a callback:</p>
+<pre><code class="language-javascript">module.exports = function(callback) {
+  // perform actions
 }
 </code></pre>
-<p>Migration: 3_hook_up_example_library.js</p>
-<pre><code class="language-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
-
-module.exports = function(deployer) {
-  // Deploy our contract, then set the address of the registry.
-  deployer.deploy(MyContract).then(function() {
-    MyContract.deployed().setRegistry(SimpleNameRegistry.address);
-  });
-};
-</code></pre>
-<h2>Recommendation: Use the TestRPC</h2><p>The <a href="https://github.com/ethereumjs/testrpc">ethereumjs-testrpc</a> is wildly useful for packages that were previously deployed to the live network. The TestRPC includes a <code>--fork</code> feature which allows you to fork from the main chain while developing your application. What this means for you is that you can develop and test against packages that are deployed live, using <strong>real data</strong>, without having to worry about deploying your dependency&#39;s contracts yourself.</p>
-<h2>The Future: Where do we go from here?</h2><p>Node&#39;s <code>npm</code> is, of course, a centralized service, and the packages that exist there are on a centralized network. As Ethereum becomes more widespread, so will the urge to decentralize all of our tools and packages. The ideal package management system for Ethereum is one where the package registry exists on the live chain and the package data exists on a decentralized file storage network like IPFS or Swarm; however, that ideal is going to take time to develop and reach critical mass. Until that time, we can use <code>npm</code> to distribute our contracts and applications like the rest of the Javascript community.</p>
+<p>You can do anything you&#39;d like within this script, so long as the callback is called when the script finishes. The callback accepts an error as its first and only parameter. If an error is provided, execution will halt and the process will return a non-zero exit code.</p>
+              <footer class="container-fluid">
+                <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/getting_started/scripts.md">Edit here &rarr;</a></p>
+              </footer>
+            </div>
           </div>
         </div>
-        <footer class="container">
-          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/package-management.md">Edit here &rarr;</a></p>
-        </footer>
       </section>
     </section>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

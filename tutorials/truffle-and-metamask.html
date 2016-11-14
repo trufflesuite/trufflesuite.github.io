@@ -128,6 +128,7 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="/">Home</a></li>
+              <li><a href="/docs">Documentation</a></li>
               <li><a class="active" href="/tutorials">Tutorials</a></li>
               <li><a href="https://github.com/truffleframework">Github</a></li>
               <li><a href="/community">Community</a></li>
@@ -204,7 +205,25 @@ truffle serve   # Host your web interface on port 8080
 <p>Here&#39;s a simple shell command to tell your <code>testrpc</code> to send 1 ether to your Metamask account.  Let&#39;s assume <code>0x0f91747e3a5df28d81ab30b2d8216c93263c0cf3</code> is the first account in your <code>testrpc</code> list, and <code>0xbbd220f66e989a493c4d48531ea1e283abc385de</code> is one of your Metamask accounts.</p>
 <p><code>1e18</code> is equal to 1 ether, which will be more than enough for our purposes.</p>
 <pre><code>curl -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_sendTransaction&quot;,&quot;params&quot;: [{&quot;from&quot;:&quot;0x0f91747e3a5df28d81ab30b2d8216c93263c0cf3&quot;, &quot;to&quot;:&quot;0xbbd220f66e989a493c4d48531ea1e283abc385de&quot;, &quot;value&quot;: 1e18}], &quot;id&quot;:1}&#39; -X POST http://localhost:8545/
-</code></pre><h2>Sending Metacoin from Metamask: So Meta!</h2><p>Now if we connect to our Dapp via Metamask, we should see we have some MetaCoin, and if we look in our Metamask plugin, we should have 1 ether too!</p>
+</code></pre><h3>Synchronizing Accounts Between Metamask And Testrpc</h3><p>If you want to use testrpc/Metamask combination for development purposes, another route to get the accounts in Metamask to be useful with testrpc is to use the HD wallet generation that both support. If you start testrpc it creates 10 different addresses that can be recovered by the supplied mnemonic. The <code>`testrpc</code> output show the 10 inital accounts, the 10 private keys for the accounts and the mnemonic to recreate those accounts. </p>
+<pre><code>Available Accounts
+==================
+(0) 0x0b488d56e55996ea868e6bc640a59d10c71ff4e7
+...
+(9) 0x4decace9430b32cfd72ed99656adf80ebf23931d
+
+Private Keys
+==================
+(0) cb99e7dfaf138af48dde4e863f6dca0ab0acfad29f95954f08796f962656d5c8
+...
+(9) 29f734be35466ed5a62d0c7387412bc73d533bc24197cdcf2b8bbac8a982b198
+
+HD Wallet
+==================
+Mnemonic:      rubber negative firm purity helmet barely six asset imitate nephew october pluck
+Base HD Path:  m/44&#39;/60&#39;/0&#39;/0/{account_index}
+</code></pre><p>If you use that mnemonic in Metamask to <em>restore an existing vault</em> instead of creating a new one Metamask will use the same accounts. Testrpc also support a command line option to supply the mnemonic instead of using a random one. Starting it with <code>testrpc -m &quot;rubber negative firm purity helmet barely six asset imitate nephew october pluck&quot;</code> will give you the same accounts each time. That way you don&#39;t have to setup Metamask every time to use a new mnemonic.</p>
+<h2>Sending Metacoin from Metamask: So Meta!</h2><p>Now if we connect to our Dapp via Metamask, we should see we have some MetaCoin, and if we look in our Metamask plugin, we should have 1 ether too!</p>
 <p>It&#39;s important that we have ether, because it&#39;s not only a currency for trade, it&#39;s also the currency for processing transactions on the Ethereum blockchain. This processing fee is referred to as &quot;gas&quot;.</p>
 <p>Let&#39;s try sending some Metacoin from one of our Metamask accounts to another.</p>
 <p>First select the account that has the Metacoin and Ether. Now click the details arrow for another account, and copy its address (<code>COPY ADDR</code>).</p>
@@ -232,6 +251,7 @@ truffle serve   # Host your web interface on port 8080
 <script src="/vendor/scripts/prism.js"></script>
 <script src="/vendor/scripts/collapse.js"></script>
 <script src="/vendor/scripts/dropdown.js"></script>
+<script src="/vendor/scripts/lunr.js"></script>
 
     
   <script>

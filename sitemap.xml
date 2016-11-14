@@ -2,12 +2,102 @@
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
     <loc>http://truffleframework.io/community</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2016-09-29T19:08:53.475Z</lastmod>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
 </url>
 <url>
     <loc>http://truffleframework.io/</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2016-09-29T19:08:53.475Z</lastmod>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/search</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/advanced/build_processes</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/advanced/commands</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/advanced/configuration</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/advanced/networks</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/getting_started/build</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/getting_started/client</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/getting_started/compile</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/getting_started/console</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/getting_started/contact</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/getting_started/contracts</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.587Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/getting_started/installation</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.588Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/getting_started/migrations</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.588Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/getting_started/project</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.588Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/getting_started/scripts</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.588Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/getting_started/testing</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.588Z</lastmod>
+</url>
+<url>
+    <loc>http://truffleframework.io/docs/getting_started/workflow</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2016-11-14T23:29:26.588Z</lastmod>
 </url>
 <url>
     <loc>http://truffleframework.io/tutorials/all-about-truffle-networks</loc>
@@ -32,7 +122,7 @@
 <url>
     <loc>http://truffleframework.io/tutorials/</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2016-09-29T19:08:53.475Z</lastmod>
+    <lastmod>2016-11-14T23:29:26.588Z</lastmod>
 </url>
 <url>
     <loc>http://truffleframework.io/tutorials/package-management</loc>
