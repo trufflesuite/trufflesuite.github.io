@@ -69,7 +69,7 @@ Finally, we want to export our Truffle configuration. Here we use this wallet on
 module.exports = {
   networks: {
     "rotsten": {
-      network_id: 2,    // Official rotsten network id
+      network_id: 3,    // Official rotsten network id
       provider: engine, // Use our custom provider
       from: address     // Use the address we derived
     }
@@ -114,7 +114,7 @@ engine.start(); // Required by the provider engine.
 module.exports = {
   networks: {
     "rotsten": {
-      network_id: 2,    // Official rotsten network id
+      network_id: 3,    // Official rotsten network id
       provider: engine, // Use our custom provider
       from: address     // Use the address we derived
     }
