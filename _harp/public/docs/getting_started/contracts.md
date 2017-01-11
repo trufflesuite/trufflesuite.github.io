@@ -1,6 +1,6 @@
 # Background
 
-The standard method of interacting with the Ethereum network is through the [Web3](https://github.com/ethereum/web3.js) library, created by the Ethereum foundation. Although this library is very useful, its current contract abstraction makes interacting with contracts difficult, especially for those new to Ethereum development. To smooth the learning curve, Truffle uses the [Ether Pudding](https://github.com/ConsenSys/ether-pudding) library, built on top of Web3, which aims to make interacting with contracts much easier.
+The standard method of interacting with the Ethereum network is through the [Web3](https://github.com/ethereum/web3.js) library, created by the Ethereum foundation. Although this library is very useful, its current contract abstraction makes interacting with contracts difficult, especially for those new to Ethereum development. To smooth the learning curve, Truffle uses the [Truffle Artifactor](https://github.com/trufflesuite/truffle-artifactor) library, built on top of Web3, which aims to make interacting with contracts much easier.
 
 # Reading & Writing Data
 
@@ -60,7 +60,7 @@ contract MetaCoin {
 
 This contract has three methods aside from the constructor (`sendCoin`, `getBalanceInEth`, and `getBalance`). All three methods can be executed as either a transaction or a call.
 
-Now let's look at the Javascript object called `MetaCoin` provided for us by Truffle and Ether Pudding, made available within our frontend:
+Now let's look at the Javascript object called `MetaCoin` provided for us by Truffle and Truffle Artifactor, made available within our frontend:
 
 ```javascript
 // Print the deployed version of MetaCoin
@@ -95,7 +95,7 @@ var account_two = "0xabcd..."; // another address
 var meta = MetaCoin.deployed();
 meta.sendCoin(account_two, 10, {from: account_one}).then(function(tx_id) {
   // If this callback is called, the transaction was successfully processed.
-  // Note that Ether Pudding takes care of watching the network and triggering
+  // Note that Truffle Artifactor takes care of watching the network and triggering
   // this callback.
   alert("Transaction successful!")
 }).catch(function(e) {
