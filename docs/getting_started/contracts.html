@@ -308,7 +308,7 @@ transfers.watch(function(error, result) {
 <h3>Method: deployed()</h3><p>Each contract abstraction has a method called <code>deployed()</code>, which you saw used above. Calling this function on the main contract object will give you an instance of the abstraction that represents the contract previously deployed to the network.</p>
 <pre><code class="language-javascript">var meta = MetaCoin.deployed();
 </code></pre>
-<p><strong>Warning:</strong> This will only work successfully for contracts that have been deployed using <code>truffle deploy</code> and are set to be deployed within your <a href="/docs/advanced/configuration">project configuration</a>. This function will throw an error if your contract does not meet this criteria.</p>
+<p><strong>Warning:</strong> This will only work successfully for contracts that have been deployed using <code>truffle migrate</code> and are set to be deployed within your <a href="/docs/advanced/configuration">project configuration</a>. This function will throw an error if your contract does not meet this criteria.</p>
 <h3>Method: at()</h3><p>Similar to <code>deployed()</code>, you can get an instance of the abstraction that represents the contract at a specific address. Here, we expect to have an already deployed contract at the address &quot;0x1234...&quot;:</p>
 <pre><code class="language-javascript">var meta = MetaCoin.at(&quot;0x1234...&quot;)
 </code></pre>

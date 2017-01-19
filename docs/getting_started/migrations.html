@@ -199,7 +199,7 @@
 <h1>Command</h1><p>To run your migrations, run the following:</p>
 <pre><code class="language-none">$ truffle migrate
 </code></pre>
-<p>This will run all migrations located within your project&#39;s <code>migrations</code> directory. If your migrations were previously run successfully, <code>truffle migrate</code> will start execution from the last migration that was ran, running only newly created migrations. If no new migrations exists, <code>truffle migrate</code> won&#39;t perform any action at all. You can use the <code>--reset</code> option to run all your migrations from the beginning.</p>
+<p>This will run all migrations located within your project&#39;s <code>migrations</code> directory. If your migrations were previously run successfully, <code>truffle migrate</code> will start execution from the last migration that was ran, running only newly created migrations. If no new migrations exists, <code>truffle migrate</code> won&#39;t perform any action at all. You can use the <code>--reset</code> option to run all your migrations from the beginning. For local testing make sure to have <a href="https://github.com/ethereumjs/testrpc">testrpc</a> installed and running before running <code>migrate</code>.</p>
 <h1>Migration Files</h1><p>A simple migration file looks like this:</p>
 <p>Filename: 4_example_migration.js</p>
 <pre><code class="language-javascript">module.exports = function(deployer) {

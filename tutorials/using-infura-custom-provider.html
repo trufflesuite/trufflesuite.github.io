@@ -172,24 +172,24 @@ var wallet_hdpath = &quot;m/44&#39;/60&#39;/0&#39;/0/&quot;;
 var wallet = hdwallet.derivePath(wallet_hdpath + &quot;0&quot;).getWallet();
 var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
 </code></pre>
-<p>Next, we need to set up the Provider Engine, telling it that we&#39;d like to use our wallet to sign transactions, and use the morden network on infura for everything else:</p>
-<pre><code class="language-javascript">var providerUrl = &quot;https://morden.infura.io:8545&quot;;
+<p>Next, we need to set up the Provider Engine, telling it that we&#39;d like to use our wallet to sign transactions, and use the rotsten network on infura for everything else:</p>
+<pre><code class="language-javascript">var providerUrl = &quot;https://testnet.infura.io&quot;;
 var engine = new ProviderEngine();
 engine.addProvider(new WalletSubprovider(wallet, {}));
 engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
 engine.start(); // Required by the provider engine.
 </code></pre>
-<p>Finally, we want to export our Truffle configuration. Here we use this wallet only when we want to deploy to the morden network:</p>
+<p>Finally, we want to export our Truffle configuration. Here we use this wallet only when we want to deploy to the rotsten network:</p>
 <pre><code class="language-javascript">module.exports = {
   networks: {
-    &quot;morden&quot;: {
-      network_id: 2,    // Official morden network id
+    &quot;rotsten&quot;: {
+      network_id: 3,    // Official rotsten network id
       provider: engine, // Use our custom provider
       from: address     // Use the address we derived
     }
   },
   rpc: {
-    // Use the default host and port when not using morden
+    // Use the default host and port when not using rotsten
     host: &quot;localhost&quot;,
     port: 8545
   }
@@ -212,7 +212,7 @@ var wallet_hdpath = &quot;m/44&#39;/60&#39;/0&#39;/0/&quot;;
 var wallet = hdwallet.derivePath(wallet_hdpath + &quot;0&quot;).getWallet();
 var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
 
-var providerUrl = &quot;https://morden.infura.io:8545&quot;;
+var providerUrl = &quot;https://testnet.infura.io&quot;;
 var engine = new ProviderEngine();
 engine.addProvider(new WalletSubprovider(wallet, {}));
 engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
@@ -220,14 +220,14 @@ engine.start(); // Required by the provider engine.
 
 module.exports = {
   networks: {
-    &quot;morden&quot;: {
-      network_id: 2,    // Official morden network id
+    &quot;rotsten&quot;: {
+      network_id: 3,    // Official rotsten network id
       provider: engine, // Use our custom provider
       from: address     // Use the address we derived
     }
   },
   rpc: {
-    // Use the default host and port when not using morden
+    // Use the default host and port when not using rotsten
     host: &quot;localhost&quot;,
     port: 8545
   }
