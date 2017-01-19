@@ -64,7 +64,7 @@ To interact with package's contracts within Javascript code, you simply need to 
 var SimpleNameRegistry = require("example-truffle-library/build/contracts/SimpleNameRegistry.sol.js");
 ```
 
-These files are provided by [EtherPudding](https://github.com/ConsenSys/ether-pudding), which Truffle uses internally. See EtherPudding's documentation for more information.
+These files are provided by [Truffle Artifactor](https://github.com/trufflesuite/truffle-artifactor), which Truffle uses internally. See Truffle Artifactor's documentation for more information.
 
 ### Package's Deployed Addresses
 

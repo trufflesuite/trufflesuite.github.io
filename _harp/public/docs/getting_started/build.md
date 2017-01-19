@@ -7,7 +7,7 @@ Truffle comes standard with a default build system which is meant to be easy to 
 The default builder comes with a few standard niceties meant to get you started quickly:
 
 * Automatic bootstrapping of your application within the browser, importing your compiled contract artifacts, deployed contract information and Ethereum client configuration automatically.
-* Inclusion of recommended dependencies, including [web3](https://github.com/ethereum/web3.js/tree/master) and [Ether Pudding](https://github.com/ConsenSys/ether-pudding).
+* Inclusion of recommended dependencies, including [web3](https://github.com/ethereum/web3.js/tree/master) and [Truffle Artifactor](https://github.com/trufflesuite/truffle-artifactor).
 * Support for ES6 and JSX built-in.
 * SASS support for manageable CSS.
 * And UglifyJS support for creating minified versions of your Javascript assets.

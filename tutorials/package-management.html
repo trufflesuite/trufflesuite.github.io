@@ -164,7 +164,7 @@ $ npm install example-truffle-library
 <h3>Within Javascript Code</h3><p>To interact with package&#39;s contracts within Javascript code, you simply need to <code>require</code> that package&#39;s <code>.sol.js</code> files like so:</p>
 <pre><code class="language-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
 </code></pre>
-<p>These files are provided by <a href="https://github.com/ConsenSys/ether-pudding">EtherPudding</a>, which Truffle uses internally. See EtherPudding&#39;s documentation for more information.</p>
+<p>These files are provided by <a href="https://github.com/trufflesuite/truffle-artifactor">Truffle Artifactor</a>, which Truffle uses internally. See Truffle Artifactor&#39;s documentation for more information.</p>
 <h3>Package&#39;s Deployed Addresses</h3><p>Sometimes you want your contracts to interact with the package&#39;s previously deployed contracts. Since the deployed addresses exist within the package&#39;s <code>.sol.js</code> files, you must perform an extra step to get those addresses into your contracts. To do so, make your contract accept the address of the dependency contract, and then use migrations. The following is an example contract that exists within your project as well as an example migration:</p>
 <p>Contract: MyContract.sol</p>
 <pre><code class="language-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
