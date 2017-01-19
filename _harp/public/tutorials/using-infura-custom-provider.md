@@ -53,29 +53,29 @@ var wallet = hdwallet.derivePath(wallet_hdpath + "0").getWallet();
 var address = "0x" + wallet.getAddress().toString("hex");
 ```
 
-Next, we need to set up the Provider Engine, telling it that we'd like to use our wallet to sign transactions, and use the morden network on infura for everything else:
+Next, we need to set up the Provider Engine, telling it that we'd like to use our wallet to sign transactions, and use the rotsten network on infura for everything else:
 
 ```javascript
-var providerUrl = "https://morden.infura.io:8545";
+var providerUrl = "https://testnet.infura.io";
 var engine = new ProviderEngine();
 engine.addProvider(new WalletSubprovider(wallet, {}));
 engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
 engine.start(); // Required by the provider engine.
 ```
 
-Finally, we want to export our Truffle configuration. Here we use this wallet only when we want to deploy to the morden network:
+Finally, we want to export our Truffle configuration. Here we use this wallet only when we want to deploy to the rotsten network:
 
 ```javascript
 module.exports = {
   networks: {
-    "morden": {
-      network_id: 2,    // Official morden network id
+    "rotsten": {
+      network_id: 3,    // Official rotsten network id
       provider: engine, // Use our custom provider
       from: address     // Use the address we derived
     }
   },
   rpc: {
-    // Use the default host and port when not using morden
+    // Use the default host and port when not using rotsten
     host: "localhost",
     port: 8545
   }
@@ -105,7 +105,7 @@ var wallet_hdpath = "m/44'/60'/0'/0/";
 var wallet = hdwallet.derivePath(wallet_hdpath + "0").getWallet();
 var address = "0x" + wallet.getAddress().toString("hex");
 
-var providerUrl = "https://morden.infura.io:8545";
+var providerUrl = "https://testnet.infura.io";
 var engine = new ProviderEngine();
 engine.addProvider(new WalletSubprovider(wallet, {}));
 engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
@@ -113,14 +113,14 @@ engine.start(); // Required by the provider engine.
 
 module.exports = {
   networks: {
-    "morden": {
-      network_id: 2,    // Official morden network id
+    "rotsten": {
+      network_id: 3,    // Official rotsten network id
       provider: engine, // Use our custom provider
       from: address     // Use the address we derived
     }
   },
   rpc: {
-    // Use the default host and port when not using morden
+    // Use the default host and port when not using rotsten
     host: "localhost",
     port: 8545
   }
