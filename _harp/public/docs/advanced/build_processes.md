@@ -59,7 +59,7 @@ Because you're using a custom build process, Truffle no longer knows how to boot
 
 * Include the [Web3](https://github.com/ethereum/web3.js) library.
 * Initialize a web3 instance and set a provider that points to your desired ethereum client. It's important to detect if the `web3` object already exists, as it might already be available if someone is viewing your application via a wallet-browser like Metamask or Mist. If the `web3` object already exists, you should use that instead of initializing your own. See [this example](https://github.com/ethereum/mist/releases/tag/0.3.6) for more details.
-* `require` or `import` the built `sol.js` files from the `./build/contracts` directory. For each `.sol.js` file, set the provider using the `MyContract.setProvider()` method. This should the same provider your `web3` instance is using. Using `web3.currentProvider` is recommended:
+* `require` or `import` the built `sol.js` files from the `./build/contracts` directory. For each `.sol.js` file, set the provider using the `MyContract.setProvider()` method. This should be the same provider your `web3` instance is using. Using `web3.currentProvider` is recommended:
 
 ```javascript
 var MyContract = require("./build/contracts/MyContract.sol.js");
