@@ -46,5 +46,23 @@
     "date": "2016-09-16",
     "author": "Tim Coulter",
     "published": true
+  },
+  "how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development": {
+    "title": "How to install Truffle & TestRPC on Windows for Blockchain development",
+    "date": "2016-11-28",
+    "author": "David Burela",
+    "published": true
+  },
+  "ethereum-devops-truffle-testrpc-vsts": {
+    "title": "Ethereum DevOps with Truffle, TestRPC & Visual Studio Team Services",
+    "date": "2016-11-28",
+    "author": "David Burela",
+    "published": true
+  },
+  "configuring-visual-studio-code": {
+    "title": "Configuring Visual Studio code for Ethereum Blockchain Development",
+    "date": "2016-11-28",
+    "author": "David Burela",
+    "published": true
   }
 }
