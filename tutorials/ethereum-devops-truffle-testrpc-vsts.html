@@ -30,14 +30,14 @@
     
     <meta property="og:site_name" content="Truffle Framework" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
+    <meta property="og:title" content="Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
-    <meta name="twitter:title" content="TruffleFramework.com - Truffle Framework" />
+    <meta name="twitter:title" content="Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services - Truffle Framework" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
@@ -46,7 +46,7 @@
     
     
 
-    <title>TruffleFramework.com | Truffle Framework</title>
+    <title>Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services | Truffle Framework</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -139,144 +139,140 @@
       <section class="MainContent">
         <div class="container-fluid">
           <div class="row">
-            <div class="container-fluid">
-    <div class="row">
-      <section class="TutorialIndex">
-        <h1>TRUFFLE TUTORIAL INDEX</h1>
-        <ol class="list-unstyled">
-    
-        
-    
-        
-          <li>
-          <a href="/tutorials/ethereum-devops-truffle-testrpc-vsts">
-            <h2>Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services</h2>
-            <span>
-              <date>2016-12-23</date> &bull; <span>BY David Burela</span>
-            </span>
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-        
-          <li>
-          <a href="/tutorials/configuring-visual-studio-code">
-            <h2>Configuring Visual Studio code for Ethereum Blockchain Development</h2>
-            <span>
-              <date>2016-11-18</date> &bull; <span>BY David Burela</span>
-            </span>
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-        
-          <li>
-          <a href="/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development">
-            <h2>How to install Truffle &amp; TestRPC on Windows for Blockchain development</h2>
-            <span>
-              <date>2016-11-18</date> &bull; <span>BY David Burela</span>
-            </span>
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-        
-          <li>
-          <a href="/tutorials/chain-forking-exploiting-the-dao">
-            <h2>Chain Forking and Dynamic Analysis: Exploiting The DAO</h2>
-            <span>
-              <date>2016-09-26</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-        
-          <li>
-          <a href="/tutorials/deploying-to-the-live-network">
-            <h2>Deploying to the Live Network</h2>
-            <span>
-              <date>2016-09-16</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-        
-          <li>
-          <a href="/tutorials/bundling-with-webpack">
-            <h2>Bundling with Webpack</h2>
-            <span>
-              <date>2016-09-16</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-        
-          <li>
-          <a href="/tutorials/using-infura-custom-provider">
-            <h2>Using Infura (or a custom provider)</h2>
-            <span>
-              <date>2016-09-16</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-        
-          <li>
-          <a href="/tutorials/package-management">
-            <h2>Beta: Package Management</h2>
-            <span>
-              <date>2016-09-15</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-        
-          <li>
-          <a href="/tutorials/solidity-unit-tests">
-            <h2>Beta: Solidity Unit Tests</h2>
-            <span>
-              <date>2016-09-01</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-        
-          <li>
-          <a href="/tutorials/truffle-and-metamask">
-            <h2>Truffle and Metamask</h2>
-            <span>
-              <date>2016-07-01</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-    </ol>
-    </section>
+            <h1>Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services</h1><p>This post was originally published by David Burela on his blog <a href="https://davidburela.wordpress.com/2016/12/23/ethereum-devops-with-truffle-testrpc-visual-studio-team-services/">Burela&#39;s House-o-blog</a>. Big thanks to David for allowing us publish it here!</p>
+<hr>
+<p>I have been working on automating the compilation and testing of Ethereum solidity contracts, via the use of <a href="http://truffleframework.com/">Truffle</a>. I’ve got the test results being published back into the portal, allowing me to see on each commit if my code still compiles and passes my tests.</p>
+<p>I’m assuming you already have a Truffle project locally that you want to automate the continuous builds &amp; testing on. Follow the <a href="/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development">tutorial on installing Truffle &amp; TestRPC on Windows</a>.</p>
+<p>My final system will allow you to run “truffle test” locally to see standard test output, but will modify the test runner on the server to output it as JUnit format.</p>
+<h2>The Build system</h2><p>The system uses the <a href="https://azure.microsoft.com/en-us/services/visual-studio-team-services/">Visual Studio Team Services</a> (VSTS) build engine to automate this. You can sign up for free, and get unlimited private Git repos.  </p>
+<p>You can have the code hosted on any Git provider. So either within VSTS itself, or GitHub, BitBucket, etc.</p>
+<h2>Prepare truffle.js</h2><p>A pre-step is to define the  test section in the truffle.js file</p>
+<pre><code class="language-javascript">mocha: {  
+  reporter: “spec”,  
+  reporterOptions: {  
+    mochaFile: ‘junitresults.xml’  
+  }  
+}
+</code></pre>
+<h2>Create a build agent</h2><p>VSTS does provide hosted build agents, which are generic and can build standard .Net projects, Xamarin, etc. But because we are going to use npm packages installed globally on the box to handle the Truffle builds</p>
+<ul>
+<li>Create a new Windows VM (Can be your own hosted server, or Azure).<br>e.g. <a href="https://azure.microsoft.com/en-au/marketplace/partners/microsoft/windowsserver2016datacenter/">Windows Server 2016 Datacentre edition on Azure</a></li>
+<li>Install the VSTS build agent. Instructions at <a href="https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows">https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows</a><br>Note: DON’T select to run service as NT AUTHORITY\NETWORK, this will not work with TestRPC (needs to open ports).<br>Run the service as another user, or NT AUTHORITY\SYSTEM</li>
+<li>Install chocolatey<br><a href="https://chocolatey.org/install">https://chocolatey.org/install</a></li>
+<li>Install these chocolatey packages</li>
+</ul>
+<pre><code>$ choco install git -y
+$ choco install nodejs.install –y
+</code></pre><ul>
+<li>Install npm packages (make sure you open a new PowerShell window so that node is in your path)</li>
+</ul>
+<pre><code>$ npm install -g npm
+$ npm install -g –production windows-build-tools
+$ npm install -g ethereumjs-testrpc
+$ npm install -g truffle
+$ npm install -g mocha
+$ npm install -g mocha-junit-reporter
+</code></pre><ul>
+<li>Restart the build agent so that all new paths are working</li>
+</ul>
+<h2>Configure VSTS build</h2><p>Create a new variable with the path to where the npm global path is, for the user you installed the npm packages on above:</p>
+<ul>
+<li>variable name: <code>npm.path</code></li>
+<li>variable value: path to npm packages e.g. <code>C:\Users\&lt;user&gt;\AppData\Roaming\npm</code>  </li>
+</ul>
+<p><img src="https://davidburela.files.wordpress.com/2016/12/image5.png" alt="image"></p>
+<h2>Add 7 PowerShell tasks, and configure them like this</h2><ul>
+<li>Name: System version information  </li>
+<li>Script:  </li>
+</ul>
+<pre><code>#Setting environment paths  
+$ENV:Path = $ENV:Path + “;” + $env:npm_path  
+npm config set prefix $env:npm_path    #only needs to be set once, will update for user  
 
+#DEBUG  
+#$env:path  
+#npm list -g –depth=0  
+#Display system information  
+Write-Host “System version information”  
+Write-Host -nonewline    “node version: ” ; node -v  
+Write-Host -nonewline    “npm version: “; npm -v  
+Write-Host -nonewline    “npm prefix: “;  npm prefix -g  
+Write-Host -nonewline    “truffle: ” ;    truffle version
+</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image6.png" alt="image"></p>
+<ul>
+<li>Name: Config transform &amp; test clean</li>
+<li>Script:</li>
+</ul>
+<pre><code># remove old test results  
+rm .\junitresults.xml -ea SilentlyContinue 
 
-    </div>
-  </div>
+# Modify the Truffle test runner to use the JUnit reporter  
+Rename-Item .\truffle.js .\truffle_temp.js  
+cat .\truffle_temp.js | % { $_ -replace ‘reporter: “spec”‘, ‘reporter: “mocha-junit-reporter”‘ } | Out-File -Encoding ASCII .\truffle.js  
+rm .\truffle_temp.js
+</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image7.png" alt="image"></p>
+<ul>
+<li>Name: Truffle build  </li>
+<li>Script:  </li>
+</ul>
+<pre><code>#Setting environment paths  
+$ENV:Path = $ENV:Path + “;” + $env:npm_path
+
+#Truffle build  
+truffle compile
+</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image8.png" alt="image"></p>
+<ul>
+<li>Name: Launch TestRPC  </li>
+<li>Script:  </li>
+</ul>
+<pre><code>#Setting environment paths  
+$ENV:Path = $ENV:Path + “;” + $env:npm_path
+
+# launch the process  
+echo “launching TestRPC”  
+$testrpcProcess = Start-Process testrpc -passthru  
+
+# persist the PID to disk and display in logs  
+$testrpcProcess.Id | Export-CliXml testrpcPID.xml  
+cat testrpcPID.xml
+</code></pre><ul>
+<li>Name: Run Truffle tests  </li>
+<li>Script:  </li>
+</ul>
+<pre><code>#Setting environment paths  
+$ENV:Path = $ENV:Path + “;” + $env:npm_path
+
+# Run the tests  
+truffle test
+</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image10.png" alt="image"></p>
+<ul>
+<li>Name: Shutdown TestRPC  </li>
+<li>Other Settings: Enable “Always Run” (to make sure it is shutdown if there is an error)  </li>
+<li>Script:  </li>
+</ul>
+<pre><code>#Setting environment paths  
+$ENV:Path = $ENV:Path + “;” + $env:npm_path
+
+# retrieve the PID and kill the entire processs tree  
+cat testrpcPID.xml  
+$testrpcPID = Import-CliXml testrpcPID.xml  
+taskkill /pid $testrpcPID /F /T
+</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image11.png" alt="image"></p>
+<ul>
+<li>Add a new Publish test result</li>
+<li>Test Result Format: JUnit  </li>
+<li>Test Result Files: <code>junitresults.xml</code>
+<img src="https://davidburela.files.wordpress.com/2016/12/image12.png" alt="image"></li>
+</ul>
+<h2>Future work</h2><p>Things that I would like to add in the future:</p>
+<ul>
+<li>Figure out how to automate this on a Linux build agent (VSTS supports both Windows &amp; Linux based build agents)</li>
+<li>Automate Release Management to run <code>truffle migrate</code> to push to a <a href="https://azure.microsoft.com/en-us/blog/project-bletchley-blockchain-infrastructure-made-easy/">Bletchley test environment</a></li>
+</ul>
           </div>
         </div>
         <footer class="container">
-          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/index.md">Edit here &rarr;</a></p>
+          <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/tutorials/ethereum-devops-truffle-testrpc-vsts.md">Edit here &rarr;</a></p>
         </footer>
       </section>
     </section>
