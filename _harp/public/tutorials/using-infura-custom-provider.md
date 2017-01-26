@@ -53,7 +53,7 @@ var wallet = hdwallet.derivePath(wallet_hdpath + "0").getWallet();
 var address = "0x" + wallet.getAddress().toString("hex");
 ```
 
-Next, we need to set up the Provider Engine, telling it that we'd like to use our wallet to sign transactions, and use the rotsten network on infura for everything else:
+Next, we need to set up the Provider Engine, telling it that we'd like to use our wallet to sign transactions, and use the ropsten network on infura for everything else:
 
 ```javascript
 var providerUrl = "https://testnet.infura.io";
@@ -63,19 +63,19 @@ engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerU
 engine.start(); // Required by the provider engine.
 ```
 
-Finally, we want to export our Truffle configuration. Here we use this wallet only when we want to deploy to the rotsten network:
+Finally, we want to export our Truffle configuration. Here we use this wallet only when we want to deploy to the ropsten network:
 
 ```javascript
 module.exports = {
   networks: {
-    "rotsten": {
-      network_id: 3,    // Official rotsten network id
+    "ropsten": {
+      network_id: 3,    // Official ropsten network id
       provider: engine, // Use our custom provider
       from: address     // Use the address we derived
     }
   },
   rpc: {
-    // Use the default host and port when not using rotsten
+    // Use the default host and port when not using ropsten
     host: "localhost",
     port: 8545
   }
@@ -113,14 +113,14 @@ engine.start(); // Required by the provider engine.
 
 module.exports = {
   networks: {
-    "rotsten": {
-      network_id: 3,    // Official rotsten network id
+    "ropsten": {
+      network_id: 3,    // Official ropsten network id
       provider: engine, // Use our custom provider
       from: address     // Use the address we derived
     }
   },
   rpc: {
-    // Use the default host and port when not using rotsten
+    // Use the default host and port when not using ropsten
     host: "localhost",
     port: 8545
   }
