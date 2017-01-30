@@ -48,7 +48,7 @@ mkdir my-money  # Create a folder for your new dapp
 cd my-money     # Move into that folder
 truffle init    # Initialize a default truffle project in that folder
 truffle build   # Compile the dapp
-truffle deploy  # Publish the dapp on the blockchain
+truffle migrate  # Publish the dapp on the blockchain
 truffle serve   # Host your web interface on port 8080
 ```
 We just deployed a simple alt-coin called `MetaCoin` to our local blockchain, and it's available to our browser on `http://localhost:8080`!
