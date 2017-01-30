@@ -111,7 +111,7 @@ rpc: {
 }
 ```
 
-### mocha
+### <a name="mocha"></a>mocha
 
 Configuration options for the [MochaJS](http://mochajs.org/) testing framework. This configuration expects an object as detailed in Mocha's [documentation](https://github.com/mochajs/mocha/wiki/Using-mocha-programmatically#set-options).
 
