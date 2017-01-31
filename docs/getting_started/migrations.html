@@ -30,14 +30,14 @@
     
     <meta property="og:site_name" content="Truffle Framework" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Running migrations - Truffle Framework" />
+    <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
-    <meta name="twitter:title" content="Running migrations - Truffle Framework" />
+    <meta name="twitter:title" content="TruffleFramework.com - Truffle Framework" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
@@ -46,7 +46,88 @@
     
     
 
-    <title>Running migrations | Truffle Framework</title>
+    <title>TruffleFramework.com | Truffle Framework</title>
+
+    <link rel="author" href="humans.txt" />
+
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Truffle Framework">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="stylesheet" href="/styles/main.css">
+    
+      <noscript>
+        <!-- [*] Web fonts for no-js -->
+        <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700%7COpen+Sans:400,700' rel='stylesheet' type='text/css'>
+      </noscript>
+    
+  </head>
+
+  <body>
+    <main>
+      
+
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+  
+  
+    <!-- Fallback for Font family below in noscript [*] -->
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Oswald:300,400,700',  'Open+Sans:400,700' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })(); </script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Your Ethereum Swiss Army Knife">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="news_keywords" content="solidity, dapps, contracts, smart contracts" />
+    <meta name="standout" content="http://truffleframwork.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta property="og:site_name" content="Truffle Framework" />
+    <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
+    <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
+    <meta property="og:url" content="http://truffleframwork.com" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="Truffle Framework" />
+    <meta name="twitter:title" content="TruffleFramework.com - Truffle Framework" />
+    <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
+    <meta name="twitter:creator" content="Truffle Framework" />
+    <meta name="twitter:domain" content="truffleframework.com" />
+    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+
+    
+    
+
+    <title>TruffleFramework.com | Truffle Framework</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -151,7 +232,8 @@
               
 
               <ul class="list-unstyled">
-                                  <h2>Getting Started</h2>                                                <li>
+                                  <h2>Getting Started</h2>
+                                                <li>
                   <ul class="list-unstyled">
                                           
                     <li class=""><a href="/docs/getting_started/installation">Installation</a></li>
@@ -179,7 +261,8 @@
                     <li class=""><a href="/docs/getting_started/contact">Contact the developers</a></li>
                                     </ul>
                 </li>
-                                <h2>Advanced</h2>                                                <li>
+                                <h2>Advanced</h2>
+                                                <li>
                   <ul class="list-unstyled">
                                           
                     <li class=""><a href="/docs/advanced/configuration">Configuration</a></li>
@@ -196,13 +279,15 @@
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
               <p>Migrations are Javascript files that help you deploy contracts to the Ethereum network. These files are responsible for staging your deployment tasks, and they&#39;re written under the assumption that your deployment needs will change over time. As your project evolves, you&#39;ll create new migration scripts to further this evolution on the blockchain. A history of previously run migrations is recorded on-chain through a special <code>Migrations</code> contract, detailed below.</p>
-<h1>Command</h1><p>To run your migrations, run the following:</p>
-<pre><code class="language-none">$ truffle migrate
+<h1 id="command">Command</h1>
+<p>To run your migrations, run the following:</p>
+<pre><code class="lang-none">$ truffle migrate
 </code></pre>
 <p>This will run all migrations located within your project&#39;s <code>migrations</code> directory. If your migrations were previously run successfully, <code>truffle migrate</code> will start execution from the last migration that was ran, running only newly created migrations. If no new migrations exists, <code>truffle migrate</code> won&#39;t perform any action at all. You can use the <code>--reset</code> option to run all your migrations from the beginning. For local testing make sure to have <a href="https://github.com/ethereumjs/testrpc">testrpc</a> installed and running before running <code>migrate</code>.</p>
-<h1>Migration Files</h1><p>A simple migration file looks like this:</p>
+<h1 id="migration-files">Migration Files</h1>
+<p>A simple migration file looks like this:</p>
 <p>Filename: 4_example_migration.js</p>
-<pre><code class="language-javascript">module.exports = function(deployer) {
+<pre><code class="lang-javascript">module.exports = function(deployer) {
   // deployment steps
   deployer.deploy(MyContract);
 };
@@ -210,7 +295,8 @@
 <p>Note that the filename is prefixed with a number and is suffixed by a description. The numbered prefix is required in order to record whether the migration ran successfully. The suffix is purely for human readability and comprehension.</p>
 <p>The function exported by each migration accepts a <code>deployer</code> object as a first parameter. This object aides in deployment by both providing a clear syntax as well as performing some of the more mundane duties of contract deployments, such as saving deployed artifacts for later use. The <code>deployer</code> object is your main interface for staging deployment tasks, and its API is described at the bottom of this page.</p>
 <p>Like all code within Truffle, your <a href="/docs/getting_started/contracts/">contract abstractions</a> are provided and initialized for you so you can easily interact with the Ethereum network. These abstractions are an integral part of the deployment process, as you&#39;ll see below.</p>
-<h1>Initial Migration</h1><p>Truffle requires you to have a Migrations contract in order to use the Migrations feature. This contract must contain a specific interface, but you&#39;re free to edit this contract at will. For most projects, this contract will be deployed initially as the first migration and won&#39;t be updated again. You will also receive this contract by default when creating a new project with <code>truffle init</code>.</p>
+<h1 id="initial-migration">Initial Migration</h1>
+<p>Truffle requires you to have a Migrations contract in order to use the Migrations feature. This contract must contain a specific interface, but you&#39;re free to edit this contract at will. For most projects, this contract will be deployed initially as the first migration and won&#39;t be updated again. You will also receive this contract by default when creating a new project with <code>truffle init</code>.</p>
 <p>Filename: contracts/Migrations.sol</p>
 <pre><code>contract Migrations {
   address public owner;
@@ -238,39 +324,43 @@
 }
 </code></pre><p>You must deploy this contract inside your first migration in order to take advantage of the Migrations feature. To do so, create the following migration:</p>
 <p>Filename: migrations/1_initial_migration.js</p>
-<pre><code class="language-javascript">module.exports = function(deployer) {
+<pre><code class="lang-javascript">module.exports = function(deployer) {
   // Deploy the Migrations contract as our only task
   deployer.deploy(Migrations);
 };
 </code></pre>
 <p>From here, you can create new migrations with increasing numbered prefixes to deploy other contracts and perform further deployment steps.</p>
-<h1>Deployer</h1><p>Your migration files will use the deployer to stage deployment tasks. As such, you can write deployment tasks synchronously and they&#39;ll be executed in the correct order:</p>
-<pre><code class="language-javascript">// Stage deploying A before B
+<h1 id="deployer">Deployer</h1>
+<p>Your migration files will use the deployer to stage deployment tasks. As such, you can write deployment tasks synchronously and they&#39;ll be executed in the correct order:</p>
+<pre><code class="lang-javascript">// Stage deploying A before B
 deployer.deploy(A);
 deployer.deploy(B);
 </code></pre>
 <p>Alternatively, each function on the deployer can be used as a Promise, to queue up deployment tasks that depend on the execution of the previous task:</p>
-<pre><code class="language-javascript">// Deploy A, then deploy B, passing in A&#39;s newly deployed address
+<pre><code class="lang-javascript">// Deploy A, then deploy B, passing in A&#39;s newly deployed address
 deployer.deploy(A).then(function() {
   return deployer.deploy(B, A.address);
 });
 </code></pre>
 <p>It is possible to write your deployment as a single promise chain if you find that syntax to be more clear. The deployer API is discussed at the bottom of this page.</p>
-<h1>Network Considerations</h1><p>It is possible to run deployment steps conditionally based on the network being deployed to. This is an advanced feature, so see the <a href="/docs/advanced/networks">Networks</a> section first before continuing.</p>
+<h1 id="network-considerations">Network Considerations</h1>
+<p>It is possible to run deployment steps conditionally based on the network being deployed to. This is an advanced feature, so see the <a href="/docs/advanced/networks">Networks</a> section first before continuing.</p>
 <p>To conditionally stage deployment steps, write your migrations so that they accept a second parameter, called <code>network</code>. Example:</p>
-<pre><code class="language-javascript">module.exports = function(deployer, network) {
+<pre><code class="lang-javascript">module.exports = function(deployer, network) {
   // Add demo data if we&#39;re not deploying to the live network.
   if (network != &quot;live&quot;) {
     deployer.exec(&quot;add_demo_data.js&quot;);
   }
 }
 </code></pre>
-<h1>Deployer API</h1><p>The deployer contains many functions available to simplify your migrations.</p>
-<h5>deployer.deploy(contract, args...)</h5><p>Deploy a specific contract, specified by the contract object, with optional constructor arguments. This is useful for singleton contracts, such that only one instance of this contract exists for your dapp. This will set the address of the contract after deployment (i.e., <code>Contract.address</code> will equal the newly deployed address), and it will override any previous address stored.</p>
+<h1 id="deployer-api">Deployer API</h1>
+<p>The deployer contains many functions available to simplify your migrations.</p>
+<h5 id="deployer-deploy-contract-args-">deployer.deploy(contract, args&#8230;)</h5>
+<p>Deploy a specific contract, specified by the contract object, with optional constructor arguments. This is useful for singleton contracts, such that only one instance of this contract exists for your dapp. This will set the address of the contract after deployment (i.e., <code>Contract.address</code> will equal the newly deployed address), and it will override any previous address stored.</p>
 <p>You can optionally pass an array of contracts, or an array of arrays, to speed up deployment of multiple contracts.</p>
 <p>Note that <code>deploy</code> will automatically link any required libraries to the contracts that are being deployed, if the addresses for those libraries are available. You <em>must</em> deploy your libraries first before deploying a contract that depends on one of those libraries.</p>
 <p>Examples:</p>
-<pre><code class="language-javascript">// Deploy a single contract without constructor arguments
+<pre><code class="lang-javascript">// Deploy a single contract without constructor arguments
 deployer.deploy(A);
 
 // Deploy a single contract with constructor arguments
@@ -285,30 +375,33 @@ deployer.deploy([
   [C, arg1]
 ]);
 </code></pre>
-<h5>deployer.link(library, destinations)</h5><p>Link an already-deployed library to a contract or multiple contracts. <code>destinations</code> can be a single contract or an array of multiple contracts. If any contract within the destination doesn&#39;t rely on the library being linked, the deployer will ignore that contract.</p>
+<h5 id="deployer-link-library-destinations-">deployer.link(library, destinations)</h5>
+<p>Link an already-deployed library to a contract or multiple contracts. <code>destinations</code> can be a single contract or an array of multiple contracts. If any contract within the destination doesn&#39;t rely on the library being linked, the deployer will ignore that contract.</p>
 <p>This is useful for contracts that you <em>don&#39;t</em> intend to deploy (i.e. are not singletons) yet will need linking before being used in your dapp.</p>
 <p>Example:</p>
-<pre><code class="language-javascript">// Deploy library LibA, then link LibA to contract B
+<pre><code class="lang-javascript">// Deploy library LibA, then link LibA to contract B
 deployer.deploy(LibA);
 deployer.link(LibA, B);
 
 // Link LibA to many contracts
 deployer.link(LibA, [B, C, D]);
 </code></pre>
-<h5>deployer.autolink(contract)</h5><p>Link all libraries that <code>contract</code> depends on to that contract. This requires that all libraries <code>contract</code> depends on have already been deployed or were queued for deployment in a previous step.</p>
+<h5 id="deployer-autolink-contract-">deployer.autolink(contract)</h5>
+<p>Link all libraries that <code>contract</code> depends on to that contract. This requires that all libraries <code>contract</code> depends on have already been deployed or were queued for deployment in a previous step.</p>
 <p>Example:</p>
-<pre><code class="language-javascript">// Assume A depends on a LibB and LibC
+<pre><code class="lang-javascript">// Assume A depends on a LibB and LibC
 deployer.deploy([LibB, LibC]);
 deployer.autolink(A);
 </code></pre>
 <p>Alternatively, you can call <code>autolink()</code> without a first parameter. This will link all libraries available to the contracts that depend on them. Ensure your libraries are deployed first before calling this function.</p>
 <p>Example:</p>
-<pre><code class="language-javascript">// Link *all* libraries to all available contracts
+<pre><code class="lang-javascript">// Link *all* libraries to all available contracts
 deployer.autolink();
 </code></pre>
-<h5>deployer.then(function() {...})</h5><p>Just like a promise, run an arbitrary deployment step.</p>
+<h5 id="deployer-then-function-">deployer.then(function() {&#8230;})</h5>
+<p>Just like a promise, run an arbitrary deployment step.</p>
 <p>Example:</p>
-<pre><code class="language-javascript">deployer.then(function() {
+<pre><code class="lang-javascript">deployer.then(function() {
   // Create a new version of A
   return A.new();
 }).then(function(instance) {
@@ -317,11 +410,13 @@ deployer.autolink();
   return b.setA(instance.address);
 });
 </code></pre>
-<h5>deployer.exec(pathToFile)</h5><p>Execute a file meant to be run with <code>truffle exec</code> as part of the deployment. See the <a href="/docs/getting_started/scripts/">Writing external scripts</a> section for more information.</p>
+<h5 id="deployer-exec-pathtofile-">deployer.exec(pathToFile)</h5>
+<p>Execute a file meant to be run with <code>truffle exec</code> as part of the deployment. See the <a href="/docs/getting_started/scripts/">Writing external scripts</a> section for more information.</p>
 <p>Example:</p>
-<pre><code class="language-javascript">// Run the script, relative to the migrations file.
+<pre><code class="lang-javascript">// Run the script, relative to the migrations file.
 deployer.exec(&quot;../path/to/file/demo_data.js&quot;);
 </code></pre>
+
               <footer class="container-fluid">
                 <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/getting_started/migrations.md">Edit here &rarr;</a></p>
               </footer>
@@ -330,6 +425,28 @@ deployer.exec(&quot;../path/to/file/demo_data.js&quot;);
         </div>
       </section>
     </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="/scripts/main.js"></script>
+<script src="/deps/scripts/prism.js"></script>
+<script src="/deps/scripts/collapse.js"></script>
+<script src="/deps/scripts/dropdown.js"></script>
+<script src="/deps/scripts/lunr.js"></script>
+
+    
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-83874933-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  </body>
+</html>
+
+    </main>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script src="/scripts/main.js"></script>
