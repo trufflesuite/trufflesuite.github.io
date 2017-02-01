@@ -30,14 +30,14 @@
     
     <meta property="og:site_name" content="Truffle Framework" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Configuration - Truffle Framework" />
+    <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
-    <meta name="twitter:title" content="Configuration - Truffle Framework" />
+    <meta name="twitter:title" content="TruffleFramework.com - Truffle Framework" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
@@ -46,7 +46,88 @@
     
     
 
-    <title>Configuration | Truffle Framework</title>
+    <title>TruffleFramework.com | Truffle Framework</title>
+
+    <link rel="author" href="humans.txt" />
+
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Truffle Framework">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="stylesheet" href="/styles/main.css">
+    
+      <noscript>
+        <!-- [*] Web fonts for no-js -->
+        <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700%7COpen+Sans:400,700' rel='stylesheet' type='text/css'>
+      </noscript>
+    
+  </head>
+
+  <body>
+    <main>
+      
+
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+  
+  
+    <!-- Fallback for Font family below in noscript [*] -->
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Oswald:300,400,700',  'Open+Sans:400,700' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })(); </script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Your Ethereum Swiss Army Knife">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="news_keywords" content="solidity, dapps, contracts, smart contracts" />
+    <meta name="standout" content="http://truffleframwork.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta property="og:site_name" content="Truffle Framework" />
+    <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
+    <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
+    <meta property="og:url" content="http://truffleframwork.com" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="Truffle Framework" />
+    <meta name="twitter:title" content="TruffleFramework.com - Truffle Framework" />
+    <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
+    <meta name="twitter:creator" content="Truffle Framework" />
+    <meta name="twitter:domain" content="truffleframework.com" />
+    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+
+    
+    
+
+    <title>TruffleFramework.com | Truffle Framework</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -151,7 +232,8 @@
               
 
               <ul class="list-unstyled">
-                                  <h2>Getting Started</h2>                                                <li>
+                                  <h2>Getting Started</h2>
+                                                <li>
                   <ul class="list-unstyled">
                                           
                     <li class=""><a href="/docs/getting_started/installation">Installation</a></li>
@@ -179,7 +261,8 @@
                     <li class=""><a href="/docs/getting_started/contact">Contact the developers</a></li>
                                     </ul>
                 </li>
-                                <h2>Advanced</h2>                                                <li>
+                                <h2>Advanced</h2>
+                                                <li>
                   <ul class="list-unstyled">
                                           
                     <li class="active"><a href="/docs/advanced/configuration">Configuration</a></li>
@@ -195,9 +278,9 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1>Location</h1><p>Your configuration file is called <code>truffle.js</code> and is located at the root of your project directory. This file is a Javascript file and can execute any code necessary to create your configuration. It must export an object representing your project configuration like the example below.</p>
-<h3>Resolving Naming Conflicts on Windows</h3><p>When using the Command Prompt on Windows, the default configuration file name can cause a conflict with the <code>truffle</code> executable. If this is the case, we recommend using Windows PowerShell or <a href="https://git-for-windows.github.io/">Git BASH</a> as these shells do not have this conflict. Alternatively, you can rename the configuration file to <code>truffle-config.js</code> to avoid this conflict.</p>
-<h1>Example</h1><pre><code class="language-javascript">module.exports = {
+              <h1><a name="location" class="anchor" href="#location"><span class="header-link" style="z-index: 9999994720">&nbsp;</span></a>Location</h1><p>Your configuration file is called <code>truffle.js</code> and is located at the root of your project directory. This file is a Javascript file and can execute any code necessary to create your configuration. It must export an object representing your project configuration like the example below.</p>
+<h3><a name="resolving-naming-conflicts-on-windows" class="anchor" href="#resolving-naming-conflicts-on-windows"><span class="header-link" style="z-index: 9999994719">&nbsp;</span></a>Resolving Naming Conflicts on Windows</h3><p>When using the Command Prompt on Windows, the default configuration file name can cause a conflict with the <code>truffle</code> executable. If this is the case, we recommend using Windows PowerShell or <a href="https://git-for-windows.github.io/">Git BASH</a> as these shells do not have this conflict. Alternatively, you can rename the configuration file to <code>truffle-config.js</code> to avoid this conflict.</p>
+<h1><a name="example" class="anchor" href="#example"><span class="header-link" style="z-index: 9999994718">&nbsp;</span></a>Example</h1><pre><code class="lang-javascript">module.exports = {
   build: {
     &quot;index.html&quot;: &quot;index.html&quot;,
     &quot;app.js&quot;: [
@@ -215,9 +298,9 @@
 };
 </code></pre>
 <p>The default configuration ships with two options specified: <code>build</code> and <code>rpc</code>. These options as well as non-default options are detailed below.</p>
-<h1>Options</h1><h3>build</h3><p>Build configuration of your frontend. By default this configuration invokes the default builder, described in the <a href="/docs/getting_started/build">Build</a> section, but you can use custom build processes as well. See the <a href="/advanced/build_processes">advanced build processes</a> section for details.</p>
+<h1><a name="options" class="anchor" href="#options"><span class="header-link" style="z-index: 9999994717">&nbsp;</span></a>Options</h1><h3><a name="build" class="anchor" href="#build"><span class="header-link" style="z-index: 9999994716">&nbsp;</span></a>build</h3><p>Build configuration of your frontend. By default this configuration invokes the default builder, described in the <a href="/docs/getting_started/build">Build</a> section, but you can use custom build processes as well. See the <a href="/advanced/build_processes">advanced build processes</a> section for details.</p>
 <p><strong>Example:</strong></p>
-<pre><code class="language-javascript">build: {
+<pre><code class="lang-javascript">build: {
   &quot;index.html&quot;: &quot;index.html&quot;,
   &quot;app.js&quot;: [
     &quot;javascripts/app.js&quot;
@@ -228,14 +311,14 @@
   &quot;images/&quot;: &quot;images/&quot;
 }
 </code></pre>
-<h3>networks</h3><p>Specifies which networks are available for deployment during migrations. When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your Ethereum client is connected to a specific network, they&#39;ll use the contract artifacts associated that network to simplify app deployment. Networks are identified through Ethereum&#39;s <code>net_version</code> RPC call.</p>
+<h3><a name="networks" class="anchor" href="#networks"><span class="header-link" style="z-index: 9999994715">&nbsp;</span></a>networks</h3><p>Specifies which networks are available for deployment during migrations. When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your Ethereum client is connected to a specific network, they&#39;ll use the contract artifacts associated that network to simplify app deployment. Networks are identified through Ethereum&#39;s <code>net_version</code> RPC call.</p>
 <p>The <code>networks</code> object, shown below, is keyed by a network name and contains a corresponding object that defines the parameters of the network. The <code>networks</code> option is not required, but if specified, each network it defines must specify a corresponding <code>network_id</code>. If you&#39;d like a specific network configuration to be associated with every network that <em>doesn&#39;t</em> match any other network in the list, use a <code>network_id</code> of &quot;default&quot;. However, there should only be one default network. Traditionally, the default network is used during development, where contract artifacts don&#39;t matter long-term and the network id continuously changes, for instance, if the TestRPC is restarted.</p>
 <p>The network name is used for user interface purposes, such as when running your migrations on a specific network:</p>
-<pre><code class="language-bash">$ truffle migrate --network live
+<pre><code class="lang-bash">$ truffle migrate --network live
 </code></pre>
 <p>You can optionally specify rpc information for each network. Examples below.</p>
 <p><strong>Example:</strong></p>
-<pre><code class="language-javascript">networks: {
+<pre><code class="lang-javascript">networks: {
   &quot;live&quot;: {
     network_id: 1, // Ethereum public network
     // optional config values
@@ -259,7 +342,7 @@
   }
 }
 </code></pre>
-<h3>rpc</h3><p>Details about how to connect to your ethereum client. The <code>host</code> and <code>port</code> keys are required. However, a few other keys are available:</p>
+<h3><a name="rpc" class="anchor" href="#rpc"><span class="header-link" style="z-index: 9999994714">&nbsp;</span></a>rpc</h3><p>Details about how to connect to your ethereum client. The <code>host</code> and <code>port</code> keys are required. However, a few other keys are available:</p>
 <ul>
 <li><code>host</code>: Hostname pointing to the network location of your Ethereum client (usually &quot;localhost&quot; for development).</li>
 <li><code>port</code>: Port number where your Etheruem client accepts requests. Default is <code>8545</code>.</li>
@@ -268,17 +351,18 @@
 <li><code>from</code>: From address used during migrations. If not specified, defaults to the first available account provided by your Ethereum client.</li>
 </ul>
 <p><strong>Example:</strong></p>
-<pre><code class="language-javascript">rpc: {
+<pre><code class="lang-javascript">rpc: {
   host: &quot;localhost&quot;,
   port: 8545
 }
 </code></pre>
-<h3>mocha</h3><p>Configuration options for the <a href="http://mochajs.org/">MochaJS</a> testing framework. This configuration expects an object as detailed in Mocha&#39;s <a href="https://github.com/mochajs/mocha/wiki/Using-mocha-programmatically#set-options">documentation</a>.</p>
+<h3><a name="mocha" class="anchor" href="#mocha"><span class="header-link" style="z-index: 9999994713">&nbsp;</span></a>mocha</h3><p>Configuration options for the <a href="http://mochajs.org/">MochaJS</a> testing framework. This configuration expects an object as detailed in Mocha&#39;s <a href="https://github.com/mochajs/mocha/wiki/Using-mocha-programmatically#set-options">documentation</a>.</p>
 <p><strong>Example:</strong></p>
-<pre><code class="language-javascript">mocha: {
+<pre><code class="lang-javascript">mocha: {
   useColors: true
 }
 </code></pre>
+
               <footer class="container-fluid">
                 <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/advanced/configuration.md">Edit here &rarr;</a></p>
               </footer>
@@ -287,6 +371,28 @@
         </div>
       </section>
     </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="/scripts/main.js"></script>
+<script src="/deps/scripts/prism.js"></script>
+<script src="/deps/scripts/collapse.js"></script>
+<script src="/deps/scripts/dropdown.js"></script>
+<script src="/deps/scripts/lunr.js"></script>
+
+    
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-83874933-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  </body>
+</html>
+
+    </main>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script src="/scripts/main.js"></script>
