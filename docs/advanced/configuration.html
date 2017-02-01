@@ -278,12 +278,9 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1 id="location">Location</h1>
-<p>Your configuration file is called <code>truffle.js</code> and is located at the root of your project directory. This file is a Javascript file and can execute any code necessary to create your configuration. It must export an object representing your project configuration like the example below.</p>
-<h3 id="resolving-naming-conflicts-on-windows">Resolving Naming Conflicts on Windows</h3>
-<p>When using the Command Prompt on Windows, the default configuration file name can cause a conflict with the <code>truffle</code> executable. If this is the case, we recommend using Windows PowerShell or <a href="https://git-for-windows.github.io/">Git BASH</a> as these shells do not have this conflict. Alternatively, you can rename the configuration file to <code>truffle-config.js</code> to avoid this conflict.</p>
-<h1 id="example">Example</h1>
-<pre><code class="lang-javascript">module.exports = {
+              <h1><a name="location" class="anchor" href="#location"><span class="header-link" style="z-index: 9999994720">&nbsp;</span></a>Location</h1><p>Your configuration file is called <code>truffle.js</code> and is located at the root of your project directory. This file is a Javascript file and can execute any code necessary to create your configuration. It must export an object representing your project configuration like the example below.</p>
+<h3><a name="resolving-naming-conflicts-on-windows" class="anchor" href="#resolving-naming-conflicts-on-windows"><span class="header-link" style="z-index: 9999994719">&nbsp;</span></a>Resolving Naming Conflicts on Windows</h3><p>When using the Command Prompt on Windows, the default configuration file name can cause a conflict with the <code>truffle</code> executable. If this is the case, we recommend using Windows PowerShell or <a href="https://git-for-windows.github.io/">Git BASH</a> as these shells do not have this conflict. Alternatively, you can rename the configuration file to <code>truffle-config.js</code> to avoid this conflict.</p>
+<h1><a name="example" class="anchor" href="#example"><span class="header-link" style="z-index: 9999994718">&nbsp;</span></a>Example</h1><pre><code class="lang-javascript">module.exports = {
   build: {
     &quot;index.html&quot;: &quot;index.html&quot;,
     &quot;app.js&quot;: [
@@ -301,9 +298,7 @@
 };
 </code></pre>
 <p>The default configuration ships with two options specified: <code>build</code> and <code>rpc</code>. These options as well as non-default options are detailed below.</p>
-<h1 id="options">Options</h1>
-<h3 id="build">build</h3>
-<p>Build configuration of your frontend. By default this configuration invokes the default builder, described in the <a href="/docs/getting_started/build">Build</a> section, but you can use custom build processes as well. See the <a href="/advanced/build_processes">advanced build processes</a> section for details.</p>
+<h1><a name="options" class="anchor" href="#options"><span class="header-link" style="z-index: 9999994717">&nbsp;</span></a>Options</h1><h3><a name="build" class="anchor" href="#build"><span class="header-link" style="z-index: 9999994716">&nbsp;</span></a>build</h3><p>Build configuration of your frontend. By default this configuration invokes the default builder, described in the <a href="/docs/getting_started/build">Build</a> section, but you can use custom build processes as well. See the <a href="/advanced/build_processes">advanced build processes</a> section for details.</p>
 <p><strong>Example:</strong></p>
 <pre><code class="lang-javascript">build: {
   &quot;index.html&quot;: &quot;index.html&quot;,
@@ -316,8 +311,7 @@
   &quot;images/&quot;: &quot;images/&quot;
 }
 </code></pre>
-<h3 id="networks">networks</h3>
-<p>Specifies which networks are available for deployment during migrations. When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your Ethereum client is connected to a specific network, they&#39;ll use the contract artifacts associated that network to simplify app deployment. Networks are identified through Ethereum&#39;s <code>net_version</code> RPC call.</p>
+<h3><a name="networks" class="anchor" href="#networks"><span class="header-link" style="z-index: 9999994715">&nbsp;</span></a>networks</h3><p>Specifies which networks are available for deployment during migrations. When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your Ethereum client is connected to a specific network, they&#39;ll use the contract artifacts associated that network to simplify app deployment. Networks are identified through Ethereum&#39;s <code>net_version</code> RPC call.</p>
 <p>The <code>networks</code> object, shown below, is keyed by a network name and contains a corresponding object that defines the parameters of the network. The <code>networks</code> option is not required, but if specified, each network it defines must specify a corresponding <code>network_id</code>. If you&#39;d like a specific network configuration to be associated with every network that <em>doesn&#39;t</em> match any other network in the list, use a <code>network_id</code> of &quot;default&quot;. However, there should only be one default network. Traditionally, the default network is used during development, where contract artifacts don&#39;t matter long-term and the network id continuously changes, for instance, if the TestRPC is restarted.</p>
 <p>The network name is used for user interface purposes, such as when running your migrations on a specific network:</p>
 <pre><code class="lang-bash">$ truffle migrate --network live
@@ -348,8 +342,7 @@
   }
 }
 </code></pre>
-<h3 id="rpc">rpc</h3>
-<p>Details about how to connect to your ethereum client. The <code>host</code> and <code>port</code> keys are required. However, a few other keys are available:</p>
+<h3><a name="rpc" class="anchor" href="#rpc"><span class="header-link" style="z-index: 9999994714">&nbsp;</span></a>rpc</h3><p>Details about how to connect to your ethereum client. The <code>host</code> and <code>port</code> keys are required. However, a few other keys are available:</p>
 <ul>
 <li><code>host</code>: Hostname pointing to the network location of your Ethereum client (usually &quot;localhost&quot; for development).</li>
 <li><code>port</code>: Port number where your Etheruem client accepts requests. Default is <code>8545</code>.</li>
@@ -363,8 +356,7 @@
   port: 8545
 }
 </code></pre>
-<h3 id="mocha">mocha</h3>
-<p>Configuration options for the <a href="http://mochajs.org/">MochaJS</a> testing framework. This configuration expects an object as detailed in Mocha&#39;s <a href="https://github.com/mochajs/mocha/wiki/Using-mocha-programmatically#set-options">documentation</a>.</p>
+<h3><a name="mocha" class="anchor" href="#mocha"><span class="header-link" style="z-index: 9999994713">&nbsp;</span></a>mocha</h3><p>Configuration options for the <a href="http://mochajs.org/">MochaJS</a> testing framework. This configuration expects an object as detailed in Mocha&#39;s <a href="https://github.com/mochajs/mocha/wiki/Using-mocha-programmatically#set-options">documentation</a>.</p>
 <p><strong>Example:</strong></p>
 <pre><code class="lang-javascript">mocha: {
   useColors: true

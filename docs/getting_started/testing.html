@@ -278,19 +278,15 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1 id="framework">Framework</h1>
-<p>Truffle uses the <a href="https://mochajs.org/">Mocha</a> testing framework for automated testing and <a href="http://chaijs.com/">Chai</a> for assertions. We think these two libraries together make automated testing a breeze, and so we&#39;ve built on top of them to provide you a way to write simple and manageable automated tests for your contracts.</p>
-<h1 id="location">Location</h1>
-<p>All test files should be located in the <code>./tests</code> directory. Truffle will only run test files with the following file extensions: <code>.js</code>, <code>.es</code>, <code>.es6</code>, and <code>.jsx</code>. All other files are ignored.</p>
-<h1 id="writing-tests">Writing Tests</h1>
-<p>Each test file should contain at least one call to Mocha&#39;s <code>describe()</code> function as shown in the <a href="https://mochajs.org/">MochaJS Documentation</a>. Alternatively, you can use Truffle&#39;s custom <code>contract()</code> function which works like Mocha&#39;s <code>describe()</code> but with a few added features:</p>
+              <h1><a name="framework" class="anchor" href="#framework"><span class="header-link" style="z-index: 9999994752">&nbsp;</span></a>Framework</h1><p>Truffle uses the <a href="https://mochajs.org/">Mocha</a> testing framework for automated testing and <a href="http://chaijs.com/">Chai</a> for assertions. We think these two libraries together make automated testing a breeze, and so we&#39;ve built on top of them to provide you a way to write simple and manageable automated tests for your contracts.</p>
+<h1><a name="location" class="anchor" href="#location"><span class="header-link" style="z-index: 9999994751">&nbsp;</span></a>Location</h1><p>All test files should be located in the <code>./tests</code> directory. Truffle will only run test files with the following file extensions: <code>.js</code>, <code>.es</code>, <code>.es6</code>, and <code>.jsx</code>. All other files are ignored.</p>
+<h1><a name="writing-tests" class="anchor" href="#writing-tests"><span class="header-link" style="z-index: 9999994750">&nbsp;</span></a>Writing Tests</h1><p>Each test file should contain at least one call to Mocha&#39;s <code>describe()</code> function as shown in the <a href="https://mochajs.org/">MochaJS Documentation</a>. Alternatively, you can use Truffle&#39;s custom <code>contract()</code> function which works like Mocha&#39;s <code>describe()</code> but with a few added features:</p>
 <ul>
 <li>Before each <code>contract()</code> function is run, your contracts are redeployed to the running Ethereum client so the tests within it run with a clean contract state.</li>
 <li>The <code>contract()</code> function provides a list of available accounts as a second parameter with which you can write tests against.</li>
 </ul>
 <p>Use the <code>contract()</code> function when you&#39;re writing tests that interact with your contracts. Use <code>describe()</code> when you&#39;re writing tests that don&#39;t interact with any contracts.</p>
-<h1 id="example-test">Example Test</h1>
-<p>Here&#39;s an example test provided for you by <code>truffle init</code>. This will tell Truffle (and Mocha) to deploy your contracts first and then run the test specified in the <code>it()</code> block.</p>
+<h1><a name="example-test" class="anchor" href="#example-test"><span class="header-link" style="z-index: 9999994749">&nbsp;</span></a>Example Test</h1><p>Here&#39;s an example test provided for you by <code>truffle init</code>. This will tell Truffle (and Mocha) to deploy your contracts first and then run the test specified in the <code>it()</code> block.</p>
 <pre><code class="lang-javascript">contract(&#39;MetaCoin&#39;, function(accounts) {
   it(&quot;should put 10000 MetaCoin in the first account&quot;, function() {
     // Get a reference to the deployed MetaCoin contract, as a JS object.
@@ -304,18 +300,14 @@
 });
 </code></pre>
 <p>Note that the string <code>&#39;MetaCoin&#39;</code> passed to the <code>contract()</code> function is for display purposes only.</p>
-<h1 id="contracts">Contracts</h1>
-<p>Truffle provides a contract abstraction for you that makes interacting with your contracts easy. You can see this abstraction at work within the <code>var meta = MetaCoin.deployed()</code> line of code. Truffle ensures that interacting with contracts within your tests is the same as interacting with contracts within your frontend and within your migrations, and you can read more about <a href="/docs/getting_started/contracts">that interaction</a> in the next section.</p>
-<h1 id="command">Command</h1>
-<p>To run all tests, simply run:</p>
+<h1><a name="contracts" class="anchor" href="#contracts"><span class="header-link" style="z-index: 9999994748">&nbsp;</span></a>Contracts</h1><p>Truffle provides a contract abstraction for you that makes interacting with your contracts easy. You can see this abstraction at work within the <code>var meta = MetaCoin.deployed()</code> line of code. Truffle ensures that interacting with contracts within your tests is the same as interacting with contracts within your frontend and within your migrations, and you can read more about <a href="/docs/getting_started/contracts">that interaction</a> in the next section.</p>
+<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999994747">&nbsp;</span></a>Command</h1><p>To run all tests, simply run:</p>
 <pre><code>$ truffle test
 </code></pre><p>Alternatively, you can specify a path to a specific file you want to run, e.g.,</p>
 <pre><code class="lang-none">$ truffle test ./path/to/test/file.js
 </code></pre>
-<h1 id="considerations">Considerations</h1>
-<p>The <a href="https://github.com/ethereumjs/testrpc">EthereumJS TestRPC</a> is significantly faster than other clients when running automated tests. Moreover, the TestRPC contains special features which Truffle takes advantage of to speed up test runtime even more. As a general workflow, we recommend you use the TestRPC during normal development and testing, and then run your tests once against Geth or another official Ethereum client when you&#39;re gearing up to deploy to the live network.</p>
-<h1 id="advanced">Advanced</h1>
-<p>Truffle gives you access to Mocha&#39;s configuration so you can change how Mocha behaves. See the <a href="/docs/advanced/configuration/#mocha">project configuration</a> section for more details.</p>
+<h1><a name="considerations" class="anchor" href="#considerations"><span class="header-link" style="z-index: 9999994746">&nbsp;</span></a>Considerations</h1><p>The <a href="https://github.com/ethereumjs/testrpc">EthereumJS TestRPC</a> is significantly faster than other clients when running automated tests. Moreover, the TestRPC contains special features which Truffle takes advantage of to speed up test runtime even more. As a general workflow, we recommend you use the TestRPC during normal development and testing, and then run your tests once against Geth or another official Ethereum client when you&#39;re gearing up to deploy to the live network.</p>
+<h1><a name="advanced" class="anchor" href="#advanced"><span class="header-link" style="z-index: 9999994745">&nbsp;</span></a>Advanced</h1><p>Truffle gives you access to Mocha&#39;s configuration so you can change how Mocha behaves. See the <a href="/docs/advanced/configuration/#mocha">project configuration</a> section for more details.</p>
 
               <footer class="container-fluid">
                 <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/getting_started/testing.md">Edit here &rarr;</a></p>
