@@ -33,7 +33,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,7 +41,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -114,7 +114,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -122,7 +122,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -211,7 +211,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/docs">Documentation</a></li>
               <li><a class="active" href="/tutorials">Tutorials</a></li>
-              <li><a href="https://github.com/truffleframework">Github</a></li>
+              <li><a href="https://github.com/trufflesuite">Github</a></li>
               <li><a href="/community">Community</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -246,17 +246,23 @@
                                         
                     <li class=""><a href="/docs/getting_started/migrations">Running migrations</a></li>
                                         
-                    <li class="active"><a href="/docs/getting_started/build">Building your application</a></li>
+                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/javascript-tests">Writing tests in Javascript</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/solidity-tests">Writing tests in Solidity</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contracts">Interacting with your contracts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                    <li class=""><a href="/docs/getting_started/packages-ethpm">Package management via EthPM</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/packages-npm">Package management via NPM</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/console">Using the console</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/scripts">Writing external scripts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/workflow">Improving your workflow</a></li>
+                    <li class="active"><a href="/docs/getting_started/build">Using the build pipeline</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contact">Contact the developers</a></li>
                                     </ul>
@@ -278,61 +284,12 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1><a name="default-builder" class="anchor" href="#default-builder"><span class="header-link" style="z-index: 9999994803">&nbsp;</span></a>Default Builder</h1><p>Truffle comes standard with a default build system which is meant to be easy to use. It&#39;s not suitable for every project, and you may choose to use other build systems to package your application. See the <a href="/docs/advanced/build_processes">advanced build processes</a> section for more details. Note that the default builder is targeted towards web applications, but it can be easily swapped out for another build process that works better for command line tools and libraries.</p>
-<h1><a name="features" class="anchor" href="#features"><span class="header-link" style="z-index: 9999994802">&nbsp;</span></a>Features</h1><p>The default builder comes with a few standard niceties meant to get you started quickly:</p>
-<ul>
-<li>Automatic bootstrapping of your application within the browser, importing your compiled contract artifacts, deployed contract information and Ethereum client configuration automatically.</li>
-<li>Inclusion of recommended dependencies, including <a href="https://github.com/ethereum/web3.js/tree/master">web3</a> and <a href="https://github.com/ConsenSys/ether-pudding">Ether Pudding</a>.</li>
-<li>Support for ES6 and JSX built-in.</li>
-<li>SASS support for manageable CSS.</li>
-<li>And UglifyJS support for creating minified versions of your Javascript assets.</li>
-</ul>
-<h1><a name="configuration" class="anchor" href="#configuration"><span class="header-link" style="z-index: 9999994801">&nbsp;</span></a>Configuration</h1><p>The default builder gives you complete control over how you want to organize your files and folders, but the default directory structure looks like this:</p>
-<pre><code class="lang-none">app/
-- javascripts/
-  - app.js
-- stylesheets/
-  - app.css
-- images/
-- index.html
-</code></pre>
-<p>It&#39;s corresponding configuration within your <a href="/docs/advanced/configuration">project configuration</a> looks very similar:</p>
-<pre><code class="lang-javascript">{
-  &quot;build&quot;: {
-    // Copy ./app/index.html (right hand side) to ./build/index.html (left hand side).
-    &quot;index.html&quot;: &quot;index.html&quot;,
-
-    // Process all files in the array, concatenating them together
-    // to create a resultant app.js
-    &quot;app.js&quot;: [
-      &quot;javascripts/app.js&quot;
-    ],
-
-    // Process all files in the array, concatenating them together
-    // to create a resultant app.css
-    &quot;app.css&quot;: [
-      &quot;stylesheets/app.scss&quot;
-    ],
-
-    // Copy over the whole directory to the build destination.
-    &quot;images/&quot;: &quot;images/&quot;
-  }
-}
-</code></pre>
-<p>This configuration describes &quot;targets&quot; (left hand side) with files, folders and arrays of files that make up the targets&#39; contents (right hand side). Each target will be produced by processing the files on the right hand side based on their file extension, concatenating the results together and then saving the resultant file (the target) into the build destination. Where a string is specified on the right hand side instead of an array, that file will be processed, if needed, and then copied over directly. If the string ends in a &quot;/&quot;, it will be interpreted as a directory and the directory will be copied over without further processing. All paths specified on the right hand side are relative to the <code>app/</code> directory.</p>
-<p>You can change this configuration and directory structure at any time. You aren&#39;t required to have a <code>javascripts</code> and <code>stylesheets</code> directory, for example, but make sure you edit your configuration accordingly.</p>
-<p><strong>Special note:</strong> If you want the default builder to bootstrap your application on the frontend, make sure you have a build target called <code>app.js</code> which the default builder can append code to. It will not bootstrap your application with any other filename.</p>
-<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999994800">&nbsp;</span></a>Command</h1><p>To build your frontend, simply run:</p>
+              <h1><a name="build-pipeline" class="anchor" href="#build-pipeline"><span class="header-link" style="z-index: 9999999999">&nbsp;</span></a>Build Pipeline</h1><p>Truffle 1.0 and 2.0 came standard with a default build system heavily geared toward web applications (here, the term &quot;build&quot; means turning code artifacts into HTML, Javascript and CSS). That build system has been pulled out into its <a href="https://github.com/trufflesuite/truffle-default-builder/tree/master">own module</a> to make Truffle usable and extensible for all kinds of applications.</p>
+<p>Truffle can be configured for tight integration with any build system. To configure a custom build system, see the <a href="http://localhost:9000/docs/advanced/build_processes">Advanced Build Processes</a> section for more details.</p>
+<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999998">&nbsp;</span></a>Command</h1><p>To build your application when a build system is configured, run:</p>
 <pre><code class="lang-none">$ truffle build
 </code></pre>
-<h1><a name="build-artifacts" class="anchor" href="#build-artifacts"><span class="header-link" style="z-index: 9999994799">&nbsp;</span></a>Build Artifacts</h1><p>Your build artifacts are saved within the <code>./build</code> directory, along side compiled deployed contract artifacts in <code>./build/contracts</code>.</p>
-<h1><a name="considerations" class="anchor" href="#considerations"><span class="header-link" style="z-index: 9999994798">&nbsp;</span></a>Considerations</h1><p>The default builder is easy to use for most projects, and allows you to quickly get started. However, it has some drawbacks:</p>
-<ul>
-<li>It doesn&#39;t currently support <code>import</code>, <code>require</code>, etc., provided to you by tools like Browserify, Webpack, and CommonJS, making dependency management harder than it should be.</li>
-<li>It&#39;s a custom build system and doesn&#39;t easily integrate with other popular build systems.</li>
-<li>It is extensible, but again, using custom methods and APIs.</li>
-</ul>
-<p>The default builder will likely be deprecated and replaced in future versions of Truffle, but it remains the default to continue to support dapps previously built on top of it. Truffle provides many ways for you to switch to a different build process, however, and you can find many examples in the <a href="/docs/advanced/build_processes">advanced build processes</a> section.</p>
+<p>Note you&#39;ll receive an error if you try to run the <code>build</code> command without first configuring a custom build process.</p>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -344,7 +301,7 @@
 </script>
 
               <footer class="container-fluid">
-                <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/getting_started/build.md">Edit here &rarr;</a></p>
+                <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_harp/public/docs/getting_started/build.md">Edit here &rarr;</a></p>
               </footer>
             </div>
           </div>

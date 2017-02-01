@@ -33,7 +33,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,7 +41,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -114,7 +114,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -122,7 +122,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -211,7 +211,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/docs">Documentation</a></li>
               <li><a class="active" href="/tutorials">Tutorials</a></li>
-              <li><a href="https://github.com/truffleframework">Github</a></li>
+              <li><a href="https://github.com/trufflesuite">Github</a></li>
               <li><a href="/community">Community</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -246,17 +246,23 @@
                                         
                     <li class=""><a href="/docs/getting_started/migrations">Running migrations</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/build">Building your application</a></li>
+                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/javascript-tests">Writing tests in Javascript</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/solidity-tests">Writing tests in Solidity</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contracts">Interacting with your contracts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                    <li class=""><a href="/docs/getting_started/packages-ethpm">Package management via EthPM</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/packages-npm">Package management via NPM</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/console">Using the console</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/scripts">Writing external scripts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/workflow">Improving your workflow</a></li>
+                    <li class=""><a href="/docs/getting_started/build">Using the build pipeline</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contact">Contact the developers</a></li>
                                     </ul>
@@ -282,17 +288,16 @@
 <p><a href="https://gitter.im/consensys/truffle?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/consensys/truffle"></a></p>
 <p><a class="github-button" href="https://github.com/consensys/truffle" data-icon="octicon-star" data-count-href="/consensys/truffle/stargazers" data-count-api="/repos/consensys/truffle#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star consensys/truffle on GitHub">Star</a>
 <a class="github-button" href="https://github.com/consensys/truffle/fork" data-icon="octicon-repo-forked" data-count-href="/consensys/truffle/network" data-count-api="/repos/consensys/truffle#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork consensys/truffle on GitHub">Fork</a></p>
-<p>Truffle is a development environment, testing framework and asset pipeline for Ethereum, aiming to make life as an Ethereum developer easier. With Truffle, you get:</p>
+<p>Truffle is a world class development environment, testing framework and asset pipeline for Ethereum, aiming to make life as an Ethereum developer easier. With Truffle, you get:</p>
 <ul>
 <li>Built-in smart contract compilation, linking, deployment and binary management.</li>
-<li>Automated contract testing with Mocha and Chai.</li>
-<li>Configurable build pipeline with support for custom build processes.</li>
-<li>Scriptable deployment &amp; migrations framework</li>
-<li>Network management for deploying to many public &amp; private networks.</li>
-<li>Interactive console for direct contract communication</li>
-<li>Instant rebuilding of assets during development.</li>
+<li>Automated contract testing for rapid development.</li>
+<li>Scriptable, extensible deployment &amp; migrations framework.</li>
+<li>Network management for deploying to any number of public &amp; private networks.</li>
+<li>Package management with EthPM &amp; NPM, using the <a href="https://github.com/ethereum/EIPs/issues/190">ERC190</a> standard.</li>
+<li>Interactive console for direct contract communication.</li>
+<li>Configurable build pipeline with support for tight integration.</li>
 <li>External script runner that executes scripts within a Truffle environment.</li>
-<li>Support for JavaScript, SASS, ES6 and JSX built-in.</li>
 </ul>
 <hr>
 <p>Subscribe to our mailing list for news, beta releases and new features!</p>
@@ -304,7 +309,7 @@
 <p>  #mc_embed_signup input.email{display: inline-block; vertical-align: top; margin-right: 5px; min-height: 33px; color: black;}
 </style></p>
 <div id="mc_embed_signup">
-<form action="//readthedocs.us14.list-manage.com/subscribe/post?u=563e4b50100f771d2d17cf7a5&amp;id=b754a8ab50" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="//readthedocs.us14.list-manage.com/subscribe/post?u=563e4b50100f771d2d17cf7a5&amp;id=b754a8ab50" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="padding-left: 0; padding-top: 0;" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
     <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
@@ -327,7 +332,7 @@
 </script>
 
               <footer class="container-fluid">
-                <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/index.md">Edit here &rarr;</a></p>
+                <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_harp/public/docs/index.md">Edit here &rarr;</a></p>
               </footer>
             </div>
           </div>

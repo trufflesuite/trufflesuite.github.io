@@ -33,7 +33,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,7 +41,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -114,7 +114,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -122,7 +122,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -211,7 +211,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/docs">Documentation</a></li>
               <li><a class="active" href="/tutorials">Tutorials</a></li>
-              <li><a href="https://github.com/truffleframework">Github</a></li>
+              <li><a href="https://github.com/trufflesuite">Github</a></li>
               <li><a href="/community">Community</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -246,17 +246,23 @@
                                         
                     <li class=""><a href="/docs/getting_started/migrations">Running migrations</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/build">Building your application</a></li>
+                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/javascript-tests">Writing tests in Javascript</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/solidity-tests">Writing tests in Solidity</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contracts">Interacting with your contracts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                    <li class=""><a href="/docs/getting_started/packages-ethpm">Package management via EthPM</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/packages-npm">Package management via NPM</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/console">Using the console</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/scripts">Writing external scripts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/workflow">Improving your workflow</a></li>
+                    <li class=""><a href="/docs/getting_started/build">Using the build pipeline</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contact">Contact the developers</a></li>
                                     </ul>
@@ -278,17 +284,17 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999994772">&nbsp;</span></a>Command</h1><pre><code>$ npm install -g truffle
-</code></pre><h1><a name="requirements" class="anchor" href="#requirements"><span class="header-link" style="z-index: 9999994771">&nbsp;</span></a>Requirements</h1><ul>
+              <h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999974">&nbsp;</span></a>Command</h1><pre><code>$ npm install -g truffle
+</code></pre><h1><a name="requirements" class="anchor" href="#requirements"><span class="header-link" style="z-index: 9999999973">&nbsp;</span></a>Requirements</h1><ul>
 <li>NodeJS 5.0+ recommended.</li>
 <li>Windows, Linux or Mac OS X</li>
 </ul>
 <p>Truffle also requires that you have a running Ethereum client which supports the standard JSON RPC API (nearly all of them). There are many to choose from, and some better than others for development. We&#39;ll discuss them in detail in the <a href="/docs/getting_started/client">next section</a>.</p>
-<h3><a name="recommendations-for-windows" class="anchor" href="#recommendations-for-windows"><span class="header-link" style="z-index: 9999994770">&nbsp;</span></a>Recommendations for Windows</h3><p>If you&#39;re a Windows user, we recommend installing and using Truffle via Windows PowerShell or <a href="https://git-for-windows.github.io/">Git BASH</a>. These two shells provide features far beyond the standard Command Prompt, and will make your life on the command line much easier.</p>
+<h3><a name="recommendations-for-windows" class="anchor" href="#recommendations-for-windows"><span class="header-link" style="z-index: 9999999972">&nbsp;</span></a>Recommendations for Windows</h3><p>If you&#39;re a Windows user, we recommend installing and using Truffle via Windows PowerShell or <a href="https://git-for-windows.github.io/">Git BASH</a>. These two shells provide features far beyond the standard Command Prompt, and will make your life on the command line much easier.</p>
 <p>If you must use the Command Prompt, please see <a href="/advanced/configuration/#resolving-naming-conflicts-on-windows">this discussion</a> about configuring Truffle.</p>
 
               <footer class="container-fluid">
-                <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/getting_started/installation.md">Edit here &rarr;</a></p>
+                <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_harp/public/docs/getting_started/installation.md">Edit here &rarr;</a></p>
               </footer>
             </div>
           </div>

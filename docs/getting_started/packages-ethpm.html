@@ -252,9 +252,9 @@
                                         
                     <li class=""><a href="/docs/getting_started/solidity-tests">Writing tests in Solidity</a></li>
                                         
-                    <li class="active"><a href="/docs/getting_started/contracts">Interacting with your contracts</a></li>
+                    <li class=""><a href="/docs/getting_started/contracts">Interacting with your contracts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/packages-ethpm">Package management via EthPM</a></li>
+                    <li class="active"><a href="/docs/getting_started/packages-ethpm">Package management via EthPM</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/packages-npm">Package management via NPM</a></li>
                                         
@@ -284,167 +284,96 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1><a name="introduction" class="anchor" href="#introduction"><span class="header-link" style="z-index: 9999999986">&nbsp;</span></a>Introduction</h1><p>If you were writing raw requests to the Ethereum network yourself in order to interact with your contracts, you&#39;d soon realize that writing these requests is clunky and cumbersome. As well, you might find that managing the state each request you&#39;ve made is <em>complicated</em>. Fortunately, Truffle takes care of this complexity for you, to make interacting with your contracts a breeze.</p>
-<h1><a name="reading-amp-writing-data" class="anchor" href="#reading-amp-writing-data"><span class="header-link" style="z-index: 9999999985">&nbsp;</span></a>Reading &amp; Writing Data</h1><p>The Ethereum network makes a distinction between writing data to the network and reading data from it, and this distinction plays a significant part in how you write your application. In general, writing data is called a <strong>transaction</strong> whereas reading data is called a <strong>call</strong>. Transactions and calls are treated very differently, and have the following characteristics.</p>
-<h3><a name="transactions" class="anchor" href="#transactions"><span class="header-link" style="z-index: 9999999984">&nbsp;</span></a>Transactions</h3><p>Transactions fundamentally change the state of the network. A transaction can be as simple as sending Ether to another account, or as complicated as executing a contract function or adding a new contract to the network. The defining characteristic of a transaction is that it writes (or changes) data. Transactions cost Ether to run, known as &quot;gas&quot;, and transactions take time to process. When you execute a contract&#39;s function via a transaction, you cannot receive that function&#39;s return value because the transaction isn&#39;t processed immediately. In general, functions meant to be executed via a transaction will not return a value; they will return a transaction id instead. So in summary, transactions:</p>
-<ul>
-<li>Cost gas (Ether)</li>
-<li>Change the state of the network</li>
-<li>Aren&#39;t processed immediately</li>
-<li>Won&#39;t expose a return value (only a transaction id).</li>
-</ul>
-<h3><a name="calls" class="anchor" href="#calls"><span class="header-link" style="z-index: 9999999983">&nbsp;</span></a>Calls</h3><p>Calls, on the other hand, are very different. Calls can be used to execute code on the network, though no data will be permanently changed. Calls are free to run, and their defining characteristic is that they read data. When you execute a contract function via a call you will receive the return value immediately. In summary, calls:</p>
-<ul>
-<li>Are free (do not cost gas)</li>
-<li>Do not change the state of the network</li>
-<li>Are processed immediately</li>
-<li>Will expose a return value (hooray!)</li>
-</ul>
-<p>Choosing between a transaction and a call is as simple as deciding whether you want to read data, or write it.</p>
-<h1><a name="introducing-abstractions" class="anchor" href="#introducing-abstractions"><span class="header-link" style="z-index: 9999999982">&nbsp;</span></a>Introducing Abstractions</h1><p>Contract abstractions are the bread and butter of interacting with Ethereum contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> module, and its this contract abstraction that&#39;s described below.</p>
-<p>In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We&#39;ll use the MetaCoin contract provided for you by default via <code>truffle init</code>.</p>
+              <h1><a name="ethpm" class="anchor" href="#ethpm"><span class="header-link" style="z-index: 9999999955">&nbsp;</span></a>EthPM</h1><p>EthPM is the new <a href="https://www.ethpm.com/">Package Registry</a> for Ethereum. It follows the <a href="https://github.com/ethereum/EIPs/issues/190">ERC190 spec</a> for publishing and consuming smart contract packages, and has gained wide support from many diverse Ethereum development tools. To show our support, we&#39;ve integrated the Ethereum Package Registry directly into Truffle.</p>
+<h2><a name="installing-a-package" class="anchor" href="#installing-a-package"><span class="header-link" style="z-index: 9999999954">&nbsp;</span></a>Installing a Package</h2><p>Installing a package from EthPM is nearly as easy as installing a package via NPM. You can simply run the following command:</p>
+<pre><code>$ truffle install &lt;package name&gt;
+</code></pre><p>You can also install a package at a specific version:</p>
+<pre><code>$ truffle install &lt;package name&gt;@&lt;version&gt;
+</code></pre><p>Like NPM, EthPM versions follow <a href="http://semver.org/">semver</a>. You can find a list of all available packages at <a href="https://www.ethpm.com/registry">the Ethereum Package Registry</a>.</p>
+<h2><a name="consuming-installed-contracts" class="anchor" href="#consuming-installed-contracts"><span class="header-link" style="z-index: 9999999953">&nbsp;</span></a>Consuming Installed Contracts</h2><p>Installed packages will be placed in the <code>installed_contracts</code> directory within your project folder. If no <code>installed_contracts</code> directory exists it&#39;ll be created for you. You should treat this folder like you treat the <code>node_modules</code> folder with NPM &#8211; that is, you shouldn&#39;t edit the contents inside unless you know what you&#39;re doing. :)</p>
+<p>Installed packages can be consumed within your tests, migrations and solidity contract files by <code>import</code>&#39;ing or <code>require</code>&#39;ing that package and contract by name. For example, the following Solidity contract would import the <code>owned.sol</code> file from the <code>owned</code> package:</p>
 <pre><code class="lang-javascript">pragma solidity ^0.4.2;
 
-import &quot;./ConvertLib.sol&quot;;
+import &quot;owned/owned.sol&quot;;
 
-// This is just a simple example of a coin-like contract.
-// It is not standards compatible and cannot be expected to talk to other
-// coin/token contracts. If you want to create a standards-compliant
-// token, see: https://github.com/ConsenSys/Tokens. Cheers!
-
-contract MetaCoin {
-    mapping (address =&gt; uint) balances;
-
-    event Transfer(address indexed _from, address indexed _to, uint256 _value);
-
-    function MetaCoin() {
-        balances[tx.origin] = 10000;
-    }
-
-    function sendCoin(address receiver, uint amount) returns(bool sufficient) {
-        if (balances[msg.sender] &lt; amount) return false;
-        balances[msg.sender] -= amount;
-        balances[receiver] += amount;
-        Transfer(msg.sender, receiver, amount);
-        return true;
-    }
-
-    function getBalanceInEth(address addr) returns(uint){
-        return ConvertLib.convert(getBalance(addr),2);
-    }
-
-    function getBalance(address addr) returns(uint) {
-        return balances[addr];
-    }
+contract MyContract is owned {
+  // ...
 }
 </code></pre>
-<p>This contract has three methods aside from the constructor (<code>sendCoin</code>, <code>getBalanceInEth</code>, and <code>getBalance</code>). All three methods can be executed as either a transaction or a call.</p>
-<p>Now let&#39;s look at the Javascript object called <code>MetaCoin</code> provided for us by Truffle, as made available in the <a href="/docs/getting_started/console">Truffle console</a>:</p>
-<pre><code class="lang-javascript">// Print the deployed version of MetaCoin.
-// Note that getting the deployed version requires a promise, hence the .then.
-MetaCoin.deployed().then(function(instance) {
-  console.log(instance);
-});
+<p>Similarly, the following migration file would use the <code>ENS.sol</code> contract from the <code>ens</code> package:</p>
+<p>File: <code>./migrations/2_deploy_contracts.js</code></p>
+<pre><code class="lang-javascript">var ENS = artifacts.require(&quot;ens/ENS.sol&quot;);
+var MyContract = artifacts.require(&quot;MyContract.sol&quot;);
 
-// outputs:
-//
-// Contract
-// - address: &quot;0xa9f441a487754e6b27ba044a5a8eb2eec77f6b92&quot;
-// - allEvents: ()
-// - getBalance: ()
-// - getBalanceInEth: ()
-// - sendCoin: ()
-// ...
+module.exports = function(deployer) {
+  // Only deploy ENS if there&#39;s not already an address already.
+  // i.e., don&#39;t deploy if we&#39;re using the canonical ENS address,
+  // but do deploy it if we&#39;re on a test network and ENS doesn&#39;t exist.
+  deployer.deploy(ENS, {overwrite: false}).then(function() {
+    return deployer.deploy(MyContract, ENS.address);
+  });
+};
 </code></pre>
-<p>Notice that the abstraction contains the exact same functions that exist within our contract. It also contains an address which points to the deployed version of the MetaCoin contract.</p>
-<h2><a name="executing-contract-functions" class="anchor" href="#executing-contract-functions"><span class="header-link" style="z-index: 9999999981">&nbsp;</span></a>Executing Contract Functions</h2><p>Using the abstraction you can easily execute contract functions on the Ethereum network.</p>
-<h3><a name="making-a-transaction" class="anchor" href="#making-a-transaction"><span class="header-link" style="z-index: 9999999980">&nbsp;</span></a>Making a Transaction</h3><p>There are three functions on the MetaCoin contract that we can execute. If you analyze each of them, you&#39;ll see that <code>sendCoin</code> is the only function that aims to make changes to the network. The goal of <code>sendCoin</code> is to &quot;send&quot; some Meta coins from one account to the next, and these changes should persist.</p>
-<p>When calling <code>sendCoin</code>, we&#39;ll execute it as a transaction. In the following example, we&#39;ll send 10 Meta coin from one account to another, in a way that persists changes on the network:</p>
-<pre><code class="lang-javascript">var account_one = &quot;0x1234...&quot;; // an address
-var account_two = &quot;0xabcd...&quot;; // another address
+<p>Note that in the migration above, we consume the <code>ens</code> package and deploy the ENS contract conditionally based on whether or not ENS already has an address set. This is a fancy trick provided to you by the <a href="/docs/getting_started/migrations#deployer-deploy-contract-args-options-">deployer</a> that makes it much easier to write migrations dependent on the the existence of network artifacts. In this case, if we were running our migrations on the ropsten network, this migration <strong>wouldn&#39;t</strong> deploy the <code>ENS</code> contract because (at the time of this writing) roptsen is where the canonical <code>ENS</code> contract exists &#8211; we wouldn&#39;t want to deploy our own. But if we were running our migrations against a different network, or a test network perhaps, then we&#39;d want to deploy the <code>ENS</code> contract so that we have a dependency contract to work with.</p>
+<h2><a name="publishing-your-own-package" class="anchor" href="#publishing-your-own-package"><span class="header-link" style="z-index: 9999999952">&nbsp;</span></a>Publishing Your Own Package</h2><p>Publishing your own package is as straightforward as installing, but like NPM, requires a bit more configuration.</p>
+<h3><a name="ropsten-ropsten-ropsten" class="anchor" href="#ropsten-ropsten-ropsten"><span class="header-link" style="z-index: 9999999951">&nbsp;</span></a>Ropsten, Ropsten, Ropsten</h3><p>The Ethereum Package Registry currently exists on the Ropsten test network. To publish to the registry, we need to set up our own Ropsten configuration because we&#39;ll be making transactions that need to be signed.</p>
+<p>In this example, we&#39;ll use Infura for publishing packages along with the <code>truffle-hdwallet-provider</code> NPM module and a 12-word hd-wallet mnemonic that represents our Ethereum address on the Ropsten network. First, install the <code>truffle-hdwallet-provider</code> via NPM within your project directory:</p>
+<pre><code>$ npm install truffle-hdwallet-provider --save
+</code></pre><p>Then edit your configuration to add the <code>ropsten</code> network using your 12-word mnemonic:</p>
+<p>File: <code>truffle.js</code></p>
+<pre><code class="lang-javascript">var HDWalletProvider = require(&quot;truffle-hdwallet-provider&quot;);
 
-var meta;
-MetaCoin.deployed().then(function(instance) {
-  meta = instance;
-  return meta.sendCoin(account_two, 10, {from: account_one});
-}).then(function(result) {
-  // If this callback is called, the transaction was successfully processed.
-  alert(&quot;Transaction successful!&quot;)
-}).catch(function(e) {
-  // There was an error! Handle it.
-})
-</code></pre>
-<p>There are a few things interesting about the above code:</p>
-<ul>
-<li>We called the abstraction&#39;s <code>sendCoin</code> function directly. This will result in a transaction by default (i.e, writing data) instead of call.</li>
-<li>When the transaction is successful, the callback function isn&#39;t fired until the transaction is processed. This makes life easy and means you don&#39;t have to check the status of the transaction yourself.</li>
-<li>We passed an object as the third parameter to <code>sendCoin</code>. Note that the <code>sendCoin</code> function in our Solidity contract doesn&#39;t have a third parameter. What you see above is a special object that can always be passed as the last parameter to a function that lets you edit specific details about the transaction. Here, we set the <code>from</code> address ensuring this transaction came from <code>account_one</code>.</li>
-</ul>
-<h3><a name="making-a-call" class="anchor" href="#making-a-call"><span class="header-link" style="z-index: 9999999979">&nbsp;</span></a>Making a Call</h3><p>Continuing with MetaCoin, notice the <code>getBalance</code> function is a great candidate for reading data from the network. It doesn&#39;t need to make any changes, as it just returns the MetaCoin balance of the address passed to it. Let&#39;s give it a shot:</p>
-<pre><code class="lang-javascript">var account_one = &quot;0x1234...&quot;; // an address
+// 12-word mnemonic
+var mnemonic = &quot;opinion destroy betray ...&quot;;
 
-var meta;
-MetaCoin.deployed().then(function(instance) {
-  meta = instance;
-  return meta.getBalance.call(account_one, {from: account_one});
-}).then(function(balance) {
-  // If this callback is called, the call was successfully executed.
-  // Note that this returns immediately without any waiting.
-  // Let&#39;s print the return value.
-  console.log(balance.toNumber());
-}).catch(function(e) {
-  // There was an error! Handle it.
-})
-</code></pre>
-<p>What&#39;s interesting here:</p>
-<ul>
-<li>We had to execute the <code>.call()</code> function explicitly to let the Ethereum network know we&#39;re not intending to persist any changes.</li>
-<li>We received a return value instead of a transaction id on success. Note that since the Etheruem network can handle very large numbers, we&#39;re given a <a href="https://github.com/MikeMcl/bignumber.js/">BigNumber</a> object which we then convert to a number.</li>
-</ul>
-<p><strong>Warning:</strong> We convert the return value to a number because in this example the numbers are small. However, if you try to convert a BigNumber that&#39;s larger than the largest integer supported by Javascript, you&#39;ll likely run into errors or unexpected behavior.</p>
-<h3><a name="catching-events" class="anchor" href="#catching-events"><span class="header-link" style="z-index: 9999999978">&nbsp;</span></a>Catching Events</h3><p>Your contracts can fire events that you can catch to gain more insight into what your contracts are doing. The easiest way to handle events is by processing the result object of the transaction that triggered the event, like so:</p>
-<pre><code class="lang-javascript">var account_one = &quot;0x1234...&quot;; // an address
-var account_two = &quot;0xabcd...&quot;; // another address
-
-var meta;
-MetaCoin.deployed().then(function(instance) {
-  meta = instance;  
-  return meta.sendCoin(account_two, 10, {from: account_one});
-}).then(function(result) {
-  // result is an object with the following values:
-  //
-  // result.tx      =&gt; transaction hash, string
-  // result.logs    =&gt; array of decoded events that were triggered within this transaction
-  // result.receipt =&gt; transaction receipt object, which includes gas used
-
-  // We can loop through result.logs to see if we triggered the Transfer event.
-  for (var i = 0; i &lt; result.logs.length; i++) {
-    var log = result.logs[i];
-
-    if (log.event == &quot;Transfer&quot;) {
-      // We found the event!
-      break;
+module.exports = {
+  networks: {
+    development: {
+      host: &quot;localhost&quot;,
+      port: 8545,
+      network_id: &quot;*&quot; // Match any network id
+    },
+    ropsten: {
+      provider: new HDWalletProvider(mnemonic, &quot;https://ropsten.infura.io/&quot;),
+      network_id: 3 // official id of the ropsten network
     }
   }
-}).catch(function(err) {
-  // There was an error! Handle it.
-});
+};
 </code></pre>
-<h3><a name="add-a-new-contract-to-the-network" class="anchor" href="#add-a-new-contract-to-the-network"><span class="header-link" style="z-index: 9999999977">&nbsp;</span></a>Add a new contract to the network</h3><p>In all of the above cases, we&#39;ve been using a contract abstraction that has already been deployed. We can deploy our own version to the network using the <code>.new()</code> function:</p>
-<pre><code class="lang-javascript">MetaCoin.new().then(function(instance) {
-  // Print the new address
-  console.log(instance.address);
-}).catch(function(err) {
-  // There was an error! Handle it.
-});
+<h3><a name="package-configuration" class="anchor" href="#package-configuration"><span class="header-link" style="z-index: 9999999950">&nbsp;</span></a>Package configuration</h3><p>Like NPM, configuration options for EthPM go in a separate JSON file called <code>ethpm.json</code>. This file sits alongside your Truffle configuration and gives Truffle all the information it needs to publish your package. You can see a full list of available options in the <a href="/docs/advanced/configuration">Configuration</a> section.</p>
+<p>File: <code>ethpm.json</code></p>
+<pre><code class="lang-javascript">{
+  // Package configuration options
+  &quot;package_name&quot;: &quot;adder&quot;,
+  &quot;version&quot;: &quot;0.0.3&quot;,
+  &quot;description&quot;: &quot;Simple contract to add two numbers&quot;,
+  &quot;authors&quot;: [
+    &quot;Tim Coulter &lt;tim.coulter@consensys.net&gt;&quot;
+  ],
+  &quot;keywords&quot;: [
+    &quot;ethereum&quot;,
+    &quot;addition&quot;
+  ],
+  &quot;dependencies&quot;: {
+    &quot;owned&quot;: &quot;^0.0.1&quot;
+  },
+  &quot;license&quot;: &quot;MIT&quot;
+};
 </code></pre>
-<h3><a name="use-a-contract-at-a-specific-address" class="anchor" href="#use-a-contract-at-a-specific-address"><span class="header-link" style="z-index: 9999999976">&nbsp;</span></a>Use a contract at a specific address</h3><p>If you already have an address for a contract, you can create a new abstraction to represent the contract at that address.</p>
-<pre><code class="lang-javascript">var instance = MetaCoin.at(&quot;0x1234...&quot;);
-</code></pre>
-<h1><a name="further-reading" class="anchor" href="#further-reading"><span class="header-link" style="z-index: 9999999975">&nbsp;</span></a>Further Reading</h1><p>The contract abstractions provided by Truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> documentation for tips, tricks and insights.</p>
+<h3><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999949">&nbsp;</span></a>Command</h3><p>After you have your configuration settled, publishing is a snap:</p>
+<pre><code>$ truffle publish
+</code></pre><p>You&#39;ll see output similar to that below, with confirmation that your package was published successfully.</p>
+<pre><code>$ truffle publish
+Gathering contracts...
+Finding publishable artifacts...
+Uploading sources and publishing to registry...
++ adder@0.0.3
+</code></pre><h3><a name="before-publishing" class="anchor" href="#before-publishing"><span class="header-link" style="z-index: 9999999948">&nbsp;</span></a>Before publishing</h3><p>When using a network like the default <code>development</code> network that&#39;s configured to match any Ethereum client (i.e., the TestRPC), you&#39;re bound to have network artifacts laying around that you don&#39;t want published. Before publishing your package, consider running the following command to remove any extraneous network artifacts:</p>
+<pre><code>$ truffle networks --clean
+</code></pre><p>See the <a href="/docs/advanced/commands#networks">command reference</a> for more information.</p>
 
               <footer class="container-fluid">
-                <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_harp/public/docs/getting_started/contracts.md">Edit here &rarr;</a></p>
+                <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_harp/public/docs/getting_started/packages-ethpm.md">Edit here &rarr;</a></p>
               </footer>
             </div>
           </div>

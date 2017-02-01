@@ -33,7 +33,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,7 +41,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -114,7 +114,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -122,7 +122,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -211,7 +211,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/docs">Documentation</a></li>
               <li><a class="active" href="/tutorials">Tutorials</a></li>
-              <li><a href="https://github.com/truffleframework">Github</a></li>
+              <li><a href="https://github.com/trufflesuite">Github</a></li>
               <li><a href="/community">Community</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -246,17 +246,23 @@
                                         
                     <li class=""><a href="/docs/getting_started/migrations">Running migrations</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/build">Building your application</a></li>
+                    <li class="active"><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/javascript-tests">Writing tests in Javascript</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/solidity-tests">Writing tests in Solidity</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contracts">Interacting with your contracts</a></li>
                                         
-                    <li class="active"><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                    <li class=""><a href="/docs/getting_started/packages-ethpm">Package management via EthPM</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/packages-npm">Package management via NPM</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/console">Using the console</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/scripts">Writing external scripts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/workflow">Improving your workflow</a></li>
+                    <li class=""><a href="/docs/getting_started/build">Using the build pipeline</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contact">Contact the developers</a></li>
                                     </ul>
@@ -278,39 +284,23 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1><a name="framework" class="anchor" href="#framework"><span class="header-link" style="z-index: 9999994752">&nbsp;</span></a>Framework</h1><p>Truffle uses the <a href="https://mochajs.org/">Mocha</a> testing framework for automated testing and <a href="http://chaijs.com/">Chai</a> for assertions. We think these two libraries together make automated testing a breeze, and so we&#39;ve built on top of them to provide you a way to write simple and manageable automated tests for your contracts.</p>
-<h1><a name="location" class="anchor" href="#location"><span class="header-link" style="z-index: 9999994751">&nbsp;</span></a>Location</h1><p>All test files should be located in the <code>./tests</code> directory. Truffle will only run test files with the following file extensions: <code>.js</code>, <code>.es</code>, <code>.es6</code>, and <code>.jsx</code>. All other files are ignored.</p>
-<h1><a name="writing-tests" class="anchor" href="#writing-tests"><span class="header-link" style="z-index: 9999994750">&nbsp;</span></a>Writing Tests</h1><p>Each test file should contain at least one call to Mocha&#39;s <code>describe()</code> function as shown in the <a href="https://mochajs.org/">MochaJS Documentation</a>. Alternatively, you can use Truffle&#39;s custom <code>contract()</code> function which works like Mocha&#39;s <code>describe()</code> but with a few added features:</p>
+              <h1><a name="framework" class="anchor" href="#framework"><span class="header-link" style="z-index: 9999999932">&nbsp;</span></a>Framework</h1><p>Truffle comes standard with an automated testing framework to make testing your contracts a breeze. This framework lets you write simple and manageable tests in two different ways:</p>
 <ul>
-<li>Before each <code>contract()</code> function is run, your contracts are redeployed to the running Ethereum client so the tests within it run with a clean contract state.</li>
-<li>The <code>contract()</code> function provides a list of available accounts as a second parameter with which you can write tests against.</li>
+<li>In <a href="/docs/getting_started/javascript-tests">Javascript</a>, for exercising your contracts from the outside world, just like your application.</li>
+<li>In <a href="/docs/getting_started/solidity-tests">Solidity</a>, for exercising your contracts in advanced, bare-to-the-metal scenarios.</li>
 </ul>
-<p>Use the <code>contract()</code> function when you&#39;re writing tests that interact with your contracts. Use <code>describe()</code> when you&#39;re writing tests that don&#39;t interact with any contracts.</p>
-<h1><a name="example-test" class="anchor" href="#example-test"><span class="header-link" style="z-index: 9999994749">&nbsp;</span></a>Example Test</h1><p>Here&#39;s an example test provided for you by <code>truffle init</code>. This will tell Truffle (and Mocha) to deploy your contracts first and then run the test specified in the <code>it()</code> block.</p>
-<pre><code class="lang-javascript">contract(&#39;MetaCoin&#39;, function(accounts) {
-  it(&quot;should put 10000 MetaCoin in the first account&quot;, function() {
-    // Get a reference to the deployed MetaCoin contract, as a JS object.
-    var meta = MetaCoin.deployed();
-
-    // Get the MetaCoin balance of the first account and assert that it&#39;s 10000.
-    return meta.getBalance.call(accounts[0]).then(function(balance) {
-      assert.equal(balance.valueOf(), 10000, &quot;10000 wasn&#39;t in the first account&quot;);
-    });
-  });
-});
-</code></pre>
-<p>Note that the string <code>&#39;MetaCoin&#39;</code> passed to the <code>contract()</code> function is for display purposes only.</p>
-<h1><a name="contracts" class="anchor" href="#contracts"><span class="header-link" style="z-index: 9999994748">&nbsp;</span></a>Contracts</h1><p>Truffle provides a contract abstraction for you that makes interacting with your contracts easy. You can see this abstraction at work within the <code>var meta = MetaCoin.deployed()</code> line of code. Truffle ensures that interacting with contracts within your tests is the same as interacting with contracts within your frontend and within your migrations, and you can read more about <a href="/docs/getting_started/contracts">that interaction</a> in the next section.</p>
-<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999994747">&nbsp;</span></a>Command</h1><p>To run all tests, simply run:</p>
+<p>Both styles of tests have their advantages and drawbacks. See the next two sections for a discussion of each one.</p>
+<h1><a name="location" class="anchor" href="#location"><span class="header-link" style="z-index: 9999999931">&nbsp;</span></a>Location</h1><p>All test files should be located in the <code>./tests</code> directory. Truffle will only run test files with the following file extensions: <code>.js</code>, <code>.es</code>, <code>.es6</code>, and <code>.jsx</code>, and <code>.sol</code>. All other files are ignored.</p>
+<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999930">&nbsp;</span></a>Command</h1><p>To run all tests, simply run:</p>
 <pre><code>$ truffle test
 </code></pre><p>Alternatively, you can specify a path to a specific file you want to run, e.g.,</p>
 <pre><code class="lang-none">$ truffle test ./path/to/test/file.js
 </code></pre>
-<h1><a name="considerations" class="anchor" href="#considerations"><span class="header-link" style="z-index: 9999994746">&nbsp;</span></a>Considerations</h1><p>The <a href="https://github.com/ethereumjs/testrpc">EthereumJS TestRPC</a> is significantly faster than other clients when running automated tests. Moreover, the TestRPC contains special features which Truffle takes advantage of to speed up test runtime even more. As a general workflow, we recommend you use the TestRPC during normal development and testing, and then run your tests once against Geth or another official Ethereum client when you&#39;re gearing up to deploy to the live network.</p>
-<h1><a name="advanced" class="anchor" href="#advanced"><span class="header-link" style="z-index: 9999994745">&nbsp;</span></a>Advanced</h1><p>Truffle gives you access to Mocha&#39;s configuration so you can change how Mocha behaves. See the <a href="/docs/advanced/configuration/#mocha">project configuration</a> section for more details.</p>
+<h1><a name="clean-room-environment" class="anchor" href="#clean-room-environment"><span class="header-link" style="z-index: 9999999929">&nbsp;</span></a>Clean-room Environment</h1><p>Truffle provides a clean room environment when running your test files. When running your tests against the <a href="https://github.com/ethereumjs/testrpc">TestRPC</a>, Truffle will use the TestRPC&#39;s advanced snapshotting features to ensure your test files don&#39;t share state with each other. When running against other Ethereum clients like go-ethereum, Truffle will re-deploy all of your migrations at the beginning of every test file to ensure you have a fresh set of contracts to test against.</p>
+<h1><a name="speed-amp-reliability-considerations" class="anchor" href="#speed-amp-reliability-considerations"><span class="header-link" style="z-index: 9999999928">&nbsp;</span></a>Speed &amp; Reliability Considerations</h1><p>The <a href="https://github.com/ethereumjs/testrpc">EthereumJS TestRPC</a> is significantly faster than other clients when running automated tests. Moreover, the TestRPC contains special features which Truffle takes advantage of to speed up test runtime by almost 90%. As a general workflow, we recommend you use the TestRPC during normal development and testing, and then run your tests once against go-ethereum or another official Ethereum client when you&#39;re gearing up to deploy to live or production networks.</p>
 
               <footer class="container-fluid">
-                <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/getting_started/testing.md">Edit here &rarr;</a></p>
+                <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_harp/public/docs/getting_started/testing.md">Edit here &rarr;</a></p>
               </footer>
             </div>
           </div>

@@ -33,7 +33,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,7 +41,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -114,7 +114,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -122,7 +122,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -211,7 +211,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/docs">Documentation</a></li>
               <li><a class="active" href="/tutorials">Tutorials</a></li>
-              <li><a href="https://github.com/truffleframework">Github</a></li>
+              <li><a href="https://github.com/trufflesuite">Github</a></li>
               <li><a href="/community">Community</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -246,17 +246,23 @@
                                         
                     <li class=""><a href="/docs/getting_started/migrations">Running migrations</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/build">Building your application</a></li>
+                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/javascript-tests">Writing tests in Javascript</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/solidity-tests">Writing tests in Solidity</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contracts">Interacting with your contracts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                    <li class=""><a href="/docs/getting_started/packages-ethpm">Package management via EthPM</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/packages-npm">Package management via NPM</a></li>
                                         
                     <li class="active"><a href="/docs/getting_started/console">Using the console</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/scripts">Writing external scripts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/workflow">Improving your workflow</a></li>
+                    <li class=""><a href="/docs/getting_started/build">Using the build pipeline</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contact">Contact the developers</a></li>
                                     </ul>
@@ -278,18 +284,18 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1><a name="background" class="anchor" href="#background"><span class="header-link" style="z-index: 9999994792">&nbsp;</span></a>Background</h1><p>Sometimes it&#39;s nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. Truffle provides you an easy way to do this via an interactive console, with your contracts available and ready to use.</p>
-<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999994791">&nbsp;</span></a>Command</h1><p>To fire up the console, simply run:</p>
+              <h1><a name="background" class="anchor" href="#background"><span class="header-link" style="z-index: 9999999994">&nbsp;</span></a>Background</h1><p>Sometimes it&#39;s nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. Truffle provides you an easy way to do this via an interactive console, with your contracts available and ready to use.</p>
+<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999993">&nbsp;</span></a>Command</h1><p>To fire up the console, simply run:</p>
 <pre><code class="lang-none">$ truffle console
 </code></pre>
-<p>This will load up a console using the default network, connecting automatically to the running Ethereum client. You can override this using the <code>--network</code> option. See more details in the <a href="/docs/advanced/networks">Networks</a> section as well as the <a href="/docs/advanced/commands">command reference</a>.</p>
+<p>This will load up a console using the <code>development</code> network, if specified. You can override this using the <code>--network</code> option. See more details in the <a href="/docs/advanced/networks">Networks</a> section as well as the <a href="/docs/advanced/commands">command reference</a>.</p>
 <p>When you load the console, you&#39;ll immediately see output like this:</p>
 <pre><code>$ truffle console
-truffle(default)&gt;
-</code></pre><p>This tells you you&#39;re running within a Truffle console using the default network.</p>
-<h1><a name="features" class="anchor" href="#features"><span class="header-link" style="z-index: 9999994790">&nbsp;</span></a>Features</h1><p>The console provides all the features available in the Truffle command line tool. For instance, you can type <code>migrate --reset</code> within the console, and it will be interpreted the same as if you ran <code>truffle migrate --reset</code> from outside the console. Truffle&#39;s console additionally has the following features:</p>
+truffle(development)&gt;
+</code></pre><p>This tells you you&#39;re running within a Truffle console using the <code>development</code> network.</p>
+<h1><a name="features" class="anchor" href="#features"><span class="header-link" style="z-index: 9999999992">&nbsp;</span></a>Features</h1><p>The console provides all the features available in the Truffle command line tool. For instance, you can type <code>migrate --reset</code> within the console, and it will be interpreted the same as if you ran <code>truffle migrate --reset</code> from outside the console. Truffle&#39;s console additionally has the following features:</p>
 <ul>
-<li>All of your compiled contracts are available and ready for use, as if you were developing tests or your frontend, or writing a migration.</li>
+<li>All of your compiled contracts are available and ready for use.</li>
 <li>After each command (such as <code>migrate --reset</code>) your contracts are reprovisioned so you can start using the newly assigned addresses and binaries immediately.</li>
 <li>The <code>web3</code> library is made available and is set to connect to your Ethereum client.</li>
 <li>All commands that return a promise will automatically be resolved, and the result printed, removing the need to use <code>.then()</code> for simple commands. e.g.,</li>
@@ -298,7 +304,7 @@ truffle(default)&gt;
 5
 </code></pre>
               <footer class="container-fluid">
-                <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/getting_started/console.md">Edit here &rarr;</a></p>
+                <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_harp/public/docs/getting_started/console.md">Edit here &rarr;</a></p>
               </footer>
             </div>
           </div>

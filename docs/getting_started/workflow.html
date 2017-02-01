@@ -33,7 +33,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,7 +41,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -114,7 +114,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -122,7 +122,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -211,7 +211,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/docs">Documentation</a></li>
               <li><a class="active" href="/tutorials">Tutorials</a></li>
-              <li><a href="https://github.com/truffleframework">Github</a></li>
+              <li><a href="https://github.com/trufflesuite">Github</a></li>
               <li><a href="/community">Community</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -246,17 +246,25 @@
                                         
                     <li class=""><a href="/docs/getting_started/migrations">Running migrations</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/build">Building your application</a></li>
+                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/javascript-tests">Writing tests in Javascript</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/solidity-tests">Writing tests in Solidity</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contracts">Interacting with your contracts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                    <li class=""><a href="/docs/getting_started/packages-ethpm">Package management via EthPM</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/packages-npm">Package management via NPM</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/console">Using the console</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/scripts">Writing external scripts</a></li>
                                         
                     <li class="active"><a href="/docs/getting_started/workflow">Improving your workflow</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/build">Using the build pipeline</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contact">Contact the developers</a></li>
                                     </ul>
@@ -278,18 +286,18 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1><a name="commands" class="anchor" href="#commands"><span class="header-link" style="z-index: 9999994744">&nbsp;</span></a>Commands</h1><p>We&#39;ve recommended the <a href="https://github.com/ethereumjs/testrpc">EthereumJS TestRPC</a> a number of times to get you quick feedback during development. However, Truffle comes with two commands that can make development even faster.</p>
-<h3><a name="truffle-watch" class="anchor" href="#truffle-watch"><span class="header-link" style="z-index: 9999994743">&nbsp;</span></a>truffle watch</h3><p>Watch your filesystem for changes and recompile and redeploy your contracts, if needed, and rebuild your frontend when there are changes.</p>
+              <h1><a name="commands" class="anchor" href="#commands"><span class="header-link" style="z-index: 9999994331">&nbsp;</span></a>Commands</h1><p>We&#39;ve recommended the <a href="https://github.com/ethereumjs/testrpc">EthereumJS TestRPC</a> a number of times to get you quick feedback during development. However, Truffle comes with two commands that can make development even faster.</p>
+<h3><a name="truffle-watch" class="anchor" href="#truffle-watch"><span class="header-link" style="z-index: 9999994330">&nbsp;</span></a>truffle watch</h3><p>Watch your filesystem for changes and recompile and redeploy your contracts, if needed, and rebuild your frontend when there are changes.</p>
 <p>Usage:</p>
 <pre><code>$ truffle watch
 </code></pre><p>See the <a href="/docs/advanced/commands">command reference</a> for more information.</p>
-<h3><a name="truffle-serve" class="anchor" href="#truffle-serve"><span class="header-link" style="z-index: 9999994742">&nbsp;</span></a>truffle serve</h3><p>Watch your filesystem for changes and recompile, redeploy and rebuild, like <code>truffle watch</code>, and serve the built project on <em><a href="http://localhost:8080">http://localhost:8080</a></em>.</p>
+<h3><a name="truffle-serve" class="anchor" href="#truffle-serve"><span class="header-link" style="z-index: 9999994329">&nbsp;</span></a>truffle serve</h3><p>Watch your filesystem for changes and recompile, redeploy and rebuild, like <code>truffle watch</code>, and serve the built project on <em><a href="http://localhost:8080">http://localhost:8080</a></em>.</p>
 <p>Usage:</p>
 <pre><code>$ truffle serve
 </code></pre><p>You can override the port Truffle serves on. See the <a href="/docs/advanced/commands">command reference</a> for more information.</p>
 
               <footer class="container-fluid">
-                <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/getting_started/workflow.md">Edit here &rarr;</a></p>
+                <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_harp/public/docs/getting_started/workflow.md">Edit here &rarr;</a></p>
               </footer>
             </div>
           </div>

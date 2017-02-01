@@ -33,7 +33,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,7 +41,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -114,7 +114,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -122,7 +122,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -211,7 +211,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/docs">Documentation</a></li>
               <li><a class="active" href="/tutorials">Tutorials</a></li>
-              <li><a href="https://github.com/truffleframework">Github</a></li>
+              <li><a href="https://github.com/trufflesuite">Github</a></li>
               <li><a href="/community">Community</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -246,17 +246,23 @@
                                         
                     <li class=""><a href="/docs/getting_started/migrations">Running migrations</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/build">Building your application</a></li>
+                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/javascript-tests">Writing tests in Javascript</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/solidity-tests">Writing tests in Solidity</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contracts">Interacting with your contracts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                    <li class=""><a href="/docs/getting_started/packages-ethpm">Package management via EthPM</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/packages-npm">Package management via NPM</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/console">Using the console</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/scripts">Writing external scripts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/workflow">Improving your workflow</a></li>
+                    <li class=""><a href="/docs/getting_started/build">Using the build pipeline</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contact">Contact the developers</a></li>
                                     </ul>
@@ -279,19 +285,20 @@
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
               <p>There are many Ethereum clients to choose from. We recommend using different clients when developing and deploying.</p>
-<h1><a name="when-developing" class="anchor" href="#when-developing"><span class="header-link" style="z-index: 9999994797">&nbsp;</span></a>When Developing</h1><ul>
+<h1><a name="when-developing" class="anchor" href="#when-developing"><span class="header-link" style="z-index: 9999999997">&nbsp;</span></a>When Developing</h1><ul>
 <li>EthereumJS TestRPC: <a href="https://github.com/ethereumjs/testrpc">https://github.com/ethereumjs/testrpc</a></li>
 </ul>
 <p>When developing your Truffle-based application, we recommend using the <a href="https://github.com/ethereumjs/testrpc">EthereumJS TestRPC</a>. It&#39;s a complete blockchain-in-memory that runs only on your development machine. It processes transactions instantly instead of waiting for the default block time &#8211; so you can test that your code works quickly &#8211; and it tells you immediately when your smart contracts run into errors. It also makes a great client for automated testing, and Truffle knows how to use its special features to speed up test runtime by almost 90%.</p>
-<h1><a name="when-deploying" class="anchor" href="#when-deploying"><span class="header-link" style="z-index: 9999994796">&nbsp;</span></a>When Deploying</h1><ul>
+<h1><a name="when-deploying-to-live-networks" class="anchor" href="#when-deploying-to-live-networks"><span class="header-link" style="z-index: 9999999996">&nbsp;</span></a>When Deploying to Live Networks</h1><ul>
 <li>Geth (go-ethereum): <a href="https://github.com/ethereum/go-ethereum">https://github.com/ethereum/go-ethereum</a></li>
 <li>WebThree (cpp-ethereum): <a href="https://github.com/ethereum/webthree-umbrella">https://github.com/ethereum/webthree-umbrella</a></li>
 <li>More: <a href="https://www.ethereum.org/cli">https://www.ethereum.org/cli</a></li>
 </ul>
-<p>There are many official and unofficial Ethereum clients available for you to use. You should use these clients after you&#39;ve sufficiently tested your dapp with the EthereumJS TestRPC and you&#39;re ready to deploy to the Ethereum network. These are full client implementations that include mining, networking, blocks and transaction processing, and Truffle can deploy to these clients without any extra configuration.</p>
+<p>There are many official and unofficial Ethereum clients available for you to use. You should use these clients after you&#39;ve sufficiently tested your dapp with the EthereumJS TestRPC and you&#39;re ready to deploy to your desired Ethereum network. These are full client implementations that include mining, networking, blocks and transaction processing, and Truffle can deploy to these clients without any extra configuration.</p>
+<h1><a name="when-deploying-to-private-networks" class="anchor" href="#when-deploying-to-private-networks"><span class="header-link" style="z-index: 9999999995">&nbsp;</span></a>When Deploying to Private Networks</h1><p>Private networks utilize the same technology but with a different configuration. So you can configure any of the Ethereum clients mentioned above to run a private network, and deploy to it in exactly the same way.</p>
 
               <footer class="container-fluid">
-                <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/getting_started/client.md">Edit here &rarr;</a></p>
+                <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_harp/public/docs/getting_started/client.md">Edit here &rarr;</a></p>
               </footer>
             </div>
           </div>

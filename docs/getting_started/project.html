@@ -33,7 +33,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,7 +41,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -114,7 +114,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -122,7 +122,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -211,7 +211,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/docs">Documentation</a></li>
               <li><a class="active" href="/tutorials">Tutorials</a></li>
-              <li><a href="https://github.com/truffleframework">Github</a></li>
+              <li><a href="https://github.com/trufflesuite">Github</a></li>
               <li><a href="/community">Community</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -246,17 +246,23 @@
                                         
                     <li class=""><a href="/docs/getting_started/migrations">Running migrations</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/build">Building your application</a></li>
+                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/javascript-tests">Writing tests in Javascript</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/solidity-tests">Writing tests in Solidity</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contracts">Interacting with your contracts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                    <li class=""><a href="/docs/getting_started/packages-ethpm">Package management via EthPM</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/packages-npm">Package management via NPM</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/console">Using the console</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/scripts">Writing external scripts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/workflow">Improving your workflow</a></li>
+                    <li class=""><a href="/docs/getting_started/build">Using the build pipeline</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contact">Contact the developers</a></li>
                                     </ul>
@@ -278,25 +284,24 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1><a name="create-a-project-folder" class="anchor" href="#create-a-project-folder"><span class="header-link" style="z-index: 9999994758">&nbsp;</span></a>Create a Project Folder</h1><p>First create a project folder. You can do this through your favorite file explorer or by running the following on the command line:</p>
+              <h1><a name="create-a-project-folder" class="anchor" href="#create-a-project-folder"><span class="header-link" style="z-index: 9999999938">&nbsp;</span></a>Create a Project Folder</h1><p>First create a project folder. You can do this through your favorite file explorer or by running the following on the command line:</p>
 <pre><code class="lang-none">$ mkdir myproject
 </code></pre>
-<h1><a name="initialize-your-project" class="anchor" href="#initialize-your-project"><span class="header-link" style="z-index: 9999994757">&nbsp;</span></a>Initialize Your Project</h1><p>Next, initialize your Truffle project by performing the following in the command line:</p>
+<h1><a name="initialize-your-project" class="anchor" href="#initialize-your-project"><span class="header-link" style="z-index: 9999999937">&nbsp;</span></a>Initialize Your Project</h1><p>Next, initialize your Truffle project by performing the following in the command line:</p>
 <pre><code class="lang-none">$ cd myproject
 $ truffle init
 </code></pre>
 <p>Once completed, you&#39;ll now have a project structure with the following items:</p>
 <ul>
-<li><code>app/</code> - directory where your application files go by default. This includes recommended folders for Javascript files and stylesheets, but you have free reign over how this folder is used, if at all.</li>
 <li><code>contracts/</code> - directory where Truffle expects to find solidity contracts.</li>
 <li><code>migrations/</code> - directory to place scriptable deployment files.</li>
 <li><code>test/</code> - location of test files for testing your application and contracts.</li>
 <li><code>truffle.js</code> - your main Truffle configuration file.</li>
 </ul>
-<h1><a name="default-project-metacoin" class="anchor" href="#default-project-metacoin"><span class="header-link" style="z-index: 9999994756">&nbsp;</span></a>Default Project: MetaCoin</h1><p>By default, <code>truffle init</code> gives you a demo application called MetaCoin which acts like an alt-coin built inside Ethereum. You can use this project to learn quickly while navigating through the Getting Started guide, or delete these files and build a project of your own.</p>
+<h1><a name="default-contracts-metacoin" class="anchor" href="#default-contracts-metacoin"><span class="header-link" style="z-index: 9999999936">&nbsp;</span></a>Default Contracts: MetaCoin</h1><p>By default, <code>truffle init</code> gives you a set of example contracts (<code>MetaCoin</code> and <code>ConvertLib</code>) which act like a simple alt-coin built on top of Ethereum. You can use these contracts to learn quickly while navigating through the Getting Started guide, or delete these files and build a project of your own.</p>
 
               <footer class="container-fluid">
-                <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/getting_started/project.md">Edit here &rarr;</a></p>
+                <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_harp/public/docs/getting_started/project.md">Edit here &rarr;</a></p>
               </footer>
             </div>
           </div>

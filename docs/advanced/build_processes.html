@@ -33,7 +33,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,7 +41,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -114,7 +114,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -122,7 +122,7 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/truffleframework/truffleframework.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
 
     
     
@@ -211,7 +211,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/docs">Documentation</a></li>
               <li><a class="active" href="/tutorials">Tutorials</a></li>
-              <li><a href="https://github.com/truffleframework">Github</a></li>
+              <li><a href="https://github.com/trufflesuite">Github</a></li>
               <li><a href="/community">Community</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -246,17 +246,23 @@
                                         
                     <li class=""><a href="/docs/getting_started/migrations">Running migrations</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/build">Building your application</a></li>
+                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/javascript-tests">Writing tests in Javascript</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/solidity-tests">Writing tests in Solidity</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contracts">Interacting with your contracts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
+                    <li class=""><a href="/docs/getting_started/packages-ethpm">Package management via EthPM</a></li>
+                                        
+                    <li class=""><a href="/docs/getting_started/packages-npm">Package management via NPM</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/console">Using the console</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/scripts">Writing external scripts</a></li>
                                         
-                    <li class=""><a href="/docs/getting_started/workflow">Improving your workflow</a></li>
+                    <li class=""><a href="/docs/getting_started/build">Using the build pipeline</a></li>
                                         
                     <li class=""><a href="/docs/getting_started/contact">Contact the developers</a></li>
                                     </ul>
@@ -278,8 +284,8 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1><a name="custom-build-processes" class="anchor" href="#custom-build-processes"><span class="header-link" style="z-index: 9999994741">&nbsp;</span></a>Custom Build Processes</h1><p>Throughout Truffle&#39;s history, it&#39;s clear that the <a href="/docs/getting_started/build">default builder</a> is not for everybody. It has some obvious caveats and is less mature than other build systems. With that in mind, Truffle provides you three ways to override the build system in order to get the most out of Truffle while also using your build process of choice.</p>
-<h3><a name="running-an-external-command" class="anchor" href="#running-an-external-command"><span class="header-link" style="z-index: 9999994740">&nbsp;</span></a>Running an External Command</h3><p>If you&#39;d like Truffle to run an external command whenever it triggers a build, simply include that option as a string within your project configuration, like so:</p>
+              <h1><a name="custom-build-processes" class="anchor" href="#custom-build-processes"><span class="header-link" style="z-index: 9999999919">&nbsp;</span></a>Custom Build Processes</h1><p>In order to provide tight integration with Truffle for those that desire it, Truffle allows you to specify a custom build pipeline meant to bootstrap and configure your application. Truffle provides three methods of integration, described below.</p>
+<h3><a name="running-an-external-command" class="anchor" href="#running-an-external-command"><span class="header-link" style="z-index: 9999999918">&nbsp;</span></a>Running an External Command</h3><p>If you&#39;d like Truffle to run an external command whenever it triggers a build, simply include that option as a string within your project configuration, like so:</p>
 <pre><code class="lang-javascript">module.exports = {
   // This will run the `webpack` command on each build.
   //
@@ -287,45 +293,55 @@
   // WORKING_DIRECTORY: root location of the project
   // BUILD_DESTINATION_DIRECTORY: expected destination of built assets (important for `truffle serve`)
   // BUILD_CONTRACTS_DIRECTORY: root location of your build contract files (.sol.js)
-  // WEB3_PROVIDER_LOCATION: rpc configuration as a string, as a URL needed for web3&#39;s http provider.
   //
   build: &quot;webpack&quot;
 }
 </code></pre>
 <p>Note that you&#39;re given ample environment variables with which to integrate with Truffle, detailed above.</p>
-<h3><a name="providing-a-custom-function" class="anchor" href="#providing-a-custom-function"><span class="header-link" style="z-index: 9999994739">&nbsp;</span></a>Providing a Custom Function</h3><p>You can also provide a custom build function like the one below. Note you&#39;re given a plethora of information about your project which you can use to integrate tightly with Truffle.</p>
+<h3><a name="providing-a-custom-function" class="anchor" href="#providing-a-custom-function"><span class="header-link" style="z-index: 9999999917">&nbsp;</span></a>Providing a Custom Function</h3><p>You can also provide a custom build function like the one below. Note you&#39;re given a plethora of information about your project which you can use to integrate tightly with Truffle.</p>
 <pre><code class="lang-javascript">module.exports = {
   build: function(options, callback) {
      // Do something when a build is required. `options` contains these values:
      //
      // working_directory: root location of the project
-     // contracts: metadata about your contract files, code, etc.
      // contracts_directory: root directory of .sol files
-     // rpc: rpc configuration defined in the configuration
      // destination_directory: directory where truffle expects the built assets (important for `truffle serve`)
   }
 }
 </code></pre>
-<h3><a name="creating-a-custom-module" class="anchor" href="#creating-a-custom-module"><span class="header-link" style="z-index: 9999994738">&nbsp;</span></a>Creating a Custom Module</h3><p>You could also create a module or object that implements the builder interface (i.e., is an object which contains a <code>build</code> function like the one above). This is great for those who want to maintain tighter integration with Truffle and publish a package to make everyone else&#39;s lives easier.</p>
+<h3><a name="creating-a-custom-module" class="anchor" href="#creating-a-custom-module"><span class="header-link" style="z-index: 9999999916">&nbsp;</span></a>Creating a Custom Module</h3><p>You could also create a module or object that implements the builder interface (i.e., is an object which contains a <code>build</code> function like the one above). This is great for those who want to maintain tighter integration with Truffle and publish a package to make everyone else&#39;s lives easier.</p>
 <p>Here&#39;s an example using Truffle&#39;s default builder:</p>
 <pre><code class="lang-javascript">var DefaultBuilder = require(&quot;truffle-default-builder&quot;);
 module.exports = {
   build: new DefaultBuilder(...) // specify the default builder configuration here.
 }
 </code></pre>
-<h1><a name="bootstrapping-your-frontend" class="anchor" href="#bootstrapping-your-frontend"><span class="header-link" style="z-index: 9999994737">&nbsp;</span></a>Bootstrapping Your Frontend</h1><p>Because you&#39;re using a custom build process, Truffle no longer knows how to bootstrap your frontend. You&#39;ll need to do this yourself. Here&#39;s a list of things your build process and/or application will need to do:</p>
-<ul>
-<li>Include the <a href="https://github.com/ethereum/web3.js">Web3</a> library.</li>
-<li>Initialize a web3 instance and set a provider that points to your desired ethereum client. It&#39;s important to detect if the <code>web3</code> object already exists, as it might already be available if someone is viewing your application via a wallet-browser like Metamask or Mist. If the <code>web3</code> object already exists, you should use that instead of initializing your own. See <a href="https://github.com/ethereum/mist/releases/tag/0.3.6">this example</a> for more details.</li>
-<li><code>require</code> or <code>import</code> the built <code>sol.js</code> files from the <code>./build/contracts</code> directory. For each <code>.sol.js</code> file, set the provider using the <code>MyContract.setProvider()</code> method. This should the same provider your <code>web3</code> instance is using. Using <code>web3.currentProvider</code> is recommended:</li>
-</ul>
-<pre><code class="lang-javascript">var MyContract = require(&quot;./build/contracts/MyContract.sol.js&quot;);
-MyContract.setProvider(web3.currentProvider);
+<h1><a name="bootstrapping-your-application" class="anchor" href="#bootstrapping-your-application"><span class="header-link" style="z-index: 9999999915">&nbsp;</span></a>Bootstrapping Your Application</h1><p>Whether you&#39;re building an application to run in the browser, or a command line tool, a Javascript library or a native mobile application, bootstrapping your contracts is the same, and using your deployed contract artifacts follows the same general process no matter the app you&#39;re building.</p>
+<p>When configuring your build tool or application, you&#39;ll need to perform the following steps:</p>
+<p>1) Get all your contract artifacts into your build pipeline / application. This includes all of the <code>.json</code> files within the <code>./build/contracts</code> directory.</p>
+<p>2) Turn those <code>.json</code> contract artifacts into contract abstractions that are easy to use, via <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a>.</p>
+<p>3) Provision those contract abstractions with a Web3 provider. In the browser, this provider might come from <a href="https://metamask.io/">Metamask</a> or <a href="https://github.com/ethereum/mist">Mist</a>, but it could also be a custom provider you&#39;ve configured to point to <a href="http://infura.io/">Infura</a> or any other Ethereum client.</p>
+<p>4) Use your contracts!</p>
+<p>In Node, this is very easy to do. Let&#39;s take a look at an example that shows off the &quot;purest&quot; way of performing the above steps, since it exists outside of any build process or tool.</p>
+<pre><code class="lang-javascript">// Step 1: Get a contract into my application
+var json = require(&quot;./build/contracts/MyContract.json&quot;);
+
+// Step 2: Turn that contract into an abstraction I can use
+var contract = require(&quot;truffle-contract&quot;);
+var MyContract = contract(json);
+
+// Step 3: Provision the contract with a web3 provider
+MyContract.setProvider(new Web3.providers.HttpProvider(&quot;http://localhost:8545&quot;));
+
+// Step 4: Use the contract!
+MyContract.deployed().then(function(deployed) {
+  return.deployed.someFunction();
+});
 </code></pre>
-<h1><a name="using-webpack" class="anchor" href="#using-webpack"><span class="header-link" style="z-index: 9999994736">&nbsp;</span></a>Using Webpack</h1><p>We&#39;re still working on having tighter integration with Webpack. However, checkout <a href="https://github.com/ConsenSys/truffle/wiki/Using-Truffle-and-Webpack-(beta">this example</a>) and let us know how it works for you.</p>
+<p>All build processes and contract bootstrapping will follow this pattern. The key when setting up your own custom build process is to ensure you&#39;re consuming all of your contract artifacts and provisioning your abstractions correctly.</p>
 
               <footer class="container-fluid">
-                <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/advanced/build_processes.md">Edit here &rarr;</a></p>
+                <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_harp/public/docs/advanced/build_processes.md">Edit here &rarr;</a></p>
               </footer>
             </div>
           </div>
