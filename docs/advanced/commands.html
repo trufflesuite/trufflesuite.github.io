@@ -278,12 +278,9 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1 id="usage">Usage</h1>
-<pre><code class="lang-none">$ truffle [command] [options]
+              <h1><a name="usage" class="anchor" href="#usage"><span class="header-link" style="z-index: 9999994735">&nbsp;</span></a>Usage</h1><pre><code class="lang-none">$ truffle [command] [options]
 </code></pre>
-<h1 id="available-commands">Available Commands</h1>
-<h5 id="build">build</h5>
-<p>Build a development version of the app; creates the <code>./build</code> directory.</p>
+<h1><a name="available-commands" class="anchor" href="#available-commands"><span class="header-link" style="z-index: 9999994734">&nbsp;</span></a>Available Commands</h1><h5><a name="build" class="anchor" href="#build"><span class="header-link" style="z-index: 9999994733">&nbsp;</span></a>build</h5><p>Build a development version of the app; creates the <code>./build</code> directory.</p>
 <pre><code class="lang-none">$ truffle build
 </code></pre>
 <p>Optional parameters:</p>
@@ -291,8 +288,7 @@
 <li><code>--dist</code>: Build a distributable version of the app. Only applicable when using the default builder.</li>
 </ul>
 <p>See the <a href="/docs/getting_started/build">Building your application</a> section for more details.</p>
-<h5 id="console">console</h5>
-<p>Run a console with your contract objects instantiated and ready to use.</p>
+<h5><a name="console" class="anchor" href="#console"><span class="header-link" style="z-index: 9999994732">&nbsp;</span></a>console</h5><p>Run a console with your contract objects instantiated and ready to use.</p>
 <pre><code class="lang-none">$ truffle console
 </code></pre>
 <p>Once the console starts, you can then use your contracts via the command line like you would in your code. Additionally, all truffle commands listed here are available within the console.</p>
@@ -302,8 +298,7 @@
 <li><code>--verbose-rpc</code>: Log communication between Truffle and the RPC.</li>
 </ul>
 <p>See the <a href="/docs/getting_started/console">Using the console</a> section for more details.</p>
-<h5 id="compile">compile</h5>
-<p>Intelligently compile your contracts. This will only compile contracts that have changed since the last compile, unless otherwise specified.</p>
+<h5><a name="compile" class="anchor" href="#compile"><span class="header-link" style="z-index: 9999994731">&nbsp;</span></a>compile</h5><p>Intelligently compile your contracts. This will only compile contracts that have changed since the last compile, unless otherwise specified.</p>
 <pre><code class="lang-none">$ truffle compile
 </code></pre>
 <p>Optional parameter:</p>
@@ -311,16 +306,13 @@
 <li><code>--compile-all</code>: Compile all contracts instead of intelligently choosing.</li>
 <li><code>--network name</code>: Specify the network to use, saving artifacts specific to that network.</li>
 </ul>
-<h5 id="create-contract">create:contract</h5>
-<p>Helper method to scaffold a new contract. Name must be camel-case.</p>
+<h5><a name="create-contract" class="anchor" href="#create-contract"><span class="header-link" style="z-index: 9999994730">&nbsp;</span></a>create:contract</h5><p>Helper method to scaffold a new contract. Name must be camel-case.</p>
 <pre><code class="lang-none">$ truffle create:contract MyContract
 </code></pre>
-<h5 id="create-test">create:test</h5>
-<p>Helper method to scaffold a new test for a contract. Name must be camel-case.</p>
+<h5><a name="create-test" class="anchor" href="#create-test"><span class="header-link" style="z-index: 9999994729">&nbsp;</span></a>create:test</h5><p>Helper method to scaffold a new test for a contract. Name must be camel-case.</p>
 <pre><code class="lang-none">$ truffle create:test MyTest
 </code></pre>
-<h5 id="migrate">migrate</h5>
-<p>Run your project&#39;s migrations. See the <a href="/docs/getting_started/migrations">Migrations</a> section for more details.</p>
+<h5><a name="migrate" class="anchor" href="#migrate"><span class="header-link" style="z-index: 9999994728">&nbsp;</span></a>migrate</h5><p>Run your project&#39;s migrations. See the <a href="/docs/getting_started/migrations">Migrations</a> section for more details.</p>
 <pre><code class="lang-none">$ truffle migrate
 </code></pre>
 <p>Optional parameters:</p>
@@ -331,24 +323,20 @@
 <li><code>--compile-all</code>: Compile all contracts instead of intelligently choosing.</li>
 <li><code>--verbose-rpc</code>: Log communication between Truffle and the RPC.</li>
 </ul>
-<h5 id="exec">exec</h5>
-<p>Execute a Javascript file within the Truffle environment. This will include <code>web3</code>, set the default provider based on the network specified (if any), and include your contracts as global objects while executing the script. Your script must export a function that Truffle can run. See the <a href="/docs/getting_started/scripts">Writing external scripts</a> section for more details.</p>
+<h5><a name="exec" class="anchor" href="#exec"><span class="header-link" style="z-index: 9999994727">&nbsp;</span></a>exec</h5><p>Execute a Javascript file within the Truffle environment. This will include <code>web3</code>, set the default provider based on the network specified (if any), and include your contracts as global objects while executing the script. Your script must export a function that Truffle can run. See the <a href="/docs/getting_started/scripts">Writing external scripts</a> section for more details.</p>
 <pre><code class="lang-none">$ truffle exec /path/to/my/script.js
 </code></pre>
 <p>Optional parameter:</p>
 <ul>
 <li><code>--network name</code>: Specify the network to use, using artifacts specific to that network.</li>
 </ul>
-<h5 id="init">init</h5>
-<p>Create a completely new app within the current working directory. Will add default contracts, tests and frontend configuration.</p>
+<h5><a name="init" class="anchor" href="#init"><span class="header-link" style="z-index: 9999994726">&nbsp;</span></a>init</h5><p>Create a completely new app within the current working directory. Will add default contracts, tests and frontend configuration.</p>
 <pre><code class="lang-none">$ truffle init
 </code></pre>
-<h5 id="list">list</h5>
-<p>List all available commands and exit. Synonymous with <code>--help</code>.</p>
+<h5><a name="list" class="anchor" href="#list"><span class="header-link" style="z-index: 9999994725">&nbsp;</span></a>list</h5><p>List all available commands and exit. Synonymous with <code>--help</code>.</p>
 <pre><code class="lang-none">$ truffle list
 </code></pre>
-<h5 id="serve">serve</h5>
-<p>Serve the built app from <code>http://localhost:8080</code>, rebuilding and redeploying changes as needed. Like <code>truffle watch</code>, but with the web server component added.</p>
+<h5><a name="serve" class="anchor" href="#serve"><span class="header-link" style="z-index: 9999994724">&nbsp;</span></a>serve</h5><p>Serve the built app from <code>http://localhost:8080</code>, rebuilding and redeploying changes as needed. Like <code>truffle watch</code>, but with the web server component added.</p>
 <pre><code class="lang-none">$ truffle serve
 </code></pre>
 <p>Optional parameters:</p>
@@ -356,8 +344,7 @@
 <li><code>-p port</code>: Specify the port to serve on. Default is 8080.</li>
 <li><code>--network name</code>: Specify the network to use, using artifacts specific to that network.</li>
 </ul>
-<h5 id="test">test</h5>
-<p>Run all tests within the <code>./test</code> directory, or optionally run a single test.</p>
+<h5><a name="test" class="anchor" href="#test"><span class="header-link" style="z-index: 9999994723">&nbsp;</span></a>test</h5><p>Run all tests within the <code>./test</code> directory, or optionally run a single test.</p>
 <pre><code class="lang-none">$ truffle test [/path/to/test/file]
 </code></pre>
 <p>Optional parameters:</p>
@@ -366,12 +353,10 @@
 <li><code>--verbose-rpc</code>: Log communication between Truffle and the RPC.</li>
 <li><code>--network name</code>: Specify the network to use, using artifacts specific to that network.</li>
 </ul>
-<h5 id="version">version</h5>
-<p>Show version number and exit.</p>
+<h5><a name="version" class="anchor" href="#version"><span class="header-link" style="z-index: 9999994722">&nbsp;</span></a>version</h5><p>Show version number and exit.</p>
 <pre><code class="lang-none">$ truffle version
 </code></pre>
-<h5 id="watch">watch</h5>
-<p>Watch for changes to contracts, app and configuration files. When there&#39;s a change, rebuild the app if necessary.</p>
+<h5><a name="watch" class="anchor" href="#watch"><span class="header-link" style="z-index: 9999994721">&nbsp;</span></a>watch</h5><p>Watch for changes to contracts, app and configuration files. When there&#39;s a change, rebuild the app if necessary.</p>
 <pre><code class="lang-none">$ truffle watch
 </code></pre>
 

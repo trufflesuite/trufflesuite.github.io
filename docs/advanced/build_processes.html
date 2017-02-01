@@ -278,10 +278,8 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1 id="custom-build-processes">Custom Build Processes</h1>
-<p>Throughout Truffle&#39;s history, it&#39;s clear that the <a href="/docs/getting_started/build">default builder</a> is not for everybody. It has some obvious caveats and is less mature than other build systems. With that in mind, Truffle provides you three ways to override the build system in order to get the most out of Truffle while also using your build process of choice.</p>
-<h3 id="running-an-external-command">Running an External Command</h3>
-<p>If you&#39;d like Truffle to run an external command whenever it triggers a build, simply include that option as a string within your project configuration, like so:</p>
+              <h1><a name="custom-build-processes" class="anchor" href="#custom-build-processes"><span class="header-link" style="z-index: 9999994741">&nbsp;</span></a>Custom Build Processes</h1><p>Throughout Truffle&#39;s history, it&#39;s clear that the <a href="/docs/getting_started/build">default builder</a> is not for everybody. It has some obvious caveats and is less mature than other build systems. With that in mind, Truffle provides you three ways to override the build system in order to get the most out of Truffle while also using your build process of choice.</p>
+<h3><a name="running-an-external-command" class="anchor" href="#running-an-external-command"><span class="header-link" style="z-index: 9999994740">&nbsp;</span></a>Running an External Command</h3><p>If you&#39;d like Truffle to run an external command whenever it triggers a build, simply include that option as a string within your project configuration, like so:</p>
 <pre><code class="lang-javascript">module.exports = {
   // This will run the `webpack` command on each build.
   //
@@ -295,8 +293,7 @@
 }
 </code></pre>
 <p>Note that you&#39;re given ample environment variables with which to integrate with Truffle, detailed above.</p>
-<h3 id="providing-a-custom-function">Providing a Custom Function</h3>
-<p>You can also provide a custom build function like the one below. Note you&#39;re given a plethora of information about your project which you can use to integrate tightly with Truffle.</p>
+<h3><a name="providing-a-custom-function" class="anchor" href="#providing-a-custom-function"><span class="header-link" style="z-index: 9999994739">&nbsp;</span></a>Providing a Custom Function</h3><p>You can also provide a custom build function like the one below. Note you&#39;re given a plethora of information about your project which you can use to integrate tightly with Truffle.</p>
 <pre><code class="lang-javascript">module.exports = {
   build: function(options, callback) {
      // Do something when a build is required. `options` contains these values:
@@ -309,16 +306,14 @@
   }
 }
 </code></pre>
-<h3 id="creating-a-custom-module">Creating a Custom Module</h3>
-<p>You could also create a module or object that implements the builder interface (i.e., is an object which contains a <code>build</code> function like the one above). This is great for those who want to maintain tighter integration with Truffle and publish a package to make everyone else&#39;s lives easier.</p>
+<h3><a name="creating-a-custom-module" class="anchor" href="#creating-a-custom-module"><span class="header-link" style="z-index: 9999994738">&nbsp;</span></a>Creating a Custom Module</h3><p>You could also create a module or object that implements the builder interface (i.e., is an object which contains a <code>build</code> function like the one above). This is great for those who want to maintain tighter integration with Truffle and publish a package to make everyone else&#39;s lives easier.</p>
 <p>Here&#39;s an example using Truffle&#39;s default builder:</p>
 <pre><code class="lang-javascript">var DefaultBuilder = require(&quot;truffle-default-builder&quot;);
 module.exports = {
   build: new DefaultBuilder(...) // specify the default builder configuration here.
 }
 </code></pre>
-<h1 id="bootstrapping-your-frontend">Bootstrapping Your Frontend</h1>
-<p>Because you&#39;re using a custom build process, Truffle no longer knows how to bootstrap your frontend. You&#39;ll need to do this yourself. Here&#39;s a list of things your build process and/or application will need to do:</p>
+<h1><a name="bootstrapping-your-frontend" class="anchor" href="#bootstrapping-your-frontend"><span class="header-link" style="z-index: 9999994737">&nbsp;</span></a>Bootstrapping Your Frontend</h1><p>Because you&#39;re using a custom build process, Truffle no longer knows how to bootstrap your frontend. You&#39;ll need to do this yourself. Here&#39;s a list of things your build process and/or application will need to do:</p>
 <ul>
 <li>Include the <a href="https://github.com/ethereum/web3.js">Web3</a> library.</li>
 <li>Initialize a web3 instance and set a provider that points to your desired ethereum client. It&#39;s important to detect if the <code>web3</code> object already exists, as it might already be available if someone is viewing your application via a wallet-browser like Metamask or Mist. If the <code>web3</code> object already exists, you should use that instead of initializing your own. See <a href="https://github.com/ethereum/mist/releases/tag/0.3.6">this example</a> for more details.</li>
@@ -327,8 +322,7 @@ module.exports = {
 <pre><code class="lang-javascript">var MyContract = require(&quot;./build/contracts/MyContract.sol.js&quot;);
 MyContract.setProvider(web3.currentProvider);
 </code></pre>
-<h1 id="using-webpack">Using Webpack</h1>
-<p>We&#39;re still working on having tighter integration with Webpack. However, checkout <a href="https://github.com/ConsenSys/truffle/wiki/Using-Truffle-and-Webpack-(beta">this example</a>) and let us know how it works for you.</p>
+<h1><a name="using-webpack" class="anchor" href="#using-webpack"><span class="header-link" style="z-index: 9999994736">&nbsp;</span></a>Using Webpack</h1><p>We&#39;re still working on having tighter integration with Webpack. However, checkout <a href="https://github.com/ConsenSys/truffle/wiki/Using-Truffle-and-Webpack-(beta">this example</a>) and let us know how it works for you.</p>
 
               <footer class="container-fluid">
                 <p class="text-center">See a way to make this page better? <a href="https://github.com/truffleframework/truffleframework.github.io/edit/master/_harp/public/docs/advanced/build_processes.md">Edit here &rarr;</a></p>

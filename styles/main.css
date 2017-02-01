@@ -8759,6 +8759,74 @@ code {
   text-transform: uppercase;
 }
 
+.Tutorials .MainContent h1,
+.Tutorials .MainContent h2,
+.Tutorials .MainContent h3,
+.Tutorials .MainContent h4,
+.Tutorials .MainContent h5,
+.Tutorials .MainContent h6,
+.Tutorials .MainContent h7 {
+  position: relative;
+}
+
+.Tutorials .MainContent h1 .anchor,
+.Tutorials .MainContent h2 .anchor,
+.Tutorials .MainContent h3 .anchor,
+.Tutorials .MainContent h4 .anchor,
+.Tutorials .MainContent h5 .anchor,
+.Tutorials .MainContent h6 .anchor,
+.Tutorials .MainContent h7 .anchor {
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  left: -40px;
+  bottom: 0;
+  cursor: default;
+  text-decoration: none;
+  border: 0;
+}
+
+.Tutorials .MainContent h1 .anchor .header-link,
+.Tutorials .MainContent h2 .anchor .header-link,
+.Tutorials .MainContent h3 .anchor .header-link,
+.Tutorials .MainContent h4 .anchor .header-link,
+.Tutorials .MainContent h5 .anchor .header-link,
+.Tutorials .MainContent h6 .anchor .header-link,
+.Tutorials .MainContent h7 .anchor .header-link {
+  display: inline-block;
+  position: absolute;
+  width: 40px;
+  bottom: 0;
+  left: 0;
+}
+
+.Tutorials .MainContent h1 .anchor .header-link:hover,
+.Tutorials .MainContent h2 .anchor .header-link:hover,
+.Tutorials .MainContent h3 .anchor .header-link:hover,
+.Tutorials .MainContent h4 .anchor .header-link:hover,
+.Tutorials .MainContent h5 .anchor .header-link:hover,
+.Tutorials .MainContent h6 .anchor .header-link:hover,
+.Tutorials .MainContent h7 .anchor .header-link:hover {
+  background-image: url(/images/anchor.png);
+  background-size: 20px 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.Tutorials .MainContent h1:hover .header-link,
+.Tutorials .MainContent h2:hover .header-link,
+.Tutorials .MainContent h3:hover .header-link,
+.Tutorials .MainContent h4:hover .header-link,
+.Tutorials .MainContent h5:hover .header-link,
+.Tutorials .MainContent h6:hover .header-link,
+.Tutorials .MainContent h7:hover .header-link {
+  background-image: url(/images/anchor.png);
+  background-size: 20px 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 .Tutorials .MainContent p {
   line-height: 1.9rem;
   margin-bottom: 1.9rem;
@@ -9005,6 +9073,85 @@ code {
 .Documentation .ContentPage h3,
 .Documentation .ContentPage h5 {
   text-transform: uppercase;
+}
+
+.Documentation .ContentPage h1,
+.Documentation .ContentPage h2,
+.Documentation .ContentPage h3,
+.Documentation .ContentPage h4,
+.Documentation .ContentPage h5,
+.Documentation .ContentPage h6,
+.Documentation .ContentPage h7 {
+  position: relative;
+}
+
+.Documentation .ContentPage h1 .anchor,
+.Documentation .ContentPage h2 .anchor,
+.Documentation .ContentPage h3 .anchor,
+.Documentation .ContentPage h4 .anchor,
+.Documentation .ContentPage h5 .anchor,
+.Documentation .ContentPage h6 .anchor,
+.Documentation .ContentPage h7 .anchor {
+  padding-top: 160px;
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  left: -40px;
+  bottom: 40px;
+  cursor: default;
+  text-decoration: none;
+}
+
+.Documentation .ContentPage h1 .anchor .header-link,
+.Documentation .ContentPage h2 .anchor .header-link,
+.Documentation .ContentPage h3 .anchor .header-link,
+.Documentation .ContentPage h4 .anchor .header-link,
+.Documentation .ContentPage h5 .anchor .header-link,
+.Documentation .ContentPage h6 .anchor .header-link,
+.Documentation .ContentPage h7 .anchor .header-link {
+  display: inline-block;
+  position: absolute;
+  width: 40px;
+  bottom: -40px;
+  left: 0;
+}
+
+.Documentation .ContentPage h1 .anchor .header-link:hover,
+.Documentation .ContentPage h2 .anchor .header-link:hover,
+.Documentation .ContentPage h3 .anchor .header-link:hover,
+.Documentation .ContentPage h4 .anchor .header-link:hover,
+.Documentation .ContentPage h5 .anchor .header-link:hover,
+.Documentation .ContentPage h6 .anchor .header-link:hover,
+.Documentation .ContentPage h7 .anchor .header-link:hover {
+  visibility: visible !important;
+  background-image: url(/images/anchor.png);
+  background-size: 20px 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.Documentation .ContentPage h1 .anchor:hover .header-link,
+.Documentation .ContentPage h2 .anchor:hover .header-link,
+.Documentation .ContentPage h3 .anchor:hover .header-link,
+.Documentation .ContentPage h4 .anchor:hover .header-link,
+.Documentation .ContentPage h5 .anchor:hover .header-link,
+.Documentation .ContentPage h6 .anchor:hover .header-link,
+.Documentation .ContentPage h7 .anchor:hover .header-link {
+  visibility: hidden;
+}
+
+.Documentation .ContentPage h1:hover .header-link,
+.Documentation .ContentPage h2:hover .header-link,
+.Documentation .ContentPage h3:hover .header-link,
+.Documentation .ContentPage h4:hover .header-link,
+.Documentation .ContentPage h5:hover .header-link,
+.Documentation .ContentPage h6:hover .header-link,
+.Documentation .ContentPage h7:hover .header-link {
+  background-image: url(/images/anchor.png);
+  background-size: 20px 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .Documentation .ContentPage p {
