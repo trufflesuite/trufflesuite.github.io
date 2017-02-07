@@ -290,7 +290,10 @@
 </code></pre><p>You can also install a package at a specific version:</p>
 <pre><code>$ truffle install &lt;package name&gt;@&lt;version&gt;
 </code></pre><p>Like NPM, EthPM versions follow <a href="http://semver.org/">semver</a>. You can find a list of all available packages at <a href="https://www.ethpm.com/registry">the Ethereum Package Registry</a>.</p>
-<h2><a name="consuming-installed-contracts" class="anchor" href="#consuming-installed-contracts"><span class="header-link" style="z-index: 9999999909">&nbsp;</span></a>Consuming Installed Contracts</h2><p>Installed packages will be placed in the <code>installed_contracts</code> directory within your project folder. If no <code>installed_contracts</code> directory exists it&#39;ll be created for you. You should treat this folder like you treat the <code>node_modules</code> folder with NPM &#8211; that is, you shouldn&#39;t edit the contents inside unless you know what you&#39;re doing. :)</p>
+<h2><a name="installing-dependencies" class="anchor" href="#installing-dependencies"><span class="header-link" style="z-index: 9999999909">&nbsp;</span></a>Installing Dependencies</h2><p>Your project can define an <code>ethpm.json</code> file that among other things can pin your project to specific dependencies and versions. To install all dependencies listed in the <code>ethpm.json</code> file, run:</p>
+<pre><code>$ truffle install
+</code></pre><p>For more details on the <code>ethpm.json</code> file, see the <a href="/docs/getting_started/packages-ethpm#package-configuration">package configuration</a> below.</p>
+<h2><a name="consuming-installed-contracts" class="anchor" href="#consuming-installed-contracts"><span class="header-link" style="z-index: 9999999908">&nbsp;</span></a>Consuming Installed Contracts</h2><p>Installed packages will be placed in the <code>installed_contracts</code> directory within your project folder. If no <code>installed_contracts</code> directory exists it&#39;ll be created for you. You should treat this folder like you treat the <code>node_modules</code> folder with NPM &#8211; that is, you shouldn&#39;t edit the contents inside unless you know what you&#39;re doing. :)</p>
 <p>Installed packages can be consumed within your tests, migrations and solidity contract files by <code>import</code>&#39;ing or <code>require</code>&#39;ing that package and contract by name. For example, the following Solidity contract would import the <code>owned.sol</code> file from the <code>owned</code> package:</p>
 <pre><code class="lang-javascript">pragma solidity ^0.4.2;
 
@@ -315,8 +318,8 @@ module.exports = function(deployer) {
 };
 </code></pre>
 <p>Note that in the migration above, we consume the <code>ens</code> package and deploy the ENS contract conditionally based on whether or not ENS already has an address set. This is a fancy trick provided to you by the <a href="/docs/getting_started/migrations#deployer-deploy-contract-args-options-">deployer</a> that makes it much easier to write migrations dependent on the the existence of network artifacts. In this case, if we were running our migrations on the ropsten network, this migration <strong>wouldn&#39;t</strong> deploy the <code>ENS</code> contract because (at the time of this writing) roptsen is where the canonical <code>ENS</code> contract exists &#8211; we wouldn&#39;t want to deploy our own. But if we were running our migrations against a different network, or a test network perhaps, then we&#39;d want to deploy the <code>ENS</code> contract so that we have a dependency contract to work with.</p>
-<h2><a name="publishing-your-own-package" class="anchor" href="#publishing-your-own-package"><span class="header-link" style="z-index: 9999999908">&nbsp;</span></a>Publishing Your Own Package</h2><p>Publishing your own package is as straightforward as installing, but like NPM, requires a bit more configuration.</p>
-<h3><a name="ropsten-ropsten-ropsten" class="anchor" href="#ropsten-ropsten-ropsten"><span class="header-link" style="z-index: 9999999907">&nbsp;</span></a>Ropsten, Ropsten, Ropsten</h3><p>The Ethereum Package Registry currently exists on the Ropsten test network. To publish to the registry, we need to set up our own Ropsten configuration because we&#39;ll be making transactions that need to be signed.</p>
+<h2><a name="publishing-your-own-package" class="anchor" href="#publishing-your-own-package"><span class="header-link" style="z-index: 9999999907">&nbsp;</span></a>Publishing Your Own Package</h2><p>Publishing your own package is as straightforward as installing, but like NPM, requires a bit more configuration.</p>
+<h3><a name="ropsten-ropsten-ropsten" class="anchor" href="#ropsten-ropsten-ropsten"><span class="header-link" style="z-index: 9999999906">&nbsp;</span></a>Ropsten, Ropsten, Ropsten</h3><p>The Ethereum Package Registry currently exists on the Ropsten test network. To publish to the registry, we need to set up our own Ropsten configuration because we&#39;ll be making transactions that need to be signed.</p>
 <p>In this example, we&#39;ll use Infura for publishing packages along with the <code>truffle-hdwallet-provider</code> NPM module and a 12-word hd-wallet mnemonic that represents our Ethereum address on the Ropsten network. First, install the <code>truffle-hdwallet-provider</code> via NPM within your project directory:</p>
 <pre><code>$ npm install truffle-hdwallet-provider --save
 </code></pre><p>Then edit your configuration to add the <code>ropsten</code> network using your 12-word mnemonic:</p>
@@ -340,7 +343,7 @@ module.exports = {
   }
 };
 </code></pre>
-<h3><a name="package-configuration" class="anchor" href="#package-configuration"><span class="header-link" style="z-index: 9999999906">&nbsp;</span></a>Package configuration</h3><p>Like NPM, configuration options for EthPM go in a separate JSON file called <code>ethpm.json</code>. This file sits alongside your Truffle configuration and gives Truffle all the information it needs to publish your package. You can see a full list of available options in the <a href="/docs/advanced/configuration">Configuration</a> section.</p>
+<h3><a name="package-configuration" class="anchor" href="#package-configuration"><span class="header-link" style="z-index: 9999999905">&nbsp;</span></a>Package configuration</h3><p>Like NPM, configuration options for EthPM go in a separate JSON file called <code>ethpm.json</code>. This file sits alongside your Truffle configuration and gives Truffle all the information it needs to publish your package. You can see a full list of available options in the <a href="/docs/advanced/configuration">Configuration</a> section.</p>
 <p>File: <code>ethpm.json</code></p>
 <pre><code class="lang-javascript">{
   &quot;package_name&quot;: &quot;adder&quot;,
@@ -359,7 +362,7 @@ module.exports = {
   &quot;license&quot;: &quot;MIT&quot;
 }
 </code></pre>
-<h3><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999905">&nbsp;</span></a>Command</h3><p>After you have your configuration settled, publishing is a snap:</p>
+<h3><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999904">&nbsp;</span></a>Command</h3><p>After you have your configuration settled, publishing is a snap:</p>
 <pre><code>$ truffle publish
 </code></pre><p>You&#39;ll see output similar to that below, with confirmation that your package was published successfully.</p>
 <pre><code>$ truffle publish
@@ -367,7 +370,7 @@ Gathering contracts...
 Finding publishable artifacts...
 Uploading sources and publishing to registry...
 + adder@0.0.3
-</code></pre><h3><a name="before-publishing" class="anchor" href="#before-publishing"><span class="header-link" style="z-index: 9999999904">&nbsp;</span></a>Before publishing</h3><p>When using a network like the default <code>development</code> network that&#39;s configured to match any Ethereum client (i.e., the TestRPC), you&#39;re bound to have network artifacts laying around that you don&#39;t want published. Before publishing your package, consider running the following command to remove any extraneous network artifacts:</p>
+</code></pre><h3><a name="before-publishing" class="anchor" href="#before-publishing"><span class="header-link" style="z-index: 9999999903">&nbsp;</span></a>Before publishing</h3><p>When using a network like the default <code>development</code> network that&#39;s configured to match any Ethereum client (i.e., the TestRPC), you&#39;re bound to have network artifacts laying around that you don&#39;t want published. Before publishing your package, consider running the following command to remove any extraneous network artifacts:</p>
 <pre><code>$ truffle networks --clean
 </code></pre><p>See the <a href="/docs/advanced/commands#networks">command reference</a> for more information.</p>
 
