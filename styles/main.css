@@ -8062,7 +8062,7 @@ button.close {
   padding-right: 1.5rem !important;
 }
 
-.p-b-2, .LandingPage .BetaSignup h2, .LandingPage .Features .FeatureCard footer p {
+.p-b-2, .BetaSignup h2, .LandingPage .Features .FeatureCard footer p {
   padding-bottom: 1.5rem !important;
 }
 
@@ -8114,7 +8114,7 @@ button.close {
   padding: 4rem 4rem !important;
 }
 
-.p-t-4, .LandingPage .BetaSignup {
+.p-t-4, .BetaSignup {
   padding-top: 4rem !important;
 }
 
@@ -8122,7 +8122,7 @@ button.close {
   padding-right: 4rem !important;
 }
 
-.p-b-4, .LandingPage .BetaSignup, .Tutorials .MainContent {
+.p-b-4, .BetaSignup, .Tutorials .MainContent {
   padding-bottom: 4rem !important;
 }
 
@@ -8364,6 +8364,140 @@ code {
   margin-right: 0.5rem;
 }
 
+.BetaSignup {
+  background: #E1DCD4;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid #3FE0C5;
+  border-bottom: 1px solid #3FE0C5;
+}
+
+.BetaSignup:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 219px;
+  height: 541px;
+  background: #e8e5e2;
+  transform: skew(0, -6deg);
+}
+
+.BetaSignup .FormWrapper {
+  background: rgba(255, 255, 255, 0.3);
+  border: 4px solid white;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  margin: 50px 0;
+}
+
+.BetaSignup .FormWrapper .mc-field-group:first-child {
+  border-right: 4px white solid;
+}
+
+.BetaSignup .FormWrapper .mc-field-group {
+  position: relative;
+  flex: 2;
+}
+
+.BetaSignup .FormWrapper label {
+  position: absolute;
+  z-index: 2;
+  font-size: 12px;
+  left: 10px;
+  top: 5px;
+  color: #8e8e8e;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.BetaSignup .FormWrapper input {
+  position: relative;
+  border: 0;
+  background: #E6E4E4;
+  padding: 0;
+  display: block;
+  height: 70px;
+  width: 100%;
+  padding: 0 10px;
+  font-size: 18px;
+}
+
+.BetaSignup .FormWrapper input[type='submit'] {
+  flex: 1;
+  text-transform: uppercase;
+  background: #3FE0C5;
+  color: #fff;
+  padding: 0 15px;
+  display: block;
+  height: 70px;
+  width: 100%;
+  border: 0;
+}
+
+@media (max-width: 590px) {
+  .BetaSignup .FormWrapper {
+    display: block;
+  }
+  .BetaSignup .FormWrapper .mc-field-group:first-child {
+    border-right: none;
+    border-bottom: 4px solid white;
+  }
+}
+
+.Footer {
+  position: relative;
+  overflow: hidden;
+  background-color: #F7F7F7;
+  padding-bottom: 6rem;
+}
+
+.Footer .Logo {
+  width: 100px;
+  height: 100px;
+}
+
+.Footer ul,
+.Footer ol {
+  font-family: "Open Sans", "Verdana", Times, serif;
+  line-height: 1.5rem;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.Footer ul li,
+.Footer ol li {
+  margin-bottom: 1.2em;
+}
+
+.Footer ul {
+  text-transform: uppercase;
+}
+
+.Footer h5 {
+  margin-top: 0;
+}
+
+.Footer .BetaSignup {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0 !important;
+}
+
+.Footer .BetaSignup .FormWrapper {
+  margin: 0;
+}
+
+.Footer .BetaSignup:before {
+  display: none;
+}
+
+.Footer .container > svg {
+  position: absolute;
+  bottom: -115px;
+}
+
 .LandingPage ul,
 .LandingPage ol {
   font-family: "Open Sans", "Verdana", Times, serif;
@@ -8416,87 +8550,6 @@ code {
 .LandingPage header .InstallInstruction .Box code {
   background: transparent;
   color: white;
-}
-
-.LandingPage .BetaSignup {
-  background: #E1DCD4;
-  overflow: hidden;
-  position: relative;
-  border-top: 1px solid #3FE0C5;
-  border-bottom: 1px solid #3FE0C5;
-}
-
-.LandingPage .BetaSignup:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 219px;
-  height: 541px;
-  background: #e8e5e2;
-  transform: skew(0, -6deg);
-}
-
-.LandingPage .BetaSignup .FormWrapper {
-  background: rgba(255, 255, 255, 0.3);
-  border: 4px solid white;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.03);
-  display: flex;
-  margin: 50px 0;
-}
-
-.LandingPage .BetaSignup .FormWrapper .mc-field-group:first-child {
-  border-right: 4px white solid;
-}
-
-.LandingPage .BetaSignup .FormWrapper .mc-field-group {
-  position: relative;
-  flex: 2;
-}
-
-.LandingPage .BetaSignup .FormWrapper label {
-  position: absolute;
-  z-index: 2;
-  font-size: 12px;
-  left: 10px;
-  top: 5px;
-  color: #8e8e8e;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.LandingPage .BetaSignup .FormWrapper input {
-  position: relative;
-  border: 0;
-  background: #E6E4E4;
-  padding: 0;
-  display: block;
-  height: 70px;
-  width: 100%;
-  padding: 0 10px;
-  font-size: 18px;
-}
-
-.LandingPage .BetaSignup .FormWrapper input[type='submit'] {
-  flex: 1;
-  text-transform: uppercase;
-  background: #3FE0C5;
-  color: #fff;
-  padding: 0 15px;
-  display: block;
-  height: 70px;
-  width: 100%;
-  border: 0;
-}
-
-@media (max-width: 590px) {
-  .LandingPage .BetaSignup .FormWrapper {
-    display: block;
-  }
-  .LandingPage .BetaSignup .FormWrapper .mc-field-group:first-child {
-    border-right: none;
-    border-bottom: 4px solid white;
-  }
 }
 
 .LandingPage .Features {
