@@ -220,27 +220,102 @@
       <section class="MainContent">
         <div class="container-fluid">
           <div class="row">
-            <h1><a name="configuring-visual-studio-code-for-ethereum-blockchain-development" class="anchor" href="#configuring-visual-studio-code-for-ethereum-blockchain-development"><span class="header-link" style="z-index: 9999999845">&nbsp;</span></a>Configuring Visual Studio code for Ethereum Blockchain development</h1><p>This post was originally published by David Burela on his blog <a href="https://davidburela.wordpress.com/2016/11/18/configuring-visual-studio-code-for-ethereum-blockchain-development/">Burela&#39;s House-o-blog</a>. Big thanks to David for allowing us publish it here!</p>
+            <h1><a name="testing-for-throws-in-truffle-solidity-testing" class="anchor" href="#testing-for-throws-in-truffle-solidity-testing"><span class="header-link" style="z-index: 9999999798">&nbsp;</span></a>Testing for Throws in Truffle Solidity Testing</h1><p>By guest writer Simon de la Rouviere</p>
+<p>Truffle 3 brings forth Solidity unit testing, which means one can now test contracts in Solidity itself. This is a boon to contract developers, as there are several reasons why it&#39;s useful to have Solidity tests in addition to Truffle’s Javascript tests. For us at <a href="https://ujomusic.com/">Ujo</a>, one of our biggest concerns is testing how contracts interact with each other, rather than just testing their interaction from a web3 perspective, and Solidity tests allow us to do that.</p>
+<p>Though Solidity tests can be quite powerful, they do come with some drawbacks. One of those is testing whether or not a function should <code>throw</code> (without breaking the test!), which I&#39;ll show you how to do right now.</p>
+<h2><a name="diving-in" class="anchor" href="#diving-in"><span class="header-link" style="z-index: 9999999797">&nbsp;</span></a>Diving In</h2><p>In Solidity, when performing a contract call that produces an error, Solidity automatically rethrows, meaning it will bubble that error up to the caller. However, with a <em>raw</em> call, the behavior is different: one can catch the error and decide what to do from there on out. If it throws (fails), it will return <code>false</code>. If it succeeds, it will return <code>true</code>. Thus, the following calls will produce a different result.</p>
+<pre><code class="lang-javascript">bool result = address.call(bytes4(bytes32(sha3(“functionThatThrows()”))));
+</code></pre>
+<p>Here, “result” will be <code>false</code>.</p>
+<pre><code class="lang-javascript">bool result = address.call(bytes4(bytes32(sha3(“functionThatDoesNotThrow()”))));
+</code></pre>
+<p>And here, “result” will be <code>true</code>. Even if a sub-call failed, it won’t automatically rethrow.</p>
+<p>In order to test for throws, one can either write out each call in the format above (which is cumbersome), or use a proxy contract to wrap the contract call to a raw call and return whether it succeeded or not.</p>
+<p>For our purposes, let&#39;s look at the example below, similar to a method I saw used by Dapple in a Tester contract. Note that these contracts will likely be placed in separate files within your Truffle project. Here, <code>Thrower</code> is the contract you&#39;re testing to see whether or not certain contracts <code>throw</code>, <code>ThrowProxy</code> is our helper and <code>TestThrower</code> is our test contract.</p>
+<p>The code is as follows:</p>
+<pre><code class="lang-javascript">import &quot;truffle/Assert.sol&quot;;
+
+// Proxy contract for testing throws
+contract ThrowProxy {
+  address public target;
+  bytes data;
+
+  function ThrowProxy(address _target) {
+    target = _target;
+  }    
+
+  //prime the data using the fallback function.
+  function() {
+    data = msg.data;
+  }
+
+  function execute() returns (bool) {
+    return target.call(data);
+  }
+}
+
+// Contract you&#39;re testing
+contract Thrower {
+  function doThrow() {
+    throw;
+  }
+
+  function doNoThrow() {
+    //
+  }
+}
+
+// Solidity test contract, meant to test Thrower
+contract TestThrower {
+  function testThrow() {
+    Thrower thrower = new Thrower();
+    ThrowProxy throwProxy = new ThrowProxy(address(thrower)); //set Thrower as the contract to forward requests to. The target.
+
+    //prime the proxy.
+    Thrower(address(throwProxy)).doThrow();
+    //execute the call that is supposed to throw.
+    //r will be false if it threw. r will be true if it didn&#39;t.
+    //make sure you send enough gas for your contract method.
+    bool r = throwProxy.execute.gas(200000)();
+
+    Assert.isFalse(r, “Should be false, as it should throw”);
+  }
+}
+</code></pre>
+<p>Perhaps the most interesting line is the following:</p>
+<pre><code class="lang-javascript">Thrower(address(throwProxy)).doThrow();
+</code></pre>
+<p>This is telling Solidity to call the <code>doThrow()</code> function at the <code>throwProxy</code> address. Solidity automatically creates the necessary message data (<code>msg.data</code>) based on this call. Writing it like this, one would assume that at <code>throwProxy</code> there <em>is</em> a Thrower contract, but there isn’t. There&#39;s a proxy instead. The proxy then receives the msg data, and since it doesn’t have a <code>doThrow()</code> function, the fallback function is triggered in its place.</p>
+<p>The fallback function then saves the message data. After that, when executing the proxy, it then forwards the request onwards as a raw call, not a contract call. Since the <code>throw</code> would use up all the gas, the rest of the tests would legitimately OOG, so we restrict the gas sent through when calling the <code>execute()</code> method. Note that enough should be sent through so that it doesn’t OOG legitimately and thus miss the actual throw condition.</p>
+<p>With this proxy, one can still effectively write the interactions as contracts calling other contracts without having to resort to crafting raw calls manually. (Hooray!)</p>
+<h2><a name="gotchas" class="anchor" href="#gotchas"><span class="header-link" style="z-index: 9999999796">&nbsp;</span></a>Gotchas</h2><p>An important caveat here is to recognize the contract caller, <code>msg.sender</code>. If you add a proxy in between, then <code>msg.sender</code> will be the proxy, which could break authorization and permissioning algorithms. If your authorization system allows you to change the owner, you can get around this constraint by setting the proxy to be the contract owner. For example:</p>
+<pre><code class="lang-javascript">// Assume our contract under test has a changeOwner() function
+thrower.changeOwner(address(throwProxy));
+
+// Perform test functions and assertions
+// ...
+
+// Restore previous owner
+Thrower(address(throwProxy)).changeOwner(address(this));
+throwProxy.execute();
+</code></pre>
+<p>It’s also important to know that this only tests <code>throw</code>&#39;s at this particular level. For instance, if your contract call structure looked like the following:</p>
+<pre><code class="lang-shell">Test -&gt; Proxy -&gt; ContractToTest -&gt; SomeOtherContract -&gt; AnotherContractThatThrows
+</code></pre>
+<p>Then you wouldn’t know where the <code>throw</code> occurred, since SomeOtherContract and ContractToTest could just rethrow.</p>
+<p>It would be prudent to also ensure there isn’t anything faulty in the proxy by creating a second test as a control. This test should be called with the appropriate gas and use the proxy to test a function where <em>no</em> <code>throw</code> occurs, just to make sure the proxy is setup and working as intended.</p>
+<p>Because a <code>throw</code> essentially uses up all gas, one must make doubly sure they catch the <code>throw</code> and <strong>not</strong> a legitimate out-of-gas (OOG) error. As well, take care to manage sending Ether through the proxy (for tests that require it) as that can be difficult as well.</p>
+<h2><a name="conclusion" class="anchor" href="#conclusion"><span class="header-link" style="z-index: 9999999795">&nbsp;</span></a>Conclusion</h2><p>Testing <code>throws</code> is possible from within Solidity tests, but can be cumbersome if you want to write those tests yourself as raw calls. You can get around this by using a proxy contract, which makes many situations a lot easier and makes your tests much easier to write. But keep a look out for potential caveats as Solidity tests with a lot more power but plenty of drawbacks.</p>
+<p>Happy developing!</p>
 <hr>
-<p><a href="https://code.visualstudio.com/">Visual Studio code</a> is a great tool for editing Solidity smart contracts, and is available on Windows, Mac &amp; Linux. There is a great plugin that enables Syntax highlighting, snippets, and compiling of the current contract (if you aren’t using an external tool) <a href="https://github.com/juanfranblanco/vscode-solidity/">https://github.com/juanfranblanco/vscode-solidity/</a></p>
-<p>This configuration works really well with Truffle (as shown in the final screenshot). You can read how to install Truffle on Windows in <a href="/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development">my previous post</a>.</p>
-<h2><a name="step-1-install-visual-studio-code" class="anchor" href="#step-1-install-visual-studio-code"><span class="header-link" style="z-index: 9999999844">&nbsp;</span></a>Step 1: Install Visual Studio code</h2><p><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
-<p>Easy option on Windows: Just install via <a href="https://chocolatey.org/">https://chocolatey.org/</a> by using the command  </p>
-<pre><code>choco install VisualstudioCode –y
-</code></pre><h2><a name="step-2-install-visual-studio-extensions" class="anchor" href="#step-2-install-visual-studio-extensions"><span class="header-link" style="z-index: 9999999843">&nbsp;</span></a>Step 2: Install Visual Studio extensions</h2><p>Go into the extensions section, then install these plugins:</p>
-<ul>
-<li>Solidity</li>
-<li>Material Icon Theme
-<img src="https://davidburela.files.wordpress.com/2016/11/image3.png" alt="image"></li>
-</ul>
-<h2><a name="step-3-enable-icon-theme" class="anchor" href="#step-3-enable-icon-theme"><span class="header-link" style="z-index: 9999999842">&nbsp;</span></a>Step 3: Enable icon theme</h2><p>Select <code>File –&gt; Preferences –&gt; File Icon Theme</code>.
-<img src="https://davidburela.files.wordpress.com/2016/11/image4.png" alt="image"></p>
-<h2><a name="final-result-sexy-workspace" class="anchor" href="#final-result-sexy-workspace"><span class="header-link" style="z-index: 9999999841">&nbsp;</span></a>Final result: Sexy workspace</h2><p><img src="https://davidburela.files.wordpress.com/2016/11/image5.png" alt="image"></p>
+<p><img src="https://consensys.net/img/team/simon.jpg" alt="About Simon de la Rouviere"></p>
+<p>About Simon de la Rouviere</p>
+<p>Simon builds decentralised applications for use in the music industry, online communities and the developing world. He has been in the Bitcoin/blockchain space since 2011, developed a decentralised band around a full blown cryptocurrency, and is writing a book on the blockchain. More about Simon can be found on <a href="https://consensys.net/team/">consensys.net</a>.</p>
 
           </div>
         </div>
         <footer class="container">
-          <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/tutorials/configuring-visual-studio-code.md">Edit here &rarr;</a></p>
+          <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/tutorials/testing-for-throws-in-solidity-tests.md">Edit here &rarr;</a></p>
         </footer>
       </section>
     </section>
