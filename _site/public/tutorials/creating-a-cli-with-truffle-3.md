@@ -25,7 +25,7 @@ The first thing to look at is the build process. Since Truffle now puts us in co
 ...
 "description": "CLI for ENS deployment",
 "scripts": {
-  "ens": "babel-node ./bin/ensa.js",
+  "babel": "babel-node ./bin/ensa.js",
   "lint": "eslint ./"
 },
 "author": "Douglas von Kohorn",
