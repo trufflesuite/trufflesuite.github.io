@@ -303,7 +303,9 @@ module.exports = function(deployer) {
 <p>All migrations must export a function via the <code>module.exports</code> syntax. The function exported by each migration should accept a <code>deployer</code> object as its first parameter. This object aides in deployment by both providing a clear syntax for deploying smart contracts as well as performing some of deployment&#39;s more mundane duties, such as saving deployed artifacts for later use. The <code>deployer</code> object is your main interface for staging deployment tasks, and its API is described at the bottom of this page.</p>
 <h1><a name="initial-migration" class="anchor" href="#initial-migration"><span class="header-link" style="z-index: 9999999918">&nbsp;</span></a>Initial Migration</h1><p>Truffle requires you to have a Migrations contract in order to use the Migrations feature. This contract must contain a specific interface, but you&#39;re free to edit this contract at will. For most projects, this contract will be deployed initially as the first migration and won&#39;t be updated again. You will also receive this contract by default when creating a new project with <code>truffle init</code>.</p>
 <p>Filename: contracts/Migrations.sol</p>
-<pre><code>contract Migrations {
+<pre><code>pragma solidity ^0.4.8;
+
+contract Migrations {
   address public owner;
 
   // A function with the signature `last_completed_migration()`, returning a uint, is required.
