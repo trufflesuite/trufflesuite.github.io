@@ -300,7 +300,7 @@ truffle(development)&gt;
 <li>The <code>web3</code> library is made available and is set to connect to your Ethereum client.</li>
 <li>All commands that return a promise will automatically be resolved, and the result printed, removing the need to use <code>.then()</code> for simple commands. e.g.,</li>
 </ul>
-<pre><code>truffle(default)&gt; MyContract.deployed().getValue.call(); //
+<pre><code>truffle(default)&gt; MyContract.at(&quot;0xabcd...&quot;).getValue.call(); 
 5
 </code></pre>
               <footer class="container-fluid">
