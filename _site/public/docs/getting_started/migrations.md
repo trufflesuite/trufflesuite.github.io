@@ -195,3 +195,7 @@ deployer.then(function() {
   return b.setA(a.address);
 });
 ```
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Compiling contracts](/docs/getting_started/compile) || [Next: Testing your contracts](/docs/getting_started/testing) &rarr;

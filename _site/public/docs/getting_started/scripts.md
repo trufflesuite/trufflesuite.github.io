@@ -22,3 +22,6 @@ module.exports = function(callback) {
 
 You can do anything you'd like within this script, so long as the callback is called when the script finishes. The callback accepts an error as its first and only parameter. If an error is provided, execution will halt and the process will return a non-zero exit code.
 
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Using the console](/docs/getting_started/console) || [Next: Using the build pipeline](/docs/getting_started/build) &rarr;

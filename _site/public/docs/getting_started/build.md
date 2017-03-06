@@ -14,6 +14,10 @@ $ truffle build
 
 Note you'll receive an error if you try to run the `build` command without first configuring a custom build process.
 
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Writing external scripts](/docs/getting_started/scripts) || [Next: Contact the developers](/docs/getting_started/contact) &rarr;
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

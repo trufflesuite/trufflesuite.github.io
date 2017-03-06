@@ -84,3 +84,7 @@ MyContract.deployed().then(function(deployed) {
 ```
 
 All build processes and contract bootstrapping will follow this pattern. The key when setting up your own custom build process is to ensure you're consuming all of your contract artifacts and provisioning your abstractions correctly.
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Networks & App Deployment](/docs/advanced/networks) || [Next: Command Reference](/docs/advanced/commands) &rarr;

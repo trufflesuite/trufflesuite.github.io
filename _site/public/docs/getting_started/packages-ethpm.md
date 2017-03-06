@@ -155,3 +155,7 @@ $ truffle networks --clean
 ```
 
 See the [command reference](/docs/advanced/commands#networks) for more information.
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Interacting with your contracts](/docs/getting_started/contracts) || [Next: Package management via NPM](/docs/getting_started/packages-npm) &rarr;

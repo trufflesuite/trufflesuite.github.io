@@ -17,3 +17,7 @@ There are many official and unofficial Ethereum clients available for you to use
 # When Deploying to Private Networks
 
 Private networks utilize the same technology but with a different configuration. So you can configure any of the Ethereum clients mentioned above to run a private network, and deploy to it in exactly the same way.
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Installation](/docs/getting_started/installation) || [Next: Creating a project](/docs/getting_started/project) &rarr;
