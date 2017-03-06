@@ -212,3 +212,7 @@ var instance = MetaCoin.at("0x1234...");
 # Further Reading
 
 The contract abstractions provided by Truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the [truffle-contract](https://github.com/trufflesuite/truffle-contract) documentation for tips, tricks and insights.
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Writing tests in Solidity](/docs/getting_started/solidity-tests) || [Next: Package management via EthPM](/docs/getting_started/packages-ethpm) &rarr;

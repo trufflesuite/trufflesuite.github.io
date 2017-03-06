@@ -41,6 +41,8 @@ Subscribe to our mailing list for news, beta releases and new features!
 <!--End mc_embed_signup-->
 
 -------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Home](http://truffleframework.com/) || [Next: Installation](/docs/getting_started/installation) &rarr;
 
 
 <script>

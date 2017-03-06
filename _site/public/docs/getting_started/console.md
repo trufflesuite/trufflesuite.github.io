@@ -34,3 +34,7 @@ The console provides all the features available in the Truffle command line tool
 truffle(default)> MyContract.deployed().getValue.call(); //
 5
 ```
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Package management with NPM](/docs/getting_started/packages-npm) || [Next: Writing external scripts](/docs/getting_started/scripts) &rarr;

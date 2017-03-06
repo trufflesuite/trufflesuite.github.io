@@ -33,3 +33,5 @@ Subsribe to our Truffle Users Mailing list for access to news, beta releases and
 <!--End mc_embed_signup-->
 
 --------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Using the build pipeline](/docs/getting_started/build) || [Next: Configuration](/docs/advanced/configuration) &rarr;

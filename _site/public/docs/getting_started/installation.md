@@ -17,3 +17,6 @@ If you're a Windows user, we recommend installing and using Truffle via Windows 
 
 If you must use the Command Prompt, please see [this discussion](/advanced/configuration/#resolving-naming-conflicts-on-windows) about configuring Truffle.
 
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Introduction](/docs/) || [Next: Choosing an Ethereum client](/docs/getting_started/client) &rarr;
