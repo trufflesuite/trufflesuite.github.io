@@ -154,3 +154,7 @@ Example:
 ```javascript
 license: "MIT",
 ```
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Contact the developers](/docs/getting_started/contact) || [Next: Networks & App Deployment](/docs/advanced/networks) &rarr;

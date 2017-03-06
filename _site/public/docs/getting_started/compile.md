@@ -41,3 +41,7 @@ You can also use the `import` statement to import dependencies installed via pac
 # Artifacts
 
 Artifacts of your compilation will be placed in the `./build/contracts` directory, relative to your project. This directory will be created if it does not exist. These artifacts are integral to the inner workings of Truffle, and they play and important part to the successful deployment of your application. You should not edit these files by hand as they'll be overwritten by contract compilation and deployment.
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Creating a project](/docs/getting_started/project) || [Next: Running migrations](/docs/getting_started/migrations) &rarr;
