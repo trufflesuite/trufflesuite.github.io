@@ -161,16 +161,16 @@
   <body>
     <section class="Documentation">
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">
-              
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        
 <svg width="100%" height="100%" viewBox="655 52 131 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <polyline id="path-1" points="0 0.426 130.715 0.426 130.715 128 0 128"></polyline>
@@ -204,19 +204,21 @@
     </g>
 </svg>
 
-            </a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="/">Home</a></li>
-              <li><a href="/docs">Documentation</a></li>
-              <li><a class="active" href="/tutorials">Tutorials</a></li>
-              <li><a href="https://github.com/trufflesuite">Github</a></li>
-              <li><a href="/community">Community</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
+      </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a class="active" href="/blog">Blog</a></li>
+        <li><a class="active" href="/tutorials">Tutorials</a></li>
+        <li><a href="https://github.com/trufflesuite">Github</a></li>
+        <li><a href="/community">Community</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav>
+
       <section class="MainContent">
         <div class="container-fluid">
           <div class="row">
@@ -284,8 +286,8 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1><a name="background" class="anchor" href="#background"><span class="header-link" style="z-index: 9999999946">&nbsp;</span></a>Background</h1><p>Sometimes it&#39;s nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. Truffle provides you an easy way to do this via an interactive console, with your contracts available and ready to use.</p>
-<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999945">&nbsp;</span></a>Command</h1><p>To fire up the console, simply run:</p>
+              <h1><a name="background" class="anchor" href="#background"><span class="header-link" style="z-index: 9999999985">&nbsp;</span></a>Background</h1><p>Sometimes it&#39;s nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. Truffle provides you an easy way to do this via an interactive console, with your contracts available and ready to use.</p>
+<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999984">&nbsp;</span></a>Command</h1><p>To fire up the console, simply run:</p>
 <pre><code class="lang-none">$ truffle console
 </code></pre>
 <p>This will load up a console using the <code>development</code> network, if specified. You can override this using the <code>--network</code> option. See more details in the <a href="/docs/advanced/networks">Networks</a> section as well as the <a href="/docs/advanced/commands">command reference</a>.</p>
@@ -293,7 +295,7 @@
 <pre><code>$ truffle console
 truffle(development)&gt;
 </code></pre><p>This tells you you&#39;re running within a Truffle console using the <code>development</code> network.</p>
-<h1><a name="features" class="anchor" href="#features"><span class="header-link" style="z-index: 9999999944">&nbsp;</span></a>Features</h1><p>The console provides all the features available in the Truffle command line tool. For instance, you can type <code>migrate --reset</code> within the console, and it will be interpreted the same as if you ran <code>truffle migrate --reset</code> from outside the console. Truffle&#39;s console additionally has the following features:</p>
+<h1><a name="features" class="anchor" href="#features"><span class="header-link" style="z-index: 9999999983">&nbsp;</span></a>Features</h1><p>The console provides all the features available in the Truffle command line tool. For instance, you can type <code>migrate --reset</code> within the console, and it will be interpreted the same as if you ran <code>truffle migrate --reset</code> from outside the console. Truffle&#39;s console additionally has the following features:</p>
 <ul>
 <li>All of your compiled contracts are available and ready for use.</li>
 <li>After each command (such as <code>migrate --reset</code>) your contracts are reprovisioned so you can start using the newly assigned addresses and binaries immediately.</li>

@@ -161,16 +161,16 @@
   <body>
     <section class="Tutorials">
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">
-              
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        
 <svg width="100%" height="100%" viewBox="655 52 131 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <polyline id="path-1" points="0 0.426 130.715 0.426 130.715 128 0 128"></polyline>
@@ -204,28 +204,30 @@
     </g>
 </svg>
 
-            </a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="/">Home</a></li>
-              <li><a href="/docs">Documentation</a></li>
-              <li><a class="active" href="/tutorials">Tutorials</a></li>
-              <li><a href="https://github.com/trufflesuite">Github</a></li>
-              <li><a href="/community">Community</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
+      </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a class="active" href="/blog">Blog</a></li>
+        <li><a class="active" href="/tutorials">Tutorials</a></li>
+        <li><a href="https://github.com/trufflesuite">Github</a></li>
+        <li><a href="/community">Community</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav>
+
       <section class="MainContent">
         <div class="container-fluid">
           <div class="row">
-            <h1><a name="in-beta-solidity-unit-tests" class="anchor" href="#in-beta-solidity-unit-tests"><span class="header-link" style="z-index: 9999999790">&nbsp;</span></a>In Beta: Solidity Unit Tests</h1><p>This is a beta document and refers to the <code>beta</code> version of Truffle. The following features will not work unless you are using Truffle Beta.</p>
-<h2><a name="get-the-beta-version" class="anchor" href="#get-the-beta-version"><span class="header-link" style="z-index: 9999999789">&nbsp;</span></a>Get the Beta Version</h2><p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
+            <h1><a name="in-beta-solidity-unit-tests" class="anchor" href="#in-beta-solidity-unit-tests"><span class="header-link" style="z-index: 9999999786">&nbsp;</span></a>In Beta: Solidity Unit Tests</h1><p>This is a beta document and refers to the <code>beta</code> version of Truffle. The following features will not work unless you are using Truffle Beta.</p>
+<h2><a name="get-the-beta-version" class="anchor" href="#get-the-beta-version"><span class="header-link" style="z-index: 9999999785">&nbsp;</span></a>Get the Beta Version</h2><p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
 <pre><code>$ npm uninstall -g truffle
 </code></pre><p>And then install the beta version:</p>
 <pre><code>$ npm install -g truffle@beta
-</code></pre><h2><a name="overview" class="anchor" href="#overview"><span class="header-link" style="z-index: 9999999788">&nbsp;</span></a>Overview</h2><p>Solidity test contracts live alongside Javascript tests as <code>.sol</code> files. When <code>truffle test</code> is run, they will be included in the mocha run with a separate test suite per test contract. These contracts maintain all the benefits of the Javascript tests: namely a clean slate per test suite, access to deployed contracts via migrations, runnable on any Ethereum client, and usage of snapshot/revert features (if supported by your Ethereum client) for increased speed. An example solidity unit test looks like this:</p>
+</code></pre><h2><a name="overview" class="anchor" href="#overview"><span class="header-link" style="z-index: 9999999784">&nbsp;</span></a>Overview</h2><p>Solidity test contracts live alongside Javascript tests as <code>.sol</code> files. When <code>truffle test</code> is run, they will be included in the mocha run with a separate test suite per test contract. These contracts maintain all the benefits of the Javascript tests: namely a clean slate per test suite, access to deployed contracts via migrations, runnable on any Ethereum client, and usage of snapshot/revert features (if supported by your Ethereum client) for increased speed. An example solidity unit test looks like this:</p>
 <pre><code class="lang-solidity">import &quot;truffle/Assert.sol&quot;;
 import &quot;truffle/DeployedAddresses.sol&quot;;
 import &quot;../contracts/MetaCoin.sol&quot;;
@@ -355,11 +357,12 @@ contract TestHooks {
       <div class="col-xs-12 col-md-3">
         <ul class="list-unstyled">
           <li><a href="/">Home</a></li>
-          <li><a href="#features">Features</a></li>
+          <li><a href="/#features">Features</a></li>
           <li><a href="/tutorials">Tutorials</a></li>
           <li><a href="/community">Community</a></li>
           <li><a href="/dashboard">Dashboard</a></li>
           <li><a href="https://github.com/trufflesuite">Github</a></li>
+          <li><a href="https://twitter.com/trufflesuite">Twitter</a></li>
         </ul>
         <strong>A CONSENSYS FORMATION &copy; 2016</strong>
         <strong>DESIGN BY JOHN MCDOWALL</strong>

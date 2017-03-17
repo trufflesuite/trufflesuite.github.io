@@ -7971,7 +7971,7 @@ button.close {
   margin-right: 4rem !important;
 }
 
-.m-b-4, .LandingPage .Tutorials li a, .Tutorials .TutorialIndex li a {
+.m-b-4, .LandingPage .Tutorials li a, .LandingPage .Blog li a, .Tutorials .TutorialIndex li a {
   margin-bottom: 4rem !important;
 }
 
@@ -8080,7 +8080,7 @@ button.close {
   padding-bottom: 1.5rem !important;
 }
 
-.p-a-3, .LandingPage .Tutorials li a, .Tutorials .TutorialIndex li a {
+.p-a-3, .LandingPage .Tutorials li a, .LandingPage .Blog li a, .Tutorials .TutorialIndex li a {
   padding: 3rem 3rem !important;
 }
 
@@ -8686,6 +8686,61 @@ code {
   color: white;
 }
 
+.LandingPage .Blog {
+  background-color: #F5F5F5;
+  position: relative;
+  overflow: hidden;
+  border-top: solid 1px #E8E8E8;
+}
+
+.LandingPage .Blog .container {
+  position: relative;
+  overflow: hidden;
+}
+
+.LandingPage .Blog:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1000px;
+  height: 800px;
+  background: #E8E8E8;
+  transform: skew(0, 45deg);
+}
+
+.LandingPage .Blog li a {
+  display: block;
+  background-color: #FFF;
+  text-transform: uppercase;
+  transition: all .3s;
+  border-bottom: solid 1px #3FE0C5;
+  /*border-left: solid 1px $body-primary-color;*/
+}
+
+.LandingPage .Blog li a h2 {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+  text-shadow: none;
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+}
+
+.LandingPage .Blog li a div {
+  margin-top: 1.2rem;
+}
+
+.LandingPage .Blog li a:hover {
+  color: white;
+  background-color: #3FE0C5;
+  text-decoration: none;
+  transform: scale(1.02);
+}
+
+.LandingPage .Blog li a:hover h2 {
+  color: white;
+}
+
 .LandingPage .Contributing {
   background: #3fe0c5;
 }
@@ -8697,6 +8752,11 @@ code {
 .LandingPage .NotableUsers li {
   margin-left: 2rem;
   margin-right: 2rem;
+}
+
+.LandingPage .NotableUsers li img {
+  width: 200px;
+  padding-bottom: 2rem;
 }
 
 @media (max-width: 590px) {
