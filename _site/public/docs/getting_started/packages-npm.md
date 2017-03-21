@@ -108,6 +108,10 @@ $ truffle networks --clean
 
 See the [command reference](/docs/advanced/commands#networks) for more information.
 
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Package management with EthPM](/docs/getting_started/packages-ethpm) || [Next: Using the console](/docs/getting_started/console) &rarr;
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

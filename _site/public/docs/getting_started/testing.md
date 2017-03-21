@@ -32,3 +32,7 @@ Truffle provides a clean room environment when running your test files. When run
 # Speed & Reliability Considerations
 
 The [EthereumJS TestRPC](https://github.com/ethereumjs/testrpc) is significantly faster than other clients when running automated tests. Moreover, the TestRPC contains special features which Truffle takes advantage of to speed up test runtime by almost 90%. As a general workflow, we recommend you use the TestRPC during normal development and testing, and then run your tests once against go-ethereum or another official Ethereum client when you're gearing up to deploy to live or production networks.
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Running migrations](/docs/getting_started/migrations) || [Next: Writing tests in Javascript](/docs/getting_started/javascript-tests) &rarr;

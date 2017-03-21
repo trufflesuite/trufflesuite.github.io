@@ -145,3 +145,7 @@ contract TestContract {
 ```
 
 Note that Truffle sends Ether to your test contract in a way that does **not** execute a fallback function, so you can still use the fallback function within your Solidity tests for advanced test cases.
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Writing tests in Javascript](/docs/getting_started/javascript-tests) || [Next: Interacting with your contracts](/docs/getting_started/contracts) &rarr;

@@ -182,3 +182,7 @@ Watch for changes to contracts, app and configuration files. When there's a chan
 ```none
 $ truffle watch
 ```
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Build Process](/docs/advanced/build_processes)

@@ -10,7 +10,7 @@ The best way to contact us is through Gitter. This allows you to ask questions t
 
 ### Mailing List
 
-Subsribe to our Truffle Users Mailing list for access to news, beta releases and new features!
+Subscribe to our Truffle Users Mailing list for access to news, beta releases and new features!
 
 <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
@@ -33,3 +33,5 @@ Subsribe to our Truffle Users Mailing list for access to news, beta releases and
 <!--End mc_embed_signup-->
 
 --------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Using the build pipeline](/docs/getting_started/build) || [Next: Configuration](/docs/advanced/configuration) &rarr;

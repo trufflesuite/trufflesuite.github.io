@@ -90,3 +90,7 @@ Using network 'development'.
 # Advanced
 
 Truffle gives you access to Mocha's configuration so you can change how Mocha behaves. See the [project configuration](/docs/advanced/configuration/#mocha) section for more details.
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Testing your contracts](/docs/getting_started/testing) || [Next: Writing tests in Solidity](/docs/getting_started/solidity-tests) &rarr;

@@ -25,3 +25,7 @@ Once completed, you'll now have a project structure with the following items:
 # Default Contracts: MetaCoin
 
 By default, `truffle init` gives you a set of example contracts (`MetaCoin` and `ConvertLib`) which act like a simple alt-coin built on top of Ethereum. You can use these contracts to learn quickly while navigating through the Getting Started guide, or delete these files and build a project of your own.
+
+-------------------------------
+<!-- previous/next page links -->
+&larr; [Previous: Choosing an Ethereum client](/docs/getting_started/client) || [Next: Compiling contracts](/docs/getting_started/compile) &rarr;
