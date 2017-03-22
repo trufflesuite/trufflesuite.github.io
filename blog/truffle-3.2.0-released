@@ -1,0 +1,21 @@
+<h1><a name="truffle-3-2-0-released-" class="anchor" href="#truffle-3-2-0-released-"><span class="header-link" style="z-index: 9999999485">&nbsp;</span></a>Truffle 3.2.0 Released! 🎉</h1><p>Hi all.</p>
+<p>Following your feedback from the Truffle 3.0 release, we&#39;ve just released Truffle 3.2.0. This release includes a <a href="https://github.com/trufflesuite/truffle/releases/tag/3.2.0">number of great new features</a>. We&#39;re most excited about the following:</p>
+<ol>
+<li><p>We&#39;ve built infrastructure for providing you boilerplates on demand! Now with <code>truffle init</code> comes <code>truffle init webpack</code>, which gives you a boilerplate web application combing the web development capabilities of Webpack with the power of Truffle. More boilerplates to come to make your life easier, so stay tuned!</p>
+</li>
+<li><p>We&#39;ve added huge speed improvements to the Truffle command line tool. Now your commands trigger in milliseconds! Go ahead, try it out. <code>truffle version</code></p>
+</li>
+<li><p>Solidity tests can now be given default balances so you can use those tests to exercise sending Ether to your contracts. Big win for Solidity tests, and your sanity in general. <a href="/docs/getting_started/solidity-tests#testing-ether-transactions">Documentation</a></p>
+</li>
+<li><p>Similarly, Javascript abstractions got an upgrade that making it easier to send Ether directly to your contracts as well as trigger your contracts&#39; fallback functions. You can use this feature within your tests as well as within your application. <a href="/docs/getting_started/contracts#sending-ether-to-a-contract">More on that here</a></p>
+</li>
+<li><p>Migrations got a nice upgrade <a href="/docs/getting_started/migrations#available-accounts">allowing you to view available accounts within your migrations</a></p>
+</li>
+<li><p>Oh, and there&#39;s no more naming restriction on contract names! 🎉🎉🎉 You can now have a file called <code>ImABigDeal.sol</code> and have it define contracts under a completely different name. Woot!</p>
+</li>
+<li><p>Along with the above, there&#39;s a new way of requiring contract artifacts within your migrations and tests. The old way still works if your contract names match your Solidity file names, but even if they don&#39;t you can simply require the contract by name:</p>
+</li>
+</ol>
+<pre><code>// Assume for a second `ImABigDeal.sol` defines `contract MyContract { ... }`
+var MyContract = artifacts.require(&quot;MyContract&quot;);
+</code></pre>
