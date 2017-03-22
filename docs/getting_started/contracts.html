@@ -286,16 +286,16 @@
               </ul>
             </div>
             <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-              <h1><a name="introduction" class="anchor" href="#introduction"><span class="header-link" style="z-index: 9999999979">&nbsp;</span></a>Introduction</h1><p>If you were writing raw requests to the Ethereum network yourself in order to interact with your contracts, you&#39;d soon realize that writing these requests is clunky and cumbersome. As well, you might find that managing the state each request you&#39;ve made is <em>complicated</em>. Fortunately, Truffle takes care of this complexity for you, to make interacting with your contracts a breeze.</p>
-<h1><a name="reading-amp-writing-data" class="anchor" href="#reading-amp-writing-data"><span class="header-link" style="z-index: 9999999978">&nbsp;</span></a>Reading &amp; Writing Data</h1><p>The Ethereum network makes a distinction between writing data to the network and reading data from it, and this distinction plays a significant part in how you write your application. In general, writing data is called a <strong>transaction</strong> whereas reading data is called a <strong>call</strong>. Transactions and calls are treated very differently, and have the following characteristics.</p>
-<h3><a name="transactions" class="anchor" href="#transactions"><span class="header-link" style="z-index: 9999999977">&nbsp;</span></a>Transactions</h3><p>Transactions fundamentally change the state of the network. A transaction can be as simple as sending Ether to another account, or as complicated as executing a contract function or adding a new contract to the network. The defining characteristic of a transaction is that it writes (or changes) data. Transactions cost Ether to run, known as &quot;gas&quot;, and transactions take time to process. When you execute a contract&#39;s function via a transaction, you cannot receive that function&#39;s return value because the transaction isn&#39;t processed immediately. In general, functions meant to be executed via a transaction will not return a value; they will return a transaction id instead. So in summary, transactions:</p>
+              <h1><a name="introduction" class="anchor" href="#introduction"><span class="header-link" style="z-index: 9999999935">&nbsp;</span></a>Introduction</h1><p>If you were writing raw requests to the Ethereum network yourself in order to interact with your contracts, you&#39;d soon realize that writing these requests is clunky and cumbersome. As well, you might find that managing the state each request you&#39;ve made is <em>complicated</em>. Fortunately, Truffle takes care of this complexity for you, to make interacting with your contracts a breeze.</p>
+<h1><a name="reading-amp-writing-data" class="anchor" href="#reading-amp-writing-data"><span class="header-link" style="z-index: 9999999934">&nbsp;</span></a>Reading &amp; Writing Data</h1><p>The Ethereum network makes a distinction between writing data to the network and reading data from it, and this distinction plays a significant part in how you write your application. In general, writing data is called a <strong>transaction</strong> whereas reading data is called a <strong>call</strong>. Transactions and calls are treated very differently, and have the following characteristics.</p>
+<h3><a name="transactions" class="anchor" href="#transactions"><span class="header-link" style="z-index: 9999999933">&nbsp;</span></a>Transactions</h3><p>Transactions fundamentally change the state of the network. A transaction can be as simple as sending Ether to another account, or as complicated as executing a contract function or adding a new contract to the network. The defining characteristic of a transaction is that it writes (or changes) data. Transactions cost Ether to run, known as &quot;gas&quot;, and transactions take time to process. When you execute a contract&#39;s function via a transaction, you cannot receive that function&#39;s return value because the transaction isn&#39;t processed immediately. In general, functions meant to be executed via a transaction will not return a value; they will return a transaction id instead. So in summary, transactions:</p>
 <ul>
 <li>Cost gas (Ether)</li>
 <li>Change the state of the network</li>
 <li>Aren&#39;t processed immediately</li>
 <li>Won&#39;t expose a return value (only a transaction id).</li>
 </ul>
-<h3><a name="calls" class="anchor" href="#calls"><span class="header-link" style="z-index: 9999999976">&nbsp;</span></a>Calls</h3><p>Calls, on the other hand, are very different. Calls can be used to execute code on the network, though no data will be permanently changed. Calls are free to run, and their defining characteristic is that they read data. When you execute a contract function via a call you will receive the return value immediately. In summary, calls:</p>
+<h3><a name="calls" class="anchor" href="#calls"><span class="header-link" style="z-index: 9999999932">&nbsp;</span></a>Calls</h3><p>Calls, on the other hand, are very different. Calls can be used to execute code on the network, though no data will be permanently changed. Calls are free to run, and their defining characteristic is that they read data. When you execute a contract function via a call you will receive the return value immediately. In summary, calls:</p>
 <ul>
 <li>Are free (do not cost gas)</li>
 <li>Do not change the state of the network</li>
@@ -303,7 +303,7 @@
 <li>Will expose a return value (hooray!)</li>
 </ul>
 <p>Choosing between a transaction and a call is as simple as deciding whether you want to read data, or write it.</p>
-<h1><a name="introducing-abstractions" class="anchor" href="#introducing-abstractions"><span class="header-link" style="z-index: 9999999975">&nbsp;</span></a>Introducing Abstractions</h1><p>Contract abstractions are the bread and butter of interacting with Ethereum contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> module, and its this contract abstraction that&#39;s described below.</p>
+<h1><a name="introducing-abstractions" class="anchor" href="#introducing-abstractions"><span class="header-link" style="z-index: 9999999931">&nbsp;</span></a>Introducing Abstractions</h1><p>Contract abstractions are the bread and butter of interacting with Ethereum contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> module, and its this contract abstraction that&#39;s described below.</p>
 <p>In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We&#39;ll use the MetaCoin contract provided for you by default via <code>truffle init</code>.</p>
 <pre><code class="lang-javascript">pragma solidity ^0.4.2;
 
@@ -359,8 +359,8 @@ MetaCoin.deployed().then(function(instance) {
 // ...
 </code></pre>
 <p>Notice that the abstraction contains the exact same functions that exist within our contract. It also contains an address which points to the deployed version of the MetaCoin contract.</p>
-<h2><a name="executing-contract-functions" class="anchor" href="#executing-contract-functions"><span class="header-link" style="z-index: 9999999974">&nbsp;</span></a>Executing Contract Functions</h2><p>Using the abstraction you can easily execute contract functions on the Ethereum network.</p>
-<h3><a name="making-a-transaction" class="anchor" href="#making-a-transaction"><span class="header-link" style="z-index: 9999999973">&nbsp;</span></a>Making a Transaction</h3><p>There are three functions on the MetaCoin contract that we can execute. If you analyze each of them, you&#39;ll see that <code>sendCoin</code> is the only function that aims to make changes to the network. The goal of <code>sendCoin</code> is to &quot;send&quot; some Meta coins from one account to the next, and these changes should persist.</p>
+<h2><a name="executing-contract-functions" class="anchor" href="#executing-contract-functions"><span class="header-link" style="z-index: 9999999930">&nbsp;</span></a>Executing Contract Functions</h2><p>Using the abstraction you can easily execute contract functions on the Ethereum network.</p>
+<h3><a name="making-a-transaction" class="anchor" href="#making-a-transaction"><span class="header-link" style="z-index: 9999999929">&nbsp;</span></a>Making a Transaction</h3><p>There are three functions on the MetaCoin contract that we can execute. If you analyze each of them, you&#39;ll see that <code>sendCoin</code> is the only function that aims to make changes to the network. The goal of <code>sendCoin</code> is to &quot;send&quot; some Meta coins from one account to the next, and these changes should persist.</p>
 <p>When calling <code>sendCoin</code>, we&#39;ll execute it as a transaction. In the following example, we&#39;ll send 10 Meta coin from one account to another, in a way that persists changes on the network:</p>
 <pre><code class="lang-javascript">var account_one = &quot;0x1234...&quot;; // an address
 var account_two = &quot;0xabcd...&quot;; // another address
@@ -382,7 +382,7 @@ MetaCoin.deployed().then(function(instance) {
 <li>When the transaction is successful, the callback function isn&#39;t fired until the transaction is processed. This makes life easy and means you don&#39;t have to check the status of the transaction yourself.</li>
 <li>We passed an object as the third parameter to <code>sendCoin</code>. Note that the <code>sendCoin</code> function in our Solidity contract doesn&#39;t have a third parameter. What you see above is a special object that can always be passed as the last parameter to a function that lets you edit specific details about the transaction. Here, we set the <code>from</code> address ensuring this transaction came from <code>account_one</code>.</li>
 </ul>
-<h3><a name="making-a-call" class="anchor" href="#making-a-call"><span class="header-link" style="z-index: 9999999972">&nbsp;</span></a>Making a Call</h3><p>Continuing with MetaCoin, notice the <code>getBalance</code> function is a great candidate for reading data from the network. It doesn&#39;t need to make any changes, as it just returns the MetaCoin balance of the address passed to it. Let&#39;s give it a shot:</p>
+<h3><a name="making-a-call" class="anchor" href="#making-a-call"><span class="header-link" style="z-index: 9999999928">&nbsp;</span></a>Making a Call</h3><p>Continuing with MetaCoin, notice the <code>getBalance</code> function is a great candidate for reading data from the network. It doesn&#39;t need to make any changes, as it just returns the MetaCoin balance of the address passed to it. Let&#39;s give it a shot:</p>
 <pre><code class="lang-javascript">var account_one = &quot;0x1234...&quot;; // an address
 
 var meta;
@@ -404,7 +404,7 @@ MetaCoin.deployed().then(function(instance) {
 <li>We received a return value instead of a transaction id on success. Note that since the Etheruem network can handle very large numbers, we&#39;re given a <a href="https://github.com/MikeMcl/bignumber.js/">BigNumber</a> object which we then convert to a number.</li>
 </ul>
 <p><strong>Warning:</strong> We convert the return value to a number because in this example the numbers are small. However, if you try to convert a BigNumber that&#39;s larger than the largest integer supported by Javascript, you&#39;ll likely run into errors or unexpected behavior.</p>
-<h3><a name="catching-events" class="anchor" href="#catching-events"><span class="header-link" style="z-index: 9999999971">&nbsp;</span></a>Catching Events</h3><p>Your contracts can fire events that you can catch to gain more insight into what your contracts are doing. The easiest way to handle events is by processing the result object of the transaction that triggered the event, like so:</p>
+<h3><a name="catching-events" class="anchor" href="#catching-events"><span class="header-link" style="z-index: 9999999927">&nbsp;</span></a>Catching Events</h3><p>Your contracts can fire events that you can catch to gain more insight into what your contracts are doing. The easiest way to handle events is by processing the result object of the transaction that triggered the event, like so:</p>
 <pre><code class="lang-javascript">var account_one = &quot;0x1234...&quot;; // an address
 var account_two = &quot;0xabcd...&quot;; // another address
 
@@ -432,7 +432,7 @@ MetaCoin.deployed().then(function(instance) {
   // There was an error! Handle it.
 });
 </code></pre>
-<h3><a name="add-a-new-contract-to-the-network" class="anchor" href="#add-a-new-contract-to-the-network"><span class="header-link" style="z-index: 9999999970">&nbsp;</span></a>Add a new contract to the network</h3><p>In all of the above cases, we&#39;ve been using a contract abstraction that has already been deployed. We can deploy our own version to the network using the <code>.new()</code> function:</p>
+<h3><a name="add-a-new-contract-to-the-network" class="anchor" href="#add-a-new-contract-to-the-network"><span class="header-link" style="z-index: 9999999926">&nbsp;</span></a>Add a new contract to the network</h3><p>In all of the above cases, we&#39;ve been using a contract abstraction that has already been deployed. We can deploy our own version to the network using the <code>.new()</code> function:</p>
 <pre><code class="lang-javascript">MetaCoin.new().then(function(instance) {
   // Print the new address
   console.log(instance.address);
@@ -440,10 +440,21 @@ MetaCoin.deployed().then(function(instance) {
   // There was an error! Handle it.
 });
 </code></pre>
-<h3><a name="use-a-contract-at-a-specific-address" class="anchor" href="#use-a-contract-at-a-specific-address"><span class="header-link" style="z-index: 9999999969">&nbsp;</span></a>Use a contract at a specific address</h3><p>If you already have an address for a contract, you can create a new abstraction to represent the contract at that address.</p>
+<h3><a name="use-a-contract-at-a-specific-address" class="anchor" href="#use-a-contract-at-a-specific-address"><span class="header-link" style="z-index: 9999999925">&nbsp;</span></a>Use a contract at a specific address</h3><p>If you already have an address for a contract, you can create a new abstraction to represent the contract at that address.</p>
 <pre><code class="lang-javascript">var instance = MetaCoin.at(&quot;0x1234...&quot;);
 </code></pre>
-<h1><a name="further-reading" class="anchor" href="#further-reading"><span class="header-link" style="z-index: 9999999968">&nbsp;</span></a>Further Reading</h1><p>The contract abstractions provided by Truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> documentation for tips, tricks and insights.</p>
+<h3><a name="sending-ether-to-a-contract" class="anchor" href="#sending-ether-to-a-contract"><span class="header-link" style="z-index: 9999999924">&nbsp;</span></a>Sending Ether to a contract</h3><p>You may simply want to send Ether directly to a contract, or trigger a contract&#39;s <a href="http://solidity.readthedocs.io/en/develop/contracts.html#fallback-function">fallback function</a>. You can do so using one of the following two options.</p>
+<p>Option 1: Send a transaction directly to a contract via <code>instance.sendTransaction()</code>. This is promisified like all available contract instance functions, and has the same API as <code>web3.eth.sendTransaction</code> but without the callback. The <code>to</code> value will be automatically filled in for you if not specified.</p>
+<pre><code class="lang-javascript">instance.sendTransaction({...}).then(function(result) {
+  // Same transaction result object as above.
+});
+</code></pre>
+<p>Option 2: There&#39;s also shorthand for just sending Ether directly:</p>
+<pre><code class="lang-javascript">instance.send(web3.toWei(1, &quot;ether&quot;)).then(function(result) {
+  // Same result object as above.
+});
+</code></pre>
+<h1><a name="further-reading" class="anchor" href="#further-reading"><span class="header-link" style="z-index: 9999999923">&nbsp;</span></a>Further Reading</h1><p>The contract abstractions provided by Truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> documentation for tips, tricks and insights.</p>
 
               <footer class="container-fluid">
                 <p class="text-center">See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/docs/getting_started/contracts.md">Edit here &rarr;</a></p>
