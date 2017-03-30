@@ -8317,6 +8317,28 @@ code {
   word-wrap: break-word;
 }
 
+.nav a {
+  text-transform: uppercase;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+  line-height: 100px;
+  height: 100px;
+  padding-top: 0;
+}
+
+.navbar-brand svg,
+.navbar-nav li a svg {
+  width: 100px;
+  padding-top: 15px;
+}
+
+.navbar-toggle {
+  margin-top: 30px;
+  margin-right: 30px;
+}
+
 .btn-primary,
 .btn-secondary {
   border: none;
@@ -9034,26 +9056,26 @@ code {
   color: white;
 }
 
-.Community .nav a {
-  text-transform: uppercase;
+.Support .MainContent {
+  border-bottom: solid 1px #e7e7e7;
 }
 
-.Community .navbar-brand,
-.Community .navbar-nav li a {
-  line-height: 100px;
-  height: 100px;
-  padding-top: 0;
+.Support .MainContent ul {
+  max-width: 600px;
 }
 
-.Community .navbar-brand svg,
-.Community .navbar-nav li a svg {
-  width: 100px;
-  padding-top: 15px;
+.Support .MainContent ul li {
+  font-family: "Open Sans", "Verdana", Times, serif;
 }
 
-.Community .navbar-toggle {
-  margin-top: 30px;
-  margin-right: 30px;
+.Support .custom-box {
+  position: relative;
+  max-width: 750px;
+}
+
+.Support .livesaver {
+  width: 120px;
+  float: right;
 }
 
 @media (min-width: 992px) {
