@@ -10,11 +10,11 @@ To compile your contracts, simply run:
 $ truffle compile
 ```
 
-Truffle will compile only the contracts that have been changed since the last compile, to reduce any unnecessarily compilation. If you'd like to override this behavior, run the above command with the `--all` option.
+Truffle will compile only the contracts that have been changed since the last compile, to reduce any unnecessary compilation. If you'd like to override this behavior, run the above command with the `--all` option.
 
 # Artifacts
 
-Artifacts of your compilation will be placed in the `./build/contracts` directory, relative to your project. This directory will be created if it does not exist. These artifacts are integral to the inner workings of Truffle, and they play and important part to the successful deployment of your application. You should not edit these files by hand as they'll be overwritten by contract compilation and deployment.
+Artifacts of your compilation will be placed in the `./build/contracts` directory, relative to your project. This directory will be created if it does not exist. These artifacts are integral to the inner workings of Truffle, and they play an important part to the successful deployment of your application. You should not edit these files by hand as they'll be overwritten by contract compilation and deployment.
 
 # Dependencies
 
@@ -38,6 +38,6 @@ Truffle supports dependencies installed via [NPM](./packages-npm) as well as [Et
 import "somepackage/SomeContract.sol";
 ```
 
-Note that Truffle will search installed packages from EthPM first before searching for packages installed from NPM, so in the rare case of a naming conflict the package installed via EthPM will be used.
+Note that Truffle will search installed packages from EthPM first before searching for packages installed from NPM so, in the rare case of a naming conflict, the package installed via EthPM will be used.
 
 For more information on how to use Truffle's package management features, please see Truffle's [NPM](./packages-npm) and [EthPM](./packages-ethpm) documentation, respectively.
