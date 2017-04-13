@@ -222,14 +222,14 @@
       <section class="MainContent">
         <div class="container-fluid">
           <div class="row">
-            <h1><a name="ethereum-devops-with-truffle-testrpc-amp-visual-studio-team-services" class="anchor" href="#ethereum-devops-with-truffle-testrpc-amp-visual-studio-team-services"><span class="header-link" style="z-index: 9999968056">&nbsp;</span></a>Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services</h1><p>This post was originally published by David Burela on his blog <a href="https://davidburela.wordpress.com/2016/12/23/ethereum-devops-with-truffle-testrpc-visual-studio-team-services/">Burela&#39;s House-o-blog</a>. Big thanks to David for allowing us publish it here!</p>
+            <h1><a name="ethereum-devops-with-truffle-testrpc-amp-visual-studio-team-services" class="anchor" href="#ethereum-devops-with-truffle-testrpc-amp-visual-studio-team-services"><span class="header-link" style="z-index: 9999998008">&nbsp;</span></a>Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services</h1><p>This post was originally published by David Burela on his blog <a href="https://davidburela.wordpress.com/2016/12/23/ethereum-devops-with-truffle-testrpc-visual-studio-team-services/">Burela&#39;s House-o-blog</a>. Big thanks to David for allowing us publish it here!</p>
 <hr>
 <p>I have been working on automating the compilation and testing of Ethereum solidity contracts, via the use of <a href="http://truffleframework.com/">Truffle</a>. I’ve got the test results being published back into the portal, allowing me to see on each commit if my code still compiles and passes my tests.</p>
 <p>I’m assuming you already have a Truffle project locally that you want to automate the continuous builds &amp; testing on. Follow the <a href="/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development">tutorial on installing Truffle &amp; TestRPC on Windows</a>.</p>
 <p>My final system will allow you to run “truffle test” locally to see standard test output, but will modify the test runner on the server to output it as JUnit format.</p>
-<h2><a name="the-build-system" class="anchor" href="#the-build-system"><span class="header-link" style="z-index: 9999968055">&nbsp;</span></a>The Build system</h2><p>The system uses the <a href="https://azure.microsoft.com/en-us/services/visual-studio-team-services/">Visual Studio Team Services</a> (VSTS) build engine to automate this. You can sign up for free, and get unlimited private Git repos.  </p>
+<h2><a name="the-build-system" class="anchor" href="#the-build-system"><span class="header-link" style="z-index: 9999998007">&nbsp;</span></a>The Build system</h2><p>The system uses the <a href="https://azure.microsoft.com/en-us/services/visual-studio-team-services/">Visual Studio Team Services</a> (VSTS) build engine to automate this. You can sign up for free, and get unlimited private Git repos.  </p>
 <p>You can have the code hosted on any Git provider. So either within VSTS itself, or GitHub, BitBucket, etc.</p>
-<h2><a name="prepare-truffle-js" class="anchor" href="#prepare-truffle-js"><span class="header-link" style="z-index: 9999968054">&nbsp;</span></a>Prepare truffle.js</h2><p>A pre-step is to define the  test section in the truffle.js file</p>
+<h2><a name="prepare-truffle-js" class="anchor" href="#prepare-truffle-js"><span class="header-link" style="z-index: 9999998006">&nbsp;</span></a>Prepare truffle.js</h2><p>A pre-step is to define the  test section in the truffle.js file</p>
 <pre><code class="lang-javascript">mocha: {  
   reporter: “spec”,  
   reporterOptions: {  
@@ -237,7 +237,7 @@
   }  
 }
 </code></pre>
-<h2><a name="create-a-build-agent" class="anchor" href="#create-a-build-agent"><span class="header-link" style="z-index: 9999968053">&nbsp;</span></a>Create a build agent</h2><p>VSTS does provide hosted build agents, which are generic and can build standard .Net projects, Xamarin, etc. But because we are going to use npm packages installed globally on the box to handle the Truffle builds</p>
+<h2><a name="create-a-build-agent" class="anchor" href="#create-a-build-agent"><span class="header-link" style="z-index: 9999998005">&nbsp;</span></a>Create a build agent</h2><p>VSTS does provide hosted build agents, which are generic and can build standard .Net projects, Xamarin, etc. But because we are going to use npm packages installed globally on the box to handle the Truffle builds</p>
 <ul>
 <li>Create a new Windows VM (Can be your own hosted server, or Azure).<br>e.g. <a href="https://azure.microsoft.com/en-au/marketplace/partners/microsoft/windowsserver2016datacenter/">Windows Server 2016 Datacentre edition on Azure</a></li>
 <li>Install the VSTS build agent. Instructions at <a href="https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows">https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows</a><br>Note: DON’T select to run service as NT AUTHORITY\NETWORK, this will not work with TestRPC (needs to open ports).<br>Run the service as another user, or NT AUTHORITY\SYSTEM</li>
@@ -258,13 +258,13 @@ $ npm install -g mocha-junit-reporter
 </code></pre><ul>
 <li>Restart the build agent so that all new paths are working</li>
 </ul>
-<h2><a name="configure-vsts-build" class="anchor" href="#configure-vsts-build"><span class="header-link" style="z-index: 9999968052">&nbsp;</span></a>Configure VSTS build</h2><p>Create a new variable with the path to where the npm global path is, for the user you installed the npm packages on above:</p>
+<h2><a name="configure-vsts-build" class="anchor" href="#configure-vsts-build"><span class="header-link" style="z-index: 9999998004">&nbsp;</span></a>Configure VSTS build</h2><p>Create a new variable with the path to where the npm global path is, for the user you installed the npm packages on above:</p>
 <ul>
 <li>variable name: <code>npm.path</code></li>
 <li>variable value: path to npm packages e.g. <code>C:\Users\&lt;user&gt;\AppData\Roaming\npm</code>  </li>
 </ul>
 <p><img src="https://davidburela.files.wordpress.com/2016/12/image5.png" alt="image"></p>
-<h2><a name="add-7-powershell-tasks-and-configure-them-like-this" class="anchor" href="#add-7-powershell-tasks-and-configure-them-like-this"><span class="header-link" style="z-index: 9999968051">&nbsp;</span></a>Add 7 PowerShell tasks, and configure them like this</h2><ul>
+<h2><a name="add-7-powershell-tasks-and-configure-them-like-this" class="anchor" href="#add-7-powershell-tasks-and-configure-them-like-this"><span class="header-link" style="z-index: 9999998003">&nbsp;</span></a>Add 7 PowerShell tasks, and configure them like this</h2><ul>
 <li>Name: System version information  </li>
 <li>Script:  </li>
 </ul>
@@ -347,7 +347,7 @@ taskkill /pid $testrpcPID /F /T
 <li>Test Result Files: <code>junitresults.xml</code>
 <img src="https://davidburela.files.wordpress.com/2016/12/image12.png" alt="image"></li>
 </ul>
-<h2><a name="future-work" class="anchor" href="#future-work"><span class="header-link" style="z-index: 9999968050">&nbsp;</span></a>Future work</h2><p>Things that I would like to add in the future:</p>
+<h2><a name="future-work" class="anchor" href="#future-work"><span class="header-link" style="z-index: 9999998002">&nbsp;</span></a>Future work</h2><p>Things that I would like to add in the future:</p>
 <ul>
 <li>Figure out how to automate this on a Linux build agent (VSTS supports both Windows &amp; Linux based build agents)</li>
 <li>Automate Release Management to run <code>truffle migrate</code> to push to a <a href="https://azure.microsoft.com/en-us/blog/project-bletchley-blockchain-infrastructure-made-easy/">Bletchley test environment</a></li>
