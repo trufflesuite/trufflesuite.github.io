@@ -17,6 +17,10 @@ Truffle is a world class development environment, testing framework and asset pi
 * External script runner that executes scripts within a Truffle environment.
 
 -------------------------------
+<!-- Previous/Next page links -->
+<a href="http://truffleframework.com/">Home</a> &larr; || &rarr; <a href="/docs/getting_started/installation">Installation</a>
+
+-------------------------------
 
 Subscribe to our mailing list for news, beta releases and new features!
 
