@@ -1,3 +1,13 @@
 .Community {
-  
+  .MainContent {
+    padding-top: 123px;
+    background: #F8F5F0;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 767px) {
+    .MainContent {
+      padding-top: 83px;
+    }
+  }
 }

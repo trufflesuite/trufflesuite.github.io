@@ -1385,7 +1385,7 @@ body {
   font-size: 16px;
   line-height: 1.42857;
   color: #545452;
-  background-color: #F8F5F0;
+  background-color: #FFF;
 }
 
 input,
@@ -1433,7 +1433,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857;
-  background-color: #F8F5F0;
+  background-color: #FFF;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1934,36 +1934,71 @@ pre code {
   overflow-y: scroll;
 }
 
-.container {
+.container, .Tutorials .MainContent > .container-fluid > .row > h1,
+.Tutorials .MainContent > .container-fluid > .row > h2,
+.Tutorials .MainContent > .container-fluid > .row > h3,
+.Tutorials .MainContent > .container-fluid > .row > h4,
+.Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent h1:first-child, .Tutorials .MainContent ul,
+.Tutorials .MainContent ol, .Tutorials .MainContent pre code {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.container:before, .container:after {
+.container:before, .Tutorials .MainContent > .container-fluid > .row > h1:before,
+.Tutorials .MainContent > .container-fluid > .row > h2:before,
+.Tutorials .MainContent > .container-fluid > .row > h3:before,
+.Tutorials .MainContent > .container-fluid > .row > h4:before,
+.Tutorials .MainContent > .container-fluid > .row > p:before, .Tutorials .MainContent h1:first-child:before, .Tutorials .MainContent ul:before,
+.Tutorials .MainContent ol:before, .Tutorials .MainContent pre code:before, .container:after, .Tutorials .MainContent > .container-fluid > .row > h1:after,
+.Tutorials .MainContent > .container-fluid > .row > h2:after,
+.Tutorials .MainContent > .container-fluid > .row > h3:after,
+.Tutorials .MainContent > .container-fluid > .row > h4:after,
+.Tutorials .MainContent > .container-fluid > .row > p:after, .Tutorials .MainContent h1:first-child:after, .Tutorials .MainContent ul:after,
+.Tutorials .MainContent ol:after, .Tutorials .MainContent pre code:after {
   content: " ";
   display: table;
 }
 
-.container:after {
+.container:after, .Tutorials .MainContent > .container-fluid > .row > h1:after,
+.Tutorials .MainContent > .container-fluid > .row > h2:after,
+.Tutorials .MainContent > .container-fluid > .row > h3:after,
+.Tutorials .MainContent > .container-fluid > .row > h4:after,
+.Tutorials .MainContent > .container-fluid > .row > p:after, .Tutorials .MainContent h1:first-child:after, .Tutorials .MainContent ul:after,
+.Tutorials .MainContent ol:after, .Tutorials .MainContent pre code:after {
   clear: both;
 }
 
 @media (min-width: 768px) {
-  .container {
+  .container, .Tutorials .MainContent > .container-fluid > .row > h1,
+  .Tutorials .MainContent > .container-fluid > .row > h2,
+  .Tutorials .MainContent > .container-fluid > .row > h3,
+  .Tutorials .MainContent > .container-fluid > .row > h4,
+  .Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent h1:first-child, .Tutorials .MainContent ul,
+  .Tutorials .MainContent ol, .Tutorials .MainContent pre code {
     width: 750px;
   }
 }
 
 @media (min-width: 992px) {
-  .container {
+  .container, .Tutorials .MainContent > .container-fluid > .row > h1,
+  .Tutorials .MainContent > .container-fluid > .row > h2,
+  .Tutorials .MainContent > .container-fluid > .row > h3,
+  .Tutorials .MainContent > .container-fluid > .row > h4,
+  .Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent h1:first-child, .Tutorials .MainContent ul,
+  .Tutorials .MainContent ol, .Tutorials .MainContent pre code {
     width: 970px;
   }
 }
 
 @media (min-width: 1200px) {
-  .container {
+  .container, .Tutorials .MainContent > .container-fluid > .row > h1,
+  .Tutorials .MainContent > .container-fluid > .row > h2,
+  .Tutorials .MainContent > .container-fluid > .row > h3,
+  .Tutorials .MainContent > .container-fluid > .row > h4,
+  .Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent h1:first-child, .Tutorials .MainContent ul,
+  .Tutorials .MainContent ol, .Tutorials .MainContent pre code {
     width: 1170px;
   }
 }
@@ -1998,32 +2033,17 @@ pre code {
   clear: both;
 }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .Tutorials .MainContent > .container-fluid > .row > h1,
-.Tutorials .MainContent > .container-fluid > .row > h2,
-.Tutorials .MainContent > .container-fluid > .row > h3,
-.Tutorials .MainContent > .container-fluid > .row > h4,
-.Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent table, .Tutorials .MainContent ul,
-.Tutorials .MainContent ol, .Tutorials .MainContent ul li pre code,
-.Tutorials .MainContent ol li pre code, .Tutorials .MainContent hr, .Tutorials .MainContent pre code, .Tutorials .TutorialIndex h1, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .Tutorials .MainContent > .container-fluid > .row > h1,
-.Tutorials .MainContent > .container-fluid > .row > h2,
-.Tutorials .MainContent > .container-fluid > .row > h3,
-.Tutorials .MainContent > .container-fluid > .row > h4,
-.Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent table, .Tutorials .MainContent ul,
-.Tutorials .MainContent ol, .Tutorials .MainContent ul li pre code,
-.Tutorials .MainContent ol li pre code, .Tutorials .MainContent hr, .Tutorials .MainContent pre code, .Tutorials .TutorialIndex h1, .col-sm-12, .col-md-12, .Tutorials .MainContent pre, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
+.Tutorials .MainContent ol li pre code, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
+.Tutorials .MainContent ol li pre code, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .Tutorials .MainContent > .container-fluid > .row > h1,
-.Tutorials .MainContent > .container-fluid > .row > h2,
-.Tutorials .MainContent > .container-fluid > .row > h3,
-.Tutorials .MainContent > .container-fluid > .row > h4,
-.Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent table, .Tutorials .MainContent ul,
-.Tutorials .MainContent ol, .Tutorials .MainContent ul li pre code,
-.Tutorials .MainContent ol li pre code, .Tutorials .MainContent hr, .Tutorials .MainContent pre code, .Tutorials .TutorialIndex h1 {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
+.Tutorials .MainContent ol li pre code {
   float: left;
 }
 
@@ -2071,13 +2091,8 @@ pre code {
   width: 91.66667%;
 }
 
-.col-xs-12, .Tutorials .MainContent > .container-fluid > .row > h1,
-.Tutorials .MainContent > .container-fluid > .row > h2,
-.Tutorials .MainContent > .container-fluid > .row > h3,
-.Tutorials .MainContent > .container-fluid > .row > h4,
-.Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent table, .Tutorials .MainContent ul,
-.Tutorials .MainContent ol, .Tutorials .MainContent ul li pre code,
-.Tutorials .MainContent ol li pre code, .Tutorials .MainContent hr, .Tutorials .MainContent pre code, .Tutorials .TutorialIndex h1 {
+.col-xs-12, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
+.Tutorials .MainContent ol li pre code {
   width: 100%;
 }
 
@@ -2397,13 +2412,8 @@ pre code {
 }
 
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .Tutorials .MainContent > .container-fluid > .row > h1,
-  .Tutorials .MainContent > .container-fluid > .row > h2,
-  .Tutorials .MainContent > .container-fluid > .row > h3,
-  .Tutorials .MainContent > .container-fluid > .row > h4,
-  .Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent table, .Tutorials .MainContent ul,
-  .Tutorials .MainContent ol, .Tutorials .MainContent ul li pre code,
-  .Tutorials .MainContent ol li pre code, .Tutorials .MainContent hr, .Tutorials .MainContent pre code, .Tutorials .TutorialIndex h1, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .Tutorials .MainContent pre {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
+  .Tutorials .MainContent ol li pre code, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
   .col-md-1 {
@@ -2421,13 +2431,8 @@ pre code {
   .col-md-5 {
     width: 41.66667%;
   }
-  .col-md-6, .Tutorials .MainContent > .container-fluid > .row > h1,
-  .Tutorials .MainContent > .container-fluid > .row > h2,
-  .Tutorials .MainContent > .container-fluid > .row > h3,
-  .Tutorials .MainContent > .container-fluid > .row > h4,
-  .Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent table, .Tutorials .MainContent ul,
-  .Tutorials .MainContent ol, .Tutorials .MainContent ul li pre code,
-  .Tutorials .MainContent ol li pre code, .Tutorials .MainContent hr, .Tutorials .MainContent pre code, .Tutorials .TutorialIndex h1 {
+  .col-md-6, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
+  .Tutorials .MainContent ol li pre code {
     width: 50%;
   }
   .col-md-7 {
@@ -2445,7 +2450,7 @@ pre code {
   .col-md-11 {
     width: 91.66667%;
   }
-  .col-md-12, .Tutorials .MainContent pre {
+  .col-md-12 {
     width: 100%;
   }
   .col-md-pull-0 {
@@ -2463,13 +2468,8 @@ pre code {
   .col-md-pull-4 {
     right: 33.33333%;
   }
-  .col-md-pull-5, .Tutorials .MainContent > .container-fluid > .row > h1,
-  .Tutorials .MainContent > .container-fluid > .row > h2,
-  .Tutorials .MainContent > .container-fluid > .row > h3,
-  .Tutorials .MainContent > .container-fluid > .row > h4,
-  .Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent table, .Tutorials .MainContent ul,
-  .Tutorials .MainContent ol, .Tutorials .MainContent ul li pre code,
-  .Tutorials .MainContent ol li pre code, .Tutorials .MainContent hr, .Tutorials .MainContent pre code, .Tutorials .TutorialIndex h1 {
+  .col-md-pull-5, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
+  .Tutorials .MainContent ol li pre code {
     right: 41.66667%;
   }
   .col-md-pull-6 {
@@ -2551,12 +2551,7 @@ pre code {
   .Tutorials .MainContent ol li pre code {
     margin-left: 41.66667%;
   }
-  .col-md-offset-6, .Tutorials .MainContent > .container-fluid > .row > h1,
-  .Tutorials .MainContent > .container-fluid > .row > h2,
-  .Tutorials .MainContent > .container-fluid > .row > h3,
-  .Tutorials .MainContent > .container-fluid > .row > h4,
-  .Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent table, .Tutorials .MainContent ul,
-  .Tutorials .MainContent ol, .Tutorials .MainContent hr, .Tutorials .MainContent pre code, .Tutorials .TutorialIndex h1 {
+  .col-md-offset-6, .Tutorials .MainContent table {
     margin-left: 50%;
   }
   .col-md-offset-7 {
@@ -2788,7 +2783,7 @@ th {
 }
 
 .table .table, .Tutorials .MainContent table .table, .table .Tutorials .MainContent table, .Tutorials .MainContent .table table, .Tutorials .MainContent table table {
-  background-color: #F8F5F0;
+  background-color: #FFF;
 }
 
 .table-condensed > thead > tr > th,
@@ -4727,7 +4722,7 @@ tbody.collapse.in {
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #F8F5F0;
+  background-color: #FFF;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -4810,7 +4805,7 @@ tbody.collapse.in {
   .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a,
   .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #F8F5F0;
+    border-bottom-color: #FFF;
   }
 }
 
@@ -4922,8 +4917,18 @@ tbody.collapse.in {
   }
 }
 
-.container > .navbar-header,
-.container > .navbar-collapse,
+.container > .navbar-header, .Tutorials .MainContent > .container-fluid > .row > h1 > .navbar-header,
+.Tutorials .MainContent > .container-fluid > .row > h2 > .navbar-header,
+.Tutorials .MainContent > .container-fluid > .row > h3 > .navbar-header,
+.Tutorials .MainContent > .container-fluid > .row > h4 > .navbar-header,
+.Tutorials .MainContent > .container-fluid > .row > p > .navbar-header, .Tutorials .MainContent h1:first-child > .navbar-header, .Tutorials .MainContent ul > .navbar-header,
+.Tutorials .MainContent ol > .navbar-header, .Tutorials .MainContent pre code > .navbar-header,
+.container > .navbar-collapse, .Tutorials .MainContent > .container-fluid > .row > h1 > .navbar-collapse,
+.Tutorials .MainContent > .container-fluid > .row > h2 > .navbar-collapse,
+.Tutorials .MainContent > .container-fluid > .row > h3 > .navbar-collapse,
+.Tutorials .MainContent > .container-fluid > .row > h4 > .navbar-collapse,
+.Tutorials .MainContent > .container-fluid > .row > p > .navbar-collapse, .Tutorials .MainContent h1:first-child > .navbar-collapse, .Tutorials .MainContent ul > .navbar-collapse,
+.Tutorials .MainContent ol > .navbar-collapse, .Tutorials .MainContent pre code > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
@@ -4931,8 +4936,18 @@ tbody.collapse.in {
 }
 
 @media (min-width: 768px) {
-  .container > .navbar-header,
-  .container > .navbar-collapse,
+  .container > .navbar-header, .Tutorials .MainContent > .container-fluid > .row > h1 > .navbar-header,
+  .Tutorials .MainContent > .container-fluid > .row > h2 > .navbar-header,
+  .Tutorials .MainContent > .container-fluid > .row > h3 > .navbar-header,
+  .Tutorials .MainContent > .container-fluid > .row > h4 > .navbar-header,
+  .Tutorials .MainContent > .container-fluid > .row > p > .navbar-header, .Tutorials .MainContent h1:first-child > .navbar-header, .Tutorials .MainContent ul > .navbar-header,
+  .Tutorials .MainContent ol > .navbar-header, .Tutorials .MainContent pre code > .navbar-header,
+  .container > .navbar-collapse, .Tutorials .MainContent > .container-fluid > .row > h1 > .navbar-collapse,
+  .Tutorials .MainContent > .container-fluid > .row > h2 > .navbar-collapse,
+  .Tutorials .MainContent > .container-fluid > .row > h3 > .navbar-collapse,
+  .Tutorials .MainContent > .container-fluid > .row > h4 > .navbar-collapse,
+  .Tutorials .MainContent > .container-fluid > .row > p > .navbar-collapse, .Tutorials .MainContent h1:first-child > .navbar-collapse, .Tutorials .MainContent ul > .navbar-collapse,
+  .Tutorials .MainContent ol > .navbar-collapse, .Tutorials .MainContent pre code > .navbar-collapse,
   .container-fluid > .navbar-header,
   .container-fluid > .navbar-collapse {
     margin-right: 0;
@@ -4994,7 +5009,12 @@ tbody.collapse.in {
 }
 
 @media (min-width: 768px) {
-  .navbar > .container .navbar-brand,
+  .navbar > .container .navbar-brand, .Tutorials .MainContent > .container-fluid > .row.navbar > h1 .navbar-brand,
+  .Tutorials .MainContent > .container-fluid > .row.navbar > h2 .navbar-brand,
+  .Tutorials .MainContent > .container-fluid > .row.navbar > h3 .navbar-brand,
+  .Tutorials .MainContent > .container-fluid > .row.navbar > h4 .navbar-brand,
+  .Tutorials .MainContent > .container-fluid > .row.navbar > p .navbar-brand, .Tutorials .MainContent .navbar > h1:first-child .navbar-brand, .Tutorials .MainContent .navbar > ul .navbar-brand,
+  .Tutorials .MainContent .navbar > ol .navbar-brand, .Tutorials .MainContent pre .navbar > code .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
   }
@@ -5760,14 +5780,29 @@ a.badge:hover, a.badge:focus {
   border-top-color: #d5d5d5;
 }
 
-.container .jumbotron,
+.container .jumbotron, .Tutorials .MainContent > .container-fluid > .row > h1 .jumbotron,
+.Tutorials .MainContent > .container-fluid > .row > h2 .jumbotron,
+.Tutorials .MainContent > .container-fluid > .row > h3 .jumbotron,
+.Tutorials .MainContent > .container-fluid > .row > h4 .jumbotron,
+.Tutorials .MainContent > .container-fluid > .row > p .jumbotron, .Tutorials .MainContent h1:first-child .jumbotron, .Tutorials .MainContent ul .jumbotron,
+.Tutorials .MainContent ol .jumbotron, .Tutorials .MainContent pre code .jumbotron,
 .container-fluid .jumbotron {
   border-radius: 6px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.jumbotron .container {
+.jumbotron .container, .jumbotron .Tutorials .MainContent > .container-fluid > .row > h1, .Tutorials .jumbotron .MainContent > .container-fluid > .row > h1, .jumbotron
+.Tutorials .MainContent > .container-fluid > .row > h2,
+.Tutorials .jumbotron .MainContent > .container-fluid > .row > h2, .jumbotron
+.Tutorials .MainContent > .container-fluid > .row > h3,
+.Tutorials .jumbotron .MainContent > .container-fluid > .row > h3, .jumbotron
+.Tutorials .MainContent > .container-fluid > .row > h4,
+.Tutorials .jumbotron .MainContent > .container-fluid > .row > h4, .jumbotron
+.Tutorials .MainContent > .container-fluid > .row > p,
+.Tutorials .jumbotron .MainContent > .container-fluid > .row > p, .jumbotron .Tutorials .MainContent h1:first-child, .Tutorials .MainContent .jumbotron h1:first-child, .jumbotron .Tutorials .MainContent ul, .Tutorials .MainContent .jumbotron ul, .jumbotron
+.Tutorials .MainContent ol,
+.Tutorials .MainContent .jumbotron ol, .jumbotron .Tutorials .MainContent pre code, .Tutorials .MainContent pre .jumbotron code {
   max-width: 100%;
 }
 
@@ -5776,7 +5811,12 @@ a.badge:hover, a.badge:focus {
     padding-top: 48px;
     padding-bottom: 48px;
   }
-  .container .jumbotron,
+  .container .jumbotron, .Tutorials .MainContent > .container-fluid > .row > h1 .jumbotron,
+  .Tutorials .MainContent > .container-fluid > .row > h2 .jumbotron,
+  .Tutorials .MainContent > .container-fluid > .row > h3 .jumbotron,
+  .Tutorials .MainContent > .container-fluid > .row > h4 .jumbotron,
+  .Tutorials .MainContent > .container-fluid > .row > p .jumbotron, .Tutorials .MainContent h1:first-child .jumbotron, .Tutorials .MainContent ul .jumbotron,
+  .Tutorials .MainContent ol .jumbotron, .Tutorials .MainContent pre code .jumbotron,
   .container-fluid .jumbotron {
     padding-left: 60px;
     padding-right: 60px;
@@ -5792,7 +5832,7 @@ a.badge:hover, a.badge:focus {
   padding: 4px;
   margin-bottom: 22px;
   line-height: 1.42857;
-  background-color: #F8F5F0;
+  background-color: #FFF;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: border 0.2s ease-in-out;
@@ -7873,7 +7913,7 @@ button.close {
   margin: 1rem 1rem !important;
 }
 
-.m-t-1, .Tutorials .MainContent hr, .Tutorials .MainContent pre {
+.m-t-1 {
   margin-top: 1rem !important;
 }
 
@@ -7903,7 +7943,7 @@ button.close {
   margin: 1.5rem 1.5rem !important;
 }
 
-.m-t-2 {
+.m-t-2, .LandingPage header .InstallInstruction {
   margin-top: 1.5rem !important;
 }
 
@@ -7933,7 +7973,7 @@ button.close {
   margin: 3rem 3rem !important;
 }
 
-.m-t-3, .LandingPage header .InstallInstruction, .Tutorials .MainContent h1, .Tutorials .MainContent img {
+.m-t-3, .Tutorials .MainContent img {
   margin-top: 3rem !important;
 }
 
@@ -7941,7 +7981,7 @@ button.close {
   margin-right: 3rem !important;
 }
 
-.m-b-3, .LandingPage .Features .FeatureList li, .Tutorials .MainContent h1, .Tutorials .MainContent hr, .Tutorials .MainContent pre {
+.m-b-3, .LandingPage .Features .FeatureList li {
   margin-bottom: 3rem !important;
 }
 
@@ -7971,7 +8011,7 @@ button.close {
   margin-right: 4rem !important;
 }
 
-.m-b-4, .LandingPage .Tutorials li a, .LandingPage .Blog li a, .Tutorials .TutorialIndex li a {
+.m-b-4, .LandingPage .Tutorials li a, .LandingPage .Blog li:not(:last-child) a, .Tutorials .TutorialIndex li:not(:last-child) a {
   margin-bottom: 4rem !important;
 }
 
@@ -8084,7 +8124,7 @@ button.close {
   padding: 3rem 3rem !important;
 }
 
-.p-t-3, .Tutorials .MainContent pre {
+.p-t-3 {
   padding-top: 3rem !important;
 }
 
@@ -8092,7 +8132,7 @@ button.close {
   padding-right: 3rem !important;
 }
 
-.p-b-3, .Tutorials .MainContent pre {
+.p-b-3 {
   padding-bottom: 3rem !important;
 }
 
@@ -8321,22 +8361,162 @@ code {
   text-transform: uppercase;
 }
 
+.navbar {
+  height: 100px;
+  padding: 0 15px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+
+.navbar.navbar-default {
+  background: #fff;
+}
+
+.navbar .navbar-collapse {
+  background: transparent;
+  max-height: none;
+}
+
 .navbar-brand,
 .navbar-nav li a {
   line-height: 100px;
   height: 100px;
   padding-top: 0;
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
 }
 
-.navbar-brand svg,
-.navbar-nav li a svg {
-  width: 100px;
-  padding-top: 15px;
+.navbar-brand {
+  position: relative;
+  padding: 15px;
+}
+
+.navbar-brand .truffle-logo,
+.navbar-brand .truffle-wordmark {
+  position: absolute;
+  height: auto;
+  width: 70px;
+  float: left;
+}
+
+.navbar-brand .truffle-logo {
+  top: 15px;
+  left: 15px;
+}
+
+.navbar-brand .truffle-wordmark {
+  bottom: 15px;
+  left: 15px;
 }
 
 .navbar-toggle {
-  margin-top: 30px;
+  position: relative;
+  height: 32px;
+  width: 42px;
+  margin-top: 34px;
   margin-right: 30px;
+  border: none;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    height: 60px;
+  }
+  .navbar .navbar-collapse {
+    display: block;
+    position: fixed;
+    top: 59px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    background: #F5F5F5;
+    border-bottom: 1px solid #e7e7e7;
+    transition: all .25s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .navbar .navbar-collapse.in {
+    opacity: 1;
+    visibility: visible;
+    z-index: 300;
+  }
+  .navbar .navbar-nav {
+    margin: 1.2em 0;
+  }
+  .navbar .navbar-nav li {
+    margin-bottom: 0;
+  }
+  .navbar-nav li:not(:last-child) {
+    margin-bottom: 1.2em;
+  }
+  .navbar-nav li a {
+    line-height: 50px;
+    height: 50px;
+  }
+  .navbar-brand {
+    height: 60px;
+  }
+  .navbar-brand .truffle-logo {
+    top: 14px;
+    left: 0;
+    width: auto;
+    height: 40px;
+  }
+  .navbar-brand .truffle-wordmark {
+    display: none;
+  }
+  .navbar-toggle {
+    margin-top: 15px;
+    margin-right: 0;
+  }
+}
+
+.navbar-toggle .icon-bar {
+  position: absolute;
+  height: 3px;
+  width: 22px;
+  transition: all .25s ease-in-out;
+}
+
+.icon-bar:nth-of-type(2) {
+  top: 7px;
+  left: 10px;
+}
+
+.icon-bar:nth-of-type(3) {
+  top: 10px;
+  left: 10px;
+}
+
+.icon-bar:nth-of-type(4) {
+  bottom: 8px;
+  left: 10px;
+}
+
+.navbar-toggle.close:hover {
+  opacity: 1;
+}
+
+.navbar-toggle.close .icon-bar:nth-of-type(2) {
+  top: calc(50% - 2px);
+  left: 11px;
+  transform: rotate(45deg);
+}
+
+.navbar-toggle.close .icon-bar:nth-of-type(3) {
+  opacity: 0;
+}
+
+.navbar-toggle.close .icon-bar:nth-of-type(4) {
+  bottom: calc(50% - 1px);
+  transform: rotate(-45deg);
 }
 
 .btn-primary,
@@ -8472,11 +8652,17 @@ code {
   overflow: hidden;
   background-color: #F7F7F7;
   padding-bottom: 6rem;
+  border-top: 1px solid #e7e7e7;
 }
 
 .Footer .Logo {
   width: 100px;
   height: 100px;
+}
+
+.Footer .Logo .truffle-wordmark {
+  position: relative;
+  top: -100px;
 }
 
 .Footer ul,
@@ -8494,6 +8680,12 @@ code {
 
 .Footer ul {
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 991px) {
+  .Footer ul {
+    margin-top: 20px;
+  }
 }
 
 .Footer h5 {
@@ -8515,9 +8707,72 @@ code {
   display: none;
 }
 
-.Footer .container > svg {
+@media screen and (max-width: 991px) {
+  .Footer .john-attribution {
+    margin: 0 0 20px 0;
+  }
+}
+
+.Footer .container, .Footer .Tutorials .MainContent > .container-fluid > .row > h1, .Tutorials .Footer .MainContent > .container-fluid > .row > h1, .Footer
+.Tutorials .MainContent > .container-fluid > .row > h2,
+.Tutorials .Footer .MainContent > .container-fluid > .row > h2, .Footer
+.Tutorials .MainContent > .container-fluid > .row > h3,
+.Tutorials .Footer .MainContent > .container-fluid > .row > h3, .Footer
+.Tutorials .MainContent > .container-fluid > .row > h4,
+.Tutorials .Footer .MainContent > .container-fluid > .row > h4, .Footer
+.Tutorials .MainContent > .container-fluid > .row > p,
+.Tutorials .Footer .MainContent > .container-fluid > .row > p, .Footer .Tutorials .MainContent h1:first-child, .Tutorials .MainContent .Footer h1:first-child, .Footer .Tutorials .MainContent ul, .Tutorials .MainContent .Footer ul, .Footer
+.Tutorials .MainContent ol,
+.Tutorials .MainContent .Footer ol, .Footer .Tutorials .MainContent pre code, .Tutorials .MainContent pre .Footer code {
+  position: relative;
+}
+
+.Footer .container .footer-wordmark, .Footer .Tutorials .MainContent > .container-fluid > .row > h1 .footer-wordmark, .Tutorials .Footer .MainContent > .container-fluid > .row > h1 .footer-wordmark, .Footer
+.Tutorials .MainContent > .container-fluid > .row > h2 .footer-wordmark,
+.Tutorials .Footer .MainContent > .container-fluid > .row > h2 .footer-wordmark, .Footer
+.Tutorials .MainContent > .container-fluid > .row > h3 .footer-wordmark,
+.Tutorials .Footer .MainContent > .container-fluid > .row > h3 .footer-wordmark, .Footer
+.Tutorials .MainContent > .container-fluid > .row > h4 .footer-wordmark,
+.Tutorials .Footer .MainContent > .container-fluid > .row > h4 .footer-wordmark, .Footer
+.Tutorials .MainContent > .container-fluid > .row > p .footer-wordmark,
+.Tutorials .Footer .MainContent > .container-fluid > .row > p .footer-wordmark, .Footer .Tutorials .MainContent h1:first-child .footer-wordmark, .Tutorials .MainContent .Footer h1:first-child .footer-wordmark, .Footer .Tutorials .MainContent ul .footer-wordmark, .Tutorials .MainContent .Footer ul .footer-wordmark, .Footer
+.Tutorials .MainContent ol .footer-wordmark,
+.Tutorials .MainContent .Footer ol .footer-wordmark, .Footer .Tutorials .MainContent pre code .footer-wordmark, .Tutorials .MainContent pre .Footer code .footer-wordmark {
+  width: calc(100% - 30px);
   position: absolute;
-  bottom: -115px;
+  bottom: -211px;
+  left: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .Footer .container .footer-wordmark, .Footer .Tutorials .MainContent > .container-fluid > .row > h1 .footer-wordmark, .Tutorials .Footer .MainContent > .container-fluid > .row > h1 .footer-wordmark, .Footer
+  .Tutorials .MainContent > .container-fluid > .row > h2 .footer-wordmark,
+  .Tutorials .Footer .MainContent > .container-fluid > .row > h2 .footer-wordmark, .Footer
+  .Tutorials .MainContent > .container-fluid > .row > h3 .footer-wordmark,
+  .Tutorials .Footer .MainContent > .container-fluid > .row > h3 .footer-wordmark, .Footer
+  .Tutorials .MainContent > .container-fluid > .row > h4 .footer-wordmark,
+  .Tutorials .Footer .MainContent > .container-fluid > .row > h4 .footer-wordmark, .Footer
+  .Tutorials .MainContent > .container-fluid > .row > p .footer-wordmark,
+  .Tutorials .Footer .MainContent > .container-fluid > .row > p .footer-wordmark, .Footer .Tutorials .MainContent h1:first-child .footer-wordmark, .Tutorials .MainContent .Footer h1:first-child .footer-wordmark, .Footer .Tutorials .MainContent ul .footer-wordmark, .Tutorials .MainContent .Footer ul .footer-wordmark, .Footer
+  .Tutorials .MainContent ol .footer-wordmark,
+  .Tutorials .MainContent .Footer ol .footer-wordmark, .Footer .Tutorials .MainContent pre code .footer-wordmark, .Tutorials .MainContent pre .Footer code .footer-wordmark {
+    bottom: -183px;
+  }
+}
+
+.LandingPage .navbar {
+  background: transparent;
+  border-color: transparent;
+  transition: all .25s ease-in-out;
+}
+
+.LandingPage .navbar.scroll, .LandingPage .navbar.nav-shown {
+  background: #fff;
+  border-color: #e7e7e7;
+}
+
+.LandingPage .navbar.scroll .navbar-brand, .LandingPage .navbar.nav-shown .navbar-brand {
+  opacity: 1;
 }
 
 .LandingPage ul,
@@ -8534,8 +8789,26 @@ code {
 }
 
 .LandingPage header {
+  min-height: 100vh;
   background: url("../images/header_bg.jpg") no-repeat;
   background-size: cover;
+}
+
+.LandingPage header .container, .LandingPage header .Tutorials .MainContent > .container-fluid > .row > h1, .Tutorials .LandingPage header .MainContent > .container-fluid > .row > h1, .LandingPage header
+.Tutorials .MainContent > .container-fluid > .row > h2,
+.Tutorials .LandingPage header .MainContent > .container-fluid > .row > h2, .LandingPage header
+.Tutorials .MainContent > .container-fluid > .row > h3,
+.Tutorials .LandingPage header .MainContent > .container-fluid > .row > h3, .LandingPage header
+.Tutorials .MainContent > .container-fluid > .row > h4,
+.Tutorials .LandingPage header .MainContent > .container-fluid > .row > h4, .LandingPage header
+.Tutorials .MainContent > .container-fluid > .row > p,
+.Tutorials .LandingPage header .MainContent > .container-fluid > .row > p, .LandingPage header .Tutorials .MainContent h1:first-child, .Tutorials .MainContent .LandingPage header h1:first-child, .LandingPage header .Tutorials .MainContent ul, .Tutorials .MainContent .LandingPage header ul, .LandingPage header
+.Tutorials .MainContent ol,
+.Tutorials .MainContent .LandingPage header ol, .LandingPage header .Tutorials .MainContent pre code, .Tutorials .MainContent pre .LandingPage header code {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .LandingPage header h1 {
@@ -8565,6 +8838,7 @@ code {
 }
 
 .LandingPage header .InstallInstruction .Box {
+  margin: 0 auto;
   background-color: #5E464D;
   border-radius: 2px;
 }
@@ -8572,6 +8846,63 @@ code {
 .LandingPage header .InstallInstruction .Box code {
   background: transparent;
   color: white;
+}
+
+.LandingPage .scroll-down {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  margin: 0 auto;
+  color: #545452;
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+}
+
+.LandingPage .scroll-down.scroll {
+  opacity: 0;
+}
+
+.LandingPage .scroll-down svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 50px;
+  height: auto;
+}
+
+@media screen and (max-height: 720px) {
+  .LandingPage .scroll-down {
+    bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 767px), screen and (max-height: 639px) {
+  .LandingPage header {
+    min-height: auto;
+    height: auto;
+    padding: 83px 0 30px 0;
+  }
+  .LandingPage header .container, .LandingPage header .Tutorials .MainContent > .container-fluid > .row > h1, .Tutorials .LandingPage header .MainContent > .container-fluid > .row > h1, .LandingPage header
+  .Tutorials .MainContent > .container-fluid > .row > h2,
+  .Tutorials .LandingPage header .MainContent > .container-fluid > .row > h2, .LandingPage header
+  .Tutorials .MainContent > .container-fluid > .row > h3,
+  .Tutorials .LandingPage header .MainContent > .container-fluid > .row > h3, .LandingPage header
+  .Tutorials .MainContent > .container-fluid > .row > h4,
+  .Tutorials .LandingPage header .MainContent > .container-fluid > .row > h4, .LandingPage header
+  .Tutorials .MainContent > .container-fluid > .row > p,
+  .Tutorials .LandingPage header .MainContent > .container-fluid > .row > p, .LandingPage header .Tutorials .MainContent h1:first-child, .Tutorials .MainContent .LandingPage header h1:first-child, .LandingPage header .Tutorials .MainContent ul, .Tutorials .MainContent .LandingPage header ul, .LandingPage header
+  .Tutorials .MainContent ol,
+  .Tutorials .MainContent .LandingPage header ol, .LandingPage header .Tutorials .MainContent pre code, .Tutorials .MainContent pre .LandingPage header code {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 30px auto;
+  }
+  .LandingPage .scroll-down {
+    display: none;
+  }
 }
 
 .LandingPage .Features {
@@ -8663,7 +8994,7 @@ code {
   overflow: hidden;
 }
 
-.LandingPage .Tutorials .container {
+.LandingPage .Tutorials .container, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h1, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h2, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h3, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h4, .LandingPage .Tutorials .MainContent > .container-fluid > .row > p, .LandingPage .Tutorials .MainContent h1:first-child, .LandingPage .Tutorials .MainContent ul, .LandingPage .Tutorials .MainContent ol, .LandingPage .Tutorials .MainContent pre code {
   position: relative;
   overflow: hidden;
 }
@@ -8682,20 +9013,27 @@ code {
 .LandingPage .Tutorials li a {
   display: block;
   background-color: #94D6E2;
+  color: #545452;
+  border-bottom: none;
   text-transform: uppercase;
   transition: all .3s;
 }
 
 .LandingPage .Tutorials li a h2 {
-  margin: 0;
+  margin: 0 0 5px 0;
   padding: 0;
   letter-spacing: 1px;
   text-shadow: none;
-  font-family: "Oswald", Helvetica, Arial, sans-serif;
 }
 
 .LandingPage .Tutorials li a div {
   margin-top: 1.2rem;
+  font-weight: bold;
+}
+
+.LandingPage .Tutorials li a h2 {
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  transition: all .3s;
 }
 
 .LandingPage .Tutorials li a:hover {
@@ -8715,7 +9053,17 @@ code {
   border-top: solid 1px #E8E8E8;
 }
 
-.LandingPage .Blog .container {
+.LandingPage .Blog .container, .LandingPage .Blog .Tutorials .MainContent > .container-fluid > .row > h1, .Tutorials .LandingPage .Blog .MainContent > .container-fluid > .row > h1, .LandingPage .Blog
+.Tutorials .MainContent > .container-fluid > .row > h2,
+.Tutorials .LandingPage .Blog .MainContent > .container-fluid > .row > h2, .LandingPage .Blog
+.Tutorials .MainContent > .container-fluid > .row > h3,
+.Tutorials .LandingPage .Blog .MainContent > .container-fluid > .row > h3, .LandingPage .Blog
+.Tutorials .MainContent > .container-fluid > .row > h4,
+.Tutorials .LandingPage .Blog .MainContent > .container-fluid > .row > h4, .LandingPage .Blog
+.Tutorials .MainContent > .container-fluid > .row > p,
+.Tutorials .LandingPage .Blog .MainContent > .container-fluid > .row > p, .LandingPage .Blog .Tutorials .MainContent h1:first-child, .Tutorials .MainContent .LandingPage .Blog h1:first-child, .LandingPage .Blog .Tutorials .MainContent ul, .Tutorials .MainContent .LandingPage .Blog ul, .LandingPage .Blog
+.Tutorials .MainContent ol,
+.Tutorials .MainContent .LandingPage .Blog ol, .LandingPage .Blog .Tutorials .MainContent pre code, .Tutorials .MainContent pre .LandingPage .Blog code {
   position: relative;
   overflow: hidden;
 }
@@ -8733,28 +9081,33 @@ code {
 
 .LandingPage .Blog li a {
   display: block;
-  background-color: #FFF;
+  background-color: #fff;
+  color: #545452;
+  border-bottom: solid 2px #3FE0C5;
   text-transform: uppercase;
   transition: all .3s;
-  border-bottom: solid 1px #3FE0C5;
-  /*border-left: solid 1px $body-primary-color;*/
 }
 
 .LandingPage .Blog li a h2 {
-  margin: 0;
+  margin: 0 0 5px 0;
   padding: 0;
   letter-spacing: 1px;
   text-shadow: none;
-  font-family: "Oswald", Helvetica, Arial, sans-serif;
 }
 
 .LandingPage .Blog li a div {
   margin-top: 1.2rem;
+  font-weight: bold;
+}
+
+.LandingPage .Blog li a h2 {
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  transition: all .3s;
 }
 
 .LandingPage .Blog li a:hover {
-  color: white;
   background-color: #3FE0C5;
+  color: white;
   text-decoration: none;
   transform: scale(1.02);
 }
@@ -8769,6 +9122,10 @@ code {
 
 .LandingPage .Contributing ol {
   margin-left: 1rem;
+}
+
+.LandingPage .Contributing .col-github-logo svg {
+  max-width: 300px;
 }
 
 .LandingPage .NotableUsers li {
@@ -8801,8 +9158,8 @@ code {
 .LandingPage .BuiltWith .Left img {
   border: 4px solid white;
   border-radius: 50%;
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 @media (max-width: 590px) {
@@ -8815,82 +9172,20 @@ code {
   background-color: #fff;
 }
 
-.LandingPage .Footer {
-  position: relative;
-  overflow: hidden;
-  background-color: #F7F7F7;
-  padding-bottom: 6rem;
-}
-
-.LandingPage .Footer .Logo {
-  width: 100px;
-  height: 100px;
-}
-
-.LandingPage .Footer ul {
-  text-transform: uppercase;
-}
-
-.LandingPage .Footer h5 {
-  margin-top: 0;
-}
-
-.LandingPage .Footer .BetaSignup {
-  background: transparent;
-  border: 0;
-  margin: 0;
-  padding: 0 !important;
-}
-
-.LandingPage .Footer .BetaSignup .FormWrapper {
-  margin: 0;
-}
-
-.LandingPage .Footer .BetaSignup:before {
-  display: none;
-}
-
-.LandingPage .Footer .container > svg {
-  position: absolute;
-  bottom: -115px;
-}
-
-.Tutorials {
-  background: white;
+.Tutorials.TutorialIndexContainer {
+  background: #F8F5F0;
 }
 
 .Tutorials .nav a {
   text-transform: uppercase;
 }
 
-.Tutorials .navbar {
-  min-height: 100px;
-}
-
-.Tutorials .navbar-toggle {
-  margin-top: 30px;
-  margin-right: 30px;
-}
-
-.Tutorials .navbar-brand {
-  height: 100px;
-  width: 100px;
-  margin-left: 0 !important;
-}
-
-.Tutorials .navbar-nav li a {
-  line-height: 100px;
-  height: 100px;
-  padding-top: 0;
-}
-
-.Tutorials .navbar-nav li a svg {
-  width: 100px;
-  padding-top: 15px;
+.Tutorials .MainContent {
+  padding-top: 123px;
 }
 
 .Tutorials .MainContent h1 {
-  width: 90% !important;
+  margin: 1.5rem auto 3rem auto;
   text-transform: uppercase;
 }
 
@@ -8967,6 +9262,10 @@ code {
   margin-bottom: 1.9rem;
 }
 
+.Tutorials .MainContent p:last-of-type {
+  margin-bottom: 0;
+}
+
 .Tutorials .MainContent a {
   cursor: pointer;
   border-bottom: 1px solid;
@@ -8983,8 +9282,15 @@ code {
 
 .Tutorials .MainContent ul,
 .Tutorials .MainContent ol {
+  max-width: 100%;
   margin-bottom: 1.9rem;
+  padding-left: 30px;
   font-family: "Open Sans", "Verdana", Times, serif;
+}
+
+.Tutorials .MainContent ul.list-unstyled,
+.Tutorials .MainContent ol.list-unstyled {
+  padding-left: 15px;
 }
 
 .Tutorials .MainContent ul li,
@@ -8993,22 +9299,48 @@ code {
 }
 
 .Tutorials .MainContent hr {
+  margin: 3rem auto;
   border: none;
-  border-bottom: 1px solid;
+  border-bottom: 1px dotted;
   display: block;
   height: 1px;
+  width: 1140px;
+}
+
+@media screen and (max-width: 1199px) {
+  .Tutorials .MainContent hr {
+    width: 940px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .Tutorials .MainContent hr {
+    width: 720px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .Tutorials .MainContent hr {
+    width: calc(100% - 30px);
+  }
 }
 
 .Tutorials .MainContent pre {
+  margin: 1rem 0 3rem 0;
+  padding: 3rem 0;
   border-radius: 0;
   background: #f7f7f7;
-  max-width: 100%;
+  width: 100%;
   word-break: break-word;
-  padding-left: 0;
+  border-left: none;
+  border-right: none;
+  float: left;
 }
 
 .Tutorials .MainContent pre code {
-  width: 90% important;
+  display: block;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .Tutorials .MainContent pre.language-shell {
@@ -9020,24 +9352,40 @@ code {
   text-shadow: none;
 }
 
+.Tutorials .MainContent footer p {
+  margin-bottom: 0;
+}
+
 .Tutorials .MainContent footer p:before {
   content: '';
   display: block;
   border-top: 1px dotted;
   margin-top: 3rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+@media screen and (max-width: 767px) {
+  .Tutorials .MainContent {
+    padding-top: 83px;
+  }
+}
+
+.Tutorials .TutorialIndex ol {
+  margin-bottom: 1rem;
 }
 
 .Tutorials .TutorialIndex li a {
   display: block;
   background-color: #94D6E2;
+  color: #545452;
+  border-bottom: none;
   text-transform: uppercase;
   transition: all .3s;
 }
 
 .Tutorials .TutorialIndex li a h2 {
-  margin: 0;
+  margin: 0 0 5px 0;
   padding: 0;
   letter-spacing: 1px;
   text-shadow: none;
@@ -9045,19 +9393,51 @@ code {
 
 .Tutorials .TutorialIndex li a div {
   margin-top: 1.2rem;
+  font-weight: bold;
+}
+
+.Tutorials .TutorialIndex li a h2 {
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  transition: all .3s;
 }
 
 .Tutorials .TutorialIndex li a:hover {
   color: white;
   text-decoration: none;
+  transform: scale(1.02);
 }
 
 .Tutorials .TutorialIndex li a:hover h2 {
   color: white;
 }
 
+.Tutorials .TutorialIndex.Blog li a {
+  background-color: #fff;
+  color: #545452;
+  border-bottom: solid 2px #3FE0C5;
+}
+
+.Tutorials .TutorialIndex.Blog li a:hover {
+  background-color: #3FE0C5;
+  color: white;
+}
+
+.Community .MainContent {
+  padding-top: 123px;
+  background: #F8F5F0;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  .Community .MainContent {
+    padding-top: 83px;
+  }
+}
+
 .Support .MainContent {
+  padding-top: 123px;
   border-bottom: solid 1px #e7e7e7;
+  background: #F8F5F0;
 }
 
 .Support .MainContent ul {
@@ -9066,6 +9446,12 @@ code {
 
 .Support .MainContent ul li {
   font-family: "Open Sans", "Verdana", Times, serif;
+}
+
+@media screen and (max-width: 767px) {
+  .Support .MainContent {
+    padding-top: 83px;
+  }
 }
 
 .Support .custom-box {
@@ -9078,67 +9464,50 @@ code {
   float: right;
 }
 
-@media (min-width: 992px) {
-  .Documentation .navbar {
-    position: fixed;
-    right: 0;
-    top: 0;
-    left: 0;
-    z-index: 1;
+@media screen and (max-width: 767px) {
+  .Support ul {
+    margin-top: 2rem !important;
+  }
+  .Support .livesaver {
+    display: none;
+  }
+}
+
+.Documentation .MainContent {
+  background: #F8F5F0;
+  padding-top: 100px;
+}
+
+@media screen and (max-width: 767px) {
+  .Documentation .MainContent {
+    padding-top: 60px;
   }
 }
 
 .Documentation .DocSearchForm {
-  margin-left: 1rem;
-  margin-right: 2rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.Documentation .DocSearchForm .form-group {
-  display: flex;
-  flex: 1;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .Documentation .DocSearchForm .btn {
-  height: 54px;
+  height: 53px;
+  border: 1px solid #3FE0C5;
 }
 
 .Documentation .DocSearchForm input[type='text'] {
   background: transparent;
-  border: none;
-  border: 1px solid #3FE0C5;
-  padding: 1.6rem;
+  border-color: #3FE0C5;
+  padding: 1.58rem 1rem;
   color: #3FE0C5;
-  flex: 1;
-  margin-right: 1rem;
 }
 
 @media (max-width: 1390px) {
   .Documentation .DocSearchForm {
-    flex-direction: column;
-    margin-right: 1rem;
+    margin-right: 0;
   }
   .Documentation .DocSearchForm input[type='text'] {
-    margin: 0 0 .2rem 0;
+    margin: 0;
   }
-}
-
-.Documentation .navbar {
-  margin-bottom: 0;
-  text-transform: uppercase;
-}
-
-.Documentation .navbar-brand {
-  height: 100px;
-  width: 102px;
-  margin-left: 0 !important;
-}
-
-.Documentation .navbar-nav li a {
-  line-height: 100px;
-  height: 100px;
-  padding-top: 0;
 }
 
 @media (min-width: 992px) {
@@ -9154,25 +9523,25 @@ code {
 }
 
 .Documentation .SubNav {
-  overflow: scroll;
   background: #5e464d;
-  padding-top: 2rem;
-  padding-right: 0;
   color: #3fe0c5;
+  padding: 2rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .Documentation .SubNav h2 {
   text-shadow: none;
   text-transform: uppercase;
   color: #3FE0C5;
-  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 .Documentation .SubNav ul {
-  margin-left: 15px;
+  margin: 0;
 }
 
-.Documentation .SubNav ul li {
+.Documentation .SubNav ul li:not(:last-child) {
   margin-bottom: .5rem;
 }
 
@@ -9196,7 +9565,7 @@ code {
 }
 
 .Documentation .SubNav ul > li > ul {
-  margin-left: 1rem;
+  margin-left: 0;
 }
 
 .Documentation .ContentPage {
@@ -9309,14 +9678,8 @@ code {
   margin-bottom: 1rem;
 }
 
-@media (min-width: 992px) {
-  .Documentation .ContentPage {
-    margin-top: 100px;
-  }
-}
-
 .Documentation footer {
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding: 2rem;
   background: white;
   border-radius: 10px;
@@ -9325,6 +9688,21 @@ code {
 .Documentation footer p {
   margin: 0 !important;
   padding: 0;
+}
+
+.Documentation .BetaSignup {
+  background: transparent;
+  border: none;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+.Documentation .BetaSignup::before {
+  display: none;
+}
+
+.Documentation .BetaSignup .FormWrapper {
+  margin-bottom: 1rem;
 }
 
 .Ganache {

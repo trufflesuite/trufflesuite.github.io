@@ -1,6 +1,8 @@
 .Support {
   .MainContent {
+    padding-top: 123px;
     border-bottom: solid 1px #e7e7e7;
+    background: #F8F5F0;
 
     ul {
       max-width: 600px;
@@ -11,12 +13,29 @@
     }
   }
 
+  @media screen and (max-width: 767px) {
+    .MainContent {
+      padding-top: 83px;
+    }
+  }
+
   .custom-box {
     position: relative;
     max-width: 750px;
   }
+
   .livesaver {
     width: 120px;
     float: right;
+  }
+
+  @media screen and (max-width: 767px) {
+    ul {
+      margin-top: 2rem !important;
+    }
+
+    .livesaver {
+      display: none;
+    }
   }
 }
