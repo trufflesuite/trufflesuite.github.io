@@ -8789,7 +8789,7 @@ code {
 }
 
 .LandingPage header {
-  min-height: 100vh;
+  height: 80vh;
   background: url("../images/header_bg.jpg") no-repeat;
   background-size: cover;
 }
@@ -8806,7 +8806,7 @@ code {
 .Tutorials .MainContent ol,
 .Tutorials .MainContent .LandingPage header ol, .LandingPage header .Tutorials .MainContent pre code, .Tutorials .MainContent pre .LandingPage header code {
   position: absolute;
-  top: 50%;
+  top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -8877,7 +8877,7 @@ code {
   }
 }
 
-@media screen and (max-width: 767px), screen and (max-height: 639px) {
+@media screen and (max-width: 767px), screen and (max-height: 739px) {
   .LandingPage header {
     min-height: auto;
     height: auto;
