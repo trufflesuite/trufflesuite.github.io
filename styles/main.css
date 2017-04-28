@@ -8775,6 +8775,10 @@ code {
   opacity: 1;
 }
 
+.LandingPage p, .LandingPage li {
+  line-height: 1.75rem;
+}
+
 .LandingPage ul,
 .LandingPage ol {
   font-family: "Open Sans", "Verdana", Times, serif;
@@ -8794,6 +8798,24 @@ code {
   background-size: cover;
 }
 
+.LandingPage header h1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.LandingPage header p {
+  line-height: 1.5rem;
+}
+
+.LandingPage header div > iframe:first-of-type {
+  margin-right: 1em;
+}
+
+.LandingPage header div > a > img {
+  margin-top: -10px;
+  margin-left: 1em;
+}
+
 .LandingPage header .container, .LandingPage header .Tutorials .MainContent > .container-fluid > .row > h1, .Tutorials .LandingPage header .MainContent > .container-fluid > .row > h1, .LandingPage header
 .Tutorials .MainContent > .container-fluid > .row > h2,
 .Tutorials .LandingPage header .MainContent > .container-fluid > .row > h2, .LandingPage header
@@ -8811,26 +8833,12 @@ code {
   transform: translate(-50%, -50%);
 }
 
-.LandingPage header h1 {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.LandingPage header div > iframe:first-of-type {
-  margin-right: 1em;
-}
-
 .LandingPage header .github-button {
   display: none;
 }
 
 .LandingPage header .btn {
   width: 200px;
-}
-
-.LandingPage header div > a > img {
-  margin-top: -10px;
-  margin-left: 1em;
 }
 
 .LandingPage header .InstallInstruction {
@@ -8846,35 +8854,6 @@ code {
 .LandingPage header .InstallInstruction .Box code {
   background: transparent;
   color: white;
-}
-
-.LandingPage .scroll-down {
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: block;
-  margin: 0 auto;
-  color: #545452;
-  opacity: 1;
-  transition: opacity .25s ease-in-out;
-}
-
-.LandingPage .scroll-down.scroll {
-  opacity: 0;
-}
-
-.LandingPage .scroll-down svg {
-  display: block;
-  margin: 0 auto;
-  max-width: 50px;
-  height: auto;
-}
-
-@media screen and (max-height: 720px) {
-  .LandingPage .scroll-down {
-    bottom: 40px;
-  }
 }
 
 @media screen and (max-width: 767px), screen and (max-height: 739px) {
@@ -8899,9 +8878,6 @@ code {
     left: auto;
     transform: none;
     margin: 30px auto;
-  }
-  .LandingPage .scroll-down {
-    display: none;
   }
 }
 
@@ -9258,7 +9234,7 @@ code {
 }
 
 .Tutorials .MainContent p {
-  line-height: 1.9rem;
+  line-height: 1.75rem;
   margin-bottom: 1.9rem;
 }
 
@@ -9283,8 +9259,8 @@ code {
 .Tutorials .MainContent ul,
 .Tutorials .MainContent ol {
   max-width: 100%;
-  margin-bottom: 1.9rem;
-  padding-left: 30px;
+  margin: 2rem auto;
+  padding-left: 50px;
   font-family: "Open Sans", "Verdana", Times, serif;
 }
 
@@ -9293,9 +9269,22 @@ code {
   padding-left: 15px;
 }
 
+.Tutorials .MainContent ul.list-unstyled li,
+.Tutorials .MainContent ol.list-unstyled li {
+  margin-bottom: 0;
+}
+
 .Tutorials .MainContent ul li,
 .Tutorials .MainContent ol li {
-  line-height: 1.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.75rem;
+}
+
+@media screen and (max-width: 767px) {
+  .Tutorials .MainContent ul,
+  .Tutorials .MainContent ol {
+    padding-left: 30px;
+  }
 }
 
 .Tutorials .MainContent hr {
@@ -9428,6 +9417,14 @@ code {
   overflow: hidden;
 }
 
+.Community .MainContent h1 {
+  margin-bottom: 2rem;
+}
+
+.Community .MainContent p, .Community .MainContent li {
+  line-height: 1.75rem;
+}
+
 @media screen and (max-width: 767px) {
   .Community .MainContent {
     padding-top: 83px;
@@ -9440,17 +9437,33 @@ code {
   background: #F8F5F0;
 }
 
+.Support .MainContent h1 {
+  margin-bottom: 2rem;
+}
+
+.Support .MainContent p, .Support .MainContent li {
+  line-height: 1.75rem;
+}
+
 .Support .MainContent ul {
-  max-width: 600px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .Support .MainContent ul li {
+  margin-bottom: 1rem;
   font-family: "Open Sans", "Verdana", Times, serif;
 }
 
 @media screen and (max-width: 767px) {
   .Support .MainContent {
     padding-top: 83px;
+  }
+  .Support .MainContent ul {
+    padding-left: 20px;
+  }
+  .Support .MainContent .livesaver {
+    display: none;
   }
 }
 
@@ -9462,15 +9475,6 @@ code {
 .Support .livesaver {
   width: 120px;
   float: right;
-}
-
-@media screen and (max-width: 767px) {
-  .Support ul {
-    margin-top: 2rem !important;
-  }
-  .Support .livesaver {
-    display: none;
-  }
 }
 
 .Documentation .MainContent {
@@ -9678,6 +9682,7 @@ code {
 
 .Documentation .ContentPage p {
   margin-bottom: 2rem;
+  line-height: 1.75rem;
 }
 
 .Documentation .ContentPage pre {
@@ -9694,6 +9699,8 @@ code {
   font-weight: normal;
   font-family: "Open Sans", "Verdana", Times, serif;
   margin-bottom: 1rem;
+  word-wrap: break-word;
+  line-height: 1.75rem;
 }
 
 @media screen and (max-width: 767px) {
