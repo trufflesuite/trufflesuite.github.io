@@ -1,1 +1,0 @@
-$(function(){var l=$("#scrollDown");l.click(function(){var l=$(".navbar").outerHeight();$("html, body").animate({scrollTop:$(".BetaSignup").offset().top-l},800)}),$(window).scroll(function(){var o=$(this).scrollTop();{if(!(o>0))return l.removeClass("scroll");if(!l.hasClass("scroll"))return l.addClass("scroll")}})});

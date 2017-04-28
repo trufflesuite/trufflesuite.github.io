@@ -9530,6 +9530,12 @@ code {
   overflow-y: scroll;
 }
 
+@media screen and (max-width: 767px) {
+  .Documentation .SubNav {
+    padding: 2rem 15px;
+  }
+}
+
 .Documentation .SubNav h2 {
   text-shadow: none;
   text-transform: uppercase;
@@ -9570,6 +9576,18 @@ code {
 
 .Documentation .ContentPage {
   padding: 2rem 4rem;
+}
+
+@media screen and (max-width: 991px) {
+  .Documentation .ContentPage {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .Documentation .ContentPage {
+    padding: 2rem 15px;
+  }
 }
 
 .Documentation .ContentPage h1,
@@ -9676,6 +9694,12 @@ code {
   font-weight: normal;
   font-family: "Open Sans", "Verdana", Times, serif;
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .Documentation .ContentPage ul {
+    padding-left: 20px;
+  }
 }
 
 .Documentation footer {
