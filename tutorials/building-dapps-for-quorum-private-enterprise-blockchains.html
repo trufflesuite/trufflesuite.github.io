@@ -156,104 +156,234 @@
   <section class="MainContent">
     <div class="container-fluid">
       <div class="row">
-        <h1><a name="testing-for-throws-in-truffle-solidity-tests" class="anchor" href="#testing-for-throws-in-truffle-solidity-tests"><span class="header-link" style="z-index: 9999999766">&nbsp;</span></a>Testing for Throws in Truffle Solidity Tests</h1><p>By guest writer Simon de la Rouviere</p>
-<p>Truffle 3 brings forth Solidity unit testing, which means one can now test contracts in Solidity itself. This is a boon to contract developers, as there are several reasons why it&#39;s useful to have Solidity tests in addition to Truffle’s Javascript tests. For us at <a href="https://ujomusic.com/">Ujo</a>, one of our biggest concerns is testing how contracts interact with each other, rather than just testing their interaction from a web3 perspective, and Solidity tests allow us to do that.</p>
-<p>Though Solidity tests can be quite powerful, they do come with some drawbacks. One of those is testing whether or not a function should <code>throw</code> (without breaking the test!), which I&#39;ll show you how to do right now.</p>
-<h2><a name="diving-in" class="anchor" href="#diving-in"><span class="header-link" style="z-index: 9999999765">&nbsp;</span></a>Diving In</h2><p>In Solidity, when performing a contract call that produces an error, Solidity automatically rethrows, meaning it will bubble that error up to the caller. However, with a <em>raw</em> call, the behavior is different: one can catch the error and decide what to do from there on out. If it throws (fails), it will return <code>false</code>. If it succeeds, it will return <code>true</code>. Thus, the following calls will produce a different result.</p>
-<pre><code class="lang-javascript">// Returns false
-bool result = address.call(bytes4(bytes32(sha3(“functionThatThrows()”))));
-
-// Returns true
-bool result = address.call(bytes4(bytes32(sha3(“functionThatDoesNotThrow()”))));
+        <h1><a name="building-dapps-for-quorum-private-enterprise-blockchains" class="anchor" href="#building-dapps-for-quorum-private-enterprise-blockchains"><span class="header-link" style="z-index: 9999999859">&nbsp;</span></a>Building dapps for Quorum: Private Enterprise Blockchains</h1><p>Ethereum is perhaps best defined by its public network, a network where every transaction &#8211; and all participants of each transaction &#8211; are publicly available to anyone looking at its transaction history. Truffle got its start building for the public blockchain: at the time of Ethereum&#39;s launch, the public blockchain was the only smart contract blockchain around. However, since launch, technology has changed, most notably with JP Morgan&#39;s <a href="https://www.jpmorgan.com/country/US/EN/Quorum">Quorum</a>.</p>
+<p>Quorum is a version of Ethereum that adds new features on top of what Ethereum already provides. Specifically, Quorum adds the ability to create private blockchains between select participants, and more importantly adds transaction privacy on top of your normal everyday Ethereum transactions. Let&#39;s use a quick example: Say Bob, Tom and Alice all create a blockchain together, and Alice wants to send 20 TruffleCoin to Bob. But here&#39;s the kicker: she doesn&#39;t want Tom (or anyone else other than Bob) to know, because she cares about her privacy. Using Quorum, Alice could easily send a transaction where the transaction data is only available to her and Bob.</p>
+<p>Transaction privacy presents a number of useful use cases, especially in the enterprise and banking worlds. For instance, large banks might want to take advantage of blockchain technologies like Ethereum but don&#39;t want their transactions to be publicly available to everyone as a matter of doing business. Quorum presents a useful alternative.</p>
+<h2><a name="requirements" class="anchor" href="#requirements"><span class="header-link" style="z-index: 9999999858">&nbsp;</span></a>Requirements</h2><p>This tutorial expects you to have some knowledge of Truffle, Ethereum, Quorum and Solidity. For more information on these topics, please see the following links:</p>
+<ul>
+<li><a href="/docs/">Truffle documentation</a></li>
+<li><a href="https://ethereum.org/">Etheruem overview</a></li>
+<li><a href="https://www.jpmorgan.com/country/US/EN/Quorum">Quorum overview</a> and <a href="https://github.com/jpmorganchase/quorum-examples">documentation</a></li>
+<li><a href="https://solidity.readthedocs.io/en/develop/">Solidity documentation</a></li>
+</ul>
+<p>You will primarily be using the command line for this tutorial. Ensure you have basic familiarity with opening and using the command line provided by your operating system. Additionally, you will need the following software. Ensure it is installed before proceeding:</p>
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></li>
+<li><a href="https://www.vagrantup.com/downloads.html">Vagrant</a></li>
+<li><a href="https://git-scm.com/downloads">git</a></li>
+</ul>
+<h2><a name="getting-started" class="anchor" href="#getting-started"><span class="header-link" style="z-index: 9999999857">&nbsp;</span></a>Getting Started</h2><p>In this tutorial, we&#39;ll show you how to develop dapps for Quorum using Truffle and Quorum&#39;s <a href="https://github.com/jpmorganchase/quorum-examples/tree/master/examples/7nodes">7nodes example</a>. You&#39;ll learn how to:</p>
+<ol>
+<li>Set up a Quorum client</li>
+<li>Configure Truffle, and point it at Quorum</li>
+<li>Use Truffle to deploy smart contracts on Quorum</li>
+<li>Use Quorum&#39;s privacy features to make transactions private</li>
+</ol>
+<p>Also in this tutorial, you&#39;ll see that developing for Quorum using Truffle is <em>exactly like</em> developing for the public Ethereum blockchain. Truffle supports Quorum out of the box, and the same strategies and methods for building Ethereum-enabled applications for the Ethereum public blockchain also apply to building dapps on Quorum.</p>
+<h2><a name="1-setting-up-your-quorum-client" class="anchor" href="#1-setting-up-your-quorum-client"><span class="header-link" style="z-index: 9999999856">&nbsp;</span></a>1. Setting up your Quorum client</h2><p>The Quorum client is a replacement for the Ethereum client. Using the Quorum client, you can set up a private blockchain that&#39;s only available to you and the people you allow to participate.</p>
+<p>To set up a Quorum client, open the command line and navigate to a folder which you&#39;d like to install the Quorum example. Here, we chose the folder <code>workspace</code>:</p>
+<pre><code class="lang-shell">$ cd workspace
+$ git clone https://github.com/jpmorganchase/quorum-examples
 </code></pre>
-<p>When calls are made this way, even if a sub-call fails, it won’t automatically rethrow.</p>
-<p>In order to test for throws, one can either write out each call in the format above (which is cumbersome), or use a proxy contract to wrap the contract call to a raw call and return whether it succeeded or not.</p>
-<p>For our purposes, let&#39;s look at the example below, similar to a method I saw used by Dapple in a Tester contract. Note that these contracts will likely be placed in separate files within your Truffle project. Here, <code>Thrower</code> is the contract you&#39;re testing to see whether or not certain contracts <code>throw</code>, <code>ThrowProxy</code> is our helper and <code>TestThrower</code> is our test contract.</p>
-<p>The code is as follows:</p>
-<pre><code class="lang-javascript">import &quot;truffle/Assert.sol&quot;;
+<p>Next, we&#39;ll want to use <code>vagrant</code> (you should have installed it along with VirtualBox above) to initialize the Quorum virtual machine. Note that this step could take up to five minutes as it makes the virtual machine ready for use.</p>
+<pre><code class="lang-shell">$ cd quorum-examples
+$ vagrant up
+</code></pre>
+<p>After <code>vagrant up</code> successfully completes, we&#39;ll want a way to access our newly minted virtual machine. Note that a virtual machine is like another computer running inside of your own, and so we&#39;ll need a way to access it in order to run commands within the machine. Luckily <code>vagrant</code> provides just such a feature. Note that after running this command, our command line changes to show <code>ubuntu@ubuntu-xenial:~$</code>, designating that we&#39;re running commands inside the virtual machine.</p>
+<pre><code class="lang-shell">$ vagrant ssh
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-75-generic x86_64)
 
-// Proxy contract for testing throws
-contract ThrowProxy {
-  address public target;
-  bytes data;
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
 
-  function ThrowProxy(address _target) {
-    target = _target;
-  }    
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
 
-  //prime the data using the fallback function.
-  function() {
-    data = msg.data;
+8 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Mon May  1 20:21:21 2017 from 10.0.2.2
+ubuntu@ubuntu-xenial:~$
+</code></pre>
+<p>While we&#39;re here, let&#39;s navigate to the example we want to run:</p>
+<pre><code class="lang-shell">ubuntu@ubuntu-xenial:~$ cd quorum-examples/7nodes/
+</code></pre>
+<p>Our Quorum client is nearly ready to go. We need to run two more commands within the virtual machine. The first one creates seven Quorum nodes we can use to simulate a real Quorum deployment &#8211; you only need to do this once, ever. The second one starts up those seven nodes; you should perform this one anytime you restart the virtual machine:</p>
+<pre><code class="lang-shell">ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ init.sh
+ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ start.sh
+</code></pre>
+<p>Success! Our Quorum client set up, with seven nodes we can use to represent seven different actors on our private network.</p>
+<h2><a name="2-setting-up-truffle" class="anchor" href="#2-setting-up-truffle"><span class="header-link" style="z-index: 9999999855">&nbsp;</span></a>2. Setting up Truffle</h2><p>To set up Truffle, we&#39;re going to start by creating a bare Truffle project, without any contracts or code. Before doing this, make sure to open up a new command line window. We want to leave the old command line window alone, and let the Quorum example run without bothering it. In the new command line window, navigate to your workspace and create a new directory for your Truffle project. Note that if you&#39;re using Windows, the commands you&#39;ll type might be slightly different.</p>
+<pre><code class="lang-shell">$ cd workspace
+$ mkdir myproject
+</code></pre>
+<p>Next, navigate to the new directory and initialize the bare Truffle project:</p>
+<pre><code class="lang-shell">$ cd myproject
+$ truffle init bare
+</code></pre>
+<p>If you look at the contents of the <code>myproject</code> directory, you&#39;ll notice folders were created for you. See the <a href="/docs/getting_started/project">Truffle documentation</a> for more information about Truffle&#39;s project structure.</p>
+<p>Before moving onto code, we need to configure Truffle to point to our running Quorum client. For this example, we&#39;ll change our <code>development</code> configuration within <code>truffle.js</code> to point to the first node available in the 7nodes example.</p>
+<pre><code class="lang-javascript">// File: `truffle.js` (edited for 7nodes example)
+module.exports = {
+  networks: {
+    development: {
+      host: &quot;localhost&quot;,
+      port: 22000, // was 8545
+      network_id: &quot;*&quot; // Match any network id
+    }
+  }
+};
+</code></pre>
+<p>Note that the only thing we had to change was the <code>port</code> that Truffle connects to (we changed it to <code>22000</code>). Because of the magic of VirtualBox and Vagrant, the node running inside the virtual machine is made available to us via local ports, so connecting via <code>localhost</code> and <code>22000</code> will work just fine.</p>
+<p>Now that we have Truffle set up, we can move onto code.</p>
+<h2><a name="3-deploying-smart-contracts-on-quorum" class="anchor" href="#3-deploying-smart-contracts-on-quorum"><span class="header-link" style="z-index: 9999999854">&nbsp;</span></a>3. Deploying Smart Contracts on Quorum</h2><p>We won&#39;t spend too much time talking about writing or deploying contracts in Truffle since we have <a href="/docs">ample documentation</a>, however we do want to show how deploying contracts applies to Quorum.</p>
+<p>First, copy the following contract into a new file, called <code>SimpleStorage.sol</code>. Place it in your <code>contracts</code> directory:</p>
+<pre><code class="lang-javascript">// File: `./contracts/SimpleStorage.sol`
+pragma solidity ^0.4.8;
+
+contract SimpleStorage {
+  uint public storedData;
+
+  function SimpleStorage(uint initVal) {
+    storedData = initVal;
   }
 
-  function execute() returns (bool) {
-    return target.call(data);
+  function set(uint x) {
+    storedData = x;
+  }
+
+  function get() constant returns (uint retVal) {
+    return storedData;
   }
 }
+</code></pre>
+<p>You can make sure this contract compiles using the command <code>truffle compile</code> within your project directory.</p>
+<p>Next, create a new migration called <code>2_deploy_simplestorage.js</code> within your <code>migrations</code> directory. Note that this migration is just like any other you&#39;d create for Truffle, but there&#39;s one important difference. Let&#39;s see if you can catch it.</p>
+<pre><code class="lang-javascript">// File: `./migrations/2_deploy_simplestorage.js`
+var SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
 
-// Contract you&#39;re testing
-contract Thrower {
-  function doThrow() {
-    throw;
+module.exports = function(deployer) {
+  // Pass 42 to the contract as the first constructor parameter
+  deployer.deploy(SimpleStorage, 42, {privateFor: [&quot;ROAZBWtSacxXQrOe3FGAqJDyJjFePR5ce4TSIzmJ0Bc=&quot;]})
+};
+</code></pre>
+<p>If you guessed the difference was <code>privateFor</code>, you got it! <code>privateFor</code> is an extra transaction parameter added to Quorum that specifies that the transaction you&#39;re making &#8211; in this case a contract deployment &#8211; is private for a specific account, identified by the given public key. For this transaction, the public key we chose represents node 7. Since we previously configured Truffle to connect to the first node, this transaction will deploy a contract from node 1, making the transaction private for node 1 and node 7.</p>
+<p>Now it&#39;s time to deploy your contracts. Run the <code>truffle migrate</code> command and watch your contracts be successfully deployed:</p>
+<pre><code class="lang-shell">$ truffle migrate
+Using network &#39;development&#39;.
+
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  Migrations: 0x721650d027d87cd247a3a776c4b6170bf1e5b936
+Saving successful migration to network...
+Saving artifacts...
+Running migration: 2_deploy_simplestorage.js
+  Deploying SimpleStorage...
+  SimpleStorage: 0x10ae69385c79ef3eb815ac008a7013d6878f1d38
+Saving successful migration to network...
+Saving artifacts...
+</code></pre>
+<p>Now that the contract&#39;s deployed, it&#39;s off to the races.</p>
+<h2><a name="4-exploring-our-privacy" class="anchor" href="#4-exploring-our-privacy"><span class="header-link" style="z-index: 9999999853">&nbsp;</span></a>4. Exploring Our Privacy</h2><p>In step 2 we configured Truffle to point our development environment to the first of the seven nodes provided by the example. You can think of the first node as &quot;us&quot;, as if we were developing a dapp for a private network that&#39;s used by multiple other parties. Since the 7nodes example provides us seven nodes to work with, we can tell Truffle about the other nodes so we can &quot;be&quot; someone else, and ensure the contract we deployed was private.</p>
+<p>To add a new network configuration, edit your <code>truffle.js</code> file and add another configuration, choosing a network name that best describes what that network connection you&#39;re adding. In this case, we&#39;re going to add a connection to node four and node seven:</p>
+<pre><code class="lang-javascript">// File: `truffle.js`
+module.exports = {
+  networks: {
+    development: {
+      host: &quot;localhost&quot;,
+      port: 22000, // was 8545
+      network_id: &quot;*&quot; // Match any network id
+    },
+    nodefour:  {
+      host: &quot;localhost&quot;,
+      port: 22003,
+      network_id: &quot;*&quot; // Match any network id
+    },
+    nodeseven:  {
+      host: &quot;localhost&quot;,
+      port: 22006,
+      network_id: &quot;*&quot; // Match any network id
+    }
   }
-
-  function doNoThrow() {
-    //
-  }
-}
-
-// Solidity test contract, meant to test Thrower
-contract TestThrower {
-  function testThrow() {
-    Thrower thrower = new Thrower();
-    ThrowProxy throwProxy = new ThrowProxy(address(thrower)); //set Thrower as the contract to forward requests to. The target.
-
-    //prime the proxy.
-    Thrower(address(throwProxy)).doThrow();
-    //execute the call that is supposed to throw.
-    //r will be false if it threw. r will be true if it didn&#39;t.
-    //make sure you send enough gas for your contract method.
-    bool r = throwProxy.execute.gas(200000)();
-
-    Assert.isFalse(r, “Should be false, as it should throw”);
-  }
-}
+};
 </code></pre>
-<p>Perhaps the most interesting line is the following:</p>
-<pre><code class="lang-javascript">Thrower(address(throwProxy)).doThrow();
+<p>Like before, VirtualBox and Vagrant are making these nodes available to us through local ports, so these configurations can look the same as our <code>development</code> configuration except with a different ports specified. Note that node four is someone who was <em>not</em> privy to the contract we deployed, whereas node seven was.</p>
+<p>Now that our configuration is set up, we can use the Truffle console to interact with our deployed contract. First let&#39;s be &quot;us&quot; &#8211; i.e., node one, configured via our <code>development</code> configuration. The easiest way to do this is to launch the Truffle console, which lets us interact with our deployed Contracts directly. Here, we&#39;ll get the deployed instance of the SimpleStorage contract and then get the integer value we specied on deployment.</p>
+<pre><code class="lang-shell">$ truffle console
+truffle(development)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
+{ [String: &#39;42&#39;] s: 1, e: 1, c: [ 42 ] }
 </code></pre>
-<p>This is telling Solidity to call the <code>doThrow()</code> function at the <code>throwProxy</code> address. Solidity automatically creates the necessary message data (<code>msg.data</code>) based on this call. Writing it like this, one would assume that at <code>throwProxy</code> there <em>is</em> a Thrower contract, but there isn’t. There&#39;s a proxy instead. The proxy then receives the msg data, and since it doesn’t have a <code>doThrow()</code> function, the fallback function is triggered in its place.</p>
-<p>The fallback function then saves the message data. After that, when executing the proxy, it then forwards the request onwards as a raw call, not a contract call. Since the <code>throw</code> would use up all the gas, the rest of the tests would legitimately OOG, so we restrict the gas sent through when calling the <code>execute()</code> method. Note that enough should be sent through so that it doesn’t OOG legitimately and thus miss the actual throw condition.</p>
-<p>With this proxy, one can still effectively write the interactions as contracts calling other contracts without having to resort to crafting raw calls manually. (Hooray!)</p>
-<h2><a name="gotchas" class="anchor" href="#gotchas"><span class="header-link" style="z-index: 9999999764">&nbsp;</span></a>Gotchas</h2><p>An important caveat here is to recognize the contract caller, <code>msg.sender</code>. If you add a proxy in between, then <code>msg.sender</code> will be the proxy, which could break authorization and permissioning algorithms. If your authorization system allows you to change the owner, you can get around this constraint by setting the proxy to be the contract owner. For example:</p>
-<pre><code class="lang-javascript">// Assume our contract under test has a changeOwner() function
-thrower.changeOwner(address(throwProxy));
+<p>Note that Truffle&#39;s contract abstractions use Promises to interact with Ethereum. This can be a little cumbersome on the console, as it requires a few extra key strokes to get things done, but within your application it makes control flow a lot smoother. Additionally, take a look at the output we received: We got 42 back, but as an object. This is because Ethereum can represent larger numbers than those natively represented by Javascript, and so we need an abstraction in order to interact with them.</p>
+<p>Quit out of the console using <code>Ctrl + C</code> (or <code>CMD + C</code> for Mac), and let&#39;s try accessing the SimpleStorage contract as node four. To do this, run the same command as before, but this time specifying the connection to node four instead of node one:</p>
+<pre><code class="lang-shell">$ truffle console --network nodefour
+truffle(nodefour)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
+{ [String: &#39;0&#39;] s: 1, e: 0, c: [ 0 ] }
+</code></pre>
+<p>You&#39;ll notice we got zero back instead. This is because the accounts represented by node four weren&#39;t privy to this contract.</p>
+<p>Lastly we can try with node seven, that <em>was</em> privy to this contract:</p>
+<pre><code class="lang-shell">$ truffle console --network nodeseven
+truffle(nodeseven)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
+{ [String: &#39;42&#39;] s: 1, e: 1, c: [ 42 ] }
+</code></pre>
+<p>And as you can see, we get 42! We can now deploy contracts that are only available to our desired parties.</p>
+<h2><a name="4-interacting-with-contracts-privately" class="anchor" href="#4-interacting-with-contracts-privately"><span class="header-link" style="z-index: 9999999852">&nbsp;</span></a>4. Interacting With Contracts Privately</h2><p>So far, we&#39;ve shown you how to deploy contracts that are private within your migrations. When building a dapp on Quorum, it&#39;d also be helpful to learn how to make all transactions private.</p>
+<p>Truffle uses its <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> contract abstraction wherever contracts are used in Javascript. When you interacted with <code>SimpleStorage</code> in the console above, for instance, you were using a <code>truffle-contract</code> contract abstraction. These abstractions are also used within your migrations, your Javascript-based unit tests, as well as executing external scripts with Truffle.</p>
+<p>Truffle&#39;s contract abstraction allow you to make a transaction against any function available on the contract. It does so by evaluating the functions of the contract and making them available to Javascript. To see these transactions in action, we&#39;re going to use an advanced feature of Truffle that lets us execute external scripts within our Truffle environment.</p>
+<p>Start out by creating a file called <code>sampletx.js</code> within the root of your project. Then fill it with this code:</p>
+<pre><code class="lang-Javascript">var SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
 
-// Perform test functions and assertions
-// ...
+module.exports = function(done) {
+  console.log(&quot;Getting deployed version of SimpleStorage...&quot;)
+  SimpleStorage.deployed().then(function(instance) {
+    console.log(&quot;Setting value to 65...&quot;);
+    return instance.set(65, {privateFor: [&quot;ROAZBWtSacxXQrOe3FGAqJDyJjFePR5ce4TSIzmJ0Bc=&quot;]});
+  }).then(function(result) {
+    console.log(&quot;Transaction:&quot;, result.tx);
+    console.log(&quot;Finished!&quot;);
+    done();
+  }).catch(function(e) {
+    console.log(e);
+    done();
+  });
+};
+</code></pre>
+<p>This code does two things: First, it asks Truffle to get our contract abstraction for the SimpleStorage contract. Then, it finds the deployed contract and sets the value managed by SimpleStorage to 65, using the contract&#39;s <code>set()</code> function. As with the migration we wrote previously, the <code>privateFor</code> parameter can be appended within an object at the end of the transaction to tell Quorum that this transaction is private between the sender and the account represented by the given public key.</p>
+<p>You can run this code using the commnad <code>truffle exect sampletx.js</code>. Your output should have looked something like this:</p>
+<pre><code class="lang-shell">$ truffle exec sampletx.js
+Using network &#39;development&#39;.
 
-// Restore previous owner
-Thrower(address(throwProxy)).changeOwner(address(this));
-throwProxy.execute();
+Getting deployed version of SimpleStorage...
+Setting value to 65...
+Transaction: 0x0a7a661e657f5a706b0c39b4f197038ef0c3e77abc9970a623327c6f48ca9aff
+Finished!
 </code></pre>
-<p>It’s also important to know that this only tests <code>throw</code>&#39;s at this particular level. For instance, if your contract call structure looked like the following:</p>
-<pre><code class="lang-shell">Test -&gt; Proxy -&gt; ContractToTest -&gt; SomeOtherContract -&gt; AnotherContractThatThrows
+<p>We can now use the Truffle console, like before, to check the results of this transaction. Let&#39;s see the value as node one:</p>
+<pre><code class="lang-shell">$ truffle console
+truffle(development)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
+{ [String: &#39;65&#39;] s: 1, e: 1, c: [ 65 ] }
 </code></pre>
-<p>Then you wouldn’t know where the <code>throw</code> occurred, since SomeOtherContract and ContractToTest could just rethrow.</p>
-<p>It would be prudent to also ensure there isn’t anything faulty in the proxy by creating a second test as a control. This test should be called with the appropriate gas and use the proxy to test a function where <em>no</em> <code>throw</code> occurs, just to make sure the proxy is setup and working as intended.</p>
-<p>Because a <code>throw</code> essentially uses up all gas, one must make doubly sure they catch the <code>throw</code> and <strong>not</strong> a legitimate out-of-gas (OOG) error. As well, take care to manage sending Ether through the proxy (for tests that require it) as that can be difficult as well.</p>
-<h2><a name="conclusion" class="anchor" href="#conclusion"><span class="header-link" style="z-index: 9999999763">&nbsp;</span></a>Conclusion</h2><p>Testing <code>throws</code> is possible from within Solidity tests, but can be cumbersome if you want to write those tests yourself as raw calls. You can get around this by using a proxy contract, which makes many situations a lot easier and makes your tests much easier to write. But keep a look out for potential caveats as Solidity tests with a lot more power but plenty of drawbacks.</p>
-<p>Happy developing!</p>
-<hr>
-<p><img src="https://consensys.net/img/team/simon.jpg" alt="About Simon de la Rouviere"></p>
-<p>About Simon de la Rouviere</p>
-<p>Simon builds decentralised applications for use in the music industry, online communities and the developing world. He has been in the Bitcoin/blockchain space since 2011, developed a decentralised band around a full blown cryptocurrency, and is writing a book on the blockchain. More about Simon can be found on <a href="https://consensys.net/team/">consensys.net</a>.</p>
+<p>We got 65! Now let&#39;s do node four (not privy to the transaction):</p>
+<pre><code class="lang-shell">$ truffle console --network nodefour
+truffle(nodefour)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
+{ [String: &#39;0&#39;] s: 1, e: 0, c: [ 0 ] }
+</code></pre>
+<p>We got zero, as expected. Now let&#39;s try node seven:</p>
+<pre><code class="lang-shell">$ truffle console --network nodeseven
+truffle(nodeseven)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
+{ [String: &#39;65&#39;] s: 1, e: 1, c: [ 65 ] }
+</code></pre>
+<p>And we got 65 again, as we should expect. We can now use Truffle&#39;s contract abstractions to make private transactions with Quorum.</p>
+<h2><a name="is-that-all-truffle-can-do-" class="anchor" href="#is-that-all-truffle-can-do-"><span class="header-link" style="z-index: 9999999851">&nbsp;</span></a>Is that all Truffle can do?</h2><p>Absolutely not! What we&#39;ve shown you today is everything that makes building dapps for Quorum different than building dapps for the public Ethereum network. And what you&#39;ll see is it&#39;s not different at all: The only difference is adding the <code>privateFor</code> parameter for deployments and transactions you&#39;d like to keep private. The rest is the same! In fact, now that you have the basics, you can explore <a href="/docs">all our other resources</a> for building dapps with Truffle, including <a href="/tutorials">tutorials</a>, <a href="/documentation">documentation</a>, <a href="/docs/getting_started/migrations">writing advanced deployment scripts</a>, <a href="/docs/getting_started/javascript-tests">unit testing</a> (<a href="/docs/getting_started/solidity-tests">with solidity too</a>), and much more.</p>
+<p>By building with Truffle, you now have access to not only the best development tools and technologies (like Quorum), but you also have access to the largest Ethereum developer community around. Don&#39;t hesitate to <a href="https://gitter.im/ConsenSys/truffle">drop us a line</a> or <a href="https://gitter.im/ConsenSys/truffle">get help from the community</a>. There&#39;s always someone available to answer any questions you have.</p>
+<p>Cheers, and happy coding!</p>
 
       </div>
     </div>
 
     <footer class="container">
-      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/tutorials/testing-for-throws-in-solidity-tests.md">Edit here &rarr;</a></p>
+      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/tutorials/building-dapps-for-quorum-private-enterprise-blockchains.md">Edit here &rarr;</a></p>
     </footer>
   </section>
 </section>
