@@ -160,16 +160,80 @@
   <img src="/tutorials/images/petshop.png" alt="Ethereum Pet Shop">
 </div>
 
-<h1><a name="ethereum-pet-shop" class="anchor" href="#ethereum-pet-shop"><span class="header-link" style="z-index: 9999998716">&nbsp;</span></a>Ethereum Pet Shop</h1><p>This series of tutoials will take you through building your first Dapp&#8211;a tracking system for a pet shop!</p>
-<p>This tutorial is meant for <strong>Dapp beginners who have knowledge of HTML, CSS and JavaScript</strong>. Some topics in here will be unfamiliar. For example, we&#39;ll be developing a smart contract, but not talking about what that means. You may want to check out the <a href="/tutorials/ethereum-overview">Ethereum Overview</a> to get some concepts and terms down before proceeding.</p>
+<h1><a name="ethereum-pet-shop" class="anchor" href="#ethereum-pet-shop"><span class="header-link" style="z-index: 9999999769">&nbsp;</span></a>Ethereum Pet Shop</h1><p>This series of tutoials will take you through building your first Dapp&#8211;a tracking system for a pet shop!</p>
+<p>This tutorial is meant for <strong>Dapp beginners who have knowledge of HTML, CSS and JavaScript</strong>, but assumes you have a basic knowledge of what Ethereum and smart contracts are conceptually. You may want to check out the <a href="/tutorials/ethereum-overview">Ethereum Overview</a> to get some concepts and terms down before proceeding.</p>
 <p>In this tutorial we will be covering:</p>
 <ul>
 <li>Setting up The Development Environment</li>
 <li>Creating a Truffle project</li>
 <li>Writing and Testing a Smart Contract</li>
 <li>Creating a UI to Interact with our Smart Contract</li>
+<li>Deploying to the Ropsten TestNet</li>
 </ul>
-<h2><a name="setting-up-the-development-environment" class="anchor" href="#setting-up-the-development-environment"><span class="header-link" style="z-index: 9999998715">&nbsp;</span></a>Setting up The Development Environment</h2><h3><a name="installing-ganache" class="anchor" href="#installing-ganache"><span class="header-link" style="z-index: 9999998714">&nbsp;</span></a>Installing Ganache</h3><h3><a name="installing-truffle" class="anchor" href="#installing-truffle"><span class="header-link" style="z-index: 9999998713">&nbsp;</span></a>Installing Truffle</h3><h2><a name="creating-a-truffle-project" class="anchor" href="#creating-a-truffle-project"><span class="header-link" style="z-index: 9999998712">&nbsp;</span></a>Creating a Truffle project</h2>
+<h2><a name="setting-up-the-development-environment" class="anchor" href="#setting-up-the-development-environment"><span class="header-link" style="z-index: 9999999768">&nbsp;</span></a>Setting up The Development Environment</h2><h3><a name="installing-ethereumjs-testrpc" class="anchor" href="#installing-ethereumjs-testrpc"><span class="header-link" style="z-index: 9999999767">&nbsp;</span></a>Installing EthereumJS TestRPC</h3><h3><a name="installing-truffle" class="anchor" href="#installing-truffle"><span class="header-link" style="z-index: 9999999766">&nbsp;</span></a>Installing Truffle</h3><h2><a name="creating-a-truffle-project" class="anchor" href="#creating-a-truffle-project"><span class="header-link" style="z-index: 9999999765">&nbsp;</span></a>Creating a Truffle Project</h2><p>Truffle initializes in the current directory. So first, create a directory in your development folder of choice. We&#39;re calling ours &quot;pet-shop-tutorial&quot;.</p>
+<pre><code class="lang-javascript">// Create the directory.
+mkdir pet-shop-tutorial
+
+// Navigate to within the directory.
+cd pet-shop-tutorial
+
+// Initialize Truffle.
+truffle init
+</code></pre>
+<h3><a name="directory-structure" class="anchor" href="#directory-structure"><span class="header-link" style="z-index: 9999999764">&nbsp;</span></a>Directory Structure</h3><p>The default truffle directory structure looks like the following:</p>
+<ul>
+<li>/contracts: Contains the Solidity source files for our smart contracts. There is an important contract in here called <strong>Migrations.sol</strong>, which we&#39;ll talk about later. Be sure not to delete this file!</li>
+<li>/migrations: Truffle uses a migration system to handle smart contract deployments. A migration is a series of contract deployments, accompanied by an additional special smart contract to keep track of any changes in</li>
+<li>/test: Contains both JavaScript and Solidity tests for our smart contracts.</li>
+<li>truffle.js: Truffle&#39;s configuration file.</li>
+</ul>
+<h2><a name="writing-the-smart-contract" class="anchor" href="#writing-the-smart-contract"><span class="header-link" style="z-index: 9999999763">&nbsp;</span></a>Writing the Smart Contract</h2><p>We&#39;ll start our Dapp by writing the smart contract that acts as its backend logic and storage.</p>
+<p>Start by creating a new file PetShop.sol in the /contracts directory with the following contents:</p>
+<pre><code class="lang-javascript">pragma solidity ^0.4.4;
+
+contract PetShop {
+
+}
+</code></pre>
+<p>A few key things to notice:</p>
+<ul>
+<li>A smart contract&#39;s file contains a single contract which has the same name and capitalization of the file itself.</li>
+<li>The minimum version of Solidity required is noted at the top of the contract: <code>pragma solidity ^0.4.4;</code>. The carat symbol (^) means &quot;the version noted after this or higher&quot;.</li>
+<li>Much like JavaScript or PHP, statements are terminated with semicolons.</li>
+</ul>
+<h3><a name="variable-setup" class="anchor" href="#variable-setup"><span class="header-link" style="z-index: 9999999762">&nbsp;</span></a>Variable Setup</h3><p>Solidity is a statically-typed language, meaning data types like strings, integers, arrays etc. much be defined. Solidity has a unique datatype called and <strong>address</strong>. Addresses are Ethereum addresses, which are stored as 20 byte values. Every account and smart contract on the Ethereum blockchain has an address and can send/receive Ether from/to this address.</p>
+<p>Setup the following varialbes on the next line after <code>contract PetShop {</code>.</p>
+<pre><code class="lang-javascript">struct Pet {
+  string name;
+  string species;
+  string breed;
+  uint age;
+  address owner;
+}
+
+mapping (uint =&gt; Pet) public pets;
+</code></pre>
+<p>We&#39;ve defined two variables: Pet and pets. Pet is a <strong>struct</strong>. Structs allow you to create new, complex datatypes. Our Pet struct contains strings for the name, species and breed; along with an integer age and address owner to store the owner&#39;s address.</p>
+<p>The pets mapping creates a&#8230;</p>
+<h3><a name="your-first-function-adopting-a-pet" class="anchor" href="#your-first-function-adopting-a-pet"><span class="header-link" style="z-index: 9999999761">&nbsp;</span></a>Your First Function: Adopting a Pet</h3><p>Let&#39;s allow the pet shop staff to mark a pet as adopted. Add the following function to the smart contract, after the variables we setup above.</p>
+<pre><code class="lang-javascript">function Adopt(uint pet_id) returns(bool adopted) {
+  if (pets[pet_id].owner != 0x0)
+  {
+    throw;
+  }
+
+  pets[pet_id].owner = tx.origin;
+
+  return true;
+}
+</code></pre>
+<p>TODO: Explanation of this function.</p>
+<h2><a name="testing-the-smart-contract" class="anchor" href="#testing-the-smart-contract"><span class="header-link" style="z-index: 9999999760">&nbsp;</span></a>Testing the Smart Contract</h2><h2><a name="creating-a-ui-to-interact-with-our-smart-contract" class="anchor" href="#creating-a-ui-to-interact-with-our-smart-contract"><span class="header-link" style="z-index: 9999999759">&nbsp;</span></a>Creating a UI to Interact with our Smart Contract</h2><p>Now that we&#39;ve created the smart contract, deployed it to our local test chain and confirmed we can interact with it via the console, it&#39;s time to create a UI so the world can use this!</p>
+<p>So you don&#39;t have to spend time on layout and stying, we&#39;ve created the HTML for you, <a href="#">download it here</a>.</p>
+<h3><a name="instantiating-the-contract" class="anchor" href="#instantiating-the-contract"><span class="header-link" style="z-index: 9999999758">&nbsp;</span></a>Instantiating the Contract</h3><h2><a name="deploying-to-the-ropsten-testnet" class="anchor" href="#deploying-to-the-ropsten-testnet"><span class="header-link" style="z-index: 9999999757">&nbsp;</span></a>Deploying to the Ropsten TestNet</h2><div class="container alert alert-warning" role="alert"><strong>NOTICE</strong> This section requires you have a live development server.</div>
+
+<p>It&#39;s time to show the world your hard work! Up to this point, we&#39;ve been testing our Dapp locally on a test blockchain called Ganache. To show others, we&#39;ll need to deploy to a public chain. So we don&#39;t have to spend real money, we&#39;ll deploy our smart contracts to the Ethereum test network, Ropsten.</p>
+
       </div>
     </div>
 
