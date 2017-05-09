@@ -156,6 +156,7 @@
   <section class="MainContent">
     <div class="container-fluid">
       <div class="row">
+
         <h1><a name="using-infura-or-any-custom-provider-" class="anchor" href="#using-infura-or-any-custom-provider-"><span class="header-link" style="z-index: 9999999740">&nbsp;</span></a>Using Infura (or any custom provider)</h1><p><a href="https://infura.io/">Infura</a> is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet. For security reasons Infura does not manage users&#39; private keys, which means they cannot sign transactions on your behalf (or your users&#39; behalf). Similarly, Truffle doesn&#39;t intuitively know how to sign your transactions &#8211; it usually hands that task over to the Ethereum node &#8211; so if you&#39;d like to deploy your contracts using Infura, you must first tell Truffle how you&#39;d like these transactions signed.</p>
 <p>Fortunately libraries can help us along. In this example we&#39;ll use an <a href="https://en.bitcoin.it/wiki/Deterministic_wallet">hd wallet mnemonic</a> to generate our list of wallets, and we&#39;ll use the <a href="https://github.com/MetaMask/provider-engine">web3-provider-engine</a> to provide us with built-in signing functionality.</p>
 <h3><a name="getting-started" class="anchor" href="#getting-started"><span class="header-link" style="z-index: 9999999739">&nbsp;</span></a>Getting Started</h3><p>First install the required dependencies:</p>
@@ -212,6 +213,7 @@ engine.start(); // Required by the provider engine.
   }
 };
 </code></pre>
+
 <h3><a name="discussion" class="anchor" href="#discussion"><span class="header-link" style="z-index: 9999999737">&nbsp;</span></a>Discussion</h3><p>In general, this is a lot of work in order to use an hd wallet with Truffle. This is a very early feature, and we&#39;d highly encourage anyone to create a new library that encapsulates the above code.</p>
 <h3><a name="full-code" class="anchor" href="#full-code"><span class="header-link" style="z-index: 9999999736">&nbsp;</span></a>Full Code</h3><pre><code class="lang-javascript">var bip39 = require(&quot;bip39&quot;);
 var hdkey = require(&#39;ethereumjs-wallet/hdkey&#39;);
