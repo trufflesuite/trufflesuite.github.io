@@ -156,14 +156,14 @@
   <section class="MainContent">
     <div class="container-fluid">
       <div class="row">
-        <h1><a name="building-dapps-for-quorum-private-enterprise-blockchains" class="anchor" href="#building-dapps-for-quorum-private-enterprise-blockchains"><span class="header-link" style="z-index: 9999999859">&nbsp;</span></a>Building dapps for Quorum: Private Enterprise Blockchains</h1><p>Ethereum is perhaps best defined by its public network, a network where every transaction &#8211; and all participants of each transaction &#8211; are publicly available to anyone looking at its transaction history. Truffle got its start building for the public blockchain: at the time of Ethereum&#39;s launch, the public blockchain was the only smart contract blockchain around. However, since launch, technology has changed, most notably with JP Morgan&#39;s <a href="https://www.jpmorgan.com/country/US/EN/Quorum">Quorum</a>.</p>
+        <h1><a name="building-dapps-for-quorum-private-enterprise-blockchains" class="anchor" href="#building-dapps-for-quorum-private-enterprise-blockchains"><span class="header-link" style="z-index: 9999999859">&nbsp;</span></a>Building dapps for Quorum: Private Enterprise Blockchains</h1><p>Ethereum is perhaps best defined by its public network, a network where every transaction &#8211; and all participants of each transaction &#8211; are publicly available to anyone looking at its transaction history. Truffle got its start building for the public blockchain: at the time of Ethereum&#39;s launch, the public blockchain was the only smart contract blockchain around. However since launch, technology has changed, most notably with <a href="https://github.com/jpmorganchase/quorum/wiki">Quorum</a>, the permissioned blockchain initially developed by JP Morgan.</p>
 <p>Quorum is a version of Ethereum that adds new features on top of what Ethereum already provides. Specifically, Quorum adds the ability to create private blockchains between select participants, and more importantly adds transaction privacy on top of your normal everyday Ethereum transactions. Let&#39;s use a quick example: Say Bob, Tom and Alice all create a blockchain together, and Alice wants to send 20 TruffleCoin to Bob. But here&#39;s the kicker: she doesn&#39;t want Tom (or anyone else other than Bob) to know, because she cares about her privacy. Using Quorum, Alice could easily send a transaction where the transaction data is only available to her and Bob.</p>
 <p>Transaction privacy presents a number of useful use cases, especially in the enterprise and banking worlds. For instance, large banks might want to take advantage of blockchain technologies like Ethereum but don&#39;t want their transactions to be publicly available to everyone as a matter of doing business. Quorum presents a useful alternative.</p>
 <h2><a name="requirements" class="anchor" href="#requirements"><span class="header-link" style="z-index: 9999999858">&nbsp;</span></a>Requirements</h2><p>This tutorial expects you to have some knowledge of Truffle, Ethereum, Quorum and Solidity. For more information on these topics, please see the following links:</p>
 <ul>
 <li><a href="/docs/">Truffle documentation</a></li>
 <li><a href="https://ethereum.org/">Etheruem overview</a></li>
-<li><a href="https://www.jpmorgan.com/country/US/EN/Quorum">Quorum overview</a> and <a href="https://github.com/jpmorganchase/quorum-examples">documentation</a></li>
+<li><a href="https://www.jpmorgan.com/country/US/EN/Quorum">Quorum overview</a> and <a href="https://github.com/jpmorganchase/quorum/wiki">documentation</a></li>
 <li><a href="https://solidity.readthedocs.io/en/develop/">Solidity documentation</a></li>
 </ul>
 <p>You will primarily be using the command line for this tutorial. Ensure you have basic familiarity with opening and using the command line provided by your operating system. Additionally, you will need the following software. Ensure it is installed before proceeding:</p>
@@ -181,11 +181,11 @@
 </ol>
 <p>Also in this tutorial, you&#39;ll see that developing for Quorum using Truffle is <em>exactly like</em> developing for the public Ethereum blockchain. Truffle supports Quorum out of the box, and the same strategies and methods for building Ethereum-enabled applications for the Ethereum public blockchain also apply to building dapps on Quorum.</p>
 <h2><a name="1-setting-up-your-quorum-client" class="anchor" href="#1-setting-up-your-quorum-client"><span class="header-link" style="z-index: 9999999856">&nbsp;</span></a>1. Setting up your Quorum client</h2><p>The Quorum client is a replacement for the Ethereum client. Using the Quorum client, you can set up a private blockchain that&#39;s only available to you and the people you allow to participate.</p>
-<p>To set up a Quorum client, open the command line and navigate to a folder which you&#39;d like to install the Quorum example. Here, we chose the folder <code>workspace</code>:</p>
+<p>In this example, we&#39;re going to use a Quorum cluster of seven nodes &#8211; i.e., seven Quorum clients &#8211; already set up and configured for us inside a virtual machine. You <em>could</em> choose to install Quorum yourself by <a href="https://github.com/jpmorganchase/quorum">downloading it directly</a> and building it from source, but for this example, using the pre-configured cluster is much easier. To set up the cluster, open the command line and navigate to a folder where you&#39;d like it installed. Here, we chose the folder <code>workspace</code>:</p>
 <pre><code class="lang-shell">$ cd workspace
 $ git clone https://github.com/jpmorganchase/quorum-examples
 </code></pre>
-<p>Next, we&#39;ll want to use <code>vagrant</code> (you should have installed it along with VirtualBox above) to initialize the Quorum virtual machine. Note that this step could take up to five minutes as it makes the virtual machine ready for use.</p>
+<p>Next, we&#39;ll want to use <code>vagrant</code> (you should have installed it along with VirtualBox above) to initialize the cluster&#39;s virtual machine. Note that this step could take up to five minutes as it makes the virtual machine ready for use.</p>
 <pre><code class="lang-shell">$ cd quorum-examples
 $ vagrant up
 </code></pre>
@@ -214,7 +214,7 @@ ubuntu@ubuntu-xenial:~$
 <pre><code class="lang-shell">ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ init.sh
 ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ start.sh
 </code></pre>
-<p>Success! Our Quorum client set up, with seven nodes we can use to represent seven different actors on our private network.</p>
+<p>Success! We now have seven Quorum nodes set up that we can use to represent seven different actors on our private network.</p>
 <h2><a name="2-setting-up-truffle" class="anchor" href="#2-setting-up-truffle"><span class="header-link" style="z-index: 9999999855">&nbsp;</span></a>2. Setting up Truffle</h2><p>To set up Truffle, we&#39;re going to start by creating a bare Truffle project, without any contracts or code. Before doing this, make sure to open up a new command line window. We want to leave the old command line window alone, and let the Quorum example run without bothering it. In the new command line window, navigate to your workspace and create a new directory for your Truffle project. Note that if you&#39;re using Windows, the commands you&#39;ll type might be slightly different.</p>
 <pre><code class="lang-shell">$ cd workspace
 $ mkdir myproject
