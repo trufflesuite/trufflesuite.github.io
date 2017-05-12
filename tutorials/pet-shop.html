@@ -156,106 +156,129 @@
   <section class="MainContent">
     <div class="container-fluid">
       <div class="row">
-        <h1><a name="using-infura-or-any-custom-provider-" class="anchor" href="#using-infura-or-any-custom-provider-"><span class="header-link" style="z-index: 9999999709">&nbsp;</span></a>Using Infura (or any custom provider)</h1><p><a href="https://infura.io/">Infura</a> is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet. For security reasons Infura does not manage users&#39; private keys, which means they cannot sign transactions on your behalf (or your users&#39; behalf). Similarly, Truffle doesn&#39;t intuitively know how to sign your transactions &#8211; it usually hands that task over to the Ethereum node &#8211; so if you&#39;d like to deploy your contracts using Infura, you must first tell Truffle how you&#39;d like these transactions signed.</p>
-<p>Fortunately libraries can help us along. In this example we&#39;ll use an <a href="https://en.bitcoin.it/wiki/Deterministic_wallet">hd wallet mnemonic</a> to generate our list of wallets, and we&#39;ll use the <a href="https://github.com/MetaMask/provider-engine">web3-provider-engine</a> to provide us with built-in signing functionality.</p>
-<h3><a name="getting-started" class="anchor" href="#getting-started"><span class="header-link" style="z-index: 9999999708">&nbsp;</span></a>Getting Started</h3><p>First install the required dependencies:</p>
-<pre><code>$ npm install ethereumjs-wallet bip39 web3-provider-engine web3
-</code></pre><p>We recommend you run the above command with the <code>--save</code> flag to save this configuration in your project&#39;s <code>package.json</code> file.</p>
-<h3><a name="editing-your-project-39-s-configuration" class="anchor" href="#editing-your-project-39-s-configuration"><span class="header-link" style="z-index: 9999999707">&nbsp;</span></a>Editing Your Project&#39;s Configuration</h3><p>We can use your project&#39;s <code>truffle.js</code> configuration file to tell Truffle how to sign our transactions. To start, we should first require all of our dependencies used for signing transactions:</p>
-<pre><code class="lang-javascript">var bip39 = require(&quot;bip39&quot;);
-var hdkey = require(&#39;ethereumjs-wallet/hdkey&#39;);
-var ProviderEngine = require(&quot;web3-provider-engine&quot;);
-var WalletSubprovider = require(&#39;web3-provider-engine/subproviders/wallet.js&#39;);
-var Web3Subprovider = require(&quot;web3-provider-engine/subproviders/web3.js&quot;);
-var Web3 = require(&quot;web3&quot;);
-</code></pre>
-<p>These dependencies are used for the following things:</p>
+        <div class="pet-shop-header">
+  <img src="/tutorials/images/petshop.png" alt="Ethereum Pet Shop">
+</div>
+
+<h1><a name="ethereum-pet-shop" class="anchor" href="#ethereum-pet-shop"><span class="header-link" style="z-index: 9999999754">&nbsp;</span></a>Ethereum Pet Shop</h1><p>This series of tutoials will take you through building your first Dapp&#8211;a tracking system for a pet shop!</p>
+<p>This tutorial is meant for <strong>Dapp beginners who have knowledge of HTML, CSS and JavaScript</strong>, but assumes you have a basic knowledge of what Ethereum and smart contracts are conceptually. You may want to check out the <a href="/tutorials/ethereum-overview">Ethereum Overview</a> to get some concepts and terms down before proceeding.</p>
+<p>In this tutorial we will be covering:</p>
 <ul>
-<li><code>bip39</code>: Used to create a seed from hd wallet mnemonics (more on that later).</li>
-<li><code>hdkey</code>: Used to derive addresses from seeds using complex math.</li>
-<li><code>ProviderEngine</code>: The basic framework that will be used to wrangle all transactions that need to be signed.</li>
-<li><code>WalletSubprovider</code>: Part of the provider engine framework that will handle wallet signing.</li>
-<li><code>Web3Subprovider</code>: Part of the provider engine framework that handles everything <em>other than</em> transaction signing.</li>
-<li><code>Web3</code>: What we used to communicate with the Ethereum network. Here, we&#39;re using it solely to create a provider.</li>
+<li>Setting up The Development Environment</li>
+<li>Creating a Truffle project</li>
+<li>Writing and Testing a Smart Contract</li>
+<li>Creating a UI to Interact with our Smart Contract</li>
+<li>Deploying to the Ropsten TestNet</li>
 </ul>
-<p>After setting up are dependencies, we&#39;ll then need to create an hd wallet from a mnemonic. A mnemonic is a twelve word string that represents a secure random seed (warning: don&#39;t just create a mnemonic yourself; use the bip39 library to do this if you don&#39;t have one). From this seed we can create an unlimited number of Ethereum addresses and private keys. Because this is a seed, we can always use this mnemonic to find those addresses again.</p>
-<pre><code class="lang-javascript">// Get our mnemonic and create an hdwallet
-var mnemonic = &quot;couch solve unique spirit wine fine occur rhythm foot feature glory away&quot;;
-var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
+<h2><a name="setting-up-the-development-environment" class="anchor" href="#setting-up-the-development-environment"><span class="header-link" style="z-index: 9999999753">&nbsp;</span></a>Setting up The Development Environment</h2><h3><a name="installing-ethereumjs-testrpc" class="anchor" href="#installing-ethereumjs-testrpc"><span class="header-link" style="z-index: 9999999752">&nbsp;</span></a>Installing EthereumJS TestRPC</h3><h3><a name="installing-truffle" class="anchor" href="#installing-truffle"><span class="header-link" style="z-index: 9999999751">&nbsp;</span></a>Installing Truffle</h3><h2><a name="creating-a-truffle-project" class="anchor" href="#creating-a-truffle-project"><span class="header-link" style="z-index: 9999999750">&nbsp;</span></a>Creating a Truffle Project</h2><p>Truffle initializes in the current directory. So first, create a directory in your development folder of choice. We&#39;re calling ours &quot;pet-shop-tutorial&quot;.</p>
+<pre><code class="lang-shell">// Create the directory.
+mkdir pet-shop-tutorial
+
+// Navigate to within the directory.
+cd pet-shop-tutorial
+
+// Initialize Truffle.
+truffle init
 </code></pre>
-<p>From here we can use the hdwallet to derive the first account. We do so using something called an &quot;hd path&quot;, which is a way of telling the complex mathematics what we&#39;re attempting to derive. The most important bit is when we add &quot;0&quot; on the end of the hd path. This means we want to find the first account that we can derive from this hd wallet. It&#39;s zero based, so if we wanted the second address we&#39;d derive <code>wallet_hdpath + &quot;1&quot;</code>, and for the third address <code>wallet_hdpath + &quot;2&quot;</code>, etc.</p>
-<pre><code class="lang-javascript">// Get the first account using the standard hd path.
-var wallet_hdpath = &quot;m/44&#39;/60&#39;/0&#39;/0/&quot;;
-var wallet = hdwallet.derivePath(wallet_hdpath + &quot;0&quot;).getWallet();
-var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
+<h3><a name="directory-structure" class="anchor" href="#directory-structure"><span class="header-link" style="z-index: 9999999749">&nbsp;</span></a>Directory Structure</h3><p>The default truffle directory structure looks like the following:</p>
+<ul>
+<li>/contracts: Contains the Solidity source files for our smart contracts. There is an important contract in here called <strong>Migrations.sol</strong>, which we&#39;ll talk about later. Be sure not to delete this file!</li>
+<li>/migrations: Truffle uses a migration system to handle smart contract deployments. A migration is a series of contract deployments, accompanied by an additional special smart contract to keep track of any changes in</li>
+<li>/test: Contains both JavaScript and Solidity tests for our smart contracts.</li>
+<li>truffle.js: Truffle&#39;s configuration file.</li>
+</ul>
+<h2><a name="writing-the-smart-contract" class="anchor" href="#writing-the-smart-contract"><span class="header-link" style="z-index: 9999999748">&nbsp;</span></a>Writing the Smart Contract</h2><p>We&#39;ll start our Dapp by writing the smart contract that acts as its backend logic and storage.</p>
+<p>Start by creating a new file PetShop.sol in the /contracts directory with the following contents:</p>
+<pre><code class="lang-javascript">pragma solidity ^0.4.4;
+
+contract PetShop {
+
+}
 </code></pre>
-<p>Next, we need to set up the Provider Engine, telling it that we&#39;d like to use our wallet to sign transactions, and use the ropsten network on infura for everything else:</p>
-<pre><code class="lang-javascript">var providerUrl = &quot;https://testnet.infura.io&quot;;
-var engine = new ProviderEngine();
-engine.addProvider(new WalletSubprovider(wallet, {}));
-engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
-engine.start(); // Required by the provider engine.
+<p>A few key things to notice:</p>
+<ul>
+<li>A smart contract&#39;s file contains a single contract which has the same name and capitalization of the file itself.</li>
+<li>The minimum version of Solidity required is noted at the top of the contract: <code>pragma solidity ^0.4.4;</code>. The carat symbol (^) means &quot;the version noted after this or higher&quot;.</li>
+<li>Much like JavaScript or PHP, statements are terminated with semicolons.</li>
+</ul>
+<h3><a name="variable-setup" class="anchor" href="#variable-setup"><span class="header-link" style="z-index: 9999999747">&nbsp;</span></a>Variable Setup</h3><p>Solidity is a statically-typed language, meaning data types like strings, integers, arrays etc. must be defined. Solidity has a unique datatype called and <strong>address</strong>. Addresses are Ethereum addresses, which are stored as 20 byte values. Every account and smart contract on the Ethereum blockchain has an address and can send/receive Ether from/to this address.</p>
+<p>Setup the following varialbes on the next line after <code>contract PetShop {</code>.</p>
+<pre><code class="lang-javascript">struct Pet {
+  string name;
+  string species;
+  string breed;
+  uint age;
+  address owner;
+}
+
+mapping (uint =&gt; Pet) public pets;
 </code></pre>
-<p>Finally, we want to export our Truffle configuration. Here we use this wallet only when we want to deploy to the ropsten network:</p>
-<pre><code class="lang-javascript">module.exports = {
-  networks: {
-    &quot;ropsten&quot;: {
-      network_id: 3,    // Official ropsten network id
-      provider: engine, // Use our custom provider
-      from: address     // Use the address we derived
-    }
-  },
-  rpc: {
-    // Use the default host and port when not using ropsten
-    host: &quot;localhost&quot;,
-    port: 8545
+<p>We&#39;ve defined two variables: Pet and pets. Pet is a <strong>struct</strong>. Structs allow you to create new, complex datatypes. Our Pet struct contains strings for the name, species and breed; along with an integer age and address owner to store the owner&#39;s address.</p>
+<p>The pets mapping creates a&#8230;</p>
+<h3><a name="your-first-function-adopting-a-pet" class="anchor" href="#your-first-function-adopting-a-pet"><span class="header-link" style="z-index: 9999999746">&nbsp;</span></a>Your First Function: Adopting a Pet</h3><p>Let&#39;s allow the pet shop staff to mark a pet as adopted. Add the following function to the smart contract, after the variables we setup above.</p>
+<pre><code class="lang-javascript">function Adopt(uint pet_id) returns(bool adopted) {
+  if (pets[pet_id].owner != 0x0)
+  {
+    throw;
   }
+
+  pets[pet_id].owner = tx.origin;
+
+  return true;
+}
+</code></pre>
+<p>TODO: Explanation of this function.</p>
+<h2><a name="compiling-and-migrating-the-smart-contract" class="anchor" href="#compiling-and-migrating-the-smart-contract"><span class="header-link" style="z-index: 9999999745">&nbsp;</span></a>Compiling and Migrating the Smart Contract</h2><h3><a name="compilation" class="anchor" href="#compilation"><span class="header-link" style="z-index: 9999999744">&nbsp;</span></a>Compilation</h3><p>Solidity is a compiled language, meaning we need to compile our Solidity to bytecode for the EVM to execute. Here we&#39;ll compile our contracts to bytecode and put that bytecode on the blockchain so we can interact with it.</p>
+<p>Truffle comes with two example smart contracts. Let&#39;s delete them so we don&#39;t compile or migrate more than we need to. The files are ConvertLib.sol and MetaCoin.sol. DO NOT DELETE Migrations.sol, as we will need this for the next step.</p>
+<p>Open a new console window and run the command <code>testrpc</code>. This starts a new, local blockchain instance powered by EthereumJS TestRPC. Once the TestRPC boots up, you&#39;ll see the current TestRPC version, a list of available accounts and private keys, and a section called HD Wallet. We need to copy the words from the Mnemonic section for use later in our browser.</p>
+<p>Back in your first console window, run the command <code>truffle compile</code>. You should see the following output:</p>
+<pre><code class="lang-shell">Compiling ./contracts/Migrations.sol...
+Compiling ./contracts/PetShop.sol...
+Writing artifacts to ./build/contracts
+</code></pre>
+<h3><a name="migration" class="anchor" href="#migration"><span class="header-link" style="z-index: 9999999743">&nbsp;</span></a>Migration</h3><p>Now that we&#39;ve successfully compiled out contracts, it&#39;s time to migrate them to the blockchain! A <strong>migration</strong> is&#8230;</p>
+<p>You&#39;ll see two JavaScript files already in the migrations directory: 1_initial_migration.js and 2_deploy_contracts.js. These are executed in their enumerated order. All migration files follow the same basic structure:</p>
+<ul>
+<li>Import the desired contract artifacts from the build folder.</li>
+<li>Export a single, anonymous function taking one argument, <code>deployer</code>.</li>
+<li>Order a deployment of a given contract with <code>deployer.deploy(&lt;&lt; CONTRACT_NAME &gt;&gt;)</code>.</li>
+<li>If one contract depends on another, link them using: <code>deployer.link(&lt;&lt; DEPENDENCY_CONTRACT_NAME &gt;&gt;, &lt;&lt; DEPENDENT_CONTRACT_NAME &gt;&gt;)</code>. Then, deploy the dependency contract using the deployer&#39;s deploy command as we did in the previous bullet. For this tutorial, we&#39;ll only be working with one contract so no linking is required.</li>
+</ul>
+<p>We can leave 1_initial_migration alone; it deploys the Migrations.sol contract to keep track of our migrations so we don&#39;t double-migrate unchanged contracts in the future.</p>
+<p>Edit the file 2_deploy_contracts.js by removing the unused code pertaining to ConvertLib and Metacoin and replacing it with:</p>
+<pre><code class="lang-javascript">var PetShop = artifacts.require(&quot;./PetShop.sol&quot;);
+
+module.exports = function(deployer) {
+  deployer.deploy(PetShop);
 };
 </code></pre>
-<h3><a name="discussion" class="anchor" href="#discussion"><span class="header-link" style="z-index: 9999999706">&nbsp;</span></a>Discussion</h3><p>In general, this is a lot of work in order to use an hd wallet with Truffle. This is a very early feature, and we&#39;d highly encourage anyone to create a new library that encapsulates the above code.</p>
-<h3><a name="full-code" class="anchor" href="#full-code"><span class="header-link" style="z-index: 9999999705">&nbsp;</span></a>Full Code</h3><pre><code class="lang-javascript">var bip39 = require(&quot;bip39&quot;);
-var hdkey = require(&#39;ethereumjs-wallet/hdkey&#39;);
-var ProviderEngine = require(&quot;web3-provider-engine&quot;);
-var WalletSubprovider = require(&#39;web3-provider-engine/subproviders/wallet.js&#39;);
-var Web3Subprovider = require(&quot;web3-provider-engine/subproviders/web3.js&quot;);
-var Web3 = require(&quot;web3&quot;);
+<p>In the same console window we ran the compile command, run <code>truffle migrate</code>. You&#39;ll see this output:</p>
+<pre><code class="lang-shell">Using network &#39;development&#39;.
 
-// Get our mnemonic and create an hdwallet
-var mnemonic = &quot;couch solve unique spirit wine fine occur rhythm foot feature glory away&quot;;
-var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
-
-// Get the first account using the standard hd path.
-var wallet_hdpath = &quot;m/44&#39;/60&#39;/0&#39;/0/&quot;;
-var wallet = hdwallet.derivePath(wallet_hdpath + &quot;0&quot;).getWallet();
-var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
-
-var providerUrl = &quot;https://testnet.infura.io&quot;;
-var engine = new ProviderEngine();
-engine.addProvider(new WalletSubprovider(wallet, {}));
-engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
-engine.start(); // Required by the provider engine.
-
-module.exports = {
-  networks: {
-    &quot;ropsten&quot;: {
-      network_id: 3,    // Official ropsten network id
-      provider: engine, // Use our custom provider
-      from: address     // Use the address we derived
-    }
-  },
-  rpc: {
-    // Use the default host and port when not using ropsten
-    host: &quot;localhost&quot;,
-    port: 8545
-  }
-};
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  Migrations: 0x75175eb116b36ff5fef15ebd15cbab01b50b50d1
+Saving successful migration to network...
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+  Deploying PetShop...
+  PetShop: 0xb9f485451a945e65e48d9dd7fc5d759af0a89e21
+Saving successful migration to network...
+Saving artifacts...
 </code></pre>
+<p>You can see the migrations being executed in order, followed by the blockchain address of each deployed contract (NOTE: Your addresses will differ). Congratulations! You&#39;ve written your first smart contract and deployed it to a locally running test blockchain. It&#39;s time to interact with our smart contrat now to make sure it does what we want.</p>
+<h2><a name="testing-the-smart-contract" class="anchor" href="#testing-the-smart-contract"><span class="header-link" style="z-index: 9999999742">&nbsp;</span></a>Testing the Smart Contract</h2><p>Truffle is very flexible when it comes to smart contract testing. Tests can be written either in JavaScript or Solidity. Today we&#39;ll be writing our tests in Solidity to separate our concerns. Solidity for back-end, JavaScript for front-end.</p>
+<h2><a name="creating-a-ui-to-interact-with-our-smart-contract" class="anchor" href="#creating-a-ui-to-interact-with-our-smart-contract"><span class="header-link" style="z-index: 9999999741">&nbsp;</span></a>Creating a UI to Interact with our Smart Contract</h2><p>Now that we&#39;ve created the smart contract, deployed it to our local test chain and confirmed we can interact with it via the console, it&#39;s time to create a UI so the world can use this!</p>
+<p>So you don&#39;t have to spend time on layout and stying, we&#39;ve created the HTML for you, <a href="#">download it here</a>.</p>
+<h3><a name="instantiating-the-contract" class="anchor" href="#instantiating-the-contract"><span class="header-link" style="z-index: 9999999740">&nbsp;</span></a>Instantiating the Contract</h3><h2><a name="deploying-to-the-ropsten-testnet" class="anchor" href="#deploying-to-the-ropsten-testnet"><span class="header-link" style="z-index: 9999999739">&nbsp;</span></a>Deploying to the Ropsten TestNet</h2><div class="container alert alert-warning" role="alert"><strong>NOTICE</strong> This section requires you have a live development server.</div>
+
+<p>It&#39;s time to show the world your hard work! Up to this point, we&#39;ve been testing our Dapp locally on a test blockchain called Ganache. To show others, we&#39;ll need to deploy to a public chain. So we don&#39;t have to spend real money, we&#39;ll deploy our smart contracts to the Ethereum test network, Ropsten.</p>
 
       </div>
     </div>
 
     <footer class="container">
-      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/tutorials/using-infura-custom-provider.md">Edit here &rarr;</a></p>
+      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/tutorials/pet-shop.md">Edit here &rarr;</a></p>
     </footer>
   </section>
 </section>

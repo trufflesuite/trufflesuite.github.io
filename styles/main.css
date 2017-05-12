@@ -9256,6 +9256,13 @@ code {
   max-width: 100%;
 }
 
+.Tutorials .MainContent .pet-shop-header img {
+  display: block;
+  height: calc(50vh - 100px);
+  width: auto;
+  margin: 1.5rem auto 3rem auto !important;
+}
+
 .Tutorials .MainContent ul,
 .Tutorials .MainContent ol {
   max-width: 100%;
@@ -9352,6 +9359,15 @@ code {
   margin-top: 3rem;
   padding-top: 0;
   padding-bottom: 3rem;
+}
+
+.Tutorials .MainContent .container-steps {
+  margin-bottom: 4rem;
+}
+
+.Tutorials .MainContent .container-steps img {
+  max-height: 300px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 767px) {
