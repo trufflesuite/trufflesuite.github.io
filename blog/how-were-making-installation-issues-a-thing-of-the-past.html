@@ -156,268 +156,41 @@
   <section class="MainContent">
     <div class="container-fluid">
       <div class="row">
-        <h1><a name="upgrading-from-truffle-2-0-to-truffle-3-0-a-guide" class="anchor" href="#upgrading-from-truffle-2-0-to-truffle-3-0-a-guide"><span class="header-link" style="z-index: 9999999716">&nbsp;</span></a>Upgrading from Truffle 2.0 to Truffle 3.0 - a Guide</h1><p><em>Note: This guide also applies to users upgrading from Truffle beta 3.0.0-9 to Truffle 3.0.1</em></p>
-<h2><a name="introduction" class="anchor" href="#introduction"><span class="header-link" style="z-index: 9999999715">&nbsp;</span></a>Introduction</h2><p>Truffle 3.0 offers a ton of new features. With it comes some very important breaking changes. These breaking changes make network management easier, make contract abstractions easier to use, and allow you to install third party packages from any number of sources. We consider these breaking changes helpful &#8211; they&#39;re due to the careful maturation of Ethereum&#39;s most popular development tool, and we&#39;ll guide you through the steps needed to take advantage of all these new features.</p>
-<p>In order to show you code samples that describe the evolution from 2.0 to 3.0, we&#39;re going to use examples like this:</p>
-<p>v2.0:</p>
-<pre><code class="lang-javascript">// This is old code from Truffle 2.0
-</code></pre>
-<p>v3.0:</p>
-<pre><code class="lang-javascript">// This is new code for Truffle 3.0!
-</code></pre>
-<p>Now let&#39;s get started!</p>
-<h2><a name="first-things-first-configuration" class="anchor" href="#first-things-first-configuration"><span class="header-link" style="z-index: 9999999714">&nbsp;</span></a>First Things First: Configuration</h2><p>Truffle 2.0 had an odd configuration &#8211; we admit it. Not only can you have a default, unnamed network sitting around (the <code>rpc</code> configuration option) but you can also have named networks like <code>&quot;ropsten&quot;</code> or <code>&quot;live&quot;</code>. A result of this default vs. named distinction came were other oddities, such as accidentally overwriting important network artifacts or deploying to the wrong network. With Truffle 3.0 we fixed all that, but it requires a change in your configuration.</p>
-<p>In v2.0, a configuration with a named network might look like this:</p>
-<pre><code class="lang-javascript">module.exports = {
-  rpc: {
-    host: &quot;localhost&quot;,
-    port: 8545
-  },
-  networks: {
-    staging: {
-      host: &quot;localhost&quot;,
-      port: 8546,
-      network_id: 1337
-    },
-    ropsten: {
-      host: &quot;158.253.8.12&quot;,
-      port: 8545,
-      network_id: 3
-    }
-  }
-};
-</code></pre>
-<p>In v3.0, this same configuration would look like this:</p>
-<pre><code class="lang-javascript">module.exports = {
-  networks: {
-    development: {
-      host: &quot;localhost&quot;,
-      port: 8545,
-      network_id: &quot;*&quot;
-    },
-    staging: {
-      host: &quot;localhost&quot;,
-      port: 8546,
-      network_id: 1337
-    },
-    ropsten: {
-      host: &quot;158.253.8.12&quot;,
-      port: 8545,
-      network_id: 3
-    }
-  }
-};
-</code></pre>
-<p>What&#39;s the difference? First, there&#39;s no default network anymore: the <code>rpc</code> configuration item has been removed. In its place is a specially named <code>development</code> network. This is a network that will match any network it connects to at the specified host and port, and when running commands like <code>migrate</code> Truffle will default to this network if none is specified. If you&#39;d like to protect yourself from deploying to the wrong network completely, you can <strong>remove</strong> the <code>development</code> configuration entirely; if you don&#39;t specify the network via <code>truffle migrate --network ropsten</code>, for example, Truffle will exit with an error, ensuring you never deploy to a network you don&#39;t intend to.</p>
-<p>Additionally, each network needs to have a network id specified, or a <code>&quot;*&quot;</code>. This is another security measure used during migrations to ensure that even <em>if</em> Truffle connects to the Ethereum client at the specified host and port, if it&#39;s not the network you intend, Truffle will error before attempting any deployments.</p>
-<h2><a name="migrations-and-test-dependencies" class="anchor" href="#migrations-and-test-dependencies"><span class="header-link" style="z-index: 9999999713">&nbsp;</span></a>Migrations and Test Dependencies</h2><p>Before package management, Truffle could assume that all the contracts you wrote yourself were the contracts you wanted to interact with via your migrations and tests. Now that package management is here, this is no longer a safe assumption &#8211; contract dependencies can come from any number of sources, and so you have to explicitly ask for those abstractions yourself. This is all in the name of reducing magic. Let&#39;s look at an example migration.</p>
-<p>v2.0 : <code>./migrations/2_deploy_contracts.js</code></p>
-<pre><code class="lang-javascript">module.exports = function(deployer) {
-  deployer.deploy(ConvertLib);
-  deployer.autolink();
-  deployer.deploy(MetaCoin);
-};
-</code></pre>
-<p>v3.0 : <code>./migrations/2_deploy_contracts.js</code></p>
-<pre><code class="lang-javascript">var ConvertLib = artifacts.require(&quot;ConvertLib.sol&quot;);
-var MetaCoin = artifacts.require(&quot;MetaCoin.sol&quot;);
-
-module.exports = function(deployer) {
-  deployer.deploy(ConvertLib);
-  deployer.link(ConvertLib, MetaCoin);
-  deployer.deploy(MetaCoin);
-};
-</code></pre>
-<p>Note there are a couple differences. For this section, the changes we&#39;ll focus on are the two lines which use <code>artifacts.require()</code>. This is a function similar to Node&#39;s <code>require()</code> statement provided by Truffle. If given a path to a solidity file local to your project, or the path of a package dependency, this function will locate the correct artifacts and make them ready for use on your current network.</p>
-<p>Your Javascript tests need the exact same <code>artifacts.require()</code> statements in order to use those abstractions like before.</p>
-<h2><a name="migrations-no-more-autolink" class="anchor" href="#migrations-no-more-autolink"><span class="header-link" style="z-index: 9999999712">&nbsp;</span></a>Migrations: No more autolink</h2><p>Like the section above, autolinking was a boon of a very small dependency tree. With package management, Truffle can no longer autolink your contracts because it can&#39;t determine all possible dependencies you might need within your migration. Instead, you need to explicitly link your libraries yourself. Fortunately this is not hard, and you can see the changes we made in the example above.</p>
-<h2><a name="contract-abstractions-all-json-goodbye-sol-js-" class="anchor" href="#contract-abstractions-all-json-goodbye-sol-js-"><span class="header-link" style="z-index: 9999999711">&nbsp;</span></a>Contract Abstractions: All JSON (goodbye .sol.js!)</h2><p>Truffle had originally saved your contract abstractions on disk in <code>.sol.js</code> files. These files were Javascript files that represented specific solidity files in your project, hence the file extension, and they were originally intended to make your contract artifacts really easy to use, everywhere. Well, it turns out we got it wrong. Really wrong. Not only were these files hard to use <em>within</em> Javascript in certain cases, but they were completely unusable if you wanted to use them outside of Javascript. To overcome this limitation and make your contract artifacts available everywhere, Truffle 3.0 now saves all artifacts within the JSON format.</p>
-<p>So what should you do if you&#39;ve been using Truffle 2.0 and have important contract artifacts you&#39;d like to save? Easy. Upgrade them! We built you a handy tool that does just that.</p>
-<p>To upgrade your <code>.sol.js</code> files, first install <code>truffle-soljs-updater</code> globally via npm:</p>
-<pre><code>$ npm install -g truffle-soljs-updater
-</code></pre><p>This will provide the <code>sjsu</code> command available for your use. Next, navigate to the directory where your <code>.sol.js</code> files are stored (usually <code>./build/contracts</code>), and run <code>sjsu</code>. Your output should look something like this:</p>
-<pre><code>$ cd ./build/contracts
-$ sjsu
-Converting ConvertLib.sol.js...
-Converting MetaCoin.sol.js...
-Converting Migrations.sol.js...
-Files converted successfully.
-</code></pre><p>By default <code>sjsu</code> only creates newer, <code>.json</code> versions of your artifacts and leaves the original <code>.sol.js</code> files alone. You&#39;ll need to remove the <code>.sol.js</code> files from this directory in order for Truffle 3.0 to function properly. Before removing, check to ensure that the converted <code>.json</code> files were created properly, and perhaps as a safeguard backup your old <code>.sol.js</code> files somewhere else before continuing.</p>
-<p>Once you&#39;re sure all data was copied correctly and you have a nice backup, you can run <code>sjsu</code> with the <code>-f</code> parameter. This will tell <code>sjsu</code> to delete the existing <code>.sol.js</code> files. Your output should look something like this:</p>
-<pre><code>$ cd ./build/contracts
-$ sjsu -f
-Converting ConvertLib.sol.js...
-Converting MetaCoin.sol.js...
-Converting Migrations.sol.js...
-Files converted successfully.
-Successfully deleted old .sol.js files.
-</code></pre><p>And that&#39;s it! You&#39;re now ready to move onto the next step.</p>
-<h2><a name="contract-abstractions-deployed-is-now-thennable" class="anchor" href="#contract-abstractions-deployed-is-now-thennable"><span class="header-link" style="z-index: 9999999710">&nbsp;</span></a>Contract Abstractions: .deployed() is now thennable</h2><p>⚠️ Warning: This change will affect your migrations, your tests, and your application code! ⚠️</p>
-<p>In Truffle 2.0, your contract abstractions managed your networks in a naive way, and added constructs like a &quot;default network&quot; that opened up the possibility of using the wrong network artifacts and deployed addresses at the wrong time. This provided a fancy and easy to use syntax &#8211; i.e., <code>MyContract.deployed().myFunction(...)</code> &#8211; but it left your code open to errors. Truffle 3.0 changes this syntax, where <code>.deployed()</code> is now thennable, like a promise (see example below). Similarly, this makes your contract abstractions seamlessly integrate with <a href="https://github.com/ethereum/EIPs/issues/190">EIP 190</a>, Ethereum&#39;s package management standard. All of this is for the better, but it means you&#39;ll have some changes to make all across the board.</p>
-<p>In the general use case, here is how the new syntax differs from the old:</p>
-<p>v2.0</p>
-<pre><code class="lang-javascript">MyContract.setProvider(someWeb3Provider);
-MyContract.deployed().someFunction().then(function(tx) {
-  // Do something after the someFunction() transaction executed
-});
-</code></pre>
-<p>v3.0</p>
-<pre><code class="lang-javascript">MyContract.setProvider(someWeb3Provider);
-MyContract.deployed().then(function(instance) {  
-  return instance.someFunction();
-}).then(function(result) {
-  // Do something after the someFunction() transaction executed
-});
-</code></pre>
-<p>This syntax is a little more verbose, but it ensures the correct network artifacts are used based on the Ethereum client the abstraction is connected to.</p>
-<p>Note that in v3.0, you may need to correctly scope your deployed instance if you want to perform multiple actions with it in the same promise chain:</p>
-<pre><code class="lang-javascript">MyContract.setProvider(someWeb3Provider);
-
-var deployed;
-
-MyContract.deployed().then(function(instance) {
-  deployed = instance;  
-  return deployed.someFunction();
-}).then(function(result) {
-  return deployed.anotherFunction();
-}).then(function(result) {
-  // etc.
-});
-</code></pre>
-<h2><a name="contract-abstractions-transaction-result-objects" class="anchor" href="#contract-abstractions-transaction-result-objects"><span class="header-link" style="z-index: 9999999709">&nbsp;</span></a>Contract Abstractions: Transaction result objects</h2><p>People have long complained that events are hard to watch for in Web3. Similarly, in most use cases, events aren&#39;t used via a contract observer pattern; instead, in practice, events are used to check specific results of a specific transaction. Though the contract observer pattern for events is still available, we made the latter use case much easier, which required breaking changes to the return value of transactions.</p>
-<p>In v2.0, a transaction simply returned the transaction hash. In v3.0, transactions return a result object with a wealth of information about that transaction.</p>
-<p>v2.0</p>
-<pre><code class="lang-javascript">MyContract.deployed().someFunction().then(function(tx) {
-  // tx is the transaction id (hash) of the transaction executed
-});
-</code></pre>
-<p>v3.0</p>
-<pre><code class="lang-javascript">MyContract.deployed().then(function(instance) {
-  deployed = instance;  
-  return deployed.someFunction();
-}).then(function(result) {
-  // result is an object with the following values:
-  //
-  // result.tx      =&gt; transaction hash, string
-  // result.logs    =&gt; array of decoded events that were triggered within this transaction
-  // result.receipt =&gt; transaction receipt object, which includes gas used
-});
-</code></pre>
-<p>In Truffle 3.0, it&#39;s now much easier to detect if an event was fired as a result of your transaction. Here&#39;s a Javascript test for a hypothetical PackageIndex contract and ReleasePublished event:</p>
-<pre><code class="lang-javascript">var assert = require(&quot;assert&quot;);
-var PackageIndex = artifacts.require(&quot;PackageIndex.sol&quot;);
-
-contract(&quot;PackageIndex&quot;, function(accounts) {
-
-  it(&quot;publishes a release correctly&quot;, function() {
-    return PackageIndex.deployed().then(function(deployed) {
-      return deployed.publish(&quot;v2.0.0&quot;);
-    }).then(function(result) {
-      // This result object is what provides us with the information we need.
-      // result.logs, specifically for this example.
-
-      var found_published_event = false;
-
-      for (var i = 0; i &lt; result.logs.length; i++) {
-        var log = result.logs[i];
-
-        if (log.event == &quot;ReleasePublished&quot;) {
-          found_published_event = true;
-          break;
-        }
-      }
-
-      assert(found_published_event, &quot;Uh oh! We didn&#39;t find the published event!&quot;)
-    });
-  });
-
-});
-</code></pre>
-<p>We have to search through all returned events to ensure we found the one we wanted, but this is certainly better than using <code>PackageIndex.ReleasePublished.watch(...)</code>, and we can keep event processing within our application&#39;s (or test&#39;s) normal control flow.</p>
-<h2><a name="build-pipeline-no-more-builder-by-default" class="anchor" href="#build-pipeline-no-more-builder-by-default"><span class="header-link" style="z-index: 9999999708">&nbsp;</span></a>Build Pipeline: No more builder, by default</h2><p>In Truffle 1.0 and 2.0, things were heavily geared toward building web applications, and so Truffle shipped with a default build pipeline that could get your dapp up and running quickly. This build pipeline was magical: It did everything for you, and you didn&#39;t have to lift a finger. This was good for some use cases, but it became evidently clear that in any other use case the pipeline was very brittle.</p>
-<p>Over the last year, Ethereum-enabled applications have only been growing. What started out as solely a platform for web application, now dapps can be written in native languages and run as standalone applications on mobile and the desktop. Truffle has always intended to support these use cases, and so that&#39;s why we <strong>removed the default build pipeline</strong> from Truffle. You can still <a href="">write your own custom build pipeline</a> if you&#39;d like to tightly integrate it with Truffle, but by default Truffle will focus on continuing to be the best tool for smart contracts around. We&#39;ll let the better build pipelines &#8211; like <a href="https://webpack.github.io/">webpack</a>, <a href="http://browserify.org/">browserify</a>, <a href="http://gruntjs.com/">Grunt</a>, <a href="http://www.metalsmith.io/">Metalsmith</a> &#8211; do the job of, well, building.</p>
-<p>Now, just because the build pipeline has been removed by default doesn&#39;t mean you don&#39;t have options. At Truffle, we care about your developer experience and so would never leave you hanging. In general there are two options for you to choose from, but for the latter option what you&#39;ll do is heavily dependent on which build tool (i.e., webpack) you choose to use. Let&#39;s go over the options below.</p>
-<h3><a name="use-the-old-pipeline-in-truffle-3-0" class="anchor" href="#use-the-old-pipeline-in-truffle-3-0"><span class="header-link" style="z-index: 9999999707">&nbsp;</span></a>Use the old pipeline in Truffle 3.0</h3><p>If you&#39;re using the default build pipeline in Truffle 2.0 and would like to upgrade to 3.0, you&#39;re not out of luck. We&#39;ve upgraded the <a href="https://github.com/trufflesuite/truffle-default-builder">truffle-default-builder</a> so it can work seamlessly with Truffle 3.0. This will be the last time we update the default builder though as engineering for all possible use cases is too complex. So we recommend you eventually choose a different build system later down the line.</p>
-<p>The default builder no longer ships with Truffle by default. So for Truffle 3.0, you first need to make <code>truffle-default-builder</code> a dependency of your project by running the following command within your project&#39;s folder:</p>
-<pre><code>$ npm install truffle-default-builder --save
-</code></pre><p>Once installed, you can use the default builder within your <code>truffle.js</code> configuration file. Let&#39;s have a look at how your configuration file changes from v2.0 to v3.0, using a very simple build configuration:</p>
-<p>v2.0 : <code>truffle.js</code></p>
-<pre><code class="lang-javascript">module.exports = {
-  build: {
-    &quot;index.html&quot;: &quot;index.html&quot;,
-    &quot;app.js&quot;: [
-      &quot;javascripts/app.js&quot;
-    ],
-    &quot;app.css&quot;: [
-      &quot;stylesheets/app.css&quot;
-    ],
-    &quot;images/&quot;: &quot;images/&quot;
-  },
-  rpc: {
-    host: &quot;localhost&quot;,
-    port: 8545
-  }
-};
-</code></pre>
-<p>v3.0 : <code>truffle.js</code></p>
-<pre><code class="lang-javascript">var DefaultBuilder = require(&quot;truffle-default-builder&quot;);
-
-module.exports = {
-  build: new DefaultBuilder({
-    &quot;index.html&quot;: &quot;index.html&quot;,
-    &quot;app.js&quot;: [
-      &quot;javascripts/app.js&quot;
-    ],
-    &quot;app.css&quot;: [
-      &quot;stylesheets/app.css&quot;
-    ],
-    &quot;images/&quot;: &quot;images/&quot;
-  }),
-  networks: {
-    development: {
-      host: &quot;localhost&quot;,
-      port: 8545,
-      network_id: &quot;*&quot; // Match any network id
-    }
-  }
-};
-</code></pre>
-<p>You&#39;ll notice that in version 3.0 we <code>require</code>&#39;d the default builder as a dependency and then passed that object into our configuration. Otherwise, the configuration was the same!</p>
-<p>Now, be aware that the default builder does use the latest contract abstractions (<a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a>), so you will still need to edit your application to account for the breaking changes mentioned above.</p>
-<h3><a name="use-a-custom-build-process-build-tool" class="anchor" href="#use-a-custom-build-process-build-tool"><span class="header-link" style="z-index: 9999999706">&nbsp;</span></a>Use a custom build process / build tool</h3><p>Custom build processes are not hard to write. Instead, what&#39;s hard is writing a build process that fits all shapes and sizes. We now recommend you look into the many build tools available to you that best fits your application. We&#39;ve already mentioned <a href="https://webpack.github.io/">webpack</a>, <a href="http://browserify.org/">browserify</a>, <a href="http://gruntjs.com/">Grunt</a>, and <a href="http://www.metalsmith.io/">Metalsmith</a>, but there are many others, and their features run the gamut based on the context of the application being built and the features that you need.</p>
-<p>Whether you&#39;re building an application to run in the browser, or a command line tool, a Javascript library or a native mobile application, bootstrapping your contracts is the same, and using your deployed contract artifacts follows the same general process no matter the app you&#39;re building.</p>
-<p>When configuring your build tool or application, you&#39;ll need to perform the following steps;</p>
-<ol>
-<li>Get all your contract artifacts into your build pipeline / application. This includes all of the <code>.json</code> files within the <code>./build/contracts</code> directory.</li>
-<li>Turn those <code>.json</code> contract artifacts into contract abstractions that are easy to use, via <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a>.</li>
-<li>Provision those contract abstractions with a Web3 provider. In the browser, this provider might come from <a href="https://metamask.io/">Metamask</a> or <a href="https://github.com/ethereum/mist">Mist</a>, but it could also be a custom provider you&#39;ve configured to point to <a href="http://infura.io/">Infura</a> or any other Ethereum client.</li>
-<li>Use your contracts!</li>
-</ol>
-<p>In Node, this is very easy to do. Let&#39;s take a look at an example that shows off the &quot;purest&quot; way of performing the above steps, since it exists outside of any build process or tool.</p>
-<pre><code class="lang-javascript">// Step 1: Get a contract into my application
-var json = require(&quot;./build/contracts/MyContract.json&quot;);
-
-// Step 2: Turn that contract into an abstraction I can use
-var contract = require(&quot;truffle-contract&quot;);
-var MyContract = contract(json);
-
-// Step 3: Provision the contract with a web3 provider
-MyContract.setProvider(new Web3.providers.HttpProvider(&quot;http://localhost:8545&quot;));
-
-// Step 4: Use the contract!
-MyContract.deployed().then(function(deployed) {
-  return deployed.someFunction();
-});
-</code></pre>
-<p>All build processes and contract bootstrapping will follow this pattern. The key when setting up your own custom build process is to ensure you&#39;re consuming all of your contract artifacts and provisioning your abstractions correctly.</p>
-<h2><a name="fin" class="anchor" href="#fin"><span class="header-link" style="z-index: 9999999705">&nbsp;</span></a>Fin</h2><p>That&#39;s it! That&#39;s all you need to know to upgrade from Truffle 2.0 to 3.0. It might require a bit of work, but the changes are surely worth it. If you have questions, Truffle has a <a href="https://gitter.im/ConsenSys/truffle">vibrant community available 24/7</a> to help you with any issues you may have. Don&#39;t hesitate to ask for help, and we wish you a happy 3.0!</p>
-<p>&#8211; The Truffle Team</p>
+        <h1><a name="how-we-39-re-making-installation-issues-a-thing-of-the-past" class="anchor" href="#how-we-39-re-making-installation-issues-a-thing-of-the-past"><span class="header-link" style="z-index: 9999999995">&nbsp;</span></a>How we&#39;re making installation issues a thing of the past</h1><p>It doesn&#39;t matter what operating system you&#39;re on &#8211; if you&#39;ve used Truffle in any capacity, you&#39;ve likely run into an install issue in some form or another. This is especially true for Windows, as Windows doesn&#39;t generally ship with the necessary tools to install all of Truffle&#39;s important dependencies. And for most users, this sucks: getting hung up on installation is incredibly frustrating when you&#39;re usually just one error message or two away from creating your first Ethereum-enabled application. Well, I&#39;ve got good news. As of the latest Truffle beta release, I&#39;m happy to tell you that this is an issue no longer.</p>
+<p>That&#39;s right: No matter what platform you&#39;re on, your install issues should be over. This is big.</p>
+<p>In order to completely sidestep most if not all of the most common installation issues, we had to overcome some technical difficulties as well as rethink how we ship our code. In this post, I&#39;m going to tell you about what we did and how that made installation incredibly simpler, on every platform, for everyone.</p>
+<h2><a name="so-what-was-the-problem-" class="anchor" href="#so-what-was-the-problem-"><span class="header-link" style="z-index: 9999999994">&nbsp;</span></a>So what was the problem?</h2><p>Since Truffle is a Javascript-based application, we (naturally) ship our code using the <a href="https://www.npmjs.com/">Node Package Manager</a> (NPM for short). NPM hosts thousands if not millions of code packages, and it&#39;s the service that makes modern Javascript programming possible. Without NPM, not only would programming Truffle be nearly impossible, but programming <em>anything</em> complex in Javascript would be impossible: NPM lets developers separate and bundle code into its own individual chunks, called &quot;packages&quot;, that any of those other chunks (packages) can then rely on.</p>
+<p>Because of NPM, Truffle is standing on the shoulders of giants. Truffle relies on the code of so many other people that if you looked at the full list you&#39;d be hard pressed to give us credit for the codebase. And that&#39;s the beauty of it: packages like hashing functions and cryptographic libraries &#8211; hard libraries to write (and get right!) &#8211; we don&#39;t have to write ourselves.</p>
+<p>Though using dependencies on NPM has significant upsides, it also comes with significant drawbacks. Those same hashing functions &#8211; functions used throughout Ethereum &#8211; are written to be extremely performant, and so are written in C. In order to install those packages, NPM has to be able to compile them on the fly during installation, which means every Truffle user needs to have a C compiler installed. Additionally, NPM (for some reason) uses Python during the compilation process, which means Truffle users <em>also</em> need to have Python installed.</p>
+<p>Bottom line: In order to install a Javascript project, Truffle users need both C and Python. <a href="https://s-media-cache-ak0.pinimg.com/originals/ec/5a/0a/ec5a0a5e4990668ca3f41ed50ca273d3.gif">This is madness.</a></p>
+<h2><a name="so-what-can-we-do-" class="anchor" href="#so-what-can-we-do-"><span class="header-link" style="z-index: 9999999993">&nbsp;</span></a>So what can we do?</h2><p>Most of the issues people were seeing stem from the compilation process mentioned: Either they didn&#39;t have the right compilers/interpreters installed for C and Python, or C and Python <em>itself</em> required some dependency that wasn&#39;t properly installed. We&#39;ve had a <a href="/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development">tutorial</a> written for awhile that shows Windows users how to correctly set up their environment and get everything installed, but this required considerable effort from novice users and didn&#39;t take into account the many landmines hiding around every corner, waiting to explode at any moment. So we can&#39;t &quot;instruct&quot; our way around this problem. The only way to fix it, then, is to sidestep it completely.</p>
+<p>Sidestepping the compilation process means completely excising any compilation out of the installation process. The way we chose to tackle this is two ways:</p>
+<ul>
+<li>Remove any unnecessary dependencies that rely on compilation.</li>
+<li>Replace dependencies that need compilation with versions 100% written in Javascript.</li>
+</ul>
+<p>In theory this sounds easy: i.e., &quot;just use the Javascript versions or don&#39;t use the C versions as all&quot;. In practice, this is much harder. Often, we don&#39;t directly control the dependencies our application relies on, because <em>dependencies of dependencies</em> (of dependencies of dependencies) might rely on a package that requires compilation. Since the bad apples are the packages that power the code we rely on (i.e., they&#39;re &quot;indirect dependencies&quot;), we have to surgically remove them and replace them with versions that install and function more easily. This is no small matter.</p>
+<p>Thankfully, a tool exists that makes this surgical replacement possible. It&#39;s called <a href="https://webpack.js.org/">Webpack</a>. Webpack bills itself as a Javascript bundler, aiming to mash together all your project&#39;s dependencies into a single blob of code, i.e., a &quot;bundle&quot;. Webpack finds most of its uses in browser applications, as browsers need to download all code first before a website can be displayed, and it&#39;s more performant for the browser to download that code in a single request. However, for console applications like Truffle, Webpack can still be immensely valuable. By creating a bundle with Webpack, we can control exactly which dependencies get included in it.</p>
+<p>Take <a href="https://github.com/tonyg/js-scrypt">js-scrypt</a> for instance. This library provides hashing functions required by Ethereum, is 100% written in Javascript, and is API-compatible with the C-compiled <a href="https://github.com/barrysteyn/node-scrypt">node-scrypt</a> library. With Webpack, we can simply remove <code>scrypt</code> and replace it with <code>js-scrypt</code> like nothing happened.</p>
+<p>How about another example: Let&#39;s do IPFS. Truffle relies on the <a href="https://github.com/ethpm/ethpm-js">ethpm-js</a> package to provide EthPM support, which itself relies on the <a href="https://github.com/ipfs/js-ipfs">ipfs</a> package to communicate with IPFS servers. Somewhere deep down in <code>ipfs</code>&#39;s dependency tree, some code needs the <a href="https://www.npmjs.com/package/execSync">execSync</a> package, a package that causes installation issues for some users. Using Webpack, when creating our bundle, we can just <em>not include it</em>. Since that code only matters for parts of IPFS that Truffle doesn&#39;t use, that code doesn&#39;t need to be in our bundle. Ex-nay, <a href="http://www.technobuffalo.com/wp-content/uploads/2016/03/kanye-west-1280x640.jpg">gone-yay</a>. Zip, zilch, completely gone.</p>
+<p>Creating a bundle for our releases instead of letting NPM manage dependencies has other benefits as well. To keep code modular and maintainable, Truffle relies on almost 2000 packages! (This includes the dependencies of dependencies we mentioned before). Bundling ahead of time creates a single file users have to download during installation instead of requiring NPM to make requests for all 2000 dependencies. So not only do we get to sidestep all of the installation issues, but we make installation nearly instant as well.</p>
+<p>Yep. Feel free to party. We did. 🎉</p>
+<h2><a name="so-how-can-you-get-it-" class="anchor" href="#so-how-can-you-get-it-"><span class="header-link" style="z-index: 9999999992">&nbsp;</span></a>So how can you get it?</h2><p>Bundling Truffle&#39;s dependencies means releasing a version of the code where certain dependencies have been either replaced or removed. This not only means releasing structurally new code, but it means releasing code that has differing testability characteristics which change our ability to ensure its of the quality you&#39;ve come to expect. We need to build infrastructure to help us do that, so in the meantime <strong>we&#39;ve released the new version of the code in beta.</strong></p>
+<p>To get the beta version of Truffle, first uninstall the version you currently have (they&#39;ll conflict):</p>
+<pre><code>$ npm uninstall -g truffle
+</code></pre><p>And now install the beta version:</p>
+<pre><code>$ npm install -g truffle@beta
+</code></pre><p>You&#39;ll notice that the beta version installs almost instantly, and no compilation is required. Hot-dog.</p>
+<h2><a name="so-what-39-s-next-" class="anchor" href="#so-what-39-s-next-"><span class="header-link" style="z-index: 9999999991">&nbsp;</span></a>So what&#39;s next?</h2><p>As we gain responses from the community about this new version we&#39;ll likely make changes to ensure we&#39;ve sidestepped all the installation issues that have plagued users in the past. Once that&#39;s finished we&#39;ll make an official release. As well, we&#39;ll be performing this same work for the TestRPC in the coming weeks to ensure the TestRPC has the same hassle-free, instant installation that you&#39;ll soon come to expect from Truffle.</p>
+<p>If you run into issues with the beta version, don&#39;t hesitate to <a href="https://github.com/trufflesuite/truffle/issues">write up an issue</a> in our issue tracker or reach out to us on <a href="gitter.im/ConsenSys/truffle">Gitter</a>. We&#39;re happy to help.</p>
+<p>Cheers, and we appreciate your ongoing support and feedback.</p>
+<p>&#8211; Tim &amp; the Truffle Team</p>
 
       </div>
     </div>
 
     <footer class="container">
-      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/tutorials/upgrading-from-truffle-2-to-3.md">Edit here &rarr;</a></p>
+      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/blog/how-were-making-installation-issues-a-thing-of-the-past.md">Edit here &rarr;</a></p>
     </footer>
   </section>
 </section>
