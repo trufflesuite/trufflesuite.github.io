@@ -24,6 +24,7 @@ var hdkey = require('ethereumjs-wallet/hdkey');
 var ProviderEngine = require("web3-provider-engine");
 var WalletSubprovider = require('web3-provider-engine/subproviders/wallet.js');
 var Web3Subprovider = require("web3-provider-engine/subproviders/web3.js");
+var FilterSubprovider = require('web3-provider-engine/subproviders/filters.js');
 var Web3 = require("web3");
 ```
 
@@ -34,6 +35,7 @@ These dependencies are used for the following things:
 - `ProviderEngine`: The basic framework that will be used to wrangle all transactions that need to be signed.
 - `WalletSubprovider`: Part of the provider engine framework that will handle wallet signing.
 - `Web3Subprovider`: Part of the provider engine framework that handles everything *other than* transaction signing.
+- `FilterSubprovier`: Part of the provider engine frameworkt that allows you to run filters locally vs running it on Infura.
 - `Web3`: What we used to communicate with the Ethereum network. Here, we're using it solely to create a provider.
 
 After setting up are dependencies, we'll then need to create an hd wallet from a mnemonic. A mnemonic is a twelve word string that represents a secure random seed (warning: don't just create a mnemonic yourself; use the bip39 library to do this if you don't have one). From this seed we can create an unlimited number of Ethereum addresses and private keys. Because this is a seed, we can always use this mnemonic to find those addresses again.
@@ -59,6 +61,7 @@ Next, we need to set up the Provider Engine, telling it that we'd like to use ou
 var providerUrl = "https://testnet.infura.io";
 var engine = new ProviderEngine();
 engine.addProvider(new WalletSubprovider(wallet, {}));
+engine.addProvider(new FilterSubprovider());
 engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
 engine.start(); // Required by the provider engine.
 ```
@@ -94,6 +97,8 @@ var hdkey = require('ethereumjs-wallet/hdkey');
 var ProviderEngine = require("web3-provider-engine");
 var WalletSubprovider = require('web3-provider-engine/subproviders/wallet.js');
 var Web3Subprovider = require("web3-provider-engine/subproviders/web3.js");
+var FilterSubprovider = require('web3-provider-engine/subproviders/filters.js');
+
 var Web3 = require("web3");
 
 // Get our mnemonic and create an hdwallet
@@ -108,6 +113,7 @@ var address = "0x" + wallet.getAddress().toString("hex");
 var providerUrl = "https://testnet.infura.io";
 var engine = new ProviderEngine();
 engine.addProvider(new WalletSubprovider(wallet, {}));
+engine.addProvider(new FilterSubprovider());
 engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
 engine.start(); // Required by the provider engine.
 
