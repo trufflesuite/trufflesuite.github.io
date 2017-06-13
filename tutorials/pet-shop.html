@@ -157,10 +157,10 @@
     <div class="container-fluid">
       <div class="row">
         <div class="pet-shop-header">
-  <img src="/tutorials/images/petshop.png" alt="Ethereum Pet Shop">
+  <img src="/tutorials/images/pet-shop/petshop.png" alt="Ethereum Pet Shop">
 </div>
 
-<h1><a name="ethereum-pet-shop" class="anchor" href="#ethereum-pet-shop"><span class="header-link" style="z-index: 9999999747">&nbsp;</span></a>Ethereum Pet Shop</h1><p>This series of tutorials will take you through building your first Dapp&#8211;a tracking system for a pet shop!</p>
+<h1><a name="ethereum-pet-shop" class="anchor" href="#ethereum-pet-shop"><span class="header-link" style="z-index: 9999999749">&nbsp;</span></a>Ethereum Pet Shop</h1><p>This series of tutorials will take you through building your first Dapp&#8211;a tracking system for a pet shop!</p>
 <p>This tutorial is meant for <strong>Dapp beginners who have knowledge of HTML, CSS and JavaScript</strong>, but assumes you have a basic knowledge of what Ethereum and smart contracts are conceptually. You may want to check out the <a href="/tutorials/ethereum-overview">Ethereum Overview</a> to get some concepts and terms down before proceeding.</p>
 <p>In this tutorial we will be covering:</p>
 <ul>
@@ -170,9 +170,9 @@
 <li>Creating a UI to Interact with our Smart Contract</li>
 <li>Deploying to the Ropsten TestNet</li>
 </ul>
-<h2><a name="project-brief" class="anchor" href="#project-brief"><span class="header-link" style="z-index: 9999999746">&nbsp;</span></a>Project Brief</h2><p>Pete Scandlon of Pete&#39;s Pet Shop is interested in using Ethereum as an efficient way to handle their pet adoptions. The store has space for 16 pets at a given time, and they already have a database of pets. As an initial proof on concept, Pete wants to see a Dapp which associates an Ethereum address with a pet to be adopted. The website structure and styling will be supplied for you. We need to write the smart contract and front-end logic for its usage.</p>
+<h2><a name="project-brief" class="anchor" href="#project-brief"><span class="header-link" style="z-index: 9999999748">&nbsp;</span></a>Project Brief</h2><p>Pete Scandlon of Pete&#39;s Pet Shop is interested in using Ethereum as an efficient way to handle their pet adoptions. The store has space for 16 pets at a given time, and they already have a database of pets. As an initial proof on concept, Pete wants to see a Dapp which associates an Ethereum address with a pet to be adopted. The website structure and styling will be supplied for you. We need to write the smart contract and front-end logic for its usage.</p>
 <p>Let&#39;s start by setting up the development environment.</p>
-<h2><a name="setting-up-the-development-environment" class="anchor" href="#setting-up-the-development-environment"><span class="header-link" style="z-index: 9999999745">&nbsp;</span></a>Setting up The Development Environment</h2><p>There are a few requirements before we setup the TestRPC and Truffle:</p>
+<h2><a name="setting-up-the-development-environment" class="anchor" href="#setting-up-the-development-environment"><span class="header-link" style="z-index: 9999999747">&nbsp;</span></a>Setting up The Development Environment</h2><p>There are a few requirements before we setup the TestRPC and Truffle:</p>
 <ul>
 <li><a href="https://nodejs.org/en/">Node.js v6+ LTS and NPM (comes with Node)</a></li>
 <li><a href="https://git-scm.com/">Git</a></li>
@@ -183,7 +183,7 @@
 <li><code>npm install -g ethereumjs-testrpc</code></li>
 <li><code>npm install -g truffle</code></li>
 </ul>
-<h2><a name="creating-a-truffle-project" class="anchor" href="#creating-a-truffle-project"><span class="header-link" style="z-index: 9999999744">&nbsp;</span></a>Creating a Truffle Project</h2><p>Truffle initializes in the current directory. So first, create a directory in your development folder of choice. We&#39;re calling ours &quot;pet-shop-tutorial&quot;. We&#39;ll initialize a &quot;bare&quot; Truffle project, meaning there will be no example contracts included.</p>
+<h2><a name="creating-a-truffle-project" class="anchor" href="#creating-a-truffle-project"><span class="header-link" style="z-index: 9999999746">&nbsp;</span></a>Creating a Truffle Project</h2><p>Truffle initializes in the current directory. So first, create a directory in your development folder of choice. We&#39;re calling ours &quot;pet-shop-tutorial&quot;. We&#39;ll initialize a &quot;bare&quot; Truffle project, meaning there will be no example contracts included.</p>
 <pre><code class="lang-shell">// Create the directory.
 mkdir pet-shop-tutorial
 
@@ -193,14 +193,14 @@ cd pet-shop-tutorial
 // Initialize Truffle.
 truffle init bare
 </code></pre>
-<h3><a name="directory-structure" class="anchor" href="#directory-structure"><span class="header-link" style="z-index: 9999999743">&nbsp;</span></a>Directory Structure</h3><p>The default truffle directory structure looks like the following:</p>
+<h3><a name="directory-structure" class="anchor" href="#directory-structure"><span class="header-link" style="z-index: 9999999745">&nbsp;</span></a>Directory Structure</h3><p>The default truffle directory structure looks like the following:</p>
 <ul>
 <li>/contracts: Contains the Solidity source files for our smart contracts. There is an important contract in here called <strong>Migrations.sol</strong>, which we&#39;ll talk about later. Be sure not to delete this file!</li>
 <li>/migrations: Truffle uses a migration system to handle smart contract deployments. A migration is a series of contract deployments, accompanied by an additional special smart contract to keep track of any changes in</li>
 <li>/test: Contains both JavaScript and Solidity tests for our smart contracts.</li>
 <li>truffle.js: Truffle&#39;s configuration file.</li>
 </ul>
-<h2><a name="writing-the-smart-contract" class="anchor" href="#writing-the-smart-contract"><span class="header-link" style="z-index: 9999999742">&nbsp;</span></a>Writing the Smart Contract</h2><p>We&#39;ll start our Dapp by writing the smart contract that acts as its backend logic and storage.</p>
+<h2><a name="writing-the-smart-contract" class="anchor" href="#writing-the-smart-contract"><span class="header-link" style="z-index: 9999999744">&nbsp;</span></a>Writing the Smart Contract</h2><p>We&#39;ll start our Dapp by writing the smart contract that acts as its backend logic and storage.</p>
 <p>Start by creating a new file Adoption.sol in the /contracts directory with the following contents:</p>
 <pre><code class="lang-javascript">pragma solidity ^0.4.4;
 
@@ -214,13 +214,13 @@ contract Adoption {
 <li>The minimum version of Solidity required is noted at the top of the contract: <code>pragma solidity ^0.4.4;</code>. The carat symbol (^) means &quot;the version noted after this or higher&quot;.</li>
 <li>Much like JavaScript or PHP, statements are terminated with semicolons.</li>
 </ul>
-<h3><a name="variable-setup" class="anchor" href="#variable-setup"><span class="header-link" style="z-index: 9999999741">&nbsp;</span></a>Variable Setup</h3><p>Solidity is a statically-typed language, meaning data types like strings, integers, arrays etc. must be defined. Solidity has a unique datatype called and <strong>address</strong>. Addresses are Ethereum addresses, which are stored as 20 byte values. Every account and smart contract on the Ethereum blockchain has an address and can send/receive Ether from/to this address.</p>
+<h3><a name="variable-setup" class="anchor" href="#variable-setup"><span class="header-link" style="z-index: 9999999743">&nbsp;</span></a>Variable Setup</h3><p>Solidity is a statically-typed language, meaning data types like strings, integers, arrays etc. must be defined. Solidity has a unique datatype called and <strong>address</strong>. Addresses are Ethereum addresses, which are stored as 20 byte values. Every account and smart contract on the Ethereum blockchain has an address and can send/receive Ether from/to this address.</p>
 <p>Variables marked as <strong>public</strong> have automatic getter methods, but in the case of arrays a key is required and will only return a single value. Later, we&#39;ll write a function to return the whole array for use in our UI.</p>
 <p>Setup the following varialbe on the next line after <code>contract Adoption {</code>.</p>
 <pre><code class="lang-javascript">address[16] public adopters;
 </code></pre>
 <p>We&#39;ve defined a single variable: adopters. Adopters is an <strong>array</strong> of Ethereum addresses. Arrays contain one type and can have a fixed or variable length. In this case the type is address and the length is 16.</p>
-<h3><a name="your-first-function-adopting-a-pet" class="anchor" href="#your-first-function-adopting-a-pet"><span class="header-link" style="z-index: 9999999740">&nbsp;</span></a>Your First Function: Adopting a Pet</h3><p>Let&#39;s allow users to make adoption requests. Add the following function to the smart contract, after the variables we setup above.</p>
+<h3><a name="your-first-function-adopting-a-pet" class="anchor" href="#your-first-function-adopting-a-pet"><span class="header-link" style="z-index: 9999999742">&nbsp;</span></a>Your First Function: Adopting a Pet</h3><p>Let&#39;s allow users to make adoption requests. Add the following function to the smart contract, after the variables we setup above.</p>
 <pre><code class="lang-javascript">function adopt(uint petId) public returns (uint) {
   if (petId &lt; 0 || petId &gt; 15) {
     throw;
@@ -235,14 +235,14 @@ contract Adoption {
 <p>First we check to make sure <code>petId</code> is in range of our <code>adopters</code> array. Arrays in Solidity are indexed from 0, so the ID value will need to be between 0 and 15. If the ID is out of range, we return an error by calling <code>throw</code> (as in &quot;throw&quot; an error).</p>
 <p>If the ID is in range, we then add the address that made the call to our <code>adopters</code> array. To get the address of the person or smart contract who called this function, we use <strong>msg.sender</strong>.</p>
 <p>Finally, we return the <code>petId</code> provided as a confirmation.</p>
-<h3><a name="your-second-function-retrieving-the-adopters" class="anchor" href="#your-second-function-retrieving-the-adopters"><span class="header-link" style="z-index: 9999999739">&nbsp;</span></a>Your Second Function: Retrieving the Adopters</h3><p>Remember above we mentioned array getters return only a single value from a given key. Our UI needs to update all pets adoption status and making 16 API calls is not ideal. Let&#39;s write a function to return the entire array.</p>
+<h3><a name="your-second-function-retrieving-the-adopters" class="anchor" href="#your-second-function-retrieving-the-adopters"><span class="header-link" style="z-index: 9999999741">&nbsp;</span></a>Your Second Function: Retrieving the Adopters</h3><p>Remember above we mentioned array getters return only a single value from a given key. Our UI needs to update all pets adoption status and making 16 API calls is not ideal. Let&#39;s write a function to return the entire array.</p>
 <p>Add the following function to the smart contract, after the function we added above:</p>
 <pre><code class="lang-javascript">function getAdopters() public returns (address[16]) {
   return adopters;
 }
 </code></pre>
 <p>Since adopters is already declared, we can simply return it. Be sure to specify the return type (in this case, it&#39;s <code>adopters</code> type) as <code>address[16]</code>.</p>
-<h2><a name="compiling-and-migrating-the-smart-contract" class="anchor" href="#compiling-and-migrating-the-smart-contract"><span class="header-link" style="z-index: 9999999738">&nbsp;</span></a>Compiling and Migrating the Smart Contract</h2><h3><a name="compilation" class="anchor" href="#compilation"><span class="header-link" style="z-index: 9999999737">&nbsp;</span></a>Compilation</h3><p>Solidity is a compiled language, meaning we need to compile our Solidity to bytecode for the EVM to execute. Think of it as translating our human-readable Solidity into something the EVM understands. Here we&#39;ll compile our contracts to bytecode and put that on the blockchain so we can interact with it.</p>
+<h2><a name="compiling-and-migrating-the-smart-contract" class="anchor" href="#compiling-and-migrating-the-smart-contract"><span class="header-link" style="z-index: 9999999740">&nbsp;</span></a>Compiling and Migrating the Smart Contract</h2><h3><a name="compilation" class="anchor" href="#compilation"><span class="header-link" style="z-index: 9999999739">&nbsp;</span></a>Compilation</h3><p>Solidity is a compiled language, meaning we need to compile our Solidity to bytecode for the EVM to execute. Think of it as translating our human-readable Solidity into something the EVM understands. Here we&#39;ll compile our contracts to bytecode and put that on the blockchain so we can interact with it.</p>
 <p>Truffle comes with two example smart contracts. Let&#39;s delete them so we don&#39;t compile or migrate more than we need to. The files are ConvertLib.sol and MetaCoin.sol. DO NOT DELETE Migrations.sol, as we will need this for the next step.</p>
 <p>Open a new console window and run the command <code>testrpc</code>. This starts a new, local blockchain instance powered by EthereumJS TestRPC. Once the TestRPC boots up, you&#39;ll see the current TestRPC version, a list of available accounts and private keys, and a section called HD Wallet. We need to copy the words from the Mnemonic section for use later in our browser.</p>
 <p>Back in your first console window, run the command <code>truffle compile</code>. You should see the following output:</p>
@@ -250,7 +250,7 @@ contract Adoption {
 Compiling ./contracts/PetShop.sol...
 Writing artifacts to ./build/contracts
 </code></pre>
-<h3><a name="migration" class="anchor" href="#migration"><span class="header-link" style="z-index: 9999999736">&nbsp;</span></a>Migration</h3><p>Now that we&#39;ve successfully compiled out contracts, it&#39;s time to migrate them to the blockchain! A <strong>migration</strong> is&#8230;</p>
+<h3><a name="migration" class="anchor" href="#migration"><span class="header-link" style="z-index: 9999999738">&nbsp;</span></a>Migration</h3><p>Now that we&#39;ve successfully compiled out contracts, it&#39;s time to migrate them to the blockchain! A <strong>migration</strong> is&#8230;</p>
 <p>You&#39;ll see one JavaScript file already in the migrations directory: 1_initial_migration.js. This handles deploying the Migrations.sol contract to observe subsequent smart contract migrations. Migrations are executed in their enumerated order and follow the same basic structure:</p>
 <ul>
 <li>Import the desired contract artifacts from the build folder.</li>
@@ -281,7 +281,7 @@ Saving successful migration to network...
 Saving artifacts...
 </code></pre>
 <p>You can see the migrations being executed in order, followed by the blockchain address of each deployed contract (NOTE: Your addresses will differ). Congratulations! You&#39;ve written your first smart contract and deployed it to a locally running test blockchain. It&#39;s time to interact with our smart contrat now to make sure it does what we want.</p>
-<h2><a name="testing-the-smart-contract" class="anchor" href="#testing-the-smart-contract"><span class="header-link" style="z-index: 9999999735">&nbsp;</span></a>Testing the Smart Contract</h2><p>Truffle is very flexible when it comes to smart contract testing. Tests can be written either in JavaScript or Solidity. Today we&#39;ll be writing our tests in Solidity to separate our concerns. Solidity for back-end, JavaScript for front-end.</p>
+<h2><a name="testing-the-smart-contract" class="anchor" href="#testing-the-smart-contract"><span class="header-link" style="z-index: 9999999737">&nbsp;</span></a>Testing the Smart Contract</h2><p>Truffle is very flexible when it comes to smart contract testing. Tests can be written either in JavaScript or Solidity. Today we&#39;ll be writing our tests in Solidity to separate our concerns. Solidity for back-end, JavaScript for front-end.</p>
 <p>Begin by create the smart contract TestAdoption.sol in the test directory with the following contents:</p>
 <pre><code class="lang-javascript">import &quot;truffle/Assert.sol&quot;;
 import &quot;truffle/DeployedAddresses.sol&quot;;
@@ -299,7 +299,7 @@ contract TestAdoption {
 <li>The Smart Contract We Want to Test (<code>Adoption.sol</code>)</li>
 </ul>
 <p>Then, we setup a contract-wide variable containing the smart contract to be tested, calling the DeployedAddresses smart contract to get its address.</p>
-<h3><a name="testing-the-adopt-function" class="anchor" href="#testing-the-adopt-function"><span class="header-link" style="z-index: 9999999734">&nbsp;</span></a>Testing The adopt() Function</h3><p>To test the adopt function, remember that upon success it returns the given <code>petId</code>. We can ensure and ID was returned and it&#39;s correct by comparing the return value of <code>adopt()</code> to the ID we passed in.</p>
+<h3><a name="testing-the-adopt-function" class="anchor" href="#testing-the-adopt-function"><span class="header-link" style="z-index: 9999999736">&nbsp;</span></a>Testing The adopt() Function</h3><p>To test the adopt function, remember that upon success it returns the given <code>petId</code>. We can ensure and ID was returned and it&#39;s correct by comparing the return value of <code>adopt()</code> to the ID we passed in.</p>
 <p>Add the following function within the TestAdoption smart contract, after the declaration of Adoption:</p>
 <pre><code class="lang-javascript">function testUserCanAdoptPet() {
   uint returnedId = adoption.adopt(8);
@@ -310,7 +310,7 @@ contract TestAdoption {
 }
 </code></pre>
 <p>Here we call the smart contract we declared earlier with the ID of 8. We then declare an expected value of 8 as well. Finally, we pass the value to compare, the expected value and a failure message (which gets printed to the console if the test does not pass) to <code>Assert.equal()</code>.</p>
-<h3><a name="testing-retrieval-of-a-single-pet-39-s-owner" class="anchor" href="#testing-retrieval-of-a-single-pet-39-s-owner"><span class="header-link" style="z-index: 9999999733">&nbsp;</span></a>Testing Retrieval of a Single Pet&#39;s Owner</h3><p>Remembering from above that public variables have automatic getter methods, we can retrieve the address stored by out adoption test above.</p>
+<h3><a name="testing-retrieval-of-a-single-pet-39-s-owner" class="anchor" href="#testing-retrieval-of-a-single-pet-39-s-owner"><span class="header-link" style="z-index: 9999999735">&nbsp;</span></a>Testing Retrieval of a Single Pet&#39;s Owner</h3><p>Remembering from above that public variables have automatic getter methods, we can retrieve the address stored by out adoption test above.</p>
 <pre><code class="lang-javascript">function testGetAdopterAddressByPetId() {
   address expected = this;
 
@@ -320,7 +320,7 @@ contract TestAdoption {
 }
 </code></pre>
 <p>Since the TestAdoption contract will be sending the transaction, we set the expected value to <strong>this</strong>, a contract-wide variable that gets the current contract&#39;s address. From there we assert equality as we did above.</p>
-<h3><a name="testing-retrieval-of-all-pet-owners" class="anchor" href="#testing-retrieval-of-all-pet-owners"><span class="header-link" style="z-index: 9999999732">&nbsp;</span></a>Testing Retrieval of All Pet Owners</h3><p>Since arrays can only return a single value given a single key, we needed to create our own getter for the entire array. This will reduce the number of calls we make to keep the UI up to date from 16 to just 1.</p>
+<h3><a name="testing-retrieval-of-all-pet-owners" class="anchor" href="#testing-retrieval-of-all-pet-owners"><span class="header-link" style="z-index: 9999999734">&nbsp;</span></a>Testing Retrieval of All Pet Owners</h3><p>Since arrays can only return a single value given a single key, we needed to create our own getter for the entire array. This will reduce the number of calls we make to keep the UI up to date from 16 to just 1.</p>
 <pre><code class="lang-javascript">function testGetAdopterAddressByPetIdInArray() {
   address expected = this;
 
@@ -330,7 +330,7 @@ contract TestAdoption {
 }
 </code></pre>
 <p>Note the <strong>memory</strong> attribute on adopters. Memory stores the value temporarily in memory, rather than storing it in the contract. Since <code>adopters</code> is an array, and we know from the first adoption test we adopted pet 8, we compare the testing contracts address with location 8 in the array.</p>
-<h3><a name="running-the-tests" class="anchor" href="#running-the-tests"><span class="header-link" style="z-index: 9999999731">&nbsp;</span></a>Running The Tests</h3><p>Before testing your smart contracts, you&#39;ll need to have the TestRPC up and running. Open a new console tab and run it with <code>testrpc</code>. You&#39;ll see some information on the screen such as the version, available accounts, private keys, wallet information and a stream of blocks will begin.</p>
+<h3><a name="running-the-tests" class="anchor" href="#running-the-tests"><span class="header-link" style="z-index: 9999999733">&nbsp;</span></a>Running The Tests</h3><p>Before testing your smart contracts, you&#39;ll need to have the TestRPC up and running. Open a new console tab and run it with <code>testrpc</code>. You&#39;ll see some information on the screen such as the version, available accounts, private keys, wallet information and a stream of blocks will begin.</p>
 <p>Once the TestRPC is up and running, go back to your original console tab and run <code>truffle test</code>. If all the tests pass, you&#39;ll see console output like below:</p>
 <pre><code class="lang-shell">Using network &#39;development&#39;.
 
@@ -349,10 +349,10 @@ Compiling truffle/DeployedAddresses.sol...
   3 passing (670ms)
 </code></pre>
 <p>Note your completion times may be different.</p>
-<h2><a name="creating-a-ui-to-interact-with-our-smart-contract" class="anchor" href="#creating-a-ui-to-interact-with-our-smart-contract"><span class="header-link" style="z-index: 9999999730">&nbsp;</span></a>Creating a UI to Interact with our Smart Contract</h2><p>Now that we&#39;ve created the smart contract, deployed it to our local test chain and confirmed we can interact with it via the console, it&#39;s time to create a UI so the world can use this!</p>
+<h2><a name="creating-a-ui-to-interact-with-our-smart-contract" class="anchor" href="#creating-a-ui-to-interact-with-our-smart-contract"><span class="header-link" style="z-index: 9999999732">&nbsp;</span></a>Creating a UI to Interact with our Smart Contract</h2><p>Now that we&#39;ve created the smart contract, deployed it to our local test chain and confirmed we can interact with it via the console, it&#39;s time to create a UI so the world can use this!</p>
 <p>So you don&#39;t have to spend time on layout and stying, we&#39;ve created the HTML, CSS and basic JavaScript for you, <a href="/tutorials/files/pet-shop/pet-shop-static.zip">download it here</a>. Once downloaded, unzip it in your project directory, so the file structure is <code>your-project-folder/src</code>.</p>
 <p>The front-end does not use a build system (webpack, grunt, etc.) to be as easy to get started as possible. If you&#39;ve worked with any front-end JavaScript before, you&#39;ll feel right at home. The base structure of the App is already there, we&#39;ll be filling in the functions which are unique to Ethereum. This way, you can take this knowledge and apply it to your own front-end setups.</p>
-<h3><a name="instantiating-web3" class="anchor" href="#instantiating-web3"><span class="header-link" style="z-index: 9999999729">&nbsp;</span></a>Instantiating Web3</h3><p>Open the app.js file and have a look around. We setup a global App object to manage our application, load in the pet data in <code>init()</code> and then call the function <code>initWeb3()</code>. Web3 is a JavaScript library for interacting with the Ethereum blockchain. It can retrieve user accounts, send transactions, interact with smart contracts and more. For more information, see <a href="https://github.com/ethereum/web3.js/">the web3 GitHub page</a>.</p>
+<h3><a name="instantiating-web3" class="anchor" href="#instantiating-web3"><span class="header-link" style="z-index: 9999999731">&nbsp;</span></a>Instantiating Web3</h3><p>Open the app.js file and have a look around. We setup a global App object to manage our application, load in the pet data in <code>init()</code> and then call the function <code>initWeb3()</code>. Web3 is a JavaScript library for interacting with the Ethereum blockchain. It can retrieve user accounts, send transactions, interact with smart contracts and more. For more information, see <a href="https://github.com/ethereum/web3.js/">the web3 GitHub page</a>.</p>
 <p>Remove the multi-line comment from initWeb3 and replace it with the following:</p>
 <pre><code class="lang-javascript">// Initialize web3 and set the provider to the testRPC.
 if (typeof web3 !== &#39;undefined&#39;) {
@@ -366,7 +366,7 @@ if (typeof web3 !== &#39;undefined&#39;) {
 </code></pre>
 <p>First, we check if there&#39;s a web3 instance already active. Ethereum browsers like <a href="https://github.com/ethereum/mist">Mist</a> or Chrome with the <a href="https://metamask.io/">MetaMask</a> extension will inject their own web3 instances. If an injected web3 instance is present, we get its provider and use it to create our web3 object.</p>
 <p>If no injected web3 instance is present, we create our web3 object based on the TestRPC&#39;s provider.</p>
-<h3><a name="instantiating-the-contract" class="anchor" href="#instantiating-the-contract"><span class="header-link" style="z-index: 9999999728">&nbsp;</span></a>Instantiating the Contract</h3><p>Now that we can interact with Ethereum via web3, we need to instantiate our smart contract so web3 knows where to find it and how it works. Truffle has a library to help with this called <code>truffle-contract</code>. It keeps information about contract in sync with your migrations, so you don&#39;t need to change the contract&#39;s deployed address manually.</p>
+<h3><a name="instantiating-the-contract" class="anchor" href="#instantiating-the-contract"><span class="header-link" style="z-index: 9999999730">&nbsp;</span></a>Instantiating the Contract</h3><p>Now that we can interact with Ethereum via web3, we need to instantiate our smart contract so web3 knows where to find it and how it works. Truffle has a library to help with this called <code>truffle-contract</code>. It keeps information about contract in sync with your migrations, so you don&#39;t need to change the contract&#39;s deployed address manually.</p>
 <p>Remove the multi-line comment from initWeb3 and replace it with the following:</p>
 <pre><code class="lang-javascript">$.getJSON(&#39;Adoption.json&#39;, function(data) {
   // Get the necessary contract artifact file and instantiate it with truffle-contract.
@@ -384,7 +384,7 @@ if (typeof web3 !== &#39;undefined&#39;) {
 <p>Once we have the artifacts in our callback, we pass them to <code>TruffleContract()</code>. This creates and instance of the contract we can interact with.</p>
 <p>With our contract instantiated, we set its web3 provider using the <code>this.provider</code> value we stored earlier when setting up web3.</p>
 <p>Finally, we call the app&#39;s <code>markAdopted()</code> function in case any pets are already adopted from a previous visit. We&#39;ve encapsulated this in a separate function since we&#39;ll need to update the UI any time we make a change to the smart contract&#39;s data.</p>
-<h3><a name="getting-the-adopted-pets-and-updating-the-ui" class="anchor" href="#getting-the-adopted-pets-and-updating-the-ui"><span class="header-link" style="z-index: 9999999727">&nbsp;</span></a>Getting The Adopted Pets and Updating The UI</h3><p>Remove the multi-line comment from <code>markAdopted()</code> and replace it with the following:</p>
+<h3><a name="getting-the-adopted-pets-and-updating-the-ui" class="anchor" href="#getting-the-adopted-pets-and-updating-the-ui"><span class="header-link" style="z-index: 9999999729">&nbsp;</span></a>Getting The Adopted Pets and Updating The UI</h3><p>Remove the multi-line comment from <code>markAdopted()</code> and replace it with the following:</p>
 <pre><code class="lang-javascript">var adoptionInstance;
 
 App.contracts.Adoption.deployed().then(function(instance) {
@@ -405,7 +405,7 @@ App.contracts.Adoption.deployed().then(function(instance) {
 <p>A <strong>call</strong> allows us to read data from the blockchain without having to send a full transaction; meaning we won&#39;t have to spend any Ether.</p>
 <p>After calling <code>getAdopters()</code>, we then loop through them, checking to see if an address is stored for each pet. Since the array contains address types, Ethereum initializes the array with 16 empty addresses. This is why we check for an empty address string rather than null or another falsey value. Once a petId with a corresponding address is found, we disable its adopt button and so the user gets some feedback we change the button text to &quot;Pending&#8230;&quot;.</p>
 <p>Finally, we catch any errors which may have occurred and log them to the console.</p>
-<h3><a name="handling-the-adopt-function" class="anchor" href="#handling-the-adopt-function"><span class="header-link" style="z-index: 9999999726">&nbsp;</span></a>Handling the adopt() Function</h3><p>Remove the multi-line comment from handleAdopt and replace it with the following:</p>
+<h3><a name="handling-the-adopt-function" class="anchor" href="#handling-the-adopt-function"><span class="header-link" style="z-index: 9999999728">&nbsp;</span></a>Handling the adopt() Function</h3><p>Remove the multi-line comment from handleAdopt and replace it with the following:</p>
 <pre><code class="lang-javascript">var adoptionInstance;
 
 web3.eth.getAccounts(function(error, accounts) {
@@ -430,7 +430,7 @@ web3.eth.getAccounts(function(error, accounts) {
 <p>From there, we get the deployed contract as we did above and store the instance in <code>adoptionInstance</code>. This time though, we&#39;re going to send a <strong>transaction</strong> instead of use a call. Transactions require a &quot;from&quot; address and have an associated cost. This cost, paid in Ether, is called <strong>gas</strong>. The gas cost is the fee for performing computation and/or storing data in an Ethereum smart contract. We send the transaction by executing the <code>adopt()</code> function with both the pet&#39;s ID and an object containing the account address, which we stored earlier in <code>account</code>.</p>
 <p>The result of sending a transaction is the transaction object. If there are no errors, we proceed to call our <code>markAdopted()</code> function to sync the UI with our newly stored data.</p>
 <p>Now it&#39;s time to actually use our Dapp!</p>
-<h2><a name="using-our-dapp-in-chrome" class="anchor" href="#using-our-dapp-in-chrome"><span class="header-link" style="z-index: 9999999725">&nbsp;</span></a>Using Our Dapp in Chrome</h2><h3><a name="installing-and-configuring-metamask" class="anchor" href="#installing-and-configuring-metamask"><span class="header-link" style="z-index: 9999999724">&nbsp;</span></a>Installing and Configuring MetaMask</h3><p>The easiest way to interact with our Dapp in a browser is to download and install the MetaMask Chrome extension. Once installed, you&#39;ll see the MetaMask fox icon next to your address bar.</p>
+<h2><a name="using-our-dapp-in-chrome" class="anchor" href="#using-our-dapp-in-chrome"><span class="header-link" style="z-index: 9999999727">&nbsp;</span></a>Using Our Dapp in Chrome</h2><h3><a name="installing-and-configuring-metamask" class="anchor" href="#installing-and-configuring-metamask"><span class="header-link" style="z-index: 9999999726">&nbsp;</span></a>Installing and Configuring MetaMask</h3><p>The easiest way to interact with our Dapp in a browser is to download and install the MetaMask Chrome extension. Once installed, you&#39;ll see the MetaMask fox icon next to your address bar.</p>
 <p>Click the MetaMask icon and you&#39;ll see this screen appear:</p>
 <div class="text-center">
   <img src="/tutorials/images/pet-shop/metamask-1.png" alt="MetaMask Unlock">
@@ -452,7 +452,7 @@ web3.eth.getAccounts(function(error, accounts) {
 </div>
 
 <p>Now that MetaMask is configured, we can start our web server and actually use the Dapp.</p>
-<h3><a name="installing-and-configuring-lite-server" class="anchor" href="#installing-and-configuring-lite-server"><span class="header-link" style="z-index: 9999999723">&nbsp;</span></a>Installing and Configuring lite-server</h3><p>We&#39;re going to use the <code>lite-server</code> library to serve our static files. Since it&#39;s an NPM package, we&#39;ll need to initialize NPM in our project.</p>
+<h3><a name="installing-and-configuring-lite-server" class="anchor" href="#installing-and-configuring-lite-server"><span class="header-link" style="z-index: 9999999725">&nbsp;</span></a>Installing and Configuring lite-server</h3><p>We&#39;re going to use the <code>lite-server</code> library to serve our static files. Since it&#39;s an NPM package, we&#39;ll need to initialize NPM in our project.</p>
 <p>In the project&#39;s root directory, run <code>npm init</code>. It will ask you some questions about the project, but for now let&#39;s accept all the defaults by pressing Enter at each prompt (you can later change them if necessary).</p>
 <p>With NPM initialized, run <code>npm install lite-server --save-dev</code>. This installs <code>lite-server</code> as a development dependency. For production we&#39;ll be deploying our Dapp to a real server, so there&#39;s no need for <code>lite-server</code> in that environment.</p>
 <p>Next, create a file called <code>bs-config.json</code> in the project&#39;s root directory with the following contents:</p>
@@ -470,7 +470,7 @@ web3.eth.getAccounts(function(error, accounts) {
 },
 </code></pre>
 <p>This tells NPM to run our local install of <code>lite-server</code> when we execute <code>npm run dev</code> from the console.</p>
-<h3><a name="using-the-dapp" class="anchor" href="#using-the-dapp"><span class="header-link" style="z-index: 9999999722">&nbsp;</span></a>Using the Dapp</h3><p>Run the command <code>npm run dev</code>. The dev server will launch and automatically open a new browser tab containing your Dapp!</p>
+<h3><a name="using-the-dapp" class="anchor" href="#using-the-dapp"><span class="header-link" style="z-index: 9999999724">&nbsp;</span></a>Using the Dapp</h3><p>Run the command <code>npm run dev</code>. The dev server will launch and automatically open a new browser tab containing your Dapp!</p>
 <p>Now, simply click the adopt button on the pet of your choice. You&#39;ll be prompted to approve the transaction by MetaMask. Do so, and you&#39;ll see the button change to &quot;Pending&#8230;&quot; and become disabled, just as we specified.</p>
 <div class="text-center container">
   <img src="/tutorials/images/pet-shop/adoption-1.jpeg" alt="MetaMask Account">
@@ -484,7 +484,7 @@ web3.eth.getAccounts(function(error, accounts) {
 </div>
 
 <p><strong>CONGRATULATIONS!</strong> You took a huge first step to becoming a full-fledged Dapp developer. If you&#39;re content developing locally for now, you have all the tools you need to start making more advanced Dapps. If you&#39;d like to make your Dapp live for others to use, continue on to Deploying to the Ropsten TestNet.</p>
-<h2><a name="deploying-to-the-ropsten-testnet" class="anchor" href="#deploying-to-the-ropsten-testnet"><span class="header-link" style="z-index: 9999999721">&nbsp;</span></a>Deploying to the Ropsten TestNet</h2><div class="container alert alert-warning" role="alert"><strong>NOTICE</strong> This section requires you have a live development server.</div>
+<h2><a name="deploying-to-the-ropsten-testnet" class="anchor" href="#deploying-to-the-ropsten-testnet"><span class="header-link" style="z-index: 9999999723">&nbsp;</span></a>Deploying to the Ropsten TestNet</h2><div class="container alert alert-warning" role="alert"><strong>NOTICE</strong> This section requires you have a live development server.</div>
 
 <p>It&#39;s time to show the world your hard work! Up to this point, we&#39;ve been testing our Dapp locally on a test blockchain. To show others, we&#39;ll need to deploy to a public chain. So we don&#39;t have to spend real money, we&#39;ll deploy our smart contracts to the Ethereum test network, Ropsten.</p>
 
