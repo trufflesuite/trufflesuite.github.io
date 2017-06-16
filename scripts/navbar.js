@@ -1,1 +1,37 @@
-$(function(){var s=$(".LandingPage .navbar");$(window).scroll(function(){var a=$(this).scrollTop();{if(!(a>0))return s.removeClass("scroll");if(!s.hasClass("scroll"))return s.addClass("scroll")}});var a=$("#navbar"),l=$(".navbar-toggle");a.on("show.bs.collapse",function(){return l.addClass("close"),s.addClass("nav-shown")}),a.on("hide.bs.collapse",function(){return l.removeClass("close"),s.removeClass("nav-shown")})});
+$(function() {
+
+  var navbar = $('.LandingPage .navbar');
+
+  // Landing Page Scrolling Opacity
+
+  $(window).scroll(function() {
+    var windowScrollPos = $(this).scrollTop();
+
+    if (windowScrollPos > 0)
+    {
+      if (!navbar.hasClass('scroll'))
+      {
+        return navbar.addClass('scroll');
+      }
+
+      return;
+    }
+
+    return navbar.removeClass('scroll');
+  });
+
+  // Opacity with Menu Open for Mobile
+
+  var navMenu = $('#navbar');
+  var navbarToggle = $('.navbar-toggle');
+
+  navMenu.on('show.bs.collapse', function() {
+    navbarToggle.addClass('close');
+    return navbar.addClass('nav-shown');
+  });
+
+  navMenu.on('hide.bs.collapse', function() {
+    navbarToggle.removeClass('close');
+    return navbar.removeClass('nav-shown');
+  });
+});
