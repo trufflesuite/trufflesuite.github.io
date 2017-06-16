@@ -7951,7 +7951,7 @@ button.close {
   margin-right: 1.5rem !important;
 }
 
-.m-b-2, .LandingPage .Features .FeatureCard h6, .LandingPage .Features .FeatureCard .FeatureBody > p {
+.m-b-2, .LandingPage .Features .FeatureCard h6, .LandingPage .Features .FeatureCard .FeatureBody > p, .Ballotin .FeatureCard h6, .Ballotin .FeatureCard .FeatureBody > p {
   margin-bottom: 1.5rem !important;
 }
 
@@ -8094,7 +8094,7 @@ button.close {
   padding: 1.5rem 1.5rem !important;
 }
 
-.p-t-2, .LandingPage .Features .FeatureCard footer img {
+.p-t-2, .LandingPage .Features .FeatureCard footer img, .Ballotin .FeatureCard footer img {
   padding-top: 1.5rem !important;
 }
 
@@ -8102,7 +8102,7 @@ button.close {
   padding-right: 1.5rem !important;
 }
 
-.p-b-2, .BetaSignup h2, .LandingPage .Features .FeatureCard footer p {
+.p-b-2, .BetaSignup h2, .LandingPage .Features .FeatureCard footer p, .Ballotin .FeatureCard footer p {
   padding-bottom: 1.5rem !important;
 }
 
@@ -9874,4 +9874,92 @@ code {
     font-size: 15vw;
     line-height: 13vw;
   }
+}
+
+.Ballotin > main {
+  padding: 100px 0 50px 0;
+}
+
+.Ballotin .label-truffle {
+  display: inline-block;
+  background: #f8f7f7;
+  color: #545452;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.Ballotin .label-truffle svg {
+  max-height: 20px;
+  margin-bottom: -3px;
+  width: auto;
+}
+
+.Ballotin .FeatureCard {
+  background: #FFFFFF;
+  border: 1px solid rgba(212, 212, 212, 0.28);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+.Ballotin .FeatureCard .FeatureBody {
+  padding: 1rem 1.8rem;
+}
+
+.Ballotin .FeatureCard .FeatureBody > p {
+  line-height: 1.6rem;
+}
+
+.Ballotin .FeatureCard .FeatureBody.FeatureImage {
+  height: 0;
+  padding: 0 0 100% 0;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
+
+.Ballotin .FeatureCard footer {
+  text-align: center;
+  background: #f8f7f7;
+  min-height: 60px;
+}
+
+.Ballotin .FeatureCard footer p {
+  margin: 0;
+}
+
+.Ballotin .FeatureCard footer img {
+  width: 60px;
+}
+
+.Ballotin .FeatureCard footer.BoxRundown {
+  padding: 25px 15px;
+  text-align: left;
+}
+
+.Ballotin .FeatureCard footer.BoxRundown h3 {
+  margin-top: 0;
+}
+
+.Ballotin .FeatureCard footer.BoxRundown .BoxRundownList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
+
+.Ballotin .FeatureCard footer.BoxRundown .BoxRundownList hr {
+  margin: 5px 0;
+}
+
+.Ballotin .FeatureCard footer.BoxRundown .BoxRundownList strong {
+  text-transform: uppercase;
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-weight: normal;
+}
+
+.Ballotin .FeatureCard footer.BoxRundown .BoxRundownList .label {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
 }
