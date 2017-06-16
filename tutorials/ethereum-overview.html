@@ -180,7 +180,7 @@
 </div>
 </div>
 
-<h2><a name="why-use-a-blockchain-" class="anchor" href="#why-use-a-blockchain-"><span class="header-link" style="z-index: 9999999776">&nbsp;</span></a>Why Use a Blockchain?</h2><p>Blockchains are a great fit for situations where multiple parties need to share data without trusting each other. Before we further define how a blockchain achieves this, let&#39;s first look at some history and where the need for blockchains arose.</p>
+<h2><a name="why-use-a-blockchain-" class="anchor" href="#why-use-a-blockchain-"><span class="header-link" style="z-index: 9999999776">&nbsp;</span></a>Why Use a Blockchain?</h2><p>Blockchains are used when multiple parties, perhaps located across the world, need to share data and transfer value without trusting each other. The financial world describes this trust as the &quot;counterparty risk&quot; &#8211; i.e., what&#39;s the risk that the other party won&#39;t hold up their end of the bargain? Blockchains completely remove the counterparty risk through a revolutionary system of mathematics, cryptography and peer-to-peer networking. Before we go into detail about how they work, let&#39;s first look at some history and how the need for blockchains arose.</p>
 <h3><a name="the-first-databases" class="anchor" href="#the-first-databases"><span class="header-link" style="z-index: 9999999775">&nbsp;</span></a>The First Databases</h3><p>In the 1960s the first computerized databases emerged. With hardware occupying multiple rooms and the Internet decades away, data naturally existed in central, physical locations. This is a <em>centralized</em> approach, meaning the location and accessing of data is controlled by a central authority. Centralized systems can be manipulated, from inside or outside bad actors, so we trust the owners of these systems have sufficient will and resources to keep their data secure and preserve its integrity. Centralized databases are still the most common today, powering most of our online and offline applications.</p>
 <p>A self-hosted blog is a common use of a centralized database. The owner could edit posts in hindsight to look better or censor users without recourse. Even with an upstanding owner, a hacker could infiltrate the server and commit malicious acts. If there is no database backup, determining what&#39;s changed and reversing the damage might be impossible.</p>
 <p>Graphically represented, each arrow crossing a boundary of the main server box is a connection which requires trust.</p>
@@ -199,8 +199,8 @@
 <li>Consensus: For a database to be shared, all parties must agree (reach consensus) on its contents. There are various methods of reaching consensus, one of which (Proof of Work) we&#39;ll discuss in the context of a blockchain below.</li>
 </ul>
 <p>Blockchains use these and take them a step further, completely solving the problem of trust.</p>
-<h2><a name="what-is-a-blockchain-" class="anchor" href="#what-is-a-blockchain-"><span class="header-link" style="z-index: 9999999773">&nbsp;</span></a>What is a Blockchain?</h2><p>A blockchain, at its heart, is a shared database. This database is called a ledger. Much like a bank, the ledger keeps track of currency (in this case, cryptocurrency) ownership. Unlike a centralized bank, everyone has a copy of the ledger and can verify each other&#39;s accounts. This is the <em>distributed</em> (or decentralized) part of the blockchain. Each connected device with a copy of the ledger is called a <strong>node</strong>.</p>
-<p>Interactions between accounts in a blockchain network are called <strong>transactions</strong>. They can be monetary transactions, such as sending someone <strong>Ether</strong>, Ethereum&#39;s cryptocurrency. Other times they are transmissions of data, like a comment or username. Every account on the blockchain has a unique signature, which lets us know which account initiated the transaction.</p>
+<h2><a name="what-is-a-blockchain-" class="anchor" href="#what-is-a-blockchain-"><span class="header-link" style="z-index: 9999999773">&nbsp;</span></a>What is a Blockchain?</h2><p>A blockchain, at its heart, is a shared database. This database is called a ledger. Much like a bank, the ledgers of simple blockchains keep track of currency (in this case, cryptocurrency) ownership. Unlike a centralized bank, everyone has a copy of the ledger and can verify each other&#39;s accounts. This is the <em>distributed</em> (or decentralized) part of the blockchain. Each connected device with a copy of the ledger is called a <strong>node</strong>.</p>
+<p>Interactions between accounts in a blockchain network are called <strong>transactions</strong>. They can be monetary transactions, such as sending someone <strong>Ether</strong>, Ethereum&#39;s cryptocurrency. Other times they are transmissions of data, like a comment or username. Every account on the blockchain has a unique signature, which lets everyone know which account initiated the transaction.</p>
 <p>Blockchains eliminate this problem of trust with some key advantages over previous databases:</p>
 <ul>
 <li>Full Decentralization: Reading/writing to the database is completely decentralized and secure. No single person or group controls a blockchain.</li>
@@ -209,9 +209,9 @@
 </ul>
 <p>Now that we have some idea of why blockchains are useful, let&#39;s dive deeper into how they work.</p>
 <h2><a name="how-a-blockchain-works" class="anchor" href="#how-a-blockchain-works"><span class="header-link" style="z-index: 9999999772">&nbsp;</span></a>How a Blockchain Works</h2><p>On a public blockchain, anyone can read or write data. Reading data is free, but writing to the public chain costs money. This cost helps discourage spam and pays to secure the network. Any node on the network can take part in securing the network through a process called mining. Since mining requires computing power and therefore electricity cost, miners are compensated for their service.</p>
-<h3><a name="mining" class="anchor" href="#mining"><span class="header-link" style="z-index: 9999999771">&nbsp;</span></a>Mining</h3><p>Each node in the network can optionally take part in a process called <strong>mining</strong>. Every so often, nodes which have opted to be miners compete to solve math problems which secure the contents of the block. The winner of this competition creates the next block and receives some cyptocurrency as a reward. This incentivizes nodes to secure the network and prevents too much power from being in the hands of any single miner. A <strong>block</strong> contains a bundle of any pending transactions since the creation of the previous block.</p>
+<h3><a name="mining" class="anchor" href="#mining"><span class="header-link" style="z-index: 9999999771">&nbsp;</span></a>Mining</h3><p>Each node in the network can optionally take part in a process called <strong>mining</strong>. Every so often, nodes which have opted to be miners compete to solve math problems which secure the contents of a block. A <strong>block</strong> is a bundle of any pending transactions created since the addition of the most recent block in the chain. The winner of the competition creates the next block and receives some cyptocurrency as a reward. This incentivizes nodes to secure the network, preventing too much power from being in the hands of any single miner.</p>
 <h3><a name="hashing" class="anchor" href="#hashing"><span class="header-link" style="z-index: 9999999770">&nbsp;</span></a>Hashing</h3><p>Once a new block is mined, the other miners are notified and begin verifying and adding this new block to their copies of the chain. That math we referred to earlier is called <strong>cryptographic hashing</strong> (or simply, hashing). A hash function is a special, one-way process which takes in data and gives back a fixed-length string representing that data. While the original data can&#39;t be reproduced from its hash, the same data will always produce the same hash. Therefore, unverified data can be hashed with the same function and compared to the original. If they are identical, the data is validated.</p>
-<p>Once more than half of the miners have validated the new block, the network has reached <strong>consensus</strong> on the new block and it is part of the chain&#39;s permanent history. Now this data can simply be downloaded (synchronized) by non-mining nodes with its validity assured.</p>
+<p>Once more than half of the miners have validated the new block, the network has reached <strong>consensus</strong> on the new block and it becomes part of the chain&#39;s permanent history. Now this data can simply be downloaded (synchronized) by non-mining nodes with its validity assured.</p>
 <p>Here&#39;s the whole process visually:</p>
 <div class="container container-steps text-center">
 <div class="row">
@@ -227,7 +227,7 @@
 
   <div class="col-lg-4">
     <img src="/tutorials/images/ethereum-overview/chain-step3.png" alt="Mining Step 3">
-    <p>3. Miners compete to valid block for the new set of transactions.</p>
+    <p>3. Miners compete to validate the block with the new set of transactions.</p>
   </div>
 </div>
 
@@ -244,16 +244,16 @@
 </div>
 </div>
 
-<h2><a name="what-is-ethereum-" class="anchor" href="#what-is-ethereum-"><span class="header-link" style="z-index: 9999999769">&nbsp;</span></a>What is Ethereum?</h2><p>More than a database, Ethereum allows you run programs in a blockchain&#39;s trusted environment. Ethereum adds a virtual machine, called the <strong>EVM (Ethereum Virtual Machine)</strong>, on top of the blockchain. The EVM allows code to be verified and executed on the blockchain. This code is contained in Smart Contracts (more on these below).</p>
-<p>Rather than just tracking account balances, Ethereum uses the same methods to keep the state of the EVM on the blockchain. All nodes process smart contracts to verify the integrity of the contracts themselves their outputs.</p>
+<h2><a name="what-is-ethereum-" class="anchor" href="#what-is-ethereum-"><span class="header-link" style="z-index: 9999999769">&nbsp;</span></a>What is Ethereum?</h2><p>More than a database, Ethereum allows you run programs in a blockchain&#39;s trusted environment. Ethereum adds a virtual machine, called the <strong>EVM (Ethereum Virtual Machine)</strong>, on top of the blockchain. The EVM allows code to be verified and executed on the blockchain, providing guarantees that code will be run the same way on everyone&#39;s machine. This code is contained in Smart Contracts (more on these below).</p>
+<p>Rather than just tracking account balances, Ethereum uses the same methods to keep the state of the EVM on the blockchain. All nodes process smart contracts to verify the integrity of the contracts themselves and their outputs.</p>
 <h2><a name="what-is-a-smart-contract-" class="anchor" href="#what-is-a-smart-contract-"><span class="header-link" style="z-index: 9999999768">&nbsp;</span></a>What is a Smart Contract?</h2><p><strong>Smart Contracts</strong> are programs running on the EVM. They most closely resemble classes in other programming languages. Smart Contracts can accept and store Ether, data, or a combination of both. Then, using the logic programmed into the contract, it can distribute that Ether to other accounts or even other smart contracts. You can see how complex systems can develop from this flexibility.</p>
-<p>The language smart contracts are written in is called <strong>Solidity</strong>. Solidity is is statically typed, supports inheritance, libraries and complex user-defined types among other features. It&#39;s file extension is &quot;.sol&quot;. Solidity&#39;s syntax is similar to JavaScript&#39;s. We&#39;ll go over the basics of Solidity in our <a href="/tutorials/pet-shop">our Pet Shop tutorial</a>, but you may also want to dive deeper by checking out <a href="https://solidity.readthedocs.io/en/develop/">the documentation</a>.</p>
-<p>Here&#39;s a smart contract example with Bob and Alice again. This time, they&#39;re using an escrow (a place to store money until a condidtion is fulfilled) to store their Ether before the final transaction.</p>
+<p>The language smart contracts are written in is called <strong>Solidity</strong>. Solidity is statically typed, supports inheritance, libraries and complex user-defined types among other features. It&#39;s file extension is &quot;.sol&quot;. Solidity&#39;s syntax is similar to JavaScript&#39;s. We&#39;ll go over the basics of Solidity in future tutorials, but you may also want to dive deeper by checking out <a href="https://solidity.readthedocs.io/en/develop/">the documentation</a>.</p>
+<p>Here&#39;s a smart contract example with Bob and Alice again. This time, they&#39;re using an escrow contract (a place to store money until a condition is fulfilled) to store their Ether before the final transaction.</p>
 <div class="container container-steps text-center">
 <div class="row">
   <div class="col-lg-4">
     <img src="/tutorials/images/ethereum-overview/smart-contract-step1.png" alt="Smart Contract Step 1">
-    <p>1. Alice wants to hire Bob to build her a patio. To keep both parties honest, Alice agrees to store her payment and Bob an equal amount of collateral in an escrow smart contract.</p>
+    <p>1. Alice wants to hire Bob to build her a patio. To keep both parties honest, Alice agrees to store her payment for the patio within the escrow contract, and Bob agrees to deposit an equal amount in the contract as well.</p>
   </div>
 
   <div class="col-lg-4">
@@ -268,20 +268,26 @@
 </div>
 </div>
 
+<p>In a more complex escrow contract, if Bob were to fail to build the patio or if he were to perform a poor job, provisions could be written into the contract&#39;s code releasing Bob&#39;s collateral to Alice instead.</p>
 <h2><a name="ethereum-networks" class="anchor" href="#ethereum-networks"><span class="header-link" style="z-index: 9999999767">&nbsp;</span></a>Ethereum Networks</h2><p>Up to this point we&#39;ve been describing the <strong>main network</strong> (or <strong>MainNet</strong>), Ethereum&#39;s public blockchain. Anyone can create a node and begin verifying transactions; therefore, it&#39;s highly secure. Data on the chain, including account balances and transactions, are public. Ether on this network has a market value and can be exchanged for other cryptocurrency or fiat currencies like US Dollars.</p>
 <p>Apart from the MainNet, there are test networks (both local and public), as well as private networks.</p>
 <h3><a name="local-test-networks" class="anchor" href="#local-test-networks"><span class="header-link" style="z-index: 9999999766">&nbsp;</span></a>Local Test Networks</h3><p>The Ethereum blockchain can be simulated locally for development. Local test networks process transactions instantly and Ether can be distributed as desired. An array of Ethereum simulators exist; we recommend our own, <a href="https://github.com/trufflesuite/ganache">Ganache</a>.</p>
 <h3><a name="public-test-networks" class="anchor" href="#public-test-networks"><span class="header-link" style="z-index: 9999999765">&nbsp;</span></a>Public Test Networks</h3><p>These test networks are live and public. Ether on these networks is for testing purposes only and has no monetary value. Because these networks are public and the currency is freely available, developers use them to test Ethereum applications before final deployment to the main network.</p>
-<p><strong>Ropsten</strong>: The official test network, created by <a href="https://www.ethereum.org/foundation">The Ethereum Foundation</a>.</p>
-<p><strong>Kovan</strong>: A public test network that uses a consensus method called &quot;proof of authority&quot;. This means its transactions are validated by select members, leading to a consistent 4 second block time. The supply of Ether on this testnet is also controlled to mitigate spam attacks. Information on this chain is public. Kovan was created by <a href="https://parity.io/">Parity Technologies</a>, and requires their Parity Ethereum client.</p>
-<p><strong>Rinkeby</strong>: An official public testnet also using proof of authority. It&#39;s accessible by any Ethereum client and created by The Ethereum Foundation.</p>
+<ul>
+<li><p><strong>Ropsten</strong>: The official test network, created by <a href="https://www.ethereum.org/foundation">The Ethereum Foundation</a>.</p>
+</li>
+<li><p><strong>Kovan</strong>: A public test network that uses a consensus method called &quot;proof of authority&quot;. This means its transactions are validated by select members, leading to a consistent 4 second block time. The supply of Ether on this testnet is also controlled to mitigate spam attacks. Information on this chain is public. Kovan was created by <a href="https://parity.io/">Parity Technologies</a>, and requires their Parity Ethereum client.</p>
+</li>
+<li><p><strong>Rinkeby</strong>: An official public testnet also using proof of authority. It&#39;s accessible by any Ethereum client and created by The Ethereum Foundation.</p>
+</li>
+</ul>
 <h3><a name="private-enterprise-networks" class="anchor" href="#private-enterprise-networks"><span class="header-link" style="z-index: 9999999764">&nbsp;</span></a>Private/Enterprise Networks</h3><p>Private Ethereum networks allow parties to share data without making it publicly accessible. A private blockchain is a good choice for:</p>
 <ul>
 <li>Sharing of sensitive data, such as health care records, that isn&#39;t allowed or desired to be public.</li>
 <li>Groups with a need for massive scale. With a smaller network size, private blockchains can scale to larger sizes and handle heavier read/write throughput than public chains.</li>
 </ul>
-<p>Private chains, being based on Ethereum, run the EVM and are therefore compatible with Truffle and other development tools. <a href="https://www.jpmorgan.com/country/US/EN/Quorum">JP Morgan&#39;s Quorum</a> is a great example that works with Truffle. <a href="/tutorials/building-dapps-for-quorum-private-enterprise-blockchains">Check out our blog for more on using Truffle with Quorum</a>.</p>
-<h2><a name="dapps-distributed-applications-" class="anchor" href="#dapps-distributed-applications-"><span class="header-link" style="z-index: 9999999763">&nbsp;</span></a>Dapps (Distributed Applications)</h2><p>Applications using smart contracts for most of all of their processing are called <strong>dapps</strong>, short for distributed applications. The user interfaces for these dapps consists of languages you may already know: HTML, CSS and JavaScript. These files can be hosted on a traditional trusted web server or trustlessly on a decentralized file service such as <a href="http://swarm-gateways.net/bzz:/theswarm.eth/">Swarm</a> or <a href="http://ipfs.io/">IPFS</a>.</p>
+<p>Private chains, being based on Ethereum, run the EVM and are therefore compatible with Truffle and other development tools. <a href="https://www.jpmorgan.com/country/US/EN/Quorum">Quorum</a>, originally written by JP Morgan, is a great example that works with Truffle. <a href="/tutorials/building-dapps-for-quorum-private-enterprise-blockchains">Check out our blog for more on using Truffle with Quorum</a>.</p>
+<h2><a name="dapps-distributed-applications-" class="anchor" href="#dapps-distributed-applications-"><span class="header-link" style="z-index: 9999999763">&nbsp;</span></a>Dapps (Distributed Applications)</h2><p>Applications using smart contracts for most if not all of their backend processing are called <strong>dapps</strong>, short for distributed applications. The user interfaces for these dapps consists of languages you may already know: HTML, CSS and JavaScript. These files can be hosted on a traditional trusted web server or trustlessly on a decentralized file service such as <a href="http://swarm-gateways.net/bzz:/theswarm.eth/">Swarm</a> or <a href="http://ipfs.io/">IPFS</a>.</p>
 <p>Given the benefits of the Ethereum blockchain, a dapp could be a solution for many industries, including but not limited to:</p>
 <ul>
 <li>Record Keeping</li>
@@ -290,7 +296,7 @@
 <li>Real-Estate</li>
 <li>Marketplaces</li>
 </ul>
-<p>Ready to build your first distributed application (Dapp)? Check out <a href="/tutorials/pet-shop">our Pet Shop tutorial</a>.</p>
+<p>And the list goes on. We&#39;ll be providing detailed examples of how to build your own dapps in the near future, so bookmark this tutorial, and stay tuned.</p>
 
       </div>
     </div>
