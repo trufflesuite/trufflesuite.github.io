@@ -9876,6 +9876,16 @@ code {
   }
 }
 
+.Ballotin .BallotinIndexContainer {
+  background: #F8F5F0;
+  padding-top: 23px;
+}
+
+.Ballotin .CommunityBoxes {
+  background-color: #D8D8D8;
+  padding: 60px 0;
+}
+
 .Ballotin > main {
   padding: 100px 0 50px 0;
 }
@@ -9885,13 +9895,19 @@ code {
   background: #f8f7f7;
   color: #545452;
   font-weight: normal;
-  font-size: 1.2rem;
 }
 
 .Ballotin .label-truffle svg {
-  max-height: 20px;
-  margin-bottom: -3px;
+  float: left;
+  height: 1.2em;
+  margin-bottom: -.333333333333333em;
+  margin-left: -.333333333333333em;
+  margin-right: .2em;
   width: auto;
+}
+
+.Ballotin h1 .label-truffle {
+  font-size: 1.2rem;
 }
 
 .Ballotin .FeatureCard {
@@ -9903,6 +9919,8 @@ code {
 
 .Ballotin .FeatureCard .FeatureBody {
   padding: 1rem 1.8rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .Ballotin .FeatureCard .FeatureBody > p {
@@ -9915,6 +9933,11 @@ code {
   background-size: contain !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
+}
+
+.Ballotin .FeatureCard .FeatureBody.Status {
+  background-size: cover !important;
+  background-position: left center !important;
 }
 
 .Ballotin .FeatureCard footer {
