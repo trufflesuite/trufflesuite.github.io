@@ -279,7 +279,7 @@ th {
   .dropup > .btn > .caret {
     border-top-color: #000 !important;
   }
-  .label {
+  .label, .Ballotin .BoxTagsList li a {
     border: 1px solid #000;
   }
   .table, .Tutorials .MainContent table {
@@ -5627,7 +5627,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   cursor: not-allowed;
 }
 
-.label {
+.label, .Ballotin .BoxTagsList li a {
   display: inline;
   padding: .2em .6em .3em;
   font-size: 75%;
@@ -5640,26 +5640,26 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   border-radius: .25em;
 }
 
-.label:empty {
+.label:empty, .Ballotin .BoxTagsList li a:empty {
   display: none;
 }
 
-.btn .label {
+.btn .label, .btn .Ballotin .BoxTagsList li a, .Ballotin .BoxTagsList li .btn a {
   position: relative;
   top: -1px;
 }
 
-a.label:hover, a.label:focus {
+a.label:hover, .Ballotin .BoxTagsList li a:hover, a.label:focus, .Ballotin .BoxTagsList li a:focus {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
 
-.label-default {
+.label-default, .Ballotin .BoxTagsList li a {
   background-color: #777777;
 }
 
-.label-default[href]:hover, .label-default[href]:focus {
+.label-default[href]:hover, .Ballotin .BoxTagsList li a[href]:hover, .label-default[href]:focus, .Ballotin .BoxTagsList li a[href]:focus {
   background-color: #5e5e5e;
 }
 
@@ -9876,18 +9876,77 @@ code {
   }
 }
 
+.Ballotin .row-flex {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+@media screen and (max-width: 767px) {
+  .Ballotin .row-flex {
+    display: block;
+  }
+}
+
 .Ballotin .BallotinIndexContainer {
   background: #F8F5F0;
   padding-top: 23px;
 }
 
+.Ballotin .BallotinSingleContainer {
+  padding-top: 23px;
+  padding-bottom: 50px;
+}
+
 .Ballotin .CommunityBoxes {
+  position: relative;
   background-color: #D8D8D8;
   padding: 60px 0;
+  overflow: hidden;
+}
+
+.Ballotin .CommunityBoxes:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 25%;
+  height: 90%;
+  background-color: #fff;
+  opacity: .2;
+  transform: skew(0, -20deg);
+}
+
+.Ballotin .CommunityBoxes ul {
+  font-family: "Open Sans", sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  .Ballotin .CommunityBoxes h2 {
+    margin-top: 0;
+  }
+  .Ballotin .CommunityBoxes p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .Ballotin > main {
-  padding: 100px 0 50px 0;
+  padding: 100px 0 0 0;
+}
+
+@media screen and (max-width: 767px) {
+  .Ballotin > main {
+    padding: 60px 0 0 0;
+  }
+}
+
+.Ballotin > .container, .Tutorials .MainContent > .container-fluid > .row.Ballotin > h1,
+.Tutorials .MainContent > .container-fluid > .row.Ballotin > h2,
+.Tutorials .MainContent > .container-fluid > .row.Ballotin > h3,
+.Tutorials .MainContent > .container-fluid > .row.Ballotin > h4,
+.Tutorials .MainContent > .container-fluid > .row.Ballotin > p, .Tutorials .MainContent .Ballotin > h1:first-child, .Tutorials .MainContent .Ballotin > ul,
+.Tutorials .MainContent .Ballotin > ol, .Tutorials .MainContent pre .Ballotin > code {
+  padding-bottom: 50px;
 }
 
 .Ballotin .label-truffle {
@@ -9910,9 +9969,26 @@ code {
   font-size: 1.2rem;
 }
 
+@media screen and (max-width: 991px) {
+  .Ballotin .Sidebar {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .Ballotin .Sidebar {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Ballotin .Sidebar [class^="col-"]:nth-child(2) .FeatureCard {
+    margin-top: 4rem;
+  }
+}
+
 .Ballotin .FeatureCard {
   background: #FFFFFF;
-  border: 1px solid rgba(212, 212, 212, 0.28);
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
 }
@@ -9935,6 +10011,18 @@ code {
   background-position: center center !important;
 }
 
+@media screen and (max-width: 767px) {
+  .Ballotin .FeatureCard .FeatureBody.FeatureImage {
+    background-size: cover !important;
+  }
+}
+
+.Ballotin .FeatureCard .FeatureBody.FeatureImage.visible-xs {
+  height: 100px;
+  padding: 0;
+  background-position: left center !important;
+}
+
 .Ballotin .FeatureCard .FeatureBody.Status {
   background-size: cover !important;
   background-position: left center !important;
@@ -9944,6 +10032,8 @@ code {
   text-align: center;
   background: #f8f7f7;
   min-height: 60px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .Ballotin .FeatureCard footer p {
@@ -9982,7 +10072,37 @@ code {
   font-weight: normal;
 }
 
-.Ballotin .FeatureCard footer.BoxRundown .BoxRundownList .label {
+@media screen and (max-width: 991px) {
+  .Ballotin .FeatureCard {
+    margin-top: 5px;
+  }
+  .Ballotin .CommunityBoxes .FeatureCard {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .Ballotin .FeatureCard {
+    margin-top: 30px;
+  }
+  .Ballotin .CommunityBoxes .FeatureCard {
+    margin: 1rem 0 3rem 0;
+  }
+}
+
+.Ballotin .BoxTagsList {
+  list-style: none;
+  margin: -5px 0 0 0;
+  padding: 0;
+  width: 100%;
+}
+
+.Ballotin .BoxTagsList li {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.Ballotin .BoxTagsList li a {
   font-family: "Open Sans", sans-serif;
   font-weight: normal;
 }
