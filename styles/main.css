@@ -7951,7 +7951,7 @@ button.close {
   margin-right: 1.5rem !important;
 }
 
-.m-b-2, .LandingPage .Features .FeatureCard h6, .LandingPage .Features .FeatureCard .FeatureBody > p, .Ballotin .FeatureCard h6, .Ballotin .FeatureCard .FeatureBody > p {
+.m-b-2, .LandingPage .Features .FeatureCard h6, .LandingPage .Features .FeatureCard .FeatureBody > p, .Ballotin .BallotinSingleContainer .WithDash, .Ballotin .FeatureCard h6, .Ballotin .FeatureCard .FeatureBody > p, .Ballotin .BoxMarkdown h1, .Ballotin .BoxMarkdown h2, .Ballotin .BoxMarkdown h3, .Ballotin .BoxMarkdown h4, .Ballotin .BoxMarkdown h5, .Ballotin .BoxMarkdown h6 {
   margin-bottom: 1.5rem !important;
 }
 
@@ -7973,7 +7973,7 @@ button.close {
   margin: 3rem 3rem !important;
 }
 
-.m-t-3, .Tutorials .MainContent img {
+.m-t-3, .Tutorials .MainContent img, .Ballotin .BoxMarkdown h1, .Ballotin .BoxMarkdown h2, .Ballotin .BoxMarkdown h3, .Ballotin .BoxMarkdown h4, .Ballotin .BoxMarkdown h5, .Ballotin .BoxMarkdown h6 {
   margin-top: 3rem !important;
 }
 
@@ -9876,6 +9876,18 @@ code {
   }
 }
 
+.Ballotin {
+  /* General */
+  /* Containers */
+  /* Elements */
+  /* Cards */
+  /* Markdown Area (Documentation) */
+}
+
+.Ballotin p {
+  line-height: 1.75rem;
+}
+
 .Ballotin .row-flex {
   display: flex;
   align-items: center;
@@ -9969,6 +9981,15 @@ code {
   font-size: 1.2rem;
 }
 
+.Ballotin .GitHubStars {
+  float: right;
+  margin-top: 7px;
+}
+
+.Ballotin .GitHubStarIcon {
+  color: #e4b93e;
+}
+
 @media screen and (max-width: 991px) {
   .Ballotin .Sidebar {
     margin-top: 2rem;
@@ -9985,6 +10006,25 @@ code {
   .Ballotin .Sidebar [class^="col-"]:nth-child(2) .FeatureCard {
     margin-top: 4rem;
   }
+}
+
+.Ballotin .BoxTagsList {
+  list-style: none;
+  margin: -5px 0 0 0;
+  padding: 0;
+  width: 100%;
+}
+
+.Ballotin .BoxTagsList li {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.Ballotin .BoxTagsList li a {
+  display: block;
+  padding: .5em .7em .5em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
 }
 
 .Ballotin .FeatureCard {
@@ -10045,7 +10085,7 @@ code {
 }
 
 .Ballotin .FeatureCard footer.BoxRundown {
-  padding: 25px 15px;
+  padding: 2rem;
   text-align: left;
 }
 
@@ -10062,6 +10102,10 @@ code {
   font-weight: normal;
 }
 
+.Ballotin .FeatureCard footer.BoxRundown .BoxRundownList li {
+  margin-bottom: 0;
+}
+
 .Ballotin .FeatureCard footer.BoxRundown .BoxRundownList hr {
   margin: 5px 0;
 }
@@ -10070,6 +10114,10 @@ code {
   text-transform: uppercase;
   font-family: "Oswald", "Arial Narrow", sans-serif;
   font-weight: normal;
+}
+
+.Ballotin .FeatureCard footer.BoxRundown .BoxRundownList > li:nth-child(odd):not(:first-child) {
+  margin-top: 2rem;
 }
 
 @media screen and (max-width: 991px) {
@@ -10090,19 +10138,9 @@ code {
   }
 }
 
-.Ballotin .BoxTagsList {
-  list-style: none;
-  margin: -5px 0 0 0;
-  padding: 0;
-  width: 100%;
-}
-
-.Ballotin .BoxTagsList li {
-  display: inline-block;
-  margin-top: 5px;
-}
-
-.Ballotin .BoxTagsList li a {
+.Ballotin .BoxMarkdown ul li,
+.Ballotin .BoxMarkdown ol li {
+  margin-bottom: 1.5rem;
+  line-height: 1.75rem;
   font-family: "Open Sans", sans-serif;
-  font-weight: normal;
 }
