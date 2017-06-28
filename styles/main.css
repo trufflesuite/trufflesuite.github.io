@@ -7951,7 +7951,7 @@ button.close {
   margin-right: 1.5rem !important;
 }
 
-.m-b-2, .LandingPage .Features .FeatureCard h6, .LandingPage .Features .FeatureCard .FeatureBody > p, .Ballotin .BallotinSingleContainer .WithDash, .Ballotin .FeatureCard h6, .Ballotin .FeatureCard .FeatureBody > p, .Ballotin .BoxMarkdown h1, .Ballotin .BoxMarkdown h2, .Ballotin .BoxMarkdown h3, .Ballotin .BoxMarkdown h4, .Ballotin .BoxMarkdown h5, .Ballotin .BoxMarkdown h6 {
+.m-b-2, .LandingPage .Features .FeatureCard h6, .LandingPage .Features .FeatureCard .FeatureBody > p, .Ballotin .BallotinSingleContainer .WithDash, .Ballotin .FeatureCard h6, .Ballotin .FeatureCard .FeatureBody > p, .Ballotin .BoxReadme h1, .Ballotin .BoxReadme h2, .Ballotin .BoxReadme h3, .Ballotin .BoxReadme h4, .Ballotin .BoxReadme h5, .Ballotin .BoxReadme h6 {
   margin-bottom: 1.5rem !important;
 }
 
@@ -7973,7 +7973,7 @@ button.close {
   margin: 3rem 3rem !important;
 }
 
-.m-t-3, .Tutorials .MainContent img, .Ballotin .BoxMarkdown h1, .Ballotin .BoxMarkdown h2, .Ballotin .BoxMarkdown h3, .Ballotin .BoxMarkdown h4, .Ballotin .BoxMarkdown h5, .Ballotin .BoxMarkdown h6 {
+.m-t-3, .Tutorials .MainContent img, .Ballotin .BoxReadme h1, .Ballotin .BoxReadme h2, .Ballotin .BoxReadme h3, .Ballotin .BoxReadme h4, .Ballotin .BoxReadme h5, .Ballotin .BoxReadme h6 {
   margin-top: 3rem !important;
 }
 
@@ -9922,11 +9922,11 @@ code {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 25%;
+  bottom: 16.5%;
   height: 90%;
   background-color: #fff;
   opacity: .2;
-  transform: skew(0, -20deg);
+  transform: skew(0, -12deg);
 }
 
 .Ballotin .CommunityBoxes ul {
@@ -9982,8 +9982,11 @@ code {
 }
 
 .Ballotin .GitHubStars {
-  float: right;
-  margin-top: 7px;
+  display: block;
+}
+
+.Ballotin .GitHubStars iframe {
+  margin: 10px 0;
 }
 
 .Ballotin .GitHubStarIcon {
@@ -10033,39 +10036,48 @@ code {
   border-radius: 4px;
 }
 
+.Ballotin .FeatureCard a {
+  color: #545452;
+}
+
 .Ballotin .FeatureCard .FeatureBody {
-  padding: 1rem 1.8rem;
+  position: relative;
+  padding: 2rem;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  overflow: hidden;
+}
+
+.Ballotin .FeatureCard .FeatureBody.withImage {
+  padding: 0;
 }
 
 .Ballotin .FeatureCard .FeatureBody > p {
   line-height: 1.6rem;
 }
 
-.Ballotin .FeatureCard .FeatureBody.FeatureImage {
-  height: 0;
-  padding: 0 0 100% 0;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
+.Ballotin .FeatureCard .FeatureBody .FeatureImageSm {
+  display: none;
+  height: 100px;
+  padding: 0;
 }
 
 @media screen and (max-width: 767px) {
-  .Ballotin .FeatureCard .FeatureBody.FeatureImage {
-    background-size: cover !important;
+  .Ballotin .FeatureCard .FeatureBody .FeatureImageSm {
+    display: block;
   }
 }
 
-.Ballotin .FeatureCard .FeatureBody.FeatureImage.visible-xs {
-  height: 100px;
-  padding: 0;
-  background-position: left center !important;
+.Ballotin .FeatureCard .FeatureBody .FeatureImageLg {
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
-.Ballotin .FeatureCard .FeatureBody.Status {
-  background-size: cover !important;
-  background-position: left center !important;
+@media screen and (max-width: 767px) {
+  .Ballotin .FeatureCard .FeatureBody .FeatureImageLg {
+    display: none;
+  }
 }
 
 .Ballotin .FeatureCard footer {
@@ -10138,8 +10150,8 @@ code {
   }
 }
 
-.Ballotin .BoxMarkdown ul li,
-.Ballotin .BoxMarkdown ol li {
+.Ballotin .BoxReadme ul li,
+.Ballotin .BoxReadme ol li {
   margin-bottom: 1.5rem;
   line-height: 1.75rem;
   font-family: "Open Sans", sans-serif;
