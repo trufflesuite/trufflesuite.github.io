@@ -79,7 +79,7 @@
 
   <body>
     <main>
-      <section class="Tutorials">
+      <body class="Ballotin">
   <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -154,160 +154,118 @@
 </nav>
 
 
-  <section class="MainContent">
-    <div class="container-fluid">
-      <div class="row">
-        <h1><a name="creating-an-ethereum-enabled-command-line-tool-with-truffle-3-0" class="anchor" href="#creating-an-ethereum-enabled-command-line-tool-with-truffle-3-0"><span class="header-link" style="z-index: 9999999800">&nbsp;</span></a>Creating an Ethereum-enabled command line tool with Truffle 3.0</h1><p>Truffle 3 <a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">is out</a>, and it switched to a less opinionated build process. In Truffle 2, the default app from <code>truffle init</code> included a frontend example with build process. Now, there&#39;s nothing other than a <code>build</code> folder for your JSON contract artifacts. This opens up the door for testing and building other (<strong>cough</strong> command line <strong>cough</strong>) types of applications!</p>
-<h2><a name="intended-audience" class="anchor" href="#intended-audience"><span class="header-link" style="z-index: 9999999799">&nbsp;</span></a>Intended Audience</h2><p>This is written for those familiar with Truffle and Ethereum, who want to learn how to create a testable, Ethereum-enabled command line application with Truffle.</p>
-<p>For this tutorial, we&#39;ll be building a command line tool that interacts with the <a href="https://ens.readthedocs.io/en/latest/">Ethereum Name Service</a> (ENS).</p>
-<h2><a name="getting-started" class="anchor" href="#getting-started"><span class="header-link" style="z-index: 9999999798">&nbsp;</span></a>Getting Started</h2><p>If you were using Truffle beta 3.0.0-9 or below, <strong>do not immediately upgrade</strong>. Read <a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">these release notes</a> and the <a href="/tutorials/upgrading-from-truffle-2-to-3">upgrade guide</a> first. Next, make a new folder and run the following command:</p>
-<pre><code>$ truffle init
-</code></pre><p>You should see the <code>test</code>, <code>build</code>, and <code>migrations</code> directories were created for you &#8211; but no <code>app</code>. Additionally, the build step in the <code>truffle.js</code> file is mysteriously absent. That&#39;s ok! This means Truffle is getting out of your way and letting you control the build process.</p>
-<h2><a name="let-39-s-look-at-the-example" class="anchor" href="#let-39-s-look-at-the-example"><span class="header-link" style="z-index: 9999999797">&nbsp;</span></a>Let&#39;s Look at the Example</h2><p><a href="https://github.com/dougvk/ens-registrar3">Check out the example app</a> as a reference. I&#39;ll be referring to it often so give it a look over if you haven&#39;t already.</p>
-<p>The first thing to look at is the build process. Since Truffle now puts us in control of the build, I&#39;ve added some custom scripts within <code>package.json</code> to handle building for us:</p>
-<pre><code class="lang-json">...
-&quot;description&quot;: &quot;CLI for ENS deployment&quot;,
-&quot;scripts&quot;: {
-  &quot;ens&quot;: &quot;babel-node ./bin/ensa.js&quot;,
-  &quot;lint&quot;: &quot;eslint ./&quot;
-},
-&quot;author&quot;: &quot;Douglas von Kohorn&quot;,
-&quot;license&quot;: &quot;MIT&quot;,
-...
-</code></pre>
-<p>I&#39;ve defined two scripts here: <code>lint</code> for linting my Javascript to keep my codebase so fresh and so clean, and <code>ens</code> for transpiling my Javascript command line tool (using Babel) and running it. That&#39;s it! That&#39;s the build process. You can run it via <code>npm run lint</code> and <code>npm run babel</code>. Now that that&#39;s out of the way, let&#39;s dig into how and why I structured my app this way.</p>
-<h2><a name="building-our-app-separation-of-concerns" class="anchor" href="#building-our-app-separation-of-concerns"><span class="header-link" style="z-index: 9999999796">&nbsp;</span></a>Building our App: Separation of concerns</h2><p>In order to take advantage of all parts of Truffle while building this tool, we need to separate our code into two distinct pieces. First, we need to write a library which will constitute the bulk of the app, and allow us to perform actions against the ENS contracts quickly and easily from Javascript. Next is the CLI; the CLI will take advantage of the library itself, and will be the user&#39;s interface to our application.</p>
-<h3><a name="the-library" class="anchor" href="#the-library"><span class="header-link" style="z-index: 9999999795">&nbsp;</span></a>The Library</h3><p>The library is <a href="https://github.com/dougvk/ens-registrar3/blob/master/lib/ens_registrar.js">lib/ens_registrar.js</a>. Let&#39;s take a look at the constructor:</p>
-<pre><code class="lang-javascript">...
-constructor (AuctionRegistrar, Deed, registrarAddress, provider, fromAddress) {
-  this.web3 = new Web3(provider)
+  <main>
+    <section class="BallotinSingleContainer" data-box="truffle-box-uport" data-user="truffle-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="WithDash">react-uport <span class="label label-truffle">
+  <svg class="truffle-logo" width="100%" height="100%" viewBox="655 52 131 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+          <polyline id="path-1" points="0 0.426 130.715 0.426 130.715 128 0 128"></polyline>
+          <polygon id="path-3" points="0 0.426 130.715 0.426 130.715 128 0 128"></polygon>
+      </defs>
+      <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(655.000000, 52.000000)">
+          <!-- Truffle Logo -->
 
-  this.Deed = Deed
-  this.Deed.setProvider(provider)
+          <path d="M100.8574,99.9258 C100.8574,102.0878 82.8804,103.8378 65.6344,103.8378 C48.3884,103.8378 30.4124,102.0878 30.4124,99.9258 C30.4124,97.7658 48.3884,96.0138 65.6344,96.0138 C82.8804,96.0138 100.8574,97.7658 100.8574,99.9258" id="Fill-1" fill="#E6E7E8"></path>
+          <g id="Group-5">
+              <mask id="mask-2" fill="white">
+                  <use xlink:href="#path-1"></use>
+              </mask>
+              <g id="Clip-4"></g>
+              <path d="M117.7813,50.4258 C117.7813,78.0398 95.3943,100.4258 67.7813,100.4258 C51.0803,100.4258 36.2913,92.2378 27.2113,79.6558 C21.2773,71.4358 18.9393,61.3388 18.9403,50.4258 C18.9403,35.2618 24.5313,21.6738 35.1913,12.5048 C43.9433,4.9768 55.3313,0.4258 67.7813,0.4258 C95.3943,0.4258 117.7813,22.8118 117.7813,50.4258" id="Fill-3" fill="#5E464D" mask="url(#mask-2)"></path>
+          </g>
+          <path d="M53.8936,94.4175 C55.9346,95.0525 62.7846,97.0835 63.0116,94.9175 C63.1366,93.7305 59.5436,92.6085 54.6076,90.1675 C47.5826,86.6945 41.1946,82.2065 35.5246,76.8335 C29.1906,70.8335 22.6076,61.2925 21.8576,47.2925 C21.0476,32.1835 26.6756,19.8005 36.1896,11.6595 C24.9566,20.8285 17.7816,34.7795 17.7816,50.4105 C17.7816,61.3545 21.2466,71.4225 27.2106,79.6565 C29.1966,81.4595 31.3236,83.1725 33.4116,84.6675 C39.0236,88.6875 47.1746,92.3275 53.8936,94.4175" id="Fill-6" fill="#FFFFFF"></path>
+          <path d="M118.4668,38.9644 C115.3988,24.5534 105.8718,14.4624 93.1328,7.3374 C102.8738,14.2754 116.5888,29.0214 108.5048,42.0234 C101.6488,52.4484 84.9838,50.4034 75.8768,45.4644 C65.0498,39.5924 51.4838,26.3724 64.8638,13.4504 C73.5248,5.0894 101.1068,14.4644 96.2358,26.9644 C93.4048,34.2294 82.3948,32.6164 77.4388,29.0604 C73.7848,26.4384 70.7128,21.9294 72.3408,17.2754 C72.8628,15.7824 72.7868,13.4654 70.6798,15.1704 C69.1068,16.4434 68.3158,18.5384 68.0398,20.4864 C65.7358,36.7834 94.7688,49.4154 103.3798,33.6494 C107.8508,25.4644 100.6068,13.5894 91.4888,8.7144 C84.6208,5.0424 77.4998,2.4644 68.7578,3.0894 C54.7818,4.0884 43.0478,12.8314 41.5788,27.1154 C40.1228,41.2914 49.5978,54.0844 60.7748,61.7264 C72.5128,69.7534 88.3168,75.0464 102.7678,70.2574 C115.7198,65.9644 121.0708,51.0974 118.4668,38.9644" id="Fill-8" fill="#FFFFFF"></path>
+          <path d="M100.2344,27.9272 C101.6234,18.5872 93.1804,12.1762 85.3844,9.2612 C76.1884,5.8212 64.0464,7.3312 57.3504,14.9472 C52.4384,20.5352 52.7724,28.6592 55.2964,35.2182 C59.1144,45.1422 67.7354,52.3152 77.7704,55.4112 C84.9014,57.6132 93.5214,58.5732 100.7504,56.2472 C111.2874,52.8582 114.7194,41.8662 112.5424,31.7982 C112.0734,29.6302 111.3594,27.4952 110.4064,25.4932 C109.0764,22.6982 104.9984,17.0422 110.6194,23.9312 C111.2334,24.6842 111.7204,25.5142 112.2424,26.3332 C113.4294,28.2002 114.2954,30.3142 114.9784,32.4102 C118.0444,41.8102 115.6374,52.7752 107.1294,58.4472 C100.6124,62.7912 92.3294,63.3062 84.7694,62.2222 C74.6384,60.7702 65.0854,55.8372 58.4524,47.9822 C52.3874,40.8022 48.2554,30.4882 50.7474,21.0642 C52.5704,14.1662 58.1724,9.0192 64.8764,6.8492 C73.3604,4.1012 82.6984,5.3762 90.3444,9.8372 C94.1684,12.0682 97.6714,15.1532 99.6164,19.1932 C100.4904,21.0072 100.9934,23.0192 101.0114,25.0352 C101.0184,25.8482 100.9834,26.6872 100.8214,27.4862 C100.7684,27.7782 100.1484,28.6072 100.2344,27.9272" id="Fill-10" fill="#3FE0C5"></path>
+      </g>
+  </svg>
 
-  AuctionRegistrar.setProvider(provider)
-  AuctionRegistrar.defaults({
-    from: fromAddress,
-    gas: 400000
-  })
-  this.registrar = AuctionRegistrar.at(registrarAddress)
-}
-...
-</code></pre>
-<p>The library constructor requires a few things:</p>
-<ol>
-<li>the contract interfaces (<code>AuctionRegistrar</code> &amp; <code>Deed</code>)</li>
-<li>the address on the network of the registrar</li>
-<li>a web3 provider that will be used to connect to the desired Ethereum network</li>
-<li>and the account address that will provide gas for transactions.</li>
-</ol>
-<p>It&#39;s crucial that the library remain ignorant of the creation of these variables if we want to take advantage of <strong>both</strong> Truffle&#39;s testing pipeline and a CLI. As I see it, there are two ways to use the library:</p>
-<ul>
-<li><strong>Through Truffle</strong>, which manages contract addresses for testing against different networks (e.g. local, private, ropsten). Truffle makes testing our library easy.</li>
-<li>Once we&#39;ve convinced ourselves that the library is well tested and works properly, we&#39;ll want to tell the library where to find our own contracts, provider, and account on the mainnet <strong>through the CLI</strong>.</li>
-</ul>
-<p>Let&#39;s take a look at how the library is used in both cases.</p>
-<h3><a name="use-1-truffle-tests" class="anchor" href="#use-1-truffle-tests"><span class="header-link" style="z-index: 9999999794">&nbsp;</span></a>Use #1: Truffle Tests</h3><p>Here&#39;s <a href="https://github.com/dougvk/ens-registrar3/blob/master/test/ENS.js">test/ENS.js</a>, a Truffle test that uses the library:</p>
-<pre><code class="lang-javascript">import { default as ENSAuctionLib } from &#39;../lib/ens_registrar&#39;
-const Registrar = artifacts.require(&#39;./Registrar.sol&#39;)
-const Deed = artifacts.require(&#39;./Deed.sol&#39;)
-
-contract(&#39;ENS integration&#39;, (accounts) =&gt; {
-  let auctionRegistrar
-
-  before(&#39;set up auction registrar&#39;, (done) =&gt; {
-    Registrar.deployed().then((instance) =&gt; {
-      auctionRegistrar = new ENSAuctionLib(
-          Registrar,
-          Deed,
-          instance.address,
-          web3.currentProvider,
-          accounts[0]
-      )
-    }).then(() =&gt; done())
-  })
-
-  it(&#39;demonstrates that the domain name isn\&#39;t available&#39;, (done) =&gt; {
-    auctionRegistrar.available(&#39;test&#39;)
-      .then((isAvailable) =&gt; {
-        assert.isTrue(isAvailable)
-        done()
-      })
-  })
-...
-}
-</code></pre>
-<p>Truffle injects a global <code>artifacts.require</code> function, a helper for finding the right compiled contract artifacts within the test environment. The test then finds a deployed instance of the Registrar on the test network via <code>Registrar.deployed()</code>. Now, with the addition of <code>accounts</code>, which is passed in via the <code>contract</code> wrapper <a href="http://truffleframework.com/docs/getting_started/javascript-tests">(see here)</a>, we have enough to instantiate the library and use it to test that the domain name <code>&#39;test&#39;</code> is available for auction.</p>
-<h3><a name="use-2-the-cli" class="anchor" href="#use-2-the-cli"><span class="header-link" style="z-index: 9999999793">&nbsp;</span></a>Use #2: the CLI</h3><p>Here&#39;s <a href="https://github.com/dougvk/ens-registrar3/blob/master/index.js">index.js</a>, which provides our command line tool, using the library:</p>
-<pre><code class="lang-javascript">import { default as ENSAuctionLib } from &#39;./lib/ens_registrar&#39;
-import { default as Web3 } from &#39;web3&#39;
-import { default as contract } from &#39;truffle-contract&#39;
-
-const AuctionRegistrar = contract(require(&#39;./build/contracts/Registrar.json&#39;))
-const Deed = contract(require(&#39;./build/contracts/Deed.json&#39;))
-
-export default function (host, port, registrarAddress, fromAddress) {
-  let provider = new Web3.providers.HttpProvider(`http:\/\/${host}:${port}`)
-  return new ENSAuctionLib(
-      AuctionRegistrar,
-      Deed,
-      registrarAddress,
-      provider,
-      fromAddress
-  )
-}
-</code></pre>
-<p>Here I&#39;m using the same library, <code>truffle-contract</code>, that <code>artifacts.require</code> uses under the hood. Because I can&#39;t rely on the Truffle framework within the CLI, I have to include the compiled contract artifacts manually. The rest is passed in through the CLI in <code>bin/ensa.js</code>:</p>
-<pre><code class="lang-javascript">import { default as initializeLib } from &#39;../index&#39;
-...
-let command = argv._[0]
-
-if (command === &#39;bid&#39;) {
-  let { name, host, max, port, registrar, account, secret } = argv
-  let auctionRegistrar = initializeLib(host, port, registrar, account)
-  auctionRegistrar.createBid(name, account, max, secret)
-    .then(() =&gt; console.log(&#39;Created bid for &#39; + name))
-}
-</code></pre>
-<h2><a name="usage" class="anchor" href="#usage"><span class="header-link" style="z-index: 9999999792">&nbsp;</span></a>Usage</h2><p>You can use the line command tool against any network that has an ENS registrar deployed. First, choose a command:</p>
-<pre><code class="lang-shell">$ npm run -s ens
-Usage: bin/ensa.js [command] [options]
-
-Commands:
-  winner  Current winner of bid
-  bid     Place a bid on a domain name
-  reveal  Reveal your bid on a domain name
-
-Options:
-  --help  Show help
-</code></pre>
-<p>Then specify the correct options, including the <code>account</code> and <code>registrar</code>:</p>
-<pre><code class="lang-shell">$ npm run -s ens -- winner -n &#39;NewDomain&#39;
-bin/ensa.js winner
-
-Options:
-  --help           Show help                                           [boolean]
-  --host, -h       HTTP host of Ethereum node               [default: &quot;testrpc&quot;]
-  --port, -p       HTTP port                                   [default: &quot;8545&quot;]
-  --registrar, -r  The address of the registrar              [string] [required]
-  --name, -n       The name you want to register             [string] [required]
-  --account, -a    The address to register the domain name   [string] [required]
-
-Missing required arguments: account, registrar
-</code></pre>
-<h2><a name="recap" class="anchor" href="#recap"><span class="header-link" style="z-index: 9999999791">&nbsp;</span></a>Recap</h2><p>You might be thinking to yourself, &quot;That was a short tutorial&quot;. That&#39;s because it doesn&#39;t need to be much longer: Creating a command line application with Truffle is very similar to creating a web application, but you have to do things a bit differently. For instance, instead of a build process, your command line tool needs to grab your contract artifacts and make them ready for use. Additionally, if you want to take advantage of Truffle&#39;s tests, you need to separate your code into a command line interface and a library &#8211; a good practice anyway &#8211; so you can use Truffle&#39;s testing framework to test your code.</p>
-<h2><a name="stay-tuned" class="anchor" href="#stay-tuned"><span class="header-link" style="z-index: 9999999790">&nbsp;</span></a>Stay Tuned</h2><p>Truffle 3.0 now makes it easier than ever to write <strong>any</strong> Ethereum-enabled application, and not just web apps. Stay tuned for more examples in the future where we explore Desktop and Mobile applications, too. Cheers!</p>
-
+  OFFICIAL
+</span>
+</h1>
       </div>
     </div>
 
-    <footer class="container">
-      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/tutorials/creating-a-cli-with-truffle-3.md">Edit here &rarr;</a></p>
-    </footer>
-  </section>
+    <div class="row">
+      <div class="col-xs-12 col-md-7 BoxReadme" id="BoxReadme">
+        <div class="alert alert-info" role="alert">Loading readme&#8230;</div>
+      </div>
+
+      <div class="col-xs-12 col-md-4 col-md-offset-1">
+        <div class="row Sidebar">
+          <div class="col-xs-12 col-sm-6 col-md-12">
+            <section class="FeatureCard">
+              <div class="FeatureBody withImage">
+                <img class="FeatureImageLg" src="https://github.com/truffle-box/truffle-box-uport/blob/master/box-img-lg.png?raw=true" alt="truffle-box-uport" onerror="javascript:this.src='/images/ballotin/loading-thumb.png'" />
+                <img class="FeatureImageSm" src="https://github.com/truffle-box/truffle-box-uport/blob/master/box-img-sm.png?raw=true" alt="truffle-box-uport" onerror="javascript:this.src='/images/ballotin/loading-banner.png'" />
+              </div>
+
+              <footer class="BoxRundown">
+                <ul class="BoxRundownList">
+                  <li><strong>Tags</strong><br/><hr/></li>
+                  <li>
+                    <ul class="BoxTagsList">
+                      <li>
+                        <a href="#">uport</a>
+                      </li>
+                      <li>
+                        <a href="#">react</a>
+                      </li>
+                      <li>
+                        <a href="#">redux</a>
+                      </li>
+                      <li>
+                        <a href="#">webpack</a>
+                      </li>
+                      <li>
+                        <a href="#">webapp</a>
+                      </li>
+                      <li>
+                        <a href="#">official</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><strong>Created</strong><br/><hr/></li>
+                  <li id="BoxDateCreated">X-X-X</li>
+                  <li><strong>Last Updated</strong><br/><hr/></li>
+                  <li id="BoxDateUpdated">X-X-X</li>
+                  <li><strong>Stars</strong><br/><hr/></li>
+                  <li><a class="github-button" href="https://github.com/truffle-box/truffle-box-react" data-icon="octicon-star" data-show-count="true" data-size="large" aria-label="Star truffle-box/truffle-box-react on GitHub">Star</a></li>
+                </ul>
+              </footer>
+            </section>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-12">
+            <section class="FeatureCard">
+              <div class="FeatureBody">
+                <h3>Installing</h3>
+                <p>Run this command to create a new Truffle project with this box:</p>
+                <p><pre>truffle unbox react-uport</pre></p>
+              </div>
+
+              <footer>
+                <a class="btn btn-primary m-t-1 m-b-1" id="BoxDownloadLink" href="#">Download</a>
+                <a class="btn btn-primary m-t-1 m-b-1" id="BoxGitHubLink" href="#">GitHub</a>
+              </footer>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
+<script src="/scripts/ballotin/marked.min.js"></script>
+<script src="/scripts/ballotin/single-truffle-box.js"></script>
 
+  </main>
+
+  
 <section class="Footer p-t-4 ">
   <div class="container">
     <div class="row">
@@ -420,6 +378,7 @@ Missing required arguments: account, registrar
   </div>
 </section>
 
+</body>
 
     </main>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
