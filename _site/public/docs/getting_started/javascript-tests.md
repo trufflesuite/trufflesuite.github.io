@@ -94,3 +94,7 @@ Using network 'development'.
 # Advanced
 
 Truffle gives you access to Mocha's configuration so you can change how Mocha behaves. See the [project configuration](/docs/advanced/configuration#mocha) section for more details.
+
+### Transaction gas usage
+
+To test for gas usage, [transaction objects](http://truffleframework.com/tutorials/upgrading-from-truffle-2-to-3#contract-abstractions-transaction-result-objects) contain a `receipt` with the `gasUsed` and `cumulativeGasUsed` properties.
