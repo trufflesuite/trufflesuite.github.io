@@ -8779,6 +8779,10 @@ code {
   line-height: 1.75rem;
 }
 
+.LandingPage p.hint, .LandingPage li.hint {
+  font-size: .9em;
+}
+
 .LandingPage ul,
 .LandingPage ol {
   font-family: "Open Sans", "Verdana", Times, serif;
