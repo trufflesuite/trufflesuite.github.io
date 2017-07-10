@@ -1945,6 +1945,7 @@ pre code {
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p {
   margin-right: auto;
@@ -1964,6 +1965,7 @@ pre code {
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4:before,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul:before,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol:before,
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr:before,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code:before,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p:before, .container:after, .Tutorials .MainContent > .container-fluid > .row > h1:after,
 .Tutorials .MainContent > .container-fluid > .row > h2:after,
@@ -1976,6 +1978,7 @@ pre code {
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4:after,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul:after,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol:after,
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr:after,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code:after,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p:after {
   content: " ";
@@ -1993,6 +1996,7 @@ pre code {
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4:after,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul:after,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol:after,
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr:after,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code:after,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p:after {
   clear: both;
@@ -2010,6 +2014,7 @@ pre code {
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
+  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p {
     width: 750px;
@@ -2028,6 +2033,7 @@ pre code {
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
+  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p {
     width: 970px;
@@ -2046,6 +2052,7 @@ pre code {
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
+  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p {
     width: 1170px;
@@ -4974,6 +4981,7 @@ tbody.collapse.in {
 .Tutorials .MainContent ol > .navbar-header, .Tutorials .MainContent pre code > .navbar-header,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul > .navbar-header,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol > .navbar-header,
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr > .navbar-header,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code > .navbar-header,
 .container > .navbar-collapse, .Tutorials .MainContent > .container-fluid > .row > h1 > .navbar-collapse,
 .Tutorials .MainContent > .container-fluid > .row > h2 > .navbar-collapse,
@@ -4983,6 +4991,7 @@ tbody.collapse.in {
 .Tutorials .MainContent ol > .navbar-collapse, .Tutorials .MainContent pre code > .navbar-collapse,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul > .navbar-collapse,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol > .navbar-collapse,
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr > .navbar-collapse,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
@@ -4999,6 +5008,7 @@ tbody.collapse.in {
   .Tutorials .MainContent ol > .navbar-header, .Tutorials .MainContent pre code > .navbar-header,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul > .navbar-header,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol > .navbar-header,
+  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr > .navbar-header,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code > .navbar-header,
   .container > .navbar-collapse, .Tutorials .MainContent > .container-fluid > .row > h1 > .navbar-collapse,
   .Tutorials .MainContent > .container-fluid > .row > h2 > .navbar-collapse,
@@ -5008,6 +5018,7 @@ tbody.collapse.in {
   .Tutorials .MainContent ol > .navbar-collapse, .Tutorials .MainContent pre code > .navbar-collapse,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul > .navbar-collapse,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol > .navbar-collapse,
+  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr > .navbar-collapse,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code > .navbar-collapse,
   .container-fluid > .navbar-header,
   .container-fluid > .navbar-collapse {
@@ -5078,6 +5089,7 @@ tbody.collapse.in {
   .Tutorials .MainContent .navbar > ol .navbar-brand, .Tutorials .MainContent pre .navbar > code .navbar-brand,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row.navbar > ul .navbar-brand,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row.navbar > ol .navbar-brand,
+  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row.navbar > hr .navbar-brand,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .navbar > code .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
@@ -5852,6 +5864,7 @@ a.badge:hover, a.badge:focus {
 .Tutorials .MainContent ol .jumbotron, .Tutorials .MainContent pre code .jumbotron,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul .jumbotron,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol .jumbotron,
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr .jumbotron,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code .jumbotron,
 .container-fluid .jumbotron {
   border-radius: 6px;
@@ -5874,6 +5887,8 @@ a.badge:hover, a.badge:focus {
 .Tutorials:not(.TutorialIndexContainer) .jumbotron .MainContent > .container-fluid > .row > ul, .jumbotron
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
 .Tutorials:not(.TutorialIndexContainer) .jumbotron .MainContent > .container-fluid > .row > ol, .jumbotron
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
+.Tutorials:not(.TutorialIndexContainer) .jumbotron .MainContent > .container-fluid > .row > hr, .jumbotron
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .jumbotron code {
   max-width: 100%;
@@ -5892,6 +5907,7 @@ a.badge:hover, a.badge:focus {
   .Tutorials .MainContent ol .jumbotron, .Tutorials .MainContent pre code .jumbotron,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul .jumbotron,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol .jumbotron,
+  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr .jumbotron,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code .jumbotron,
   .container-fluid .jumbotron {
     padding-left: 60px;
@@ -8804,6 +8820,8 @@ code {
 .Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > ul, .Footer
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
 .Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > ol, .Footer
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
+.Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > hr, .Footer
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .Footer code {
   position: relative;
@@ -8824,6 +8842,8 @@ code {
 .Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > ul .footer-wordmark, .Footer
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol .footer-wordmark,
 .Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > ol .footer-wordmark, .Footer
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr .footer-wordmark,
+.Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > hr .footer-wordmark, .Footer
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code .footer-wordmark,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .Footer code .footer-wordmark {
   width: calc(100% - 30px);
@@ -8848,6 +8868,8 @@ code {
   .Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > ul .footer-wordmark, .Footer
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol .footer-wordmark,
   .Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > ol .footer-wordmark, .Footer
+  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr .footer-wordmark,
+  .Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > hr .footer-wordmark, .Footer
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code .footer-wordmark,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .Footer code .footer-wordmark {
     bottom: -183px;
@@ -8929,6 +8951,8 @@ code {
 .Tutorials:not(.TutorialIndexContainer) .LandingPage header .MainContent > .container-fluid > .row > ul, .LandingPage header
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
 .Tutorials:not(.TutorialIndexContainer) .LandingPage header .MainContent > .container-fluid > .row > ol, .LandingPage header
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
+.Tutorials:not(.TutorialIndexContainer) .LandingPage header .MainContent > .container-fluid > .row > hr, .LandingPage header
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .LandingPage header code {
   position: absolute;
@@ -8981,6 +9005,8 @@ code {
   .Tutorials:not(.TutorialIndexContainer) .LandingPage header .MainContent > .container-fluid > .row > ul, .LandingPage header
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
   .Tutorials:not(.TutorialIndexContainer) .LandingPage header .MainContent > .container-fluid > .row > ol, .LandingPage header
+  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
+  .Tutorials:not(.TutorialIndexContainer) .LandingPage header .MainContent > .container-fluid > .row > hr, .LandingPage header
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
   .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .LandingPage header code {
     position: static;
@@ -9080,7 +9106,7 @@ code {
   overflow: hidden;
 }
 
-.LandingPage .Tutorials .container, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h1, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h2, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h3, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h4, .LandingPage .Tutorials .MainContent > .container-fluid > .row > p, .LandingPage .Tutorials .MainContent h1:first-child, .LandingPage .Tutorials .MainContent ul, .LandingPage .Tutorials .MainContent ol, .LandingPage .Tutorials .MainContent pre code, .LandingPage .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul, .LandingPage .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol, .LandingPage .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code {
+.LandingPage .Tutorials .container, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h1, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h2, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h3, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h4, .LandingPage .Tutorials .MainContent > .container-fluid > .row > p, .LandingPage .Tutorials .MainContent h1:first-child, .LandingPage .Tutorials .MainContent ul, .LandingPage .Tutorials .MainContent ol, .LandingPage .Tutorials .MainContent pre code, .LandingPage .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul, .LandingPage .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol, .LandingPage .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr, .LandingPage .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code {
   position: relative;
   overflow: hidden;
 }
@@ -9154,6 +9180,8 @@ code {
 .Tutorials:not(.TutorialIndexContainer) .LandingPage .Blog .MainContent > .container-fluid > .row > ul, .LandingPage .Blog
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
 .Tutorials:not(.TutorialIndexContainer) .LandingPage .Blog .MainContent > .container-fluid > .row > ol, .LandingPage .Blog
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
+.Tutorials:not(.TutorialIndexContainer) .LandingPage .Blog .MainContent > .container-fluid > .row > hr, .LandingPage .Blog
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .LandingPage .Blog code {
   position: relative;
@@ -9561,6 +9589,7 @@ code {
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p {
   max-width: 600px;
@@ -9569,6 +9598,10 @@ code {
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol {
   padding-left: 35px;
+}
+
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr {
+  max-width: 540px;
 }
 
 .Community .MainContent {
@@ -10104,6 +10137,7 @@ code {
 .Tutorials .MainContent .Ballotin > ol, .Tutorials .MainContent pre .Ballotin > code,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row.Ballotin > ul,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row.Ballotin > ol,
+.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row.Ballotin > hr,
 .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .Ballotin > code {
   padding-bottom: 50px;
 }
