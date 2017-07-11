@@ -166,10 +166,9 @@
 <p>In this tutorial we will be covering:</p>
 <ul>
 <li>Setting up The Development Environment</li>
-<li>Creating a Truffle project</li>
+<li>Creating a Truffle Project Using a Truffle Box</li>
 <li>Writing and Testing a Smart Contract</li>
 <li>Creating a UI to Interact with our Smart Contract</li>
-<li>Deploying to the Ropsten TestNet</li>
 </ul>
 <h2><a name="project-brief" class="anchor" href="#project-brief"><span class="header-link" style="z-index: 9999999741">&nbsp;</span></a>Project Brief</h2><p>Pete Scandlon of Pete&#39;s Pet Shop is interested in using Ethereum as an efficient way to handle their pet adoptions. The store has space for 16 pets at a given time, and they already have a database of pets. As an initial proof on concept, Pete wants to see a Dapp which associates an Ethereum address with a pet to be adopted. The website structure and styling will be supplied for you. We need to write the smart contract and front-end logic for its usage.</p>
 <p>Let&#39;s start by setting up the development environment.</p>
@@ -188,16 +187,21 @@
 <li><code>npm install -g ethereumjs-testrpc@beta</code></li>
 <li><code>npm install -g truffle@beta</code></li>
 </ul>
-<h2><a name="creating-a-truffle-project" class="anchor" href="#creating-a-truffle-project"><span class="header-link" style="z-index: 9999999739">&nbsp;</span></a>Creating a Truffle Project</h2><p>Truffle initializes in the current directory. So first, create a directory in your development folder of choice. We&#39;re calling ours &quot;pet-shop-tutorial&quot;. We&#39;ll initialize a &quot;bare&quot; Truffle project, meaning there will be no example contracts included.</p>
+<h2><a name="creating-a-truffle-project-using-a-truffle-box" class="anchor" href="#creating-a-truffle-project-using-a-truffle-box"><span class="header-link" style="z-index: 9999999739">&nbsp;</span></a>Creating a Truffle Project Using a Truffle Box</h2><p>Truffle initializes in the current directory. So first, create a directory in your development folder of choice. We&#39;re calling ours &quot;pet-shop-tutorial&quot;. We&#39;ll initialize our project with a <a href="/boxes">Truffle Box</a>. Truffle Boxes are helpful boilerplates that contain additional modules and/or scripts to ease development.</p>
 <pre><code class="lang-shell">// Create the directory.
 mkdir pet-shop-tutorial
 
 // Navigate to within the directory.
 cd pet-shop-tutorial
 
-// Initialize Truffle.
-truffle init bare
+// Initialize Truffle with the pet-shop Truffle Box.
+truffle unbox pet-shop
 </code></pre>
+<p></code></p>
+<p class="alert alert-info" style="margin-top: -2rem; margin-bottom: 3rem;">
+  <strong>NOTE</strong>: Truffle can be initialized a few different ways. Another useful initialization command is <code>truffle init bare</code>, which creates an empty Truffle project with no example contracts included.
+</p>
+
 <h3><a name="directory-structure" class="anchor" href="#directory-structure"><span class="header-link" style="z-index: 9999999738">&nbsp;</span></a>Directory Structure</h3><p>The default truffle directory structure looks like the following:</p>
 <ul>
 <li>/contracts: Contains the Solidity source files for our smart contracts. There is an important contract in here called <strong>Migrations.sol</strong>, which we&#39;ll talk about later. Be sure not to delete this file!</li>
@@ -457,10 +461,8 @@ web3.eth.getAccounts(function(error, accounts) {
 </div>
 
 <p>Now that MetaMask is configured, we can start our web server and actually use the Dapp.</p>
-<h3><a name="installing-and-configuring-lite-server" class="anchor" href="#installing-and-configuring-lite-server"><span class="header-link" style="z-index: 9999999718">&nbsp;</span></a>Installing and Configuring lite-server</h3><p>We&#39;re going to use the <code>lite-server</code> library to serve our static files. Since it&#39;s an NPM package, we&#39;ll need to initialize NPM in our project.</p>
-<p>In the project&#39;s root directory, run <code>npm init</code>. It will ask you some questions about the project, but for now let&#39;s accept all the defaults by pressing Enter at each prompt (you can later change them if necessary).</p>
-<p>With NPM initialized, run <code>npm install lite-server --save-dev</code>. This installs <code>lite-server</code> as a development dependency. For production we&#39;ll be deploying our Dapp to a real server, so there&#39;s no need for <code>lite-server</code> in that environment.</p>
-<p>Next, create a file called <code>bs-config.json</code> in the project&#39;s root directory with the following contents:</p>
+<h3><a name="installing-and-configuring-lite-server" class="anchor" href="#installing-and-configuring-lite-server"><span class="header-link" style="z-index: 9999999718">&nbsp;</span></a>Installing and Configuring lite-server</h3><p>We&#39;re using the <code>lite-server</code> library to serve our static files. This already came with the box, but let&#39;s take a look at how it works.</p>
+<p>Notice the file <code>bs-config.json</code> in the project&#39;s root directory with the following contents:</p>
 <pre><code class="lang-javascript">{
   &quot;server&quot;: {
     &quot;baseDir&quot;: [&quot;./src&quot;, &quot;./build/contracts&quot;]
@@ -468,7 +470,7 @@ web3.eth.getAccounts(function(error, accounts) {
 }
 </code></pre>
 <p>This tells <code>lite-server</code> which files to include in our base directory. We add the <code>./src</code> directory for our website files and <code>./build/contracts</code> directory for the contract artifacts. The dot preceding the slash means &quot;start looking for this in the current directory.&quot;</p>
-<p>Finally, edit the <code>scripts</code> object in the <code>package.json</code> file in the project&#39;s root directory with the following contents:</p>
+<p>We&#39;ve also added a dev command to the <code>scripts</code> object in the <code>package.json</code> file in the project&#39;s root directory. The <code>scripts</code> object allows us to alias console commands to a single npm command. In this case we&#39;re just doing a single command, but it&#39;s possible to have more complex configurations. Here&#39;s what yours should look like:</p>
 <pre><code class="lang-javascript">&quot;scripts&quot;: {
   &quot;dev&quot;: &quot;lite-server&quot;,
   &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
@@ -478,14 +480,14 @@ web3.eth.getAccounts(function(error, accounts) {
 <h3><a name="using-the-dapp" class="anchor" href="#using-the-dapp"><span class="header-link" style="z-index: 9999999717">&nbsp;</span></a>Using the Dapp</h3><p>Run the command <code>npm run dev</code>. The dev server will launch and automatically open a new browser tab containing your Dapp!</p>
 <p>Now, simply click the adopt button on the pet of your choice. You&#39;ll be prompted to approve the transaction by MetaMask. Do so, and you&#39;ll see the button change to &quot;Pending&#8230;&quot; and become disabled, just as we specified.</p>
 <div class="text-center container">
-  <img src="/tutorials/images/pet-shop/adoption-1.jpeg" alt="MetaMask Account">
+  <img src="/tutorials/images/pet-shop/adoption1.jpeg" alt="Pet Shop Adoption Step 1">
   <p class="caption">After clicking an Adopt button, MetaMask prompts you to review and accept the transaction.</p>
 </div>
 
 <div class="text-center container">
-  <img src="/tutorials/images/pet-shop/adoption-2.jpeg" alt="MetaMask Account">
-  <p class="caption">Once the transaction completes, you&#39;ll see the button change to Pending&#8230;</p>
-  <br/>
+  <img src="/tutorials/images/pet-shop/adoption2.jpeg" alt="Pet Shop Adoption Step 2">
+  <p class="caption">Once the transaction completes, you&#39;ll see the button change to Pending&#8230; and a transaction will appear in your MetaMask account.</p>
+  <br/><br/>
 </div>
 
 <p><strong>CONGRATULATIONS!</strong> You took a huge first step to becoming a full-fledged Dapp developer. For developing locally, you have all the tools you need to start making more advanced Dapps. If you&#39;d like to make your Dapp live for others to use, stay tuned for our next tutorial on deploying to the Ropsten testnet.</p>
