@@ -224,11 +224,11 @@
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
           <p>Migrations are Javascript files that help you deploy contracts to the Ethereum network. These files are responsible for staging your deployment tasks, and they&#39;re written under the assumption that your deployment needs will change over time. As your project evolves, you&#39;ll create new migration scripts to further this evolution on the blockchain. A history of previously run migrations is recorded on-chain through a special <code>Migrations</code> contract, detailed below.</p>
-<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999900">&nbsp;</span></a>Command</h1><p>To run your migrations, run the following:</p>
+<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999918">&nbsp;</span></a>Command</h1><p>To run your migrations, run the following:</p>
 <pre><code class="lang-none">$ truffle migrate
 </code></pre>
 <p>This will run all migrations located within your project&#39;s <code>migrations</code> directory. At their simplest, migrations are simply a set of managed deployment scripts. If your migrations were previously run successfully, <code>truffle migrate</code> will start execution from the last migration that was ran, running only newly created migrations. If no new migrations exists, <code>truffle migrate</code> won&#39;t perform any action at all. You can use the <code>--reset</code> option to run all your migrations from the beginning. For local testing make sure to have <a href="https://github.com/ethereumjs/testrpc">TestRPC</a> installed and running before running <code>migrate</code>.</p>
-<h1><a name="migration-files" class="anchor" href="#migration-files"><span class="header-link" style="z-index: 9999999899">&nbsp;</span></a>Migration Files</h1><p>A simple migration file looks like this:</p>
+<h1><a name="migration-files" class="anchor" href="#migration-files"><span class="header-link" style="z-index: 9999999917">&nbsp;</span></a>Migration Files</h1><p>A simple migration file looks like this:</p>
 <p>Filename: 4_example_migration.js</p>
 <pre><code class="lang-javascript">var MyContract = artifacts.require(&quot;MyContract&quot;);
 
@@ -238,7 +238,7 @@ module.exports = function(deployer) {
 };
 </code></pre>
 <p>Note that the filename is prefixed with a number and is suffixed by a description. The numbered prefix is required in order to record whether the migration ran successfully. The suffix is purely for human readability and comprehension.</p>
-<h3><a name="artifacts-require-" class="anchor" href="#artifacts-require-"><span class="header-link" style="z-index: 9999999898">&nbsp;</span></a>artifacts.require()</h3><p>At the beginning of the migration, we tell Truffle which contracts we&#39;d like to interact with via the <code>artifacts.require()</code> method. This method is similar to Node&#39;s <code>require</code>, but in our case it specifically returns a contract abstraction that we can use within the rest of our deployment script. The name specified <em>does not</em> have to match the filename of your contract source files. Instead, it should match the name of the contract definition within that source file. Consider this example where two contracts are specified within the same source file:</p>
+<h3><a name="artifacts-require-" class="anchor" href="#artifacts-require-"><span class="header-link" style="z-index: 9999999916">&nbsp;</span></a>artifacts.require()</h3><p>At the beginning of the migration, we tell Truffle which contracts we&#39;d like to interact with via the <code>artifacts.require()</code> method. This method is similar to Node&#39;s <code>require</code>, but in our case it specifically returns a contract abstraction that we can use within the rest of our deployment script. The name specified <em>does not</em> have to match the filename of your contract source files. Instead, it should match the name of the contract definition within that source file. Consider this example where two contracts are specified within the same source file:</p>
 <p>Filename: <code>./contracts/Contracts.sol</code></p>
 <pre><code class="lang-javascript">
 contract ContractOne {
@@ -251,9 +251,9 @@ contract ContractTwo {
 </code></pre>
 <p>To use only <code>ContractTwo</code>, your <code>artifacts.require()</code> statement would look like this:</p>
 <pre><code>var ContractTwo = artifacts.require(&quot;ContractTwo&quot;);
-</code></pre><h3><a name="module-exports" class="anchor" href="#module-exports"><span class="header-link" style="z-index: 9999999897">&nbsp;</span></a>module.exports</h3><p>All migrations must export a function via the <code>module.exports</code> syntax. The function exported by each migration should accept a <code>deployer</code> object as its first parameter. This object aides in deployment by both providing a clear syntax for deploying smart contracts as well as performing some of deployment&#39;s more mundane duties, such as saving deployed artifacts for later use. The <code>deployer</code> object is your main interface for staging deployment tasks, and its API is described at the bottom of this page.</p>
+</code></pre><h3><a name="module-exports" class="anchor" href="#module-exports"><span class="header-link" style="z-index: 9999999915">&nbsp;</span></a>module.exports</h3><p>All migrations must export a function via the <code>module.exports</code> syntax. The function exported by each migration should accept a <code>deployer</code> object as its first parameter. This object aides in deployment by both providing a clear syntax for deploying smart contracts as well as performing some of deployment&#39;s more mundane duties, such as saving deployed artifacts for later use. The <code>deployer</code> object is your main interface for staging deployment tasks, and its API is described at the bottom of this page.</p>
 <p>Your migration function can accept other parameters as well. See the examples below.</p>
-<h1><a name="initial-migration" class="anchor" href="#initial-migration"><span class="header-link" style="z-index: 9999999896">&nbsp;</span></a>Initial Migration</h1><p>Truffle requires you to have a Migrations contract in order to use the Migrations feature. This contract must contain a specific interface, but you&#39;re free to edit this contract at will. For most projects, this contract will be deployed initially as the first migration and won&#39;t be updated again. You will also receive this contract by default when creating a new project with <code>truffle init</code>.</p>
+<h1><a name="initial-migration" class="anchor" href="#initial-migration"><span class="header-link" style="z-index: 9999999914">&nbsp;</span></a>Initial Migration</h1><p>Truffle requires you to have a Migrations contract in order to use the Migrations feature. This contract must contain a specific interface, but you&#39;re free to edit this contract at will. For most projects, this contract will be deployed initially as the first migration and won&#39;t be updated again. You will also receive this contract by default when creating a new project with <code>truffle init</code>.</p>
 <p>Filename: contracts/Migrations.sol</p>
 <pre><code>pragma solidity ^0.4.8;
 
@@ -291,7 +291,7 @@ module.exports = function(deployer) {
 };
 </code></pre>
 <p>From here, you can create new migrations with increasing numbered prefixes to deploy other contracts and perform further deployment steps.</p>
-<h1><a name="deployer" class="anchor" href="#deployer"><span class="header-link" style="z-index: 9999999895">&nbsp;</span></a>Deployer</h1><p>Your migration files will use the deployer to stage deployment tasks. As such, you can write deployment tasks synchronously and they&#39;ll be executed in the correct order:</p>
+<h1><a name="deployer" class="anchor" href="#deployer"><span class="header-link" style="z-index: 9999999913">&nbsp;</span></a>Deployer</h1><p>Your migration files will use the deployer to stage deployment tasks. As such, you can write deployment tasks synchronously and they&#39;ll be executed in the correct order:</p>
 <pre><code class="lang-javascript">// Stage deploying A before B
 deployer.deploy(A);
 deployer.deploy(B);
@@ -303,7 +303,7 @@ deployer.deploy(A).then(function() {
 });
 </code></pre>
 <p>It is possible to write your deployment as a single promise chain if you find that syntax to be more clear. The deployer API is discussed at the bottom of this page.</p>
-<h1><a name="network-considerations" class="anchor" href="#network-considerations"><span class="header-link" style="z-index: 9999999894">&nbsp;</span></a>Network Considerations</h1><p>It is possible to run deployment steps conditionally based on the network being deployed to. This is an advanced feature, so see the <a href="/docs/advanced/networks">Networks</a> section first before continuing.</p>
+<h1><a name="network-considerations" class="anchor" href="#network-considerations"><span class="header-link" style="z-index: 9999999912">&nbsp;</span></a>Network Considerations</h1><p>It is possible to run deployment steps conditionally based on the network being deployed to. This is an advanced feature, so see the <a href="/docs/advanced/networks">Networks</a> section first before continuing.</p>
 <p>To conditionally stage deployment steps, write your migrations so that they accept a second parameter, called <code>network</code>. Example:</p>
 <pre><code class="lang-javascript">module.exports = function(deployer, network) {
   if (network != &quot;live&quot;) {
@@ -313,13 +313,13 @@ deployer.deploy(A).then(function() {
   }
 }
 </code></pre>
-<h1><a name="available-accounts" class="anchor" href="#available-accounts"><span class="header-link" style="z-index: 9999999893">&nbsp;</span></a>Available Accounts</h1><p>Migrations are also passed the list of accounts provided to you by your Ethereum client and web3 provider, for you to use during your deployments. This is the exact same list of accounts returned from <code>web3.eth.getAccounts()</code>.</p>
+<h1><a name="available-accounts" class="anchor" href="#available-accounts"><span class="header-link" style="z-index: 9999999911">&nbsp;</span></a>Available Accounts</h1><p>Migrations are also passed the list of accounts provided to you by your Ethereum client and web3 provider, for you to use during your deployments. This is the exact same list of accounts returned from <code>web3.eth.getAccounts()</code>.</p>
 <pre><code class="lang-javascript">module.exports = function(deployer, network, accounts) {
   // Use the accounts within your migrations.
 }
 </code></pre>
-<h1><a name="deployer-api" class="anchor" href="#deployer-api"><span class="header-link" style="z-index: 9999999892">&nbsp;</span></a>Deployer API</h1><p>The deployer contains many functions available to simplify your migrations.</p>
-<h3><a name="deployer-deploy-contract-args-options-" class="anchor" href="#deployer-deploy-contract-args-options-"><span class="header-link" style="z-index: 9999999891">&nbsp;</span></a>deployer.deploy(contract, args&#8230;, options)</h3><p>Deploy a specific contract, specified by the contract object, with optional constructor arguments. This is useful for singleton contracts, such that only one instance of this contract exists for your dapp. This will set the address of the contract after deployment (i.e., <code>Contract.address</code> will equal the newly deployed address), and it will override any previous address stored.</p>
+<h1><a name="deployer-api" class="anchor" href="#deployer-api"><span class="header-link" style="z-index: 9999999910">&nbsp;</span></a>Deployer API</h1><p>The deployer contains many functions available to simplify your migrations.</p>
+<h3><a name="deployer-deploy-contract-args-options-" class="anchor" href="#deployer-deploy-contract-args-options-"><span class="header-link" style="z-index: 9999999909">&nbsp;</span></a>deployer.deploy(contract, args&#8230;, options)</h3><p>Deploy a specific contract, specified by the contract object, with optional constructor arguments. This is useful for singleton contracts, such that only one instance of this contract exists for your dapp. This will set the address of the contract after deployment (i.e., <code>Contract.address</code> will equal the newly deployed address), and it will override any previous address stored.</p>
 <p>You can optionally pass an array of contracts, or an array of arrays, to speed up deployment of multiple contracts. Additionally, the last argument is an optional object that observes a single key, <code>overwrite</code>. If <code>overwrite</code> is set to <code>false</code>, the deployer won&#39;t deploy this contract if one has already been deployed. This is useful for certain circumstances where a contract address is provided by an external dependency.</p>
 <p>Note that you will need to deploy and link any libraries your contracts depend on first before calling <code>deploy</code>. See the <code>link</code> function below for more details.</p>
 <p>Examples:</p>
@@ -347,7 +347,7 @@ deployer.deploy([
 // a bunch of conditionals, we can simply use the `overwrite` key.
 deployer.deploy(SomeDependency, {overwrite: false});
 </code></pre>
-<h3><a name="deployer-link-library-destinations-" class="anchor" href="#deployer-link-library-destinations-"><span class="header-link" style="z-index: 9999999890">&nbsp;</span></a>deployer.link(library, destinations)</h3><p>Link an already-deployed library to a contract or multiple contracts. <code>destinations</code> can be a single contract or an array of multiple contracts. If any contract within the destination doesn&#39;t rely on the library being linked, the deployer will ignore that contract.</p>
+<h3><a name="deployer-link-library-destinations-" class="anchor" href="#deployer-link-library-destinations-"><span class="header-link" style="z-index: 9999999908">&nbsp;</span></a>deployer.link(library, destinations)</h3><p>Link an already-deployed library to a contract or multiple contracts. <code>destinations</code> can be a single contract or an array of multiple contracts. If any contract within the destination doesn&#39;t rely on the library being linked, the deployer will ignore that contract.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">// Deploy library LibA, then link LibA to contract B, then deploy B.
 deployer.deploy(LibA);
@@ -357,7 +357,7 @@ deployer.deploy(B);
 // Link LibA to many contracts
 deployer.link(LibA, [B, C, D]);
 </code></pre>
-<h3><a name="deployer-then-function-" class="anchor" href="#deployer-then-function-"><span class="header-link" style="z-index: 9999999889">&nbsp;</span></a>deployer.then(function() {&#8230;})</h3><p>Just like a promise, run an arbitrary deployment step. Use this to call specific contract functions during your migration to add, edit and reorganize contract data.</p>
+<h3><a name="deployer-then-function-" class="anchor" href="#deployer-then-function-"><span class="header-link" style="z-index: 9999999907">&nbsp;</span></a>deployer.then(function() {&#8230;})</h3><p>Just like a promise, run an arbitrary deployment step. Use this to call specific contract functions during your migration to add, edit and reorganize contract data.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">var a, b;
 deployer.then(function() {
