@@ -157,106 +157,30 @@
   <section class="MainContent">
     <div class="container-fluid">
       <div class="row">
-        <h1><a name="using-infura-or-any-custom-provider-" class="anchor" href="#using-infura-or-any-custom-provider-"><span class="header-link" style="z-index: 9999999705">&nbsp;</span></a>Using Infura (or any custom provider)</h1><p><a href="https://infura.io/">Infura</a> is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet. For security reasons Infura does not manage users&#39; private keys, which means they cannot sign transactions on your behalf (or your users&#39; behalf). Similarly, Truffle doesn&#39;t intuitively know how to sign your transactions &#8211; it usually hands that task over to the Ethereum node &#8211; so if you&#39;d like to deploy your contracts using Infura, you must first tell Truffle how you&#39;d like these transactions signed.</p>
-<p>Fortunately libraries can help us along. In this example we&#39;ll use an <a href="https://en.bitcoin.it/wiki/Deterministic_wallet">hd wallet mnemonic</a> to generate our list of wallets, and we&#39;ll use the <a href="https://github.com/MetaMask/provider-engine">web3-provider-engine</a> to provide us with built-in signing functionality.</p>
-<h3><a name="getting-started" class="anchor" href="#getting-started"><span class="header-link" style="z-index: 9999999704">&nbsp;</span></a>Getting Started</h3><p>First install the required dependencies:</p>
-<pre><code>$ npm install ethereumjs-wallet bip39 web3-provider-engine web3
-</code></pre><p>We recommend you run the above command with the <code>--save</code> flag to save this configuration in your project&#39;s <code>package.json</code> file.</p>
-<h3><a name="editing-your-project-39-s-configuration" class="anchor" href="#editing-your-project-39-s-configuration"><span class="header-link" style="z-index: 9999999703">&nbsp;</span></a>Editing Your Project&#39;s Configuration</h3><p>We can use your project&#39;s <code>truffle.js</code> configuration file to tell Truffle how to sign our transactions. To start, we should first require all of our dependencies used for signing transactions:</p>
-<pre><code class="lang-javascript">var bip39 = require(&quot;bip39&quot;);
-var hdkey = require(&#39;ethereumjs-wallet/hdkey&#39;);
-var ProviderEngine = require(&quot;web3-provider-engine&quot;);
-var WalletSubprovider = require(&#39;web3-provider-engine/subproviders/wallet.js&#39;);
-var Web3Subprovider = require(&quot;web3-provider-engine/subproviders/web3.js&quot;);
-var Web3 = require(&quot;web3&quot;);
-</code></pre>
-<p>These dependencies are used for the following things:</p>
+        <h1><a name="learn-ethereum-the-fun-way-with-our-pet-shop-tutorial" class="anchor" href="#learn-ethereum-the-fun-way-with-our-pet-shop-tutorial"><span class="header-link" style="z-index: 9999993797">&nbsp;</span></a>Learn Ethereum The Fun Way with our Pet Shop Tutorial</h1><p>Here at Truffle we want to make Ethereum development accessible to developers of all stripes. To that end, today we&#39;re releasing a new tutorial called <a href="/tutorials/pet-shop">Pet Shop</a>. It covers the entire local development process, start to finish. For added fun, we&#39;ve tied the whole thing together within the narrative of creating a pet adoption dapp for a local pet shop owner.</p>
+<p>Here&#39;s a preview of what&#39;s covered:</p>
 <ul>
-<li><code>bip39</code>: Used to create a seed from hd wallet mnemonics (more on that later).</li>
-<li><code>hdkey</code>: Used to derive addresses from seeds using complex math.</li>
-<li><code>ProviderEngine</code>: The basic framework that will be used to wrangle all transactions that need to be signed.</li>
-<li><code>WalletSubprovider</code>: Part of the provider engine framework that will handle wallet signing.</li>
-<li><code>Web3Subprovider</code>: Part of the provider engine framework that handles everything <em>other than</em> transaction signing.</li>
-<li><code>Web3</code>: What we used to communicate with the Ethereum network. Here, we&#39;re using it solely to create a provider.</li>
+<li>Setting up The Development Environment</li>
+<li>Creating a Truffle project</li>
+<li>Writing and Testing a Smart Contract</li>
+<li>Creating a UI to Interact with our Smart Contract</li>
 </ul>
-<p>After setting up are dependencies, we&#39;ll then need to create an hd wallet from a mnemonic. A mnemonic is a twelve word string that represents a secure random seed (warning: don&#39;t just create a mnemonic yourself; use the bip39 library to do this if you don&#39;t have one). From this seed we can create an unlimited number of Ethereum addresses and private keys. Because this is a seed, we can always use this mnemonic to find those addresses again.</p>
-<pre><code class="lang-javascript">// Get our mnemonic and create an hdwallet
-var mnemonic = &quot;couch solve unique spirit wine fine occur rhythm foot feature glory away&quot;;
-var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
-</code></pre>
-<p>From here we can use the hdwallet to derive the first account. We do so using something called an &quot;hd path&quot;, which is a way of telling the complex mathematics what we&#39;re attempting to derive. The most important bit is when we add &quot;0&quot; on the end of the hd path. This means we want to find the first account that we can derive from this hd wallet. It&#39;s zero based, so if we wanted the second address we&#39;d derive <code>wallet_hdpath + &quot;1&quot;</code>, and for the third address <code>wallet_hdpath + &quot;2&quot;</code>, etc.</p>
-<pre><code class="lang-javascript">// Get the first account using the standard hd path.
-var wallet_hdpath = &quot;m/44&#39;/60&#39;/0&#39;/0/&quot;;
-var wallet = hdwallet.derivePath(wallet_hdpath + &quot;0&quot;).getWallet();
-var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
-</code></pre>
-<p>Next, we need to set up the Provider Engine, telling it that we&#39;d like to use our wallet to sign transactions, and use the ropsten network on infura for everything else:</p>
-<pre><code class="lang-javascript">var providerUrl = &quot;https://testnet.infura.io&quot;;
-var engine = new ProviderEngine();
-engine.addProvider(new WalletSubprovider(wallet, {}));
-engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
-engine.start(); // Required by the provider engine.
-</code></pre>
-<p>Finally, we want to export our Truffle configuration. Here we use this wallet only when we want to deploy to the ropsten network:</p>
-<pre><code class="lang-javascript">module.exports = {
-  networks: {
-    &quot;ropsten&quot;: {
-      network_id: 3,    // Official ropsten network id
-      provider: engine, // Use our custom provider
-      from: address     // Use the address we derived
-    }
-  },
-  rpc: {
-    // Use the default host and port when not using ropsten
-    host: &quot;localhost&quot;,
-    port: 8545
-  }
-};
-</code></pre>
-<h3><a name="discussion" class="anchor" href="#discussion"><span class="header-link" style="z-index: 9999999702">&nbsp;</span></a>Discussion</h3><p>In general, this is a lot of work in order to use an hd wallet with Truffle. This is a very early feature, and we&#39;d highly encourage anyone to create a new library that encapsulates the above code.</p>
-<h3><a name="full-code" class="anchor" href="#full-code"><span class="header-link" style="z-index: 9999999701">&nbsp;</span></a>Full Code</h3><pre><code class="lang-javascript">var bip39 = require(&quot;bip39&quot;);
-var hdkey = require(&#39;ethereumjs-wallet/hdkey&#39;);
-var ProviderEngine = require(&quot;web3-provider-engine&quot;);
-var WalletSubprovider = require(&#39;web3-provider-engine/subproviders/wallet.js&#39;);
-var Web3Subprovider = require(&quot;web3-provider-engine/subproviders/web3.js&quot;);
-var Web3 = require(&quot;web3&quot;);
+<p>By then end of the tutorial you&#39;ll have a shiny new dapp with which you can reserve pets for adoption.</p>
+<div class="text-center container">
+  <img src="/blog/images/pet-shop-announcement/pet-shop-preview.jpeg" alt="The Completed Pet Shop Dapp">
+  <p class="caption">The completed dapp.</p></br></br>
+</div>
 
-// Get our mnemonic and create an hdwallet
-var mnemonic = &quot;couch solve unique spirit wine fine occur rhythm foot feature glory away&quot;;
-var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
-
-// Get the first account using the standard hd path.
-var wallet_hdpath = &quot;m/44&#39;/60&#39;/0&#39;/0/&quot;;
-var wallet = hdwallet.derivePath(wallet_hdpath + &quot;0&quot;).getWallet();
-var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
-
-var providerUrl = &quot;https://testnet.infura.io&quot;;
-var engine = new ProviderEngine();
-engine.addProvider(new WalletSubprovider(wallet, {}));
-engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
-engine.start(); // Required by the provider engine.
-
-module.exports = {
-  networks: {
-    &quot;ropsten&quot;: {
-      network_id: 3,    // Official ropsten network id
-      provider: engine, // Use our custom provider
-      from: address     // Use the address we derived
-    }
-  },
-  rpc: {
-    // Use the default host and port when not using ropsten
-    host: &quot;localhost&quot;,
-    port: 8545
-  }
-};
-</code></pre>
+<p>In the future we&#39;ll be building on this tutorial with others such as deploying to live testnets and additional, more advanced functionality. We hope you enjoy and thank everyone for your support!</p>
+<p>Love it? Got stuck? We would love to hear from you. Don&#39;t hesitate to let us know about your experience with the Pet Shop tutorial at the <a href="http://gitter.im/Consensys/truffle">Truffle Gitter</a>.</p>
+<p>Cheers!</p>
+<p>&#8211; Josh &amp; the Truffle Team</p>
 
       </div>
     </div>
 
     <footer class="container">
-      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/tutorials/using-infura-custom-provider.md">Edit here &rarr;</a></p>
+      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/blog/pet-shop-announcement2.md">Edit here &rarr;</a></p>
     </footer>
   </section>
 </section>
