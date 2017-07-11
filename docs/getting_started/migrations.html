@@ -306,7 +306,7 @@ deployer.deploy(A).then(function() {
 <h1><a name="network-considerations" class="anchor" href="#network-considerations"><span class="header-link" style="z-index: 9999999912">&nbsp;</span></a>Network Considerations</h1><p>It is possible to run deployment steps conditionally based on the network being deployed to. This is an advanced feature, so see the <a href="/docs/advanced/networks">Networks</a> section first before continuing.</p>
 <p>To conditionally stage deployment steps, write your migrations so that they accept a second parameter, called <code>network</code>. Example:</p>
 <pre><code class="lang-javascript">module.exports = function(deployer, network) {
-  if (network != &quot;live&quot;) {
+  if (network == &quot;live&quot;) {
     // Do something specific to the network named &quot;live&quot;.
   } else {
     // Perform a different step otherwise.
