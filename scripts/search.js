@@ -1,1 +1,61 @@
-function getQueryVariable(e){for(var t=window.location.search.substring(1),n=t.split("&"),r=0;r<n.length;r++){var i=n[r].split("=");if(i[0]===e)return decodeURIComponent(i[1].replace(/\+/g,"%20"))}}!function(){function e(e,t){var n=document.getElementById("search-results");if(e.length){for(var r="",i=0;i<e.length;i++){var o=t[e[i].ref];r+='<li><a href="'+o.path+'"><h3>'+o.title+"</h3></a>",r+="<p>"+o.content.substring(0,150)+"...</p></li>"}n.innerHTML=r}else n.innerHTML="<li>No results found</li>"}var t=getQueryVariable("query"),n=document.getElementsByClassName("queryTerm");if(n[0].appendChild(document.createTextNode(t)),t){document.getElementById("search-box").setAttribute("value",t);var r=lunr(function(){this.field("id"),this.field("title",{boost:10}),this.field("content")});for(var i in window.store){r.add({id:i,title:window.store[i].title,content:window.store[i].content});var o=r.search(t);e(o,window.store)}}}();
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split('&');
+
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split('=');
+
+    if (pair[0] === variable) {
+      return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
+    }
+  }
+}
+
+(function() {
+  function displaySearchResults(results, store) {
+    var searchResults = document.getElementById('search-results');
+
+    if (results.length) { // Are there any results?
+      var appendString = '';
+
+      for (var i = 0; i < results.length; i++) {  // Iterate over the results
+        var item = store[results[i].ref];
+        appendString += '<li><a href="' + item.path + '"><h3>' + item.title + '</h3></a>';
+        appendString += '<p>' + item.content.substring(0, 150) + '...</p></li>';
+      }
+
+      searchResults.innerHTML = appendString;
+    } else {
+      searchResults.innerHTML = '<li>No results found</li>';
+    }
+  }
+
+
+  var searchTerm = getQueryVariable('query');
+
+  var queryTermEl = document.getElementsByClassName('queryTerm');
+  queryTermEl[0].appendChild( document.createTextNode(searchTerm) );
+
+  if (searchTerm) {
+    document.getElementById('search-box').setAttribute("value", searchTerm);
+
+    // Initalize lunr with the fields it will be searching on. I've given title
+    // a boost of 10 to indicate matches on this field are more important.
+    var idx = lunr(function () {
+      this.field('id');
+      this.field('title', { boost: 10 });
+      this.field('content');
+    });
+
+    for (var key in window.store) { // Add the data to lunr
+      idx.add({
+        'id': key,
+        'title': window.store[key].title,
+        'content': window.store[key].content
+      });
+
+      var results = idx.search(searchTerm); // Get lunr to perform a search
+      displaySearchResults(results, window.store); // We'll write this in the next section
+    }
+  }
+})();
