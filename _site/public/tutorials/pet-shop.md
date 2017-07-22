@@ -138,8 +138,8 @@ Open a new console window and run the command `testrpc`. This starts a new, loca
 Back in your first console window, run the command `truffle compile`. You should see the following output:
 
 ```shell
+Compiling ./contracts/Adoption.sol...
 Compiling ./contracts/Migrations.sol...
-Compiling ./contracts/PetShop.sol...
 Writing artifacts to ./build/contracts
 ```
 
