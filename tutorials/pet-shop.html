@@ -245,7 +245,7 @@ contract Adoption {
 <p>Open a new console window and run the command <code>testrpc</code>. This starts a new, local blockchain instance powered by EthereumJS TestRPC. Once the TestRPC boots up, you&#39;ll see the current TestRPC version, a list of available accounts and private keys, and a section called HD Wallet. We need to copy the words from the Mnemonic section for use later in our browser.</p>
 <p>Back in your first console window, run the command <code>truffle compile</code>. You should see the following output:</p>
 <pre><code class="lang-shell">Compiling ./contracts/Migrations.sol...
-Compiling ./contracts/PetShop.sol...
+Compiling ./contracts/Adoption.sol...
 Writing artifacts to ./build/contracts
 </code></pre>
 <h3><a name="migration" class="anchor" href="#migration"><span class="header-link" style="z-index: 9999999731">&nbsp;</span></a>Migration</h3><p>Now that we&#39;ve successfully compiled out contracts, it&#39;s time to migrate them to the blockchain! A <strong>migration</strong> is a deployment script meant to alter the state of your application&#39;s contracts, moving it from one state to the next. For the first migration, you might simply be deploying new code. Over time, however, other migrations might move data around or replace a contract with a new one.</p>
@@ -280,7 +280,9 @@ Saving artifacts...
 <p>You can see the migrations being executed in order, followed by the blockchain address of each deployed contract (NOTE: Your addresses will differ). Congratulations! You&#39;ve written your first smart contract and deployed it to a locally running test blockchain. It&#39;s time to interact with our smart contract now to make sure it does what we want.</p>
 <h2><a name="testing-the-smart-contract" class="anchor" href="#testing-the-smart-contract"><span class="header-link" style="z-index: 9999999730">&nbsp;</span></a>Testing the Smart Contract</h2><p>Truffle is very flexible when it comes to smart contract testing. Tests can be written either in JavaScript or Solidity. Today we&#39;ll be writing our tests in Solidity.</p>
 <p>Begin by creating the smart contract TestAdoption.sol in the test directory with the following contents:</p>
-<pre><code class="lang-javascript">import &quot;truffle/Assert.sol&quot;;
+<pre><code class="lang-javascript">pragma solidity ^0.4.11;
+
+import &quot;truffle/Assert.sol&quot;;
 import &quot;truffle/DeployedAddresses.sol&quot;;
 import &quot;../contracts/Adoption.sol&quot;;
 
@@ -364,7 +366,7 @@ if (typeof web3 !== &#39;undefined&#39;) {
 <p>First, we check if there&#39;s a web3 instance already active. Ethereum browsers like <a href="https://github.com/ethereum/mist">Mist</a> or Chrome with the <a href="https://metamask.io/">MetaMask</a> extension will inject their own web3 instances. If an injected web3 instance is present, we get its provider and use it to create our web3 object.</p>
 <p>If no injected web3 instance is present, we create our web3 object based on the TestRPC&#39;s provider. Note this fallback is fine for development environments, but insecure and not suitable for production.</p>
 <h3><a name="instantiating-the-contract" class="anchor" href="#instantiating-the-contract"><span class="header-link" style="z-index: 9999999723">&nbsp;</span></a>Instantiating the Contract</h3><p>Now that we can interact with Ethereum via web3, we need to instantiate our smart contract so web3 knows where to find it and how it works. Truffle has a library to help with this called <code>truffle-contract</code>. It keeps information about our contract in sync with your migrations, so you don&#39;t need to change the contract&#39;s deployed address manually.</p>
-<p>Remove the multi-line comment from initWeb3 and replace it with the following:</p>
+<p>Remove the multi-line comment from <code>initContract</code> and replace it with the following:</p>
 <pre><code class="lang-javascript">$.getJSON(&#39;Adoption.json&#39;, function(data) {
   // Get the necessary contract artifact file and instantiate it with truffle-contract.
   var AdoptionArtifact = data;
