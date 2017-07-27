@@ -10215,6 +10215,7 @@ code {
   background: #FFFFFF;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
+  margin-bottom: 2rem;
 }
 
 .Ballotin .FeatureCard a {
@@ -10311,6 +10312,10 @@ code {
 
 .Ballotin .FeatureCard footer.BoxRundown .BoxRundownList > li:nth-child(odd):not(:first-child) {
   margin-top: 2rem;
+}
+
+.Ballotin .CommunityBoxes .FeatureCard {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 991px) {
