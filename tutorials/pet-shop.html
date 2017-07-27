@@ -182,20 +182,15 @@
 <li><code>npm install -g ethereumjs-testrpc</code></li>
 <li><code>npm install -g truffle</code></li>
 </ul>
-<p><strong>Windows users</strong> should instead install the precompiled beta version:</p>
-<ul>
-<li><code>npm install -g ethereumjs-testrpc@beta</code></li>
-<li><code>npm install -g truffle@beta</code></li>
-</ul>
-<h2><a name="creating-a-truffle-project" class="anchor" href="#creating-a-truffle-project"><span class="header-link" style="z-index: 9999999738">&nbsp;</span></a>Creating a Truffle Project</h2><p>Truffle initializes in the current directory. So first, create a directory in your development folder of choice. We&#39;re calling ours &quot;pet-shop-tutorial&quot;. We&#39;ll initialize a &quot;bare&quot; Truffle project, meaning there will be no example contracts included.</p>
+<h2><a name="creating-a-truffle-project" class="anchor" href="#creating-a-truffle-project"><span class="header-link" style="z-index: 9999999739">&nbsp;</span></a>Creating a Truffle Project</h2><p>Truffle initializes in the current directory. So first, create a directory in your development folder of choice. We&#39;re calling ours &quot;pet-shop-tutorial&quot;. We&#39;ve created a special <a href="/boxes">Truffle Box</a> just for this tutorial, so we&#39;ll get you started with the basic project structure as well as code for the user interface.</p>
 <pre><code class="lang-shell">// Create the directory.
 mkdir pet-shop-tutorial
 
 // Navigate to within the directory.
 cd pet-shop-tutorial
 
-// Initialize Truffle.
-truffle init bare
+// Initialize Truffle with the base pet shop code
+truffle unbox pet-shop
 </code></pre>
 <h3><a name="directory-structure" class="anchor" href="#directory-structure"><span class="header-link" style="z-index: 9999999737">&nbsp;</span></a>Directory Structure</h3><p>The default truffle directory structure looks like the following:</p>
 <ul>
@@ -204,7 +199,8 @@ truffle init bare
 <li>/test: Contains both JavaScript and Solidity tests for our smart contracts.</li>
 <li>truffle.js: Truffle&#39;s configuration file.</li>
 </ul>
-<h2><a name="writing-the-smart-contract" class="anchor" href="#writing-the-smart-contract"><span class="header-link" style="z-index: 9999999736">&nbsp;</span></a>Writing the Smart Contract</h2><p>We&#39;ll start our Dapp by writing the smart contract that acts as its backend logic and storage.</p>
+<p>The box you opened had some extra files and folders in it, but we&#39;ll get to those later.</p>
+<h2><a name="writing-the-smart-contract" class="anchor" href="#writing-the-smart-contract"><span class="header-link" style="z-index: 9999999737">&nbsp;</span></a>Writing the Smart Contract</h2><p>We&#39;ll start our Dapp by writing the smart contract that acts as its backend logic and storage.</p>
 <p>Start by creating a new file Adoption.sol in the /contracts directory with the following contents:</p>
 <pre><code class="lang-javascript">pragma solidity ^0.4.4;
 
@@ -248,7 +244,7 @@ contract Adoption {
 <p>Open a new console window and run the command <code>testrpc</code>. This starts a new, local blockchain instance powered by EthereumJS TestRPC. Once the TestRPC boots up, you&#39;ll see the current TestRPC version, a list of available accounts and private keys, and a section called HD Wallet. We need to copy the words from the Mnemonic section for use later in our browser.</p>
 <p>Back in your first console window, run the command <code>truffle compile</code>. You should see the following output:</p>
 <pre><code class="lang-shell">Compiling ./contracts/Migrations.sol...
-Compiling ./contracts/PetShop.sol...
+Compiling ./contracts/Adoption.sol...
 Writing artifacts to ./build/contracts
 </code></pre>
 <h3><a name="migration" class="anchor" href="#migration"><span class="header-link" style="z-index: 9999999730">&nbsp;</span></a>Migration</h3><p>Now that we&#39;ve successfully compiled out contracts, it&#39;s time to migrate them to the blockchain! A <strong>migration</strong> is a deployment script meant to alter the state of your application&#39;s contracts, moving it from one state to the next. For the first migration, you might simply be deploying new code. Over time, however, other migrations might move data around or replace a contract with a new one.</p>
@@ -283,7 +279,9 @@ Saving artifacts...
 <p>You can see the migrations being executed in order, followed by the blockchain address of each deployed contract (NOTE: Your addresses will differ). Congratulations! You&#39;ve written your first smart contract and deployed it to a locally running test blockchain. It&#39;s time to interact with our smart contract now to make sure it does what we want.</p>
 <h2><a name="testing-the-smart-contract" class="anchor" href="#testing-the-smart-contract"><span class="header-link" style="z-index: 9999999729">&nbsp;</span></a>Testing the Smart Contract</h2><p>Truffle is very flexible when it comes to smart contract testing. Tests can be written either in JavaScript or Solidity. Today we&#39;ll be writing our tests in Solidity.</p>
 <p>Begin by creating the smart contract TestAdoption.sol in the test directory with the following contents:</p>
-<pre><code class="lang-javascript">import &quot;truffle/Assert.sol&quot;;
+<pre><code class="lang-javascript">pragma solidity ^0.4.11;
+
+import &quot;truffle/Assert.sol&quot;;
 import &quot;truffle/DeployedAddresses.sol&quot;;
 import &quot;../contracts/Adoption.sol&quot;;
 
@@ -294,7 +292,7 @@ contract TestAdoption {
 </code></pre>
 <p>We start the contract off with 3 imports:</p>
 <ul>
-<li><code>Assert.sol</code>: gives us various assertions to use in our tests. In testing, an <strong>assertion</strong> checks for things like equality, inequality or emptiness to return a pass/fail boolean from our test. <a href="https://github.com/trufflesuite/truffle/blob/beta/lib/testing/Assert.sol">Here&#39;s a full list of the assertions included with Truffle</a>.</li>
+<li><code>Assert.sol</code>: gives us various assertions to use in our tests. In testing, an <strong>assertion</strong> checks for things like equality, inequality or emptiness to return a pass/fail boolean from our test. <a href="https://github.com/trufflesuite/truffle-core/blob/master/lib/testing/Assert.sol">Here&#39;s a full list of the assertions included with Truffle</a>.</li>
 <li><code>DeployedAddresses.sol</code>: When running tests, Truffle will deploy a fresh instance of the contract being tested to the TestRPC. This smart contract gets the address of the deployed contract.</li>
 <li>The smart contract we want to test (<code>Adoption.sol</code>).</li>
 </ul>
@@ -349,8 +347,8 @@ Compiling truffle/DeployedAddresses.sol...
   3 passing (670ms)
 </code></pre>
 <p>Note your completion times may be different.</p>
-<h2><a name="creating-a-ui-to-interact-with-our-smart-contract" class="anchor" href="#creating-a-ui-to-interact-with-our-smart-contract"><span class="header-link" style="z-index: 9999999724">&nbsp;</span></a>Creating a UI to Interact with our Smart Contract</h2><p>Now that we&#39;ve created the smart contract, deployed it to our local test chain and confirmed we can interact with it via the console, it&#39;s time to create a UI so the world can use this!</p>
-<p>So you don&#39;t have to spend time on layout and styling, we&#39;ve created the HTML, CSS and basic JavaScript for you, <a href="/tutorials/files/pet-shop/pet-shop-static.zip">download it here</a>. Once downloaded, unzip it in your project directory, so the file structure is <code>your-project-folder/src</code>.</p>
+<h2><a name="creating-a-ui-to-interact-with-our-smart-contract" class="anchor" href="#creating-a-ui-to-interact-with-our-smart-contract"><span class="header-link" style="z-index: 9999999725">&nbsp;</span></a>Creating a UI to Interact with our Smart Contract</h2><p>Now that we&#39;ve created the smart contract, deployed it to our local test chain and confirmed we can interact with it via the console, it&#39;s time to create a UI so the world can use this!</p>
+<p>When you unboxed the <code>pet-shop</code> Truffle box at the beginning of this tutorial, you were given code for Pet Shop&#39;s front-end. That code exists within the <code>src</code> directory.</p>
 <p>The front-end does not use a build system (webpack, grunt, etc.) to be as easy to get started as possible. If you&#39;ve worked with any front-end JavaScript before, you&#39;ll feel right at home. The base structure of the App is already there; we&#39;ll be filling in the functions which are unique to Ethereum. This way, you can take this knowledge and apply it to your own front-end setups.</p>
 <h3><a name="instantiating-web3" class="anchor" href="#instantiating-web3"><span class="header-link" style="z-index: 9999999723">&nbsp;</span></a>Instantiating Web3</h3><p>Open the app.js file and have a look around. We set up a global App object to manage our application, load in the pet data in <code>init()</code> and then call the function <code>initWeb3()</code>. Web3 is a JavaScript library for interacting with the Ethereum blockchain. It can retrieve user accounts, send transactions, interact with smart contracts and more. For more information, see <a href="https://github.com/ethereum/web3.js/">the web3 GitHub page</a>.</p>
 <p>Remove the multi-line comment from initWeb3 and replace it with the following:</p>
@@ -366,8 +364,8 @@ if (typeof web3 !== &#39;undefined&#39;) {
 </code></pre>
 <p>First, we check if there&#39;s a web3 instance already active. Ethereum browsers like <a href="https://github.com/ethereum/mist">Mist</a> or Chrome with the <a href="https://metamask.io/">MetaMask</a> extension will inject their own web3 instances. If an injected web3 instance is present, we get its provider and use it to create our web3 object.</p>
 <p>If no injected web3 instance is present, we create our web3 object based on the TestRPC&#39;s provider. Note this fallback is fine for development environments, but insecure and not suitable for production.</p>
-<h3><a name="instantiating-the-contract" class="anchor" href="#instantiating-the-contract"><span class="header-link" style="z-index: 9999999722">&nbsp;</span></a>Instantiating the Contract</h3><p>Now that we can interact with Ethereum via web3, we need to instantiate our smart contract so web3 knows where to find it and how it works. Truffle has a library to help with this called <code>truffle-contract</code>. It keeps information about our contract in sync with your migrations, so you don&#39;t need to change the contract&#39;s deployed address manually.</p>
-<p>Remove the multi-line comment from initWeb3 and replace it with the following:</p>
+<h3><a name="instantiating-the-contract" class="anchor" href="#instantiating-the-contract"><span class="header-link" style="z-index: 9999999723">&nbsp;</span></a>Instantiating the Contract</h3><p>Now that we can interact with Ethereum via web3, we need to instantiate our smart contract so web3 knows where to find it and how it works. Truffle has a library to help with this called <code>truffle-contract</code>. It keeps information about our contract in sync with your migrations, so you don&#39;t need to change the contract&#39;s deployed address manually.</p>
+<p>Remove the multi-line comment from <code>initContract</code> and replace it with the following:</p>
 <pre><code class="lang-javascript">$.getJSON(&#39;Adoption.json&#39;, function(data) {
   // Get the necessary contract artifact file and instantiate it with truffle-contract.
   var AdoptionArtifact = data;
