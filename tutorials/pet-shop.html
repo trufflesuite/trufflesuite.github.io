@@ -221,9 +221,7 @@ contract Adoption {
 <p>We&#39;ve defined a single variable: <code>adopters</code>. <code>adopters</code> is an <strong>array</strong> of Ethereum addresses. Arrays contain one type and can have a fixed or variable length. In this case the type is address and the length is 16. You&#39;ll also notice <code>adopters</code> is public. <strong>Public</strong> variables have automatic getter methods, but in the case of arrays a key is required and will only return a single value. Later, we&#39;ll write a function to return the whole array for use in our UI.</p>
 <h3><a name="your-first-function-adopting-a-pet" class="anchor" href="#your-first-function-adopting-a-pet"><span class="header-link" style="z-index: 9999999735">&nbsp;</span></a>Your First Function: Adopting a Pet</h3><p>Let&#39;s allow users to make adoption requests. Add the following function to the smart contract, after the variables we setup above.</p>
 <pre><code class="lang-javascript">function adopt(uint petId) public returns (uint) {
-  if (petId &lt; 0 || petId &gt; 15) {
-    throw;
-  }
+  require(petId &gt;= 0 &amp;&amp; petId &lt;= 15);
 
   adopters[petId] = msg.sender;
 
