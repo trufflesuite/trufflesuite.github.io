@@ -166,7 +166,7 @@
 <p>In this tutorial we will be covering:</p>
 <ul>
 <li>Setting up The Development Environment</li>
-<li>Creating a Truffle project</li>
+<li>Creating a Truffle Project Using a Truffle Box</li>
 <li>Writing and Testing a Smart Contract</li>
 <li>Creating a UI to Interact with our Smart Contract</li>
 </ul>
@@ -192,7 +192,12 @@ cd pet-shop-tutorial
 // Initialize Truffle with the base pet shop code
 truffle unbox pet-shop
 </code></pre>
-<h3><a name="directory-structure" class="anchor" href="#directory-structure"><span class="header-link" style="z-index: 9999999737">&nbsp;</span></a>Directory Structure</h3><p>The default truffle directory structure looks like the following:</p>
+<p></code></p>
+<p class="alert alert-info" style="margin-top: -2rem; margin-bottom: 3rem;">
+  <strong>NOTE</strong>: Truffle can be initialized a few different ways. Another useful initialization command is <code>truffle init bare</code>, which creates an empty Truffle project with no example contracts included.
+</p>
+
+<h3><a name="directory-structure" class="anchor" href="#directory-structure"><span class="header-link" style="z-index: 9999999738">&nbsp;</span></a>Directory Structure</h3><p>The default truffle directory structure looks like the following:</p>
 <ul>
 <li>/contracts: Contains the Solidity source files for our smart contracts. There is an important contract in here called <strong>Migrations.sol</strong>, which we&#39;ll talk about later. Be sure not to delete this file!</li>
 <li>/migrations: Truffle uses a migration system to handle smart contract deployments. A migration is an additional special smart contract that keeps track of changes.</li>
@@ -465,7 +470,7 @@ web3.eth.getAccounts(function(error, accounts) {
 }
 </code></pre>
 <p>This tells <code>lite-server</code> which files to include in our base directory. We add the <code>./src</code> directory for our website files and <code>./build/contracts</code> directory for the contract artifacts. The dot preceding the slash means &quot;start looking for this in the current directory.&quot;</p>
-<p>Finally, edit the <code>scripts</code> object in the <code>package.json</code> file in the project&#39;s root directory with the following contents:</p>
+<p>We&#39;ve also added a dev command to the <code>scripts</code> object in the <code>package.json</code> file in the project&#39;s root directory. The <code>scripts</code> object allows us to alias console commands to a single npm command. In this case we&#39;re just doing a single command, but it&#39;s possible to have more complex configurations. Here&#39;s what yours should look like:</p>
 <pre><code class="lang-javascript">&quot;scripts&quot;: {
   &quot;dev&quot;: &quot;lite-server&quot;,
   &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
@@ -475,14 +480,14 @@ web3.eth.getAccounts(function(error, accounts) {
 <h3><a name="using-the-dapp" class="anchor" href="#using-the-dapp"><span class="header-link" style="z-index: 9999999716">&nbsp;</span></a>Using the Dapp</h3><p>Run the command <code>npm run dev</code>. The dev server will launch and automatically open a new browser tab containing your Dapp!</p>
 <p>Now, simply click the adopt button on the pet of your choice. You&#39;ll be prompted to approve the transaction by MetaMask. Do so, and you&#39;ll see the button change to &quot;Pending&#8230;&quot; and become disabled, just as we specified.</p>
 <div class="text-center container">
-  <img src="/tutorials/images/pet-shop/adoption-1.jpeg" alt="MetaMask Account">
+  <img src="/tutorials/images/pet-shop/adoption1.jpeg" alt="Pet Shop Adoption Step 1">
   <p class="caption">After clicking an Adopt button, MetaMask prompts you to review and accept the transaction.</p>
 </div>
 
 <div class="text-center container">
-  <img src="/tutorials/images/pet-shop/adoption-2.jpeg" alt="MetaMask Account">
-  <p class="caption">Once the transaction completes, you&#39;ll see the button change to Pending&#8230;</p>
-  <br/>
+  <img src="/tutorials/images/pet-shop/adoption2.jpeg" alt="Pet Shop Adoption Step 2">
+  <p class="caption">Once the transaction completes, you&#39;ll see the button change to Pending&#8230; and a transaction will appear in your MetaMask account.</p>
+  <br/><br/>
 </div>
 
 <p><strong>CONGRATULATIONS!</strong> You took a huge first step to becoming a full-fledged Dapp developer. For developing locally, you have all the tools you need to start making more advanced Dapps. If you&#39;d like to make your Dapp live for others to use, stay tuned for our next tutorial on deploying to the Ropsten testnet.</p>
