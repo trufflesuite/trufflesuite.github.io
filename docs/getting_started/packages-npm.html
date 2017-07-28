@@ -2,7 +2,9 @@
 
 <!doctype html>
 <html lang="en">
-    <head>
+    
+
+  <head>
     <meta charset="utf-8">
   
   
@@ -33,7 +35,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,12 +43,12 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     
     
 
-    <title>TruffleFramework.com | Truffle Framework</title>
+    <title>TruffleFramework.com | Package management via NPM</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -246,7 +248,9 @@ var SimpleNameRegistry = contract(data);
 </code></pre><p>To use these abstractions, see the <a href="/docs/getting_started/contracts">Interacting With Your Contracts</a> section for more details.</p>
 <h3><a name="package-39-s-deployed-addresses" class="anchor" href="#package-39-s-deployed-addresses"><span class="header-link" style="z-index: 9999999891">&nbsp;</span></a>Package&#39;s Deployed Addresses</h3><p>Sometimes you want your contracts to interact with the package&#39;s previously deployed contracts. Since the deployed addresses exist within the package&#39;s <code>.json</code> files, you must perform an extra step to get those addresses into your contracts. To do so, make your contract accept the address of the dependency contract, and then use migrations. The following is an example contract that exists within your project as well as an example migration:</p>
 <p>Contract: MyContract.sol</p>
-<pre><code class="lang-javascript">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
+<pre><code class="lang-javascript">pragma solidity ^0.4.13;
+
+import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
 
 contract MyContract {
   SimpleNameRegistry registry;
@@ -263,7 +267,7 @@ contract MyContract {
 
   // Set the registry if you&#39;re the owner.
   function setRegistry(address addr) {
-    if (msg.sender != owner) throw;
+    require(msg.sender == owner);
 
     registry = SimpleNameRegistry(addr);
   }
