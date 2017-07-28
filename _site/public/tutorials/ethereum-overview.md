@@ -1,6 +1,6 @@
 # Ethereum Overview
 
-You may have heard the terms "blockchain" and "smart contract" floating around, but what do they actually mean? We'll demystify the jargon, show you practical blockchain solutions and give you some direction on how to create them. This is a high level overview covering:
+You may have heard the terms "blockchain" and "smart contract" floating around, but what do they actually mean? We'll demystify the jargon, show you practical blockchain solutions and give you some direction on how to create them. This is a high-level overview covering:
 
 **Blockchain Basics**
 
@@ -66,7 +66,7 @@ On a public blockchain, anyone can read or write data. Reading data is free, but
 
 ### Mining
 
-Each node in the network can optionally take part in a process called **mining**. Every so often, nodes which have opted to be miners compete to solve math problems which secure the contents of a block. A **block** is a bundle of any pending transactions created since the addition of the most recent block in the chain. The winner of the competition creates the next block and receives some cyptocurrency as a reward. This incentivizes nodes to secure the network, preventing too much power from being in the hands of any single miner.
+Each node in the network can optionally take part in a process called **mining**. Every so often, nodes which have opted to be miners compete to solve math problems which secure the contents of a block. A **block** is a bundle of any pending transactions created since the addition of the most recent block in the chain. The winner of the competition creates the next block and receives some cryptocurrency as a reward. This incentivizes nodes to secure the network, preventing too much power from being in the hands of any single miner.
 
 ### Hashing
 
@@ -97,7 +97,7 @@ Here's the whole process visually:
 <div class="row">
   <div class="col-lg-4 col-lg-offset-2">
     ![Mining Step 4](/tutorials/images/ethereum-overview/chain-step4.png)
-    <p>4. The victorious miner creates a new block and receves a reward.</p>
+    <p>4. The victorious miner creates a new block and receives a reward.</p>
   </div>
 
   <div class="col-lg-4">
@@ -117,7 +117,7 @@ Rather than just tracking account balances, Ethereum uses the same methods to ke
 
 **Smart Contracts** are programs running on the EVM. They most closely resemble classes in other programming languages. Smart Contracts can accept and store Ether, data, or a combination of both. Then, using the logic programmed into the contract, it can distribute that Ether to other accounts or even other smart contracts. You can see how complex systems can develop from this flexibility.
 
-The language smart contracts are written in is called **Solidity**. Solidity is statically typed, supports inheritance, libraries and complex user-defined types among other features. It's file extension is ".sol". Solidity's syntax is similar to JavaScript's. We'll go over the basics of Solidity in future tutorials, but you may also want to dive deeper by checking out [the documentation](https://solidity.readthedocs.io/en/develop/).
+The language smart contracts are written in is called **Solidity**. Solidity is statically typed, supports inheritance, libraries and complex user-defined types among other features. Its file extension is ".sol". Solidity's syntax is similar to JavaScript's. We'll go over the basics of Solidity in future tutorials, but you may also want to dive deeper by checking out [the documentation](https://solidity.readthedocs.io/en/develop/).
 
 Here's a smart contract example with Bob and Alice again. This time, they're using an escrow contract (a place to store money until a condition is fulfilled) to store their Ether before the final transaction.
 
