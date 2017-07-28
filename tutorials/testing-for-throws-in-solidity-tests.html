@@ -2,7 +2,9 @@
 
 <!doctype html>
 <html lang="en">
-    <head>
+    
+
+  <head>
     <meta charset="utf-8">
   
   
@@ -33,7 +35,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,12 +43,12 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     
     
 
-    <title>TruffleFramework.com | Truffle Framework</title>
+    <title>TruffleFramework.com | Testing for throws in Solidity Tests</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -157,7 +159,13 @@
   <section class="MainContent">
     <div class="container-fluid">
       <div class="row">
-        <h1><a name="testing-for-throws-in-truffle-solidity-tests" class="anchor" href="#testing-for-throws-in-truffle-solidity-tests"><span class="header-link" style="z-index: 9999999712">&nbsp;</span></a>Testing for Throws in Truffle Solidity Tests</h1><p>By guest writer Simon de la Rouviere</p>
+        <p><em><strong>Note</strong>: This tutorial is written for versions of Solidity prior to v0.4.13.
+It relies on the deprecated <code>throw</code> keyword, now replaced by
+<code>revert()</code>, <code>require()</code>, and <code>assert()</code>. See Solidity documentation for
+<a href="http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require#error-handling-assert-require-revert-and-exceptions">error handling</a>
+for more information.</em></p>
+<hr>
+<h1><a name="testing-for-throws-in-truffle-solidity-tests" class="anchor" href="#testing-for-throws-in-truffle-solidity-tests"><span class="header-link" style="z-index: 9999999712">&nbsp;</span></a>Testing for Throws in Truffle Solidity Tests</h1><p>By guest writer Simon de la Rouviere</p>
 <p>Truffle 3 brings forth Solidity unit testing, which means one can now test contracts in Solidity itself. This is a boon to contract developers, as there are several reasons why it&#39;s useful to have Solidity tests in addition to Truffle’s Javascript tests. For us at <a href="https://ujomusic.com/">Ujo</a>, one of our biggest concerns is testing how contracts interact with each other, rather than just testing their interaction from a web3 perspective, and Solidity tests allow us to do that.</p>
 <p>Though Solidity tests can be quite powerful, they do come with some drawbacks. One of those is testing whether or not a function should <code>throw</code> (without breaking the test!), which I&#39;ll show you how to do right now.</p>
 <h2><a name="diving-in" class="anchor" href="#diving-in"><span class="header-link" style="z-index: 9999999711">&nbsp;</span></a>Diving In</h2><p>In Solidity, when performing a contract call that produces an error, Solidity automatically rethrows, meaning it will bubble that error up to the caller. However, with a <em>raw</em> call, the behavior is different: one can catch the error and decide what to do from there on out. If it throws (fails), it will return <code>false</code>. If it succeeds, it will return <code>true</code>. Thus, the following calls will produce a different result.</p>
@@ -180,7 +188,7 @@ contract ThrowProxy {
 
   function ThrowProxy(address _target) {
     target = _target;
-  }    
+  }
 
   //prime the data using the fallback function.
   function() {

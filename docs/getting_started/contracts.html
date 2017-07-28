@@ -2,7 +2,9 @@
 
 <!doctype html>
 <html lang="en">
-    <head>
+    
+
+  <head>
     <meta charset="utf-8">
   
   
@@ -33,7 +35,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,12 +43,12 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     
     
 
-    <title>TruffleFramework.com | Truffle Framework</title>
+    <title>TruffleFramework.com | Interacting with your contracts</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -240,7 +242,7 @@
 <li>Will expose a return value (hooray!)</li>
 </ul>
 <p>Choosing between a transaction and a call is as simple as deciding whether you want to read data, or write it.</p>
-<h1><a name="introducing-abstractions" class="anchor" href="#introducing-abstractions"><span class="header-link" style="z-index: 9999999936">&nbsp;</span></a>Introducing Abstractions</h1><p>Contract abstractions are the bread and butter of interacting with Ethereum contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> module, and its this contract abstraction that&#39;s described below.</p>
+<h1><a name="introducing-abstractions" class="anchor" href="#introducing-abstractions"><span class="header-link" style="z-index: 9999999936">&nbsp;</span></a>Introducing Abstractions</h1><p>Contract abstractions are the bread and butter of interacting with Ethereum contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> module, and it is this contract abstraction that&#39;s described below.</p>
 <p>In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We&#39;ll use the MetaCoin contract provided for you by default via <code>truffle init</code>.</p>
 <pre><code class="lang-javascript">pragma solidity ^0.4.2;
 

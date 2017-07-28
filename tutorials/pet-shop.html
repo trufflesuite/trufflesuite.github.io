@@ -2,7 +2,9 @@
 
 <!doctype html>
 <html lang="en">
-    <head>
+    
+
+  <head>
     <meta charset="utf-8">
   
   
@@ -33,7 +35,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,12 +43,12 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     
     
 
-    <title>TruffleFramework.com | Truffle Framework</title>
+    <title>TruffleFramework.com | Ethereum Pet Shop -- Your First Dapp</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -161,7 +163,7 @@
   <img src="/tutorials/images/pet-shop/petshop.png" alt="Ethereum Pet Shop">
 </div>
 
-<h1><a name="ethereum-pet-shop" class="anchor" href="#ethereum-pet-shop"><span class="header-link" style="z-index: 9999999741">&nbsp;</span></a>Ethereum Pet Shop</h1><p>This series of tutorials will take you through building your first Dapp&#8211;a tracking system for a pet shop!</p>
+<h1><a name="ethereum-pet-shop" class="anchor" href="#ethereum-pet-shop"><span class="header-link" style="z-index: 9999999741">&nbsp;</span></a>Ethereum Pet Shop</h1><p>This series of tutorials will take you through building your first DApp&#8212; a tracking system for a pet shop!</p>
 <p>This tutorial is meant for <strong>Dapp beginners who have knowledge of HTML, CSS and JavaScript</strong>, but assumes you have a basic knowledge of what Ethereum and smart contracts are conceptually. You may want to check out the <a href="/tutorials/ethereum-overview">Ethereum Overview</a> to get some concepts and terms down before proceeding.</p>
 <p>In this tutorial we will be covering:</p>
 <ul>
@@ -182,7 +184,7 @@
 <li><code>npm install -g ethereumjs-testrpc</code></li>
 <li><code>npm install -g truffle</code></li>
 </ul>
-<h2><a name="creating-a-truffle-project" class="anchor" href="#creating-a-truffle-project"><span class="header-link" style="z-index: 9999999739">&nbsp;</span></a>Creating a Truffle Project</h2><p>Truffle initializes in the current directory. So first, create a directory in your development folder of choice. We&#39;re calling ours &quot;pet-shop-tutorial&quot;. We&#39;ve created a special <a href="/boxes">Truffle Box</a> just for this tutorial, so we&#39;ll get you started with the basic project structure as well as code for the user interface.</p>
+<h2><a name="creating-a-truffle-project" class="anchor" href="#creating-a-truffle-project"><span class="header-link" style="z-index: 9999999738">&nbsp;</span></a>Creating a Truffle Project</h2><p>Truffle initializes in the current directory. So first, create a directory in your development folder of choice. We&#39;re calling ours &quot;pet-shop-tutorial&quot;. We&#39;ve created a special <a href="/boxes">Truffle Box</a> just for this tutorial, so we&#39;ll get you started with the basic project structure as well as code for the user interface.</p>
 <pre><code class="lang-shell">// Create the directory.
 mkdir pet-shop-tutorial
 
@@ -197,7 +199,7 @@ truffle unbox pet-shop
   <strong>NOTE</strong>: Truffle can be initialized a few different ways. Another useful initialization command is <code>truffle init bare</code>, which creates an empty Truffle project with no example contracts included.
 </p>
 
-<h3><a name="directory-structure" class="anchor" href="#directory-structure"><span class="header-link" style="z-index: 9999999738">&nbsp;</span></a>Directory Structure</h3><p>The default truffle directory structure looks like the following:</p>
+<h3><a name="directory-structure" class="anchor" href="#directory-structure"><span class="header-link" style="z-index: 9999999737">&nbsp;</span></a>Directory Structure</h3><p>The default truffle directory structure looks like the following:</p>
 <ul>
 <li>/contracts: Contains the Solidity source files for our smart contracts. There is an important contract in here called <strong>Migrations.sol</strong>, which we&#39;ll talk about later. Be sure not to delete this file!</li>
 <li>/migrations: Truffle uses a migration system to handle smart contract deployments. A migration is an additional special smart contract that keeps track of changes.</li>
@@ -205,7 +207,7 @@ truffle unbox pet-shop
 <li>truffle.js: Truffle&#39;s configuration file.</li>
 </ul>
 <p>The box you opened had some extra files and folders in it, but we&#39;ll get to those later.</p>
-<h2><a name="writing-the-smart-contract" class="anchor" href="#writing-the-smart-contract"><span class="header-link" style="z-index: 9999999737">&nbsp;</span></a>Writing the Smart Contract</h2><p>We&#39;ll start our Dapp by writing the smart contract that acts as its backend logic and storage.</p>
+<h2><a name="writing-the-smart-contract" class="anchor" href="#writing-the-smart-contract"><span class="header-link" style="z-index: 9999999736">&nbsp;</span></a>Writing the Smart Contract</h2><p>We&#39;ll start our Dapp by writing the smart contract that acts as its backend logic and storage.</p>
 <p>Start by creating a new file Adoption.sol in the /contracts directory with the following contents:</p>
 <pre><code class="lang-javascript">pragma solidity ^0.4.4;
 
@@ -225,9 +227,7 @@ contract Adoption {
 <p>We&#39;ve defined a single variable: <code>adopters</code>. <code>adopters</code> is an <strong>array</strong> of Ethereum addresses. Arrays contain one type and can have a fixed or variable length. In this case the type is address and the length is 16. You&#39;ll also notice <code>adopters</code> is public. <strong>Public</strong> variables have automatic getter methods, but in the case of arrays a key is required and will only return a single value. Later, we&#39;ll write a function to return the whole array for use in our UI.</p>
 <h3><a name="your-first-function-adopting-a-pet" class="anchor" href="#your-first-function-adopting-a-pet"><span class="header-link" style="z-index: 9999999734">&nbsp;</span></a>Your First Function: Adopting a Pet</h3><p>Let&#39;s allow users to make adoption requests. Add the following function to the smart contract, after the variables we setup above.</p>
 <pre><code class="lang-javascript">function adopt(uint petId) public returns (uint) {
-  if (petId &lt; 0 || petId &gt; 15) {
-    throw;
-  }
+  require(petId &lt; 0 || petId &gt; 15);
 
   adopters[petId] = msg.sender;
 
@@ -235,7 +235,9 @@ contract Adoption {
 }
 </code></pre>
 <p>You&#39;ll noticed in Solidity the types of both the function&#39;s parameters and its output must be specified. In this case we&#39;ll be taking in a <code>petId</code> (an integer) and returning an integer.</p>
-<p>First we check to make sure <code>petId</code> is in range of our <code>adopters</code> array. Arrays in Solidity are indexed from 0, so the ID value will need to be between 0 and 15. If the ID is out of range, we return an error by calling <code>throw</code> (as in &quot;throw&quot; an error).</p>
+<p>First we check to make sure <code>petId</code> is in range of our <code>adopters</code> array. Arrays in Solidity are
+indexed from 0, so the ID value will need to be between 0 and 15. We use the
+<code>require()</code> statement to ensure the the ID is within range.</p>
 <p>If the ID is in range, we then add the address that made the call to our <code>adopters</code> array. To get the address of the person or smart contract who called this function, we use <strong>msg.sender</strong>.</p>
 <p>Finally, we return the <code>petId</code> provided as a confirmation.</p>
 <h3><a name="your-second-function-retrieving-the-adopters" class="anchor" href="#your-second-function-retrieving-the-adopters"><span class="header-link" style="z-index: 9999999733">&nbsp;</span></a>Your Second Function: Retrieving the Adopters</h3><p>Remember above we mentioned array getters return only a single value from a given key. Our UI needs to update all pets&#39; adoption statuses and making 16 API calls is not ideal. Let&#39;s write a function to return the entire array.</p>
@@ -352,7 +354,7 @@ Compiling truffle/DeployedAddresses.sol...
   3 passing (670ms)
 </code></pre>
 <p>Note your completion times may be different.</p>
-<h2><a name="creating-a-ui-to-interact-with-our-smart-contract" class="anchor" href="#creating-a-ui-to-interact-with-our-smart-contract"><span class="header-link" style="z-index: 9999999725">&nbsp;</span></a>Creating a UI to Interact with our Smart Contract</h2><p>Now that we&#39;ve created the smart contract, deployed it to our local test chain and confirmed we can interact with it via the console, it&#39;s time to create a UI so the world can use this!</p>
+<h2><a name="creating-a-ui-to-interact-with-our-smart-contract" class="anchor" href="#creating-a-ui-to-interact-with-our-smart-contract"><span class="header-link" style="z-index: 9999999724">&nbsp;</span></a>Creating a UI to Interact with our Smart Contract</h2><p>Now that we&#39;ve created the smart contract, deployed it to our local test chain and confirmed we can interact with it via the console, it&#39;s time to create a UI so the world can use this!</p>
 <p>When you unboxed the <code>pet-shop</code> Truffle box at the beginning of this tutorial, you were given code for Pet Shop&#39;s front-end. That code exists within the <code>src</code> directory.</p>
 <p>The front-end does not use a build system (webpack, grunt, etc.) to be as easy to get started as possible. If you&#39;ve worked with any front-end JavaScript before, you&#39;ll feel right at home. The base structure of the App is already there; we&#39;ll be filling in the functions which are unique to Ethereum. This way, you can take this knowledge and apply it to your own front-end setups.</p>
 <h3><a name="instantiating-web3" class="anchor" href="#instantiating-web3"><span class="header-link" style="z-index: 9999999723">&nbsp;</span></a>Instantiating Web3</h3><p>Open the app.js file and have a look around. We set up a global App object to manage our application, load in the pet data in <code>init()</code> and then call the function <code>initWeb3()</code>. Web3 is a JavaScript library for interacting with the Ethereum blockchain. It can retrieve user accounts, send transactions, interact with smart contracts and more. For more information, see <a href="https://github.com/ethereum/web3.js/">the web3 GitHub page</a>.</p>
@@ -369,7 +371,7 @@ if (typeof web3 !== &#39;undefined&#39;) {
 </code></pre>
 <p>First, we check if there&#39;s a web3 instance already active. Ethereum browsers like <a href="https://github.com/ethereum/mist">Mist</a> or Chrome with the <a href="https://metamask.io/">MetaMask</a> extension will inject their own web3 instances. If an injected web3 instance is present, we get its provider and use it to create our web3 object.</p>
 <p>If no injected web3 instance is present, we create our web3 object based on the TestRPC&#39;s provider. Note this fallback is fine for development environments, but insecure and not suitable for production.</p>
-<h3><a name="instantiating-the-contract" class="anchor" href="#instantiating-the-contract"><span class="header-link" style="z-index: 9999999723">&nbsp;</span></a>Instantiating the Contract</h3><p>Now that we can interact with Ethereum via web3, we need to instantiate our smart contract so web3 knows where to find it and how it works. Truffle has a library to help with this called <code>truffle-contract</code>. It keeps information about our contract in sync with your migrations, so you don&#39;t need to change the contract&#39;s deployed address manually.</p>
+<h3><a name="instantiating-the-contract" class="anchor" href="#instantiating-the-contract"><span class="header-link" style="z-index: 9999999722">&nbsp;</span></a>Instantiating the Contract</h3><p>Now that we can interact with Ethereum via web3, we need to instantiate our smart contract so web3 knows where to find it and how it works. Truffle has a library to help with this called <code>truffle-contract</code>. It keeps information about our contract in sync with your migrations, so you don&#39;t need to change the contract&#39;s deployed address manually.</p>
 <p>Remove the multi-line comment from <code>initContract</code> and replace it with the following:</p>
 <pre><code class="lang-javascript">$.getJSON(&#39;Adoption.json&#39;, function(data) {
   // Get the necessary contract artifact file and instantiate it with truffle-contract.
@@ -459,10 +461,8 @@ web3.eth.getAccounts(function(error, accounts) {
 </div>
 
 <p>Now that MetaMask is configured, we can start our web server and actually use the Dapp.</p>
-<h3><a name="installing-and-configuring-lite-server" class="anchor" href="#installing-and-configuring-lite-server"><span class="header-link" style="z-index: 9999999717">&nbsp;</span></a>Installing and Configuring lite-server</h3><p>We&#39;re going to use the <code>lite-server</code> library to serve our static files. Since it&#39;s an NPM package, we&#39;ll need to initialize NPM in our project.</p>
-<p>In the project&#39;s root directory, run <code>npm init</code>. It will ask you some questions about the project, but for now let&#39;s accept all the defaults by pressing Enter at each prompt (you can later change them if necessary).</p>
-<p>With NPM initialized, run <code>npm install lite-server --save-dev</code>. This installs <code>lite-server</code> as a development dependency. For production we&#39;ll be deploying our Dapp to a real server, so there&#39;s no need for <code>lite-server</code> in that environment.</p>
-<p>Next, create a file called <code>bs-config.json</code> in the project&#39;s root directory with the following contents:</p>
+<h3><a name="installing-and-configuring-lite-server" class="anchor" href="#installing-and-configuring-lite-server"><span class="header-link" style="z-index: 9999999717">&nbsp;</span></a>Installing and Configuring lite-server</h3><p>We&#39;re using the <code>lite-server</code> library to serve our static files. This already came with the box, but let&#39;s take a look at how it works.</p>
+<p>Notice the file <code>bs-config.json</code> in the project&#39;s root directory with the following contents:</p>
 <pre><code class="lang-javascript">{
   &quot;server&quot;: {
     &quot;baseDir&quot;: [&quot;./src&quot;, &quot;./build/contracts&quot;]
