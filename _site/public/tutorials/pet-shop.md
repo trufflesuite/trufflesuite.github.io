@@ -368,7 +368,7 @@ App.contracts.Adoption
       }
     })
   )
-  .catch(err => console.log(err.message))
+  .catch(err => console.error(err.message))
 ```
 
 In this function, we access the deployed Adoption contract, then call `getAdopters()` on that instance. 
@@ -393,7 +393,7 @@ web3.eth.getAccounts((error, accounts) => {
     .deployed()
     .then(instance => instance.adopt(petId, { from: firstAccount }))
     .then(result => App.markAdopted())
-    .catch(err => console.log(err.message))
+    .catch(err => console.error(err.message))
 })
 ```
 
