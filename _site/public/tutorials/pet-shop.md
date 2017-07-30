@@ -329,10 +329,9 @@ Now that we can interact with Ethereum via web3, we need to instantiate our smar
 Remove the multi-line comment from `initContract` and replace it with the following:
 
 ```javascript
-$.getJSON('Adoption.json', function(data) {
+$.getJSON('Adoption.json', adoptionArtifact => {
   // Get the necessary contract artifact file and instantiate it with truffle-contract.
-  var AdoptionArtifact = data;
-  App.contracts.Adoption = TruffleContract(AdoptionArtifact);
+  App.contracts.Adoption = TruffleContract(adoptionArtifact);
 
   // Set the provider for our contract.
   App.contracts.Adoption.setProvider(App.web3Provider);
@@ -355,24 +354,24 @@ Finally, we call the app's `markAdopted()` function in case any pets are already
 Remove the multi-line comment from `markAdopted()` and replace it with the following:
 
 ```javascript
-var adoptionInstance;
-
-App.contracts.Adoption.deployed().then(function(instance) {
-  adoptionInstance = instance;
-
-  return adoptionInstance.getAdopters.call();
-}).then(function(adopters) {
-  for (i = 0; i < adopters.length; i++) {
-    if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
-      $('.panel-pet').eq(i).find('button').text('Pending...').attr('disabled', true);
-    }
-  }
-}).catch(function(err) {
-  console.log(err.message);
-});
+App.contracts.Adoption
+  .deployed()
+  .then(adoptionInstance => adoptionInstance.getAdopters.call())
+  .then(adopters =>
+    adopters.forEach((adopter, i) => {
+      if (adopter !== '0x0000000000000000000000000000000000000000') {
+        $('.panel-pet')
+          .eq(i)
+          .find('button')
+          .text('Pending...')
+          .attr('disabled', true)
+      }
+    })
+  )
+  .catch(err => console.log(err.message))
 ```
 
-In this function, we access the deployed Adoption contract, then call `getAdopters()` on that instance. We first declare the variable `adoptionInstance` outside of the smart contract calls so we can access the instance after initially retrieving it.
+In this function, we access the deployed Adoption contract, then call `getAdopters()` on that instance. 
 
 A **call** allows us to read data from the blockchain without having to send a full transaction; meaning we won't have to spend any Ether.
 
@@ -385,30 +384,22 @@ Finally, we catch any errors which may have occurred and log them to the console
 Remove the multi-line comment from handleAdopt and replace it with the following:
 
 ```javascript
-var adoptionInstance;
+web3.eth.getAccounts((error, accounts) => {
+  if (error) console.error(error)
 
-web3.eth.getAccounts(function(error, accounts) {
-  if (error) {
-    console.log(error);
-  }
+  const firstAccount = accounts[0]
 
-  var account = accounts[0];
-
-  App.contracts.Adoption.deployed().then(function(instance) {
-    adoptionInstance = instance;
-
-    return adoptionInstance.adopt(petId, {from: account});
-  }).then(function(result) {
-    return App.markAdopted();
-  }).catch(function(err) {
-    console.log(err.message);
-  });
-});
+  App.contracts.Adoption
+    .deployed()
+    .then(instance => instance.adopt(petId, { from: firstAccount }))
+    .then(result => App.markAdopted())
+    .catch(err => console.log(err.message))
+})
 ```
 
 First, we use web3 to get the user's accounts. In the callback, after an error check, we then select the first account.
 
-From there, we get the deployed contract as we did above and store the instance in `adoptionInstance`. This time though, we're going to send a **transaction** instead of a call. Transactions require a "from" address and have an associated cost. This cost, paid in Ether, is called **gas**. The gas cost is the fee for performing computation and/or storing data in an Ethereum smart contract. We send the transaction by executing the `adopt()` function with both the pet's ID and an object containing the account address, which we stored earlier in `account`.
+From there, we get the deployed contract instance, as we did above. This time though, we're going to send a **transaction** instead of a call. Transactions require a "from" address and have an associated cost. This cost, paid in Ether, is called **gas**. The gas cost is the fee for performing computation and/or storing data in an Ethereum smart contract. We send the transaction by executing the `adopt()` function with both the pet's ID and an object containing the account address, which we stored earlier in `account`.
 
 The result of sending a transaction is the transaction object. If there are no errors, we proceed to call our `markAdopted()` function to sync the UI with our newly stored data.
 
