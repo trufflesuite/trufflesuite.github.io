@@ -70,7 +70,7 @@ We'll start our Dapp by writing the smart contract that acts as its backend logi
 Start by creating a new file Adoption.sol in the /contracts directory with the following contents:
 
 ```javascript
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.13;
 
 contract Adoption {
 
@@ -79,7 +79,7 @@ contract Adoption {
 
 Two key things to notice:
 
-*   The minimum version of Solidity required is noted at the top of the contract: `pragma solidity ^0.4.4;`. The carat symbol (^) means "the version noted after this or higher".
+*   The minimum version of Solidity required is noted at the top of the contract: `pragma solidity ^0.4.13;`. The carat symbol (^) means "the version noted after this or higher".
 *   Much like JavaScript or PHP, statements are terminated with semicolons.
 
 ### Variable Setup
@@ -89,7 +89,7 @@ Solidity is a statically-typed language, meaning data types like strings, intege
 Setup the following variable on the next line after `contract Adoption {`.
 
 ```javascript
-address[16] public adopters;
+address[16] adopters;
 ```
 
 We've defined a single variable: `adopters`. `adopters` is an **array** of Ethereum addresses. Arrays contain one type and can have a fixed or variable length. In this case the type is address and the length is 16. You'll also notice `adopters` is public. **Public** variables have automatic getter methods, but in the case of arrays a key is required and will only return a single value. Later, we'll write a function to return the whole array for use in our UI.
@@ -100,7 +100,6 @@ Let's allow users to make adoption requests. Add the following function to the s
 
 ```javascript
 function adopt(uint petId) public returns (uint) {
-  require(petId < 0 || petId > 15);
 
   adopters[petId] = msg.sender;
 
@@ -196,7 +195,7 @@ Truffle is very flexible when it comes to smart contract testing. Tests can be w
 Begin by creating the smart contract TestAdoption.sol in the test directory with the following contents:
 
 ```javascript
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.13;
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
@@ -242,7 +241,7 @@ Remembering from above that public variables have automatic getter methods, we c
 function testGetAdopterAddressByPetId() {
   address expected = this;
 
-  address adopter = adoption.adopters(8);
+  address adopter = adoption.getAdopters()[8];
 
   Assert.equal(adopter, expected, "Owner of pet ID 8 should be recorded.");
 }
