@@ -195,7 +195,7 @@ contract TutorialToken is StandardToken {
 
 }
 </code></pre>
-<p>Beyond the standard smart contract setup, we <code>import</code> the <code>StandardToken.sol</code> contract and declare our <code>TutorialToken</code>, using <code>is</code> to inherit from the <code>StandardToken</code> contract. Our contract will <strong>inherit</strong> all varialbes and functions from the <code>StandardToken</code> contract. Inherited functions and variables can be overwritten by redeclaring them in the new contract. To set our own parameters for the Tutorial Token, we&#39;ll be declaring our own <code>name</code>, <code>symbol</code>, <code>decimals</code> and <code>INITIAL_SUPPLY</code>.</p>
+<p>Beyond the standard smart contract setup, we <code>import</code> the <code>StandardToken.sol</code> contract and declare our <code>TutorialToken</code>, using <code>is</code> to inherit from the <code>StandardToken</code> contract. Our contract will <strong>inherit</strong> all variables and functions from the <code>StandardToken</code> contract. Inherited functions and variables can be overwritten by redeclaring them in the new contract. To set our own parameters for the Tutorial Token, we&#39;ll be declaring our own <code>name</code>, <code>symbol</code>, <code>decimals</code> and <code>INITIAL_SUPPLY</code>.</p>
 <pre><code class="lang-javascript">string public name = &#39;TutorialToken&#39;;
 string public symbol = &#39;TT&#39;;
 uint public decimals = 2;
