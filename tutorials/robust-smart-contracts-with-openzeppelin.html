@@ -210,7 +210,7 @@ uint public INITIAL_SUPPLY = 12000;
 </code></pre>
 <p>Using less than 15 lines of hand-coded Solidity, we&#39;ve created our own ERC-20 token! Next, we&#39;ll be deploying and interacting with the token.</p>
 <h2><a name="3-compilation-and-deployment" class="anchor" href="#3-compilation-and-deployment"><span class="header-link" style="z-index: 9999999710">&nbsp;</span></a>3. Compilation and Deployment</h2><p>In the <code>/migrations</code> directory, create the file <code>2_deploy_contracts.js</code> with the following contents:</p>
-<pre><code class="lang-javascript">var Adoption = artifacts.require(&quot;./TutorialToken.sol&quot;);
+<pre><code class="lang-javascript">var TutorialToken = artifacts.require(&quot;./TutorialToken.sol&quot;);
 
 module.exports = function(deployer) {
   deployer.deploy(TutorialToken);
