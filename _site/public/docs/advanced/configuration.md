@@ -82,6 +82,26 @@ mocha: {
 }
 ```
 
+### solc
+
+Configuration options to pass to the Solidity compiler. Supported options:
+- `optimizer`
+
+Example:
+
+```javascript
+solc: {
+  optimizer: {
+    enabled: true,
+    runs: 200
+  }
+}
+```
+
+See Solidity documentation [Compiler Input and Output JSON
+Description](http://solidity.readthedocs.io/en/develop/using-the-compiler.html#compiler-input-and-output-json-description)
+for more information.
+
 # EthPM Configuration
 
 This configuration applies to the optional `ethpm.json` file that exists alongside your `truffle.js` configuration file.
