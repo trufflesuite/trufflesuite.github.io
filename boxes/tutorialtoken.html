@@ -48,7 +48,7 @@
     
     
 
-    <title>TruffleFramework.com | Using Infura (or a custom provider)</title>
+    <title>TruffleFramework.com | tutorialtoken Box</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -81,7 +81,7 @@
 
   <body>
     <main>
-      <section class="Tutorials">
+      <body class="Ballotin">
   <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -156,114 +156,115 @@
 </nav>
 
 
-  <section class="MainContent">
-    <div class="container-fluid">
-      <div class="row">
-        <h1><a name="using-infura-or-any-custom-provider-" class="anchor" href="#using-infura-or-any-custom-provider-"><span class="header-link" style="z-index: 9999999678">&nbsp;</span></a>Using Infura (or any custom provider)</h1><p><a href="https://infura.io/">Infura</a> is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet. For security reasons Infura does not manage users&#39; private keys, which means they cannot sign transactions on your behalf (or your users&#39; behalf). Similarly, Truffle doesn&#39;t intuitively know how to sign your transactions &#8211; it usually hands that task over to the Ethereum node &#8211; so if you&#39;d like to deploy your contracts using Infura, you must first tell Truffle how you&#39;d like these transactions signed.</p>
-<p>Fortunately libraries can help us along. In this example we&#39;ll use an <a href="https://en.bitcoin.it/wiki/Deterministic_wallet">hd wallet mnemonic</a> to generate our list of wallets, and we&#39;ll use the <a href="https://github.com/MetaMask/provider-engine">web3-provider-engine</a> to provide us with built-in signing functionality.</p>
-<h3><a name="getting-started" class="anchor" href="#getting-started"><span class="header-link" style="z-index: 9999999677">&nbsp;</span></a>Getting Started</h3><p>First install the required dependencies:</p>
-<pre><code>$ npm install ethereumjs-wallet bip39 web3-provider-engine web3
-</code></pre><p>We recommend you run the above command with the <code>--save</code> flag to save this configuration in your project&#39;s <code>package.json</code> file.</p>
-<h3><a name="editing-your-project-39-s-configuration" class="anchor" href="#editing-your-project-39-s-configuration"><span class="header-link" style="z-index: 9999999676">&nbsp;</span></a>Editing Your Project&#39;s Configuration</h3><p>We can use your project&#39;s <code>truffle.js</code> configuration file to tell Truffle how to sign our transactions. To start, we should first require all of our dependencies used for signing transactions:</p>
-<pre><code class="lang-javascript">var bip39 = require(&quot;bip39&quot;);
-var hdkey = require(&#39;ethereumjs-wallet/hdkey&#39;);
-var ProviderEngine = require(&quot;web3-provider-engine&quot;);
-var WalletSubprovider = require(&#39;web3-provider-engine/subproviders/wallet.js&#39;);
-var Web3Subprovider = require(&quot;web3-provider-engine/subproviders/web3.js&quot;);
-var Web3 = require(&quot;web3&quot;);
-</code></pre>
-<p>These dependencies are used for the following things:</p>
-<ul>
-<li><code>bip39</code>: Used to create a seed from hd wallet mnemonics (more on that later).</li>
-<li><code>hdkey</code>: Used to derive addresses from seeds using complex math.</li>
-<li><code>ProviderEngine</code>: The basic framework that will be used to wrangle all transactions that need to be signed.</li>
-<li><code>WalletSubprovider</code>: Part of the provider engine framework that will handle wallet signing.</li>
-<li><code>Web3Subprovider</code>: Part of the provider engine framework that handles everything <em>other than</em> transaction signing.</li>
-<li><code>Web3</code>: What we used to communicate with the Ethereum network. Here, we&#39;re using it solely to create a provider.</li>
-</ul>
-<p>After setting up are dependencies, we&#39;ll then need to create an hd wallet from a mnemonic. A mnemonic is a twelve word string that represents a secure random seed (warning: don&#39;t just create a mnemonic yourself; use the bip39 library to do this if you don&#39;t have one). From this seed we can create an unlimited number of Ethereum addresses and private keys. Because this is a seed, we can always use this mnemonic to find those addresses again.</p>
-<pre><code class="lang-javascript">// Get our mnemonic and create an hdwallet
-var mnemonic = &quot;couch solve unique spirit wine fine occur rhythm foot feature glory away&quot;;
-var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
-</code></pre>
-<p>From here we can use the hdwallet to derive the first account. We do so using something called an &quot;hd path&quot;, which is a way of telling the complex mathematics what we&#39;re attempting to derive. The most important bit is when we add &quot;0&quot; on the end of the hd path. This means we want to find the first account that we can derive from this hd wallet. It&#39;s zero based, so if we wanted the second address we&#39;d derive <code>wallet_hdpath + &quot;1&quot;</code>, and for the third address <code>wallet_hdpath + &quot;2&quot;</code>, etc.</p>
-<pre><code class="lang-javascript">// Get the first account using the standard hd path.
-var wallet_hdpath = &quot;m/44&#39;/60&#39;/0&#39;/0/&quot;;
-var wallet = hdwallet.derivePath(wallet_hdpath + &quot;0&quot;).getWallet();
-var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
-</code></pre>
-<p>Next, we need to set up the Provider Engine, telling it that we&#39;d like to use our wallet to sign transactions, and use the ropsten network on infura for everything else:</p>
-<pre><code class="lang-javascript">var providerUrl = &quot;https://testnet.infura.io&quot;;
-var engine = new ProviderEngine();
-engine.addProvider(new WalletSubprovider(wallet, {}));
-engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
-engine.start(); // Required by the provider engine.
-</code></pre>
-<p>Finally, we want to export our Truffle configuration. Here we use this wallet only when we want to deploy to the ropsten network:</p>
-<pre><code class="lang-javascript">module.exports = {
-  networks: {
-    &quot;ropsten&quot;: {
-      network_id: 3,    // Official ropsten network id
-      provider: engine, // Use our custom provider
-      from: address     // Use the address we derived
-    }
-  },
-  rpc: {
-    // Use the default host and port when not using ropsten
-    host: &quot;localhost&quot;,
-    port: 8545
-  }
-};
-</code></pre>
-<h3><a name="discussion" class="anchor" href="#discussion"><span class="header-link" style="z-index: 9999999675">&nbsp;</span></a>Discussion</h3><p>In general, this is a lot of work in order to use an hd wallet with Truffle. This is a very early feature, and we&#39;d highly encourage anyone to create a new library that encapsulates the above code.</p>
-<h3><a name="full-code" class="anchor" href="#full-code"><span class="header-link" style="z-index: 9999999674">&nbsp;</span></a>Full Code</h3><pre><code class="lang-javascript">var bip39 = require(&quot;bip39&quot;);
-var hdkey = require(&#39;ethereumjs-wallet/hdkey&#39;);
-var ProviderEngine = require(&quot;web3-provider-engine&quot;);
-var WalletSubprovider = require(&#39;web3-provider-engine/subproviders/wallet.js&#39;);
-var Web3Subprovider = require(&quot;web3-provider-engine/subproviders/web3.js&quot;);
-var Web3 = require(&quot;web3&quot;);
+  <main>
+    <section class="BallotinSingleContainer" data-box="tutorialtoken-box" data-user="truffle-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="WithDash">tutorialtoken <span class="label label-truffle">
+  <svg class="truffle-logo" width="100%" height="100%" viewBox="655 52 131 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+          <polyline id="path-1" points="0 0.426 130.715 0.426 130.715 128 0 128"></polyline>
+          <polygon id="path-3" points="0 0.426 130.715 0.426 130.715 128 0 128"></polygon>
+      </defs>
+      <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(655.000000, 52.000000)">
+          <!-- Truffle Logo -->
 
-// Get our mnemonic and create an hdwallet
-var mnemonic = &quot;couch solve unique spirit wine fine occur rhythm foot feature glory away&quot;;
-var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
+          <path d="M100.8574,99.9258 C100.8574,102.0878 82.8804,103.8378 65.6344,103.8378 C48.3884,103.8378 30.4124,102.0878 30.4124,99.9258 C30.4124,97.7658 48.3884,96.0138 65.6344,96.0138 C82.8804,96.0138 100.8574,97.7658 100.8574,99.9258" id="Fill-1" fill="#E6E7E8"></path>
+          <g id="Group-5">
+              <mask id="mask-2" fill="white">
+                  <use xlink:href="#path-1"></use>
+              </mask>
+              <g id="Clip-4"></g>
+              <path d="M117.7813,50.4258 C117.7813,78.0398 95.3943,100.4258 67.7813,100.4258 C51.0803,100.4258 36.2913,92.2378 27.2113,79.6558 C21.2773,71.4358 18.9393,61.3388 18.9403,50.4258 C18.9403,35.2618 24.5313,21.6738 35.1913,12.5048 C43.9433,4.9768 55.3313,0.4258 67.7813,0.4258 C95.3943,0.4258 117.7813,22.8118 117.7813,50.4258" id="Fill-3" fill="#5E464D" mask="url(#mask-2)"></path>
+          </g>
+          <path d="M53.8936,94.4175 C55.9346,95.0525 62.7846,97.0835 63.0116,94.9175 C63.1366,93.7305 59.5436,92.6085 54.6076,90.1675 C47.5826,86.6945 41.1946,82.2065 35.5246,76.8335 C29.1906,70.8335 22.6076,61.2925 21.8576,47.2925 C21.0476,32.1835 26.6756,19.8005 36.1896,11.6595 C24.9566,20.8285 17.7816,34.7795 17.7816,50.4105 C17.7816,61.3545 21.2466,71.4225 27.2106,79.6565 C29.1966,81.4595 31.3236,83.1725 33.4116,84.6675 C39.0236,88.6875 47.1746,92.3275 53.8936,94.4175" id="Fill-6" fill="#FFFFFF"></path>
+          <path d="M118.4668,38.9644 C115.3988,24.5534 105.8718,14.4624 93.1328,7.3374 C102.8738,14.2754 116.5888,29.0214 108.5048,42.0234 C101.6488,52.4484 84.9838,50.4034 75.8768,45.4644 C65.0498,39.5924 51.4838,26.3724 64.8638,13.4504 C73.5248,5.0894 101.1068,14.4644 96.2358,26.9644 C93.4048,34.2294 82.3948,32.6164 77.4388,29.0604 C73.7848,26.4384 70.7128,21.9294 72.3408,17.2754 C72.8628,15.7824 72.7868,13.4654 70.6798,15.1704 C69.1068,16.4434 68.3158,18.5384 68.0398,20.4864 C65.7358,36.7834 94.7688,49.4154 103.3798,33.6494 C107.8508,25.4644 100.6068,13.5894 91.4888,8.7144 C84.6208,5.0424 77.4998,2.4644 68.7578,3.0894 C54.7818,4.0884 43.0478,12.8314 41.5788,27.1154 C40.1228,41.2914 49.5978,54.0844 60.7748,61.7264 C72.5128,69.7534 88.3168,75.0464 102.7678,70.2574 C115.7198,65.9644 121.0708,51.0974 118.4668,38.9644" id="Fill-8" fill="#FFFFFF"></path>
+          <path d="M100.2344,27.9272 C101.6234,18.5872 93.1804,12.1762 85.3844,9.2612 C76.1884,5.8212 64.0464,7.3312 57.3504,14.9472 C52.4384,20.5352 52.7724,28.6592 55.2964,35.2182 C59.1144,45.1422 67.7354,52.3152 77.7704,55.4112 C84.9014,57.6132 93.5214,58.5732 100.7504,56.2472 C111.2874,52.8582 114.7194,41.8662 112.5424,31.7982 C112.0734,29.6302 111.3594,27.4952 110.4064,25.4932 C109.0764,22.6982 104.9984,17.0422 110.6194,23.9312 C111.2334,24.6842 111.7204,25.5142 112.2424,26.3332 C113.4294,28.2002 114.2954,30.3142 114.9784,32.4102 C118.0444,41.8102 115.6374,52.7752 107.1294,58.4472 C100.6124,62.7912 92.3294,63.3062 84.7694,62.2222 C74.6384,60.7702 65.0854,55.8372 58.4524,47.9822 C52.3874,40.8022 48.2554,30.4882 50.7474,21.0642 C52.5704,14.1662 58.1724,9.0192 64.8764,6.8492 C73.3604,4.1012 82.6984,5.3762 90.3444,9.8372 C94.1684,12.0682 97.6714,15.1532 99.6164,19.1932 C100.4904,21.0072 100.9934,23.0192 101.0114,25.0352 C101.0184,25.8482 100.9834,26.6872 100.8214,27.4862 C100.7684,27.7782 100.1484,28.6072 100.2344,27.9272" id="Fill-10" fill="#3FE0C5"></path>
+      </g>
+  </svg>
 
-// Get the first account using the standard hd path.
-var wallet_hdpath = &quot;m/44&#39;/60&#39;/0&#39;/0/&quot;;
-var wallet = hdwallet.derivePath(wallet_hdpath + &quot;0&quot;).getWallet();
-var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
-
-var providerUrl = &quot;https://testnet.infura.io&quot;;
-var engine = new ProviderEngine();
-engine.addProvider(new WalletSubprovider(wallet, {}));
-engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
-engine.start(); // Required by the provider engine.
-
-module.exports = {
-  networks: {
-    &quot;ropsten&quot;: {
-      network_id: 3,    // Official ropsten network id
-      provider: engine, // Use our custom provider
-      from: address     // Use the address we derived
-    }
-  },
-  rpc: {
-    // Use the default host and port when not using ropsten
-    host: &quot;localhost&quot;,
-    port: 8545
-  }
-};
-</code></pre>
-
+  OFFICIAL
+</span>
+</h1>
       </div>
     </div>
 
-    <footer class="container">
-      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/tutorials/using-infura-custom-provider.md">Edit here &rarr;</a></p>
-    </footer>
-  </section>
+    <div class="row">
+      <div class="col-xs-12 col-md-7 BoxReadme" id="BoxReadme">
+        <div class="alert alert-info" role="alert">Loading readme&#8230;</div>
+      </div>
+
+      <div class="col-xs-12 col-md-4 col-md-offset-1">
+        <div class="row Sidebar">
+          <div class="col-xs-12 col-sm-6 col-md-12">
+            <section class="FeatureCard">
+              <div class="FeatureBody withImage">
+                <img class="FeatureImageLg" src="https://github.com/truffle-box/tutorialtoken-box/blob/master/box-img-lg.png?raw=true" alt="pet-shop-box" onerror="javascript:this.src='/images/ballotin/loading-thumb.png'" />
+                <img class="FeatureImageSm" src="https://github.com/truffle-box/tutorialtoken-box/blob/master/box-img-sm.png?raw=true" alt="pet-shop-box" onerror="javascript:this.src='/images/ballotin/loading-banner.png'" />
+              </div>
+
+              <footer class="BoxRundown">
+                <ul class="BoxRundownList">
+                  <li><strong>Tags</strong><br/><hr/></li>
+                  <li>
+                    <ul class="BoxTagsList">
+                      <li>
+                        <a href="#">tutorial</a>
+                      </li>
+                      <li>
+                        <a href="#">jquery</a>
+                      </li>
+                      <li>
+                        <a href="#">webapp</a>
+                      </li>
+                      <li>
+                        <a href="#">official</a>
+                      </li>
+                      <li>
+                        <a href="#">openzeppelin</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><strong>Created</strong><br/><hr/></li>
+                  <li id="BoxDateCreated">X-X-X</li>
+                  <li><strong>Last Updated</strong><br/><hr/></li>
+                  <li id="BoxDateUpdated">X-X-X</li>
+                  <li><strong>Stars</strong><br/><hr/></li>
+                  <li><a class="github-button" href="https://github.com/truffle-box/tutorialtoken-box" data-icon="octicon-star" data-show-count="true" data-size="large" aria-label="Star truffle-box/tutorialtoken-box on GitHub">Star</a></li>
+                </ul>
+              </footer>
+            </section>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-12">
+            <section class="FeatureCard">
+              <div class="FeatureBody">
+                <h3>Installing</h3>
+                <p>Run this command to create a new Truffle project with this box:</p>
+                <p><pre>truffle unbox tutorialtoken</pre></p>
+              </div>
+
+              <footer>
+                <a class="btn btn-primary m-t-1 m-b-1" id="BoxDownloadLink" href="#">Download</a>
+                <a class="btn btn-primary m-t-1 m-b-1" id="BoxGitHubLink" href="#">GitHub</a>
+              </footer>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
+<script src="/scripts/ballotin/marked.min.js"></script>
+<script src="/scripts/ballotin/single-truffle-box.js"></script>
 
+  </main>
+
+  
 <section class="Footer p-t-4 ">
   <div class="container">
     <div class="row">
@@ -376,6 +377,7 @@ module.exports = {
   </div>
 </section>
 
+</body>
 
     </main>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
