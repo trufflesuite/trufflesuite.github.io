@@ -47,7 +47,7 @@ To get it up and running, run these commands:
 mkdir my-money  # Create a folder for your new dapp
 cd my-money     # Move into that folder
 truffle init    # Initialize a default truffle project in that folder
-truffle build   # Compile the dapp
+truffle compile   # Compile the dapp
 truffle migrate  # Publish the dapp on the blockchain
 truffle serve   # Host your web interface on port 8080
 ```
