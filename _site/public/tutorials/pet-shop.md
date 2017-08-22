@@ -350,36 +350,6 @@ With our contract instantiated, we set its web3 provider using the `this.provide
 
 Finally, we call the app's `markAdopted()` function in case any pets are already adopted from a previous visit. We've encapsulated this in a separate function since we'll need to update the UI any time we make a change to the smart contract's data.
 
-### Getting The Adopted Pets and Updating The UI
-
-Remove the multi-line comment from `markAdopted()` and replace it with the following:
-
-```javascript
-var adoptionInstance;
-
-App.contracts.Adoption.deployed().then(function(instance) {
-  adoptionInstance = instance;
-
-  return adoptionInstance.getAdopters.call();
-}).then(function(adopters) {
-  for (i = 0; i < adopters.length; i++) {
-    if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
-      $('.panel-pet').eq(i).find('button').text('Pending...').attr('disabled', true);
-    }
-  }
-}).catch(function(err) {
-  console.log(err.message);
-});
-```
-
-In this function, we access the deployed Adoption contract, then call `getAdopters()` on that instance. We first declare the variable `adoptionInstance` outside of the smart contract calls so we can access the instance after initially retrieving it.
-
-A **call** allows us to read data from the blockchain without having to send a full transaction; meaning we won't have to spend any Ether.
-
-After calling `getAdopters()`, we then loop through them, checking to see if an address is stored for each pet. Since the array contains address types, Ethereum initializes the array with 16 empty addresses. This is why we check for an empty address string rather than null or another falsey value. Once a `petId` with a corresponding address is found, we disable its adopt button and change the button text to "Pending...", so the user gets some feedback.
-
-Finally, we catch any errors which may have occurred and log them to the console.
-
 ### Handling the adopt() Function
 
 Remove the multi-line comment from handleAdopt and replace it with the following:
@@ -409,6 +379,36 @@ web3.eth.getAccounts(function(error, accounts) {
 First, we use web3 to get the user's accounts. In the callback, after an error check, we then select the first account.
 
 From there, we get the deployed contract as we did above and store the instance in `adoptionInstance`. This time though, we're going to send a **transaction** instead of a call. Transactions require a "from" address and have an associated cost. This cost, paid in Ether, is called **gas**. The gas cost is the fee for performing computation and/or storing data in an Ethereum smart contract. We send the transaction by executing the `adopt()` function with both the pet's ID and an object containing the account address, which we stored earlier in `account`.
+
+### Getting The Adopted Pets and Updating The UI
+
+Remove the multi-line comment from `markAdopted()` and replace it with the following:
+
+```javascript
+var adoptionInstance;
+
+App.contracts.Adoption.deployed().then(function(instance) {
+  adoptionInstance = instance;
+
+  return adoptionInstance.getAdopters.call();
+}).then(function(adopters) {
+  for (i = 0; i < adopters.length; i++) {
+    if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
+      $('.panel-pet').eq(i).find('button').text('Pending...').attr('disabled', true);
+    }
+  }
+}).catch(function(err) {
+  console.log(err.message);
+});
+```
+
+In this function, we access the deployed Adoption contract, then call `getAdopters()` on that instance. We first declare the variable `adoptionInstance` outside of the smart contract calls so we can access the instance after initially retrieving it.
+
+A **call** allows us to read data from the blockchain without having to send a full transaction; meaning we won't have to spend any Ether.
+
+After calling `getAdopters()`, we then loop through them, checking to see if an address is stored for each pet. Since the array contains address types, Ethereum initializes the array with 16 empty addresses. This is why we check for an empty address string rather than null or another falsey value. Once a `petId` with a corresponding address is found, we disable its adopt button and change the button text to "Pending...", so the user gets some feedback.
+
+Finally, we catch any errors which may have occurred and log them to the console.
 
 The result of sending a transaction is the transaction object. If there are no errors, we proceed to call our `markAdopted()` function to sync the UI with our newly stored data.
 
