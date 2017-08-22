@@ -168,7 +168,7 @@ Private Ethereum networks allow parties to share data without making it publicly
 *   Sharing of sensitive data, such as health care records, that isn't allowed or desired to be public.
 *   Groups with a need for massive scale. With a smaller network size, private blockchains can scale to larger sizes and handle heavier read/write throughput than public chains.
 
-Private chains, being based on Ethereum, run the EVM and are therefore compatible with Truffle and other development tools. [Quorum](https://www.jpmorgan.com/country/US/EN/Quorum), originally written by JP Morgan, is a great example that works with Truffle. [Check out our blog for more on using Truffle with Quorum](/tutorials/building-dapps-for-quorum-private-enterprise-blockchains).
+Private chains, being based on Ethereum, run the EVM and are therefore compatible with Truffle and other development tools. [Quorum](https://www.jpmorgan.com/country/US/EN/Quorum), originally written by JP Morgan, is a great example of a private blockchain that works with Truffle. [Check out our blog for more on using Truffle with Quorum](/tutorials/building-dapps-for-quorum-private-enterprise-blockchains).
 
 ## Dapps (Distributed Applications)
 
