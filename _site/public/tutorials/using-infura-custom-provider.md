@@ -20,10 +20,10 @@ We can use your project's `truffle.js` configuration file to tell Truffle how to
 
 ```javascript
 var bip39 = require("bip39");
-var hdkey = require('ethereumjs-wallet/hdkey');
+var hdkey = require("ethereumjs-wallet/hdkey");
 var ProviderEngine = require("web3-provider-engine");
-var WalletSubprovider = require('web3-provider-engine/subproviders/wallet.js');
-var FilterSubprovider = require('web3-provider-engine/subproviders/filters.js');
+var WalletSubprovider = require("web3-provider-engine/subproviders/wallet.js");
+var FilterSubprovider = require("web3-provider-engine/subproviders/filters.js");
 var Web3Subprovider = require("web3-provider-engine/subproviders/web3.js");
 var Web3 = require("web3");
 var web3 = new Web3();
@@ -94,10 +94,10 @@ In general, this is a lot of work in order to use an hd wallet with Truffle. Thi
 
 ```javascript
 var bip39 = require("bip39");
-var hdkey = require('ethereumjs-wallet/hdkey');
+var hdkey = require("ethereumjs-wallet/hdkey");
 var ProviderEngine = require("web3-provider-engine");
-var WalletSubprovider = require('web3-provider-engine/subproviders/wallet.js');
-var FilterSubprovider = require('web3-provider-engine/subproviders/filters.js');
+var WalletSubprovider = require("web3-provider-engine/subproviders/wallet.js");
+var FilterSubprovider = require("web3-provider-engine/subproviders/filters.js");
 var Web3Subprovider = require("web3-provider-engine/subproviders/web3.js");
 var Web3 = require("web3");
 var web3 = new web3();
