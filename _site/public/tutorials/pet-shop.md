@@ -240,6 +240,7 @@ Remembering from above that public variables have automatic getter methods, we c
 
 ```javascript
 function testGetAdopterAddressByPetId() {
+  // Expected owner is this contract
   address expected = this;
 
   address adopter = adoption.adopters(8);
@@ -256,8 +257,10 @@ Since arrays can only return a single value given a single key, we created our o
 
 ```javascript
 function testGetAdopterAddressByPetIdInArray() {
+  // Expected owner is this contract
   address expected = this;
 
+  // Store adopters in memory rather than contract's storage.
   address[16] memory adopters = adoption.getAdopters();
 
   Assert.equal(adopters[8], expected, "Owner of pet ID 8 should be recorded.");
@@ -312,7 +315,8 @@ if (typeof web3 !== 'undefined') {
   App.web3Provider = web3.currentProvider;
   web3 = new Web3(web3.currentProvider);
 } else {
-  // set the provider you want from Web3.providers
+  // Set the provider you want from Web3.providers
+  // NOTE: Do not use in Production environments
   App.web3Provider = new web3.providers.HttpProvider('http://localhost:8545');
   web3 = new Web3(App.web3Provider);
 }
@@ -397,6 +401,7 @@ web3.eth.getAccounts(function(error, accounts) {
   App.contracts.Adoption.deployed().then(function(instance) {
     adoptionInstance = instance;
 
+    // Execute adopt as a transaction by sending account
     return adoptionInstance.adopt(petId, {from: account});
   }).then(function(result) {
     return App.markAdopted();
