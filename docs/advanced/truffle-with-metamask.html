@@ -48,7 +48,7 @@
     
     
 
-    <title>TruffleFramework.com | Using the console</title>
+    <title>TruffleFramework.com | Truffle with MetaMask</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -199,7 +199,7 @@
                                 
                 <li class=""><a href="/docs/getting_started/packages-npm">Package management via NPM</a></li>
                                 
-                <li class="active"><a href="/docs/getting_started/console">Using the console</a></li>
+                <li class=""><a href="/docs/getting_started/console">Using the console</a></li>
                                 
                 <li class=""><a href="/docs/getting_started/scripts">Writing external scripts</a></li>
                                 
@@ -220,34 +220,59 @@
                                 
                 <li class=""><a href="/docs/advanced/commands">Command Reference</a></li>
                                 
-                <li class=""><a href="/docs/advanced/truffle-with-metamask">Truffle with MetaMask</a></li>
+                <li class="active"><a href="/docs/advanced/truffle-with-metamask">Truffle with MetaMask</a></li>
                             </ul>
             </li>
           
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="background" class="anchor" href="#background"><span class="header-link" style="z-index: 9999999939">&nbsp;</span></a>Background</h1><p>Sometimes it&#39;s nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. Truffle provides you an easy way to do this via an interactive console, with your contracts available and ready to use.</p>
-<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999938">&nbsp;</span></a>Command</h1><p>To fire up the console, simply run:</p>
-<pre><code class="lang-none">$ truffle console
+          <h1><a name="accessing-smart-contracts-in-a-browser" class="anchor" href="#accessing-smart-contracts-in-a-browser"><span class="header-link" style="z-index: 9999999961">&nbsp;</span></a>Accessing Smart Contracts in a Browser</h1><p>To begin interacting with our smart contracts in a browser, first make sure they&#39;re compiled, deployed and that we&#39;re interacting with them via <code>web3</code> in our client-side JavaScript. We recommend using the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract library</a>, as it makes interacting with contracts easier and more robust.</p>
+<p>For more information on these topics, including using <code>truffle-contract</code>, check out our <a href="/tutorials/pet-shop">Pet Shop</a> or <a href="/tutorials/robust-smart-contracts-with-openzeppelin">TutorialToken</a> Tutorials.</p>
+<h1><a name="what-is-metamask-" class="anchor" href="#what-is-metamask-"><span class="header-link" style="z-index: 9999999960">&nbsp;</span></a>What is MetaMask?</h1><p><a href="https://metamask.io/">MetaMask</a> is the easiest way to start using Dapps in a browser. It is a Chrome extension that connects to the Ethereum network without running a full node on the browser&#39;s machine. It can connect to the Ethereum Main Network; Ropsten, Kovan and Rinkeby testnets; or a local chain such as the TestRPC. For development with Truffle this means we can use our Dapp the same way users will interact with it on a live network.</p>
+<h2><a name="installing-metamask" class="anchor" href="#installing-metamask"><span class="header-link" style="z-index: 9999999959">&nbsp;</span></a>Installing Metamask</h2><p>Currently, MetaMask only supports Google&#39;s Chrome browser, but support for Firefox and others is planned for the future.</p>
+<p>To install MetaMask, go to the <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">Chrome Web Store</a> and click the + ADD TO CHROME button.</p>
+<h1><a name="using-metamask-with-the-testrpc" class="anchor" href="#using-metamask-with-the-testrpc"><span class="header-link" style="z-index: 9999999958">&nbsp;</span></a>Using MetaMask with the TestRPC</h1><p>With our front-end ready to be used and MetaMask installed, we&#39;re ready to see our Dapp in all its glory. Before diving in though, we&#39;ll need to make sure we&#39;re checking for MetaMask&#39;s <code>web3</code> instance and the extension itself is configured properly with the TestRPC.</p>
+<h2><a name="detecting-metamask-39-s-web3-injection" class="anchor" href="#detecting-metamask-39-s-web3-injection"><span class="header-link" style="z-index: 9999999957">&nbsp;</span></a>Detecting MetaMask&#39;s Web3 Injection</h2><p>MetaMask injects its own <code>web3</code> instance, so we&#39;ll want to make sure we&#39;re checking for that. After the window as loaded perform the following check:</p>
+<pre><code class="lang-javascript">// Is there is an injected web3 instance?
+if (typeof web3 !== &#39;undefined&#39;) {
+  App.web3Provider = web3.currentProvider;
+  web3 = new Web3(web3.currentProvider);
+} else {
+  // If no injected web3 instance is detected, fallback to the TestRPC.
+  App.web3Provider = new web3.providers.HttpProvider(&#39;http://localhost:8545&#39;);
+  web3 = new Web3(App.web3Provider);
+}
 </code></pre>
-<p>This will load up a console using the <code>development</code> network, if specified. You can override this using the <code>--network</code> option. See more details in the <a href="/docs/advanced/networks">Networks</a> section as well as the <a href="/docs/advanced/commands">command reference</a>.</p>
-<p>When you load the console, you&#39;ll immediately see output like this:</p>
-<pre><code>$ truffle console
-truffle(development)&gt;
-</code></pre><p>This tells you you&#39;re running within a Truffle console using the <code>development</code> network.</p>
-<h1><a name="features" class="anchor" href="#features"><span class="header-link" style="z-index: 9999999937">&nbsp;</span></a>Features</h1><p>The console provides all the features available in the Truffle command line tool. For instance, you can type <code>migrate --reset</code> within the console, and it will be interpreted the same as if you ran <code>truffle migrate --reset</code> from outside the console. Truffle&#39;s console additionally has the following features:</p>
-<ul>
-<li>All of your compiled contracts are available and ready for use.</li>
-<li>After each command (such as <code>migrate --reset</code>) your contracts are reprovisioned so you can start using the newly assigned addresses and binaries immediately.</li>
-<li>The <code>web3</code> library is made available and is set to connect to your Ethereum client.</li>
-<li>All commands that return a promise will automatically be resolved, and the result printed, removing the need to use <code>.then()</code> for simple commands. e.g.,</li>
-</ul>
-<pre><code>truffle(default)&gt; MyContract.at(&quot;0xabcd...&quot;).getValue.call(); 
-5
-</code></pre>
+<h2><a name="using-the-browser-extension" class="anchor" href="#using-the-browser-extension"><span class="header-link" style="z-index: 9999999956">&nbsp;</span></a>Using the Browser Extension</h2><p>To use the TestRPC with MetaMask, you&#39;ll need to copy the mnemonic phrase given to you when the TestRPC first starts. From there, click the MetaMask icon in your browser and this screen will appear:</p>
+<div class="text-center">
+  <img src="/tutorials/images/pet-shop/metamask-1.png" alt="MetaMask Unlock">
+  <br/><br/>
+</div>
+
+<p>If the network in the upper-left is something other than &quot;Private Network&quot;, click it and you&#39;ll see a dropdown of possible networks. Select Localhost 8545 to use the TestRPC. If you&#39;ve set the TestRPC to use a custom port, instead choose Custom RPC and input the full TestRPC URL with port number (for example: <code>localhost:1234</code>).</p>
+<div class="text-center">
+  <img src="/tutorials/images/pet-shop/metamask-2.png" alt="MetaMask Network Choices">
+  <br/><br/>
+</div>
+
+<p>Now, you&#39;ll need to get the Mnemonic the TestRPC generated when we first started it up. If you don&#39;t have it, go to the console window running the TestRPC and scroll to the top. You&#39;ll see a heading called HD Wallet and below it Mnemonic. Copy this phrase, then click I forgot my password and paste it in the first field. Now choose a password and click OK.</p>
+<div class="text-center">
+  <img src="/tutorials/images/pet-shop/metamask-3.png" alt="MetaMask Mnemonic">
+  <br/><br/>
+</div>
+
+<p>Now that we&#39;ve connected MetaMask to the TestRPC, you&#39;ll be take to the accounts screen. Each account created by the TestRPC is given 100 Ether. The first account may have less than the others because that account supplies the gas for smart contract deployment.</p>
+<p>The plus button below Account 1 will create new accounts, the first 10 of which will correspond to the 10 accounts made by the TestRPC.</p>
+<div class="text-center">
+  <img src="/tutorials/images/pet-shop/metamask-4.png" alt="MetaMask Account">
+  <br/><br/>
+</div>
+
+<p>Now that MetaMask is configured, we can start our web server and actually use the Dapp.</p>
+
           <footer class="container-fluid">
-            <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/docs/getting_started/console.md">Edit here &rarr;</a></p>
+            <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/docs/advanced/truffle-with-metamask.md">Edit here &rarr;</a></p>
           </footer>
         </div>
       </div>
