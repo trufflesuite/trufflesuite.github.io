@@ -48,7 +48,7 @@
     
     
 
-    <title>TruffleFramework.com | Networks &amp; App Deployment</title>
+    <title>TruffleFramework.com | Truffle with MetaMask</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -214,30 +214,65 @@
                                   
                 <li class=""><a href="/docs/advanced/configuration">Configuration</a></li>
                                 
-                <li class="active"><a href="/docs/advanced/networks">Networks &amp; App Deployment</a></li>
+                <li class=""><a href="/docs/advanced/networks">Networks &amp; App Deployment</a></li>
                                 
                 <li class=""><a href="/docs/advanced/build_processes">Build Processes</a></li>
                                 
                 <li class=""><a href="/docs/advanced/commands">Command Reference</a></li>
                                 
-                <li class=""><a href="/docs/advanced/truffle-with-metamask">Truffle with MetaMask</a></li>
+                <li class="active"><a href="/docs/advanced/truffle-with-metamask">Truffle with MetaMask</a></li>
                             </ul>
             </li>
           
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="background" class="anchor" href="#background"><span class="header-link" style="z-index: 9999999966">&nbsp;</span></a>Background</h1><p>Even the smallest project will interact with at the very least two blockchains: One on the developer&#39;s machine, like the <a href="https://github.com/ethereumjs/testrpc">EthereumJS TestRPC</a>, and the other representing the network where the developer will eventually deploy their application (this could be the public Ethereum network, or a private consortium network, for instance). Truffle provides a system for managing the compilation and deployment artifacts for each network, and does so in a way that simplifies final application deployment.</p>
-<h1><a name="configuration" class="anchor" href="#configuration"><span class="header-link" style="z-index: 9999999965">&nbsp;</span></a>Configuration</h1><p>See the <a href="/docs/advanced/configuration#networks">Configuration</a> section for more information.</p>
-<h1><a name="specifying-a-network" class="anchor" href="#specifying-a-network"><span class="header-link" style="z-index: 9999999964">&nbsp;</span></a>Specifying a Network</h1><p>Most Truffle commands will behave differently based on the network specified, and will use that network&#39;s contracts and configuration. You can specify a network using the <code>--network</code> option, like below:</p>
-<pre><code class="lang-bash">$ truffle migrate --network live
+          <h1><a name="accessing-smart-contracts-in-a-browser" class="anchor" href="#accessing-smart-contracts-in-a-browser"><span class="header-link" style="z-index: 9999999961">&nbsp;</span></a>Accessing Smart Contracts in a Browser</h1><p>To begin interacting with our smart contracts in a browser, first make sure they&#39;re compiled, deployed and that we&#39;re interacting with them via <code>web3</code> in our client-side JavaScript. We recommend using the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract library</a>, as it makes interacting with contracts easier and more robust.</p>
+<p>For more information on these topics, including using <code>truffle-contract</code>, check out our <a href="/tutorials/pet-shop">Pet Shop</a> or <a href="/tutorials/robust-smart-contracts-with-openzeppelin">TutorialToken</a> Tutorials.</p>
+<h1><a name="what-is-metamask-" class="anchor" href="#what-is-metamask-"><span class="header-link" style="z-index: 9999999960">&nbsp;</span></a>What is MetaMask?</h1><p><a href="https://metamask.io/">MetaMask</a> is the easiest way to start using Dapps in a browser. It is a Chrome extension that connects to the Ethereum network without running a full node on the browser&#39;s machine. It can connect to the Ethereum Main Network; Ropsten, Kovan and Rinkeby testnets; or a local chain such as the TestRPC. For development with Truffle this means we can use our Dapp the same way users will interact with it on a live network.</p>
+<h2><a name="installing-metamask" class="anchor" href="#installing-metamask"><span class="header-link" style="z-index: 9999999959">&nbsp;</span></a>Installing Metamask</h2><p>Currently, MetaMask only supports Google&#39;s Chrome browser, but support for Firefox and others is planned for the future.</p>
+<p>To install MetaMask, go to the <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">Chrome Web Store</a> and click the + ADD TO CHROME button.</p>
+<h1><a name="using-metamask-with-the-testrpc" class="anchor" href="#using-metamask-with-the-testrpc"><span class="header-link" style="z-index: 9999999958">&nbsp;</span></a>Using MetaMask with the TestRPC</h1><p>With our front-end ready to be used and MetaMask installed, we&#39;re ready to see our Dapp in all its glory. Before diving in though, we&#39;ll need to make sure we&#39;re checking for MetaMask&#39;s <code>web3</code> instance and the extension itself is configured properly with the TestRPC.</p>
+<h2><a name="detecting-metamask-39-s-web3-injection" class="anchor" href="#detecting-metamask-39-s-web3-injection"><span class="header-link" style="z-index: 9999999957">&nbsp;</span></a>Detecting MetaMask&#39;s Web3 Injection</h2><p>MetaMask injects its own <code>web3</code> instance, so we&#39;ll want to make sure we&#39;re checking for that. After the window as loaded perform the following check:</p>
+<pre><code class="lang-javascript">// Is there is an injected web3 instance?
+if (typeof web3 !== &#39;undefined&#39;) {
+  App.web3Provider = web3.currentProvider;
+  web3 = new Web3(web3.currentProvider);
+} else {
+  // If no injected web3 instance is detected, fallback to the TestRPC.
+  App.web3Provider = new web3.providers.HttpProvider(&#39;http://localhost:8545&#39;);
+  web3 = new Web3(App.web3Provider);
+}
 </code></pre>
-<p>In this example, Truffle will run your migrations on the &quot;live&quot; network, which &#8211; if configured like <a href="/docs/advanced/configuration#networks">the example</a> &#8211; is associated with the public Ethereum blockchain.</p>
-<h1><a name="build-artifacts" class="anchor" href="#build-artifacts"><span class="header-link" style="z-index: 9999999963">&nbsp;</span></a>Build Artifacts</h1><p>As mentioned in the <a href="/docs/getting_started/compile">Compiling contracts</a> section, build artifacts are stored in the <code>./build/contracts</code> directory as <code>.json</code> files. When you compile your contracts or run your migrations using a specific network, Truffle will update those <code>.json</code> files so they contain the information related to that network. When those artifacts are used later &#8211; such as within your frontend or application via <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> &#8211; they&#39;ll automatically detect which network the Ethereum client is connected to and use the correct contract artifacts accordingly.</p>
-<h1><a name="application-deployment" class="anchor" href="#application-deployment"><span class="header-link" style="z-index: 9999999962">&nbsp;</span></a>Application Deployment</h1><p>Because the network is auto-detected by the contract artifacts at runtime, this means that you only need to deploy your application or frontend <em>once</em>. When your application is run, the running Ethereum client will determine which artifacts are used, and this will make your application very flexible. As an example, if you were to deploy a web application to <a href="http://mydapp.io">http://mydapp.io</a>, you could navigate to that address using your favorite wallet-browser (like MetaMask, or Mist) and your dapp would work correctly regardless of the Ethereum network the wallet-browser was connected to. If the wallet-browser was connected to the live network, your dapp would use the contracts you deployed on the live network. If on Ropsten, the contracts you deployed to Ropsten would be used.</p>
+<h2><a name="using-the-browser-extension" class="anchor" href="#using-the-browser-extension"><span class="header-link" style="z-index: 9999999956">&nbsp;</span></a>Using the Browser Extension</h2><p>To use the TestRPC with MetaMask, you&#39;ll need to copy the mnemonic phrase given to you when the TestRPC first starts. From there, click the MetaMask icon in your browser and this screen will appear:</p>
+<div class="text-center">
+  <img src="/tutorials/images/pet-shop/metamask-1.png" alt="MetaMask Unlock">
+  <br/><br/>
+</div>
+
+<p>If the network in the upper-left is something other than &quot;Private Network&quot;, click it and you&#39;ll see a dropdown of possible networks. Select Localhost 8545 to use the TestRPC. If you&#39;ve set the TestRPC to use a custom port, instead choose Custom RPC and input the full TestRPC URL with port number (for example: <code>localhost:1234</code>).</p>
+<div class="text-center">
+  <img src="/tutorials/images/pet-shop/metamask-2.png" alt="MetaMask Network Choices">
+  <br/><br/>
+</div>
+
+<p>Now, you&#39;ll need to get the Mnemonic the TestRPC generated when we first started it up. If you don&#39;t have it, go to the console window running the TestRPC and scroll to the top. You&#39;ll see a heading called HD Wallet and below it Mnemonic. Copy this phrase, then click I forgot my password and paste it in the first field. Now choose a password and click OK.</p>
+<div class="text-center">
+  <img src="/tutorials/images/pet-shop/metamask-3.png" alt="MetaMask Mnemonic">
+  <br/><br/>
+</div>
+
+<p>Now that we&#39;ve connected MetaMask to the TestRPC, you&#39;ll be take to the accounts screen. Each account created by the TestRPC is given 100 Ether. The first account may have less than the others because that account supplies the gas for smart contract deployment.</p>
+<p>The plus button below Account 1 will create new accounts, the first 10 of which will correspond to the 10 accounts made by the TestRPC.</p>
+<div class="text-center">
+  <img src="/tutorials/images/pet-shop/metamask-4.png" alt="MetaMask Account">
+  <br/><br/>
+</div>
+
+<p>Now that MetaMask is configured, we can start our web server and actually use the Dapp.</p>
 
           <footer class="container-fluid">
-            <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/docs/advanced/networks.md">Edit here &rarr;</a></p>
+            <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/docs/advanced/truffle-with-metamask.md">Edit here &rarr;</a></p>
           </footer>
         </div>
       </div>
