@@ -279,40 +279,49 @@
   useColors: true
 }
 </code></pre>
-<h1><a name="ethpm-configuration" class="anchor" href="#ethpm-configuration"><span class="header-link" style="z-index: 9999999974">&nbsp;</span></a>EthPM Configuration</h1><p>This configuration applies to the optional <code>ethpm.json</code> file that exists alongside your <code>truffle.js</code> configuration file.</p>
-<h3><a name="package_name" class="anchor" href="#package_name"><span class="header-link" style="z-index: 9999999973">&nbsp;</span></a>package_name</h3><p>Name of the package you&#39;re publishing. Your package name must be unique to the EthPM registry.</p>
+<h1><a name="solidity-compiler-configuration" class="anchor" href="#solidity-compiler-configuration"><span class="header-link" style="z-index: 9999999879">&nbsp;</span></a>Solidity Compiler Configuration</h1><p>Solidity compiler settings. Supports optimizer settings for <code>solc</code>.</p>
+<h3><a name="solc" class="anchor" href="#solc"><span class="header-link" style="z-index: 9999999878">&nbsp;</span></a>solc</h3><p>Example:</p>
+<pre><code class="lang-javascript">solc: {
+  optimizer: {
+    enabled: true,
+    runs: 200
+  }
+}
+</code></pre>
+<h1><a name="ethpm-configuration" class="anchor" href="#ethpm-configuration"><span class="header-link" style="z-index: 9999999877">&nbsp;</span></a>EthPM Configuration</h1><p>This configuration applies to the optional <code>ethpm.json</code> file that exists alongside your <code>truffle.js</code> configuration file.</p>
+<h3><a name="package_name" class="anchor" href="#package_name"><span class="header-link" style="z-index: 9999999876">&nbsp;</span></a>package_name</h3><p>Name of the package you&#39;re publishing. Your package name must be unique to the EthPM registry.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">package_name: &quot;adder&quot;
 </code></pre>
-<h3><a name="version" class="anchor" href="#version"><span class="header-link" style="z-index: 9999999972">&nbsp;</span></a>version</h3><p>Version of this package, using the <a href="http://semver.org/">semver</a> specification.</p>
+<h3><a name="version" class="anchor" href="#version"><span class="header-link" style="z-index: 9999999875">&nbsp;</span></a>version</h3><p>Version of this package, using the <a href="http://semver.org/">semver</a> specification.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">version: &quot;0.0.3&quot;
 </code></pre>
-<h3><a name="description" class="anchor" href="#description"><span class="header-link" style="z-index: 9999999971">&nbsp;</span></a>description</h3><p>A text description of your package for human readers.</p>
+<h3><a name="description" class="anchor" href="#description"><span class="header-link" style="z-index: 9999999874">&nbsp;</span></a>description</h3><p>A text description of your package for human readers.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">description: &quot;Simple contract to add two numbers&quot;
 </code></pre>
-<h3><a name="authors" class="anchor" href="#authors"><span class="header-link" style="z-index: 9999999970">&nbsp;</span></a>authors</h3><p>An array of authors. Can have any format, but we recommend the format below.</p>
+<h3><a name="authors" class="anchor" href="#authors"><span class="header-link" style="z-index: 9999999873">&nbsp;</span></a>authors</h3><p>An array of authors. Can have any format, but we recommend the format below.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">authors: [
   &quot;Tim Coulter &lt;tim.coulter@consensys.net&gt;&quot;
 ]
 </code></pre>
-<h3><a name="keywords" class="anchor" href="#keywords"><span class="header-link" style="z-index: 9999999969">&nbsp;</span></a>keywords</h3><p>An array of keywords that tag this package with helpful categories.</p>
+<h3><a name="keywords" class="anchor" href="#keywords"><span class="header-link" style="z-index: 9999999872">&nbsp;</span></a>keywords</h3><p>An array of keywords that tag this package with helpful categories.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">keywords: [
   &quot;ethereum&quot;,
   &quot;addition&quot;
 ],
 </code></pre>
-<h3><a name="dependencies" class="anchor" href="#dependencies"><span class="header-link" style="z-index: 9999999968">&nbsp;</span></a>dependencies</h3><p>A list of EthPM packages your package depends on, using <a href="http://semver.org/">semver</a> version ranges, like npm.</p>
+<h3><a name="dependencies" class="anchor" href="#dependencies"><span class="header-link" style="z-index: 9999999871">&nbsp;</span></a>dependencies</h3><p>A list of EthPM packages your package depends on, using <a href="http://semver.org/">semver</a> version ranges, like npm.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">dependencies: {
   &quot;owned&quot;: &quot;^0.0.1&quot;,
   &quot;erc20-token&quot;: &quot;1.0.0&quot;
 }
 </code></pre>
-<h3><a name="license" class="anchor" href="#license"><span class="header-link" style="z-index: 9999999967">&nbsp;</span></a>license</h3><p>License to use for this package. Strictly informative.</p>
+<h3><a name="license" class="anchor" href="#license"><span class="header-link" style="z-index: 9999999870">&nbsp;</span></a>license</h3><p>License to use for this package. Strictly informative.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">license: &quot;MIT&quot;,
 </code></pre>
