@@ -8,7 +8,7 @@ This article was originally written by Dan Finlay and published as a [github gis
 
 -----------------
 
-If you're interested in building web apps with [the Ethereum blockchain](https://www.ethereum.org/), you may have found [the Truffle web framework](http://truffle.readthedocs.org/en/latest/) to be a nice fit for your needs.
+If you're interested in building web apps with [the Ethereum blockchain](https://www.ethereum.org/), you may have found [the Truffle web framework](http://truffleframework.com/docs/) to be a nice fit for your needs.
 
 For many types of Dapps (Distributed Apps), Truffle does everything you could want:  It compiles your blockchain contracts, injects them into your web app, and can even run a test suite against them!
 
@@ -38,7 +38,7 @@ Next let's make sure we have our `testrpc` running in the background.  Open your
 
 Ethereum RPCs can run in a pre-authenticated mode, that allows you to perform transactions without providing any additional credentials. Obviously this would be a dangerous thing to do on the open web, but for local development, it's the default method that `testrpc` provides.
 
-When you first start `testrpc`, You get a list of initial accounts. These accounts start funded with a whole lot of Ether, so you can practice exchanging funds between accounts.
+When you first start `testrpc`, you get a list of initial accounts. These accounts start funded with a whole lot of Ether, so you can practice exchanging funds between accounts.
 
 When you open a normal Truffle Dapp, it takes advantage of your local authenticated rpc, and has access to its account list. The default Truffle dapp just uses the first account in the list.
 
@@ -71,7 +71,7 @@ Now you'll want to install [Metamask from the Chrome store](https://chrome.googl
 
 *Metamask is currently not listed on the Chrome store, but you get that link because you're an early adopter who we want to support.*
 
-When first setting up Metamask, you'll need to provide a password (used to encrypt your wallet).  It is then going to generate a unique twelve-word phrase that you'll eventually be able to use to recover all your accounts.We haven't done that yet because this is just a developer preview! Please don't use Metamask for important things yet!
+When first setting up Metamask, you'll need to provide a password (used to encrypt your wallet). It is then going to generate a unique twelve-word phrase that you'll eventually be able to use to recover all your accounts. We haven't done that yet because this is just a developer preview! Please don't use Metamask for important things yet!
 
 By default you get three accounts, all named Wallie. Again, our developer preview is showing. Eventually we're planning to integrate [rich persona management via uPort](https://medium.com/@ConsenSys/uport-the-wallet-is-the-new-browser-b133a83fe73)!).
 
