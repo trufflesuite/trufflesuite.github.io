@@ -163,9 +163,9 @@
   <img src="/tutorials/images/open-zeppelin/logo-zeppelin.png" alt="OpenZeppelin">
 </div>
 
-<h1><a name="robust-smart-contracts-with-openzeppelin" class="anchor" href="#robust-smart-contracts-with-openzeppelin"><span class="header-link" style="z-index: 9999993695">&nbsp;</span></a>Robust Smart Contracts with OpenZeppelin</h1><p>Because smart contracts in the wild deal with real money, having our Solidity code free from errors and highly secure is essential. <a href="https://zeppelin.solutions/">Zeppelin Solutions</a>, a smart contract auditing service, has recognized this need. Using their experience, they&#39;ve put together a set of vetted smart contracts called <a href="https://openzeppelin.org/">OpenZeppelin</a>.</p>
+<h1><a name="robust-smart-contracts-with-openzeppelin" class="anchor" href="#robust-smart-contracts-with-openzeppelin"><span class="header-link" style="z-index: 9999991023">&nbsp;</span></a>Robust Smart Contracts with OpenZeppelin</h1><p>Because smart contracts in the wild deal with real money, having our Solidity code free from errors and highly secure is essential. <a href="https://zeppelin.solutions/">Zeppelin Solutions</a>, a smart contract auditing service, has recognized this need. Using their experience, they&#39;ve put together a set of vetted smart contracts called <a href="https://openzeppelin.org/">OpenZeppelin</a>.</p>
 <p>We can use and extend these contracts to create more secure dapps in less time. OpenZeppelin comes with a wide array of smart contracts for various important functions (<a href="https://github.com/OpenZeppelin/zeppelin-solidity">see them all here</a>), but today we&#39;ll be focusing on their token contracts. Specifically, we&#39;ll be extending <code>StandardToken.sol</code> to create our own ERC-20 token.</p>
-<h2><a name="requirements" class="anchor" href="#requirements"><span class="header-link" style="z-index: 9999993694">&nbsp;</span></a>Requirements</h2><p>This tutorial expects you to have some knowledge of Truffle, Ethereum, and Solidity. If you haven&#39;t gone through <a href="/tutorials/pet-shop">our Pet Shop tutorial</a> yet, that&#39;s a great place to start!</p>
+<h2><a name="requirements" class="anchor" href="#requirements"><span class="header-link" style="z-index: 9999991022">&nbsp;</span></a>Requirements</h2><p>This tutorial expects you to have some knowledge of Truffle, Ethereum, and Solidity. If you haven&#39;t gone through <a href="/tutorials/pet-shop">our Pet Shop tutorial</a> yet, that&#39;s a great place to start!</p>
 <p>For even more information on the listed topics, please see the following links:</p>
 <ul>
 <li><a href="/docs/">Truffle documentation</a></li>
@@ -173,21 +173,21 @@
 <li><a href="https://solidity.readthedocs.io/en/develop/">Solidity documentation</a></li>
 </ul>
 <p>We will primarily be using the command line for this tutorial. Ensure you have basic familiarity with opening and using the command line provided by your operating system.</p>
-<h2><a name="overview" class="anchor" href="#overview"><span class="header-link" style="z-index: 9999993693">&nbsp;</span></a>Overview</h2><p>In this tutorial, you&#39;ll learn how to:</p>
+<h2><a name="overview" class="anchor" href="#overview"><span class="header-link" style="z-index: 9999991021">&nbsp;</span></a>Overview</h2><p>In this tutorial, you&#39;ll learn how to:</p>
 <ol>
 <li>Unbox the front-end</li>
 <li>Create the <code>TutorialToken</code> smart contract with OpenZeppelin&#39;s <code>StandardToken</code></li>
 <li>Compile and deploy our smart contract to the testrpc</li>
 <li>Interact with our newly created token</li>
 </ol>
-<h2><a name="1-unboxing-the-front-end" class="anchor" href="#1-unboxing-the-front-end"><span class="header-link" style="z-index: 9999993692">&nbsp;</span></a>1. Unboxing the Front-end</h2><p>Today we&#39;ll be focusing on smart contract creation. To that end, we&#39;ve created the front-end for you in the form of a truffle box. Open the command line and navigate to a folder where you&#39;d like to unbox. Here, we chose the folder <code>oz-workspace</code>:</p>
+<h2><a name="1-unboxing-the-front-end" class="anchor" href="#1-unboxing-the-front-end"><span class="header-link" style="z-index: 9999991020">&nbsp;</span></a>1. Unboxing the Front-end</h2><p>Today we&#39;ll be focusing on smart contract creation. To that end, we&#39;ve created the front-end for you in the form of a truffle box. Open the command line and navigate to a folder where you&#39;d like to unbox. Here, we chose the folder <code>oz-workspace</code>:</p>
 <pre><code class="lang-shell">$ cd oz-workspace
 $ truffle unbox tutorialtoken
 </code></pre>
 <p>Next, we&#39;ll install OpenZeppelin. The most recent version of OpenZeppelin can be found as an NPM package.</p>
 <pre><code class="lang-shell">$ npm install zeppelin-solidity
 </code></pre>
-<h2><a name="2-creating-the-tutorialtoken-smart-contract" class="anchor" href="#2-creating-the-tutorialtoken-smart-contract"><span class="header-link" style="z-index: 9999993691">&nbsp;</span></a>2. Creating the TutorialToken Smart Contract</h2><p>With our front-end taken care of, let&#39;s create the <code>TutorialToken</code> contract. In the <code>contracts</code> directory, create the file <code>TutorialToken.sol</code> with the following contents:</p>
+<h2><a name="2-creating-the-tutorialtoken-smart-contract" class="anchor" href="#2-creating-the-tutorialtoken-smart-contract"><span class="header-link" style="z-index: 9999991019">&nbsp;</span></a>2. Creating the TutorialToken Smart Contract</h2><p>With our front-end taken care of, let&#39;s create the <code>TutorialToken</code> contract. In the <code>contracts</code> directory, create the file <code>TutorialToken.sol</code> with the following contents:</p>
 <pre><code class="lang-javascript">pragma solidity ^0.4.4;
 import &#39;zeppelin-solidity/contracts/token/StandardToken.sol&#39;;
 
@@ -209,7 +209,7 @@ uint public INITIAL_SUPPLY = 12000;
 }
 </code></pre>
 <p>Using less than 15 lines of hand-coded Solidity, we&#39;ve created our own ERC-20 token! Next, we&#39;ll be deploying and interacting with the token.</p>
-<h2><a name="3-compilation-and-deployment" class="anchor" href="#3-compilation-and-deployment"><span class="header-link" style="z-index: 9999993690">&nbsp;</span></a>3. Compilation and Deployment</h2><p>In the <code>/migrations</code> directory, create the file <code>2_deploy_contracts.js</code> with the following contents:</p>
+<h2><a name="3-compilation-and-deployment" class="anchor" href="#3-compilation-and-deployment"><span class="header-link" style="z-index: 9999991018">&nbsp;</span></a>3. Compilation and Deployment</h2><p>In the <code>/migrations</code> directory, create the file <code>2_deploy_contracts.js</code> with the following contents:</p>
 <pre><code class="lang-javascript">var TutorialToken = artifacts.require(&quot;./TutorialToken.sol&quot;);
 
 module.exports = function(deployer) {
@@ -221,7 +221,7 @@ module.exports = function(deployer) {
 <pre><code class="lang-shell">$ truffle compile
 $ truffle migrate
 </code></pre>
-<h2><a name="4-interacting-with-tutorialtoken" class="anchor" href="#4-interacting-with-tutorialtoken"><span class="header-link" style="z-index: 9999993689">&nbsp;</span></a>4. Interacting with TutorialToken</h2><p>For this portion of the tutorial, we recommend using the MetaMask Chrome extension. It will allow you to switch between accounts quickly; perfect for testing the ability to transfer our newly created tokens. <a href="http://localhost:9000/tutorials/pet-shop#using-our-dapp-in-chrome">Click here if you need help setting up and configuring MetaMask for use with the testrpc</a>.</p>
+<h2><a name="4-interacting-with-tutorialtoken" class="anchor" href="#4-interacting-with-tutorialtoken"><span class="header-link" style="z-index: 9999991017">&nbsp;</span></a>4. Interacting with TutorialToken</h2><p>For this portion of the tutorial, we recommend using the MetaMask Chrome extension. It will allow you to switch between accounts quickly; perfect for testing the ability to transfer our newly created tokens. <a href="http://localhost:9000/tutorials/pet-shop#using-our-dapp-in-chrome">Click here if you need help setting up and configuring MetaMask for use with the testrpc</a>.</p>
 <p>We&#39;ve already installed <code>lite-server</code> for you, so getting the front-end up and running is as easy as executing the following command from the root <code>oz-workspace</code> directory:</p>
 <pre><code class="lang-shell">$ npm run dev
 </code></pre>
@@ -238,7 +238,7 @@ $ truffle migrate
   <p class="caption">2000TT moved to account 2.</p><br/>
 </div>
 
-<h2><a name="truffle-openzeppelin-a-superb-development-experience" class="anchor" href="#truffle-openzeppelin-a-superb-development-experience"><span class="header-link" style="z-index: 9999993688">&nbsp;</span></a>Truffle + OpenZeppelin = A Superb Development Experience</h2><p>We at Truffle are excited to see companies like Zeppelin Solutions contributing to the standardization and increased security of smart contracts. With OpenZeppelin&#39;s contracts and Truffle&#39;s toolset, you have everything necessary to start creating industry standard distributed applications.</p>
+<h2><a name="truffle-openzeppelin-a-superb-development-experience" class="anchor" href="#truffle-openzeppelin-a-superb-development-experience"><span class="header-link" style="z-index: 9999991016">&nbsp;</span></a>Truffle + OpenZeppelin = A Superb Development Experience</h2><p>We at Truffle are excited to see companies like Zeppelin Solutions contributing to the standardization and increased security of smart contracts. With OpenZeppelin&#39;s contracts and Truffle&#39;s toolset, you have everything necessary to start creating industry standard distributed applications.</p>
 <p>Happy coding!</p>
 
       </div>
