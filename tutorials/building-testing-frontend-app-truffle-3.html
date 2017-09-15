@@ -159,11 +159,11 @@
   <section class="MainContent">
     <div class="container-fluid">
       <div class="row">
-        <h1><a name="building-amp-testing-a-frontend-app-with-truffle-3-0" class="anchor" href="#building-amp-testing-a-frontend-app-with-truffle-3-0"><span class="header-link" style="z-index: 9999971439">&nbsp;</span></a>Building &amp; Testing a Frontend App with Truffle 3.0</h1><p><a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">Truffle 3</a> is out and switched to less opinionated build process that allows any build pipeline to be plugged in. We&#39;re going to take advantage of that feature today, and build a frontend app with a custom pipeline.</p>
-<h2><a name="intended-audience" class="anchor" href="#intended-audience"><span class="header-link" style="z-index: 9999971438">&nbsp;</span></a>Intended Audience</h2><p>This is written for those familiar with Truffle and Ethereum, who want a sense of how to structure a frontend application for easy development and testing. This example uses webpack, but familiarity with other build tools is enough background.</p>
-<h2><a name="what-does-a-build-process-need-to-do-in-truffle-3-" class="anchor" href="#what-does-a-build-process-need-to-do-in-truffle-3-"><span class="header-link" style="z-index: 9999971437">&nbsp;</span></a>What does a build process need to do in Truffle 3?</h2><p>In general, simple: Turn all higher level code (like ES6, SASS, JSX, templates, etc.) into vanilla Javascript/HTML/CSS artifacts, and then move those artifacts into the <code>build</code> folder alongside our contract artifacts.</p>
-<h2><a name="what-this-tutorial-does" class="anchor" href="#what-this-tutorial-does"><span class="header-link" style="z-index: 9999971436">&nbsp;</span></a>What this tutorial does</h2><p>Uses webpack to compile the application&#39;s frontend code and move the artifacts into the <code>build</code> folder.</p>
-<h3><a name="getting-started" class="anchor" href="#getting-started"><span class="header-link" style="z-index: 9999971435">&nbsp;</span></a>Getting Started</h3><p>If you were using Truffle beta 3.0.0-9 or below, <strong>do not immediately upgrade</strong>. Read <a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">these release notes</a> and the <a href="http://truffleframework.com/tutorials/upgrading-from-truffle-2-to-3">upgrade guide</a> first.</p>
+        <h1><a name="building-amp-testing-a-frontend-app-with-truffle-3-0" class="anchor" href="#building-amp-testing-a-frontend-app-with-truffle-3-0"><span class="header-link" style="z-index: 9999971105">&nbsp;</span></a>Building &amp; Testing a Frontend App with Truffle 3.0</h1><p><a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">Truffle 3</a> is out and switched to less opinionated build process that allows any build pipeline to be plugged in. We&#39;re going to take advantage of that feature today, and build a frontend app with a custom pipeline.</p>
+<h2><a name="intended-audience" class="anchor" href="#intended-audience"><span class="header-link" style="z-index: 9999971104">&nbsp;</span></a>Intended Audience</h2><p>This is written for those familiar with Truffle and Ethereum, who want a sense of how to structure a frontend application for easy development and testing. This example uses webpack, but familiarity with other build tools is enough background.</p>
+<h2><a name="what-does-a-build-process-need-to-do-in-truffle-3-" class="anchor" href="#what-does-a-build-process-need-to-do-in-truffle-3-"><span class="header-link" style="z-index: 9999971103">&nbsp;</span></a>What does a build process need to do in Truffle 3?</h2><p>In general, simple: Turn all higher level code (like ES6, SASS, JSX, templates, etc.) into vanilla Javascript/HTML/CSS artifacts, and then move those artifacts into the <code>build</code> folder alongside our contract artifacts.</p>
+<h2><a name="what-this-tutorial-does" class="anchor" href="#what-this-tutorial-does"><span class="header-link" style="z-index: 9999971102">&nbsp;</span></a>What this tutorial does</h2><p>Uses webpack to compile the application&#39;s frontend code and move the artifacts into the <code>build</code> folder.</p>
+<h3><a name="getting-started" class="anchor" href="#getting-started"><span class="header-link" style="z-index: 9999971101">&nbsp;</span></a>Getting Started</h3><p>If you were using Truffle beta 3.0.0-9 or below, <strong>do not immediately upgrade</strong>. Read <a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">these release notes</a> and the <a href="http://truffleframework.com/tutorials/upgrading-from-truffle-2-to-3">upgrade guide</a> first.</p>
 <p>Once you have Truffle 3 installed, run <code>truffle init webpack</code> in an <strong>empty</strong> directory to pull down the webpack example for this tutorial <a href="https://github.com/trufflesuite/truffle-init-webpack">(repository here)</a>. If you&#39;re coming from Truffle 2, you&#39;ll notice your old friends <code>Metacoin.sol</code> and <code>ConvertLib.sol</code> are still there. But now, running <code>truffle build</code> does this:</p>
 <pre><code class="lang-bash">root@b1c71a2e1a6e:/app# truffle build
 Error building:
@@ -173,7 +173,7 @@ No build configuration specified. Cant build.
 Build failed. See above.
 </code></pre>
 <p>That&#39;s ok! Truffle 3 is getting out of your way and letting you control the build process. Our new process is specified in <code>webpack.config.js</code>. More on this later.</p>
-<h3><a name="compile-migrate-and-" class="anchor" href="#compile-migrate-and-"><span class="header-link" style="z-index: 9999971434">&nbsp;</span></a>Compile, migrate, and &#8230;</h3><p>In order to interact with contracts, we need them deployed on a network! The default network is configured in <code>truffle.js</code>:</p>
+<h3><a name="compile-migrate-and-" class="anchor" href="#compile-migrate-and-"><span class="header-link" style="z-index: 9999971100">&nbsp;</span></a>Compile, migrate, and &#8230;</h3><p>In order to interact with contracts, we need them deployed on a network! The default network is configured in <code>truffle.js</code>:</p>
 <pre><code class="lang-json">...
 networks: {
   development: {
@@ -190,7 +190,7 @@ networks: {
 import metacoin_artifacts from &#39;../../build/contracts/MetaCoin.json&#39;
 </code></pre>
 <p>Next run <code>truffle migrate</code>. This will deploy the contracts onto the default network running at <code>localhost:8545</code>.</p>
-<h3><a name="-webpack-build" class="anchor" href="#-webpack-build"><span class="header-link" style="z-index: 9999971433">&nbsp;</span></a>&#8230; (webpack) build</h3><p>All that&#39;s left is to use webpack to compile the app and place it in the <code>build/</code> folder. A simple <code>npm run build</code> and we&#39;re done!. Relevant configs here:</p>
+<h3><a name="-webpack-build" class="anchor" href="#-webpack-build"><span class="header-link" style="z-index: 9999971099">&nbsp;</span></a>&#8230; (webpack) build</h3><p>All that&#39;s left is to use webpack to compile the app and place it in the <code>build/</code> folder. A simple <code>npm run build</code> and we&#39;re done!. Relevant configs here:</p>
 <pre><code class="lang-json">// file: package.json
 ...
   &quot;scripts&quot;: {
@@ -216,10 +216,10 @@ plugins: [
 ...
 </code></pre>
 <p>You can find more information on webpack concepts on <a href="https://webpack.js.org/concepts/">Webpack&#39;s website</a>. Notice we didn&#39;t <em>have</em> to use webpack here. But Truffle comes with a handy webpack demo that gets us started quickly. We <em>could</em> replace the webpack config with a <code>Gruntfile</code>, for instance, and use Grunt instead. Truffle 3 don&#39;t care no mo&#39;.</p>
-<h2><a name="the-app" class="anchor" href="#the-app"><span class="header-link" style="z-index: 9999971432">&nbsp;</span></a>The App</h2><p>Ater building, run <code>truffle serve</code> which will serve the <code>build/</code> folder&#39;s contents on <code>localhost:8080</code>. To see it, navigate to <a href="localhost:8080/index.html">localhost:8080/index.html</a>. You should see:</p>
+<h2><a name="the-app" class="anchor" href="#the-app"><span class="header-link" style="z-index: 9999971098">&nbsp;</span></a>The App</h2><p>Ater building, run <code>truffle serve</code> which will serve the <code>build/</code> folder&#39;s contents on <code>localhost:8080</code>. To see it, navigate to <a href="localhost:8080/index.html">localhost:8080/index.html</a>. You should see:</p>
 <p><img src="/tutorials/images/MetaCoin_running.png" alt=""></p>
 <p>That&#39;s it, all done! Happy Truffling!</p>
-<h2><a name="extra-webpack-docker-travis-ci" class="anchor" href="#extra-webpack-docker-travis-ci"><span class="header-link" style="z-index: 9999971431">&nbsp;</span></a>Extra: Webpack + Docker + Travis CI</h2><p>If you want to see how to deploy a frontend app using Docker and Travis build pipeline, check out <a href="https://github.com/dougvk/truffle3-frontend-example">my frontend example</a> for added goodness.</p>
+<h2><a name="extra-webpack-docker-travis-ci" class="anchor" href="#extra-webpack-docker-travis-ci"><span class="header-link" style="z-index: 9999971097">&nbsp;</span></a>Extra: Webpack + Docker + Travis CI</h2><p>If you want to see how to deploy a frontend app using Docker and Travis build pipeline, check out <a href="https://github.com/dougvk/truffle3-frontend-example">my frontend example</a> for added goodness.</p>
 
       </div>
     </div>

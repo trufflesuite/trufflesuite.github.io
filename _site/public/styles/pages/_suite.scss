@@ -1,74 +1,173 @@
-.Ganache {
-  background-color: #2a2825;
-  background-image: url('/images/suite/ganache/header_bg.png');
-  background-size: cover;
-  background-repeat: none;
-  font-family: 'Roboto Condensed', sans-serif;
+@mixin jaggy-edges() {
+  &:before {
+    display: block;
 
+    width: 100%;
+    height: 12px;
+
+    content: "";
+
+    background-image: linear-gradient(
+    135deg,
+    #2a2825 50%, rgba(255,255,255,0) 50%
+    ),
+    linear-gradient(
+    -135deg,
+    #2a2825 50%, rgba(255,255,255,0) 0%
+    );
+    background-position: top center, top center;
+    background-size: .75rem .75rem, .75rem .75rem;
+  }
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 12px;
+
+    content: "";
+
+    background-image: linear-gradient(
+    45deg,
+    #2a2825 50%, rgba(255,255,255,0) 50%
+    ),
+    linear-gradient(
+    -45deg,
+    #2a2825 50%, rgba(255,255,255,0) 0%
+    );
+    background-position: bottom center, bottom center;
+    background-size: .75rem .75rem, .75rem .75rem;
+  }
+}
+
+.Ganache {
+  padding-top: 100px;
+
+  background-color: #2a2825;
+  background-repeat: none;
+  background-size: cover;
+
+  font-family: "Roboto Condensed", sans-serif;
+
+  h1,
   h2,
   h3,
   h4,
   h5 {
     color: white;
-    font-weight: bold;
+    text-shadow: none;
   }
 
   p {
     color: #a6aaa8;
+
+    font-weight: 100;
   }
 
   h2 {
     color: white;
+
     line-height: 1.2;
   }
 
   .Flourish {
-    max-width: 300px;
     display: block;
-    margin: 0px auto;
+
+    max-width: 300px;
+    margin: 0 auto;
   }
+
 
   main {
     header {
+      background-image: url("/images/suite/ganache/header_bg.png");
+      background-size: cover;
 
       .Logo {
-        margin-top: 3.5rem;
+        margin-top: 2.5rem;
       }
 
       h1 {
-        margin-top: 5.5rem;
+        margin-top: 2.5rem;
+
+        letter-spacing: 2.5px;
+
+        color: #eff6f4;
+
+        font-size: 36px;
         font-weight: bold;
-        font-size: 68px;
-        color: #EFF6F4;
-        line-height: 74px;
+        line-height: 42px;
       }
 
       p {
         text-align: center;
+
         color: white;
+
+        &.text-muted {
+          color: #d0d0d0;
+        }
       }
 
       .DownloadVersions {
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+
         color: #a5a9a7;
+
+        font-size: 12px;
       }
 
       .Emoji {
         font-size: 3rem;
       }
-
-      .DownloadButton {
-        background: #E5A35D;
-        background-image: linear-gradient(-180deg, rgba(255,255,255,0.18) 0%, rgba(0,0,0,0.20) 100%);
-        border-radius: 8px;
-        padding: 1.2rem;
-        width: 290px;
-        color: #202C2A;
-        cursor: pointer;
-        display: block;
-        margin: 0px auto;
-        margin-bottom: 4rem;
-      }
     }
+  }
+
+  .DownloadButton {
+    display: block;
+
+    width: 290px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 1.2rem;
+
+    cursor: pointer;
+    text-transform: uppercase;
+
+    color: #202c2a;
+    border-radius: 8px;
+    background: #e5a35d;
+    background-image: linear-gradient(
+    -180deg,
+    rgba(255, 255, 255, .18) 0%,
+    rgba(0, 0, 0, .20) 100%
+    );
+
+    font-weight: bold;
+  }
+
+  .PosRel {
+    position: relative;
+  }
+
+  .Foil {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+
+    width: calc(100% + 30px);
+    height: 430px;
+    margin-left: -15px;
+    padding-bottom: 3rem;
+
+    background: #e9b349;
+    background-image: linear-gradient(-180deg, rgba(255,255,255,.33) 0%, rgba(0,0,0,.17) 100%);
+
+    @include jaggy-edges();
   }
 
   .Features {
@@ -78,9 +177,46 @@
       color: white;
     }
 
+    h5 {
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+
+      color: #4d4c48;
+
+      font-size: 32px;
+      font-weight: bold;
+    }
+
     .FeatureList {
+      counter-reset: counter;
+      text-align: left;
+
       li {
+        display: flex;
+        align-items: center;
+
         margin-bottom: 5rem;
+
+        &:before {
+          position: absolute;
+          z-index: -1;
+
+          content: counter(counter, decimal-leading-zero);
+          counter-increment: counter;
+          letter-spacing: -.5rem;
+
+          color: #454130;
+
+          font-size: 120px;
+          font-weight: bold;
+        }
+
+        .FeatureText {
+          padding: 0 4rem;
+
+          flex-grow: 1;
+        }
+
         h4 {
           color: white;
         }
@@ -94,43 +230,214 @@
 
 .OpenSource {
   margin: 1rem auto;
-  padding: 4rem;
-  border: 1px dashed #D1A372;
-  border-radius: 8px;
   margin-bottom: 6rem;
+  padding: 4rem;
+
+  border: 1px dashed #d1a372;
+  border-radius: 8px;
+  background-color: #2f2d2a;
+
+  svg {
+    g {
+      fill: #ab7f50 !important;
+    }
+  }
 }
 
 .BuiltWith {
-  background-color: #746f67;
-
   border-top: 10px;
   border-bottom: 10px;
-  border-image: url(/images/suite/ganache/jaggy_edge.png);
 
-  img,
-  svg,
+  .Foil {
+    height: 100% !important;
+
+    background-color: #8e8e8d;
+    background-image: none;
+
+    @include jaggy-edges();
+
+    width: calc(100% + 15px) !important;
+  }
+
+
+  img {
+    height: 130px;
+
+    border: 4px solid white;
+    border-radius: 50%;
+  }
+
   .Logo {
-    height:180px;
+    height: 180px;
+  }
+
+  hr {
+    border-color: #7d7a7a;
+  }
+
+  h6 {
+    margin: 0;
+
+    text-align: center;
+    letter-spacing: 2.5px;
+
+    color: #cbcbcb;
+    text-shadow: none;
+  }
+
+  aside {
+    border-radius: 4px;
+    background-color: #989898;
+    padding: 1rem;
+  }
+
+  .TrufflePals {
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 1rem;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    p {
+      margin: 1rem 0 0 0;
+      padding: 0;
+
+      color: #cbcbcb;
+
+      font-size: 12px;
+    }
+
+    img {
+      height: 74px;
+      border: 2px solid white;
+    }
+  }
+
+  .Flourish {
+    position: absolute;
+    top: 40%;
+    right: 0;
+
+    height: 180px;
+  }
+
+  .truffle-wordmark {
+    display: none;
   }
 }
 
 .Footer {
+  padding-bottom: 0;
+
+  border-top: 0;
+  background-color: #2a2825;
+
   h5 {
     color: #545452;
+  }
+
+  .GhostText {
+    margin-bottom: -100px;
+  }
+
+  ul {
+    li {
+      margin-bottom: .2rem;
+    }
+  }
+
+  a {
+    color: #9C9C98;
+    &:hover {
+      color: lighten(#9C9C98, 10%);
+    }
+  }
+
+  .truffle-wordmark polygon,
+  .truffle-wordmark g,
+  .truffle-wordmark path {
+    fill: white;
   }
 }
 
 @media (max-width: 768px) {
   .Ganache {
+    padding-top: 60px;
+
     main {
       header {
         height: auto;
 
-
         h1 {
-          font-size: 15vw;
-          line-height: 13vw;
+          font-size: 4vw;
+          line-height: 5.2vw;
         }
+
+        p {
+          font-size: 3vw;
+          line-height: 3.6vw;
+        }
+      }
+    }
+
+    .Foil {
+      height: 60vw;
+    }
+
+    .Features {
+      .FeatureList {
+        li {
+          position: relative;
+
+          &:before {
+            top: -1.2rem;
+
+            letter-spacing: 0;
+
+            font-size: 1.6rem;
+          }
+
+          .FeatureText {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+
+    .TrufflePals {
+      flex-direction: column;
+
+      li {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .OpenSource {
+      margin: 1rem;
+    }
+
+    .Flourish {
+      display: none;
+    }
+
+    .Footer {
+      text-align: center;
+
+      strong {
+        display: block;
+      }
+
+      .Logo {
+        margin: 1rem auto;
+      }
+
+      .BetaSignup {
+        margin-top: 2rem;
       }
     }
   }
