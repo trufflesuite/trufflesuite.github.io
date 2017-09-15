@@ -10081,13 +10081,13 @@ code {
 
 .Ganache .Features .FeatureList li:before {
   position: absolute;
-  font-size: 120px;
-  font-weight: bold;
-  letter-spacing: -.5rem;
   z-index: -1;
-  color: #454130;
   content: counter(counter, decimal-leading-zero);
   counter-increment: counter;
+  letter-spacing: -.5rem;
+  color: #454130;
+  font-size: 120px;
+  font-weight: bold;
 }
 
 .Ganache .Features .FeatureList li .FeatureText {
@@ -10109,20 +10109,24 @@ code {
   padding: 4rem;
   border: 1px dashed #d1a372;
   border-radius: 8px;
+  background-color: #2f2d2a;
+}
+
+.OpenSource svg g {
+  fill: #ab7f50 !important;
 }
 
 .BuiltWith {
   border-top: 10px;
   border-bottom: 10px;
   border-image: url(/images/suite/ganache/jaggy_edge.png);
-  background-color: #746f67;
+  background-color: #8e8e8d;
 }
 
 .BuiltWith img {
   height: 130px;
 }
 
-.BuiltWith svg,
 .BuiltWith .Logo {
   height: 180px;
 }
@@ -10131,19 +10135,65 @@ code {
   position: absolute;
   top: 40%;
   right: 0;
+  height: 180px;
+}
+
+.BuiltWith .truffle-wordmark {
+  display: none;
+}
+
+.Footer {
+  padding-bottom: 0;
+  border-top: 0;
+  background-color: #2a2825;
 }
 
 .Footer h5 {
   color: #545452;
 }
 
+.Footer .GhostText {
+  margin-bottom: -100px;
+}
+
+.Footer a:hover {
+  color: #48a0ec;
+}
+
 @media (max-width: 768px) {
+  .Ganache {
+    padding-top: 60px;
+  }
   .Ganache main header {
     height: auto;
   }
   .Ganache main header h1 {
-    font-size: 15vw;
-    line-height: 13vw;
+    font-size: 4vw;
+    line-height: 5.2vw;
+  }
+  .Ganache main header p {
+    font-size: 3vw;
+    line-height: 3.6vw;
+  }
+  .Ganache .Foil {
+    height: 60vw;
+  }
+  .Ganache .Features .FeatureList li {
+    position: relative;
+  }
+  .Ganache .Features .FeatureList li:before {
+    top: -1.2rem;
+    letter-spacing: 0;
+    font-size: 1.2rem;
+  }
+  .Ganache .Features .FeatureList li .FeatureText {
+    padding-left: 0;
+  }
+  .Ganache .OpenSource {
+    margin: 1rem;
+  }
+  .Ganache .Flourish {
+    display: none;
   }
 }
 
