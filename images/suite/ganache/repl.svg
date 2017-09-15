@@ -1,27 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="120px" height="98px" viewBox="0 0 120 98" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 28</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Ganache-Landing-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="V2" transform="translate(-1190.000000, -2898.000000)">
-            <g id="Feature-List" transform="translate(131.000000, 1804.000000)">
-                <g id="Group-30" transform="translate(0.000000, 1054.000000)">
-                    <g id="Group-28" transform="translate(1059.000000, 40.000000)">
-                        <rect id="Rectangle-8-Copy-4" fill="#E8E6E2" x="0" y="0" width="120" height="97.4117647" rx="4"></rect>
-                        <g id="Group-15" transform="translate(13.000000, 16.000000)">
-                            <g id="REPL" transform="translate(0.215208, 0.533207)">
-                                <rect id="Rectangle-5" stroke="#BF8447" stroke-width="2" x="1" y="18.3493819" width="36.4628516" height="25.6164625" rx="4"></rect>
-                                <polyline id="Path-3" stroke="#BF8447" points="6.06792949 31.138958 8.69685191 35.0045849 6.06792949 38.8702118"></polyline>
-                                <path d="M11.3546828,39.5 L17.8606741,39.5" id="Line" stroke="#BF8447" stroke-linecap="square"></path>
-                                <path d="M65.7,0.7 L65.7,16.4052632 L92.3,16.4052632 L92.3,0.7 L65.7,0.7 Z M65.7,24.6473684 L65.7,40.3526316 L92.3,40.3526316 L92.3,24.6473684 L65.7,24.6473684 Z M65.7,48.5947368 L65.7,64.3 L92.3,64.3 L92.3,48.5947368 L65.7,48.5947368 Z" id="Combined-Shape" stroke="#BF8447" stroke-width="1.4"></path>
-                                <path d="M54.3308178,32.227006 L54.3240147,25.05958 L60.1963537,32.3400643 L54.3240147,39.4698041 L54.3308178,32.227006 Z M42.9293887,32.9772296 L42.9293887,32.0550285 L54.3289624,32.0550285 L54.3289624,32.9772296 L42.9293887,32.9772296 Z" id="Combined-Shape" fill="#BF8447"></path>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="98" viewBox="0 0 120 98">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="120" height="97.412" fill="#E8E6E2" rx="4"/>
+    <g transform="translate(13.215 16.533)">
+      <rect width="36.463" height="25.616" x="1" y="18.349" stroke="#BF8447" stroke-width="2" rx="4"/>
+      <polyline stroke="#BF8447" points="6.068 31.139 8.697 35.005 6.068 38.87"/>
+      <path stroke="#BF8447" stroke-linecap="square" d="M11.3546828,39.5 L17.8606741,39.5"/>
+      <path stroke="#BF8447" stroke-width="1.4" d="M65.7,0.7 L65.7,16.4052632 L92.3,16.4052632 L92.3,0.7 L65.7,0.7 Z M65.7,24.6473684 L65.7,40.3526316 L92.3,40.3526316 L92.3,24.6473684 L65.7,24.6473684 Z M65.7,48.5947368 L65.7,64.3 L92.3,64.3 L92.3,48.5947368 L65.7,48.5947368 Z"/>
+      <path fill="#BF8447" d="M54.3308178,32.227006 L54.3240147,25.05958 L60.1963537,32.3400643 L54.3240147,39.4698041 L54.3308178,32.227006 Z M42.9293887,32.9772296 L42.9293887,32.0550285 L54.3289624,32.0550285 L54.3289624,32.9772296 L42.9293887,32.9772296 Z"/>
     </g>
+  </g>
 </svg>

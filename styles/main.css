@@ -10120,16 +10120,87 @@ code {
 .BuiltWith {
   border-top: 10px;
   border-bottom: 10px;
-  border-image: url(/images/suite/ganache/jaggy_edge.png);
+}
+
+.BuiltWith .Foil {
+  height: 100% !important;
   background-color: #8e8e8d;
+  background-image: none;
+  width: calc(100% + 15px) !important;
+}
+
+.BuiltWith .Foil:before {
+  display: block;
+  width: 100%;
+  height: 12px;
+  content: "";
+  background-image: linear-gradient(135deg, #2a2825 50%, rgba(255, 255, 255, 0) 50%), linear-gradient(-135deg, #2a2825 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: top center, top center;
+  background-size: .75rem .75rem, .75rem .75rem;
+}
+
+.BuiltWith .Foil:after {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 12px;
+  content: "";
+  background-image: linear-gradient(45deg, #2a2825 50%, rgba(255, 255, 255, 0) 50%), linear-gradient(-45deg, #2a2825 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom center, bottom center;
+  background-size: .75rem .75rem, .75rem .75rem;
 }
 
 .BuiltWith img {
   height: 130px;
+  border: 4px solid white;
+  border-radius: 50%;
 }
 
 .BuiltWith .Logo {
   height: 180px;
+}
+
+.BuiltWith hr {
+  border-color: #7d7a7a;
+}
+
+.BuiltWith h6 {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 2.5px;
+  color: #cbcbcb;
+  text-shadow: none;
+}
+
+.BuiltWith aside {
+  border-radius: 4px;
+  background-color: #989898;
+  padding: 1rem;
+}
+
+.BuiltWith .TrufflePals {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.BuiltWith .TrufflePals li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.BuiltWith .TrufflePals p {
+  margin: 1rem 0 0 0;
+  padding: 0;
+  color: #cbcbcb;
+  font-size: 12px;
+}
+
+.BuiltWith .TrufflePals img {
+  height: 74px;
+  border: 2px solid white;
 }
 
 .BuiltWith .Flourish {
@@ -10157,8 +10228,22 @@ code {
   margin-bottom: -100px;
 }
 
+.Footer ul li {
+  margin-bottom: .2rem;
+}
+
+.Footer a {
+  color: #9C9C98;
+}
+
 .Footer a:hover {
-  color: #48a0ec;
+  color: #b5b5b2;
+}
+
+.Footer .truffle-wordmark polygon,
+.Footer .truffle-wordmark g,
+.Footer .truffle-wordmark path {
+  fill: white;
 }
 
 @media (max-width: 768px) {
@@ -10189,6 +10274,12 @@ code {
   }
   .Ganache .Features .FeatureList li .FeatureText {
     padding-left: 0;
+  }
+  .Ganache .TrufflePals {
+    flex-direction: column;
+  }
+  .Ganache .TrufflePals li {
+    margin-bottom: 2rem;
   }
   .Ganache .OpenSource {
     margin: 1rem;
