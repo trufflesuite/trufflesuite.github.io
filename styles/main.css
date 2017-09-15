@@ -9930,7 +9930,7 @@ code {
 }
 
 .Ganache {
-  padding-top: 120px;
+  padding-top: 100px;
   background-color: #2a2825;
   background-repeat: none;
   background-size: cover;
@@ -9959,6 +9959,11 @@ code {
   display: block;
   max-width: 300px;
   margin: 0 auto;
+}
+
+.Ganache main header {
+  background-image: url("/images/suite/ganache/header_bg.png");
+  background-size: cover;
 }
 
 .Ganache main header .Logo {
@@ -10036,9 +10041,9 @@ code {
 }
 
 .Ganache .Foil:after {
-  display: block;
   position: absolute;
   bottom: 0;
+  display: block;
   width: 100%;
   height: 12px;
   content: "";
@@ -10055,8 +10060,39 @@ code {
   color: white;
 }
 
+.Ganache .Features h5 {
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #4d4c48;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.Ganache .Features .FeatureList {
+  counter-reset: counter;
+  text-align: left;
+}
+
 .Ganache .Features .FeatureList li {
+  display: flex;
+  align-items: center;
   margin-bottom: 5rem;
+}
+
+.Ganache .Features .FeatureList li:before {
+  position: absolute;
+  font-size: 120px;
+  font-weight: bold;
+  letter-spacing: -.5rem;
+  z-index: -1;
+  color: #454130;
+  content: counter(counter, decimal-leading-zero);
+  counter-increment: counter;
+}
+
+.Ganache .Features .FeatureList li .FeatureText {
+  padding: 0 4rem;
+  flex-grow: 1;
 }
 
 .Ganache .Features .FeatureList li h4 {
