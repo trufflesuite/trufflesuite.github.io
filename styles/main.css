@@ -10266,14 +10266,22 @@ code {
   }
   .Ganache .Features .FeatureList li {
     position: relative;
+    flex-direction: column;
   }
   .Ganache .Features .FeatureList li:before {
-    top: -1.2rem;
+    top: -2.2rem;
     letter-spacing: 0;
     font-size: 1.6rem;
+    left: calc(50% - 1rem);
+  }
+  .Ganache .Features .FeatureList li .FeatureIcon {
+    order: 1;
   }
   .Ganache .Features .FeatureList li .FeatureText {
     padding-left: 0;
+    order: 2;
+    text-align: center;
+    padding: 0 !important;
   }
   .Ganache .TrufflePals {
     flex-direction: column;
