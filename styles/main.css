@@ -10283,6 +10283,15 @@ code {
     text-align: center;
     padding: 0 !important;
   }
+  .Ganache .BuiltWith h3 {
+    padding: 0 1rem;
+  }
+  .Ganache .BuiltWith .p-a-4 {
+    padding: 0 !important;
+  }
+  .Ganache .BuiltWith .Logo:last-of-type {
+    margin-bottom: 3rem;
+  }
   .Ganache .TrufflePals {
     flex-direction: column;
   }
@@ -10306,6 +10315,9 @@ code {
   }
   .Ganache .Footer .BetaSignup {
     margin-top: 2rem;
+  }
+  .Ganache .Footer .FormWrapper .mc-field-group {
+    border-radius: 0;
   }
 }
 
