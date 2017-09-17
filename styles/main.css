@@ -9967,6 +9967,7 @@ code {
 .Ganache h5 {
   color: white;
   text-shadow: none;
+  margin: 0;
 }
 
 .Ganache h2,
