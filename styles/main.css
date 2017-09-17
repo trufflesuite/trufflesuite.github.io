@@ -9930,11 +9930,34 @@ code {
 }
 
 .Ganache {
-  padding-top: 100px;
+  padding-top: 60px;
   background-color: #2a2825;
   background-repeat: none;
   background-size: cover;
   font-family: "Roboto Condensed", sans-serif;
+}
+
+.Ganache .navbar {
+  height: 60px;
+}
+
+.Ganache .navbar .navbar-brand {
+  height: 60px;
+  line-height: 60px;
+}
+
+.Ganache .navbar .navbar-brand .truffle-logo {
+  width: 40px;
+}
+
+.Ganache .navbar .navbar-brand .truffle-wordmark {
+  display: none;
+}
+
+.Ganache .navbar .navbar-nav li a {
+  height: 60px;
+  line-height: 60px;
+  font-size: .8125rem;
 }
 
 .Ganache h1,
@@ -9944,6 +9967,12 @@ code {
 .Ganache h5 {
   color: white;
   text-shadow: none;
+}
+
+.Ganache h2,
+.Ganache h5 {
+  font-weight: bold;
+  letter-spacing: 2.5px;
 }
 
 .Ganache p {
@@ -10098,6 +10127,9 @@ code {
 
 .Ganache .Features .FeatureList li h4 {
   color: white;
+  font-size: 44px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
 }
 
 .Ganache .Features .FeatureList li p {
@@ -10105,8 +10137,8 @@ code {
 }
 
 .OpenSource {
-  margin: 1rem auto;
-  margin-bottom: 6rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   padding: 4rem;
   border: 1px dashed #d1a372;
   border-radius: 8px;
@@ -10123,10 +10155,10 @@ code {
 }
 
 .BuiltWith .Foil {
+  width: calc(100% + 15px) !important;
   height: 100% !important;
   background-color: #8e8e8d;
   background-image: none;
-  width: calc(100% + 15px) !important;
 }
 
 .BuiltWith .Foil:before {
@@ -10174,9 +10206,9 @@ code {
 }
 
 .BuiltWith aside {
+  padding: 1rem;
   border-radius: 4px;
   background-color: #989898;
-  padding: 1rem;
 }
 
 .BuiltWith .TrufflePals {
@@ -10233,7 +10265,7 @@ code {
 }
 
 .Footer a {
-  color: #9C9C98;
+  color: #9c9c98;
 }
 
 .Footer a:hover {
@@ -10270,18 +10302,18 @@ code {
   }
   .Ganache .Features .FeatureList li:before {
     top: -2.2rem;
+    left: calc(50% - 1rem);
     letter-spacing: 0;
     font-size: 1.6rem;
-    left: calc(50% - 1rem);
   }
   .Ganache .Features .FeatureList li .FeatureIcon {
     order: 1;
   }
   .Ganache .Features .FeatureList li .FeatureText {
-    padding-left: 0;
     order: 2;
-    text-align: center;
     padding: 0 !important;
+    padding-left: 0;
+    text-align: center;
   }
   .Ganache .BuiltWith h3 {
     padding: 0 1rem;
