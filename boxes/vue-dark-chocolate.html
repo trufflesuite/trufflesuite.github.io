@@ -48,7 +48,7 @@
     
     
 
-    <title>TruffleFramework.com | Ethereum DevOps with Truffle, TestRPC & Visual Studio Team Services</title>
+    <title>TruffleFramework.com | vue-dark-chocolate Box</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -81,7 +81,7 @@
 
   <body>
     <main>
-      <section class="Tutorials">
+      <body class="Ballotin">
   <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -156,150 +156,84 @@
 </nav>
 
 
-  <section class="MainContent">
-    <div class="container-fluid">
-      <div class="row">
-        <h1><a name="ethereum-devops-with-truffle-testrpc-amp-visual-studio-team-services" class="anchor" href="#ethereum-devops-with-truffle-testrpc-amp-visual-studio-team-services"><span class="header-link" style="z-index: 9999999761">&nbsp;</span></a>Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services</h1><p>This post was originally published by David Burela on his blog <a href="https://davidburela.wordpress.com/2016/12/23/ethereum-devops-with-truffle-testrpc-visual-studio-team-services/">Burela&#39;s House-o-blog</a>. Big thanks to David for allowing us publish it here!</p>
-<hr>
-<p>I have been working on automating the compilation and testing of Ethereum solidity contracts, via the use of <a href="http://truffleframework.com/">Truffle</a>. I’ve got the test results being published back into the portal, allowing me to see on each commit if my code still compiles and passes my tests.</p>
-<p>I’m assuming you already have a Truffle project locally that you want to automate the continuous builds &amp; testing on. Follow the <a href="/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development">tutorial on installing Truffle &amp; TestRPC on Windows</a>.</p>
-<p>My final system will allow you to run “truffle test” locally to see standard test output, but will modify the test runner on the server to output it as JUnit format.</p>
-<h2><a name="the-build-system" class="anchor" href="#the-build-system"><span class="header-link" style="z-index: 9999999760">&nbsp;</span></a>The Build system</h2><p>The system uses the <a href="https://azure.microsoft.com/en-us/services/visual-studio-team-services/">Visual Studio Team Services</a> (VSTS) build engine to automate this. You can sign up for free, and get unlimited private Git repos.  </p>
-<p>You can have the code hosted on any Git provider. So either within VSTS itself, or GitHub, BitBucket, etc.</p>
-<h2><a name="prepare-truffle-js" class="anchor" href="#prepare-truffle-js"><span class="header-link" style="z-index: 9999999759">&nbsp;</span></a>Prepare truffle.js</h2><p>A pre-step is to define the  test section in the truffle.js file</p>
-<pre><code class="lang-javascript">mocha: {  
-  reporter: “spec”,  
-  reporterOptions: {  
-    mochaFile: ‘junitresults.xml’  
-  }  
-}
-</code></pre>
-<h2><a name="create-a-build-agent" class="anchor" href="#create-a-build-agent"><span class="header-link" style="z-index: 9999999758">&nbsp;</span></a>Create a build agent</h2><p>VSTS does provide hosted build agents, which are generic and can build standard .Net projects, Xamarin, etc. But because we are going to use npm packages installed globally on the box to handle the Truffle builds</p>
-<ul>
-<li>Create a new Windows VM (Can be your own hosted server, or Azure).<br>e.g. <a href="https://azure.microsoft.com/en-au/marketplace/partners/microsoft/windowsserver2016datacenter/">Windows Server 2016 Datacentre edition on Azure</a></li>
-<li>Install the VSTS build agent. Instructions at <a href="https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows">https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows</a><br>Note: DON’T select to run service as NT AUTHORITY\NETWORK, this will not work with TestRPC (needs to open ports).<br>Run the service as another user, or NT AUTHORITY\SYSTEM</li>
-<li>Install chocolatey<br><a href="https://chocolatey.org/install">https://chocolatey.org/install</a></li>
-<li>Install these chocolatey packages</li>
-</ul>
-<pre><code>$ choco install git -y
-$ choco install nodejs.install –y
-</code></pre><ul>
-<li>Install npm packages (make sure you open a new PowerShell window so that node is in your path)</li>
-</ul>
-<pre><code>$ npm install -g npm
-$ npm install -g –production windows-build-tools
-$ npm install -g ethereumjs-testrpc
-$ npm install -g truffle
-$ npm install -g mocha
-$ npm install -g mocha-junit-reporter
-</code></pre><ul>
-<li>Restart the build agent so that all new paths are working</li>
-</ul>
-<h2><a name="configure-vsts-build" class="anchor" href="#configure-vsts-build"><span class="header-link" style="z-index: 9999999757">&nbsp;</span></a>Configure VSTS build</h2><p>Create a new variable with the path to where the npm global path is, for the user you installed the npm packages on above:</p>
-<ul>
-<li>variable name: <code>npm.path</code></li>
-<li>variable value: path to npm packages e.g. <code>C:\Users\&lt;user&gt;\AppData\Roaming\npm</code>  </li>
-</ul>
-<p><img src="https://davidburela.files.wordpress.com/2016/12/image5.png" alt="image"></p>
-<h2><a name="add-7-powershell-tasks-and-configure-them-like-this" class="anchor" href="#add-7-powershell-tasks-and-configure-them-like-this"><span class="header-link" style="z-index: 9999999756">&nbsp;</span></a>Add 7 PowerShell tasks, and configure them like this</h2><ul>
-<li>Name: System version information  </li>
-<li>Script:  </li>
-</ul>
-<pre><code>#Setting environment paths  
-$ENV:Path = $ENV:Path + “;” + $env:npm_path  
-npm config set prefix $env:npm_path    #only needs to be set once, will update for user  
-
-#DEBUG  
-#$env:path  
-#npm list -g –depth=0  
-#Display system information  
-Write-Host “System version information”  
-Write-Host -nonewline    “node version: ” ; node -v  
-Write-Host -nonewline    “npm version: “; npm -v  
-Write-Host -nonewline    “npm prefix: “;  npm prefix -g  
-Write-Host -nonewline    “truffle: ” ;    truffle version
-</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image6.png" alt="image"></p>
-<ul>
-<li>Name: Config transform &amp; test clean</li>
-<li>Script:</li>
-</ul>
-<pre><code># remove old test results  
-rm .\junitresults.xml -ea SilentlyContinue 
-
-# Modify the Truffle test runner to use the JUnit reporter  
-Rename-Item .\truffle.js .\truffle_temp.js  
-cat .\truffle_temp.js | % { $_ -replace ‘reporter: “spec”‘, ‘reporter: “mocha-junit-reporter”‘ } | Out-File -Encoding ASCII .\truffle.js  
-rm .\truffle_temp.js
-</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image7.png" alt="image"></p>
-<ul>
-<li>Name: Truffle build  </li>
-<li>Script:  </li>
-</ul>
-<pre><code>#Setting environment paths  
-$ENV:Path = $ENV:Path + “;” + $env:npm_path
-
-#Truffle build  
-truffle compile
-</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image8.png" alt="image"></p>
-<ul>
-<li>Name: Launch TestRPC  </li>
-<li>Script:  </li>
-</ul>
-<pre><code>#Setting environment paths  
-$ENV:Path = $ENV:Path + “;” + $env:npm_path
-
-# launch the process  
-echo “launching TestRPC”  
-$testrpcProcess = Start-Process testrpc -passthru  
-
-# persist the PID to disk and display in logs  
-$testrpcProcess.Id | Export-CliXml testrpcPID.xml  
-cat testrpcPID.xml
-</code></pre><ul>
-<li>Name: Run Truffle tests  </li>
-<li>Script:  </li>
-</ul>
-<pre><code>#Setting environment paths  
-$ENV:Path = $ENV:Path + “;” + $env:npm_path
-
-# Run the tests  
-truffle test
-</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image10.png" alt="image"></p>
-<ul>
-<li>Name: Shutdown TestRPC  </li>
-<li>Other Settings: Enable “Always Run” (to make sure it is shutdown if there is an error)  </li>
-<li>Script:  </li>
-</ul>
-<pre><code>#Setting environment paths  
-$ENV:Path = $ENV:Path + “;” + $env:npm_path
-
-# retrieve the PID and kill the entire processs tree  
-cat testrpcPID.xml  
-$testrpcPID = Import-CliXml testrpcPID.xml  
-taskkill /pid $testrpcPID /F /T
-</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image11.png" alt="image"></p>
-<ul>
-<li>Add a new Publish test result</li>
-<li>Test Result Format: JUnit  </li>
-<li>Test Result Files: <code>junitresults.xml</code>
-<img src="https://davidburela.files.wordpress.com/2016/12/image12.png" alt="image"></li>
-</ul>
-<h2><a name="future-work" class="anchor" href="#future-work"><span class="header-link" style="z-index: 9999999755">&nbsp;</span></a>Future work</h2><p>Things that I would like to add in the future:</p>
-<ul>
-<li>Figure out how to automate this on a Linux build agent (VSTS supports both Windows &amp; Linux based build agents)</li>
-<li>Automate Release Management to run <code>truffle migrate</code> to push to a <a href="https://azure.microsoft.com/en-us/blog/project-bletchley-blockchain-infrastructure-made-easy/">Bletchley test environment</a></li>
-</ul>
-
+  <main>
+    <section class="BallotinSingleContainer" data-box="vue-dark-chocolate" data-user="kierenh">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="WithDash">kierenh/vue-dark-chocolate</h1>
       </div>
     </div>
 
-    <footer class="container">
-      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/tutorials/ethereum-devops-truffle-testrpc-vsts.md">Edit here &rarr;</a></p>
-    </footer>
-  </section>
+    <div class="row">
+      <div class="col-xs-12 col-md-7 BoxReadme" id="BoxReadme">
+        <div class="alert alert-info" role="alert">Loading readme&#8230;</div>
+      </div>
+
+      <div class="col-xs-12 col-md-4 col-md-offset-1">
+        <div class="row Sidebar">
+          <div class="col-xs-12 col-sm-6 col-md-12">
+            <section class="FeatureCard">
+              <div class="FeatureBody withImage">
+                <img class="FeatureImageLg" src="https://github.com/kierenh/vue-dark-chocolate/blob/master/box-img-lg.png?raw=true" alt="truffle-box-react" onerror="javascript:this.src='/images/ballotin/loading-thumb.png'" />
+                <img class="FeatureImageSm" src="https://github.com/kierenh/vue-dark-chocolate/blob/master/box-img-sm.png?raw=true" alt="truffle-box-react" onerror="javascript:this.src='/images/ballotin/loading-banner.png'" />
+              </div>
+
+              <footer class="BoxRundown">
+                <ul class="BoxRundownList">
+                  <li><strong>Tags</strong><br/><hr/></li>
+                  <li>
+                    <ul class="BoxTagsList">
+                      <li>
+                        <a href="#">vue</a>
+                      </li>
+                      <li>
+                        <a href="#">vue-bootstrap</a>
+                      </li>
+                      <li>
+                        <a href="#">vue-router</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><strong>Created</strong><br/><hr/></li>
+                  <li id="BoxDateCreated">X-X-X</li>
+                  <li><strong>Last Updated</strong><br/><hr/></li>
+                  <li id="BoxDateUpdated">X-X-X</li>
+                  <li><strong>Stars</strong><br/><hr/></li>
+                  <li><a class="github-button" href="https://github.com/kierenh/vue-dark-chocolate" data-icon="octicon-star" data-show-count="true" data-size="large" aria-label="Star kierenh/vue-dark-chocolate on GitHub">Star</a></li>
+                </ul>
+              </footer>
+            </section>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-12">
+            <section class="FeatureCard">
+              <div class="FeatureBody">
+                <h3>Installing</h3>
+                <p>Run this command to create a new Truffle project with this box:</p>
+                <p><pre>truffle unbox kierenh/vue-dark-chocolate</pre></p>
+              </div>
+
+              <footer>
+                <a class="btn btn-primary m-t-1 m-b-1" id="BoxDownloadLink" href="#">Download</a>
+                <a class="btn btn-primary m-t-1 m-b-1" id="BoxGitHubLink" href="#">GitHub</a>
+              </footer>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
+<script src="/scripts/ballotin/marked.min.js"></script>
+<script src="/scripts/ballotin/single-truffle-box.js"></script>
 
+  </main>
+
+  
 <section class="Footer p-t-4 p-b-4">
   <div class="container">
     <div class="row">
@@ -411,6 +345,7 @@ taskkill /pid $testrpcPID /F /T
   </div>
 </section>
 
+</body>
 
     </main>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
