@@ -8095,7 +8095,7 @@ button.close {
   margin: 4rem 4rem !important;
 }
 
-.m-t-4 {
+.m-t-4, .Ballotin .CommunityBoxes .row-boxes {
   margin-top: 4rem !important;
 }
 
@@ -10474,6 +10474,17 @@ code {
   }
 }
 
+.Ballotin .row-flex-left {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 767px) {
+  .Ballotin .row-flex-left {
+    display: block;
+  }
+}
+
 .Ballotin .BallotinIndexContainer {
   background: #F8F5F0;
   padding-top: 23px;
@@ -10713,6 +10724,10 @@ code {
 
 .Ballotin .CommunityBoxes .FeatureCard {
   margin-bottom: 0;
+}
+
+.Ballotin .CommunityBoxes .row-boxes .FeatureCard {
+  margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 991px) {

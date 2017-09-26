@@ -48,7 +48,7 @@
     
     
 
-    <title>TruffleFramework.com | Ethereum DevOps with Truffle, TestRPC & Visual Studio Team Services</title>
+    <title>TruffleFramework.com | You Can Now Make Your Own Truffle Box</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -159,142 +159,28 @@
   <section class="MainContent">
     <div class="container-fluid">
       <div class="row">
-        <h1><a name="ethereum-devops-with-truffle-testrpc-amp-visual-studio-team-services" class="anchor" href="#ethereum-devops-with-truffle-testrpc-amp-visual-studio-team-services"><span class="header-link" style="z-index: 9999999761">&nbsp;</span></a>Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services</h1><p>This post was originally published by David Burela on his blog <a href="https://davidburela.wordpress.com/2016/12/23/ethereum-devops-with-truffle-testrpc-visual-studio-team-services/">Burela&#39;s House-o-blog</a>. Big thanks to David for allowing us publish it here!</p>
-<hr>
-<p>I have been working on automating the compilation and testing of Ethereum solidity contracts, via the use of <a href="http://truffleframework.com/">Truffle</a>. I’ve got the test results being published back into the portal, allowing me to see on each commit if my code still compiles and passes my tests.</p>
-<p>I’m assuming you already have a Truffle project locally that you want to automate the continuous builds &amp; testing on. Follow the <a href="/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development">tutorial on installing Truffle &amp; TestRPC on Windows</a>.</p>
-<p>My final system will allow you to run “truffle test” locally to see standard test output, but will modify the test runner on the server to output it as JUnit format.</p>
-<h2><a name="the-build-system" class="anchor" href="#the-build-system"><span class="header-link" style="z-index: 9999999760">&nbsp;</span></a>The Build system</h2><p>The system uses the <a href="https://azure.microsoft.com/en-us/services/visual-studio-team-services/">Visual Studio Team Services</a> (VSTS) build engine to automate this. You can sign up for free, and get unlimited private Git repos.  </p>
-<p>You can have the code hosted on any Git provider. So either within VSTS itself, or GitHub, BitBucket, etc.</p>
-<h2><a name="prepare-truffle-js" class="anchor" href="#prepare-truffle-js"><span class="header-link" style="z-index: 9999999759">&nbsp;</span></a>Prepare truffle.js</h2><p>A pre-step is to define the  test section in the truffle.js file</p>
-<pre><code class="lang-javascript">mocha: {  
-  reporter: “spec”,  
-  reporterOptions: {  
-    mochaFile: ‘junitresults.xml’  
-  }  
-}
-</code></pre>
-<h2><a name="create-a-build-agent" class="anchor" href="#create-a-build-agent"><span class="header-link" style="z-index: 9999999758">&nbsp;</span></a>Create a build agent</h2><p>VSTS does provide hosted build agents, which are generic and can build standard .Net projects, Xamarin, etc. But because we are going to use npm packages installed globally on the box to handle the Truffle builds</p>
-<ul>
-<li>Create a new Windows VM (Can be your own hosted server, or Azure).<br>e.g. <a href="https://azure.microsoft.com/en-au/marketplace/partners/microsoft/windowsserver2016datacenter/">Windows Server 2016 Datacentre edition on Azure</a></li>
-<li>Install the VSTS build agent. Instructions at <a href="https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows">https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows</a><br>Note: DON’T select to run service as NT AUTHORITY\NETWORK, this will not work with TestRPC (needs to open ports).<br>Run the service as another user, or NT AUTHORITY\SYSTEM</li>
-<li>Install chocolatey<br><a href="https://chocolatey.org/install">https://chocolatey.org/install</a></li>
-<li>Install these chocolatey packages</li>
-</ul>
-<pre><code>$ choco install git -y
-$ choco install nodejs.install –y
-</code></pre><ul>
-<li>Install npm packages (make sure you open a new PowerShell window so that node is in your path)</li>
-</ul>
-<pre><code>$ npm install -g npm
-$ npm install -g –production windows-build-tools
-$ npm install -g ethereumjs-testrpc
-$ npm install -g truffle
-$ npm install -g mocha
-$ npm install -g mocha-junit-reporter
-</code></pre><ul>
-<li>Restart the build agent so that all new paths are working</li>
-</ul>
-<h2><a name="configure-vsts-build" class="anchor" href="#configure-vsts-build"><span class="header-link" style="z-index: 9999999757">&nbsp;</span></a>Configure VSTS build</h2><p>Create a new variable with the path to where the npm global path is, for the user you installed the npm packages on above:</p>
-<ul>
-<li>variable name: <code>npm.path</code></li>
-<li>variable value: path to npm packages e.g. <code>C:\Users\&lt;user&gt;\AppData\Roaming\npm</code>  </li>
-</ul>
-<p><img src="https://davidburela.files.wordpress.com/2016/12/image5.png" alt="image"></p>
-<h2><a name="add-7-powershell-tasks-and-configure-them-like-this" class="anchor" href="#add-7-powershell-tasks-and-configure-them-like-this"><span class="header-link" style="z-index: 9999999756">&nbsp;</span></a>Add 7 PowerShell tasks, and configure them like this</h2><ul>
-<li>Name: System version information  </li>
-<li>Script:  </li>
-</ul>
-<pre><code>#Setting environment paths  
-$ENV:Path = $ENV:Path + “;” + $env:npm_path  
-npm config set prefix $env:npm_path    #only needs to be set once, will update for user  
-
-#DEBUG  
-#$env:path  
-#npm list -g –depth=0  
-#Display system information  
-Write-Host “System version information”  
-Write-Host -nonewline    “node version: ” ; node -v  
-Write-Host -nonewline    “npm version: “; npm -v  
-Write-Host -nonewline    “npm prefix: “;  npm prefix -g  
-Write-Host -nonewline    “truffle: ” ;    truffle version
-</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image6.png" alt="image"></p>
-<ul>
-<li>Name: Config transform &amp; test clean</li>
-<li>Script:</li>
-</ul>
-<pre><code># remove old test results  
-rm .\junitresults.xml -ea SilentlyContinue 
-
-# Modify the Truffle test runner to use the JUnit reporter  
-Rename-Item .\truffle.js .\truffle_temp.js  
-cat .\truffle_temp.js | % { $_ -replace ‘reporter: “spec”‘, ‘reporter: “mocha-junit-reporter”‘ } | Out-File -Encoding ASCII .\truffle.js  
-rm .\truffle_temp.js
-</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image7.png" alt="image"></p>
-<ul>
-<li>Name: Truffle build  </li>
-<li>Script:  </li>
-</ul>
-<pre><code>#Setting environment paths  
-$ENV:Path = $ENV:Path + “;” + $env:npm_path
-
-#Truffle build  
-truffle compile
-</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image8.png" alt="image"></p>
-<ul>
-<li>Name: Launch TestRPC  </li>
-<li>Script:  </li>
-</ul>
-<pre><code>#Setting environment paths  
-$ENV:Path = $ENV:Path + “;” + $env:npm_path
-
-# launch the process  
-echo “launching TestRPC”  
-$testrpcProcess = Start-Process testrpc -passthru  
-
-# persist the PID to disk and display in logs  
-$testrpcProcess.Id | Export-CliXml testrpcPID.xml  
-cat testrpcPID.xml
-</code></pre><ul>
-<li>Name: Run Truffle tests  </li>
-<li>Script:  </li>
-</ul>
-<pre><code>#Setting environment paths  
-$ENV:Path = $ENV:Path + “;” + $env:npm_path
-
-# Run the tests  
-truffle test
-</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image10.png" alt="image"></p>
-<ul>
-<li>Name: Shutdown TestRPC  </li>
-<li>Other Settings: Enable “Always Run” (to make sure it is shutdown if there is an error)  </li>
-<li>Script:  </li>
-</ul>
-<pre><code>#Setting environment paths  
-$ENV:Path = $ENV:Path + “;” + $env:npm_path
-
-# retrieve the PID and kill the entire processs tree  
-cat testrpcPID.xml  
-$testrpcPID = Import-CliXml testrpcPID.xml  
-taskkill /pid $testrpcPID /F /T
-</code></pre><p><img src="https://davidburela.files.wordpress.com/2016/12/image11.png" alt="image"></p>
-<ul>
-<li>Add a new Publish test result</li>
-<li>Test Result Format: JUnit  </li>
-<li>Test Result Files: <code>junitresults.xml</code>
-<img src="https://davidburela.files.wordpress.com/2016/12/image12.png" alt="image"></li>
-</ul>
-<h2><a name="future-work" class="anchor" href="#future-work"><span class="header-link" style="z-index: 9999999755">&nbsp;</span></a>Future work</h2><p>Things that I would like to add in the future:</p>
-<ul>
-<li>Figure out how to automate this on a Linux build agent (VSTS supports both Windows &amp; Linux based build agents)</li>
-<li>Automate Release Management to run <code>truffle migrate</code> to push to a <a href="https://azure.microsoft.com/en-us/blog/project-bletchley-blockchain-infrastructure-made-easy/">Bletchley test environment</a></li>
-</ul>
+        <h1><a name="you-can-now-make-your-own-truffle-box" class="anchor" href="#you-can-now-make-your-own-truffle-box"><span class="header-link" style="z-index: 9999999832">&nbsp;</span></a>You Can Now Make Your Own Truffle Box</h1><p>Two months ago we unveiled official integration with <strong>Truffle Boxes</strong>, example Ethereum applications and/or boilerplates that put complimentary tools and libraries into sweet, easily-downloadable packages. In addition to rolling out some official boxes, <a href="https://status.im/">Status.im</a> released <a href="/boxes/status">the first community-supported box</a>.</p>
+<p>Today we&#39;re happy to announce anyone can now make their very own Truffle Box!</p>
+<h2><a name="making-a-box" class="anchor" href="#making-a-box"><span class="header-link" style="z-index: 9999999831">&nbsp;</span></a>Making a Box</h2><p>To get started making a box, we&#39;ve added a page to <a href="/docs/advanced/truffle-boxes">our documentation</a>. For those starting a new box from scratch, we&#39;ve also created a <a href="/boxes/blueprint">blueprint Truffle Box</a> to get you started quickly.</p>
+<h2><a name="the-first-wave" class="anchor" href="#the-first-wave"><span class="header-link" style="z-index: 9999999830">&nbsp;</span></a>The First Wave</h2><p>We included a call for pre-screening in the community section of our first box rollout and some trailblazers answered the call!</p>
+<p>Here are the first community boxes:</p>
+<p><strong><a href="/boxes/angular-truffle-box">Quintor/angular-truffle-box</a></strong><br/>
+This Truffle Box provides a base for working with the Truffle Framework and Angular. It provides a basic working example of the MetaCoin contracts with Angular components. This project is generated with Angular CLI.</p>
+<p><strong><a href="/boxes/react-dapp-material-ui">hackingbeauty/react-dapp-material-ui</a></strong><br/>
+In addition to Webpack and React, this box adds: React-Router, Redux and Material-UI for easy skinning of a Dapp.</p>
+<p><strong><a href="/boxes/svelte-box">antony/svelte-box</a></strong><br/>
+A Truffle box using SvelteJS and Rollup. This box contains everything you need to start building a smart-contract app.</p>
+<p><strong><a href="/boxes/vue-dark-chocolate">kierenh/vue-dark-chocolate</a></strong><br/>
+A truffle box that comes with everything you need to start using smart contracts from a Vue App with Bootstrap styling and components. Supporting frameworks include Vuex, Vue-Router &amp; Bootstrap 4 (via Bootstrap-Vue) and webpack. The sample uses webpack-dev-server for hot-reloading or you can build and serve from express.</p>
+<p>Check out <a href="/boxes">the full list of boxes here</a>.</p>
+<p>A huge thank you to our entire community! We&#39;re humbled by your dedication and excited to see what&#39;s in store for the future.</p>
+<p>&#8211; Josh &amp; the Truffle Team</p>
 
       </div>
     </div>
 
     <footer class="container">
-      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/tutorials/ethereum-devops-truffle-testrpc-vsts.md">Edit here &rarr;</a></p>
+      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/blog/you-can-now-make-your-own-truffle-box.md">Edit here &rarr;</a></p>
     </footer>
   </section>
 </section>
