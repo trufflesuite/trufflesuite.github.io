@@ -108,7 +108,7 @@ function adopt(uint petId) public returns (uint) {
 }
 ```
 
-You'll noticed in Solidity the types of both the function's parameters and its output must be specified. In this case we'll be taking in a `petId` (an integer) and returning an integer.
+You'll notice that in Solidity the types of both the function's parameters and its output must be specified. In this case we'll be taking in a `petId` (an integer) and returning an integer.
 
 First we check to make sure `petId` is in range of our `adopters` array. Arrays in Solidity are
 indexed from 0, so the ID value will need to be between 0 and 15. We use the
