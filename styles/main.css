@@ -8273,6 +8273,17 @@ code {
   max-width: 600px;
 }
 
+.Footer .copyright {
+  line-height: 40px;
+}
+
+.Footer .copyright svg {
+  height: 40px;
+  width: auto;
+  float: left;
+  margin-right: 5px;
+}
+
 .nav a {
   text-transform: uppercase;
 }
@@ -8734,17 +8745,6 @@ code {
 .LandingPage header .InstallInstruction .Box code {
   background: transparent;
   color: white;
-}
-
-.LandingPage .copyright {
-  line-height: 40px;
-}
-
-.LandingPage .copyright svg {
-  height: 40px;
-  width: auto;
-  float: left;
-  margin-right: 5px;
 }
 
 @media screen and (max-width: 767px), screen and (max-height: 739px) {
@@ -9403,6 +9403,10 @@ code {
 .Support .livesaver {
   width: 120px;
   float: right;
+}
+
+.body-docs {
+  background: #F8F5F0;
 }
 
 .Documentation .MainContent {
