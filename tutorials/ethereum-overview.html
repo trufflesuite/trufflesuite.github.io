@@ -206,8 +206,9 @@
 <h3><a name="mining" class="anchor" href="#mining"><span class="header-link" style="z-index: 9999999748">&nbsp;</span></a>Mining</h3><p>Each node in the network can optionally take part in a process called <strong>mining</strong>. Every so often, nodes which have opted to be miners compete to solve math problems which secure the contents of a block. A <strong>block</strong> is a bundle of any pending transactions created since the addition of the most recent block in the chain. The winner of the competition creates the next block and receives some cyptocurrency as a reward. This incentivizes nodes to secure the network, preventing too much power from being in the hands of any single miner.</p>
 <h3><a name="hashing" class="anchor" href="#hashing"><span class="header-link" style="z-index: 9999999747">&nbsp;</span></a>Hashing</h3><p>Once a new block is mined, the other miners are notified and begin verifying and adding this new block to their copies of the chain. That math we referred to earlier is called <strong>cryptographic hashing</strong> (or simply, hashing). A hash function is a special, one-way process which takes in data and gives back a fixed-length string representing that data. While the original data can&#39;t be reproduced from its hash, the same data will always produce the same hash. Therefore, unverified data can be hashed with the same function and compared to the original. If they are identical, the data is validated.</p>
 <p>Once more than half of the miners have validated the new block, the network has reached <strong>consensus</strong> on the new block and it becomes part of the chain&#39;s permanent history. Now this data can simply be downloaded (synchronized) by non-mining nodes with its validity assured.</p>
-<p>Here&#39;s the whole process visually:</p>
-<p></div><div class="container container-steps text-center"></p>
+<p>Here&#39;s the whole process visually:
+</div></p>
+<div class="container container-steps text-center">
 <div class="row">
 <div class="col-lg-4">
 <img src="/tutorials/images/ethereum-overview/chain-step1.png" alt="Mining Step 1">
@@ -216,7 +217,7 @@
 
 <div class="col-lg-4">
 <img src="/tutorials/images/ethereum-overview/chain-step2.png" alt="Mining Step 2">
-<p>2. Bob and Alice&#39;s transaction is combined with other transactions that have occured since the last block.</p>
+<p>2. Bob and Alice&#39;s transaction is combined with other transactions that have occurred since the last block.</p>
 </div>
 
 <div class="col-lg-4">
@@ -228,7 +229,7 @@
 <div class="row">
 <div class="col-lg-4 col-lg-offset-2">
 <img src="/tutorials/images/ethereum-overview/chain-step4.png" alt="Mining Step 4">
-<p>4. The victorious miner creates a new block and receves a reward.</p>
+<p>4. The victorious miner creates a new block and receives a reward.</p>
 </div>
 
 <div class="col-lg-4">
@@ -236,40 +237,44 @@
 <p>5. With the transaction validated, Alice receives 1 ETH.</p>
 </div>
 </div>
-</div><div class="container container-narrow">
-
-## What is Ethereum?
-
-More than a database, Ethereum allows you run programs in a blockchain&#39;s trusted environment. Ethereum adds a virtual machine, called the <strong>EVM (Ethereum Virtual Machine)</strong>, on top of the blockchain. The EVM allows code to be verified and executed on the blockchain, providing guarantees that code will be run the same way on everyone&#39;s machine. This code is contained in Smart Contracts (more on these below).
-
-Rather than just tracking account balances, Ethereum uses the same methods to keep the state of the EVM on the blockchain. All nodes process smart contracts to verify the integrity of the contracts themselves and their outputs.
-
-## What is a Smart Contract?
-
-<strong>Smart Contracts</strong> are programs running on the EVM. They most closely resemble classes in other programming languages. Smart Contracts can accept and store Ether, data, or a combination of both. Then, using the logic programmed into the contract, it can distribute that Ether to other accounts or even other smart contracts. You can see how complex systems can develop from this flexibility.
-
-The language smart contracts are written in is called <strong>Solidity</strong>. Solidity is statically typed, supports inheritance, libraries and complex user-defined types among other features. It&#39;s file extension is &quot;.sol&quot;. Solidity&#39;s syntax is similar to JavaScript&#39;s. We&#39;ll go over the basics of Solidity in future tutorials, but you may also want to dive deeper by checking out <a href="https://solidity.readthedocs.io/en/develop/">the documentation</a>.
-
-Here&#39;s a smart contract example with Bob and Alice again. This time, they&#39;re using an escrow contract (a place to store money until a condition is fulfilled) to store their Ether before the final transaction.
-
-</div><div class="container container-steps text-center">
-<div class="row">
-  <div class="col-lg-4">
-    <img src="/tutorials/images/ethereum-overview/smart-contract-step1.png" alt="Smart Contract Step 1">
-    <p>1. Alice wants to hire Bob to build her a patio. To keep both parties honest, Alice agrees to store her payment for the patio within the escrow contract, and Bob agrees to deposit an equal amount in the contract as well.</p>
-  </div>
-
-  <div class="col-lg-4">
-    <img src="/tutorials/images/ethereum-overview/smart-contract-step2.png" alt="Smart Contract Step 2">
-    <p>2. Bob completes the patio and Alice is thrilled! She gives the smart contract permission to release the funds.</p>
-  </div>
-
-<p>  <div class="col-lg-4">
-    <img src="/tutorials/images/ethereum-overview/smart-contract-step3.png" alt="Smart Contract Step 3">
-    <p>3. Bob receives his collateral of 1 ETH along with Alice&#39;s payment of 1 ETH.</p>
-  </div>
 </div>
-</div><div class="container container-narrow"></p>
+<div class="container container-narrow">
+<h3><a name="what-is-ethereum" class="anchor" href="#what-is-ethereum"><span class="header-link" style="z-index: 9999995985">&nbsp;</span></a>What is Ethereum?</h3>
+
+<p>More than a database, Ethereum allows you run programs in a blockchain&#39;s trusted environment. Ethereum adds a virtual machine, called the <strong>EVM (Ethereum Virtual Machine)</strong>, on top of the blockchain. The EVM allows code to be verified and executed on the blockchain, providing guarantees that code will be run the same way on everyone&#39;s machine. This code is contained in Smart Contracts (more on these below).</p>
+
+<p>Rather than just tracking account balances, Ethereum uses the same methods to keep the state of the EVM on the blockchain. All nodes process smart contracts to verify the integrity of the contracts themselves and their outputs.</p>
+
+<h3><a name="what-is-a-smart-contract" class="anchor" href="#what-is-a-smart-contract"><span class="header-link" style="z-index: 9999995985">&nbsp;</span></a>What is a Smart Contract?</h3>
+
+<p><strong>Smart Contracts</strong> are programs running on the EVM. They most closely resemble classes in other programming languages. Smart Contracts can accept and store Ether, data, or a combination of both. Then, using the logic programmed into the contract, it can distribute that Ether to other accounts or even other smart contracts. You can see how complex systems can develop from this flexibility.</p>
+
+<p>The language smart contracts are written in is called <strong>Solidity</strong>. Solidity is statically typed, supports inheritance, libraries and complex user-defined types among other features. It&#39;s file extension is &quot;.sol&quot;. Solidity&#39;s syntax is similar to JavaScript&#39;s. We&#39;ll go over the basics of Solidity in future tutorials, but you may also want to dive deeper by checking out <a href="https://solidity.readthedocs.io/en/develop/">the documentation</a>.</p>
+
+<p>Here&#39;s a smart contract example with Bob and Alice again. This time, they&#39;re using an escrow contract (a place to store money until a condition is fulfilled) to store their Ether before the final transaction.</p>
+
+</div>
+
+<div class="container container-steps text-center">
+<div class="row">
+<div class="col-lg-4">
+<img src="/tutorials/images/ethereum-overview/smart-contract-step1.png" alt="Smart Contract Step 1">
+<p>1. Alice wants to hire Bob to build her a patio. To keep both parties honest, Alice agrees to store her payment for the patio within the escrow contract, and Bob agrees to deposit an equal amount in the contract as well.</p>
+</div>
+
+<div class="col-lg-4">
+<img src="/tutorials/images/ethereum-overview/smart-contract-step2.png" alt="Smart Contract Step 2">
+<p>2. Bob completes the patio and Alice is thrilled! She gives the smart contract permission to release the funds.</p>
+</div>
+
+<p><div class="col-lg-4">
+<img src="/tutorials/images/ethereum-overview/smart-contract-step3.png" alt="Smart Contract Step 3"></p>
+<p><p>3. Bob receives his collateral of 1 ETH along with Alice&#39;s payment of 1 ETH.</p>
+</div>
+</div>
+</div></p>
+<div class="container container-narrow">
+
 <p>In a more complex escrow contract, if Bob were to fail to build the patio or if he were to perform a poor job, provisions could be written into the contract&#39;s code releasing Bob&#39;s collateral to Alice instead.</p>
 <h2><a name="ethereum-networks" class="anchor" href="#ethereum-networks"><span class="header-link" style="z-index: 9999999746">&nbsp;</span></a>Ethereum Networks</h2><p>Up to this point we&#39;ve been describing the <strong>main network</strong> (or <strong>MainNet</strong>), Ethereum&#39;s public blockchain. Anyone can create a node and begin verifying transactions; therefore, it&#39;s highly secure. Data on the chain, including account balances and transactions, are public. Ether on this network has a market value and can be exchanged for other cryptocurrency or fiat currencies like US Dollars.</p>
 <p>Apart from the MainNet, there are test networks (both local and public), as well as private networks.</p>
