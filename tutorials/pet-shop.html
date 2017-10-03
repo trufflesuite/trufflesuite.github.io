@@ -468,7 +468,7 @@ if (typeof web3 !== &#39;undefined&#39;) {
   web3 = new Web3(web3.currentProvider);
 } else {
   // If no injected web3 instance is detected, fallback to the TestRPC.
-  App.web3Provider = new web3.providers.HttpProvider(&#39;http://localhost:8545&#39;);
+  App.web3Provider = new Web3.providers.HttpProvider(&#39;http://localhost:8545&#39;);
   web3 = new Web3(App.web3Provider);
 }
 </code></pre>
