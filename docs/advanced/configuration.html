@@ -82,6 +82,7 @@
   <body class="
     body-docs
     
+    
   ">
     <main>
       <section class="Documentation">
@@ -232,9 +233,9 @@
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="location" class="anchor" href="#location"><span class="header-link" style="z-index: 9999999976">&nbsp;</span></a>Location</h1><p>Your configuration file is called <code>truffle.js</code> and is located at the root of your project directory. This file is a Javascript file and can execute any code necessary to create your configuration. It must export an object representing your project configuration like the example below.</p>
-<h3><a name="resolving-naming-conflicts-on-windows" class="anchor" href="#resolving-naming-conflicts-on-windows"><span class="header-link" style="z-index: 9999999975">&nbsp;</span></a>Resolving Naming Conflicts on Windows</h3><p>When using the Command Prompt on Windows, the default configuration file name can cause a conflict with the <code>truffle</code> executable. If this is the case, we recommend using Windows PowerShell or <a href="https://git-for-windows.github.io/">Git BASH</a> as these shells do not have this conflict. Alternatively, you can rename the configuration file to <code>truffle-config.js</code> to avoid this conflict.</p>
-<h1><a name="example" class="anchor" href="#example"><span class="header-link" style="z-index: 9999999974">&nbsp;</span></a>Example</h1><pre><code class="lang-javascript">module.exports = {
+          <h1><a name="location" class="anchor" href="#location"><span class="header-link" style="z-index: 9999999886">&nbsp;</span></a>Location</h1><p>Your configuration file is called <code>truffle.js</code> and is located at the root of your project directory. This file is a Javascript file and can execute any code necessary to create your configuration. It must export an object representing your project configuration like the example below.</p>
+<h3><a name="resolving-naming-conflicts-on-windows" class="anchor" href="#resolving-naming-conflicts-on-windows"><span class="header-link" style="z-index: 9999999885">&nbsp;</span></a>Resolving Naming Conflicts on Windows</h3><p>When using the Command Prompt on Windows, the default configuration file name can cause a conflict with the <code>truffle</code> executable. If this is the case, we recommend using Windows PowerShell or <a href="https://git-for-windows.github.io/">Git BASH</a> as these shells do not have this conflict. Alternatively, you can rename the configuration file to <code>truffle-config.js</code> to avoid this conflict.</p>
+<h1><a name="example" class="anchor" href="#example"><span class="header-link" style="z-index: 9999999884">&nbsp;</span></a>Example</h1><pre><code class="lang-javascript">module.exports = {
   networks: {
     development: {
       host: &quot;localhost&quot;,
@@ -245,8 +246,8 @@
 };
 </code></pre>
 <p>The default configuration ships with configuration for a single development network, running on <code>localhost:8545</code>. There are many other configuration options, detailed below.</p>
-<h1><a name="general-options" class="anchor" href="#general-options"><span class="header-link" style="z-index: 9999999973">&nbsp;</span></a>General Options</h1><h3><a name="build" class="anchor" href="#build"><span class="header-link" style="z-index: 9999999972">&nbsp;</span></a>build</h3><p>Build configuration of your application, if your application requires tight integration with Truffle. Most users likely will not need to configure this option. See the <a href="http://truffleframework.com/docs/advanced/build_processes">Advanced Build Processes</a> section for more details.</p>
-<h3><a name="networks" class="anchor" href="#networks"><span class="header-link" style="z-index: 9999999971">&nbsp;</span></a>networks</h3><p>Specifies which networks are available for deployment during migrations, as well as specific transaction parameters when interacting with each network (such as gas price, from address, etc.). When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your Ethereum client is connected to a specific network, they&#39;ll use the contract artifacts associated that network to simplify app deployment. Networks are identified through Ethereum&#39;s <code>net_version</code> RPC call, as well as blockchain URIs.</p>
+<h1><a name="general-options" class="anchor" href="#general-options"><span class="header-link" style="z-index: 9999999883">&nbsp;</span></a>General Options</h1><h3><a name="build" class="anchor" href="#build"><span class="header-link" style="z-index: 9999999882">&nbsp;</span></a>build</h3><p>Build configuration of your application, if your application requires tight integration with Truffle. Most users likely will not need to configure this option. See the <a href="http://truffleframework.com/docs/advanced/build_processes">Advanced Build Processes</a> section for more details.</p>
+<h3><a name="networks" class="anchor" href="#networks"><span class="header-link" style="z-index: 9999999881">&nbsp;</span></a>networks</h3><p>Specifies which networks are available for deployment during migrations, as well as specific transaction parameters when interacting with each network (such as gas price, from address, etc.). When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your Ethereum client is connected to a specific network, they&#39;ll use the contract artifacts associated that network to simplify app deployment. Networks are identified through Ethereum&#39;s <code>net_version</code> RPC call, as well as blockchain URIs.</p>
 <p>The <code>networks</code> object, shown below, is keyed by a network name and contains a corresponding object that defines the parameters of the network. The <code>networks</code> option is required, as if you have no network configuration, Truffle will not be able to deploy your contracts. The default network configuration provided by <code>truffle init</code> gives you a development network that matches any network it connects to &#8211; this is useful during development, but not suitable for production deployments. To configure Truffle to connect to other networks, simply add more named networks and specify the corresponding network id.</p>
 <p>The network name is used for user interface purposes, such as when running your migrations on a specific network:</p>
 <pre><code class="lang-bash">$ truffle migrate --network live
@@ -278,14 +279,14 @@
 <li><code>from</code>: From address used during migrations. Defaults to the first available account provided by your Ethereum client.</li>
 <li><code>provider</code>: Default web3 provider using <code>host</code> and <code>port</code> options: <code>new Web3.providers.HttpProvider(&quot;http://&lt;host&gt;:&lt;port&gt;&quot;)</code></li>
 </ul>
-<h3><a name="mocha" class="anchor" href="#mocha"><span class="header-link" style="z-index: 9999999970">&nbsp;</span></a>mocha</h3><p>Configuration options for the <a href="http://mochajs.org/">MochaJS</a> testing framework. This configuration expects an object as detailed in Mocha&#39;s <a href="https://github.com/mochajs/mocha/wiki/Using-mocha-programmatically#set-options">documentation</a>.</p>
+<h3><a name="mocha" class="anchor" href="#mocha"><span class="header-link" style="z-index: 9999999880">&nbsp;</span></a>mocha</h3><p>Configuration options for the <a href="http://mochajs.org/">MochaJS</a> testing framework. This configuration expects an object as detailed in Mocha&#39;s <a href="https://github.com/mochajs/mocha/wiki/Using-mocha-programmatically#set-options">documentation</a>.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">mocha: {
   useColors: true
 }
 </code></pre>
-<h1><a name="solidity-compiler-configuration" class="anchor" href="#solidity-compiler-configuration"><span class="header-link" style="z-index: 9999999969">&nbsp;</span></a>Solidity Compiler Configuration</h1><p>Solidity compiler settings. Supports optimizer settings for <code>solc</code>.</p>
-<h3><a name="solc" class="anchor" href="#solc"><span class="header-link" style="z-index: 9999999968">&nbsp;</span></a>solc</h3><p>Example:</p>
+<h1><a name="solidity-compiler-configuration" class="anchor" href="#solidity-compiler-configuration"><span class="header-link" style="z-index: 9999999879">&nbsp;</span></a>Solidity Compiler Configuration</h1><p>Solidity compiler settings. Supports optimizer settings for <code>solc</code>.</p>
+<h3><a name="solc" class="anchor" href="#solc"><span class="header-link" style="z-index: 9999999878">&nbsp;</span></a>solc</h3><p>Example:</p>
 <pre><code class="lang-javascript">solc: {
   optimizer: {
     enabled: true,
@@ -293,40 +294,40 @@
   }
 }
 </code></pre>
-<h1><a name="ethpm-configuration" class="anchor" href="#ethpm-configuration"><span class="header-link" style="z-index: 9999999967">&nbsp;</span></a>EthPM Configuration</h1><p>This configuration applies to the optional <code>ethpm.json</code> file that exists alongside your <code>truffle.js</code> configuration file.</p>
-<h3><a name="package_name" class="anchor" href="#package_name"><span class="header-link" style="z-index: 9999999966">&nbsp;</span></a>package_name</h3><p>Name of the package you&#39;re publishing. Your package name must be unique to the EthPM registry.</p>
+<h1><a name="ethpm-configuration" class="anchor" href="#ethpm-configuration"><span class="header-link" style="z-index: 9999999877">&nbsp;</span></a>EthPM Configuration</h1><p>This configuration applies to the optional <code>ethpm.json</code> file that exists alongside your <code>truffle.js</code> configuration file.</p>
+<h3><a name="package_name" class="anchor" href="#package_name"><span class="header-link" style="z-index: 9999999876">&nbsp;</span></a>package_name</h3><p>Name of the package you&#39;re publishing. Your package name must be unique to the EthPM registry.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">package_name: &quot;adder&quot;
 </code></pre>
-<h3><a name="version" class="anchor" href="#version"><span class="header-link" style="z-index: 9999999965">&nbsp;</span></a>version</h3><p>Version of this package, using the <a href="http://semver.org/">semver</a> specification.</p>
+<h3><a name="version" class="anchor" href="#version"><span class="header-link" style="z-index: 9999999875">&nbsp;</span></a>version</h3><p>Version of this package, using the <a href="http://semver.org/">semver</a> specification.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">version: &quot;0.0.3&quot;
 </code></pre>
-<h3><a name="description" class="anchor" href="#description"><span class="header-link" style="z-index: 9999999964">&nbsp;</span></a>description</h3><p>A text description of your package for human readers.</p>
+<h3><a name="description" class="anchor" href="#description"><span class="header-link" style="z-index: 9999999874">&nbsp;</span></a>description</h3><p>A text description of your package for human readers.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">description: &quot;Simple contract to add two numbers&quot;
 </code></pre>
-<h3><a name="authors" class="anchor" href="#authors"><span class="header-link" style="z-index: 9999999963">&nbsp;</span></a>authors</h3><p>An array of authors. Can have any format, but we recommend the format below.</p>
+<h3><a name="authors" class="anchor" href="#authors"><span class="header-link" style="z-index: 9999999873">&nbsp;</span></a>authors</h3><p>An array of authors. Can have any format, but we recommend the format below.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">authors: [
   &quot;Tim Coulter &lt;tim.coulter@consensys.net&gt;&quot;
 ]
 </code></pre>
-<h3><a name="keywords" class="anchor" href="#keywords"><span class="header-link" style="z-index: 9999999962">&nbsp;</span></a>keywords</h3><p>An array of keywords that tag this package with helpful categories.</p>
+<h3><a name="keywords" class="anchor" href="#keywords"><span class="header-link" style="z-index: 9999999872">&nbsp;</span></a>keywords</h3><p>An array of keywords that tag this package with helpful categories.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">keywords: [
   &quot;ethereum&quot;,
   &quot;addition&quot;
 ],
 </code></pre>
-<h3><a name="dependencies" class="anchor" href="#dependencies"><span class="header-link" style="z-index: 9999999961">&nbsp;</span></a>dependencies</h3><p>A list of EthPM packages your package depends on, using <a href="http://semver.org/">semver</a> version ranges, like npm.</p>
+<h3><a name="dependencies" class="anchor" href="#dependencies"><span class="header-link" style="z-index: 9999999871">&nbsp;</span></a>dependencies</h3><p>A list of EthPM packages your package depends on, using <a href="http://semver.org/">semver</a> version ranges, like npm.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">dependencies: {
   &quot;owned&quot;: &quot;^0.0.1&quot;,
   &quot;erc20-token&quot;: &quot;1.0.0&quot;
 }
 </code></pre>
-<h3><a name="license" class="anchor" href="#license"><span class="header-link" style="z-index: 9999999960">&nbsp;</span></a>license</h3><p>License to use for this package. Strictly informative.</p>
+<h3><a name="license" class="anchor" href="#license"><span class="header-link" style="z-index: 9999999870">&nbsp;</span></a>license</h3><p>License to use for this package. Strictly informative.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">license: &quot;MIT&quot;,
 </code></pre>
