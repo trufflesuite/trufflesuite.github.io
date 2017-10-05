@@ -97,6 +97,7 @@ Now we can simply compile and migrate!
 
 ```shell
 $ truffle compile
+$ testrpc
 $ truffle migrate
 ```
 
