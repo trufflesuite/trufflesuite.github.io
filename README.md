@@ -10,11 +10,15 @@ Make sure you have run `npm install` in the `_site` subdirectory to install all 
 
 To run a local dev server, under the `_site` subdirectory, run:
 
-0. `npm run dev`
+```
+npm run dev
+```
 
 To compile the site, under the `_site` subdirectory, run:
 
-0. `npm run compile`
+```
+npm run compile
+```
 
 Running the compile step will refresh the compiled content in the project root directory. This step needs to be completed before changes will be shown on the live site.
 
@@ -22,4 +26,4 @@ Running the compile step will refresh the compiled content in the project root d
 
 We welcome all contributions, typo-corrections, and general feedback.
 
-To make this process easier, **we ask that you submit PRs containing only changes only within the `_site` subdirectory.** This means to edit the Markdown files only, not the built HTML. Someone from the Truffle team, when accepting the PR, will run the compilation step and update the HTML. Thank you!
+**We ask that you submit PRs containing only changes only within the `_site` subdirectory.** This means to edit the Markdown files only, not the built HTML. Someone from the Truffle team, when accepting the PR, will run the compilation step and update the HTML. Thank you!
