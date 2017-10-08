@@ -20,11 +20,13 @@ We can use your project's `truffle.js` configuration file to tell Truffle how to
 
 ```javascript
 var bip39 = require("bip39");
-var hdkey = require('ethereumjs-wallet/hdkey');
+var hdkey = require("ethereumjs-wallet/hdkey");
 var ProviderEngine = require("web3-provider-engine");
-var WalletSubprovider = require('web3-provider-engine/subproviders/wallet.js');
+var WalletSubprovider = require("web3-provider-engine/subproviders/wallet.js");
+var FilterSubprovider = require("web3-provider-engine/subproviders/filters.js");
 var Web3Subprovider = require("web3-provider-engine/subproviders/web3.js");
 var Web3 = require("web3");
+var web3 = new Web3();
 ```
 
 These dependencies are used for the following things:
@@ -33,6 +35,7 @@ These dependencies are used for the following things:
 - `hdkey`: Used to derive addresses from seeds using complex math.
 - `ProviderEngine`: The basic framework that will be used to wrangle all transactions that need to be signed.
 - `WalletSubprovider`: Part of the provider engine framework that will handle wallet signing.
+- `FilterSubprovider`: Part of the provider engine framework that handles block filtering. It is needed to receive blockchain updates during deployment of contracts.
 - `Web3Subprovider`: Part of the provider engine framework that handles everything *other than* transaction signing.
 - `Web3`: What we used to communicate with the Ethereum network. Here, we're using it solely to create a provider.
 
@@ -59,7 +62,8 @@ Next, we need to set up the Provider Engine, telling it that we'd like to use ou
 var providerUrl = "https://testnet.infura.io";
 var engine = new ProviderEngine();
 engine.addProvider(new WalletSubprovider(wallet, {}));
-engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
+engine.addProvider(new FilterSubprovider());
+engine.addProvider(new Web3Subprovider(new web3.providers.HttpProvider(providerUrl)));
 engine.start(); // Required by the provider engine.
 ```
 
@@ -90,11 +94,13 @@ In general, this is a lot of work in order to use an hd wallet with Truffle. Thi
 
 ```javascript
 var bip39 = require("bip39");
-var hdkey = require('ethereumjs-wallet/hdkey');
+var hdkey = require("ethereumjs-wallet/hdkey");
 var ProviderEngine = require("web3-provider-engine");
-var WalletSubprovider = require('web3-provider-engine/subproviders/wallet.js');
+var WalletSubprovider = require("web3-provider-engine/subproviders/wallet.js");
+var FilterSubprovider = require("web3-provider-engine/subproviders/filters.js");
 var Web3Subprovider = require("web3-provider-engine/subproviders/web3.js");
 var Web3 = require("web3");
+var web3 = new web3();
 
 // Get our mnemonic and create an hdwallet
 var mnemonic = "couch solve unique spirit wine fine occur rhythm foot feature glory away";
@@ -108,7 +114,8 @@ var address = "0x" + wallet.getAddress().toString("hex");
 var providerUrl = "https://testnet.infura.io";
 var engine = new ProviderEngine();
 engine.addProvider(new WalletSubprovider(wallet, {}));
-engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
+engine.addProvider(new FilterSubprovider());
+engine.addProvider(new Web3Subprovider(new web3.providers.HttpProvider(providerUrl)));
 engine.start(); // Required by the provider engine.
 
 module.exports = {
