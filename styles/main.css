@@ -1934,127 +1934,36 @@ pre code {
   overflow-y: scroll;
 }
 
-.container, .Tutorials .MainContent > .container-fluid > .row > h1,
-.Tutorials .MainContent > .container-fluid > .row > h2,
-.Tutorials .MainContent > .container-fluid > .row > h3,
-.Tutorials .MainContent > .container-fluid > .row > h4,
-.Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent h1:first-child, .Tutorials .MainContent ul,
-.Tutorials .MainContent ol, .Tutorials .MainContent pre code, .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h1,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h2,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h3,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p {
+.container {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.container:before, .Tutorials .MainContent > .container-fluid > .row > h1:before,
-.Tutorials .MainContent > .container-fluid > .row > h2:before,
-.Tutorials .MainContent > .container-fluid > .row > h3:before,
-.Tutorials .MainContent > .container-fluid > .row > h4:before,
-.Tutorials .MainContent > .container-fluid > .row > p:before, .Tutorials .MainContent h1:first-child:before, .Tutorials .MainContent ul:before,
-.Tutorials .MainContent ol:before, .Tutorials .MainContent pre code:before, .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h1:before,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h2:before,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h3:before,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4:before,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul:before,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol:before,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr:before,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code:before,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p:before, .container:after, .Tutorials .MainContent > .container-fluid > .row > h1:after,
-.Tutorials .MainContent > .container-fluid > .row > h2:after,
-.Tutorials .MainContent > .container-fluid > .row > h3:after,
-.Tutorials .MainContent > .container-fluid > .row > h4:after,
-.Tutorials .MainContent > .container-fluid > .row > p:after, .Tutorials .MainContent h1:first-child:after, .Tutorials .MainContent ul:after,
-.Tutorials .MainContent ol:after, .Tutorials .MainContent pre code:after, .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h1:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h2:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h3:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p:after {
+.container:before, .container:after {
   content: " ";
   display: table;
 }
 
-.container:after, .Tutorials .MainContent > .container-fluid > .row > h1:after,
-.Tutorials .MainContent > .container-fluid > .row > h2:after,
-.Tutorials .MainContent > .container-fluid > .row > h3:after,
-.Tutorials .MainContent > .container-fluid > .row > h4:after,
-.Tutorials .MainContent > .container-fluid > .row > p:after, .Tutorials .MainContent h1:first-child:after, .Tutorials .MainContent ul:after,
-.Tutorials .MainContent ol:after, .Tutorials .MainContent pre code:after, .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h1:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h2:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h3:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code:after,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p:after {
+.container:after {
   clear: both;
 }
 
 @media (min-width: 768px) {
-  .container, .Tutorials .MainContent > .container-fluid > .row > h1,
-  .Tutorials .MainContent > .container-fluid > .row > h2,
-  .Tutorials .MainContent > .container-fluid > .row > h3,
-  .Tutorials .MainContent > .container-fluid > .row > h4,
-  .Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent h1:first-child, .Tutorials .MainContent ul,
-  .Tutorials .MainContent ol, .Tutorials .MainContent pre code, .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h1,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h2,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h3,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p {
+  .container {
     width: 750px;
   }
 }
 
 @media (min-width: 992px) {
-  .container, .Tutorials .MainContent > .container-fluid > .row > h1,
-  .Tutorials .MainContent > .container-fluid > .row > h2,
-  .Tutorials .MainContent > .container-fluid > .row > h3,
-  .Tutorials .MainContent > .container-fluid > .row > h4,
-  .Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent h1:first-child, .Tutorials .MainContent ul,
-  .Tutorials .MainContent ol, .Tutorials .MainContent pre code, .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h1,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h2,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h3,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p {
+  .container {
     width: 970px;
   }
 }
 
 @media (min-width: 1200px) {
-  .container, .Tutorials .MainContent > .container-fluid > .row > h1,
-  .Tutorials .MainContent > .container-fluid > .row > h2,
-  .Tutorials .MainContent > .container-fluid > .row > h3,
-  .Tutorials .MainContent > .container-fluid > .row > h4,
-  .Tutorials .MainContent > .container-fluid > .row > p, .Tutorials .MainContent h1:first-child, .Tutorials .MainContent ul,
-  .Tutorials .MainContent ol, .Tutorials .MainContent pre code, .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h1,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h2,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h3,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p {
+  .container {
     width: 1170px;
   }
 }
@@ -2089,17 +1998,14 @@ pre code {
   clear: both;
 }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
-.Tutorials .MainContent ol li pre code, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
-.Tutorials .MainContent ol li pre code, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .Tutorials .MainContent table, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .Tutorials .MainContent table, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
-.Tutorials .MainContent ol li pre code {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .Tutorials .MainContent table {
   float: left;
 }
 
@@ -2147,8 +2053,7 @@ pre code {
   width: 91.66667%;
 }
 
-.col-xs-12, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
-.Tutorials .MainContent ol li pre code {
+.col-xs-12, .Tutorials .MainContent table {
   width: 100%;
 }
 
@@ -2468,8 +2373,7 @@ pre code {
 }
 
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
-  .Tutorials .MainContent ol li pre code, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .Tutorials .MainContent table, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
   .col-md-1 {
@@ -2487,8 +2391,7 @@ pre code {
   .col-md-5 {
     width: 41.66667%;
   }
-  .col-md-6, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
-  .Tutorials .MainContent ol li pre code {
+  .col-md-6, .Tutorials .MainContent table {
     width: 50%;
   }
   .col-md-7 {
@@ -2524,8 +2427,7 @@ pre code {
   .col-md-pull-4 {
     right: 33.33333%;
   }
-  .col-md-pull-5, .Tutorials .MainContent table, .Tutorials .MainContent ul li pre code,
-  .Tutorials .MainContent ol li pre code {
+  .col-md-pull-5, .Tutorials .MainContent table {
     right: 41.66667%;
   }
   .col-md-pull-6 {
@@ -2603,8 +2505,7 @@ pre code {
   .col-md-offset-4 {
     margin-left: 33.33333%;
   }
-  .col-md-offset-5, .Tutorials .MainContent ul li pre code,
-  .Tutorials .MainContent ol li pre code {
+  .col-md-offset-5 {
     margin-left: 41.66667%;
   }
   .col-md-offset-6, .Tutorials .MainContent table {
@@ -4973,26 +4874,8 @@ tbody.collapse.in {
   }
 }
 
-.container > .navbar-header, .Tutorials .MainContent > .container-fluid > .row > h1 > .navbar-header,
-.Tutorials .MainContent > .container-fluid > .row > h2 > .navbar-header,
-.Tutorials .MainContent > .container-fluid > .row > h3 > .navbar-header,
-.Tutorials .MainContent > .container-fluid > .row > h4 > .navbar-header,
-.Tutorials .MainContent > .container-fluid > .row > p > .navbar-header, .Tutorials .MainContent h1:first-child > .navbar-header, .Tutorials .MainContent ul > .navbar-header,
-.Tutorials .MainContent ol > .navbar-header, .Tutorials .MainContent pre code > .navbar-header,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul > .navbar-header,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol > .navbar-header,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr > .navbar-header,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code > .navbar-header,
-.container > .navbar-collapse, .Tutorials .MainContent > .container-fluid > .row > h1 > .navbar-collapse,
-.Tutorials .MainContent > .container-fluid > .row > h2 > .navbar-collapse,
-.Tutorials .MainContent > .container-fluid > .row > h3 > .navbar-collapse,
-.Tutorials .MainContent > .container-fluid > .row > h4 > .navbar-collapse,
-.Tutorials .MainContent > .container-fluid > .row > p > .navbar-collapse, .Tutorials .MainContent h1:first-child > .navbar-collapse, .Tutorials .MainContent ul > .navbar-collapse,
-.Tutorials .MainContent ol > .navbar-collapse, .Tutorials .MainContent pre code > .navbar-collapse,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul > .navbar-collapse,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol > .navbar-collapse,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr > .navbar-collapse,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code > .navbar-collapse,
+.container > .navbar-header,
+.container > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
@@ -5000,26 +4883,8 @@ tbody.collapse.in {
 }
 
 @media (min-width: 768px) {
-  .container > .navbar-header, .Tutorials .MainContent > .container-fluid > .row > h1 > .navbar-header,
-  .Tutorials .MainContent > .container-fluid > .row > h2 > .navbar-header,
-  .Tutorials .MainContent > .container-fluid > .row > h3 > .navbar-header,
-  .Tutorials .MainContent > .container-fluid > .row > h4 > .navbar-header,
-  .Tutorials .MainContent > .container-fluid > .row > p > .navbar-header, .Tutorials .MainContent h1:first-child > .navbar-header, .Tutorials .MainContent ul > .navbar-header,
-  .Tutorials .MainContent ol > .navbar-header, .Tutorials .MainContent pre code > .navbar-header,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul > .navbar-header,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol > .navbar-header,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr > .navbar-header,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code > .navbar-header,
-  .container > .navbar-collapse, .Tutorials .MainContent > .container-fluid > .row > h1 > .navbar-collapse,
-  .Tutorials .MainContent > .container-fluid > .row > h2 > .navbar-collapse,
-  .Tutorials .MainContent > .container-fluid > .row > h3 > .navbar-collapse,
-  .Tutorials .MainContent > .container-fluid > .row > h4 > .navbar-collapse,
-  .Tutorials .MainContent > .container-fluid > .row > p > .navbar-collapse, .Tutorials .MainContent h1:first-child > .navbar-collapse, .Tutorials .MainContent ul > .navbar-collapse,
-  .Tutorials .MainContent ol > .navbar-collapse, .Tutorials .MainContent pre code > .navbar-collapse,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul > .navbar-collapse,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol > .navbar-collapse,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr > .navbar-collapse,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code > .navbar-collapse,
+  .container > .navbar-header,
+  .container > .navbar-collapse,
   .container-fluid > .navbar-header,
   .container-fluid > .navbar-collapse {
     margin-right: 0;
@@ -5081,16 +4946,7 @@ tbody.collapse.in {
 }
 
 @media (min-width: 768px) {
-  .navbar > .container .navbar-brand, .Tutorials .MainContent > .container-fluid > .row.navbar > h1 .navbar-brand,
-  .Tutorials .MainContent > .container-fluid > .row.navbar > h2 .navbar-brand,
-  .Tutorials .MainContent > .container-fluid > .row.navbar > h3 .navbar-brand,
-  .Tutorials .MainContent > .container-fluid > .row.navbar > h4 .navbar-brand,
-  .Tutorials .MainContent > .container-fluid > .row.navbar > p .navbar-brand, .Tutorials .MainContent .navbar > h1:first-child .navbar-brand, .Tutorials .MainContent .navbar > ul .navbar-brand,
-  .Tutorials .MainContent .navbar > ol .navbar-brand, .Tutorials .MainContent pre .navbar > code .navbar-brand,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row.navbar > ul .navbar-brand,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row.navbar > ol .navbar-brand,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row.navbar > hr .navbar-brand,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .navbar > code .navbar-brand,
+  .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
   }
@@ -5856,41 +5712,14 @@ a.badge:hover, a.badge:focus {
   border-top-color: #d5d5d5;
 }
 
-.container .jumbotron, .Tutorials .MainContent > .container-fluid > .row > h1 .jumbotron,
-.Tutorials .MainContent > .container-fluid > .row > h2 .jumbotron,
-.Tutorials .MainContent > .container-fluid > .row > h3 .jumbotron,
-.Tutorials .MainContent > .container-fluid > .row > h4 .jumbotron,
-.Tutorials .MainContent > .container-fluid > .row > p .jumbotron, .Tutorials .MainContent h1:first-child .jumbotron, .Tutorials .MainContent ul .jumbotron,
-.Tutorials .MainContent ol .jumbotron, .Tutorials .MainContent pre code .jumbotron,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul .jumbotron,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol .jumbotron,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr .jumbotron,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code .jumbotron,
+.container .jumbotron,
 .container-fluid .jumbotron {
   border-radius: 6px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.jumbotron .container, .jumbotron .Tutorials .MainContent > .container-fluid > .row > h1, .Tutorials .jumbotron .MainContent > .container-fluid > .row > h1, .jumbotron
-.Tutorials .MainContent > .container-fluid > .row > h2,
-.Tutorials .jumbotron .MainContent > .container-fluid > .row > h2, .jumbotron
-.Tutorials .MainContent > .container-fluid > .row > h3,
-.Tutorials .jumbotron .MainContent > .container-fluid > .row > h3, .jumbotron
-.Tutorials .MainContent > .container-fluid > .row > h4,
-.Tutorials .jumbotron .MainContent > .container-fluid > .row > h4, .jumbotron
-.Tutorials .MainContent > .container-fluid > .row > p,
-.Tutorials .jumbotron .MainContent > .container-fluid > .row > p, .jumbotron .Tutorials .MainContent h1:first-child, .Tutorials .MainContent .jumbotron h1:first-child, .jumbotron .Tutorials .MainContent ul, .Tutorials .MainContent .jumbotron ul, .jumbotron
-.Tutorials .MainContent ol,
-.Tutorials .MainContent .jumbotron ol, .jumbotron .Tutorials .MainContent pre code, .Tutorials .MainContent pre .jumbotron code, .jumbotron
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
-.Tutorials:not(.TutorialIndexContainer) .jumbotron .MainContent > .container-fluid > .row > ul, .jumbotron
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
-.Tutorials:not(.TutorialIndexContainer) .jumbotron .MainContent > .container-fluid > .row > ol, .jumbotron
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
-.Tutorials:not(.TutorialIndexContainer) .jumbotron .MainContent > .container-fluid > .row > hr, .jumbotron
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .jumbotron code {
+.jumbotron .container {
   max-width: 100%;
 }
 
@@ -5899,16 +5728,7 @@ a.badge:hover, a.badge:focus {
     padding-top: 48px;
     padding-bottom: 48px;
   }
-  .container .jumbotron, .Tutorials .MainContent > .container-fluid > .row > h1 .jumbotron,
-  .Tutorials .MainContent > .container-fluid > .row > h2 .jumbotron,
-  .Tutorials .MainContent > .container-fluid > .row > h3 .jumbotron,
-  .Tutorials .MainContent > .container-fluid > .row > h4 .jumbotron,
-  .Tutorials .MainContent > .container-fluid > .row > p .jumbotron, .Tutorials .MainContent h1:first-child .jumbotron, .Tutorials .MainContent ul .jumbotron,
-  .Tutorials .MainContent ol .jumbotron, .Tutorials .MainContent pre code .jumbotron,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul .jumbotron,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol .jumbotron,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr .jumbotron,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code .jumbotron,
+  .container .jumbotron,
   .container-fluid .jumbotron {
     padding-left: 60px;
     padding-right: 60px;
@@ -8095,7 +7915,7 @@ button.close {
   margin: 4rem 4rem !important;
 }
 
-.m-t-4 {
+.m-t-4, .Ballotin .CommunityBoxes .row-boxes {
   margin-top: 4rem !important;
 }
 
@@ -8449,6 +8269,21 @@ code {
   word-wrap: break-word;
 }
 
+.container-narrow {
+  max-width: 600px;
+}
+
+.Footer .copyright {
+  line-height: 40px;
+}
+
+.Footer .copyright svg {
+  height: 40px;
+  width: auto;
+  float: left;
+  margin-right: 5px;
+}
+
 .nav a {
   text-transform: uppercase;
 }
@@ -8800,52 +8635,16 @@ code {
 }
 
 @media screen and (max-width: 991px) {
-  .Footer .john-attribution {
+  .Footer .copyright {
     margin: 0 0 20px 0;
   }
 }
 
-.Footer .container, .Footer .Tutorials .MainContent > .container-fluid > .row > h1, .Tutorials .Footer .MainContent > .container-fluid > .row > h1, .Footer
-.Tutorials .MainContent > .container-fluid > .row > h2,
-.Tutorials .Footer .MainContent > .container-fluid > .row > h2, .Footer
-.Tutorials .MainContent > .container-fluid > .row > h3,
-.Tutorials .Footer .MainContent > .container-fluid > .row > h3, .Footer
-.Tutorials .MainContent > .container-fluid > .row > h4,
-.Tutorials .Footer .MainContent > .container-fluid > .row > h4, .Footer
-.Tutorials .MainContent > .container-fluid > .row > p,
-.Tutorials .Footer .MainContent > .container-fluid > .row > p, .Footer .Tutorials .MainContent h1:first-child, .Tutorials .MainContent .Footer h1:first-child, .Footer .Tutorials .MainContent ul, .Tutorials .MainContent .Footer ul, .Footer
-.Tutorials .MainContent ol,
-.Tutorials .MainContent .Footer ol, .Footer .Tutorials .MainContent pre code, .Tutorials .MainContent pre .Footer code, .Footer
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
-.Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > ul, .Footer
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
-.Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > ol, .Footer
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
-.Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > hr, .Footer
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .Footer code {
+.Footer .container {
   position: relative;
 }
 
-.Footer .container .footer-wordmark, .Footer .Tutorials .MainContent > .container-fluid > .row > h1 .footer-wordmark, .Tutorials .Footer .MainContent > .container-fluid > .row > h1 .footer-wordmark, .Footer
-.Tutorials .MainContent > .container-fluid > .row > h2 .footer-wordmark,
-.Tutorials .Footer .MainContent > .container-fluid > .row > h2 .footer-wordmark, .Footer
-.Tutorials .MainContent > .container-fluid > .row > h3 .footer-wordmark,
-.Tutorials .Footer .MainContent > .container-fluid > .row > h3 .footer-wordmark, .Footer
-.Tutorials .MainContent > .container-fluid > .row > h4 .footer-wordmark,
-.Tutorials .Footer .MainContent > .container-fluid > .row > h4 .footer-wordmark, .Footer
-.Tutorials .MainContent > .container-fluid > .row > p .footer-wordmark,
-.Tutorials .Footer .MainContent > .container-fluid > .row > p .footer-wordmark, .Footer .Tutorials .MainContent h1:first-child .footer-wordmark, .Tutorials .MainContent .Footer h1:first-child .footer-wordmark, .Footer .Tutorials .MainContent ul .footer-wordmark, .Tutorials .MainContent .Footer ul .footer-wordmark, .Footer
-.Tutorials .MainContent ol .footer-wordmark,
-.Tutorials .MainContent .Footer ol .footer-wordmark, .Footer .Tutorials .MainContent pre code .footer-wordmark, .Tutorials .MainContent pre .Footer code .footer-wordmark, .Footer
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul .footer-wordmark,
-.Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > ul .footer-wordmark, .Footer
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol .footer-wordmark,
-.Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > ol .footer-wordmark, .Footer
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr .footer-wordmark,
-.Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > hr .footer-wordmark, .Footer
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code .footer-wordmark,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .Footer code .footer-wordmark {
+.Footer .container .footer-wordmark {
   width: calc(100% - 30px);
   position: absolute;
   bottom: -211px;
@@ -8853,25 +8652,7 @@ code {
 }
 
 @media screen and (max-width: 767px) {
-  .Footer .container .footer-wordmark, .Footer .Tutorials .MainContent > .container-fluid > .row > h1 .footer-wordmark, .Tutorials .Footer .MainContent > .container-fluid > .row > h1 .footer-wordmark, .Footer
-  .Tutorials .MainContent > .container-fluid > .row > h2 .footer-wordmark,
-  .Tutorials .Footer .MainContent > .container-fluid > .row > h2 .footer-wordmark, .Footer
-  .Tutorials .MainContent > .container-fluid > .row > h3 .footer-wordmark,
-  .Tutorials .Footer .MainContent > .container-fluid > .row > h3 .footer-wordmark, .Footer
-  .Tutorials .MainContent > .container-fluid > .row > h4 .footer-wordmark,
-  .Tutorials .Footer .MainContent > .container-fluid > .row > h4 .footer-wordmark, .Footer
-  .Tutorials .MainContent > .container-fluid > .row > p .footer-wordmark,
-  .Tutorials .Footer .MainContent > .container-fluid > .row > p .footer-wordmark, .Footer .Tutorials .MainContent h1:first-child .footer-wordmark, .Tutorials .MainContent .Footer h1:first-child .footer-wordmark, .Footer .Tutorials .MainContent ul .footer-wordmark, .Tutorials .MainContent .Footer ul .footer-wordmark, .Footer
-  .Tutorials .MainContent ol .footer-wordmark,
-  .Tutorials .MainContent .Footer ol .footer-wordmark, .Footer .Tutorials .MainContent pre code .footer-wordmark, .Tutorials .MainContent pre .Footer code .footer-wordmark, .Footer
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul .footer-wordmark,
-  .Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > ul .footer-wordmark, .Footer
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol .footer-wordmark,
-  .Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > ol .footer-wordmark, .Footer
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr .footer-wordmark,
-  .Tutorials:not(.TutorialIndexContainer) .Footer .MainContent > .container-fluid > .row > hr .footer-wordmark, .Footer
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code .footer-wordmark,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .Footer code .footer-wordmark {
+  .Footer .container .footer-wordmark {
     bottom: -183px;
   }
 }
@@ -8936,25 +8717,7 @@ code {
   margin-left: 1em;
 }
 
-.LandingPage header .container, .LandingPage header .Tutorials .MainContent > .container-fluid > .row > h1, .Tutorials .LandingPage header .MainContent > .container-fluid > .row > h1, .LandingPage header
-.Tutorials .MainContent > .container-fluid > .row > h2,
-.Tutorials .LandingPage header .MainContent > .container-fluid > .row > h2, .LandingPage header
-.Tutorials .MainContent > .container-fluid > .row > h3,
-.Tutorials .LandingPage header .MainContent > .container-fluid > .row > h3, .LandingPage header
-.Tutorials .MainContent > .container-fluid > .row > h4,
-.Tutorials .LandingPage header .MainContent > .container-fluid > .row > h4, .LandingPage header
-.Tutorials .MainContent > .container-fluid > .row > p,
-.Tutorials .LandingPage header .MainContent > .container-fluid > .row > p, .LandingPage header .Tutorials .MainContent h1:first-child, .Tutorials .MainContent .LandingPage header h1:first-child, .LandingPage header .Tutorials .MainContent ul, .Tutorials .MainContent .LandingPage header ul, .LandingPage header
-.Tutorials .MainContent ol,
-.Tutorials .MainContent .LandingPage header ol, .LandingPage header .Tutorials .MainContent pre code, .Tutorials .MainContent pre .LandingPage header code, .LandingPage header
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
-.Tutorials:not(.TutorialIndexContainer) .LandingPage header .MainContent > .container-fluid > .row > ul, .LandingPage header
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
-.Tutorials:not(.TutorialIndexContainer) .LandingPage header .MainContent > .container-fluid > .row > ol, .LandingPage header
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
-.Tutorials:not(.TutorialIndexContainer) .LandingPage header .MainContent > .container-fluid > .row > hr, .LandingPage header
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .LandingPage header code {
+.LandingPage header .container {
   position: absolute;
   top: 44%;
   left: 50%;
@@ -8990,25 +8753,7 @@ code {
     height: auto;
     padding: 83px 0 30px 0;
   }
-  .LandingPage header .container, .LandingPage header .Tutorials .MainContent > .container-fluid > .row > h1, .Tutorials .LandingPage header .MainContent > .container-fluid > .row > h1, .LandingPage header
-  .Tutorials .MainContent > .container-fluid > .row > h2,
-  .Tutorials .LandingPage header .MainContent > .container-fluid > .row > h2, .LandingPage header
-  .Tutorials .MainContent > .container-fluid > .row > h3,
-  .Tutorials .LandingPage header .MainContent > .container-fluid > .row > h3, .LandingPage header
-  .Tutorials .MainContent > .container-fluid > .row > h4,
-  .Tutorials .LandingPage header .MainContent > .container-fluid > .row > h4, .LandingPage header
-  .Tutorials .MainContent > .container-fluid > .row > p,
-  .Tutorials .LandingPage header .MainContent > .container-fluid > .row > p, .LandingPage header .Tutorials .MainContent h1:first-child, .Tutorials .MainContent .LandingPage header h1:first-child, .LandingPage header .Tutorials .MainContent ul, .Tutorials .MainContent .LandingPage header ul, .LandingPage header
-  .Tutorials .MainContent ol,
-  .Tutorials .MainContent .LandingPage header ol, .LandingPage header .Tutorials .MainContent pre code, .Tutorials .MainContent pre .LandingPage header code, .LandingPage header
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
-  .Tutorials:not(.TutorialIndexContainer) .LandingPage header .MainContent > .container-fluid > .row > ul, .LandingPage header
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
-  .Tutorials:not(.TutorialIndexContainer) .LandingPage header .MainContent > .container-fluid > .row > ol, .LandingPage header
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
-  .Tutorials:not(.TutorialIndexContainer) .LandingPage header .MainContent > .container-fluid > .row > hr, .LandingPage header
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
-  .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .LandingPage header code {
+  .LandingPage header .container {
     position: static;
     top: auto;
     left: auto;
@@ -9106,7 +8851,7 @@ code {
   overflow: hidden;
 }
 
-.LandingPage .Tutorials .container, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h1, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h2, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h3, .LandingPage .Tutorials .MainContent > .container-fluid > .row > h4, .LandingPage .Tutorials .MainContent > .container-fluid > .row > p, .LandingPage .Tutorials .MainContent h1:first-child, .LandingPage .Tutorials .MainContent ul, .LandingPage .Tutorials .MainContent ol, .LandingPage .Tutorials .MainContent pre code, .LandingPage .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul, .LandingPage .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol, .LandingPage .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr, .LandingPage .Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code {
+.LandingPage .Tutorials .container {
   position: relative;
   overflow: hidden;
 }
@@ -9165,25 +8910,7 @@ code {
   border-top: solid 1px #E8E8E8;
 }
 
-.LandingPage .Blog .container, .LandingPage .Blog .Tutorials .MainContent > .container-fluid > .row > h1, .Tutorials .LandingPage .Blog .MainContent > .container-fluid > .row > h1, .LandingPage .Blog
-.Tutorials .MainContent > .container-fluid > .row > h2,
-.Tutorials .LandingPage .Blog .MainContent > .container-fluid > .row > h2, .LandingPage .Blog
-.Tutorials .MainContent > .container-fluid > .row > h3,
-.Tutorials .LandingPage .Blog .MainContent > .container-fluid > .row > h3, .LandingPage .Blog
-.Tutorials .MainContent > .container-fluid > .row > h4,
-.Tutorials .LandingPage .Blog .MainContent > .container-fluid > .row > h4, .LandingPage .Blog
-.Tutorials .MainContent > .container-fluid > .row > p,
-.Tutorials .LandingPage .Blog .MainContent > .container-fluid > .row > p, .LandingPage .Blog .Tutorials .MainContent h1:first-child, .Tutorials .MainContent .LandingPage .Blog h1:first-child, .LandingPage .Blog .Tutorials .MainContent ul, .Tutorials .MainContent .LandingPage .Blog ul, .LandingPage .Blog
-.Tutorials .MainContent ol,
-.Tutorials .MainContent .LandingPage .Blog ol, .LandingPage .Blog .Tutorials .MainContent pre code, .Tutorials .MainContent pre .LandingPage .Blog code, .LandingPage .Blog
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
-.Tutorials:not(.TutorialIndexContainer) .LandingPage .Blog .MainContent > .container-fluid > .row > ul, .LandingPage .Blog
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
-.Tutorials:not(.TutorialIndexContainer) .LandingPage .Blog .MainContent > .container-fluid > .row > ol, .LandingPage .Blog
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
-.Tutorials:not(.TutorialIndexContainer) .LandingPage .Blog .MainContent > .container-fluid > .row > hr, .LandingPage .Blog
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .LandingPage .Blog code {
+.LandingPage .Blog .container {
   position: relative;
   overflow: hidden;
 }
@@ -9296,10 +9023,39 @@ code {
   /*
    * Single Tutorial
    */
+  /*&:not(.TutorialIndexContainer) {
+    .MainContent {
+      > .container-fluid > .row > h1,
+      > .container-fluid > .row > h2,
+      > .container-fluid > .row > h3,
+      > .container-fluid > .row > h4,
+      > .container-fluid > .row > ul,
+      > .container-fluid > .row > ol,
+      > .container-fluid > .row > hr,
+      > .container-fluid > .row > pre code,
+      > .container-fluid > .row > p {
+        @extend .container;
+        max-width: 600px;
+      }
+
+      > .container-fluid > .row > ul,
+      > .container-fluid > .row > ol {
+        padding-left: 35px;
+      }
+
+      > .container-fluid > .row > hr {
+        max-width: 540px;
+      }
+    }
+  }*/
 }
 
 .Tutorials.TutorialIndexContainer {
   background: #F8F5F0;
+}
+
+.Tutorials.TutorialIndexContainer .MainContent ol {
+  padding-left: 0;
 }
 
 .Tutorials .nav a {
@@ -9308,6 +9064,7 @@ code {
 
 .Tutorials .MainContent {
   padding-top: 123px;
+  overflow-x: hidden;
 }
 
 .Tutorials .MainContent h1 {
@@ -9320,8 +9077,7 @@ code {
 .Tutorials .MainContent h3,
 .Tutorials .MainContent h4,
 .Tutorials .MainContent h5,
-.Tutorials .MainContent h6,
-.Tutorials .MainContent h7 {
+.Tutorials .MainContent h6 {
   position: relative;
 }
 
@@ -9330,8 +9086,7 @@ code {
 .Tutorials .MainContent h3 .anchor,
 .Tutorials .MainContent h4 .anchor,
 .Tutorials .MainContent h5 .anchor,
-.Tutorials .MainContent h6 .anchor,
-.Tutorials .MainContent h7 .anchor {
+.Tutorials .MainContent h6 .anchor {
   position: absolute;
   height: 100%;
   width: 40px;
@@ -9347,8 +9102,7 @@ code {
 .Tutorials .MainContent h3 .anchor .header-link,
 .Tutorials .MainContent h4 .anchor .header-link,
 .Tutorials .MainContent h5 .anchor .header-link,
-.Tutorials .MainContent h6 .anchor .header-link,
-.Tutorials .MainContent h7 .anchor .header-link {
+.Tutorials .MainContent h6 .anchor .header-link {
   display: inline-block;
   position: absolute;
   width: 40px;
@@ -9361,8 +9115,7 @@ code {
 .Tutorials .MainContent h3 .anchor .header-link:hover,
 .Tutorials .MainContent h4 .anchor .header-link:hover,
 .Tutorials .MainContent h5 .anchor .header-link:hover,
-.Tutorials .MainContent h6 .anchor .header-link:hover,
-.Tutorials .MainContent h7 .anchor .header-link:hover {
+.Tutorials .MainContent h6 .anchor .header-link:hover {
   background-image: url(/images/anchor.png);
   background-size: 20px 20px;
   background-position: center center;
@@ -9375,8 +9128,7 @@ code {
 .Tutorials .MainContent h3:hover .header-link,
 .Tutorials .MainContent h4:hover .header-link,
 .Tutorials .MainContent h5:hover .header-link,
-.Tutorials .MainContent h6:hover .header-link,
-.Tutorials .MainContent h7:hover .header-link {
+.Tutorials .MainContent h6:hover .header-link {
   background-image: url(/images/anchor.png);
   background-size: 20px 20px;
   background-position: center center;
@@ -9410,20 +9162,15 @@ code {
   display: block;
   height: calc(50vh - 100px);
   width: auto;
-  margin: 1.5rem auto 3rem auto !important;
+  margin: 1.5rem auto 1rem auto !important;
 }
 
 .Tutorials .MainContent ul,
 .Tutorials .MainContent ol {
   max-width: 100%;
   margin: 2rem auto;
-  padding-left: 50px;
+  padding-left: 20px;
   font-family: "Open Sans", "Verdana", Times, serif;
-}
-
-.Tutorials .MainContent ul.list-unstyled,
-.Tutorials .MainContent ol.list-unstyled {
-  padding-left: 15px;
 }
 
 .Tutorials .MainContent ul.list-unstyled li,
@@ -9450,28 +9197,10 @@ code {
   border-bottom: 1px dotted;
   display: block;
   height: 1px;
-  width: 1140px;
-}
-
-@media screen and (max-width: 1199px) {
-  .Tutorials .MainContent hr {
-    width: 940px;
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .Tutorials .MainContent hr {
-    width: 720px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .Tutorials .MainContent hr {
-    width: calc(100% - 30px);
-  }
 }
 
 .Tutorials .MainContent pre {
+  position: relative;
   margin: 1rem 0 3rem 0;
   padding: 3rem 0;
   border-radius: 0;
@@ -9480,13 +9209,36 @@ code {
   word-break: break-word;
   border-left: none;
   border-right: none;
-  float: left;
+  overflow: visible;
 }
 
 .Tutorials .MainContent pre code {
   display: block;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0;
+  width: calc(50vw + 250px);
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 599px) {
+  .Tutorials .MainContent pre code {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+.Tutorials .MainContent pre::after {
+  content: '';
+  position: absolute;
+  width: 200vw;
+  top: -1px;
+  right: auto;
+  bottom: -1px;
+  left: -100vw;
+  z-index: -1;
+  background: #f7f7f7;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .Tutorials .MainContent pre.language-shell {
@@ -9496,6 +9248,10 @@ code {
 .Tutorials .MainContent pre.language-shell code {
   color: white;
   text-shadow: none;
+}
+
+.Tutorials .MainContent pre.language-shell::after {
+  background-color: #272727;
 }
 
 .Tutorials .MainContent footer p {
@@ -9583,27 +9339,6 @@ code {
   color: white;
 }
 
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h1,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h2,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h3,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > h4,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre code,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > p {
-  max-width: 600px;
-}
-
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ul,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > ol {
-  padding-left: 35px;
-}
-
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > hr {
-  max-width: 540px;
-}
-
 .Community .MainContent {
   padding-top: 123px;
   background: #F8F5F0;
@@ -9668,6 +9403,10 @@ code {
 .Support .livesaver {
   width: 120px;
   float: right;
+}
+
+.body-docs {
+  background: #F8F5F0;
 }
 
 .Documentation .MainContent {
@@ -9902,6 +9641,10 @@ code {
   }
 }
 
+.Documentation .ContentPage img {
+  max-width: 100%;
+}
+
 .Documentation footer {
   margin-top: 2rem;
   padding: 2rem;
@@ -9929,130 +9672,523 @@ code {
   margin-bottom: 1rem;
 }
 
+/*@mixin jaggy-edges() {
+  &:before {
+    display: block;
+
+    width: 100%;
+    height: 12px;
+
+    content: "";
+
+    background-image: linear-gradient(
+    135deg,
+    #2a2825 50%, rgba(255,255,255,0) 50%
+    ),
+    linear-gradient(
+    -135deg,
+    #2a2825 50%, rgba(255,255,255,0) 0%
+    );
+    background-position: top center, top center;
+    background-size: .75rem .75rem, .75rem .75rem;
+  }
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 12px;
+
+    content: "";
+
+    background-image: linear-gradient(
+    45deg,
+    #2a2825 50%, rgba(255,255,255,0) 50%
+    ),
+    linear-gradient(
+    -45deg,
+    #2a2825 50%, rgba(255,255,255,0) 0%
+    );
+    background-position: bottom center, bottom center;
+    background-size: .75rem .75rem, .75rem .75rem;
+  }
+}
+
 .Ganache {
+  padding-top: 60px;
+
   background-color: #2a2825;
-  background-image: url("/images/suite/ganache/header_bg.png");
-  background-size: cover;
   background-repeat: none;
-  font-family: 'Roboto Condensed', sans-serif;
-}
+  background-size: cover;
 
-.Ganache h2,
-.Ganache h3,
-.Ganache h4,
-.Ganache h5 {
-  color: white;
-  font-weight: bold;
-}
+  font-family: "Roboto Condensed", sans-serif;
 
-.Ganache p {
-  color: #a6aaa8;
-}
+  .navbar {
+    height: 60px;
 
-.Ganache h2 {
-  color: white;
-  line-height: 1.2;
-}
+    .navbar-brand {
+      height: 60px;
+      line-height: 60px;
 
-.Ganache .Flourish {
-  max-width: 300px;
-  display: block;
-  margin: 0px auto;
-}
+      .truffle-logo {
+        width: 40px;
+      }
 
-.Ganache main header .Logo {
-  margin-top: 3.5rem;
-}
+      .truffle-wordmark {
+        display: none;
+      }
+    }
 
-.Ganache main header h1 {
-  margin-top: 5.5rem;
-  font-weight: bold;
-  font-size: 68px;
-  color: #EFF6F4;
-  line-height: 74px;
-}
+    .navbar-nav {
+      li {
+        a {
+          height: 60px;
+          line-height: 60px;
+          font-size: .8125rem;
+        }
+      }
+    }
+  }
 
-.Ganache main header p {
-  text-align: center;
-  color: white;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: white;
+    text-shadow: none;
+    margin:0;
+  }
 
-.Ganache main header .DownloadVersions {
-  color: #a5a9a7;
-}
 
-.Ganache main header .Emoji {
-  font-size: 3rem;
-}
+  h2,
+  h5 {
+    font-weight: bold;
+    letter-spacing: 2.5px;
+  }
 
-.Ganache main header .DownloadButton {
-  background: #E5A35D;
-  background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.18) 0%, rgba(0, 0, 0, 0.2) 100%);
-  border-radius: 8px;
-  padding: 1.2rem;
-  width: 290px;
-  color: #202C2A;
-  cursor: pointer;
-  display: block;
-  margin: 0px auto;
-  margin-bottom: 4rem;
-}
+  p {
+    color: #a6aaa8;
 
-.Ganache .Features {
-  text-align: center;
-}
+    font-weight: 100;
+  }
 
-.Ganache .Features h2 {
-  color: white;
-}
+  h2 {
+    color: white;
 
-.Ganache .Features .FeatureList li {
-  margin-bottom: 5rem;
-}
+    line-height: 1.2;
+  }
 
-.Ganache .Features .FeatureList li h4 {
-  color: white;
-}
+  .Flourish {
+    display: block;
 
-.Ganache .Features .FeatureList li p {
-  color: #a6aaa8;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+
+  main {
+    header {
+      background-image: url("/images/suite/ganache/header_bg.png");
+      background-size: cover;
+
+      .Logo {
+        margin-top: 2.5rem;
+      }
+
+      h1 {
+        margin-top: 2.5rem;
+
+        letter-spacing: 2.5px;
+
+        color: #eff6f4;
+
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 42px;
+      }
+
+      p {
+        text-align: center;
+
+        color: white;
+
+        &.text-muted {
+          color: #d0d0d0;
+        }
+      }
+
+      .DownloadVersions {
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+
+        color: #a5a9a7;
+
+        font-size: 12px;
+      }
+
+      .Emoji {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .DownloadButton {
+    display: block;
+
+    width: 290px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 1.2rem;
+
+    cursor: pointer;
+    text-transform: uppercase;
+
+    color: #202c2a;
+    border-radius: 8px;
+    background: #e5a35d;
+    background-image: linear-gradient(
+    -180deg,
+    rgba(255, 255, 255, .18) 0%,
+    rgba(0, 0, 0, .20) 100%
+    );
+
+    font-weight: bold;
+  }
+
+  .PosRel {
+    position: relative;
+  }
+
+  .Foil {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+
+    width: calc(100% + 30px);
+    height: 430px;
+    margin-left: -15px;
+    padding-bottom: 3rem;
+
+    background: #e9b349;
+    background-image: linear-gradient(-180deg, rgba(255,255,255,.33) 0%, rgba(0,0,0,.17) 100%);
+
+    @include jaggy-edges();
+  }
+
+  .Features {
+    text-align: center;
+
+    h2 {
+      color: white;
+    }
+
+    h5 {
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+
+      color: #4d4c48;
+
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .FeatureList {
+      counter-reset: counter;
+      text-align: left;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        margin-bottom: 5rem;
+
+        &:before {
+          position: absolute;
+          z-index: -1;
+
+          content: counter(counter, decimal-leading-zero);
+          counter-increment: counter;
+          letter-spacing: -.5rem;
+
+          color: #454130;
+
+          font-size: 120px;
+          font-weight: bold;
+        }
+
+        .FeatureText {
+          padding: 0 4rem;
+
+          flex-grow: 1;
+        }
+
+        h4 {
+          color: white;
+          font-size: 44px;
+          font-weight: bold;
+          letter-spacing: 2.5px;
+        }
+
+        p {
+          color: #a6aaa8;
+        }
+      }
+    }
+  }
 }
 
 .OpenSource {
-  margin: 1rem auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   padding: 4rem;
-  border: 1px dashed #D1A372;
+
+  border: 1px dashed #d1a372;
   border-radius: 8px;
-  margin-bottom: 6rem;
+  background-color: #2f2d2a;
+
+  svg {
+    g {
+      fill: #ab7f50 !important;
+    }
+  }
 }
 
 .BuiltWith {
-  background-color: #746f67;
   border-top: 10px;
   border-bottom: 10px;
-  border-image: url(/images/suite/ganache/jaggy_edge.png);
+
+  .Foil {
+    width: calc(100% + 15px) !important;
+    height: 100% !important;
+
+    background-color: #8e8e8d;
+    background-image: none;
+
+    @include jaggy-edges();
+  }
+
+
+  img {
+    height: 130px;
+
+    border: 4px solid white;
+    border-radius: 50%;
+  }
+
+  .Logo {
+    height: 180px;
+  }
+
+  hr {
+    border-color: #7d7a7a;
+  }
+
+  h6 {
+    margin: 0;
+
+    text-align: center;
+    letter-spacing: 2.5px;
+
+    color: #cbcbcb;
+    text-shadow: none;
+  }
+
+  aside {
+    padding: 1rem;
+
+    border-radius: 4px;
+    background-color: #989898;
+  }
+
+  .TrufflePals {
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 1rem;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    p {
+      margin: 1rem 0 0 0;
+      padding: 0;
+
+      color: #cbcbcb;
+
+      font-size: 12px;
+    }
+
+    img {
+      height: 74px;
+
+      border: 2px solid white;
+    }
+  }
+
+  .Flourish {
+    position: absolute;
+    top: 40%;
+    right: 0;
+
+    height: 180px;
+  }
+
+  .truffle-wordmark {
+    display: none;
+  }
 }
 
-.BuiltWith img,
-.BuiltWith svg,
-.BuiltWith .Logo {
-  height: 180px;
-}
+.GanacheFooter {
+  padding-bottom: 0;
 
-.Footer h5 {
-  color: #545452;
+  border-top: 0;
+  background-color: #2a2825;
+
+  h5 {
+    color: #545452;
+  }
+
+  .GhostText {
+    margin-bottom: -100px;
+  }
+
+  ul {
+    li {
+      margin-bottom: .2rem;
+    }
+  }
+
+  a {
+    color: #9c9c98;
+    &:hover {
+      color: lighten(#9c9c98, 10%);
+    }
+  }
+
+  .truffle-wordmark polygon,
+  .truffle-wordmark g,
+  .truffle-wordmark path {
+    fill: white;
+  }
 }
 
 @media (max-width: 768px) {
-  .Ganache main header {
-    height: auto;
-  }
-  .Ganache main header h1 {
-    font-size: 15vw;
-    line-height: 13vw;
+  .Ganache {
+    padding-top: 60px;
+
+    main {
+      header {
+        height: auto;
+
+        h1 {
+          font-size: 4vw;
+          line-height: 5.2vw;
+        }
+
+        p {
+          font-size: 3vw;
+          line-height: 3.6vw;
+        }
+      }
+    }
+
+    .Foil {
+      height: 60vw;
+    }
+
+    .Features {
+      .FeatureList {
+        li {
+          position: relative;
+
+          flex-direction: column;
+
+          &:before {
+            top: -2.2rem;
+            left: calc(50% - 1rem);
+
+            letter-spacing: 0;
+
+            font-size: 1.6rem;
+          }
+
+          .FeatureIcon {
+            order: 1;
+          }
+
+          .FeatureText {
+            order: 2;
+
+            padding: 0 !important;
+            padding-left: 0;
+
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .BuiltWith {
+      h3 {
+        padding: 0 1rem;
+      }
+
+      .p-a-4 {
+        padding: 0 !important;
+      }
+
+      .Logo:last-of-type {
+        margin-bottom: 3rem;
+      }
+    }
+
+    .TrufflePals {
+      flex-direction: column;
+
+      li {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .OpenSource {
+      margin: 1rem;
+    }
+
+    .Flourish {
+      display: none;
+    }
+
+    .GanacheFooter {
+      text-align: center;
+
+      strong {
+        display: block;
+      }
+
+      .Logo {
+        margin: 1rem auto;
+      }
+
+      .BetaSignup {
+        margin-top: 2rem;
+      }
+
+      .FormWrapper {
+        .mc-field-group {
+          border-radius: 0;
+        }
+      }
+    }
   }
 }
-
+*/
 .Ballotin {
   /* General */
   /* Containers */
@@ -10073,6 +10209,17 @@ code {
 
 @media screen and (max-width: 767px) {
   .Ballotin .row-flex {
+    display: block;
+  }
+}
+
+.Ballotin .row-flex-left {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 767px) {
+  .Ballotin .row-flex-left {
     display: block;
   }
 }
@@ -10129,16 +10276,7 @@ code {
   }
 }
 
-.Ballotin > .container, .Tutorials .MainContent > .container-fluid > .row.Ballotin > h1,
-.Tutorials .MainContent > .container-fluid > .row.Ballotin > h2,
-.Tutorials .MainContent > .container-fluid > .row.Ballotin > h3,
-.Tutorials .MainContent > .container-fluid > .row.Ballotin > h4,
-.Tutorials .MainContent > .container-fluid > .row.Ballotin > p, .Tutorials .MainContent .Ballotin > h1:first-child, .Tutorials .MainContent .Ballotin > ul,
-.Tutorials .MainContent .Ballotin > ol, .Tutorials .MainContent pre .Ballotin > code,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row.Ballotin > ul,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row.Ballotin > ol,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row.Ballotin > hr,
-.Tutorials:not(.TutorialIndexContainer) .MainContent > .container-fluid > .row > pre .Ballotin > code {
+.Ballotin > .container {
   padding-bottom: 50px;
 }
 
@@ -10318,6 +10456,10 @@ code {
   margin-bottom: 0;
 }
 
+.Ballotin .CommunityBoxes .row-boxes .FeatureCard {
+  margin-bottom: 2rem;
+}
+
 @media screen and (max-width: 991px) {
   .Ballotin .FeatureCard {
     margin-top: 5px;
@@ -10341,4 +10483,8 @@ code {
   margin-bottom: 1.5rem;
   line-height: 1.75rem;
   font-family: "Open Sans", sans-serif;
+}
+
+a {
+  cursor: pointer;
 }
