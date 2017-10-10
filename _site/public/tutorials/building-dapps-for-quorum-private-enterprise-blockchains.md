@@ -82,8 +82,8 @@ ubuntu@ubuntu-xenial:~$ cd quorum-examples/7nodes/
 Our Quorum client is nearly ready to go. We need to run two more commands within the virtual machine. The first one creates seven Quorum nodes we can use to simulate a real Quorum deployment -- you only need to do this once, ever. The second one starts up those seven nodes; you should perform this one anytime you restart the virtual machine:
 
 ```shell
-ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ init.sh
-ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ start.sh
+ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ sh init.sh
+ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ sh start.sh
 ```
 
 Success! We now have seven Quorum nodes set up that we can use to represent seven different actors on our private network.
