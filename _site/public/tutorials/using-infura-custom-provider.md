@@ -23,6 +23,7 @@ var bip39 = require("bip39");
 var hdkey = require('ethereumjs-wallet/hdkey');
 var ProviderEngine = require("web3-provider-engine");
 var WalletSubprovider = require('web3-provider-engine/subproviders/wallet.js');
+var FilterSubprovider = require('web3-provider-engine/subproviders/filters.js');
 var Web3Subprovider = require("web3-provider-engine/subproviders/web3.js");
 var Web3 = require("web3");
 const FilterSubprovider = require('web3-provider-engine/subproviders/filters.js');
@@ -63,6 +64,7 @@ var engine = new ProviderEngine();
 engine.addProvider(new FilterSubprovider());
 
 engine.addProvider(new WalletSubprovider(wallet, {}));
+engine.addProvider(new FilterSubprovider());
 engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
 engine.start(); // Required by the provider engine.
 ```
@@ -97,6 +99,7 @@ var bip39 = require("bip39");
 var hdkey = require('ethereumjs-wallet/hdkey');
 var ProviderEngine = require("web3-provider-engine");
 var WalletSubprovider = require('web3-provider-engine/subproviders/wallet.js');
+var FilterSubprovider = require('web3-provider-engine/subproviders/filters.js');
 var Web3Subprovider = require("web3-provider-engine/subproviders/web3.js");
 var Web3 = require("web3");
 const FilterSubprovider = require('web3-provider-engine/subproviders/filters.js');
@@ -116,6 +119,7 @@ var engine = new ProviderEngine();
 engine.addProvider(new FilterSubprovider());
 
 engine.addProvider(new WalletSubprovider(wallet, {}));
+engine.addProvider(new FilterSubprovider());
 engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
 engine.start(); // Required by the provider engine.
 
