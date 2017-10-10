@@ -2,7 +2,9 @@
 
 <!doctype html>
 <html lang="en">
-    <head>
+    
+
+  <head>
     <meta charset="utf-8">
   
   
@@ -33,7 +35,7 @@
     <meta property="og:title" content="TruffleFramework.com - Truffle Framework" />
     <meta property="og:url" content="http://truffleframwork.com" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
+    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Framework" />
@@ -41,12 +43,12 @@
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Framework" />
     <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/twitter_card.jpg" />
+    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     
     
 
-    <title>TruffleFramework.com | Truffle Framework</title>
+    <title>TruffleFramework.com | Installation</title>
 
     <link rel="author" href="humans.txt" />
 
@@ -77,7 +79,10 @@
     
   </head>
 
-  <body>
+  <body class="
+    body-docs
+    
+  ">
     <main>
       <section class="Documentation">
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -143,9 +148,10 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/">Home</a></li>
         <li><a href="/docs">Documentation</a></li>
-        <li><a class="active" href="/blog">Blog</a></li>
-        <li><a class="active" href="/tutorials">Tutorials</a></li>
-        <li><a class="active" href="/support">Support</a></li>
+        <li><a href="/boxes">Boxes</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/tutorials">Tutorials</a></li>
+        <li><a href="/support">Support</a></li>
         <li><a href="/community">Community</a></li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -216,20 +222,23 @@
                 <li class=""><a href="/docs/advanced/build_processes">Build Processes</a></li>
                                 
                 <li class=""><a href="/docs/advanced/commands">Command Reference</a></li>
+                                
+                <li class=""><a href="/docs/advanced/truffle-boxes">Truffle Boxes</a></li>
+                                
+                <li class=""><a href="/docs/advanced/truffle-with-metamask">Truffle with MetaMask</a></li>
                             </ul>
             </li>
           
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999916">&nbsp;</span></a>Command</h1><pre><code>$ npm install -g truffle
-</code></pre><h1><a name="requirements" class="anchor" href="#requirements"><span class="header-link" style="z-index: 9999999915">&nbsp;</span></a>Requirements</h1><ul>
+          <h1><a name="installation" class="anchor" href="#installation"><span class="header-link" style="z-index: 9999991753">&nbsp;</span></a>Installation</h1><pre><code>$ npm install -g truffle
+</code></pre><h2><a name="requirements" class="anchor" href="#requirements"><span class="header-link" style="z-index: 9999991752">&nbsp;</span></a>Requirements</h2><ul>
 <li>NodeJS 5.0+ recommended.</li>
 <li>Windows, Linux or Mac OS X</li>
 </ul>
-<p>Truffle also requires that you have a running Ethereum client which supports the standard JSON RPC API (nearly all of them). There are many to choose from, and some better than others for development. We&#39;ll discuss them in detail in the <a href="/docs/getting_started/client">next section</a>.</p>
-<h3><a name="recommendations-for-windows" class="anchor" href="#recommendations-for-windows"><span class="header-link" style="z-index: 9999999914">&nbsp;</span></a>Recommendations for Windows</h3><p>If you&#39;re a Windows user, we recommend installing and using Truffle via Windows PowerShell or <a href="https://git-for-windows.github.io/">Git BASH</a>. These two shells provide features far beyond the standard Command Prompt, and will make your life on the command line much easier.</p>
-<p>If you must use the Command Prompt, please see <a href="/docs/advanced/configuration#resolving-naming-conflicts-on-windows">this discussion</a> about configuring Truffle.</p>
+<p>Truffle also requires that you have a running Ethereum client which supports the standard JSON RPC API (which is nearly all of them). There are many to choose from, and some better than others for development. We&#39;ll discuss them in detail in the <a href="/docs/getting_started/client">next section</a>.</p>
+<h2><a name="recommendations-for-windows" class="anchor" href="#recommendations-for-windows"><span class="header-link" style="z-index: 9999991751">&nbsp;</span></a>Recommendations for Windows</h2><p>If you&#39;re running Truffle on Windows, you may encounter some naming conflicts that could prevent Truffle from executing properly. Please see <a href="/docs/advanced/configuration#resolving-naming-conflicts-on-windows">the section on resolving naming conflicts</a> for solutions.</p>
 
           <footer class="container-fluid">
             <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.github.io/edit/master/_site/public/docs/getting_started/installation.md">Edit here &rarr;</a></p>
