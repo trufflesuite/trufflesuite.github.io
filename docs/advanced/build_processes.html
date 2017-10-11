@@ -283,7 +283,7 @@ MyContract.setProvider(new Web3.providers.HttpProvider(&quot;http://localhost:85
 
 // Step 4: Use the contract!
 MyContract.deployed().then(function(deployed) {
-  return.deployed.someFunction();
+  return deployed.someFunction();
 });
 </code></pre>
 <p>All build processes and contract bootstrapping will follow this pattern. The key when setting up your own custom build process is to ensure you&#39;re consuming all of your contract artifacts and provisioning your abstractions correctly.</p>

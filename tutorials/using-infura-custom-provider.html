@@ -173,6 +173,7 @@ var ProviderEngine = require(&quot;web3-provider-engine&quot;);
 var WalletSubprovider = require(&#39;web3-provider-engine/subproviders/wallet.js&#39;);
 var Web3Subprovider = require(&quot;web3-provider-engine/subproviders/web3.js&quot;);
 var Web3 = require(&quot;web3&quot;);
+const FilterSubprovider = require(&#39;web3-provider-engine/subproviders/filters.js&#39;);
 </code></pre>
 <p>These dependencies are used for the following things:</p>
 <ul>
@@ -197,6 +198,9 @@ var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
 <p>Next, we need to set up the Provider Engine, telling it that we&#39;d like to use our wallet to sign transactions, and use the ropsten network on infura for everything else:</p>
 <pre><code class="lang-javascript">var providerUrl = &quot;https://testnet.infura.io&quot;;
 var engine = new ProviderEngine();
+// filters
+engine.addProvider(new FilterSubprovider());
+
 engine.addProvider(new WalletSubprovider(wallet, {}));
 engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
 engine.start(); // Required by the provider engine.
@@ -224,6 +228,7 @@ var ProviderEngine = require(&quot;web3-provider-engine&quot;);
 var WalletSubprovider = require(&#39;web3-provider-engine/subproviders/wallet.js&#39;);
 var Web3Subprovider = require(&quot;web3-provider-engine/subproviders/web3.js&quot;);
 var Web3 = require(&quot;web3&quot;);
+const FilterSubprovider = require(&#39;web3-provider-engine/subproviders/filters.js&#39;);
 
 // Get our mnemonic and create an hdwallet
 var mnemonic = &quot;couch solve unique spirit wine fine occur rhythm foot feature glory away&quot;;
@@ -236,6 +241,9 @@ var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
 
 var providerUrl = &quot;https://testnet.infura.io&quot;;
 var engine = new ProviderEngine();
+// filters
+engine.addProvider(new FilterSubprovider());
+
 engine.addProvider(new WalletSubprovider(wallet, {}));
 engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
 engine.start(); // Required by the provider engine.

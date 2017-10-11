@@ -215,7 +215,7 @@ import MyContract from &quot;contracts/MyContract.sol&quot;;
 <p>After making sure your contract is imported, you now need to hook up the <code>web3</code> object you detected above with the contract abstraction provided:</p>
 <pre><code class="lang-javascript">MyContract.setProvider(window.web3.currentProvider);
 </code></pre>
-<p>Finally, you can use the contract abstraction as described within the <a href="http://truffle.readthedocs.io/en/latest/getting_started/contracts/">Truffle documentation</a>.</p>
+<p>Finally, you can use the contract abstraction as described within the <a href="/docs/getting_started/contracts">Truffle documentation</a>.</p>
 <p>You can prevent having to perform this provisioning more than once per contract dependency by either setting your contract abstractions to the global object, like <code>window</code>, and provisioning them once when your application loads; or using something like the <a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin">ProvidePlugin</a> to ensure your contract abstractions are available to every file within the bundle (recommended).</p>
 <h2><a name="running-wepback" class="anchor" href="#running-wepback"><span class="header-link" style="z-index: 9999999802">&nbsp;</span></a>Running Wepback</h2><p>From here you can run webpack like normal, via the normal <code>webpack</code> command or the <code>webpack-dev-server</code>, if you have those installed globally on your machine:</p>
 <pre><code>$ webpack
