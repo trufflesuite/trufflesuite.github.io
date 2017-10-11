@@ -8304,6 +8304,7 @@ code {
 .navbar .navbar-collapse {
   background: transparent;
   max-height: none;
+  border: none;
 }
 
 .navbar-brand,
@@ -8314,27 +8315,11 @@ code {
   font-family: "Oswald", Helvetica, Arial, sans-serif;
 }
 
-.navbar-brand {
-  position: relative;
-  padding: 15px;
-}
-
-.navbar-brand .truffle-logo,
-.navbar-brand .truffle-wordmark {
-  position: absolute;
+.navbar-brand svg {
   height: auto;
   width: 70px;
   float: left;
-}
-
-.navbar-brand .truffle-logo {
-  top: 15px;
-  left: 15px;
-}
-
-.navbar-brand .truffle-wordmark {
-  bottom: 15px;
-  left: 15px;
+  margin-top: 12px;
 }
 
 .navbar-toggle {
@@ -8390,14 +8375,10 @@ code {
   .navbar-brand {
     height: 60px;
   }
-  .navbar-brand .truffle-logo {
-    top: 14px;
-    left: 0;
+  .navbar-brand svg {
     width: auto;
-    height: 40px;
-  }
-  .navbar-brand .truffle-wordmark {
-    display: none;
+    height: 32px;
+    margin-top: 14px;
   }
   .navbar-toggle {
     margin-top: 15px;
@@ -8612,12 +8593,7 @@ code {
 
 .Footer .Logo {
   width: 100px;
-  height: 100px;
-}
-
-.Footer .Logo .truffle-wordmark {
-  position: relative;
-  top: -100px;
+  height: auto;
 }
 
 .Footer .BetaSignup {
@@ -9694,322 +9670,280 @@ code {
   margin-bottom: 1rem;
 }
 
-/* MIXINS */
-/* PAGE */
 .Ganache {
-  padding-top: 60px;
-  background-color: #2a2825;
-  background-repeat: none;
-  background-size: cover;
-  font-family: "Roboto Condensed", sans-serif;
-}
-
-.Ganache h1,
-.Ganache h2,
-.Ganache h3,
-.Ganache h4,
-.Ganache h5 {
-  color: white;
+  background: #34262a;
+  padding-top: 100px;
   text-shadow: none;
-  margin: 0;
+  color: #fff;
+  /* GENERAL */
+  /* HELPERS */
+  /* PAGE */
 }
 
-.Ganache h2,
-.Ganache h5 {
-  font-weight: bold;
-  letter-spacing: 2.5px;
-}
-
-.Ganache p {
-  color: #a6aaa8;
-  font-weight: 100;
-}
-
-.Ganache h2 {
-  color: white;
-  line-height: 1.2;
-}
-
-.Ganache main header {
-  background-image: url("/images/suite/ganache/header_bg.png");
-  background-size: cover;
-}
-
-.Ganache main header .Logo {
-  margin-top: 2.5rem;
-}
-
-.Ganache main header h1 {
-  margin-top: 2.5rem;
-  letter-spacing: 2.5px;
-  color: #eff6f4;
-  font-size: 36px;
-  font-weight: bold;
-  line-height: 42px;
-}
-
-.Ganache main header p {
-  text-align: center;
-  color: white;
-}
-
-.Ganache main header p.text-muted {
-  color: #d0d0d0;
-}
-
-.Ganache main header .DownloadVersions {
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: #a5a9a7;
-  font-size: 12px;
-}
-
-.Ganache main header .Emoji {
-  font-size: 3rem;
+.Ganache h1, .Ganache h2, .Ganache h3, .Ganache h4, .Ganache h5, .Ganache h6 {
+  background: #34262a;
+  text-shadow: none;
+  color: #fff;
 }
 
 .Ganache .navbar {
-  background-color: transparent;
-  border-bottom-color: transparent;
-  transition: all .25s ease-in-out;
+  background: #34262a;
+  border-color: #5f474e;
 }
 
-.Ganache .navbar.scroll {
-  background-color: #ffffff;
-  border-bottom-color: #e7e7e7;
+.Ganache .navbar .navbar-nav > li > a {
+  color: #fff;
+  transition: opacity .125s ease-in-out;
 }
 
-.Ganache .Flourish {
+.Ganache .navbar .navbar-nav > li > a:hover {
+  opacity: .6;
+}
+
+.Ganache .navbar .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .Ganache .navbar .navbar-collapse {
+    background: #34262a;
+  }
+}
+
+.Ganache .Footer {
+  background: #34262a;
+  border-color: #5f474e;
+  color: #fff;
+}
+
+.Ganache .Footer a {
+  color: #27aae1;
+  transition: opacity .125s ease-in-out;
+}
+
+.Ganache .Footer a:hover {
+  opacity: .6;
+  text-decoration: none;
+}
+
+.Ganache .Footer .copyright svg path,
+.Ganache .Footer .copyright svg ellipse {
+  fill: #fff;
+}
+
+.Ganache .Footer .BetaSignup h5 {
+  color: #fff;
+}
+
+.Ganache .Footer .BetaSignup .FormWrapper {
+  border-color: #5f474e;
+}
+
+.Ganache .Footer .BetaSignup .FormWrapper .mc-field-group:first-child {
+  border-color: #5f474e;
+}
+
+.Ganache .Footer .BetaSignup .FormWrapper .mc-field-group {
+  border-color: #5f474e;
+}
+
+.Ganache .Footer .BetaSignup .FormWrapper label {
+  color: #fff;
+}
+
+.Ganache .Footer .BetaSignup .FormWrapper input[type="text"],
+.Ganache .Footer .BetaSignup .FormWrapper input[type="email"] {
+  background: #34262a;
+}
+
+.Ganache .text-ganache {
+  font-family: "Grand Hotel", cursive;
+}
+
+.Ganache .btn-orange {
+  background-color: #e5a663;
+  color: #5f474e;
+  border: none;
+  text-align: left;
+  padding: 12px 18px;
+  transition: background-color .125s ease-in-out;
+}
+
+.Ganache .btn-orange:hover {
+  background-color: #fff;
+}
+
+.Ganache .btn-orange span {
   display: block;
-  max-width: 300px;
-  margin: 0 auto;
+  float: left;
+  margin-right: 60px;
 }
 
-.Ganache .DownloadButton {
-  display: block;
-  width: 290px;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-  padding: 1.2rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  color: #202c2a;
-  border-radius: 8px;
-  background: #e5a35d;
-  background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.18) 0%, rgba(0, 0, 0, 0.2) 100%);
-  font-weight: bold;
+.Ganache .btn-orange img {
+  width: 60px;
+  height: auto;
+  float: right;
+  margin-top: -2.3rem;
 }
 
-.Ganache .PosRel {
+.Ganache .btn-orange .oswald {
+  font-size: 1.5rem;
+  margin-top: .3rem;
+}
+
+.Ganache .btn-orange .os {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: .8rem;
+}
+
+.Ganache .ganache-banner {
   position: relative;
+  height: 290px;
 }
 
-.Ganache .Foil {
-  position: absolute;
-  z-index: -1;
-  bottom: 0;
-  width: calc(100% + 30px);
-  height: 430px;
-  margin-left: -15px;
-  padding-bottom: 3rem;
-  background: #e9b349;
-  background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.33) 0%, rgba(0, 0, 0, 0.17) 100%);
-}
-
-.Ganache .Foil:before {
+.Ganache .ganache-banner img {
   display: block;
-  width: 100%;
-  height: 12px;
-  content: "";
-  background-image: linear-gradient(135deg, #2a2825 50%, rgba(255, 255, 255, 0) 50%), linear-gradient(-135deg, #2a2825 50%, rgba(255, 255, 255, 0) 0%);
-  background-position: top center, top center;
-  background-size: .75rem .75rem, .75rem .75rem;
-}
-
-.Ganache .Foil:after {
+  height: auto;
+  width: 1400px;
   position: absolute;
-  bottom: 0;
-  display: block;
-  width: 100%;
-  height: 12px;
-  content: "";
-  background-image: linear-gradient(45deg, #2a2825 50%, rgba(255, 255, 255, 0) 50%), linear-gradient(-45deg, #2a2825 50%, rgba(255, 255, 255, 0) 0%);
-  background-position: bottom center, bottom center;
-  background-size: .75rem .75rem, .75rem .75rem;
+  top: -75px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.Ganache .Features {
+.Ganache .ganache-banner h1 {
+  font-family: "Grand Hotel", cursive;
+  font-size: 2.8rem;
+  margin-top: 240px;
+}
+
+.Ganache .row-tagline {
+  margin: 2rem -15px;
+}
+
+@media screen and (max-width: 767px) {
+  .Ganache .row-tagline {
+    text-align: center;
+  }
+  .Ganache .row-tagline .pull-right {
+    float: none !important;
+    margin-top: 2rem;
+  }
+}
+
+.Ganache .os-dl {
+  font-size: .8rem;
+  margin-top: .5rem;
   text-align: center;
 }
 
-.Ganache .Features h2 {
-  color: white;
+.Ganache .os-dl a {
+  color: #fff;
+  transition: opacity .125s ease-in-out;
 }
 
-.Ganache .Features h5 {
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: #4d4c48;
-  font-size: 32px;
-  font-weight: bold;
+.Ganache .os-dl a:hover {
+  text-decoration: none;
+  opacity: .6;
 }
 
-.Ganache .Features .FeatureList {
-  counter-reset: counter;
-  text-align: left;
+.Ganache .row-features-heading {
+  position: relative;
 }
 
-.Ganache .Features .FeatureList li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5rem;
+.Ganache .row-features-heading h2 {
+  background: transparent;
+  font-size: 5rem;
+  margin-top: 10vw;
 }
 
-.Ganache .Features .FeatureList li:before {
+.Ganache .row-features-heading .ganache-goop {
   position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
   z-index: -1;
-  content: counter(counter, decimal-leading-zero);
-  counter-increment: counter;
-  letter-spacing: -.5rem;
-  color: #454130;
-  font-size: 120px;
-  font-weight: bold;
+  width: 100%;
 }
 
-.Ganache .Features .FeatureList li .FeatureText {
-  padding: 0 4rem;
-  flex-grow: 1;
+.Ganache .row-features {
+  margin: 60px -15px;
 }
 
-.Ganache .Features .FeatureList li h4 {
-  color: white;
-  font-size: 44px;
-  font-weight: bold;
-  letter-spacing: 2.5px;
+.Ganache .row-features img {
+  max-width: 120px;
 }
 
-.Ganache .Features .FeatureList li p {
-  color: #a6aaa8;
+.Ganache .row-features h3 {
+  background: transparent;
 }
 
-.Ganache .OpenSource {
-  margin-top: 2rem;
+.Ganache .row-features p {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .Ganache .row-features [class^="col-"]:last-child {
+    margin-top: 60px;
+  }
+}
+
+.Ganache .row-features-bottom {
+  margin-bottom: 120px;
+}
+
+.Ganache .row-ganache-pattern {
+  background: url("/images/suite/ganache/ganache-pattern.svg");
+  background-repeat: repeat;
+  background-size: 360px 240px;
+  border-top: solid 3px #e5a663;
+  padding: 200px 0;
+}
+
+.Ganache .row-ganache-pattern a {
+  text-decoration: none;
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.Ganache .row-ganache-pattern a:hover svg path {
+  fill: #fff;
+}
+
+.Ganache .row-ganache-pattern .well {
+  max-width: 600px;
+  background: #5f474e;
+  color: #fff;
+  border: none;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 3rem;
+}
+
+.Ganache .row-ganache-pattern .well svg {
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto 1rem auto;
+}
+
+.Ganache .row-ganache-pattern .well svg path {
+  fill: #e5a663;
+  transition: fill .125s ease-in-out;
+}
+
+.Ganache .row-ganache-pattern .well h2, .Ganache .row-ganache-pattern .well h3, .Ganache .row-ganache-pattern .well p {
+  margin: 0;
+  background: transparent;
+}
+
+.Ganache .row-ganache-pattern .well h2 {
+  font-size: 2rem;
   margin-bottom: 2rem;
-  padding: 4rem;
-  border: 1px dashed #d1a372;
-  border-radius: 8px;
-  background-color: #2f2d2a;
 }
 
-.Ganache .OpenSource svg g {
-  fill: #ab7f50 !important;
-}
-
-.Ganache .GanacheFooter {
-  padding-bottom: 0;
-  border-top: 0;
-  background-color: #2a2825;
-}
-
-.Ganache .GanacheFooter h5 {
-  color: #545452;
-}
-
-.Ganache .GanacheFooter .GhostText {
-  margin-bottom: -100px;
-}
-
-.Ganache .GanacheFooter ul li {
-  margin-bottom: .2rem;
-}
-
-.Ganache .GanacheFooter a {
-  color: #9c9c98;
-}
-
-.Ganache .GanacheFooter a:hover {
-  color: #b5b5b2;
-}
-
-.Ganache .GanacheFooter .truffle-wordmark polygon,
-.Ganache .GanacheFooter .truffle-wordmark g,
-.Ganache .GanacheFooter .truffle-wordmark path {
-  fill: white;
-}
-
-@media (max-width: 768px) {
-  .Ganache {
-    padding-top: 60px;
-  }
-  .Ganache main header {
-    height: auto;
-  }
-  .Ganache main header h1 {
-    font-size: 4vw;
-    line-height: 5.2vw;
-  }
-  .Ganache main header p {
-    font-size: 3vw;
-    line-height: 3.6vw;
-  }
-  .Ganache .Foil {
-    height: 60vw;
-  }
-  .Ganache .Features .FeatureList li {
-    position: relative;
-    flex-direction: column;
-  }
-  .Ganache .Features .FeatureList li:before {
-    top: -2.2rem;
-    left: calc(50% - 1rem);
-    letter-spacing: 0;
-    font-size: 1.6rem;
-  }
-  .Ganache .Features .FeatureList li .FeatureIcon {
-    order: 1;
-  }
-  .Ganache .Features .FeatureList li .FeatureText {
-    order: 2;
-    padding: 0 !important;
-    padding-left: 0;
-    text-align: center;
-  }
-  .Ganache .BuiltWith h3 {
-    padding: 0 1rem;
-  }
-  .Ganache .BuiltWith .p-a-4 {
-    padding: 0 !important;
-  }
-  .Ganache .BuiltWith .Logo:last-of-type {
-    margin-bottom: 3rem;
-  }
-  .Ganache .TrufflePals {
-    flex-direction: column;
-  }
-  .Ganache .TrufflePals li {
-    margin-bottom: 2rem;
-  }
-  .Ganache .OpenSource {
-    margin: 1rem;
-  }
-  .Ganache .Flourish {
-    display: none;
-  }
-  .Ganache .GanacheFooter {
-    text-align: center;
-  }
-  .Ganache .GanacheFooter strong {
-    display: block;
-  }
-  .Ganache .GanacheFooter .Logo {
-    margin: 1rem auto;
-  }
-  .Ganache .GanacheFooter .BetaSignup {
-    margin-top: 2rem;
-  }
-  .Ganache .GanacheFooter .FormWrapper .mc-field-group {
-    border-radius: 0;
-  }
+.Ganache .row-ganache-pattern .well h3 {
+  font-size: 4rem;
 }
 
 .Ballotin {
