@@ -184,7 +184,7 @@ const FilterSubprovider = require(&#39;web3-provider-engine/subproviders/filters
 <li><code>Web3Subprovider</code>: Part of the provider engine framework that handles everything <em>other than</em> transaction signing.</li>
 <li><code>Web3</code>: What we used to communicate with the Ethereum network. Here, we&#39;re using it solely to create a provider.</li>
 </ul>
-<p>After setting up are dependencies, we&#39;ll then need to create an hd wallet from a mnemonic. A mnemonic is a twelve word string that represents a secure random seed (warning: don&#39;t just create a mnemonic yourself; use the bip39 library to do this if you don&#39;t have one). From this seed we can create an unlimited number of Ethereum addresses and private keys. Because this is a seed, we can always use this mnemonic to find those addresses again.</p>
+<p>After setting up our dependencies, we&#39;ll then need to create an hd wallet from a mnemonic. A mnemonic is a twelve word string that represents a secure random seed (warning: don&#39;t just create a mnemonic yourself; use the bip39 library to do this if you don&#39;t have one). From this seed we can create an unlimited number of Ethereum addresses and private keys. Because this is a seed, we can always use this mnemonic to find those addresses again.</p>
 <pre><code class="lang-javascript">// Get our mnemonic and create an hdwallet
 var mnemonic = &quot;couch solve unique spirit wine fine occur rhythm foot feature glory away&quot;;
 var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
