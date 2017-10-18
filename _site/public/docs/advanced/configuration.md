@@ -91,6 +91,16 @@ mocha: {
 }
 ```
 
+### contracts_build_directory
+
+You can specify a custom output folder for your truffle build
+
+Example:
+
+```javascript
+contracts_build_directory: 'custom/path/to/build'
+```
+
 # Solidity Compiler Configuration
 
 Solidity compiler settings. Supports optimizer settings for `solc`.
