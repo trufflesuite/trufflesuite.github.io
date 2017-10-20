@@ -188,6 +188,36 @@ MetaCoin.deployed().then(function(instance) {
 });
 ```
 
+You can also catch all events from a single contract instance with start and end block options and filter them as you wish, like so:
+
+```javascript
+var meta;
+MetaCoin.deployed().then(function(instance) {
+    
+    meta = instance;  
+
+    var eventWatch = meta.allEvents({
+         fromBlock: 0,
+           toBlock: 'latest',
+    }).watch(function(error, result) {
+        // Catch all events on the contract from the genesis block to the latest
+        if (error == null) {
+            // Your event type
+            if(result.event == 'UserRegistered') {
+                console.log(result.args);
+            }
+            // Your other event type
+            if(result.event == 'Transfered') {
+                console.log(result.args);
+            }
+        }
+    });
+    
+}).catch(function(err) {
+    // There was an error! Handle it.
+});
+```
+
 ### Add a new contract to the network
 
 In all of the above cases, we've been using a contract abstraction that has already been deployed. We can deploy our own version to the network using the `.new()` function:
