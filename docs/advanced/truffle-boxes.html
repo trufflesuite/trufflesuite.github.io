@@ -234,7 +234,7 @@
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="creating-a-box" class="anchor" href="#creating-a-box"><span class="header-link" style="z-index: 9999999955">&nbsp;</span></a>Creating a Box</h1><p>To create a Truffle Box you&#39;ll need a few things:</p>
+          <h1><a name="creating-a-box" class="anchor" href="#creating-a-box"><span class="header-link" style="z-index: 9999999954">&nbsp;</span></a>Creating a Box</h1><p>To create a Truffle Box you&#39;ll need a few things:</p>
 <ul>
 <li>A GitHub repository</li>
 <li>A configuration file</li>
@@ -243,14 +243,14 @@
 <p>The configuration file and images belong in the top-level directory of your repo. With these files in place, and your repo on GitHub, the unbox command will be: <code>truffle unbox {USER_NAME || ORG_NAME}/{REPO_NAME}</code></p>
 <p>If you&#39;re <strong>starting from scratch</strong>, we&#39;ve created a <a href="/boxes/blueprint">blueprint box</a> containing a configuration file with common values, as well as template versions of the small and large images.</p>
 <p>If you&#39;re using <strong>an existing project</strong>, <a href="/files/truffle-box-essentials.zip">download the files here</a> and extract them into your project.</p>
-<h1><a name="configuration-file" class="anchor" href="#configuration-file"><span class="header-link" style="z-index: 9999999954">&nbsp;</span></a>Configuration File</h1><p>All truffle boxes include a configuration file, <code>truffle-box.json</code>. This file has three attributes: <code>ignore</code>, <code>commands</code>, and <code>hooks</code>.</p>
-<h2><a name="-span-style-text-transform-none-code-ignore-code-span-array-" class="anchor" href="#-span-style-text-transform-none-code-ignore-code-span-array-"><span class="header-link" style="z-index: 9999999953">&nbsp;</span></a><span style="text-transform: none;"><code>ignore</code></span> (array)</h2><p>An array of files or relative paths you&#39;d like Truffle to ignore when unboxing. Common files include the <code>readme.md</code> or <code>.gitignore</code>.</p>
+<h1><a name="configuration-file" class="anchor" href="#configuration-file"><span class="header-link" style="z-index: 9999999953">&nbsp;</span></a>Configuration File</h1><p>All truffle boxes include a configuration file, <code>truffle-box.json</code>. This file has three attributes: <code>ignore</code>, <code>commands</code>, and <code>hooks</code>.</p>
+<h2><a name="-span-style-text-transform-none-code-ignore-code-span-array-" class="anchor" href="#-span-style-text-transform-none-code-ignore-code-span-array-"><span class="header-link" style="z-index: 9999999952">&nbsp;</span></a><span style="text-transform: none;"><code>ignore</code></span> (array)</h2><p>An array of files or relative paths you&#39;d like Truffle to ignore when unboxing. Common files include the <code>readme.md</code> or <code>.gitignore</code>.</p>
 <pre><code class="lang-javascript">&quot;ignore&quot;: [
   &quot;README.md&quot;,
   &quot;.gitignore&quot;
 ]
 </code></pre>
-<h2><a name="-span-style-text-transform-none-code-commands-code-span-object-" class="anchor" href="#-span-style-text-transform-none-code-commands-code-span-object-"><span class="header-link" style="z-index: 9999999952">&nbsp;</span></a><span style="text-transform: none;"><code>commands</code></span> (object)</h2><p>An object who&#39;s key/value pairs are a descriptor and console command respectively. These pairs will be shown to users once your box is successfully unboxed. Think of these as quick instructions.</p>
+<h2><a name="-span-style-text-transform-none-code-commands-code-span-object-" class="anchor" href="#-span-style-text-transform-none-code-commands-code-span-object-"><span class="header-link" style="z-index: 9999999951">&nbsp;</span></a><span style="text-transform: none;"><code>commands</code></span> (object)</h2><p>An object who&#39;s key/value pairs are a descriptor and console command respectively. These pairs will be shown to users once your box is successfully unboxed. Think of these as quick instructions.</p>
 <p>For example, consider the object below. We&#39;ve given our users all they need to compile, migrate and test their smart contracts, along with commands for developing the front-end.</p>
 <pre><code class="lang-javascript">&quot;commands&quot;: {
   &quot;Compile&quot;: &quot;truffle compile&quot;,
@@ -261,19 +261,19 @@
   &quot;Build for production&quot;: &quot;npm run build&quot;
 }
 </code></pre>
-<h2><a name="-span-style-text-transform-none-code-hooks-code-span-object-" class="anchor" href="#-span-style-text-transform-none-code-hooks-code-span-object-"><span class="header-link" style="z-index: 9999999951">&nbsp;</span></a><span style="text-transform: none;"><code>hooks</code></span> (object)</h2><p>An object containing console commands to execute once unboxed. Since we&#39;re working in Node.js, most commonly this will contain <code>npm install</code>.</p>
+<h2><a name="-span-style-text-transform-none-code-hooks-code-span-object-" class="anchor" href="#-span-style-text-transform-none-code-hooks-code-span-object-"><span class="header-link" style="z-index: 9999999950">&nbsp;</span></a><span style="text-transform: none;"><code>hooks</code></span> (object)</h2><p>An object containing console commands to execute once unboxed. Since we&#39;re working in Node.js, most commonly this will contain <code>npm install</code>.</p>
 <pre><code class="lang-javascript">&quot;hooks&quot;: {
   &quot;post-unpack&quot;: &quot;npm install&quot;
 }
 </code></pre>
-<h1><a name="images" class="anchor" href="#images"><span class="header-link" style="z-index: 9999999950">&nbsp;</span></a>Images</h1><p>The large box image is a 512px square with 32px of padding on each side.</p>
+<h1><a name="images" class="anchor" href="#images"><span class="header-link" style="z-index: 9999999949">&nbsp;</span></a>Images</h1><p>The large box image is a 512px square with 32px of padding on each side.</p>
 <p><img src="/images/ballotin/box-img-lg-template.png" alt="Large Box Image Template"></p>
 <p>The small box image is 735px x 100px. There is 32px of padding on the left side of the banner, and it&#39;s minimum size (described in the template as &quot;Min Banner Width&quot;) is 290px, including the left padding. The banners are fixed to the left side and crop off the right side as the window narrows.</p>
 <p><img src="/images/ballotin/box-img-sm-template.png" alt="Small Box Image Template"></p>
 <p>If no images are provided in a box, we default to banners containing the Truffle logo:</p>
 <p><img src="/images/ballotin/loading-thumb.png" alt="Default Large Image"></p>
 <p><img src="/images/ballotin/loading-banner.png" alt="Default Small Image"></p>
-<h1><a name="truffle-site-listing" class="anchor" href="#truffle-site-listing"><span class="header-link" style="z-index: 9999999949">&nbsp;</span></a>Truffle Site Listing</h1><p>Before being listed on the Truffle website, all boxes undergo a screening process to ensure compatibility with Truffle. To start the pre-screening process, <a href="mailto:info@trufflesuite.com">send us an email</a> with your desired box name and brief description, along with a link to its GitHub repo to: <a href="mailto:info@trufflesuite.com">info@trufflesuite.com</a>.</p>
+<h1><a name="truffle-site-listing" class="anchor" href="#truffle-site-listing"><span class="header-link" style="z-index: 9999999948">&nbsp;</span></a>Truffle Site Listing</h1><p>Before being listed on the Truffle website, all boxes undergo a screening process to ensure compatibility with Truffle. To start the pre-screening process, <a href="mailto:info@trufflesuite.com">send us an email</a> with your desired box name and brief description, along with a link to its GitHub repo to: <a href="mailto:info@trufflesuite.com">info@trufflesuite.com</a>.</p>
 
           <footer class="container-fluid">
             <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/docs/advanced/truffle-boxes.md">Edit here &rarr;</a></p>

@@ -288,14 +288,41 @@
 <li><code>from</code>: From address used during migrations. Defaults to the first available account provided by your Ethereum client.</li>
 <li><code>provider</code>: Default web3 provider using <code>host</code> and <code>port</code> options: <code>new Web3.providers.HttpProvider(&quot;http://&lt;host&gt;:&lt;port&gt;&quot;)</code></li>
 </ul>
-<h3><a name="mocha" class="anchor" href="#mocha"><span class="header-link" style="z-index: 9999999971">&nbsp;</span></a>mocha</h3><p>Configuration options for the <a href="http://mochajs.org/">MochaJS</a> testing framework. This configuration expects an object as detailed in Mocha&#39;s <a href="https://github.com/mochajs/mocha/wiki/Using-mocha-programmatically#set-options">documentation</a>.</p>
+<h3><a name="contracts_build_directory" class="anchor" href="#contracts_build_directory"><span class="header-link" style="z-index: 9999999971">&nbsp;</span></a>contracts_build_directory</h3><p>The default output directory for compiled contracts is <code>./build/contracts</code> relative to the project root. This can be changed with the <code>contracts_build_directory</code> key.</p>
+<p>Examples:</p>
+<p>To place the built contract artifacts in <code>./output/contracts</code>:</p>
+<pre><code class="lang-javascript">module.exports = {
+  contracts_build_directory: &quot;./output&quot;,
+  networks: {
+    development: {
+      host: &quot;localhost&quot;,
+      port: 8545,
+      network_id: &quot;*&quot;,
+    }
+  }
+};
+</code></pre>
+<p>The built contract artifacts do not need to be inside the project root:</p>
+<pre><code class="lang-javascript">module.exports = {
+  contracts_build_directory: &quot;../../../output&quot;,
+  networks: {
+    development: {
+      host: &quot;localhost&quot;,
+      port: 8545,
+      network_id: &quot;*&quot;,
+    }
+  }
+};
+</code></pre>
+<p>Absolute paths will also work. This is not recommended though, as an absolute path may not exist when compiled on another system. If you use absolute paths on Windows, make sure to use double backslashes for paths (example: <code>C:\\Users\\Username\\output</code>).</p>
+<h3><a name="mocha" class="anchor" href="#mocha"><span class="header-link" style="z-index: 9999999970">&nbsp;</span></a>mocha</h3><p>Configuration options for the <a href="http://mochajs.org/">MochaJS</a> testing framework. This configuration expects an object as detailed in Mocha&#39;s <a href="https://github.com/mochajs/mocha/wiki/Using-mocha-programmatically#set-options">documentation</a>.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">mocha: {
   useColors: true
 }
 </code></pre>
-<h1><a name="solidity-compiler-configuration" class="anchor" href="#solidity-compiler-configuration"><span class="header-link" style="z-index: 9999999970">&nbsp;</span></a>Solidity Compiler Configuration</h1><p>Solidity compiler settings. Supports optimizer settings for <code>solc</code>.</p>
-<h3><a name="solc" class="anchor" href="#solc"><span class="header-link" style="z-index: 9999999969">&nbsp;</span></a>solc</h3><p>Example:</p>
+<h1><a name="solidity-compiler-configuration" class="anchor" href="#solidity-compiler-configuration"><span class="header-link" style="z-index: 9999999969">&nbsp;</span></a>Solidity Compiler Configuration</h1><p>Solidity compiler settings. Supports optimizer settings for <code>solc</code>.</p>
+<h3><a name="solc" class="anchor" href="#solc"><span class="header-link" style="z-index: 9999999968">&nbsp;</span></a>solc</h3><p>Example:</p>
 <pre><code class="lang-javascript">solc: {
   optimizer: {
     enabled: true,
@@ -303,40 +330,40 @@
   }
 }
 </code></pre>
-<h1><a name="ethpm-configuration" class="anchor" href="#ethpm-configuration"><span class="header-link" style="z-index: 9999999968">&nbsp;</span></a>EthPM Configuration</h1><p>This configuration applies to the optional <code>ethpm.json</code> file that exists alongside your <code>truffle.js</code> configuration file.</p>
-<h3><a name="package_name" class="anchor" href="#package_name"><span class="header-link" style="z-index: 9999999967">&nbsp;</span></a>package_name</h3><p>Name of the package you&#39;re publishing. Your package name must be unique to the EthPM registry.</p>
+<h1><a name="ethpm-configuration" class="anchor" href="#ethpm-configuration"><span class="header-link" style="z-index: 9999999967">&nbsp;</span></a>EthPM Configuration</h1><p>This configuration applies to the optional <code>ethpm.json</code> file that exists alongside your <code>truffle.js</code> configuration file.</p>
+<h3><a name="package_name" class="anchor" href="#package_name"><span class="header-link" style="z-index: 9999999966">&nbsp;</span></a>package_name</h3><p>Name of the package you&#39;re publishing. Your package name must be unique to the EthPM registry.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">package_name: &quot;adder&quot;
 </code></pre>
-<h3><a name="version" class="anchor" href="#version"><span class="header-link" style="z-index: 9999999966">&nbsp;</span></a>version</h3><p>Version of this package, using the <a href="http://semver.org/">semver</a> specification.</p>
+<h3><a name="version" class="anchor" href="#version"><span class="header-link" style="z-index: 9999999965">&nbsp;</span></a>version</h3><p>Version of this package, using the <a href="http://semver.org/">semver</a> specification.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">version: &quot;0.0.3&quot;
 </code></pre>
-<h3><a name="description" class="anchor" href="#description"><span class="header-link" style="z-index: 9999999965">&nbsp;</span></a>description</h3><p>A text description of your package for human readers.</p>
+<h3><a name="description" class="anchor" href="#description"><span class="header-link" style="z-index: 9999999964">&nbsp;</span></a>description</h3><p>A text description of your package for human readers.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">description: &quot;Simple contract to add two numbers&quot;
 </code></pre>
-<h3><a name="authors" class="anchor" href="#authors"><span class="header-link" style="z-index: 9999999964">&nbsp;</span></a>authors</h3><p>An array of authors. Can have any format, but we recommend the format below.</p>
+<h3><a name="authors" class="anchor" href="#authors"><span class="header-link" style="z-index: 9999999963">&nbsp;</span></a>authors</h3><p>An array of authors. Can have any format, but we recommend the format below.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">authors: [
   &quot;Tim Coulter &lt;tim.coulter@consensys.net&gt;&quot;
 ]
 </code></pre>
-<h3><a name="keywords" class="anchor" href="#keywords"><span class="header-link" style="z-index: 9999999963">&nbsp;</span></a>keywords</h3><p>An array of keywords that tag this package with helpful categories.</p>
+<h3><a name="keywords" class="anchor" href="#keywords"><span class="header-link" style="z-index: 9999999962">&nbsp;</span></a>keywords</h3><p>An array of keywords that tag this package with helpful categories.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">keywords: [
   &quot;ethereum&quot;,
   &quot;addition&quot;
 ],
 </code></pre>
-<h3><a name="dependencies" class="anchor" href="#dependencies"><span class="header-link" style="z-index: 9999999962">&nbsp;</span></a>dependencies</h3><p>A list of EthPM packages your package depends on, using <a href="http://semver.org/">semver</a> version ranges, like npm.</p>
+<h3><a name="dependencies" class="anchor" href="#dependencies"><span class="header-link" style="z-index: 9999999961">&nbsp;</span></a>dependencies</h3><p>A list of EthPM packages your package depends on, using <a href="http://semver.org/">semver</a> version ranges, like npm.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">dependencies: {
   &quot;owned&quot;: &quot;^0.0.1&quot;,
   &quot;erc20-token&quot;: &quot;1.0.0&quot;
 }
 </code></pre>
-<h3><a name="license" class="anchor" href="#license"><span class="header-link" style="z-index: 9999999961">&nbsp;</span></a>license</h3><p>License to use for this package. Strictly informative.</p>
+<h3><a name="license" class="anchor" href="#license"><span class="header-link" style="z-index: 9999999960">&nbsp;</span></a>license</h3><p>License to use for this package. Strictly informative.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">license: &quot;MIT&quot;,
 </code></pre>
