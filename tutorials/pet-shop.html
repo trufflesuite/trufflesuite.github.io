@@ -323,7 +323,7 @@ Writing artifacts to ./build/contracts
 <li><p>Create a new file named <code>2_deploy_contracts.js</code> in the <code>migrations/</code> directory.</p>
 </li>
 <li><p>Add the following content to the <code>2_deploy_contracts.js</code> file:</p>
-<pre><code class="lang-javascript">var Adoption = artifacts.require(&quot;./Adoption.sol&quot;);
+<pre><code class="lang-javascript">var Adoption = artifacts.require(&quot;Adoption&quot;);
 
 module.exports = function(deployer) {
   deployer.deploy(Adoption);
