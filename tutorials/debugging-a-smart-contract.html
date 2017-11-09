@@ -235,7 +235,7 @@ module.exports = function(deployer) {
 <pre><code class="lang-shell">truffle compile
 </code></pre>
 </li>
-<li><p>Open a second terminal and run <code>truffle develop</code> to start an in-memory blockchain environment that we can use to test our contract:</p>
+<li><p>Open a second terminal and run <code>truffle develop</code> to start a development blockchain built directly into Truffle that we can use to test our contract:</p>
 <pre><code class="lang-shell">truffle develop
 </code></pre>
 <p>The console will display a prompt <code>truffle(develop)&gt;</code>. From here, unless otherwise specified, all commands will be typed on this prompt.</p>
@@ -261,7 +261,7 @@ module.exports = function(deployer) {
 </code></pre>
 </li>
 </ol>
-<h2><a name="interacting-with-the-basic-smart-contract" class="anchor" href="#interacting-with-the-basic-smart-contract"><span class="header-link" style="z-index: 9999999746">&nbsp;</span></a>Interacting with the basic smart contract</h2><p>The smart contract is now deployed to a test network via <code>truffle develop</code>, which is an in-memory blockchain, similar to the <a href="https://github.com/ethereumjs/testrpc">EthereumJS TestRPC</a>.</p>
+<h2><a name="interacting-with-the-basic-smart-contract" class="anchor" href="#interacting-with-the-basic-smart-contract"><span class="header-link" style="z-index: 9999999746">&nbsp;</span></a>Interacting with the basic smart contract</h2><p>The smart contract is now deployed to a test network via <code>truffle develop</code>, which is a development blockchain built directly into Truffle, similar to the <a href="https://github.com/ethereumjs/testrpc">EthereumJS TestRPC</a>.</p>
 <p>We next want to interact with the smart contract to see how it works when working correctly. We&#39;ll interact using the <code>truffle develop</code> console.</p>
 <p class="alert alert-info">
 <strong>Note</strong>: If you&#39;re wondering why we didn&#39;t need to mine to get the transaction to be secured, the Truffle Develop console already takes care of that for us. If using a different network, you&#39;ll need to make sure you mine to get the transaction on the blockchain.
