@@ -9776,14 +9776,14 @@ code {
 .Ganache .btn-orange span {
   display: block;
   float: left;
-  margin-right: 60px;
+  margin-right: 0;
 }
 
 .Ganache .btn-orange img {
   width: 60px;
   height: auto;
   float: right;
-  margin-top: -2.3rem;
+  margin-left: 1rem;
 }
 
 .Ganache .btn-orange .oswald {
