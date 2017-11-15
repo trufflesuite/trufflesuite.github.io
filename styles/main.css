@@ -8269,6 +8269,10 @@ code {
   word-wrap: break-word;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 .container-narrow {
   max-width: 600px;
 }
