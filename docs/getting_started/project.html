@@ -200,22 +200,23 @@
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="create-a-project-folder" class="anchor" href="#create-a-project-folder"><span class="header-link" style="z-index: 9999999916">&nbsp;</span></a>Create a Project Folder</h1><p>First create a project folder. You can do this through your favorite file explorer or by running the following on the command line:</p>
-<pre><code class="lang-none">$ mkdir myproject
+          <h1><a name="creating-a-project" class="anchor" href="#creating-a-project"><span class="header-link" style="z-index: 9999999857">&nbsp;</span></a>Creating a project</h1><p>To use most Truffle commands, you need to run them against an existing Truffle project. This section will show you how to create a new project.</p>
+<p>For those just getting started, we have many boilerplates and example applications available to you through <a href="/boxes">Truffle Boxes</a>. You can use the <code>truffle unbox &lt;box-name&gt;</code> command to download these applications.</p>
+<p>If you&#39;d prefer to start from scratch, create a project directory and move into it. You can do this through your favorite file explorer or by running the following on the command line:</p>
+<pre><code class="lang-shell">mkdir myproject
+cd myproject
 </code></pre>
-<h1><a name="initialize-your-project" class="anchor" href="#initialize-your-project"><span class="header-link" style="z-index: 9999999915">&nbsp;</span></a>Initialize Your Project</h1><p>Next, initialize your Truffle project by performing the following in the command line:</p>
-<pre><code class="lang-none">$ cd myproject
-$ truffle init
+<p>Next, initialize your Truffle project by running the following command:</p>
+<pre><code class="lang-shell">truffle init
 </code></pre>
 <p>Once completed, you&#39;ll now have a project structure with the following items:</p>
 <ul>
-<li><code>contracts/</code> - directory where Truffle expects to find solidity contracts.</li>
-<li><code>migrations/</code> - directory to place scriptable deployment files.</li>
-<li><code>test/</code> - location of test files for testing your application and contracts.</li>
-<li><code>truffle.js</code> - your main Truffle configuration file.</li>
+<li><code>contracts/</code>: Directory for <a href="./contracts">Solidity contracts</a></li>
+<li><code>migrations/</code>: Directory for <a href="./migrations#migration-files">scriptable deployment files</a></li>
+<li><code>test/</code>: Directory for test files for <a href="./testing">testing your application and contracts</a></li>
+<li><code>truffle.js</code>: Truffle configuration file</li>
 </ul>
-<h1><a name="default-contracts-metacoin" class="anchor" href="#default-contracts-metacoin"><span class="header-link" style="z-index: 9999999914">&nbsp;</span></a>Default Contracts: MetaCoin</h1><p>By default, <code>truffle init</code> gives you a set of example contracts (<code>MetaCoin</code> and <code>ConvertLib</code>) which act like a simple alt-coin built on top of Ethereum. You can use these contracts to learn quickly while navigating through the Getting Started guide, or delete these files and build a project of your own.</p>
-<h1><a name="truffle-boxes" class="anchor" href="#truffle-boxes"><span class="header-link" style="z-index: 9999999913">&nbsp;</span></a>Truffle Boxes</h1><p>By default, <code>truffle init</code> creates a simple project for you so you can get familiar with writing, compiling and deploying Solidity-based smart contracts. However, we have many boilerplates and example applications available to you via the <code>truffle unbox</code> command that help you build complex applications quickly. <a href="/boxes">Check all of our Truffle Boxes to get started</a>.</p>
+<p>(Looking for the MetaCoin Truffle project that used to be created by running <code>truffle init</code>? It&#39;s now a <a href="/boxes/metacoin">Truffle Box</a>. You can recreate the same project by running <code>truffle unbox metacoin</code>.)</p>
 
           <footer class="container-fluid">
             <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/docs/getting_started/project.md">Edit here &rarr;</a></p>
