@@ -127,108 +127,120 @@
 
   <section class="MainContent">
     <div class="container container-narrow">
-      <h1><a name="using-infura-or-any-custom-provider-" class="anchor" href="#using-infura-or-any-custom-provider-"><span class="header-link" style="z-index: 9999999630">&nbsp;</span></a>Using Infura (or any custom provider)</h1><p><a href="https://infura.io/">Infura</a> is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet. For security reasons Infura does not manage users&#39; private keys, which means they cannot sign transactions on your behalf (or your users&#39; behalf). Similarly, Truffle doesn&#39;t intuitively know how to sign your transactions &#8211; it usually hands that task over to the Ethereum node &#8211; so if you&#39;d like to deploy your contracts using Infura, you must first tell Truffle how you&#39;d like these transactions signed.</p>
-<p>Fortunately libraries can help us along. In this example we&#39;ll use an <a href="https://en.bitcoin.it/wiki/Deterministic_wallet">hd wallet mnemonic</a> to generate our list of wallets, and we&#39;ll use the <a href="https://github.com/MetaMask/provider-engine">web3-provider-engine</a> to provide us with built-in signing functionality.</p>
-<h3><a name="getting-started" class="anchor" href="#getting-started"><span class="header-link" style="z-index: 9999999629">&nbsp;</span></a>Getting Started</h3><p>First install the required dependencies:</p>
-<pre><code>$ npm install ethereumjs-wallet bip39 web3-provider-engine web3
-</code></pre><p>We recommend you run the above command with the <code>--save</code> flag to save this configuration in your project&#39;s <code>package.json</code> file.</p>
-<h3><a name="editing-your-project-39-s-configuration" class="anchor" href="#editing-your-project-39-s-configuration"><span class="header-link" style="z-index: 9999999628">&nbsp;</span></a>Editing Your Project&#39;s Configuration</h3><p>We can use your project&#39;s <code>truffle.js</code> configuration file to tell Truffle how to sign our transactions. To start, we should first require all of our dependencies used for signing transactions:</p>
-<pre><code class="lang-javascript">var bip39 = require(&quot;bip39&quot;);
-var hdkey = require(&#39;ethereumjs-wallet/hdkey&#39;);
-var ProviderEngine = require(&quot;web3-provider-engine&quot;);
-var WalletSubprovider = require(&#39;web3-provider-engine/subproviders/wallet.js&#39;);
-var Web3Subprovider = require(&quot;web3-provider-engine/subproviders/web3.js&quot;);
-var Web3 = require(&quot;web3&quot;);
-const FilterSubprovider = require(&#39;web3-provider-engine/subproviders/filters.js&#39;);
+      <h1><a name="using-infura-or-a-custom-provider-" class="anchor" href="#using-infura-or-a-custom-provider-"><span class="header-link" style="z-index: 9999999630">&nbsp;</span></a>Using Infura (or a custom provider)</h1><p><a href="https://infura.io/">Infura</a> is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet.
+<img src="/tutorials/images/infura/infura.png" alt="Infura"></p>
+<p>You may not be familiar with Infura by name, but if you&#39;ve used <a href="https://metamask.io">MetaMask</a> then you&#39;ve used Infura, as it is the Ethereum provider that powers MetaMask.</p>
+<p>For security reasons, Infura does not manage your private keys, which means Infura cannot sign transactions on your behalf.</p>
+<p>However, Truffle can sign transactions through the use of its <code>HDWalletProvider</code>. This provider can handle the transaction signing as well as the connection to the Ethereum network. (<a href="https://github.com/trufflesuite/truffle-hdwallet-provider">Read more about HDWalletProvider</a>.)</p>
+<p>This tutorial will show you how to use Infura to migrate an existing dapp to an Ethereum network supported by Infura. In this specific instance, we&#39;ll migrate to Ropsten. We&#39;ll assume that you already have a dapp to migrate. If you want a test dapp, feel free to use our <a href="/tutorials/pet-shop">Pet Shop</a> tutorial dapp.</p>
+<h2><a name="install-hdwalletprovider" class="anchor" href="#install-hdwalletprovider"><span class="header-link" style="z-index: 9999999629">&nbsp;</span></a>Install HDWalletProvider</h2><p>Truffle&#39;s <code>HDWalletProvider</code> is a separate npm package:</p>
+<pre><code class="lang-shell">npm install truffle-hdwallet-provider
 </code></pre>
-<p>These dependencies are used for the following things:</p>
-<ul>
-<li><code>bip39</code>: Used to create a seed from hd wallet mnemonics (more on that later).</li>
-<li><code>hdkey</code>: Used to derive addresses from seeds using complex math.</li>
-<li><code>ProviderEngine</code>: The basic framework that will be used to wrangle all transactions that need to be signed.</li>
-<li><code>WalletSubprovider</code>: Part of the provider engine framework that will handle wallet signing.</li>
-<li><code>Web3Subprovider</code>: Part of the provider engine framework that handles everything <em>other than</em> transaction signing.</li>
-<li><code>Web3</code>: What we used to communicate with the Ethereum network. Here, we&#39;re using it solely to create a provider.</li>
-</ul>
-<p>After setting up our dependencies, we&#39;ll then need to create an hd wallet from a mnemonic. A mnemonic is a twelve word string that represents a secure random seed (warning: don&#39;t just create a mnemonic yourself; use the bip39 library to do this if you don&#39;t have one). From this seed we can create an unlimited number of Ethereum addresses and private keys. Because this is a seed, we can always use this mnemonic to find those addresses again.</p>
-<pre><code class="lang-javascript">// Get our mnemonic and create an hdwallet
-var mnemonic = &quot;couch solve unique spirit wine fine occur rhythm foot feature glory away&quot;;
-var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
-</code></pre>
-<p>From here we can use the hdwallet to derive the first account. We do so using something called an &quot;hd path&quot;, which is a way of telling the complex mathematics what we&#39;re attempting to derive. The most important bit is when we add &quot;0&quot; on the end of the hd path. This means we want to find the first account that we can derive from this hd wallet. It&#39;s zero based, so if we wanted the second address we&#39;d derive <code>wallet_hdpath + &quot;1&quot;</code>, and for the third address <code>wallet_hdpath + &quot;2&quot;</code>, etc.</p>
-<pre><code class="lang-javascript">// Get the first account using the standard hd path.
-var wallet_hdpath = &quot;m/44&#39;/60&#39;/0&#39;/0/&quot;;
-var wallet = hdwallet.derivePath(wallet_hdpath + &quot;0&quot;).getWallet();
-var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
-</code></pre>
-<p>Next, we need to set up the Provider Engine, telling it that we&#39;d like to use our wallet to sign transactions, and use the ropsten network on infura for everything else:</p>
-<pre><code class="lang-javascript">var providerUrl = &quot;https://testnet.infura.io&quot;;
-var engine = new ProviderEngine();
-// filters
-engine.addProvider(new FilterSubprovider());
+<p class="alert alert-info">
+<strong>Note</strong>: If you are on Windows and get an <code>MSBUILD</code> error, you may need to install the Windows build tools. In a terminal with Administrator rights, run <code>npm install -g windows-build-tools</code> and then try installation again.
+</p>
 
-engine.addProvider(new WalletSubprovider(wallet, {}));
-engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
-engine.start(); // Required by the provider engine.
+<h2><a name="register-with-infura" class="anchor" href="#register-with-infura"><span class="header-link" style="z-index: 9999999628">&nbsp;</span></a>Register with Infura</h2><p>Before you can use Infura, you need to <a href="https://infura.io/register.html">register for an Infura Access Token</a>.</p>
+<p>Fill out the form and you will receive your token. Your information will be sent to your email and displayed on the screen. Make sure you save this token and keep it private!</p>
+<h2><a name="configure-your-truffle-project" class="anchor" href="#configure-your-truffle-project"><span class="header-link" style="z-index: 9999999627">&nbsp;</span></a>Configure your Truffle project</h2><p>The next step is to edit your <code>truffle.js</code> file to use <code>HDWalletProvider</code> and provide all the necessary configuration for deploying to Ropsten.</p>
+<ol>
+<li><p>First, define the <code>HDWalletProvider</code> object in your configuration file. Add this line at the top of your <code>truffle.js</code> file:</p>
+<pre><code class="lang-javascript">var HDWalletProvider = require(&quot;truffle-hdwallet-provider&quot;);
 </code></pre>
-<p>Finally, we want to export our Truffle configuration. Here we use this wallet only when we want to deploy to the ropsten network:</p>
+</li>
+<li><p>Next, provide a reference to your mnemonic that generates your accounts.</p>
+<pre><code class="lang-javascript">var mnemonic = &quot;orange apple banana ... &quot;;
+</code></pre>
+<p class="alert alert-danger">
+<strong>Warning</strong>: In production, we highly recommend storing the mnemonic in another (secret) file, to reduce the risk of the mnemonic becoming known. If someone knows your mnemonic, they have all of your addresses and private keys!
+</p>
+</li>
+<li><p>Add a Ropsten network definition:</p>
 <pre><code class="lang-javascript">module.exports = {
   networks: {
-    &quot;ropsten&quot;: {
-      network_id: 3,    // Official ropsten network id
-      provider: engine, // Use our custom provider
-      from: address     // Use the address we derived
-    }
-  },
-  rpc: {
-    // Use the default host and port when not using ropsten
-    host: &quot;localhost&quot;,
-    port: 8545
+    ropsten: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, &quot;https://ropsten.infura.io/&lt;INFURA_Access_Token&gt;&quot;)
+      }
+      network_id: 3
+    }   
   }
 };
 </code></pre>
-<h3><a name="discussion" class="anchor" href="#discussion"><span class="header-link" style="z-index: 9999999627">&nbsp;</span></a>Discussion</h3><p>In general, this is a lot of work in order to use an hd wallet with Truffle. This is a very early feature, and we&#39;d highly encourage anyone to create a new library that encapsulates the above code.</p>
-<h3><a name="full-code" class="anchor" href="#full-code"><span class="header-link" style="z-index: 9999999626">&nbsp;</span></a>Full Code</h3><pre><code class="lang-javascript">var bip39 = require(&quot;bip39&quot;);
-var hdkey = require(&#39;ethereumjs-wallet/hdkey&#39;);
-var ProviderEngine = require(&quot;web3-provider-engine&quot;);
-var WalletSubprovider = require(&#39;web3-provider-engine/subproviders/wallet.js&#39;);
-var Web3Subprovider = require(&quot;web3-provider-engine/subproviders/web3.js&quot;);
-var Web3 = require(&quot;web3&quot;);
-const FilterSubprovider = require(&#39;web3-provider-engine/subproviders/filters.js&#39;);
-
-// Get our mnemonic and create an hdwallet
-var mnemonic = &quot;couch solve unique spirit wine fine occur rhythm foot feature glory away&quot;;
-var hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
-
-// Get the first account using the standard hd path.
-var wallet_hdpath = &quot;m/44&#39;/60&#39;/0&#39;/0/&quot;;
-var wallet = hdwallet.derivePath(wallet_hdpath + &quot;0&quot;).getWallet();
-var address = &quot;0x&quot; + wallet.getAddress().toString(&quot;hex&quot;);
-
-var providerUrl = &quot;https://testnet.infura.io&quot;;
-var engine = new ProviderEngine();
-// filters
-engine.addProvider(new FilterSubprovider());
-
-engine.addProvider(new WalletSubprovider(wallet, {}));
-engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)));
-engine.start(); // Required by the provider engine.
-
-module.exports = {
-  networks: {
-    &quot;ropsten&quot;: {
-      network_id: 3,    // Official ropsten network id
-      provider: engine, // Use our custom provider
-      from: address     // Use the address we derived
-    }
-  },
-  rpc: {
-    // Use the default host and port when not using ropsten
-    host: &quot;localhost&quot;,
-    port: 8545
-  }
-};
+<p>Things to notice:</p>
+<ul>
+<li><p>While the example has only a single network defined, you can define multiple networks as normal.</p>
+</li>
+<li><p>The <code>provider</code> for the <code>ropsten</code> network definition instantiates the <code>HDWalletProvider</code>.</p>
+</li>
+<li><p>The <code>HDWalletProvider</code> takes as arguments a mnemonic and the desired network. A list of Infura-supported networks is available on the <a href="https://infura.io/">Infura homepage</a>.</p>
+</li>
+<li><p>Make sure to replace <code>&lt;INFURA_Access_Token&gt;</code> with the Infura Access Token you were granted above.</p>
+</li>
+<li><p>The <code>provider</code> value is wrapped in a function, which ensures that it won&#39;t get initialized until it&#39;s needed. This is especially important if connecting to multiple networks. (See the <a href="http://truffleframework.com/docs/advanced/configuration#networks">Networks configuration</a> section of the documentation for more on this topic.) </p>
+</li>
+<li><p>Without any other arguments, the account in charge of migration will be the first one generated by the mnemonic. But if desired, you can pass in an argument to specify which account to use. As an example, to use the third account:</p>
+<pre><code class="lang-javascript">new HDWalletProvider(mnemonic, &quot;https://ropsten.infura.io/&lt;Infura_Access_Token&gt;&quot;, 2);
 </code></pre>
+<p>(Recall that the index is zero-based, so <code>2</code> is the third address.)</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2><a name="use-an-ether-faucet" class="anchor" href="#use-an-ether-faucet"><span class="header-link" style="z-index: 9999999626">&nbsp;</span></a>Use an ether faucet</h2><p>Make sure you have enough ether in your account to do the deployment. You can acquire ether on the Ropsten network through a service known as a faucet. While there are multiple faucet sites out there, one service we recommend is hosted on <a href="https://ethtools.com/">EthTools</a>.</p>
+<ol>
+<li><p>Navigate to the <a href="https://ethtools.com/ropsten/tools/faucet/">EthTools Ether Faucet</a>.</p>
+</li>
+<li><p>Enter your mnemonic, and select how much ether you would like (maximum of 5).</p>
+</li>
+<li><p>The faucet will link to your first account. Click &quot;Request Ether&quot; to submit your request.</p>
+</li>
+<li><p>Within a short period of time, your account will be populated with the requested ether.</p>
+<p class="alert alert-info">
+<strong>Note</strong>: You can also request Ether through <a href="https://metamask.io">MetaMask</a>. Connect to your account on Ropsten, and click the &quot;Buy&quot; button, which will give you a link to MetaMask&#39;s Ropsten Test Faucet, which works similarly to above.
+</p>
+
+</li>
+</ol>
+<p>We are now ready to deploy to Ropsten!</p>
+<h2><a name="deploy-the-contract" class="anchor" href="#deploy-the-contract"><span class="header-link" style="z-index: 9999999625">&nbsp;</span></a>Deploy the contract</h2><ol>
+<li><p>Compile your project, if not already done:</p>
+<pre><code class="lang-shell">truffle compile
+</code></pre>
+</li>
+<li><p>Deploy to the Ropsten network:</p>
+<pre><code class="lang-shell">truffle migrate --network ropsten
+</code></pre>
+<p>If all goes well, you should see a response that looks similar to the following:</p>
+<pre><code class="lang-shell">Using network &#39;ropsten&#39;.
+
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  ... 0xd79bc3c5a7d338a7f85db9f86febbee738ebdec9494f49bda8f9f4c90b649db7
+  Migrations: 0x0c6c4fc8831755595eda4b5724a61ff989e2f8b9
+Saving successful migration to network...
+  ... 0xc37320561d0004dc149ea42d839375c3fc53752bae5776e4e7543ad16c1b06f0
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+  Deploying MyContract...
+  ... 0x7efbb3e4f028aa8834d0078293e0db7ff8aff88e72f33960fc806a618a6ce4d3
+  MyContract: 0xda05d7bfa5b6af7feab7bd156e812b4e564ef2b1
+Saving successful migration to network...
+  ... 0x6257dd237eb8b120c8038b066e257baee03b9c447c3ba43f843d1856de1fe132
+Saving artifacts...
+</code></pre>
+<p>Note that your transaction IDs will be different from the ones above.</p>
+<p class="alert alert-info">
+<strong>Note</strong>: If you receive an error <code>Error: Exceeds block gas limit</code>, you may need to manually set the gas limit for your contract. See the <a href="/docs/advanced/configuration">Truffle Configuration</a> documentation for details.
+</p>
+</li>
+<li><p>If you want to verify that your contract was deployed successfully, you can check this on the <a href="https://ropsten.etherscan.io/">Ropsten section of Etherscan</a>. In the search field, type in the transaction ID for your contract. In the above example, the transaction ID is:</p>
+<pre><code class="lang-shell">0x7efbb3e4f028aa8834d0078293e0db7ff8aff88e72f33960fc806a618a6ce4d3
+</code></pre>
+<p>You should see details about the transaction, including the block number where the transaction was secured.</p>
+</li>
+</ol>
+<p>Congratulations! You&#39;ve deployed your contract to Ropsten using the combined power of Infura and Truffle.</p>
 
     </div>
 
