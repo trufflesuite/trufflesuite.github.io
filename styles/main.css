@@ -7885,7 +7885,7 @@ button.close {
   margin: 3rem 3rem !important;
 }
 
-.m-t-3, .Tutorials .MainContent img, .Ballotin .BoxReadme h1, .Ballotin .BoxReadme h2, .Ballotin .BoxReadme h3, .Ballotin .BoxReadme h4, .Ballotin .BoxReadme h5, .Ballotin .BoxReadme h6 {
+.m-t-3, .Ballotin .BoxReadme h1, .Ballotin .BoxReadme h2, .Ballotin .BoxReadme h3, .Ballotin .BoxReadme h4, .Ballotin .BoxReadme h5, .Ballotin .BoxReadme h6 {
   margin-top: 3rem !important;
 }
 
@@ -9156,6 +9156,7 @@ html, body {
 }
 
 .Tutorials .MainContent img {
+  margin: 2rem 0;
   width: auto;
   max-width: 100%;
 }

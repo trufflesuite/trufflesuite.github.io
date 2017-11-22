@@ -32,14 +32,14 @@
     
     <meta property="og:site_name" content="Truffle Suite" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Deploying to the Live Network | Truffle Suite" />
+    <meta property="og:title" content="Designing the Ganache Logo | Truffle Suite" />
     <meta property="og:url" content="http://truffleframework.com" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Deploying to the Live Network | Truffle Suite" />
+    <meta name="twitter:title" content="Designing the Ganache Logo | Truffle Suite" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Suite" />
     <meta name="twitter:domain" content="truffleframework.com" />
@@ -49,7 +49,7 @@
     
 
     <title>
-    Deploying to the Live Network | 
+    Designing the Ganache Logo | 
     Truffle Suite
     
     </title>
@@ -126,50 +126,52 @@
 
   <section class="MainContent">
     <div class="container container-narrow">
-      <h1><a name="deploying-to-the-live-network" class="anchor" href="#deploying-to-the-live-network"><span class="header-link" style="z-index: 9999999728">&nbsp;</span></a>Deploying to the Live Network</h1><p>When you&#39;re finished developing your contracts and would like others to use them, the next step is to deploy them to the live network. By now you will have been working on a development network like the <a href="https://github.com/ethereumjs/testrpc">TestRPC</a>, and you will have noticed Truffle is set up to support that by default. Deploying to the live network &#8211; or any other network &#8211; will require that you first connect one of the <a href="http://ethdocs.org/en/latest/ethereum-clients/">many Ethereum clients</a> to your network of choice, as well as configure Truffle correctly.</p>
-<h2><a name="setting-up-your-ethereum-client" class="anchor" href="#setting-up-your-ethereum-client"><span class="header-link" style="z-index: 9999999727">&nbsp;</span></a>Setting Up Your Ethereum client</h2><p>There are <a href="http://ethdocs.org/en/latest/ethereum-clients/">many Ethereum clients</a> to choose from. The most popular are <a href="https://github.com/ethereum/go-ethereum">go-ethereum</a> and <a href="https://github.com/ethereum/cpp-ethereum">cpp-ethereum</a>. This tutorial cannot go into the details of setting up each client for each operating system, but be sure your desired client is installed and configured to perform the following:</p>
+      <h1><a name="designing-the-ganache-logo" class="anchor" href="#designing-the-ganache-logo"><span class="header-link" style="z-index: 9999999837">&nbsp;</span></a>Designing the Ganache Logo</h1><p>Last week we released <a href="/ganache">Ganache</a>, a personal blockchain for Ethereum development. Many of you commented on the design of the landing page and logo, but just how did the gooey cube come to be? Let&#39;s take a trip through the 30+ iterations that led to our newest confection.</p>
+<div class="row"><div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-3 m-b-2">
+<img src="/blog/images/designing-the-ganache-logo/final-logomark.png" alt="Final Ganache Logomark">
+</div></div>
+
+<p>Before setting out on our design journey, we started with some loose guidelines:</p>
 <ul>
-<li>Your client is completely synced with the live network</li>
-<li>Your client is hosting an RPC server on <code>localhost</code> and port <code>8546</code> (for this tutorial)</li>
-<li>Your client has at least one account registered and can sign transactions for that account</li>
-<li>The registered account contains enough Ether to deploy your contracts</li>
+<li>The new logo should be round and have some dimensionality to keep it consistent with the Truffle logo.</li>
+<li>The colors should consist of chocolate, an accent color and white.</li>
 </ul>
-<p>If you don&#39;t want to set up an Ethereum client yourself, you can alternatively use <a href="https://infura.io/">Infura</a>. This will require you <a href="/tutorials/using-infura-custom-provider">configure Truffle correctly for Infura</a> before proceeding.</p>
-<h2><a name="configuring-truffle" class="anchor" href="#configuring-truffle"><span class="header-link" style="z-index: 9999999726">&nbsp;</span></a>Configuring Truffle</h2><p>The default Truffle configuration without any bells and whistles looks like this:</p>
-<pre><code class="lang-javascript">module.exports = {
-  rpc: {
-    host: &quot;localhost&quot;,
-    port: 8545
-  }
-};
-</code></pre>
-<p>This tells Truffle that by default it should connect to an Ethereum client at host <code>localhost</code> and port <code>8545</code>. You <strong>could</strong> keep this configuration and simply stop your development client and run the live network at the same host and port; however, Truffle won&#39;t know how to distinguish deployment artifacts on the development network from those same artifacts on the live network (like deployed addresses, for instance). To ensure Truffle knows the network you want to deploy to, we can add a specific configuration for the live network:</p>
-<pre><code class="lang-javascript">module.exports = {
-  networks: {
-    &quot;live&quot;: {
-      network_id: 1,
-      host: &quot;localhost&quot;,
-      port: 8546   // Different than the default below
-    }
-  },
-  rpc: {
-    host: &quot;localhost&quot;,
-    port: 8545
-  }
-};
-</code></pre>
-<p>Notice we set up our live Ethereum client to run on a different port to ensure we don&#39;t inadvertently deploy to the wrong network.</p>
-<p>One important configuration option to pay attention to is <code>network_id</code>. Here, we set the network id to <code>1</code> to signify that the  network named <code>&quot;live&quot;</code> within the configuration represents only the network identified by an id of <code>1</code>. Since only the live Ethereum network has that id (all other networks do not), we can be sure this configuration will only apply to the live Ethereum network. Private networks will have their own network id, for example, and the <a href="https://github.com/ethereum/wiki/wiki/Morden">Morden testnet</a> &#8211; a publically shared network used only for testing &#8211; has a network id of <code>2</code>.</p>
-<h2><a name="deploying-to-the-live-network" class="anchor" href="#deploying-to-the-live-network"><span class="header-link" style="z-index: 9999999725">&nbsp;</span></a>Deploying to the Live Network</h2><p>Now that our configuration is set up, we can now deploy to the live network. When deploying, we must specifically ask for the live network or else Truffle will fall back to the default configuration. To do so, we can deploy with the following command:</p>
-<pre><code>$ truffle migrate --network live
-</code></pre><p>Notice that we asked for the <code>&quot;live&quot;</code> network, which is the name we defined in the configuration, and Truffle will connect to the specified host and port &#8211; in this case <code>http://localhost:8546</code> &#8211; to deploy our contracts.</p>
-<p>Your <a href="http://truffleframework.com/docs/getting_started/migrations">migrations</a> are run on this network just as they&#39;d run on any other network. If you had previously deployed to the live network before, <code>truffle migrate --network live</code> will check which migration was last run and only start deploying from there.</p>
-<h2><a name="and-that-39-s-it-" class="anchor" href="#and-that-39-s-it-"><span class="header-link" style="z-index: 9999999724">&nbsp;</span></a>And That&#39;s it!</h2><p>Congrats! You have now deployed your contracts to the live network. For more details on network configuration and deployment, be sure to check out the <a href="/docs">Truffle documentation</a>.</p>
+<p>The concepts we explored can be roughly broken down into 4 categories: Core Cutaways, Toppings, Gooey Cores and Soft Blocks.</p>
+<h2><a name="core-cutaways" class="anchor" href="#core-cutaways"><span class="header-link" style="z-index: 9999999836">&nbsp;</span></a>Core Cutaways</h2><p>The first set of core cutaways was an attempt to convey that Ganache, as a local development blockchain, was the &quot;core&quot; of your development workflow. They also depict a ganache filled truffle candy of varying viscosities.</p>
+<p>It was toward the end of this stage we qualified one of our initial guidelines. The logo&#39;s dimensionality should be represented purely by shape&#8211;no gradients!</p>
+<p><strong>Fun fact</strong>: We considered one of the third row, second and third column concepts as a final candidate, but scrapped it when Tim&#39;s wife said it looks like a banana slug floating in space. My baby, a slug?! A great reminder to not get too attached before getting feedback!</p>
+<p></div><div class="text-center container">
+  <img src="/blog/images/designing-the-ganache-logo/core-cutaways.png" alt="Ganache Logo Concepts - Core Cutaways">
+</div><div class="container container-narrow"></p>
+<h2><a name="toppings" class="anchor" href="#toppings"><span class="header-link" style="z-index: 9999999835">&nbsp;</span></a>Toppings</h2><p>Questions about the ability of the core cutaways to translate to flat color, as well as being dimensionally mismatched with the Truffle logo caused us to consider a simpler approach; a spherical candy with ganache on the outside. Overall these failed to look interesting and had the opposite problem in that they weren&#39;t dimensional enough.</p>
+<p></div><div class="text-center container">
+  <img src="/blog/images/designing-the-ganache-logo/toppings.png" alt="Ganache Logo Concepts - Toppings">
+</div><div class="container container-narrow"></p>
+<h2><a name="gooey-cores" class="anchor" href="#gooey-cores"><span class="header-link" style="z-index: 9999999834">&nbsp;</span></a>Gooey Cores</h2><p>Not satisfied with the topping options we pressed on and attempted the core concept again, this time with some fancier cutaways. While they stood on their own, they were too wide a departure from the Truffle logo. This lack of cohesion lead to a realization that would be our design breakthrough.</p>
+<p></div><div class="text-center container">
+  <img src="/blog/images/designing-the-ganache-logo/gooey-cores.png" alt="Ganache Logo Concepts - Gooey Cores">
+</div><div class="container container-narrow"></p>
+<h2><a name="soft-blocks" class="anchor" href="#soft-blocks"><span class="header-link" style="z-index: 9999999833">&nbsp;</span></a>Soft Blocks</h2><p>Letting go of our assumption that the shape should be round unlocked a series of designs that eventually led to our final logo. To achieve a more interesting drip pattern, we traced and combined different stages of glaze dripping down a cake. It became apparent that this approach was interesting, but made an overly detailed drip pattern which we later simplified for the final. We also tried a few different treatments of the candy&#39;s reflection. Check out that longhorn steer in the lower-left!</p>
+<p></div><div class="text-center container">
+  <img src="/blog/images/designing-the-ganache-logo/soft-blocks.png" alt="Ganache Logo Concepts - Soft Blocks">
+</div><div class="container container-narrow"></p>
+<h2><a name="the-final-logo" class="anchor" href="#the-final-logo"><span class="header-link" style="z-index: 9999999832">&nbsp;</span></a>The Final Logo</h2><p>Success! After reconsidering some assumptions and solidifying others, we arrived at our final design. The final logo has both a compelling design and the following qualities that made it a winner:</p>
+<ul>
+<li>The colors consist of chocolate, an accent color and white; a guideline we&#39;ll keep going forward.</li>
+<li>It&#39;s metaphorically grounded in the product it represents&#8211;it&#39;s a block, after all!</li>
+<li>The gooey consistency and soft, rounded corners represent the intimidating technical concept of a blockchain in a friendly and approachable way.</li>
+</ul>
+<div class="row"><div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-3 m-b-2">
+<img src="/blog/images/designing-the-ganache-logo/final-logomark.png" alt="Final Ganache Logo">
+</div></div>
+
+<p>We had a blast iterating this logo and Ganache itself. We hoped you learned from our experience and maybe picked up some of your own inspiration along the way. <strong>Happy illustrating!</strong></p>
+<p>&#8211; Josh &amp; the Truffle Team</p>
 
     </div>
 
     <footer class="container">
-      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/tutorials/deploying-to-the-live-network.md">Edit here &rarr;</a></p>
+      <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/blog/designing-the-ganache-logo.md">Edit here &rarr;</a></p>
     </footer>
   </section>
 </section>
