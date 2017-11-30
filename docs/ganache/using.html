@@ -32,14 +32,14 @@
     
     <meta property="og:site_name" content="Truffle Suite" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Build Processes | Truffle Suite" />
+    <meta property="og:title" content="Working with Ganache | Truffle Suite" />
     <meta property="og:url" content="http://truffleframework.com" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Build Processes | Truffle Suite" />
+    <meta name="twitter:title" content="Working with Ganache | Truffle Suite" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Suite" />
     <meta name="twitter:domain" content="truffleframework.com" />
@@ -49,7 +49,7 @@
     
 
     <title>
-    Build Processes | 
+    Working with Ganache | 
     Truffle Suite
     
     </title>
@@ -184,7 +184,7 @@
                                 
                 <li class=""><a href="/docs/advanced/networks">Networks &amp; App Deployment</a></li>
                                 
-                <li class="active"><a href="/docs/advanced/build_processes">Build Processes</a></li>
+                <li class=""><a href="/docs/advanced/build_processes">Build Processes</a></li>
                                 
                 <li class=""><a href="/docs/advanced/commands">Command Reference</a></li>
                                 
@@ -197,71 +197,55 @@
                                     <li>
               <ul class="list-unstyled">
                                   
-                <li class=""><a href="/docs/ganache/using">Working with Ganache</a></li>
+                <li class="active"><a href="/docs/ganache/using">Working with Ganache</a></li>
                             </ul>
             </li>
           
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="custom-build-processes" class="anchor" href="#custom-build-processes"><span class="header-link" style="z-index: 9999999961">&nbsp;</span></a>Custom Build Processes</h1><p>In order to provide tight integration with Truffle for those that desire it, Truffle allows you to specify a custom build pipeline meant to bootstrap and configure your application. Truffle provides three methods of integration, described below.</p>
-<h3><a name="running-an-external-command" class="anchor" href="#running-an-external-command"><span class="header-link" style="z-index: 9999999960">&nbsp;</span></a>Running an External Command</h3><p>If you&#39;d like Truffle to run an external command whenever it triggers a build, simply include that option as a string within your project configuration, like so:</p>
-<pre><code class="lang-javascript">module.exports = {
-  // This will run the `webpack` command on each build.
-  //
-  // The following environment variables will be set when running the command:
-  // WORKING_DIRECTORY: root location of the project
-  // BUILD_DESTINATION_DIRECTORY: expected destination of built assets (important for `truffle serve`)
-  // BUILD_CONTRACTS_DIRECTORY: root location of your build contract files (.sol.js)
-  //
-  build: &quot;webpack&quot;
-}
+          <h1><a name="working-with-ganache" class="anchor" href="#working-with-ganache"><span class="header-link" style="z-index: 9999999794">&nbsp;</span></a>Working with Ganache</h1><p><a href="/ganache">Ganache</a> is a personal blockchain for Ethereum development you can use to deploy contracts, develop your applications, and run tests.</p>
+<p><img src="/docs/ganache/images/ganache-logo.png" alt="Ganache logo"></p>
+<p>It is available as both a desktop application as well as a command-line tool (formerly known as the TestRPC). Ganache is available for Windows, Mac, and Linux.</p>
+<h2><a name="installation" class="anchor" href="#installation"><span class="header-link" style="z-index: 9999999793">&nbsp;</span></a>Installation</h2><h3><a name="ganache" class="anchor" href="#ganache"><span class="header-link" style="z-index: 9999999792">&nbsp;</span></a>Ganache</h3><p><a href="https://github.com/trufflesuite/ganache/releases">Download</a> the appropriate version for your OS:</p>
+<ul>
+<li>Windows: <code>Ganache-*.appx</code></li>
+<li>Mac: <code>Ganache-*.dmg</code></li>
+<li>Linux: <code>Ganache-*.AppImage</code></li>
+</ul>
+<p>Double-click on the downloaded file, follow the prompts, and you&#39;re up and running.</p>
+<h3><a name="ganache-cli" class="anchor" href="#ganache-cli"><span class="header-link" style="z-index: 9999999791">&nbsp;</span></a>Ganache CLI</h3><p>If you are interested in the command-line version (formerly known as the TestRPC), you can get it through npm.</p>
+<pre><code class="lang-shell">npm install -g ganache-cli
 </code></pre>
-<p>Note that you&#39;re given ample environment variables with which to integrate with Truffle, detailed above.</p>
-<h3><a name="providing-a-custom-function" class="anchor" href="#providing-a-custom-function"><span class="header-link" style="z-index: 9999999959">&nbsp;</span></a>Providing a Custom Function</h3><p>You can also provide a custom build function like the one below. Note you&#39;re given a plethora of information about your project which you can use to integrate tightly with Truffle.</p>
-<pre><code class="lang-javascript">module.exports = {
-  build: function(options, callback) {
-     // Do something when a build is required. `options` contains these values:
-     //
-     // working_directory: root location of the project
-     // contracts_directory: root directory of .sol files
-     // destination_directory: directory where truffle expects the built assets (important for `truffle serve`)
-  }
-}
-</code></pre>
-<h3><a name="creating-a-custom-module" class="anchor" href="#creating-a-custom-module"><span class="header-link" style="z-index: 9999999958">&nbsp;</span></a>Creating a Custom Module</h3><p>You could also create a module or object that implements the builder interface (i.e., is an object which contains a <code>build</code> function like the one above). This is great for those who want to maintain tighter integration with Truffle and publish a package to make everyone else&#39;s lives easier.</p>
-<p>Here&#39;s an example using Truffle&#39;s default builder:</p>
-<pre><code class="lang-javascript">var DefaultBuilder = require(&quot;truffle-default-builder&quot;);
-module.exports = {
-  build: new DefaultBuilder(...) // specify the default builder configuration here.
-}
-</code></pre>
-<h1><a name="bootstrapping-your-application" class="anchor" href="#bootstrapping-your-application"><span class="header-link" style="z-index: 9999999957">&nbsp;</span></a>Bootstrapping Your Application</h1><p>Whether you&#39;re building an application to run in the browser, or a command line tool, a Javascript library or a native mobile application, bootstrapping your contracts is the same, and using your deployed contract artifacts follows the same general process no matter the app you&#39;re building.</p>
-<p>When configuring your build tool or application, you&#39;ll need to perform the following steps:</p>
-<p>1) Get all your contract artifacts into your build pipeline / application. This includes all of the <code>.json</code> files within the <code>./build/contracts</code> directory.</p>
-<p>2) Turn those <code>.json</code> contract artifacts into contract abstractions that are easy to use, via <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a>.</p>
-<p>3) Provision those contract abstractions with a Web3 provider. In the browser, this provider might come from <a href="https://metamask.io/">Metamask</a> or <a href="https://github.com/ethereum/mist">Mist</a>, but it could also be a custom provider you&#39;ve configured to point to <a href="http://infura.io/">Infura</a> or any other Ethereum client.</p>
-<p>4) Use your contracts!</p>
-<p>In Node, this is very easy to do. Let&#39;s take a look at an example that shows off the &quot;purest&quot; way of performing the above steps, since it exists outside of any build process or tool.</p>
-<pre><code class="lang-javascript">// Step 1: Get a contract into my application
-var json = require(&quot;./build/contracts/MyContract.json&quot;);
+<p>This page will focus only on the graphical interface. Please see the <a href="https://github.com/trufflesuite/ganache-cli/blob/master/README.md">README</a> for more information on Ganache CLI.</p>
+<h2><a name="main-interface" class="anchor" href="#main-interface"><span class="header-link" style="z-index: 9999999790">&nbsp;</span></a>Main interface</h2><p>When you launch Ganache, the screen will show some details about the server, and also list out a number of accounts. <strong>Each account is given 100 ether</strong>. Having ether automatically in all accounts allows you to focus on developing your application.</p>
+<p class="alert alert-info">
+<strong>Note</strong>: The first time you launch Ganache, you will be asked if you want to allow Google Analytics tracking. While optional, turning this on will help the development team gain more insight into how Ganache is used. This tracking is totally anonymous, and no account data or private keys will ever be shared.
+</p>
 
-// Step 2: Turn that contract into an abstraction I can use
-var contract = require(&quot;truffle-contract&quot;);
-var MyContract = contract(json);
-
-// Step 3: Provision the contract with a web3 provider
-MyContract.setProvider(new Web3.providers.HttpProvider(&quot;http://localhost:8545&quot;));
-
-// Step 4: Use the contract!
-MyContract.deployed().then(function(deployed) {
-  return deployed.someFunction();
-});
-</code></pre>
-<p>All build processes and contract bootstrapping will follow this pattern. The key when setting up your own custom build process is to ensure you&#39;re consuming all of your contract artifacts and provisioning your abstractions correctly.</p>
+<p><img src="/docs/ganache/images/accounts.png" alt="Ganache"></p>
+<p><em>Ganache Accounts</em></p>
+<p>There are four pages available:</p>
+<ul>
+<li>The <strong>Accounts</strong> page shows the accounts generated and their balances. This is the default view.</li>
+<li>The <strong>Blocks</strong> page shows each block as mined on the blockchain, along with gas used and transactions.</li>
+<li>The <strong>Transactions</strong> page lists all transactions run against the blockchain.</li>
+<li>The <strong>Logs</strong> page shows the logs for the server, which is useful for debugging. </li>
+</ul>
+<p>Also note that you can search for block numbers or transaction hashes from a search box at the top.</p>
+<h2><a name="settings" class="anchor" href="#settings"><span class="header-link" style="z-index: 9999999789">&nbsp;</span></a>Settings</h2><p>You can change some features of the generated blockchain through the <strong>Settings</strong> pages, accessed by the gear icon in the top right corner.</p>
+<p><img src="/docs/ganache/images/settings.png" alt="Ganache Settings"></p>
+<p><em>Ganache Settings</em></p>
+<ul>
+<li>The <strong>Server</strong> page shows details about the network connection, including hostname, port, network ID, and whether to automatically mine each transaction into a block.</li>
+<li>The <strong>Accounts &amp; Keys</strong> page sets details about the number of accounts created, and whether to use a specific mnemonic or let Ganache generate its own.</li>
+<li>The <strong>Chain</strong> page sets details about the actual workings of the generated blockchain, including gas limit and gas price.</li>
+<li>The <strong>Advanced</strong> page toggles Google Analytics, which is useful for the Ganache team to track usage of the application.</li>
+</ul>
+<p>After making changes, you will have to click <strong>Restart</strong> on the application for the changes to take effect.</p>
 
           <footer class="container-fluid">
-            <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/docs/advanced/build_processes.md">Edit here &rarr;</a></p>
+            <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/docs/ganache/using.md">Edit here &rarr;</a></p>
           </footer>
         </div>
       </div>
