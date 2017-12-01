@@ -155,7 +155,7 @@
                                 
                 <li class=""><a href="/docs/getting_started/testing">Testing your contracts</a></li>
                                 
-                <li class=""><a href="/docs/getting_started/javascript-tests">Writing tests in Javascript</a></li>
+                <li class=""><a href="/docs/getting_started/javascript-tests">Writing tests in JavaScript</a></li>
                                 
                 <li class=""><a href="/docs/getting_started/solidity-tests">Writing tests in Solidity</a></li>
                                 
@@ -182,11 +182,11 @@
                                   
                 <li class=""><a href="/docs/advanced/configuration">Configuration</a></li>
                                 
-                <li class=""><a href="/docs/advanced/networks">Networks &amp; App Deployment</a></li>
+                <li class=""><a href="/docs/advanced/networks">Networks and app deployment</a></li>
                                 
-                <li class=""><a href="/docs/advanced/build_processes">Build Processes</a></li>
+                <li class=""><a href="/docs/advanced/build_processes">Build processes</a></li>
                                 
-                <li class=""><a href="/docs/advanced/commands">Command Reference</a></li>
+                <li class=""><a href="/docs/advanced/commands">Command reference</a></li>
                                 
                 <li class=""><a href="/docs/advanced/truffle-boxes">Truffle Boxes</a></li>
                                 
@@ -204,10 +204,10 @@
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="background" class="anchor" href="#background"><span class="header-link" style="z-index: 9999999813">&nbsp;</span></a>Background</h1><p>Often you may want to run external scripts that interact with your contracts. Truffle provides an easy way to do this, bootstrapping your contracts based on your desired network and connecting to your Ethereum client automatically per your <a href="/docs/advanced/configuration">project configuration</a>.</p>
-<h1><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999812">&nbsp;</span></a>Command</h1><p>To run an external script, perform the following:</p>
+          <h1><a name="writing-external-scripts" class="anchor" href="#writing-external-scripts"><span class="header-link" style="z-index: 9999999808">&nbsp;</span></a>Writing external scripts</h1><p>Often you may want to run external scripts that interact with your contracts. Truffle provides an easy way to do this, bootstrapping your contracts based on your desired network and connecting to your Ethereum client automatically per your <a href="/docs/advanced/configuration">project configuration</a>.</p>
+<h2><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999807">&nbsp;</span></a>Command</h2><p>To run an external script, perform the following:</p>
 <pre><code>$ truffle exec &lt;path/to/file.js&gt;
-</code></pre><h1><a name="file-structure" class="anchor" href="#file-structure"><span class="header-link" style="z-index: 9999999811">&nbsp;</span></a>File Structure</h1><p>In order for external scripts to be run correctly, Truffle expects them to export a function that takes a single parameter as a callback:</p>
+</code></pre><h2><a name="file-structure" class="anchor" href="#file-structure"><span class="header-link" style="z-index: 9999999806">&nbsp;</span></a>File structure</h2><p>In order for external scripts to be run correctly, Truffle expects them to export a function that takes a single parameter as a callback:</p>
 <pre><code class="lang-javascript">module.exports = function(callback) {
   // perform actions
 }
