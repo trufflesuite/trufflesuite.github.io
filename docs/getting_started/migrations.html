@@ -305,14 +305,21 @@ deployer.deploy(A).then(function() {
 </code></pre>
 <h2><a name="deployer-api" class="anchor" href="#deployer-api"><span class="header-link" style="z-index: 9999999830">&nbsp;</span></a>Deployer API</h2><p>The deployer contains many functions available to simplify your migrations.</p>
 <h3><a name="deployer-deploy-contract-args-options-" class="anchor" href="#deployer-deploy-contract-args-options-"><span class="header-link" style="z-index: 9999999829">&nbsp;</span></a>deployer.deploy(contract, args&#8230;, options)</h3><p>Deploy a specific contract, specified by the contract object, with optional constructor arguments. This is useful for singleton contracts, such that only one instance of this contract exists for your dapp. This will set the address of the contract after deployment (i.e., <code>Contract.address</code> will equal the newly deployed address), and it will override any previous address stored.</p>
-<p>You can optionally pass an array of contracts, or an array of arrays, to speed up deployment of multiple contracts. Additionally, the last argument is an optional object that observes a single key, <code>overwrite</code>. If <code>overwrite</code> is set to <code>false</code>, the deployer won&#39;t deploy this contract if one has already been deployed. This is useful for certain circumstances where a contract address is provided by an external dependency.</p>
+<p>You can optionally pass an array of contracts, or an array of arrays, to speed up deployment of multiple contracts. Additionally, the last argument is an optional object that can include the key named <code>overwrite</code> as well as other transaction parameters such as <code>gas</code> and <code>from</code>. If <code>overwrite</code> is set to <code>false</code>, the deployer won&#39;t deploy this contract if one has already been deployed. This is useful for certain circumstances where a contract address is provided by an external dependency.</p>
 <p>Note that you will need to deploy and link any libraries your contracts depend on first before calling <code>deploy</code>. See the <code>link</code> function below for more details.</p>
+<p>For more information, please see the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> documentation.</p>
 <p>Examples:</p>
 <pre><code class="lang-javascript">// Deploy a single contract without constructor arguments
 deployer.deploy(A);
 
 // Deploy a single contract with constructor arguments
 deployer.deploy(A, arg1, arg2, ...);
+
+// Don&#39;t deploy this contract if it has already been deployed
+deployer.deploy(A, {overwrite: false});
+
+// Set a gas price and from address for the deployment
+deployer.deploy(A, {gas: 4612388, from: &quot;0x....&quot;});
 
 // Deploy multiple contracts, some with arguments and some without.
 // This is quicker than writing three `deployer.deploy()` statements as the deployer
