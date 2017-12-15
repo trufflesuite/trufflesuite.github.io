@@ -180,8 +180,8 @@ ubuntu@ubuntu-xenial:~$
 <pre><code class="lang-shell">ubuntu@ubuntu-xenial:~$ cd quorum-examples/7nodes/
 </code></pre>
 <p>Our Quorum client is nearly ready to go. We need to run two more commands within the virtual machine. The first one creates seven Quorum nodes we can use to simulate a real Quorum deployment &#8211; you only need to do this once, ever. The second one starts up those seven nodes; you should perform this one anytime you restart the virtual machine:</p>
-<pre><code class="lang-shell">ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ init.sh
-ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ start.sh
+<pre><code class="lang-shell">ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ raft-init.sh
+ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ raft-start.sh
 </code></pre>
 <p>Success! We now have seven Quorum nodes set up that we can use to represent seven different actors on our private network.</p>
 <h2><a name="2-setting-up-truffle" class="anchor" href="#2-setting-up-truffle"><span class="header-link" style="z-index: 9999999778">&nbsp;</span></a>2. Setting up Truffle</h2><p>To set up Truffle, we&#39;re going to start by creating a bare Truffle project, without any contracts or code. Before doing this, make sure to open up a new command line window. We want to leave the old command line window alone, and let the Quorum example run without bothering it. In the new command line window, navigate to your workspace and create a new directory for your Truffle project. Note that if you&#39;re using Windows, the commands you&#39;ll type might be slightly different.</p>
@@ -190,7 +190,7 @@ $ mkdir myproject
 </code></pre>
 <p>Next, navigate to the new directory and initialize the bare Truffle project:</p>
 <pre><code class="lang-shell">$ cd myproject
-$ truffle init bare
+$ truffle init
 </code></pre>
 <p>If you look at the contents of the <code>myproject</code> directory, you&#39;ll notice folders were created for you. See the <a href="/docs/getting_started/project">Truffle documentation</a> for more information about Truffle&#39;s project structure.</p>
 <p>Before moving onto code, we need to configure Truffle to point to our running Quorum client. For this example, we&#39;ll change our <code>development</code> configuration within <code>truffle.js</code> to point to the first node available in the 7nodes example.</p>
@@ -200,7 +200,9 @@ module.exports = {
     development: {
       host: &quot;localhost&quot;,
       port: 22000, // was 8545
-      network_id: &quot;*&quot; // Match any network id
+      network_id: &quot;*&quot;, // Match any network id
+      gasPrice: 0,
+      gas: 4500000
     }
   }
 };
@@ -268,12 +270,16 @@ module.exports = {
     nodefour:  {
       host: &quot;localhost&quot;,
       port: 22003,
-      network_id: &quot;*&quot; // Match any network id
+      network_id: &quot;*&quot;, // Match any network id
+      gasPrice: 0,
+      gas: 4500000
     },
     nodeseven:  {
       host: &quot;localhost&quot;,
       port: 22006,
-      network_id: &quot;*&quot; // Match any network id
+      network_id: &quot;*&quot;, // Match any network id
+      gasPrice: 0,
+      gas: 4500000
     }
   }
 };
