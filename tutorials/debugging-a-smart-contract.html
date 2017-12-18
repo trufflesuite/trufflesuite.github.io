@@ -136,16 +136,16 @@
 <p><strong>Luckily, Truffle (as of version 4) has a built in debugger for stepping through your code.</strong> So when something goes wrong, you can find out exactly what it was, and fix it promptly.</p>
 <p>In this tutorial, we will migrate a basic contract to a test blockchain, introduce some errors into it, and solve each one through the use of the built-in Truffle debugger.</p>
 <h2><a name="a-basic-smart-contract" class="anchor" href="#a-basic-smart-contract"><span class="header-link" style="z-index: 9999999719">&nbsp;</span></a>A basic smart contract</h2><p>One of the most basic, non-trivial, types of smart contract is a <strong>simple storage contract</strong>. (This example was adapted from the <a href="https://solidity.readthedocs.io/en/develop/introduction-to-smart-contracts.html">Solidity documentation</a>.)</p>
-<pre><code class="lang-javascript">pragma solidity ^0.4.0;
+<pre><code class="lang-javascript">pragma solidity ^0.4.17;
 
 contract SimpleStorage {
   uint myVariable;
 
-  function set(uint x) {
+  function set(uint x) public {
     myVariable = x;
   }
 
-  function get() constant returns (uint) {
+  function get() constant public returns (uint) {
     return myVariable;
   }
 }
@@ -169,16 +169,16 @@ cd simple-storage
 <p>This will create directories such as <code>contracts/</code> and <code>migrations/</code>, and populate them with files we will use when we deploy our contract to the blockchain.</p>
 </li>
 <li><p>Inside the <code>contracts/</code> directory, create a file called <code>Store.sol</code> with the following content:</p>
-<pre><code class="lang-javascript">pragma solidity ^0.4.0;
+<pre><code class="lang-javascript">pragma solidity ^0.4.17;
 
 contract SimpleStorage {
   uint myVariable;
 
-  function set(uint x) {
+  function set(uint x) public {
     myVariable = x;
   }
 
-  function get() constant returns (uint) {
+  function get() constant public returns (uint) {
     return myVariable;
   }
 }
@@ -224,7 +224,7 @@ module.exports = function(deployer) {
 </code></pre>
 </li>
 </ol>
-<h2><a name="interacting-with-the-basic-smart-contract" class="anchor" href="#interacting-with-the-basic-smart-contract"><span class="header-link" style="z-index: 9999999717">&nbsp;</span></a>Interacting with the basic smart contract</h2><p>The smart contract is now deployed to a test network via <code>truffle develop</code>, which is a development blockchain built directly into Truffle, similar to the <a href="https://github.com/ethereumjs/testrpc">EthereumJS TestRPC</a>.</p>
+<h2><a name="interacting-with-the-basic-smart-contract" class="anchor" href="#interacting-with-the-basic-smart-contract"><span class="header-link" style="z-index: 9999999717">&nbsp;</span></a>Interacting with the basic smart contract</h2><p>The smart contract is now deployed to a test network via <code>truffle develop</code>, which launches a <a href="/docs/getting_started/console">console</a> against <a href="/ganache">Ganache</a>, a local development blockchain built right into Truffle.</p>
 <p>We next want to interact with the smart contract to see how it works when working correctly. We&#39;ll interact using the <code>truffle develop</code> console.</p>
 <p class="alert alert-info">
 <strong>Note</strong>: If you&#39;re wondering why we didn&#39;t need to mine to get the transaction to be secured, the Truffle Develop console already takes care of that for us. If using a different network, you&#39;ll need to make sure you mine to get the transaction on the blockchain.
@@ -283,7 +283,7 @@ module.exports = function(deployer) {
 <li><p>Open <code>Store.sol</code> from the <code>contracts/</code> directory in a text editor.</p>
 </li>
 <li><p>Replace the <code>set()</code> function with the following:</p>
-<pre><code class="lang-javascript">function set(uint x) {
+<pre><code class="lang-javascript">function set(uint x) public {
   while(true) {
     myVariable = x;
   }
@@ -347,7 +347,7 @@ module.exports = function(deployer) {
 
    Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
-   1: pragma solidity ^0.4.0;
+   1: pragma solidity ^0.4.17;
    2:
    3: contract SimpleStorage {
       ^^^^^^^^^^^^^^^^^^^^^^^
@@ -362,8 +362,8 @@ module.exports = function(deployer) {
 
 4:   uint myVariable;
 5:
-6:   function set(uint x) {
-     ^^^^^^^^^^^^^^^^^^^^^
+6: function set(uint x) public {
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 </code></pre>
 <p>Notice that the program has moved to the next instruction, located on line 6. (The carets point to the exact part of the instruction taking place.)</p>
 </li>
@@ -371,38 +371,65 @@ module.exports = function(deployer) {
 <pre><code class="lang-shell">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 5:
-6:   function set(uint x) {
-7:     while(true) {
-       ^^^^^^^^^^^^
+6: function set(uint x) public {
+7:   while(true) {
+     ^^^^^^^^^^^^
 </code></pre>
 </li>
-<li><p>Press Enter three more times:</p>
+<li><p>Keep pressing Enter:</p>
 <pre><code class="lang-shell">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
-6:   function set(uint x) {
-7:     while(true) {
-8:       myVariable = x;
-         ^^^^^^^^^^
-
-debug(develop:0xe4933407...)&gt;
-
-Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
-
-6:   function set(uint x) {
-7:     while(true) {
-8:       myVariable = x;
-         ^^^^^^^^^^^^^^
+5:
+6: function set(uint x) public {
+7:   while(true) {
+           ^^^^
 
 debug(develop:0xe4933407...)&gt;
 
 Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 5:
-6:   function set(uint x) {
-7:     while(true) {
-       ^^^^^^^^^^^^
+6: function set(uint x) public {
+7:   while(true) {
+     ^^^^^^^^^^^^
+
+debug(develop:0xe4933407...)&gt;
+
+Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+6: function set(uint x) public {
+7:   while(true) {
+8:     myVariable = x;
+                    ^
+
+debug(develop:0xe4933407...)&gt;
+
+Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+6: function set(uint x) public {
+7:   while(true) {
+8:     myVariable = x;
+       ^^^^^^^^^^
+
+debug(develop:0xe4933407...)&gt;
+
+Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+6: function set(uint x) public {
+7:   while(true) {
+8:     myVariable = x;
+       ^^^^^^^^^^^^^^
+
+debug(develop:0xe4933407...)&gt;
+
+Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+5:
+6: function set(uint x) public {
+7:   while(true) {
+     ^^^^^^^^^^^^
 </code></pre>
-<p>Notice that the bottom transaction is a repeat. In fact, pressing <code>Enter</code> over and over will repeat those last three transactions forever (or at least until the transaction runs out of gas). <strong>This tells you where the problem is.</strong></p>
+<p>Notice that the steps eventually repeat. In fact, pressing <code>Enter</code> over and over will repeat those transactions forever (or at least until the transaction runs out of gas). <strong>This tells you where the problem is.</strong></p>
 </li>
 <li><p>Type <code>q</code> to exit the debugger.</p>
 </li>
@@ -413,7 +440,7 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 <li><p>Open <code>Store.sol</code> again.</p>
 </li>
 <li><p>Replace the <code>set()</code> function with the following:</p>
-<pre><code class="lang-javascript">function set(uint x) {
+<pre><code class="lang-javascript">function set(uint x) public {
   assert(x == 0);
   myVariable = x;
 }
@@ -452,7 +479,7 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 <p>   Now we are back in the debugger:</p>
 <pre><code class="lang-shell">   Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
-   1: pragma solidity ^0.4.0;
+   1: pragma solidity ^0.4.17;
    2:
    3: contract SimpleStorage {
       ^^^^^^^^^^^^^^^^^^^^^^^
@@ -465,7 +492,7 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 5:
-6:   function set(uint x) {
+6:   function set(uint x) public {
 7:     assert(x == 0);
        ^^^^^^^^^^^^^^
 
@@ -492,7 +519,7 @@ contract code to determine the meaning of this error.
 
 event Even();
 
-function set(uint x) {
+function set(uint x) public {
   myVariable = x;
   if (x % 2 == 0) {
     Odd();
@@ -553,7 +580,7 @@ function set(uint x) {
 <li><p>Press <code>Enter</code> multiple times to cycle through the steps. Eventually you will see that the conditional leads to the <code>Odd()</code> event:</p>
 <pre><code class="lang-shell">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
-10:   function set(uint x) {
+10:   function set(uint x) public {
 11:     myVariable = x;
 12:     if (x % 2 == 0) {
         ^^^^^^^^^^^^^^^^
