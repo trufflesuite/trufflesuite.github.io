@@ -127,14 +127,14 @@
       <p></div><div class="pet-shop-header">
   <img src="/tutorials/images/pet-shop/petshop.png" alt="Ethereum Pet Shop">
 </div><div class="container container-narrow"></p>
-<h1><a name="ethereum-pet-shop" class="anchor" href="#ethereum-pet-shop"><span class="header-link" style="z-index: 9999999661">&nbsp;</span></a>Ethereum Pet Shop</h1><p>This series of tutorials will take you through building your first dapp&#8212;an adoption tracking system for a pet shop!</p>
+<h1><a name="ethereum-pet-shop" class="anchor" href="#ethereum-pet-shop"><span class="header-link" style="z-index: 9999999661">&nbsp;</span></a>Ethereum Pet Shop</h1><p>This tutorial will take you through the process of building your first dapp&#8212;an adoption tracking system for a pet shop!</p>
 <p>This tutorial is meant for those with a basic knowledge of Ethereum and smart contracts, who have some knowledge of HTML and JavaScript, but who are new to dapps.</p>
 <p class="alert alert-info">
 <strong>Note</strong>: For Ethereum basics, please read the Truffle <a href="/tutorials/ethereum-overview">Ethereum Overview</a> tutorial before proceeding.
 </p>
 
 <p>In this tutorial we will be covering:</p>
-<ul>
+<ol>
 <li>Setting up the development environment</li>
 <li>Creating a Truffle project using a Truffle Box</li>
 <li>Writing the smart contract</li>
@@ -142,18 +142,23 @@
 <li>Testing the smart contract</li>
 <li>Creating a user interface to interact with the smart contract</li>
 <li>Interacting with the dapp in a browser</li>
-</ul>
+</ol>
 <h2><a name="background" class="anchor" href="#background"><span class="header-link" style="z-index: 9999999660">&nbsp;</span></a>Background</h2><p>Pete Scandlon of Pete&#39;s Pet Shop is interested in using Ethereum as an efficient way to handle their pet adoptions. The store has space for 16 pets at a given time, and they already have a database of pets. As an initial proof of concept, <strong>Pete wants to see a dapp which associates an Ethereum address with a pet to be adopted.</strong></p>
 <p>The website structure and styling will be supplied. <strong>Our job is to write the smart contract and front-end logic for its usage.</strong></p>
 <h2><a name="setting-up-the-development-environment" class="anchor" href="#setting-up-the-development-environment"><span class="header-link" style="z-index: 9999999659">&nbsp;</span></a>Setting up the development environment</h2><p>There are a few technical requirements before we start. Please install the following:</p>
 <ul>
-<li><a href="https://nodejs.org/en/">Node.js v6+ LTS and npm (comes with Node)</a></li>
+<li><a href="https://nodejs.org/en/">Node.js v6+ LTS and npm</a> (comes with Node)</li>
 <li><a href="https://git-scm.com/">Git</a></li>
 </ul>
 <p>Once we have those installed, we only need one command to install Truffle:</p>
 <pre><code class="lang-shell">npm install -g truffle
 </code></pre>
 <p>To verify that Truffle is installed properly, type <code>truffle version</code> on a terminal. If you see an error, make sure that your npm modules are added to your path.</p>
+<p>We also will be using <a href="/ganache">Ganache</a>, a personal blockchain for Ethereum development you can use to deploy contracts, develop applications, and run tests. You can download Ganache by navigating to <a href="http://truffleframework.com/ganache">http://truffleframework.com/ganache</a> and clicking the &quot;Download&quot; button.</p>
+<p class="alert alert-info">
+<strong>Note</strong>: If you are developing in an environment without a graphical interface, you can also use Truffle Develop, Truffle&#39;s built-in personal blockchain, instead of Ganache. You will need to change some settings&#8212;such as the port the blockchain runs on&#8212;to adapt the tutorial for Truffle Develop.
+</p>
+
 <h2><a name="creating-a-truffle-project-using-a-truffle-box" class="anchor" href="#creating-a-truffle-project-using-a-truffle-box"><span class="header-link" style="z-index: 9999999658">&nbsp;</span></a>Creating a Truffle project using a Truffle Box</h2><ol>
 <li><p>Truffle initializes in the current directory, so first create a directory in your development folder of choice and then moving inside it.</p>
 <pre><code class="lang-shell">mkdir pet-shop-tutorial
@@ -183,7 +188,7 @@ cd pet-shop-tutorial
 <li><p>Create a new file named <code>Adoption.sol</code> in the <code>contracts/</code> directory.</p>
 </li>
 <li><p>Add the following content to the file:</p>
-<pre><code class="lang-javascript">pragma solidity ^0.4.4;
+<pre><code class="lang-javascript">pragma solidity ^0.4.17;
 
 contract Adoption {
 
@@ -193,7 +198,7 @@ contract Adoption {
 </ol>
 <p>Things to notice:</p>
 <ul>
-<li>The minimum version of Solidity required is noted at the top of the contract: <code>pragma solidity ^0.4.4;</code>. The <code>pragma</code> command means &quot;<em>additional information that only the compiler cares about</em>&quot;, while the caret symbol (^) means &quot;<em>the version indicated or higher</em>&quot;.</li>
+<li>The minimum version of Solidity required is noted at the top of the contract: <code>pragma solidity ^0.4.17;</code>. The <code>pragma</code> command means &quot;<em>additional information that only the compiler cares about</em>&quot;, while the caret symbol (^) means &quot;<em>the version indicated or higher</em>&quot;.</li>
 <li>Like JavaScript or PHP, statements are terminated with semicolons.</li>
 </ul>
 <h3><a name="variable-setup" class="anchor" href="#variable-setup"><span class="header-link" style="z-index: 9999999655">&nbsp;</span></a>Variable setup</h3><p>Solidity is a statically-typed language, meaning data types like strings, integers, and arrays must be defined. <strong>Solidity has a unique type called an address</strong>. Addresses are Ethereum addresses, stored as 20 byte values. Every account and smart contract on the Ethereum blockchain has an address and can send and receive Ether to and from this address.</p>
@@ -214,7 +219,7 @@ contract Adoption {
 <ol>
 <li><p>Add the following function to the smart contract after the variable declaration we set up above.</p>
 <pre><code class="lang-javascript">// Adopting a pet
-function adopt(uint petId) public returns (uint) {
+function adopt(uint petId) public view returns (uint) {
   require(petId &gt;= 0 &amp;&amp; petId &lt;= 15);
 
   adopters[petId] = msg.sender;
@@ -235,6 +240,7 @@ function adopt(uint petId) public returns (uint) {
 <li><p>Finally, we return the <code>petId</code> provided as a confirmation.</p>
 </li>
 </ul>
+<!-- ADD SOMETHING ABOUT PUBLIC VIEW? -->
 <h3><a name="your-second-function-retrieving-the-adopters" class="anchor" href="#your-second-function-retrieving-the-adopters"><span class="header-link" style="z-index: 9999999653">&nbsp;</span></a>Your second function: Retrieving the adopters</h3><p>As mentioned above, array getters return only a single value from a given key. Our UI needs to update all pet adoption statuses, but making 16 API calls is not ideal. So our next step is to write a function to return the entire array.</p>
 <ol>
 <li><p>Add the following <code>getAdopters()</code> function to the smart contract, after the <code>adopt()</code> function we added above:</p>
@@ -250,34 +256,24 @@ function getAdopters() public returns (address[16]) {
 <p>Truffle has a built-in developer console, which we call Truffle Develop, which generates a development blockchain that we can use to test deploy contracts. It also has the ability to run Truffle commands directly from the console. We will use Truffle Develop to perform most of the actions on our contract in this tutorial.</p>
 <h3><a name="compilation" class="anchor" href="#compilation"><span class="header-link" style="z-index: 9999999651">&nbsp;</span></a>Compilation</h3><p>Solidity is a compiled language, meaning we need to compile our Solidity to bytecode for the Ethereum Virtual Machine (EVM) to execute. Think of it as translating our human-readable Solidity into something the EVM understands.</p>
 <ol>
-<li><p>Launch Truffle Develop. Make sure you are in the directory that contains the dapp.</p>
-<pre><code class="lang-shell">truffle develop
-</code></pre>
-<p>You will see a prompt that shows that you are now in Truffle Develop. All commands will be run from this console unless otherwise stated.</p>
-<pre><code class="lang-shell">truffle(develop)&gt;
+<li><p>In a terminal, make sure you are in the root of the directory that contains the dapp and type:</p>
+<pre><code class="lang-shell">truffle compile
 </code></pre>
 <p class="alert alert-info">
 <strong>Note</strong>: If you&#39;re on Windows and encountering problems running this command, please see the documentation on <a href="/docs/advanced/configuration#resolving-naming-conflicts-on-windows">resolving naming conflicts on Windows</a>.
 </p>
-</li>
-<li><p>Compile the dapp:</p>
-<pre><code class="lang-shell">compile
-</code></pre>
+
 <p>You should see output similar to the following:</p>
 <pre><code class="lang-shell">Compiling ./contracts/Migrations.sol...
 Compiling ./contracts/Adoption.sol...
 Writing artifacts to ./build/contracts
 </code></pre>
-<p class="alert alert-info">
-<strong>Note</strong>: If you&#39;re not using Truffle Develop, these commands can be used on your terminal by prefixing them with <code>truffle</code>. As in, to compile, run <code>truffle compile</code> on a terminal.<br/><br/>However, if you&#39;re not using Truffle Develop, you&#39;ll have to use another test blockchain such as the <a href="https://github.com/ethereumjs/testrpc">TestRPC</a>.
-</p>
-
 </li>
 </ol>
 <h3><a name="migration" class="anchor" href="#migration"><span class="header-link" style="z-index: 9999999650">&nbsp;</span></a>Migration</h3><p>Now that we&#39;ve successfully compiled our contracts, it&#39;s time to migrate them to the blockchain!</p>
 <p><strong>A migration is a deployment script meant to alter the state of your application&#39;s contracts</strong>, moving it from one state to the next. For the first migration, you might just be deploying new code, but over time, other migrations might move data around or replace a contract with a new one.</p>
 <p class="alert alert-info">
-  <strong>Note</strong>: Read more about <a href="/docs/getting_started/migrations">migrations</a> in the Truffle documentation.
+  <strong>Note</strong>: Read more about migrations in the <a href="/docs/getting_started/migrations">Truffle documentation</a>.
 </p>
 
 <p>You&#39;ll see one JavaScript file already in the <code>migrations/</code> directory: <code>1_initial_migration.js</code>. This handles deploying the <code>Migrations.sol</code> contract to observe subsequent smart contract migrations, and ensures we don&#39;t double-migrate unchanged contracts in the future.</p>
@@ -293,33 +289,49 @@ module.exports = function(deployer) {
 };
 </code></pre>
 </li>
-<li><p>Back in our console, migrate the contract to the blockchain.</p>
-<pre><code class="lang-shell">migrate
+<li><p>Before we can migrate our contract to the blockchain, we need to have a blockchain running. For this tutorial, we&#39;re going to use <a href="/ganache">Ganache</a>, a personal blockchain for Ethereum development you can use to deploy contracts, develop applications, and run tests. If you haven&#39;t already, <a href="/ganache">download Ganache</a> and double click the icon to launch the application. This will generate a blockchain running locally on port 7545.</p>
+<p class="alert alert-info">
+  <strong>Note</strong>: Read more about Ganache in the <a href="/docs/ganache/using">Truffle documentation</a>.
+</p>
+
+<p><img src="/tutorials/images/pet-shop/ganache-initial.png" alt="Ganache on first launch"></p>
+<p><em>Ganache on first launch</em></p>
+</li>
+<li><p>Back in our terminal, migrate the contract to the blockchain.</p>
+<pre><code class="lang-shell">truffle migrate
 </code></pre>
 <p>You should see output similar to the following:</p>
-<pre><code class="lang-shell">Using network &#39;develop&#39;.
+<pre><code class="lang-shell">Using network &#39;development&#39;.
 
 Running migration: 1_initial_migration.js
   Deploying Migrations...
-  Migrations: 0x75175eb116b36ff5fef15ebd15cbab01b50b50d1
+  ... 0xcc1a5aea7c0a8257ba3ae366b83af2d257d73a5772e84393b0576065bf24aedf
+  Migrations: 0x8cdaf0cd259887258bc13a92c0a6da92698644c0
 Saving successful migration to network...
+  ... 0xd7bc86d31bee32fa3988f1c1eabce403a1b5d570340a3a9cdba53a472ee8c956
 Saving artifacts...
 Running migration: 2_deploy_contracts.js
   Deploying Adoption...
-  Adoption: 0xb9f485451a945e65e48d9dd7fc5d759af0a89e21
+  ... 0x43b6a6888c90c38568d4f9ea494b9e2a22f55e506a8197938fb1bb6e5eaa5d34
+  Adoption: 0x345ca3e014aaf5dca488057592ee47305d9b3e10
 Saving successful migration to network...
+  ... 0xf36163615f41ef7ed8f4a8f192149a0bf633fe1a2398ce001bf44c43dc7bdda0
 Saving artifacts...
 </code></pre>
+<p>You can see the migrations being executed in order, followed by the blockchain address of each deployed contract. (Your addresses will differ.)</p>
+</li>
+<li><p>In Ganache, note that the state of the blockchain has changed. The blockchain now shows that the current block, previously <code>0</code>, is now <code>4</code>. In addition, while the first account originally had 100 ether, it is now lower, due to the transaction costs of migration. We&#39;ll talk more about transaction costs later.</p>
+<p><img src="/tutorials/images/pet-shop/ganache-migrated.png" alt="Ganache after migration"></p>
+<p><em>Ganache after migration</em></p>
 </li>
 </ol>
-<p>You can see the migrations being executed in order, followed by the blockchain address of each deployed contract. (Your addresses will differ.)</p>
-<p>You&#39;ve now written your first smart contract and deployed it to a locally running test blockchain. It&#39;s time to interact with our smart contract now to make sure it does what we want.</p>
+<p>You&#39;ve now written your first smart contract and deployed it to a locally running blockchain. It&#39;s time to interact with our smart contract now to make sure it does what we want.</p>
 <h2><a name="testing-the-smart-contract" class="anchor" href="#testing-the-smart-contract"><span class="header-link" style="z-index: 9999999649">&nbsp;</span></a>Testing the smart contract</h2><p>Truffle is very flexible when it comes to smart contract testing, in that tests can be written either in JavaScript or Solidity. In this tutorial, we&#39;ll be writing our tests in Solidity.</p>
 <ol>
 <li><p>Create a new file named <code>TestAdoption.sol</code> in the <code>test/</code> directory.</p>
 </li>
 <li><p>Add the following content to the <code>TestAdoption.sol</code> file:</p>
-<pre><code class="lang-javascript">pragma solidity ^0.4.11;
+<pre><code class="lang-javascript">pragma solidity ^0.4.17;
 
 import &quot;truffle/Assert.sol&quot;;
 import &quot;truffle/DeployedAddresses.sol&quot;;
@@ -335,7 +347,7 @@ contract TestAdoption {
 <p>We start the contract off with 3 imports:</p>
 <ul>
 <li><code>Assert.sol</code>: Gives us various assertions to use in our tests. In testing, <strong>an assertion checks for things like equality, inequality or emptiness to return a pass/fail</strong> from our test. <a href="https://github.com/trufflesuite/truffle-core/blob/master/lib/testing/Assert.sol">Here&#39;s a full list of the assertions included with Truffle</a>.</li>
-<li><code>DeployedAddresses.sol</code>: When running tests, Truffle will deploy a fresh instance of the contract being tested to the TestRPC. This smart contract gets the address of the deployed contract.</li>
+<li><code>DeployedAddresses.sol</code>: When running tests, Truffle will deploy a fresh instance of the contract being tested to the blockchain. This smart contract gets the address of the deployed contract.</li>
 <li><code>Adoption.sol</code>: The smart contract we want to test.</li>
 </ul>
 <p class="alert alert-info">
@@ -347,7 +359,7 @@ contract TestAdoption {
 <ol>
 <li><p>Add the following function within the <code>TestAdoption.sol</code> smart contract, after the declaration of <code>Adoption</code>:</p>
 <pre><code class="lang-javascript">// Testing the adopt() function
-function testUserCanAdoptPet() {
+function testUserCanAdoptPet() public {
   uint returnedId = adoption.adopt(8);
 
   uint expected = 8;
@@ -367,7 +379,7 @@ function testUserCanAdoptPet() {
 <ol>
 <li><p>Add this function below the previously added function in <code>TestAdoption.sol</code>.</p>
 <pre><code class="lang-javascript">// Testing retrieval of a single pet&#39;s owner
-function testGetAdopterAddressByPetId() {
+function testGetAdopterAddressByPetId() public {
   // Expected owner is this contract
   address expected = this;
 
@@ -383,7 +395,7 @@ function testGetAdopterAddressByPetId() {
 <ol>
 <li><p>Add this function below the previously added function in <code>TestAdoption.sol</code>.</p>
 <pre><code class="lang-javascript">// Testing retrieval of all pet owners
-function testGetAdopterAddressByPetIdInArray() {
+function testGetAdopterAddressByPetIdInArray() public {
   // Expected owner is this contract
   address expected = this;
 
@@ -397,14 +409,14 @@ function testGetAdopterAddressByPetIdInArray() {
 </ol>
 <p>Note the <strong>memory</strong> attribute on <code>adopters</code>. The memory attribute tells Solidity to temporarily store the value in memory, rather than saving it to the contract&#39;s storage. Since <code>adopters</code> is an array, and we know from the first adoption test that we adopted pet <code>8</code>, we compare the testing contracts address with location <code>8</code> in the array.</p>
 <h3><a name="running-the-tests" class="anchor" href="#running-the-tests"><span class="header-link" style="z-index: 9999999645">&nbsp;</span></a>Running the tests</h3><ol>
-<li><p>Back in Truffle Develop, run the tests:</p>
-<pre><code class="lang-shell">test
+<li><p>Back in the terminal, run the tests:</p>
+<pre><code class="lang-shell">truffle test
 </code></pre>
 </li>
 <li><p>If all the tests pass, you&#39;ll see console output similar to this:</p>
 </li>
 </ol>
-<pre><code class="lang-shell">   Using network &#39;develop&#39;.
+<pre><code class="lang-shell">   Using network &#39;development&#39;.
 
    Compiling ./contracts/Adoption.sol...
    Compiling ./test/TestAdoption.sol...
@@ -432,8 +444,8 @@ function testGetAdopterAddressByPetIdInArray() {
 if (typeof web3 !== &#39;undefined&#39;) {
   App.web3Provider = web3.currentProvider;
 } else {
-  // If no injected web3 instance is detected, fallback to the TestRPC
-  App.web3Provider = new Web3.providers.HttpProvider(&#39;http://localhost:8545&#39;);
+  // If no injected web3 instance is detected, fall back to Ganache
+  App.web3Provider = new Web3.providers.HttpProvider(&#39;http://localhost:7545&#39;);
 }
 web3 = new Web3(App.web3Provider);
 </code></pre>
@@ -544,7 +556,7 @@ web3.eth.getAccounts(function(error, accounts) {
 </li>
 </ul>
 <h2><a name="interacting-with-the-dapp-in-a-browser" class="anchor" href="#interacting-with-the-dapp-in-a-browser"><span class="header-link" style="z-index: 9999999639">&nbsp;</span></a>Interacting with the dapp in a browser</h2><p>Now we&#39;re ready to use our dapp!</p>
-<h3><a name="installing-and-configuring-metamask" class="anchor" href="#installing-and-configuring-metamask"><span class="header-link" style="z-index: 9999999638">&nbsp;</span></a>Installing and configuring MetaMask</h3><p>The easiest way to interact with our dapp in a browser is through <a href="https://metamask.io/">MetaMask</a>, an extension for Chrome.</p>
+<h3><a name="installing-and-configuring-metamask" class="anchor" href="#installing-and-configuring-metamask"><span class="header-link" style="z-index: 9999999638">&nbsp;</span></a>Installing and configuring MetaMask</h3><p>The easiest way to interact with our dapp in a browser is through <a href="https://metamask.io/">MetaMask</a>, a browser extension for both Chrome and Firefox.</p>
 <ol>
 <li><p>Install MetaMask in your browser.</p>
 </li>
@@ -562,7 +574,7 @@ web3.eth.getAccounts(function(error, accounts) {
 <p><img src="/tutorials/images/pet-shop/metamask-initial.png" alt="Initial screen"></p>
 <p><em>MetaMask initial screen</em></p>
 </li>
-<li><p>In the box marked <strong>Wallet Seed</strong>, enter the mnemonic that was displayed when launching Truffle Develop:</p>
+<li><p>In the box marked <strong>Wallet Seed</strong>, enter the mnemonic that is displayed in Ganache:</p>
 <pre><code class="lang-shell">candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
 </code></pre>
 <p class="alert alert-danger">
@@ -577,13 +589,13 @@ web3.eth.getAccounts(function(error, accounts) {
 <p><img src="/tutorials/images/pet-shop/metamask-networkmenu.png" alt="MetaMask network menu"></p>
 <p><em>MetaMask network menu</em></p>
 </li>
-<li><p>In the box titled &quot;New RPC URL&quot; enter <code>http://localhost:9545</code> and click <strong>Save</strong>.</p>
+<li><p>In the box titled &quot;New RPC URL&quot; enter <code>http://127.0.0.1:7545</code> and click <strong>Save</strong>.</p>
 <p><img src="/tutorials/images/pet-shop/metamask-customrpc.png" alt="MetaMask Custom RPC"></p>
 <p><em>MetaMask Custom RPC</em></p>
 <p>The network name at the top will switch to say &quot;Private Network&quot;.</p>
 </li>
 <li><p>Click the left-pointing arrow next to &quot;Settings&quot; to close out of the page and return to the Accounts page.</p>
-<p>Each account created by Truffle Develop is given 100 ether. You&#39;ll notice it&#39;s slightly less on the first account because some gas was used when the contract itself was deployed.</p>
+<p>Each account created by Truffle Develop is given 100 ether. You&#39;ll notice it&#39;s slightly less on the first account because some gas was used when the contract itself was deployed and when the tests were run.</p>
 <p><img src="/tutorials/images/pet-shop/metamask-account1.png" alt="MetaMask account configured"></p>
 <p><em>MetaMask account configured</em></p>
 <p>Configuration is now complete.</p>
@@ -632,6 +644,7 @@ web3.eth.getAccounts(function(error, accounts) {
 <p>And in MetaMask, you&#39;ll see the transaction listed:</p>
 <p><img src="/tutorials/images/pet-shop/metamask-transactionsuccess.png" alt="MetaMask transaction"></p>
 <p><em>MetaMask transaction</em></p>
+<p>You&#39;ll also see the same transaction listed in Ganache under the &quot;Transactions&quot; section.</p>
 </li>
 </ol>
 <p>Congratulations! You have taken a huge step to becoming a full-fledged dapp developer. For developing locally, you have all the tools you need to start making more advanced dapps. If you&#39;d like to make your dapp live for others to use, stay tuned for our future tutorial on deploying to the Ropsten testnet.</p>
