@@ -428,7 +428,7 @@ function testGetAdopterAddressByPetIdInArray() {
 <li><p>Examine the file. Note that there is a global <code>App</code> object to manage our application, load in the pet data in <code>init()</code> and then call the function <code>initWeb3()</code>. The <a href="https://github.com/ethereum/web3.js/">web3 JavaScript library</a> interacts with the Ethereum blockchain. It can retrieve user accounts, send transactions, interact with smart contracts, and more.</p>
 </li>
 <li><p>Remove the multi-line comment from within <code>initWeb3</code> and replace it with the following:</p>
-<pre><code class="lang-javascript">// Is there is an injected web3 instance?
+<pre><code class="lang-javascript">// Is there an injected web3 instance?
 if (typeof web3 !== &#39;undefined&#39;) {
   App.web3Provider = web3.currentProvider;
 } else {
