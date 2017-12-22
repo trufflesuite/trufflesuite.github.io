@@ -251,7 +251,7 @@ var contract = require(&quot;truffle-contract&quot;);
 var MyContract = contract(json);
 
 // Step 3: Provision the contract with a web3 provider
-MyContract.setProvider(new Web3.providers.HttpProvider(&quot;http://localhost:8545&quot;));
+MyContract.setProvider(new Web3.providers.HttpProvider(&quot;http://127.0.0.1:8545&quot;));
 
 // Step 4: Use the contract!
 MyContract.deployed().then(function(deployed) {

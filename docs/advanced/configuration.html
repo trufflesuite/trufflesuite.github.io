@@ -208,14 +208,14 @@
 <pre><code class="lang-javascript">module.exports = {
   networks: {
     development: {
-      host: &quot;localhost&quot;,
+      host: &quot;127.0.0.1&quot;,
       port: 8545,
       network_id: &quot;*&quot; // Match any network id
     }
   }
 };
 </code></pre>
-<p>The default configuration ships with configuration for a single development network, running on <code>localhost:8545</code>. There are many other configuration options, detailed below.</p>
+<p>The default configuration ships with configuration for a single development network, running on <code>127.0.0.1:8545</code>. There are many other configuration options, detailed below.</p>
 <h3><a name="resolving-naming-conflicts-on-windows" class="anchor" href="#resolving-naming-conflicts-on-windows"><span class="header-link" style="z-index: 9999999935">&nbsp;</span></a>Resolving naming conflicts on Windows</h3><p>When using the Command Prompt on Windows, the default configuration file name can cause a conflict with the <code>truffle</code> executable, and so <strong>you may not be able to run Truffle commands properly on existing projects</strong>.</p>
 <p>This is because of the way that command precedence works on the Command Prompt. The <code>truffle.cmd</code> executable is on the path as part of the npm package, but the <code>truffle.js</code> configuration file is in the actual directory where the <code>truffle</code> command is run. Because <code>.js</code> is an acceptable executable extension by default, <code>truffle.js</code> takes precedence over <code>truffle.cmd</code>, causing unexpected results.</p>
 <p>Any of the following solutions will remedy this issue:</p>
@@ -234,7 +234,7 @@
 <p>Example:</p>
 <pre><code class="lang-javascript">networks: {
   development: {
-    host: &quot;localhost&quot;,
+    host: &quot;127.0.0.1&quot;,
     port: 8545,
     network_id: &quot;*&quot; // match any network
   },
@@ -268,7 +268,7 @@
     network_id: &#39;3&#39;,
   },
   test: {
-    provider: new HDWalletProvider(mnemonic, &quot;http://localhost:8545/&quot;),
+    provider: new HDWalletProvider(mnemonic, &quot;http://127.0.0.1:8545/&quot;),
     network_id: &#39;*&#39;,
   },
 }
@@ -283,7 +283,7 @@
   },
   test: {
     provider: function() {
-      return new HDWalletProvider(mnemonic, &quot;http://localhost:8545/&quot;);
+      return new HDWalletProvider(mnemonic, &quot;http://127.0.0.1:8545/&quot;);
     },
     network_id: &#39;*&#39;,
   },
@@ -297,7 +297,7 @@
   contracts_build_directory: &quot;./output&quot;,
   networks: {
     development: {
-      host: &quot;localhost&quot;,
+      host: &quot;127.0.0.1&quot;,
       port: 8545,
       network_id: &quot;*&quot;,
     }
@@ -309,7 +309,7 @@
   contracts_build_directory: &quot;../../../output&quot;,
   networks: {
     development: {
-      host: &quot;localhost&quot;,
+      host: &quot;127.0.0.1&quot;,
       port: 8545,
       network_id: &quot;*&quot;,
     }
