@@ -219,7 +219,7 @@ contract Adoption {
 <ol>
 <li><p>Add the following function to the smart contract after the variable declaration we set up above.</p>
 <pre><code class="lang-javascript">// Adopting a pet
-function adopt(uint petId) public view returns (uint) {
+function adopt(uint petId) public returns (uint) {
   require(petId &gt;= 0 &amp;&amp; petId &lt;= 15);
 
   adopters[petId] = msg.sender;
@@ -245,7 +245,7 @@ function adopt(uint petId) public view returns (uint) {
 <ol>
 <li><p>Add the following <code>getAdopters()</code> function to the smart contract, after the <code>adopt()</code> function we added above:</p>
 <pre><code class="lang-javascript">// Retrieving the adopters
-function getAdopters() public returns (address[16]) {
+function getAdopters() public view returns (address[16]) {
   return adopters;
 }
 </code></pre>
