@@ -32,14 +32,14 @@
     
     <meta property="og:site_name" content="Truffle Suite" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Beta: Solidity Unit Tests | Truffle Suite" />
+    <meta property="og:title" content="TestRPC is now Ganache | Truffle Suite" />
     <meta property="og:url" content="http://truffleframework.com" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Beta: Solidity Unit Tests | Truffle Suite" />
+    <meta name="twitter:title" content="TestRPC is now Ganache | Truffle Suite" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Suite" />
     <meta name="twitter:domain" content="truffleframework.com" />
@@ -49,7 +49,7 @@
     
 
     <title>
-    Beta: Solidity Unit Tests | 
+    TestRPC is now Ganache | 
     Truffle Suite
     
     </title>
@@ -124,94 +124,30 @@
 
   <section class="MainContent">
     <div class="container container-narrow">
-      <h1><a name="in-beta-solidity-unit-tests" class="anchor" href="#in-beta-solidity-unit-tests"><span class="header-link" style="z-index: 9999999625">&nbsp;</span></a>In Beta: Solidity Unit Tests</h1><p>This is a beta document and refers to the <code>beta</code> version of Truffle. The following features will not work unless you are using Truffle Beta.</p>
-<h2><a name="get-the-beta-version" class="anchor" href="#get-the-beta-version"><span class="header-link" style="z-index: 9999999624">&nbsp;</span></a>Get the Beta Version</h2><p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
-<pre><code>$ npm uninstall -g truffle
-</code></pre><p>And then install the beta version:</p>
-<pre><code>$ npm install -g truffle@beta
-</code></pre><h2><a name="overview" class="anchor" href="#overview"><span class="header-link" style="z-index: 9999999623">&nbsp;</span></a>Overview</h2><p>Solidity test contracts live alongside Javascript tests as <code>.sol</code> files. When <code>truffle test</code> is run, they will be included in the mocha run with a separate test suite per test contract. These contracts maintain all the benefits of the Javascript tests: namely a clean slate per test suite, access to deployed contracts via migrations, runnable on any Ethereum client, and usage of snapshot/revert features (if supported by your Ethereum client) for increased speed. An example solidity unit test looks like this:</p>
-<pre><code class="lang-solidity">import &quot;truffle/Assert.sol&quot;;
-import &quot;truffle/DeployedAddresses.sol&quot;;
-import &quot;../contracts/MetaCoin.sol&quot;;
-
-contract TestMetacoin {
-  function testInitialBalanceUsingDeployedContract() {
-    MetaCoin meta = MetaCoin(DeployedAddresses.MetaCoin());
-
-    uint expected = 10000;
-
-    Assert.equal(meta.getBalance(tx.origin), expected, &quot;Owner should have 10000 MetaCoin initially&quot;);
-  }
-
-  function testInitialBalanceWithNewMetaCoin() {
-    MetaCoin meta = new MetaCoin();
-
-    uint expected = 10000;
-
-    Assert.equal(meta.getBalance(tx.origin), expected, &quot;Owner should have 10000 MetaCoin initially&quot;);
-  }
-}
-</code></pre>
-<p>And when running the test:</p>
-<pre><code>$ truffle test
-Compiling ConvertLib.sol...
-Compiling MetaCoin.sol...
-Compiling ../test/TestMetacoin.sol...
-
-  TestMetacoin
-    ✓ testInitialBalanceUsingDeployedContract (61ms)
-    ✓ testInitialBalanceWithNewMetaCoin (69ms)
-
-  2 passing (3s)
-</code></pre><p>There are some very important structural items to discuss:</p>
+      <h1><a name="testrpc-is-now-ganache" class="anchor" href="#testrpc-is-now-ganache"><span class="header-link" style="z-index: 9999999970">&nbsp;</span></a>TestRPC is now Ganache</h1><p>Have you been looking for the TestRPC recently and haven&#39;t been able to find it?</p>
+<p>Don&#39;t worry, it&#39;s still here! It&#39;s just now known as <strong>Ganache</strong>.</p>
+<p>Ganache comes in two flavors: a fully-interactive development blockchain with a graphical interface, and the more familiar command-line version.</p>
 <ul>
-<li><p>First, your assertion functions are provided by the <code>truffle/Assert.sol</code> library. This is the default assertion library, however you can include your own assertion library so long as the library outputs the correct events to the test runner. You can find all available assertion functions in <a href="https://github.com/ConsenSys/truffle/blob/solidity-tests/lib/testing/Assert.sol">Assert.sol</a>. These functions are meant to mimic those available in your Javascript tests, and more documentation will be written about each function in the future.</p>
+<li><p><a href="/ganache">Get the graphical version here</a>.</p>
 </li>
-<li><p>The addresses of your deployed contracts (contracts that were deployed in your migration) are available through the <code>truffle/DeployedAddresses.sol</code> library. This is provided by Truffle and is recompiled and relinked before each suite is run to provide your tests with a clean slate deployment. This library provides functions for all of your deployed contracts, in the form of:</p>
-<pre><code class="lang-solidity">DeployedAddresses.&lt;contract name&gt;();
+<li><p>For the command-line version (known as <strong>Ganache CLI</strong>):</p>
+<pre><code class="lang-shell">npm install -g ganache-cli
 </code></pre>
-<p>This will return an address that you can then use to access that contract.</p>
-</li>
-<li><p>In order to use the deployed contract, you&#39;ll have to import the contract code first. Notice <code>import &quot;../contracts/MetaCoin.sol&quot;;</code> in the example. This import is relative to the test contract, which exists in the <code>./test</code> directory, and it goes outside of the test directory in order to find the MetaCoin contract. It then uses that contract in a test function below to cast the address to the <code>MetaCoin</code> type.</p>
-</li>
-<li><p>All test contracts must start with <code>Test</code>, using an uppercase <code>T</code>. This distinguishes this contract apart from test helpers and project contracts, letting the test runner know it represents a test contract.</p>
-</li>
-<li><p>Like test contract names, all test functions must start with <code>test</code>, all lowercase. Each test function is executed as a single transaction, in order of appearance in the test file (like your Javascript tests). Assertion functions provided by <code>truffle/Assert.sol</code> trigger events that the test runner evaluates to determine the result of the test. Assertion functions return a boolean representing the outcome of the assertion which you can use to return from the test early to prevent execution errors.</p>
-</li>
-<li><p>You are provided many test hooks, shown in the example below. These hooks are <code>beforeAll</code>, <code>beforeEach</code>, <code>afterAll</code> and <code>afterEach</code>, which are the same hooks provided by mocha in your Javascript tests. You can use these hooks to perform setup and teardown actions before and after each test, or before and after each suite is run. Like test functions, each hook is executed as a single transaction. Note that some complex tests will need to perform a significant amount of setup that might overflow the gas limit of a single transaction; you can get around this limitation by creating many hooks with different suffixes, like in the example test below:</p>
-<pre><code class="lang-solidity">import &quot;truffle/Assert.sol&quot;;
-
-contract TestHooks {
-  uint someValue;
-
-  function beforeEach() {
-    someValue = 5;
-  }
-
-  function beforeEachAgain() {
-    someValue += 1;
-  }
-
-  function testSomeValueIsSix() {
-    uint expected = 6;
-
-    Assert.equal(someValue, expected, &quot;someValue should have been 6&quot;);
-  }
-}
-</code></pre>
-<p>This test contract also shows that your test functions and hook functions all share the same contract state. You can setup contract data before the test, use that data during the test, and reset it afterward in preparation for the next one. Note that just like your Javascript tests, your next test function will continue from the state of the previous test function that ran.</p>
-</li>
-<li><p>You <strong>do not</strong> need to extend from any <code>Test</code> contract like in other solidity testing frameworks. This is to make writing solidity unit tests easier, and should allow for more extensibility in the future with less hassle.</p>
-</li>
-<li><p>Like Javascript tests, failing tests return the events that were fired (minus assertion events) so you can get a better sense of how your contracts-under-test performed.</p>
 </li>
 </ul>
+<h2><a name="a-little-history" class="anchor" href="#a-little-history"><span class="header-link" style="z-index: 9999999969">&nbsp;</span></a>A little history</h2><p>Prior to the existence of the TestRPC, you would have to deploy to private internal test networks to see how your contract code operated (as public test networks like Ropsten didn&#39;t yet exist!).</p>
+<p>While initially under the auspices of the <a href="https://github.com/ethereumjs/">EthereumJS project</a>, it was originally created by the Truffle team, and today we remain its primary maintainers. So simply for maintainability sake, it just made sense to bring the TestRPC under Truffle&#39;s wing.</p>
+<p>Additionally, we realized over time that the TestRPC was a poor name. The TestRPC quickly became more powerful than simply a blockchain environment used for testing. To stay with the sweet Truffle brand, we decided to rename it Ganache, as Ganache is (often) the core of your favorite chocolate truffle. It&#39;s a much catchier name (and a much tastier one too).</p>
+<h2><a name="multiple-ways-to-enjoy" class="anchor" href="#multiple-ways-to-enjoy"><span class="header-link" style="z-index: 9999999968">&nbsp;</span></a>Multiple ways to enjoy</h2><p>With this name change, we also released <a href="/ganache">a fully-interactive, graphical version of Ganache</a>.</p>
+<p>The command-line utility is still available via NPM; the <a href="https://github.com/trufflesuite/ganache-cli/blob/master/README.md">command line flags</a> are the same too. All that&#39;s changed is the name of the command.</p>
+<p>Ganache is also available as a library for your applications. See the <a href="https://github.com/trufflesuite/ganache-cli/blob/master/README.md">README</a> for more details.</p>
+<p>So now you have multiple ways to create a personal blockchain. If you&#39;re looking for a blockchain with a graphical environment that&#39;s perfect for beginners, check out <a href="/ganache">Ganache</a>. And if you want the familiar command-line interface, install Ganache CLI. Happy developing!</p>
 
     </div>
 
     <footer class="container">
       
-        <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/tutorials/solidity-unit-tests.md">Edit here &rarr;</a></p>
+        <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/blog/testrpc-is-now-ganache.md">Edit here &rarr;</a></p>
       
     </footer>
   </section>
