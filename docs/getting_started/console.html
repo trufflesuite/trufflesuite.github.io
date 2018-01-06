@@ -32,14 +32,14 @@
     
     <meta property="og:site_name" content="Truffle Suite" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Using the console | Truffle Suite" />
+    <meta property="og:title" content="Using Truffle Develop and the console | Truffle Suite" />
     <meta property="og:url" content="http://truffleframework.com" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Using the console | Truffle Suite" />
+    <meta name="twitter:title" content="Using Truffle Develop and the console | Truffle Suite" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Suite" />
     <meta name="twitter:domain" content="truffleframework.com" />
@@ -49,7 +49,7 @@
     
 
     <title>
-    Using the console | 
+    Using Truffle Develop and the console | 
     Truffle Suite
     
     </title>
@@ -168,7 +168,7 @@
                                 
                 <li class=""><a href="/docs/getting_started/debugging">Debugging your contracts</a></li>
                                 
-                <li class="active"><a href="/docs/getting_started/console">Using the console</a></li>
+                <li class="active"><a href="/docs/getting_started/console">Using Truffle Develop and the console</a></li>
                                 
                 <li class=""><a href="/docs/getting_started/scripts">Writing external scripts</a></li>
                                 
@@ -205,25 +205,107 @@
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="using-the-console" class="anchor" href="#using-the-console"><span class="header-link" style="z-index: 9999999878">&nbsp;</span></a>Using the console</h1><p>Sometimes it&#39;s nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. Truffle provides you an easy way to do this via an interactive console, with your contracts available and ready to use.</p>
-<h2><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999877">&nbsp;</span></a>Command</h2><p>To fire up the console, simply run:</p>
-<pre><code class="lang-none">$ truffle console
+          <h1><a name="using-truffle-develop-and-the-console" class="anchor" href="#using-truffle-develop-and-the-console"><span class="header-link" style="z-index: 9999999949">&nbsp;</span></a>Using Truffle Develop and the console</h1><p>Sometimes it&#39;s nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. Truffle provides you two easy ways to do this via an interactive console, with your contracts available and ready to use.</p>
+<ul>
+<li><strong>Truffle console</strong>: A basic interactive console connecting to any Ethereum client</li>
+<li><strong>Truffle Develop</strong>: An interactive console that also spawns a development blockchain</li>
+</ul>
+<h2><a name="why-two-different-consoles-" class="anchor" href="#why-two-different-consoles-"><span class="header-link" style="z-index: 9999999948">&nbsp;</span></a>Why two different consoles?</h2><p>Having two different consoles allows you to choose the best tool for your needs.</p>
+<p>Reasons to use <strong>Truffle console</strong>:</p>
+<ul>
+<li>You have a client you&#39;re already using, such as <a href="/docs/ganache/using">Ganache</a> or geth</li>
+<li>You want to migrate to a testnet (or the main Ethereum network)</li>
+<li>You want to use a specific mnemonic or account list</li>
+</ul>
+<p>Reasons to use <strong>Truffle Develop</strong>:</p>
+<ul>
+<li>You are testing your project with no intention of immediately deploying</li>
+<li>You don&#39;t need to work with specific accounts (and you&#39;re fine with using default development accounts)</li>
+<li>You don&#39;t want to install and manage a separate blockchain client</li>
+</ul>
+<h2><a name="commands" class="anchor" href="#commands"><span class="header-link" style="z-index: 9999999947">&nbsp;</span></a>Commands</h2><p>All commands require that you be in your project folder. You do not need to be at the root.</p>
+<h3><a name="console" class="anchor" href="#console"><span class="header-link" style="z-index: 9999999946">&nbsp;</span></a>Console</h3><p>To launch the console:</p>
+<pre><code class="lang-shell">truffle console
 </code></pre>
-<p>This will load up a console using the <code>development</code> network, if specified. You can override this using the <code>--network</code> option. See more details in the <a href="/docs/advanced/networks">Networks</a> section as well as the <a href="/docs/advanced/commands">command reference</a>.</p>
-<p>When you load the console, you&#39;ll immediately see output like this:</p>
-<pre><code>$ truffle console
-truffle(development)&gt;
-</code></pre><p>This tells you you&#39;re running within a Truffle console using the <code>development</code> network.</p>
-<h2><a name="features" class="anchor" href="#features"><span class="header-link" style="z-index: 9999999876">&nbsp;</span></a>Features</h2><p>The console provides all the features available in the Truffle command line tool. For instance, you can type <code>migrate --reset</code> within the console, and it will be interpreted the same as if you ran <code>truffle migrate --reset</code> from outside the console. Truffle&#39;s console additionally has the following features:</p>
+<p>This will look for a network definition called <code>development</code> in the configuration, and connect to it, if available. You can override this using the <code>--network &lt;name&gt;</code> option. See more details in the <a href="/docs/advanced/networks">Networks</a> section as well as the <a href="/docs/advanced/commands">command reference</a>.</p>
+<p>When you load the console, you&#39;ll immediately see the following prompt:</p>
+<pre><code class="lang-shell">truffle(development)&gt;
+</code></pre>
+<p>This tells you you&#39;re running within a Truffle console using the <code>development</code> network.</p>
+<h3><a name="truffle-develop" class="anchor" href="#truffle-develop"><span class="header-link" style="z-index: 9999999945">&nbsp;</span></a>Truffle Develop</h3><p>To launch Truffle Develop:</p>
+<pre><code class="lang-shell">truffle develop
+</code></pre>
+<p>This will spawn a development blockchain locally on port <code>9545</code>, regardless of what your <code>truffle.js</code> configuration file calls for.</p>
+<p>When you load Truffle Develop, you will see the following:</p>
+<pre><code class="lang-shell">Truffle Develop started at http://localhost:9545/
+
+Accounts:
+(0) 0x627306090abab3a6e1400e9345bc60c78a8bef57
+(1) 0xf17f52151ebef6c7334fad080c5704d77216b732
+(2) 0xc5fdf4076b8f3a5357c5e395ab970b5b54098fef
+(3) 0x821aea9a577a9b44299b9c15c88cf3087f3b5544
+(4) 0x0d1d4e623d10f9fba5db95830f7d3839406c6af2
+(5) 0x2932b7a2355d6fecc4b5c0b6bd44cc31df247a2e
+(6) 0x2191ef87e392377ec08e7c08eb105ef5448eced5
+(7) 0x0f4f2ac550a1b4e2280d04c21cea7ebd822934b5
+(8) 0x6330a553fc93768f612722bb8c2ec78ac90b3bbc
+(9) 0x5aeda56215b167893e80b4fe645ba6d5bab767de
+
+Private Keys:
+(0) c87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3
+(1) ae6ae8e5ccbfb04590405997ee2d52d2b330726137b875053c36d94e974d162f
+(2) 0dbbe8e4ae425a6d2687f1a7e3ba17bc98c673636790f1b8ad91193c05875ef1
+(3) c88b703fb08cbea894b6aeff5a544fb92e78a18e19814cd85da83b71f772aa6c
+(4) 388c684f0ba1ef5017716adb5d21a053ea8e90277d0868337519f97bede61418
+(5) 659cbb0e2411a44db63778987b1e22153c086a95eb6b18bdf89de078917abc63
+(6) 82d052c865f5763aad42add438569276c00d3d88a2d062d36b2bae914d58b8c8
+(7) aa3680d5d48a8283413f7a108367c7299ca73f553735860a87b08f39395618b7
+(8) 0f62d96d6675f32685bbdb8ac13cda7c23436f63efbb9d07700d8669ff12b7c4
+(9) 8d5366123cb560bb606379f90a0bfd4769eecc0557f1b362dcae9012b548b1e5
+
+Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
+</code></pre>
+<p>This shows you the addresses, private keys, and mnemonic for this particular blockchain.</p>
+<p class="alert alert-info">
+<strong>Note</strong>: The mnemonic and addresses cannot be changed. If you want to use a different mnemonic or set of addresses, we recommend using <a href="/docs/ganache/using">Ganache</a>.
+</p>
+
+<p class="alert alert-danger">
+<strong>Warning</strong>: Remember to never use any of these addresses or the mnemonic on the mainnet. This is for development only.
+</p>
+
+
+<h2><a name="features" class="anchor" href="#features"><span class="header-link" style="z-index: 9999999944">&nbsp;</span></a>Features</h2><p>Both Truffle Develop and the console provide most of the features available in the Truffle command line tool. For instance, you can type <code>migrate --reset</code> within the console, and it will be interpreted the same as if you ran <code>truffle migrate --reset</code> on the command line.</p>
+<p>Additionally, both Truffle Develop and the console additionally have the following features:</p>
 <ul>
 <li>All of your compiled contracts are available and ready for use.</li>
 <li>After each command (such as <code>migrate --reset</code>) your contracts are reprovisioned so you can start using the newly assigned addresses and binaries immediately.</li>
 <li>The <code>web3</code> library is made available and is set to connect to your Ethereum client.</li>
-<li>All commands that return a promise will automatically be resolved, and the result printed, removing the need to use <code>.then()</code> for simple commands. e.g.,</li>
-</ul>
-<pre><code>truffle(default)&gt; MyContract.at(&quot;0xabcd...&quot;).getValue.call(); 
-5
+<li><p>All commands that return a promise will automatically be resolved, and the result printed, removing the need to use <code>.then()</code> for simple commands. For example, the following command:</p>
+<pre><code class="lang-shell">MyContract.at(&quot;0xabcd...&quot;).getValue.call();
 </code></pre>
+<p>Will return something like:</p>
+<pre><code class="lang-shell">5
+</code></pre>
+</li>
+</ul>
+<h3><a name="commands-available" class="anchor" href="#commands-available"><span class="header-link" style="z-index: 9999999943">&nbsp;</span></a>Commands available</h3><ul>
+<li><code>build</code></li>
+<li><code>compile</code></li>
+<li><code>create</code></li>
+<li><code>debug</code></li>
+<li><code>exec</code></li>
+<li><code>install</code></li>
+<li><code>migrate</code></li>
+<li><code>networks</code></li>
+<li><code>opcode</code></li>
+<li><code>publish</code></li>
+<li><code>test</code></li>
+<li><code>version</code></li>
+</ul>
+<p>If a Truffle command is not available, it is because it is not relevant for an existing project (for example, <code>init</code>) or wouldn&#39;t make sense (for example, <code>develop</code> or <code>console</code>).</p>
+<p>See full <a href="/docs/advanced/commands">command reference</a> for more information.</p>
+
           <footer class="container-fluid">
             <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/docs/getting_started/console.md">Edit here &rarr;</a></p>
           </footer>
