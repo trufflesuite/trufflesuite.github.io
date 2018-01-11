@@ -125,22 +125,22 @@
 
   <section class="MainContent">
     <div class="container container-narrow">
-      <h1><a name="using-infura-or-a-custom-provider-" class="anchor" href="#using-infura-or-a-custom-provider-"><span class="header-link" style="z-index: 9999999591">&nbsp;</span></a>Using Infura (or a custom provider)</h1><p><a href="https://infura.io/">Infura</a> is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet.
+      <h1><a name="using-infura-or-a-custom-provider-" class="anchor" href="#using-infura-or-a-custom-provider-"><span class="header-link" style="z-index: 9999999587">&nbsp;</span></a>Using Infura (or a custom provider)</h1><p><a href="https://infura.io/">Infura</a> is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet.
 <img src="/tutorials/images/infura/infura.png" alt="Infura"></p>
 <p>You may not be familiar with Infura by name, but if you&#39;ve used <a href="https://metamask.io">MetaMask</a> then you&#39;ve used Infura, as it is the Ethereum provider that powers MetaMask.</p>
 <p>For security reasons, Infura does not manage your private keys, which means Infura cannot sign transactions on your behalf.</p>
 <p>However, Truffle can sign transactions through the use of its <code>HDWalletProvider</code>. This provider can handle the transaction signing as well as the connection to the Ethereum network. (<a href="https://github.com/trufflesuite/truffle-hdwallet-provider">Read more about HDWalletProvider</a>.)</p>
 <p>This tutorial will show you how to use Infura to migrate an existing dapp to an Ethereum network supported by Infura. In this specific instance, we&#39;ll migrate to Ropsten. We&#39;ll assume that you already have a dapp to migrate. If you want a test dapp, feel free to use our <a href="/tutorials/pet-shop">Pet Shop</a> tutorial dapp.</p>
-<h2><a name="install-hdwalletprovider" class="anchor" href="#install-hdwalletprovider"><span class="header-link" style="z-index: 9999999590">&nbsp;</span></a>Install HDWalletProvider</h2><p>Truffle&#39;s <code>HDWalletProvider</code> is a separate npm package:</p>
+<h2><a name="install-hdwalletprovider" class="anchor" href="#install-hdwalletprovider"><span class="header-link" style="z-index: 9999999586">&nbsp;</span></a>Install HDWalletProvider</h2><p>Truffle&#39;s <code>HDWalletProvider</code> is a separate npm package:</p>
 <pre><code class="lang-shell">npm install truffle-hdwallet-provider
 </code></pre>
 <p class="alert alert-info">
 <strong>Note</strong>: If you are on Windows and get an <code>MSBUILD</code> error, you may need to install the Windows build tools. In a terminal with Administrator rights, run <code>npm install -g windows-build-tools</code> and then try installation again.
 </p>
 
-<h2><a name="register-with-infura" class="anchor" href="#register-with-infura"><span class="header-link" style="z-index: 9999999589">&nbsp;</span></a>Register with Infura</h2><p>Before you can use Infura, you need to <a href="https://infura.io/register.html">register for an Infura Access Token</a>.</p>
+<h2><a name="register-with-infura" class="anchor" href="#register-with-infura"><span class="header-link" style="z-index: 9999999585">&nbsp;</span></a>Register with Infura</h2><p>Before you can use Infura, you need to <a href="https://infura.io/register.html">register for an Infura Access Token</a>.</p>
 <p>Fill out the form and you will receive your token. Your information will be sent to your email and displayed on the screen. Make sure you save this token and keep it private!</p>
-<h2><a name="configure-your-truffle-project" class="anchor" href="#configure-your-truffle-project"><span class="header-link" style="z-index: 9999999588">&nbsp;</span></a>Configure your Truffle project</h2><p>The next step is to edit your <code>truffle.js</code> file to use <code>HDWalletProvider</code> and provide all the necessary configuration for deploying to Ropsten.</p>
+<h2><a name="configure-your-truffle-project" class="anchor" href="#configure-your-truffle-project"><span class="header-link" style="z-index: 9999999584">&nbsp;</span></a>Configure your Truffle project</h2><p>The next step is to edit your <code>truffle.js</code> file to use <code>HDWalletProvider</code> and provide all the necessary configuration for deploying to Ropsten.</p>
 <ol>
 <li><p>First, define the <code>HDWalletProvider</code> object in your configuration file. Add this line at the top of your <code>truffle.js</code> file:</p>
 <pre><code class="lang-javascript">var HDWalletProvider = require(&quot;truffle-hdwallet-provider&quot;);
@@ -185,7 +185,7 @@
 </ul>
 </li>
 </ol>
-<h2><a name="use-an-ether-faucet" class="anchor" href="#use-an-ether-faucet"><span class="header-link" style="z-index: 9999999587">&nbsp;</span></a>Use an ether faucet</h2><p>Make sure you have enough ether in your account to do the deployment. You can acquire ether on the Ropsten network through a service known as a faucet. While there are multiple faucet sites out there, one service we recommend is hosted on <a href="https://ethtools.com/">EthTools</a>.</p>
+<h2><a name="use-an-ether-faucet" class="anchor" href="#use-an-ether-faucet"><span class="header-link" style="z-index: 9999999583">&nbsp;</span></a>Use an ether faucet</h2><p>Make sure you have enough ether in your account to do the deployment. You can acquire ether on the Ropsten network through a service known as a faucet. While there are multiple faucet sites out there, one service we recommend is hosted on <a href="https://ethtools.com/">EthTools</a>.</p>
 <ol>
 <li><p>Navigate to the <a href="https://ethtools.com/ropsten/tools/faucet/">EthTools Ether Faucet</a>.</p>
 </li>
@@ -201,7 +201,7 @@
 </li>
 </ol>
 <p>We are now ready to deploy to Ropsten!</p>
-<h2><a name="deploy-the-contract" class="anchor" href="#deploy-the-contract"><span class="header-link" style="z-index: 9999999586">&nbsp;</span></a>Deploy the contract</h2><ol>
+<h2><a name="deploy-the-contract" class="anchor" href="#deploy-the-contract"><span class="header-link" style="z-index: 9999999582">&nbsp;</span></a>Deploy the contract</h2><ol>
 <li><p>Compile your project, if not already done:</p>
 <pre><code class="lang-shell">truffle compile
 </code></pre>
