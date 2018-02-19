@@ -165,7 +165,7 @@ window.addEventListener(&#39;load&#39;, function() {
   } else {                                                      
     // No web3 detected. Show an error to the user or use Infura: https://infura.io/
   }                                                                                                                       
-});
+});     
 </code></pre>
 <p>Notice we only use the wallet&#39;s provider and not the whole <code>web3</code> object provided to us. This ensures our application is not dependent on the wallet&#39;s version of Web3, and reduces the surface area in which version errors might occur.</p>
 <h3><a name="provisioning-your-contract-abstractions" class="anchor" href="#provisioning-your-contract-abstractions"><span class="header-link" style="z-index: 9999999746">&nbsp;</span></a>Provisioning Your Contract Abstractions</h3><p>Provisioning your contract abstractions requires two things: 1) that you include your contracts in your project, and 2) that you set up the Javascript abstractions so that they&#39;re correctly talking to the Ethereum client via Web3.</p>

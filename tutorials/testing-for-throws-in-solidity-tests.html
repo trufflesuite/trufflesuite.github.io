@@ -190,6 +190,7 @@ contract TestThrower {
     Assert.isFalse(r, “Should be false, as it should throw”);
   }
 }
+
 </code></pre>
 <p>Perhaps the most interesting line is the following:</p>
 <pre><code class="lang-javascript">Thrower(address(throwProxy)).doThrow();
@@ -212,7 +213,7 @@ throwProxy.execute();
 <pre><code class="lang-shell">Test -&gt; Proxy -&gt; ContractToTest -&gt; SomeOtherContract -&gt; AnotherContractThatThrows
 </code></pre>
 <p>Then you wouldn’t know where the <code>throw</code> occurred, since SomeOtherContract and ContractToTest could just rethrow.</p>
-<p>It would be prudent to also ensure there isn’t anything faulty in the proxy by creating a second test as a control. This test should be called with the appropriate gas and use the proxy to test a function where <em>no</em> <code>throw</code> occurs, just to make sure the proxy is setup and working as intended.</p>
+<p>It would be prudent to also ensure there isn’t anything faulty in the proxy by creating a second test as a control. This test should be called with the appropriate gas and use the proxy to test a function where _no_ <code>throw</code> occurs, just to make sure the proxy is setup and working as intended.</p>
 <p>Because a <code>throw</code> essentially uses up all gas, one must make doubly sure they catch the <code>throw</code> and <strong>not</strong> a legitimate out-of-gas (OOG) error. As well, take care to manage sending Ether through the proxy (for tests that require it) as that can be difficult as well.</p>
 <h2><a name="conclusion" class="anchor" href="#conclusion"><span class="header-link" style="z-index: 9999999611">&nbsp;</span></a>Conclusion</h2><p>Testing <code>throws</code> is possible from within Solidity tests, but can be cumbersome if you want to write those tests yourself as raw calls. You can get around this by using a proxy contract, which makes many situations a lot easier and makes your tests much easier to write. But keep a look out for potential caveats as Solidity tests with a lot more power but plenty of drawbacks.</p>
 <p>Happy developing!</p>

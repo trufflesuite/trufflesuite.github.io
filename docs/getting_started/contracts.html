@@ -223,7 +223,7 @@
 </ul>
 <p>Choosing between a transaction and a call is as simple as deciding whether you want to read data, or write it.</p>
 <h2><a name="introducing-abstractions" class="anchor" href="#introducing-abstractions"><span class="header-link" style="z-index: 9999999860">&nbsp;</span></a>Introducing abstractions</h2><p>Contract abstractions are the bread and butter of interacting with Ethereum contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> module, and it is this contract abstraction that&#39;s described below.</p>
-<p>In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We&#39;ll use the MetaCoin contract provided for you by default via <code>truffle init</code>.</p>
+<p>In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We&#39;ll use the MetaCoin contract available to you through Truffle Boxes via <code>truffle unbox metacoin</code>.</p>
 <pre><code class="lang-javascript">pragma solidity ^0.4.2;
 
 import &quot;./ConvertLib.sol&quot;;
@@ -258,6 +258,7 @@ contract MetaCoin {
         return balances[addr];
     }
 }
+
 </code></pre>
 <p>This contract has three methods aside from the constructor (<code>sendCoin</code>, <code>getBalanceInEth</code>, and <code>getBalance</code>). All three methods can be executed as either a transaction or a call.</p>
 <p>Now let&#39;s look at the Javascript object called <code>MetaCoin</code> provided for us by Truffle, as made available in the <a href="/docs/getting_started/console">Truffle console</a>:</p>
