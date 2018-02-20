@@ -117,6 +117,7 @@
         <li><a href="/blog">Blog</a></li>
         <li><a href="/support">Support</a></li>
         <li><a href="/ganache"><img class="ganache-navbar" src="/images/suite/ganache/ganache-logomark.svg" alt="Ganache" />&nbsp;&nbsp;Ganache</a></li>
+        <li><a href="/docs/drizzle/getting-started"><img class="ganache-navbar" src="/images/suite/drizzle/drizzle-logomark.svg" alt="Ganache" />&nbsp;&nbsp;Drizzle</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container-fluid -->
@@ -125,12 +126,12 @@
 
   <section class="MainContent">
     <div class="container container-narrow">
-      <h1><a name="in-beta-solidity-unit-tests" class="anchor" href="#in-beta-solidity-unit-tests"><span class="header-link" style="z-index: 9999999617">&nbsp;</span></a>In Beta: Solidity Unit Tests</h1><p>This is a beta document and refers to the <code>beta</code> version of Truffle. The following features will not work unless you are using Truffle Beta.</p>
-<h2><a name="get-the-beta-version" class="anchor" href="#get-the-beta-version"><span class="header-link" style="z-index: 9999999616">&nbsp;</span></a>Get the Beta Version</h2><p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
+      <h1><a name="in-beta-solidity-unit-tests" class="anchor" href="#in-beta-solidity-unit-tests"><span class="header-link" style="z-index: 9999999582">&nbsp;</span></a>In Beta: Solidity Unit Tests</h1><p>This is a beta document and refers to the <code>beta</code> version of Truffle. The following features will not work unless you are using Truffle Beta.</p>
+<h2><a name="get-the-beta-version" class="anchor" href="#get-the-beta-version"><span class="header-link" style="z-index: 9999999581">&nbsp;</span></a>Get the Beta Version</h2><p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
 <pre><code>$ npm uninstall -g truffle
 </code></pre><p>And then install the beta version:</p>
 <pre><code>$ npm install -g truffle@beta
-</code></pre><h2><a name="overview" class="anchor" href="#overview"><span class="header-link" style="z-index: 9999999615">&nbsp;</span></a>Overview</h2><p>Solidity test contracts live alongside Javascript tests as <code>.sol</code> files. When <code>truffle test</code> is run, they will be included in the mocha run with a separate test suite per test contract. These contracts maintain all the benefits of the Javascript tests: namely a clean slate per test suite, access to deployed contracts via migrations, runnable on any Ethereum client, and usage of snapshot/revert features (if supported by your Ethereum client) for increased speed. An example solidity unit test looks like this:</p>
+</code></pre><h2><a name="overview" class="anchor" href="#overview"><span class="header-link" style="z-index: 9999999580">&nbsp;</span></a>Overview</h2><p>Solidity test contracts live alongside Javascript tests as <code>.sol</code> files. When <code>truffle test</code> is run, they will be included in the mocha run with a separate test suite per test contract. These contracts maintain all the benefits of the Javascript tests: namely a clean slate per test suite, access to deployed contracts via migrations, runnable on any Ethereum client, and usage of snapshot/revert features (if supported by your Ethereum client) for increased speed. An example solidity unit test looks like this:</p>
 <pre><code class="lang-solidity">import &quot;truffle/Assert.sol&quot;;
 import &quot;truffle/DeployedAddresses.sol&quot;;
 import &quot;../contracts/MetaCoin.sol&quot;;
