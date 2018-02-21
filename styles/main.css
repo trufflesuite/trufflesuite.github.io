@@ -9467,7 +9467,7 @@ html, body {
 }
 
 .Documentation .SubNav {
-  background: #5e464d;
+  background: #33262a;
   color: #3fe0c5;
   padding: 2rem;
   overflow-x: hidden;
@@ -9504,12 +9504,8 @@ html, body {
 }
 
 .Documentation .SubNav ul li.active {
-  background: #F8F5F0;
+  background: #5e464d;
   padding: .5rem;
-}
-
-.Documentation .SubNav ul li.active a {
-  color: #5e464d;
 }
 
 .Documentation .SubNav > ul > li:nth-of-type(3) a {
