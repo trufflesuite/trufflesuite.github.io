@@ -32,14 +32,14 @@
     
     <meta property="og:site_name" content="Truffle Suite" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Blog | Truffle Suite" />
+    <meta property="og:title" content="Drizzle: Reactive Ethereum Data for Front-ends | Truffle Suite" />
     <meta property="og:url" content="http://truffleframework.com" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Blog | Truffle Suite" />
+    <meta name="twitter:title" content="Drizzle: Reactive Ethereum Data for Front-ends | Truffle Suite" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Suite" />
     <meta name="twitter:domain" content="truffleframework.com" />
@@ -49,7 +49,7 @@
     
 
     <title>
-    Blog | 
+    Drizzle: Reactive Ethereum Data for Front-ends | 
     Truffle Suite
     
     </title>
@@ -90,7 +90,7 @@
     
   ">
     <main>
-      <section class="Tutorials TutorialIndexContainer">
+      <section class="Tutorials">
   <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -125,190 +125,46 @@
 
 
   <section class="MainContent">
-    <div class="container">
-      
+    <div class="container container-narrow">
+      <h1><a name="drizzle-reactive-ethereum-data-for-front-ends" class="anchor" href="#drizzle-reactive-ethereum-data-for-front-ends"><span class="header-link" style="z-index: 9999999993">&nbsp;</span></a>Drizzle: Reactive Ethereum Data for Front-Ends</h1><p>Today we&#39;re proud to announce the addition of a new product to the Truffle Suite: Drizzle. Drizzle is a collection of front-end libraries that make writing dapp front-ends easier and more predictable.</p>
+<p>The core is based on a Redux store. We take care of synchronizing your contract data, transaction data and more. Things stay fast because you declare what to keep in sync. Importantly, this means you have access to the spectacular development tools around Redux. <strong>Want to time travel through your recent transactions? You can do that with a slider.</strong>
+</div><div class="text-center container">
+  <video width="640" height="480" controls>
+    <source src="/blog/images/drizzle-some-chaindata-on-your-ui/drizzle-time-travel.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div><div class="container container-narrow"></p>
+<p>Drizzle&#39;s architecture is completely modular. This means you never lose access to the underlying web3 functionality you already know&#8211;drizzle as much or as little as you like. We&#39;ve created two packges for use with React, but the core functionality is contained in the base <code>drizzle</code> module itself. If you&#39;re familiar with Redux, it&#39;s not a stretch to create an Angular library or use it for something other than a webapp.</p>
+<p></div><div class="text-center container">
+  <img src="/blog/images/drizzle-some-chaindata-on-your-ui/drizzle-modules.png" alt="Drizzle Modules">
+</div><div class="container container-narrow"></p>
+<p>Want to dive in right away? <code>truffle unbox drizzle</code> and you&#39;ve got a full example dapp. Need more info? Read on!</p>
+<h2><a name="the-libraries" class="anchor" href="#the-libraries"><span class="header-link" style="z-index: 9999999992">&nbsp;</span></a>The Libraries</h2><h3><a name="drizzle" class="anchor" href="#drizzle"><span class="header-link" style="z-index: 9999999991">&nbsp;</span></a>Drizzle</h3><p>The core library responsible for web3, account and contract instantiation; wiring up the necessary synchronizations and providing additional contract functionality.</p>
+<p><a href="https://github.com/trufflesuite/drizzle">GitHub Repo</a></p>
+<h3><a name="drizzle-react" class="anchor" href="#drizzle-react"><span class="header-link" style="z-index: 9999999990">&nbsp;</span></a>Drizzle React</h3><p>Provides a DrizzleProvider component and drizzleConnect helper method to make it easier to connect Drizzle with your React app.</p>
+<p><a href="https://github.com/trufflesuite/drizzle-react">GitHub Repo</a></p>
+<h3><a name="drizzle-react-components" class="anchor" href="#drizzle-react-components"><span class="header-link" style="z-index: 9999999989">&nbsp;</span></a>Drizzle React Components</h3><p>A library of useful components for common dapp functions. Currently includes:</p>
+<ul>
+<li><code>LoadingContainer</code>: Wraps your app, ensuring it waits for web3 and contract instantiation and displays relevant feedback if something goes wrong.</li>
+<li><code>ContractData</code>: Displays contract call output.</li>
+<li><code>ContractForm</code>: Automatically generates a form for contract transactions.</li>
+</ul>
+<p><a href="https://github.com/trufflesuite/drizzle-react-components">GitHub Repo</a></p>
+<h2><a name="the-box" class="anchor" href="#the-box"><span class="header-link" style="z-index: 9999999988">&nbsp;</span></a>The Box</h2><p>Shown in the video above, this box makes use of all of Drizzle&#39;s libraries in a finished example dapp.</p>
+<p><a href="https://github.com/truffle-box/drizzle-box">GitHub Repo</a></p>
+<p><strong>Help us grow this baby!</strong> What do you want to see from Drizzle? More components? More options? To put it another way: what are you sick of doing on the front-end?</p>
+<div class="row"><div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-3 m-b-2">
+<img src="/blog/images/drizzle-some-chaindata-on-your-ui/baby.jpg" alt="Drizzle Baby">
+</div></div>
 
-<section class="TutorialIndex Blog">
-  <h1>Truffle Blog</h1>
-
-  <ol class="list-unstyled">
-    
-      
-        <li>
-          <a href="/blog/drizzle-reactive-ethereum-data-for-front-ends">
-            <h2>Drizzle: Reactive Ethereum Data for Front-ends</h2>
-
-            <span>
-              <date>2018-02-20</date> &bull; <span>BY Josh Quintal</span>
-            </span>
-
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/testrpc-is-now-ganache">
-            <h2>TestRPC is now Ganache</h2>
-
-            <span>
-              <date>2017-12-26</date> &bull; <span>BY Mike Pumphrey</span>
-            </span>
-
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/first-ever-truffle-retreat">
-            <h2>Our First Ever Truffle Retreat</h2>
-
-            <span>
-              <date>2017-11-29</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/designing-the-ganache-logo">
-            <h2>Designing the Ganache Logo</h2>
-
-            <span>
-              <date>2017-11-21</date> &bull; <span>BY Josh Quintal</span>
-            </span>
-
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/one-hundred-documentation-pull-requests">
-            <h2>One hundred documentation pull requests? Yes please.</h2>
-
-            <span>
-              <date>2017-10-23</date> &bull; <span>BY Mike Pumphrey</span>
-            </span>
-
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/you-can-now-make-your-own-truffle-box">
-            <h2>You Can Now Make Your Own Truffle Box</h2>
-
-            <span>
-              <date>2017-09-26</date> &bull; <span>BY Josh Quintal</span>
-            </span>
-
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/learn-ethereum-the-fun-way-with-our-pet-shop-tutorial">
-            <h2>Learn Ethereum The Fun Way with our Pet Shop Tutorial</h2>
-
-            <span>
-              <date>2017-07-12</date> &bull; <span>BY Josh Quintal</span>
-            </span>
-
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/truffle-boxes-making-life-sweeter">
-            <h2>Truffle Boxes: Making Life Sweeter</h2>
-
-            <span>
-              <date>2017-07-06</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/removing-installation-issues-continued-testrpc">
-            <h2>Removing installation issues, con&#39;t: TestRPC</h2>
-
-            <span>
-              <date>2017-06-13</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/how-were-making-installation-issues-a-thing-of-the-past">
-            <h2>How we&#39;re making installation issues a thing of the past</h2>
-
-            <span>
-              <date>2017-06-05</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/truffle-320-released">
-            <h2>Truffle 3.2.0 released 🎉</h2>
-
-            <span>
-              <date>2017-03-22</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/github-repository-moved">
-            <h2>We&#39;ve moved our github repo!</h2>
-
-            <span>
-              <date>2017-03-17</date> &bull; <span>BY Tim Coulter</span>
-            </span>
-
-            <div>Read Article &rarr;</div>
-          </a>
-        </li>
-      
-    
-  </ol>
-</section>
+<p>We&#39;re excited to hear your feedback and can&#39;t wait to see what you&#39;ll build! </p>
+<p>&#8211; Josh &amp; the Truffle Team</p>
 
     </div>
 
     <footer class="container">
       
-        <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/blog/index.ejs">Edit here &rarr;</a></p>
+        <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/blog/drizzle-reactive-ethereum-data-for-front-ends.md">Edit here &rarr;</a></p>
       
     </footer>
   </section>
