@@ -219,10 +219,10 @@
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="writing-external-scripts" class="anchor" href="#writing-external-scripts"><span class="header-link" style="z-index: 9999999761">&nbsp;</span></a>Writing external scripts</h1><p>Often you may want to run external scripts that interact with your contracts. Truffle provides an easy way to do this, bootstrapping your contracts based on your desired network and connecting to your Ethereum client automatically per your <a href="/docs/advanced/configuration">project configuration</a>.</p>
-<h2><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999760">&nbsp;</span></a>Command</h2><p>To run an external script, perform the following:</p>
+          <h1><a name="writing-external-scripts" class="anchor" href="#writing-external-scripts"><span class="header-link" style="z-index: 9999999829">&nbsp;</span></a>Writing external scripts</h1><p>Often you may want to run external scripts that interact with your contracts. Truffle provides an easy way to do this, bootstrapping your contracts based on your desired network and connecting to your Ethereum client automatically per your <a href="/docs/advanced/configuration">project configuration</a>.</p>
+<h2><a name="command" class="anchor" href="#command"><span class="header-link" style="z-index: 9999999828">&nbsp;</span></a>Command</h2><p>To run an external script, perform the following:</p>
 <pre><code>$ truffle exec &lt;path/to/file.js&gt;
-</code></pre><h2><a name="file-structure" class="anchor" href="#file-structure"><span class="header-link" style="z-index: 9999999759">&nbsp;</span></a>File structure</h2><p>In order for external scripts to be run correctly, Truffle expects them to export a function that takes a single parameter as a callback:</p>
+</code></pre><h2><a name="file-structure" class="anchor" href="#file-structure"><span class="header-link" style="z-index: 9999999827">&nbsp;</span></a>File structure</h2><p>In order for external scripts to be run correctly, Truffle expects them to export a function that takes a single parameter as a callback:</p>
 <pre><code class="lang-javascript">module.exports = function(callback) {
   // perform actions
 }
