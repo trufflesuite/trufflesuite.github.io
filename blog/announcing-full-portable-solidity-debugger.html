@@ -32,14 +32,14 @@
     
     <meta property="og:site_name" content="Truffle Suite" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Bundling with Webpack | Truffle Suite" />
+    <meta property="og:title" content="Announcing our Full, Portable Solidity Debugger | Truffle Suite" />
     <meta property="og:url" content="http://truffleframework.com" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Bundling with Webpack | Truffle Suite" />
+    <meta name="twitter:title" content="Announcing our Full, Portable Solidity Debugger | Truffle Suite" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Suite" />
     <meta name="twitter:domain" content="truffleframework.com" />
@@ -49,7 +49,7 @@
     
 
     <title>
-    Bundling with Webpack | 
+    Announcing our Full, Portable Solidity Debugger | 
     Truffle Suite
     
     </title>
@@ -128,109 +128,55 @@
 
   <section class="MainContent">
     <div class="container container-narrow">
-      <h1><a name="bundling-with-webpack" class="anchor" href="#bundling-with-webpack"><span class="header-link" style="z-index: 9999999928">&nbsp;</span></a>Bundling with Webpack</h1><p><a href="https://webpack.github.io/">Webpack</a> is a powerful module bundler that helps turn your code into static assets you can deploy to the web. With the <a href="https://github.com/ConsenSys/truffle-solidity-loader">Truffle Solidity loader</a>, we&#39;ll show you how you can use Webpack with your existing Truffle project.</p>
-<h2><a name="intended-audience" class="anchor" href="#intended-audience"><span class="header-link" style="z-index: 9999999927">&nbsp;</span></a>Intended Audience</h2><p>This tutorial is for Truffle users who are familiar with Webpack already. Since Webpack requires considerable knowledge to use effectively, we recommend checking out the <a href="http://webpack.github.io/docs/">Webpack documentation</a> as well as the <a href="https://github.com/ConsenSys/truffle-webpack-demo">Truffle + Webpack Demo application</a> before proceeding.</p>
-<h2><a name="getting-started" class="anchor" href="#getting-started"><span class="header-link" style="z-index: 9999999926">&nbsp;</span></a>Getting Started</h2><p>Navigate to your project in the command line, and then install the required dependencies. These dependencies are in addition to any other Webpack-related dependencies your project might have.</p>
-<pre><code>$ npm install webpack webpack-dev-server truffle-solidity-loader --save-dev
-</code></pre><h2><a name="set-up-your-webpack-configuration" class="anchor" href="#set-up-your-webpack-configuration"><span class="header-link" style="z-index: 9999999925">&nbsp;</span></a>Set up Your Webpack Configuration</h2><p>You should already have a webpack configuration for your project. If you don&#39;t, an example configuration file is provided at the bottom of this tutorial. To enable Solidity support, add the <code>truffle-solidity-loader</code> as a plugin within your project:</p>
-<pre><code class="lang-javascript">// your webpack configuration...
-module: {
-  loaders: [
-    // ...,
-    { test: /\.sol/, loader: &#39;truffle-solidity&#39; }
-  ]
-}
+      <h1><a name="announcing-our-fully-featured-portable-solidity-debugger" class="anchor" href="#announcing-our-fully-featured-portable-solidity-debugger"><span class="header-link" style="z-index: 9999999999">&nbsp;</span></a>Announcing our Fully Featured, Portable Solidity Debugger</h1><p>Every one at Truffle is giddy right now. </p>
+<hr>
+<p>Since Truffle&#39;s inception, it&#39;s been our mission to build outstanding development tools for the Ethereum community. The analogy we always used was one of history: Ethereum development practices are years behind the rest of the industry, and it&#39;s our job to build tools that modernize our craft. Well today, Truffle&#39;s come one step closer to that goal. We&#39;re happy to announce the release of our fully featured, fully portable Solidity <a href="https://github.com/trufflesuite/truffle/releases">debugger</a> and <a href="https://github.com/trufflesuite/truffle-debugger/">debugging libraries</a>. </p>
+<p><img src="https://i.imgur.com/7y80aF3.gif" alt="Debugger in Action"></p>
+<h3><a name="what-we-39-ve-built" class="anchor" href="#what-we-39-ve-built"><span class="header-link" style="z-index: 9999999998">&nbsp;</span></a>What We&#39;ve Built</h3><p>If you&#39;ve followed Truffle development, you&#39;re familiar with the <code>truffle debug</code> command. This was the first incarnation of a &quot;debugger&quot; built into Truffle, though it wasn&#39;t much more than a code tracer. Our new debugger comes with everything you expect :</p>
+<ul>
+<li>Code stepping (over, into, out, next, instruction, etc.)</li>
+<li>Current code location, including the address of the running contract</li>
+<li>Breakpoints</li>
+<li>Watch expressions</li>
+<li>Variable inspection (stack, memory <em>and</em> storage)</li>
+<li>Custom expression evaluation using Solidity variables</li>
+</ul>
+<p>On top of that, our new debugger is fully portable, built to integrate with any Javascript project or editor, like Visual Studio Code. Lastly, we built it to work with <strong>any Ethereum client</strong>, so you could debug transactions against the main Ethereum network if you so desired. </p>
+<h3><a name="how-it-works" class="anchor" href="#how-it-works"><span class="header-link" style="z-index: 9999999997">&nbsp;</span></a>How it Works</h3><p>To debug your Solidity code, you first need to make a transaction. Ethereum is a world computer with a history of all execution, so we can pull all the information we need from past transactions. After obtaining the transaction hash, simply run the following to kick off your debugging experience:</p>
+<pre><code class="lang-shell">$ truffle debug &lt;tx hash&gt;
 </code></pre>
-<h2><a name="remove-default-build-configuration" class="anchor" href="#remove-default-build-configuration"><span class="header-link" style="z-index: 9999999924">&nbsp;</span></a>Remove Default Build Configuration</h2><p>Since you&#39;re using Webpack to build your frontend, you won&#39;t want to use the default Truffle build process as the two processes will conflict. To ensure there are no issues if you or your teammates run <code>truffle build</code>, go ahead and delete the <code>build</code> configuration in your <code>truffle.js</code> file, if it exists.</p>
-<pre><code class="lang-javascript">module.exports = {
-  build: {      // Delete this.
-    // ...      // and this.
-  },            // and this too.
-  rpc: {
-    host: &quot;127.0.0.1&quot;,
-    port: 8545
-  }
-}
+<p>This will open up the debugging console which you can use to your heart&#39;s content! </p>
+<p><img src="https://i.imgur.com/0NUTSlM.png" alt="Debugger user interface"></p>
+<p>The above user interface gives you access to the debugger features you need to step through your contracts&#39; code, set breakpoints, evaluate expressions and inspect Solidity variables, providing you a better sense of what your code is doing. Under the hood, our debugger is interacting with your Ethereum client to gather all the data necessary to provide this information to you in a suitable manner. For developers reading this, the debugging library stores all this data in Redux, making the data easy to manage and making the library super portable. </p>
+<p>Most of the work done by the debugger results in some type of mapping. The debugger gathers tons of disparate data, like the bytecode of your contracts, abstract representations of your code, instructions run during your transaction, etc., and combines them to produce information useful to the contract developer. Perhaps the debugger&#39;s most valuable property is variable inspection: Using all the data gathered, the debugger can determine which variables exist within your contract, which apply to each section of the code, and what their values are at any point in time. It can even show the values of complex data types, like structs with nested arrays. We&#39;re still filling out a few data types, but expect those in the next couple weeks.</p>
+<p>If you plan on using the <code>debug</code> command <em>today</em>, we recommend using <a href="http://truffleframework.com/docs/getting_started/console">Truffle Develop</a>. Truffle Develop comes with everything you need &quot;baked in&quot; to fully debug your contracts. Ganache and <code>ganache-cli</code> will need to be updated, so stay tuned for that in the coming days. </p>
+<h3><a name="where-to-next" class="anchor" href="#where-to-next"><span class="header-link" style="z-index: 9999999996">&nbsp;</span></a>Where to Next</h3><p>The debugger we built unlocks tons of value for all Ethereum developers both new and advanced, but what you&#39;re seeing here is the tip of the iceberg of where this technology will go. The interface above is just <strong>one</strong> interface, meant to show off the debugger&#39;s capability. As mentioned, the libraries we built are super portable, so they&#39;ll end up making their way into all of the following:</p>
+<ul>
+<li>Integrated Development Environments (IDEs) like Visual Studio Code</li>
+<li><a href="/ganache">Ganache</a>, including a full debugging UI</li>
+<li><a href="/docs/drizzle/getting-started">Drizzle</a>, for automatic variable change detection after a transaction</li>
+<li>Browser plugins so you can debug transactions on the fly within your application</li>
+<li>Ethereum provider libraries that let you debug your code anywhere, without a plugin</li>
+</ul>
+<p>We encourage the Ethereum community to help build these tools. Our code is open source, and you can find all of it <a href="https://github.com/trufflesuite/">on Github</a>.</p>
+<h3><a name="how-to-get-it" class="anchor" href="#how-to-get-it"><span class="header-link" style="z-index: 9999999995">&nbsp;</span></a>How to Get It</h3><p>If you already have Truffle installed, simply run the following to get you to the latest version:</p>
+<pre><code class="lang-shell">$ npm uninstall -g truffle
+$ npm install -g truffle
 </code></pre>
-<h2><a name="bootstrapping-your-application" class="anchor" href="#bootstrapping-your-application"><span class="header-link" style="z-index: 9999999923">&nbsp;</span></a>Bootstrapping Your Application</h2><p>Since you&#39;re bundling the frontend yourself and not using Truffle&#39;s default build process, certain &quot;magic&quot; provided by Truffle needs to be handled in order to get your application running properly. This includes:</p>
-<ol>
-<li>Detecting the <code>web3</code> object provided to you by the user&#39;s Ethereum client, which as of this writing will likely be either <a href="https://metamask.io/">Metamask</a> or <a href="https://github.com/ethereum/mist">Mist</a>.</li>
-<li>Provisioning your contract abstractions so they can communicate with your user&#39;s Ethereum client.</li>
-</ol>
-<h3><a name="detecting-web3" class="anchor" href="#detecting-web3"><span class="header-link" style="z-index: 9999999922">&nbsp;</span></a>Detecting Web3</h3><p>In the past, Truffle bootstrapped applications to look for an open Ethereum node running at <code>http://localhost:8545</code>, but this has proven to be insecure for the user as well as highly unlikely in a real world scenario. Instead, users are most likely to use Metamask or Mist to interact with web applications on the Ethereum network, and you should build your application to support that. Both Metamask and Mist inject a <code>web3</code> object when the page is loading so you can hook into their transaction signing processes. Detecting this <code>web3</code> object easy:</p>
-<pre><code class="lang-javascript">var Web3 = require(&quot;web3&quot;);
-
-window.addEventListener(&#39;load&#39;, function() {                    
-  // Supports Metamask and Mist, and other wallets that provide &#39;web3&#39;.      
-  if (typeof web3 !== &#39;undefined&#39;) {                            
-    // Use the Mist/wallet provider.                            
-    window.web3 = new Web3(web3.currentProvider);               
-  } else {                                                      
-    // No web3 detected. Show an error to the user or use Infura: https://infura.io/
-  }                                                                                                                       
-});     
+<p>If you&#39;re new to Truffle, you can try it out using:</p>
+<pre><code class="lang-shell">$ npm install -g truffle
 </code></pre>
-<p>Notice we only use the wallet&#39;s provider and not the whole <code>web3</code> object provided to us. This ensures our application is not dependent on the wallet&#39;s version of Web3, and reduces the surface area in which version errors might occur.</p>
-<h3><a name="provisioning-your-contract-abstractions" class="anchor" href="#provisioning-your-contract-abstractions"><span class="header-link" style="z-index: 9999999921">&nbsp;</span></a>Provisioning Your Contract Abstractions</h3><p>Provisioning your contract abstractions requires two things: 1) that you include your contracts in your project, and 2) that you set up the Javascript abstractions so that they&#39;re correctly talking to the Ethereum client via Web3.</p>
-<p>When including contracts in your application, the Solidity Loader will resolve all <code>.sol</code> files to their associated contract abstraction, so importing your contracts is simply a matter of performing one of the following within your frontend:</p>
-<pre><code class="lang-javascript">// ES5:
-var MyContract = require(&quot;contracts/MyContract.sol&quot;);
-
-// ES6:
-import MyContract from &quot;contracts/MyContract.sol&quot;;
-</code></pre>
-<p>After making sure your contract is imported, you now need to hook up the <code>web3</code> object you detected above with the contract abstraction provided:</p>
-<pre><code class="lang-javascript">MyContract.setProvider(window.web3.currentProvider);
-</code></pre>
-<p>Finally, you can use the contract abstraction as described within the <a href="/docs/getting_started/contracts">Truffle documentation</a>.</p>
-<p>You can prevent having to perform this provisioning more than once per contract dependency by either setting your contract abstractions to the global object, like <code>window</code>, and provisioning them once when your application loads; or using something like the <a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin">ProvidePlugin</a> to ensure your contract abstractions are available to every file within the bundle (recommended).</p>
-<h2><a name="running-wepback" class="anchor" href="#running-wepback"><span class="header-link" style="z-index: 9999999920">&nbsp;</span></a>Running Wepback</h2><p>From here you can run webpack like normal, via the normal <code>webpack</code> command or the <code>webpack-dev-server</code>, if you have those installed globally on your machine:</p>
-<pre><code>$ webpack
-$ webpack-dev-server --hot
-</code></pre><p>Alternatively, you can edit your project&#39;s <code>package.json</code> file to run Wepback from the versions you installed at the beginning of this tutorial:</p>
-<pre><code class="lang-javascript">&quot;scripts&quot;: {
-  &quot;build&quot;: &quot;webpack&quot;,
-  &quot;dev&quot;: &quot;webpack-dev-server --hot&quot;
-}
-</code></pre>
-<h2><a name="example-webpack-config" class="anchor" href="#example-webpack-config"><span class="header-link" style="z-index: 9999999919">&nbsp;</span></a>Example Webpack Config</h2><p>Here&#39;s a very simple Webpack configuration file that uses the Truffle Solidity Loader as well as other plugins. This configration file exists within a React application where its source files exist within the <code>./app</code> directory, and CSS is pulled out using the <code>copy-webpack-plugin</code>. Of course, your dapp&#39;s layout and structure will be different, but this should give you a good example of how the Solidity Loader fits within a simple application.</p>
-<pre><code class="lang-javascript">var webpack = require(&quot;webpack&quot;);
-var CopyWebpackPlugin = require(&#39;copy-webpack-plugin&#39;);
-var ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;);
-
-module.exports = {
-  entry: &#39;./app/javascripts/app.jsx&#39;,
-  output: {
-    path: &quot;./build&quot;,
-    filename: &#39;app.js&#39;
-  },
-  module: {
-    loaders: [
-      { test: /\.(js|jsx|es6)$/, exclude: /node_modules/, loader: &quot;babel-loader&quot;},
-      { test: /\.scss$/i, loader: ExtractTextPlugin.extract([&quot;css&quot;, &quot;sass&quot;])},
-      { test: /\.json$/i, loader: &quot;json-loader&quot;},
-      { test: /\.sol/, loader: &#39;truffle-solidity&#39; }
-    ]
-  },
-  plugins: [
-    new CopyWebpackPlugin([
-      { from: &#39;./app/index.html&#39;, to: &quot;index.html&quot; },
-      { from: &#39;./app/images&#39;, to: &quot;images&quot; },
-      { from: &#39;./app/fonts&#39;, to: &quot;fonts&quot; }
-    ]),
-    new ExtractTextPlugin(&quot;app.css&quot;)
-  ],
-  devServer: {
-    stats: &#39;errors-only&#39;,
-  }
-};
-</code></pre>
+<p>You may have to use <code>sudo</code> with the above commands if you&#39;re running Linux.</p>
+<p>More information about how to use Truffle can be found in <a href="/docs">our documentation</a>. Feel free to reach out on <a href="https://gitter.im/consensys/truffle">Gitter</a> with any questions.</p>
+<h3><a name="a-quick-thank-you" class="anchor" href="#a-quick-thank-you"><span class="header-link" style="z-index: 9999999994">&nbsp;</span></a>A Quick Thank You</h3><p>I&#39;d like to personally thank the whole Truffle team for this effort, and particularly <a href="https://github.com/gnidan">Nick D&#39;Andrea</a> for turning some initial research work into a fully portable, fully featured debugger. The engineering under the hood is amazing, <a href="https://github.com/trufflesuite/truffle-debugger/">I urge you to take a look</a>. I&#39;d also like to thank the community at large: It&#39;s a pleasure building the tools that make your lives easier, and your consistent feedback makes the whole endeavor worthwhile.</p>
+<p>Thanks,
+<br/>&#8211; Tim </p>
 
     </div>
 
     <footer class="container">
       
-        <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/tutorials/bundling-with-webpack.md">Edit here &rarr;</a></p>
+        <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/blog/announcing-full-portable-solidity-debugger.md">Edit here &rarr;</a></p>
       
     </footer>
   </section>

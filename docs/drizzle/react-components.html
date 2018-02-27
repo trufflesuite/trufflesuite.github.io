@@ -221,20 +221,20 @@
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="drizzle-react-components" class="anchor" href="#drizzle-react-components"><span class="header-link" style="z-index: 9999999862">&nbsp;</span></a>Drizzle React Components</h1><p>A set of useful components for common UI elements.</p>
-<h2><a name="installation" class="anchor" href="#installation"><span class="header-link" style="z-index: 9999999861">&nbsp;</span></a>Installation</h2><p>Install Drizzle React Components via npm:</p>
+          <h1><a name="drizzle-react-components" class="anchor" href="#drizzle-react-components"><span class="header-link" style="z-index: 9999999734">&nbsp;</span></a>Drizzle React Components</h1><p>A set of useful components for common UI elements.</p>
+<h2><a name="installation" class="anchor" href="#installation"><span class="header-link" style="z-index: 9999999733">&nbsp;</span></a>Installation</h2><p>Install Drizzle React Components via npm:</p>
 <pre><code>npm install --save drizzle-react-components
 </code></pre><p><strong>Note</strong>: You&#39;ll also need the <code>drizzle-react</code> package, if it isn&#39;t already installed.</p>
-<h2><a name="components" class="anchor" href="#components"><span class="header-link" style="z-index: 9999999860">&nbsp;</span></a>Components</h2><h3><a name="loadingcontainer" class="anchor" href="#loadingcontainer"><span class="header-link" style="z-index: 9999999859">&nbsp;</span></a>LoadingContainer</h3><p>This components wraps your entire app (but within the DrizzleProvider) and will show a loading screen until Drizzle, and therefore web3 and your contracts, are initialized.</p>
+<h2><a name="components" class="anchor" href="#components"><span class="header-link" style="z-index: 9999999732">&nbsp;</span></a>Components</h2><h3><a name="loadingcontainer" class="anchor" href="#loadingcontainer"><span class="header-link" style="z-index: 9999999731">&nbsp;</span></a>LoadingContainer</h3><p>This components wraps your entire app (but within the DrizzleProvider) and will show a loading screen until Drizzle, and therefore web3 and your contracts, are initialized.</p>
 <p><code>loadingComp</code> (component) The component displayed while Drizzle intializes.</p>
 <p><code>errorComp</code> (component) The component displayed if Drizzle initialization fails.</p>
-<h3><a name="contractdata" class="anchor" href="#contractdata"><span class="header-link" style="z-index: 9999999858">&nbsp;</span></a>ContractData</h3><p><code>contract</code> (string, required) Name of the contract to call.</p>
+<h3><a name="contractdata" class="anchor" href="#contractdata"><span class="header-link" style="z-index: 9999999730">&nbsp;</span></a>ContractData</h3><p><code>contract</code> (string, required) Name of the contract to call.</p>
 <p><code>method</code> (string, required) Method of the contract to call.</p>
 <p><code>methodArgs</code> (array) Arguments for the contract method call. EX: The address for an ERC20 balanceOf() function. The last argument can optionally be an options object with the typical from, gas and gasPrice keys.</p>
 <p><code>hideIndicator</code> (boolean) If true, hides the loading indicator during contract state updates. Useful for things like ERC20 token symbols which do not change.</p>
 <p><code>toUtf8</code> (boolean) Converts the return value to a UTF-8 string before display.</p>
 <p><code>toAscii</code> (boolean) Converts the return value to an Ascii string before display.</p>
-<h3><a name="contractform" class="anchor" href="#contractform"><span class="header-link" style="z-index: 9999999857">&nbsp;</span></a>ContractForm</h3><p><code>contract</code> (string, required) Name of the contract whose method will be the basis the form.</p>
+<h3><a name="contractform" class="anchor" href="#contractform"><span class="header-link" style="z-index: 9999999729">&nbsp;</span></a>ContractForm</h3><p><code>contract</code> (string, required) Name of the contract whose method will be the basis the form.</p>
 <p><code>method</code> (string, required) Method whose inputs will be used to create corresponding form fields.</p>
 <p><code>labels</code> (array) Custom labels; will follow ABI input ordering. Useful for friendlier names. For example &quot;_to&quot; becoming &quot;Recipient Address&quot;.</p>
 
