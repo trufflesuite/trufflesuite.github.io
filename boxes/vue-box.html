@@ -32,14 +32,14 @@
     
     <meta property="og:site_name" content="Truffle Suite" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Beta: Package Management | Truffle Suite" />
+    <meta property="og:title" content="vue-box Box | Truffle Suite" />
     <meta property="og:url" content="http://truffleframework.com" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Beta: Package Management | Truffle Suite" />
+    <meta name="twitter:title" content="vue-box Box | Truffle Suite" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Suite" />
     <meta name="twitter:domain" content="truffleframework.com" />
@@ -49,7 +49,7 @@
     
 
     <title>
-    Beta: Package Management | 
+    vue-box Box | 
     Truffle Suite
     
     </title>
@@ -88,11 +88,11 @@
 
   <body class="
     
-    
+    Ballotin
     
   ">
     <main>
-      <section class="Tutorials">
+      <body>
   <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -126,88 +126,84 @@
 </nav>
 
 
-  <section class="MainContent">
-    <div class="container container-narrow">
-      <h1><a name="in-beta-package-management" class="anchor" href="#in-beta-package-management"><span class="header-link" style="z-index: 9999999614">&nbsp;</span></a>In Beta: Package Management</h1><p>This is a beta document and refers to the <code>beta</code> version of Truffle. The following features will not work unless you are using Truffle Beta.</p>
-<h2><a name="get-the-beta-version" class="anchor" href="#get-the-beta-version"><span class="header-link" style="z-index: 9999999613">&nbsp;</span></a>Get the Beta Version</h2><p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
-<pre><code>$ npm uninstall -g truffle
-</code></pre><p>And then install the beta version:</p>
-<pre><code>$ npm install -g truffle@beta
-</code></pre><h2><a name="overview" class="anchor" href="#overview"><span class="header-link" style="z-index: 9999999612">&nbsp;</span></a>Overview</h2><p>Truffle Beta comes standard with <code>npm</code> integration, and is aware of the <code>node_modules</code> directory in your project if it exists. This means you can use and distribute contracts, dapps and Ethereum-enabled libraries via <code>npm</code>, making your code available to others and other&#39;s code available to you.</p>
-<h2><a name="package-layout" class="anchor" href="#package-layout"><span class="header-link" style="z-index: 9999999611">&nbsp;</span></a>Package Layout</h2><p>Projects created with Truffle have a specific layout by default which enables them to be used as packages. This layout isn&#39;t required, but if used as a common convention &#8211; or &quot;de-facto standard&quot; &#8211; then distributing contracts and dapps through package management will become much easier.</p>
-<p>The most important directories in a Truffle package are the following:</p>
-<ul>
-<li><code>/contracts</code></li>
-<li><code>/build</code> (which includes <code>/build/contracts</code>, created by Truffle)</li>
-</ul>
-<p>The first directory is your contracts directory, which includes your raw Solidity contracts. The second directory is the build directory, and more specifically <code>/build/contracts</code>, which holds build artifacts in the form of <code>.sol.js</code> files. Including raw contracts in your package will allow others to import those contracts within their own solidity code. Similarly, including your <code>.sol.js</code> build artifacts in your package will allow others to seamlessly interact with your contracts from Javascript, which can be used in dapps, scripts and migrations.</p>
-<h2><a name="using-a-package" class="anchor" href="#using-a-package"><span class="header-link" style="z-index: 9999999610">&nbsp;</span></a>Using a Package</h2><p>When using a package within your own project, it is important to note that there are two places where you might be interested in using other&#39;s contract code: within your contracts (<code>.sol</code> files) and within your Javascript code (<code>.sol.js</code> files). The following provides an example of each case, and discusses techniques for making the most of other&#39;s contracts and build artifacts.</p>
-<h3><a name="installing" class="anchor" href="#installing"><span class="header-link" style="z-index: 9999999609">&nbsp;</span></a>Installing</h3><p>For this example, we&#39;re going to use the <a href="https://github.com/ConsenSys/example-truffle-library">Example Truffle Library</a>, which provides a simple name registry that is deployed to the Morden test network. In order to use it as a dependency, we must first install it within our project through <code>npm</code>:</p>
-<pre><code>$ cd my_project
-$ npm install example-truffle-library
-</code></pre><p>Note that the last command above downloads the package and places it in <code>my_project/node_modules</code> directory, which is important for the examples below. See the <a href="https://docs.npmjs.com/">npm documentation</a> for help using <code>npm</code> to install packages.</p>
-<h3><a name="within-your-contracts" class="anchor" href="#within-your-contracts"><span class="header-link" style="z-index: 9999999608">&nbsp;</span></a>Within Your Contracts</h3><p>To use a package&#39;s contracts within your contracts, this can be as simple as Solidity&#39;s <a href="http://solidity.readthedocs.io/en/develop/layout-of-source-files.html?#importing-other-source-files">import</a> statement. When your import path isn&#39;t explicitly relative or absolute, this signifies to Truffle that you&#39;re looking for a file from a specific named package. Consider this example using the Example Truffle Library mentioned above:</p>
-<pre><code class="lang-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
-</code></pre>
-<p>Since the path didn&#39;t start with <code>./</code>, Truffle knows to look in your project&#39;s <code>node_modules</code> directory for the <code>example-truffle-library</code> folder. From there, it resolves the path to provide you the contract you requested.</p>
-<h3><a name="within-javascript-code" class="anchor" href="#within-javascript-code"><span class="header-link" style="z-index: 9999999607">&nbsp;</span></a>Within Javascript Code</h3><p>To interact with package&#39;s contracts within Javascript code, you simply need to <code>require</code> that package&#39;s <code>.sol.js</code> files like so:</p>
-<pre><code class="lang-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
-</code></pre>
-<p>These files are provided by <a href="https://github.com/ConsenSys/ether-pudding">EtherPudding</a>, which Truffle uses internally. See EtherPudding&#39;s documentation for more information.</p>
-<h3><a name="package-39-s-deployed-addresses" class="anchor" href="#package-39-s-deployed-addresses"><span class="header-link" style="z-index: 9999999606">&nbsp;</span></a>Package&#39;s Deployed Addresses</h3><p>Sometimes you want your contracts to interact with the package&#39;s previously deployed contracts. Since the deployed addresses exist within the package&#39;s <code>.sol.js</code> files, you must perform an extra step to get those addresses into your contracts. To do so, make your contract accept the address of the dependency contract, and then use migrations. The following is an example contract that exists within your project as well as an example migration:</p>
-<p>Contract: MyContract.sol</p>
-<pre><code class="lang-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
-
-contract MyContract {
-  SimpleNameRegistry registry;
-  address public owner;
-
-  function MyContract {
-    owner = msg.sender;
-  }
-
-  // Simple example that uses the deployed registry from the package.
-  function getModule(bytes32 name) returns (address) {
-    return registry.names(name);
-  }
-
-  // Set the registry if you&#39;re the owner.
-  function setRegistry(address addr) {
-    require(msg.sender == owner);
-
-    registry = SimpleNameRegistry(addr);
-  }
-}
-
-</code></pre>
-<p>Migration: 3_hook_up_example_library.js</p>
-<pre><code class="lang-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
-
-module.exports = function(deployer) {
-  // Deploy our contract, then set the address of the registry.
-  deployer.deploy(MyContract).then(function() {
-    MyContract.deployed().setRegistry(SimpleNameRegistry.address);
-  });
-};
-</code></pre>
-<h2><a name="recommendation-use-the-testrpc" class="anchor" href="#recommendation-use-the-testrpc"><span class="header-link" style="z-index: 9999999605">&nbsp;</span></a>Recommendation: Use the TestRPC</h2><p class="alert alert-info">
-<strong>Update</strong>: Since this tutorial was published, we have released <a href="/ganache">Ganache</a> a personal blockchain and a replacement to the TestRPC. We have left this tutorial unaltered, but we highly recommend checking out our <a href="/docs/ganache/using">Working with Ganache</a> page.
-</p>
-
-<p>The <a href="https://github.com/ethereumjs/testrpc">ethereumjs-testrpc</a> is wildly useful for packages that were previously deployed to the live network. The TestRPC includes a <code>--fork</code> feature which allows you to fork from the main chain while developing your application. What this means for you is that you can develop and test against packages that are deployed live, using <strong>real data</strong>, without having to worry about deploying your dependency&#39;s contracts yourself.</p>
-<h2><a name="the-future-where-do-we-go-from-here-" class="anchor" href="#the-future-where-do-we-go-from-here-"><span class="header-link" style="z-index: 9999999604">&nbsp;</span></a>The Future: Where do we go from here?</h2><p>Node&#39;s <code>npm</code> is, of course, a centralized service, and the packages that exist there are on a centralized network. As Ethereum becomes more widespread, so will the urge to decentralize all of our tools and packages. The ideal package management system for Ethereum is one where the package registry exists on the live chain and the package data exists on a decentralized file storage network like IPFS or Swarm; however, that ideal is going to take time to develop and reach critical mass. Until that time, we can use <code>npm</code> to distribute our contracts and applications like the rest of the Javascript community.</p>
-
+  <main>
+    <section class="BallotinSingleContainer" data-box="vue-box" data-user="standup75">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="WithDash">standup75/vue-box</h1>
+      </div>
     </div>
 
-    <footer class="container">
-      
-        <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/tutorials/package-management.md">Edit here &rarr;</a></p>
-      
-    </footer>
-  </section>
+    <div class="row">
+      <div class="col-xs-12 col-md-7 BoxReadme" id="BoxReadme">
+        <div class="alert alert-info" role="alert">Loading readme&#8230;</div>
+      </div>
+
+      <div class="col-xs-12 col-md-4 col-md-offset-1">
+        <div class="row Sidebar">
+          <div class="col-xs-12 col-sm-6 col-md-12">
+            <section class="FeatureCard">
+              <div class="FeatureBody withImage">
+                <img class="FeatureImageLg" src="https://github.com/standup75/vue-box/blob/master/box-img-lg.png?raw=true" alt="vue-box" onerror="javascript:this.src='/images/ballotin/loading-thumb.png'" />
+                <img class="FeatureImageSm" src="https://github.com/standup75/vue-box/blob/master/box-img-sm.png?raw=true" alt="vue-box" onerror="javascript:this.src='/images/ballotin/loading-banner.png'" />
+              </div>
+
+              <footer class="BoxRundown">
+                <ul class="BoxRundownList">
+                  <li><strong>Tags</strong><br/><hr/></li>
+                  <li>
+                    <ul class="BoxTagsList">
+                      <li>
+                        <a href="#">vue</a>
+                      </li>
+                      <li>
+                        <a href="#">vue-router</a>
+                      </li>
+                      <li>
+                        <a href="#">vuex</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><strong>Created</strong><br/><hr/></li>
+                  <li id="BoxDateCreated">X-X-X</li>
+                  <li><strong>Last Updated</strong><br/><hr/></li>
+                  <li id="BoxDateUpdated">X-X-X</li>
+                  <li><strong>Stars</strong><br/><hr/></li>
+                  <li><a class="github-button" href="https://github.com/standup75/vue-box" data-icon="octicon-star" data-show-count="true" data-size="large" aria-label="Star standup75/vue-box on GitHub">Star</a></li>
+                </ul>
+              </footer>
+            </section>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-12">
+            <section class="FeatureCard">
+              <div class="FeatureBody">
+                <h3>Installing</h3>
+                <p>Run this command to create a new Truffle project with this box:</p>
+                <p><pre>truffle unbox standup75/vue-box</pre></p>
+              </div>
+
+              <footer>
+                <a class="btn btn-primary m-t-1 m-b-1" id="BoxDownloadLink" href="#">Download</a>
+                <a class="btn btn-primary m-t-1 m-b-1" id="BoxGitHubLink" href="#">GitHub</a>
+              </footer>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
+<script src="/scripts/ballotin/marked.min.js"></script>
+<script src="/scripts/ballotin/single-truffle-box.js"></script>
 
+  </main>
+
+  
 <section class="Footer p-t-4 p-b-4">
   <div class="container">
     <div class="row">
@@ -396,6 +392,7 @@ module.exports = function(deployer) {
   </div>
 </section>
 
+</body>
 
     </main>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
