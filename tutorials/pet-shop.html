@@ -237,7 +237,7 @@ function adopt(uint petId) public returns (uint) {
 <ul>
 <li><p>In Solidity the types of both the function parameters and output must be specified. In this case we&#39;ll be taking in a <code>petId</code> (integer) and returning an integer.</p>
 </li>
-<li><p>We are checking to make sure <code>petId</code> is in range of our <code>adopters</code> array. Arrays in Solidity are indexed from 0, so the ID value will need to be between 0 and 15. We use the <code>require()</code> statement to ensure the the ID is within range.</p>
+<li><p>We are checking to make sure <code>petId</code> is in range of our <code>adopters</code> array. Arrays in Solidity are indexed from 0, so the ID value will need to be between 0 and 15. We use the <code>require()</code> statement to ensure the ID is within range.</p>
 </li>
 <li><p>If the ID is in range, we then add the address that made the call to our <code>adopters</code> array. <strong>The address of the person or smart contract who called this function is denoted by <code>msg.sender</code></strong>.</p>
 </li>
