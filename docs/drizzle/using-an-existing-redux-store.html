@@ -32,14 +32,14 @@
     
     <meta property="og:site_name" content="Truffle Suite" />
     <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Truffle with MetaMask | Truffle Suite" />
+    <meta property="og:title" content="Using an Existing Redux Store | Truffle Suite" />
     <meta property="og:url" content="http://truffleframework.com" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Truffle with MetaMask | Truffle Suite" />
+    <meta name="twitter:title" content="Using an Existing Redux Store | Truffle Suite" />
     <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
     <meta name="twitter:creator" content="Truffle Suite" />
     <meta name="twitter:domain" content="truffleframework.com" />
@@ -49,7 +49,7 @@
     
 
     <title>
-    Truffle with MetaMask | 
+    Using an Existing Redux Store | 
     Truffle Suite
     
     </title>
@@ -194,7 +194,7 @@
                                 
                 <li class=""><a href="/docs/advanced/truffle-boxes">Truffle Boxes</a></li>
                                 
-                <li class="active"><a href="/docs/advanced/truffle-with-metamask">Truffle with MetaMask</a></li>
+                <li class=""><a href="/docs/advanced/truffle-with-metamask">Truffle with MetaMask</a></li>
                             </ul>
             </li>
                         <h2>Ganache</h2>
@@ -212,7 +212,7 @@
                                 
                 <li class=""><a href="/docs/drizzle/drizzle-state">Drizzle State</a></li>
                                 
-                <li class=""><a href="/docs/drizzle/using-an-existing-redux-store">Using an Existing Redux Store</a></li>
+                <li class="active"><a href="/docs/drizzle/using-an-existing-redux-store">Using an Existing Redux Store</a></li>
                                 
                 <li class=""><a href="/docs/drizzle/react-integration">React Integration</a></li>
                                 
@@ -223,105 +223,100 @@
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="truffle-and-metamask" class="anchor" href="#truffle-and-metamask"><span class="header-link" style="z-index: 9999999886">&nbsp;</span></a>Truffle and MetaMask</h1><p>Before you can interact with smart contracts in a browser, make sure they&#39;re compiled, deployed, and that you&#39;re interacting with them via <code>web3</code> in client-side JavaScript. We recommend using the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> library, as it makes interacting with contracts easier and more robust.</p>
-<p class="alert alert-info">
-<strong>Note</strong>: For more information on these topics, including using <code>truffle-contract</code>, check out our <a href="/tutorials/pet-shop">Pet Shop</a> or <a href="/tutorials/robust-smart-contracts-with-openzeppelin">TutorialToken</a> tutorials.
-</p>
+          <h1><a name="using-an-existing-redux-store" class="anchor" href="#using-an-existing-redux-store"><span class="header-link" style="z-index: 9999999738">&nbsp;</span></a>Using an Existing Redux Store</h1><p>Drizzle is flexible about its store. It can generate a store if your app doesn&#39;t currently use redux, live alongside your current store (potentially keeping all Ethereum concerns in one place) or integrating its reducers and sagas with your currently existing store.</p>
+<h2><a name="single-store" class="anchor" href="#single-store"><span class="header-link" style="z-index: 9999999737">&nbsp;</span></a>Single Store</h2><p>If you&#39;d like to integrate Drizzle&#39;s reducers and sagas with your existing store, import them for use alongside your existing reducers. In this example, we already have <code>react-router-redux</code> keeping the state of <code>react-router</code> in our store.</p>
+<pre><code class="lang-javascript">import { combineReducers } from &#39;redux&#39;
+import { routerReducer } from &#39;react-router-redux&#39;
+import { drizzleReducers } from &#39;drizzle&#39;
 
-<p>Once you&#39;ve done the above, you&#39;re ready to use MetaMask.</p>
-<h2><a name="what-is-metamask-" class="anchor" href="#what-is-metamask-"><span class="header-link" style="z-index: 9999999885">&nbsp;</span></a>What is MetaMask?</h2><p><a href="https://metamask.io/">MetaMask</a> is the easiest way to interact with dapps in a browser. It is an extension for Chrome or Firefox that connects to an Ethereum network without running a full node on the browser&#39;s machine. It can connect to the main Ethereum network, any of the testnets (Ropsten, Kovan, and Rinkeby), or a local blockchain such as the one created by <a href="/ganache">Ganache</a> or Truffle Develop.</p>
-<p><img src="/docs/img/metamask.png" alt="MetaMask"></p>
-<p>For development with Truffle this means we can use our dapp the same way users will interact with it on a live network.</p>
-<h2><a name="installing-metamask" class="anchor" href="#installing-metamask"><span class="header-link" style="z-index: 9999999884">&nbsp;</span></a>Installing MetaMask</h2><ul>
-<li><p>To install MetaMask for Chrome, go to the <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">Chrome Web Store</a> and click the <strong>Add to Chrome</strong> button.</p>
-</li>
-<li><p>To install MetaMask for FireFox, go to the <a href="https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/">Firefox Add-ons page</a> and click the <strong>Add to Firefox</strong> button.</p>
-</li>
-</ul>
-<p>With our front-end ready to be used and MetaMask installed, we&#39;re ready to see our dapp in all its glory.</p>
-<h2><a name="using-metamask-with-ganache" class="anchor" href="#using-metamask-with-ganache"><span class="header-link" style="z-index: 9999999883">&nbsp;</span></a>Using MetaMask with Ganache</h2><p><a href="/ganache">Ganache</a> is a graphical application that runs a blockchain that can be used for testing purposes. It runs on <code>127.0.0.1:7545</code>.</p>
-<p class="alert alert-info">
-<strong>Note</strong>: We recommend specifying <code>127.0.0.1</code> instead of <code>localhost</code> because the address does not require a network connection and so is more suitable for development.
-</p>
+const reducer = combineReducers({
+  routing: routerReducer,
+  ...drizzleReducers
+})
 
-<h3><a name="detecting-metamask-39-s-web3-injection" class="anchor" href="#detecting-metamask-39-s-web3-injection"><span class="header-link" style="z-index: 9999999882">&nbsp;</span></a>Detecting MetaMask&#39;s web3 injection</h3><p>Before diving in, we&#39;ll need to make sure the dapp is checking for MetaMask&#39;s <code>web3</code> instance and that the extension itself is configured properly with Ganache.</p>
-<p>MetaMask injects its own <code>web3</code> instance, so we&#39;ll want to make sure we&#39;re checking for that. After the window has loaded perform the following check:</p>
-<pre><code class="lang-javascript">// Is there is an injected web3 instance?
-if (typeof web3 !== &#39;undefined&#39;) {
-  App.web3Provider = web3.currentProvider;
-  web3 = new Web3(web3.currentProvider);
-} else {
-  // If no injected web3 instance is detected, fallback to Ganache.
-  App.web3Provider = new web3.providers.HttpProvider(&#39;http://127.0.0.1:7545&#39;);
-  web3 = new Web3(App.web3Provider);
+export default reducer
+</code></pre>
+<p>Similarly, we can import Drizzle&#39;s sagas as well. For more information on how this works, see the example just above the &quot;Making our code testable&quot; section of the <a href="https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html"><code>redux-saga</code> beginner tutorial</a>.</p>
+<pre><code class="lang-javascript">import { all, fork } from &#39;redux-saga/effects&#39;
+import { drizzleSagas } from &#39;drizzle&#39;
+
+export default function* root() {
+  yield all(
+    drizzleSagas.map(saga =&gt; fork(saga))
+  )
 }
 </code></pre>
-<h3><a name="setting-up-metamask" class="anchor" href="#setting-up-metamask"><span class="header-link" style="z-index: 9999999881">&nbsp;</span></a>Setting up MetaMask</h3><p>To use Ganache with MetaMask, click the MetaMask icon in your browser and this screen will appear:</p>
-<p><img src="/tutorials/images/pet-shop/metamask-initial.png" alt="MetaMask initial screen"></p>
-<p><em>MetaMask initial screen</em></p>
-<p>Click <strong>Import Existing DEN</strong>. In the box marked <strong>Wallet Seed</strong>, enter the mnemonic that was displayed when launching Ganache. While this can be changed in the Settings, the default is:</p>
-<pre><code class="lang-shell">candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
-</code></pre>
-<p class="alert alert-danger">
-<strong>Warning</strong>: Do not use this mnemonic on the main Ethereum network (mainnet). If you send ETH to any account generated from this mnemonic, you will lose it all!
-</p>
+<p>Now we can use the reducers and sagas as we normally would in our store. Note that we must also generate an initial state for our contracts. Drizzle takes care of this for you with the <code></code> function.</p>
+<pre><code class="lang-javascript">// ...
+import { generateContractsInitialState } from &#39;drizzle&#39;
+import drizzleOptions from &#39;./drizzleOptions&#39;
+// ...
 
-<p>Enter a password below that and click <strong>OK</strong>.</p>
-<p><img src="/tutorials/images/pet-shop/metamask-seed.png" alt="MetaMask seed phrase"></p>
-<p><em>MetaMask seed phrase</em></p>
-<p>Now we need to connect MetaMask to the blockchain created by Ganache. Click the menu that shows &quot;Main Network&quot; and select <strong>Custom RPC</strong>.</p>
-<p><img src="/tutorials/images/pet-shop/metamask-networkmenu.png" alt="MetaMask network menu"></p>
-<p><em>MetaMask network menu</em></p>
-<p>In the box titled &quot;New RPC URL&quot; enter <code>http://127.0.0.1:7545</code> and click <strong>Save</strong>.</p>
-<!--Add image from pet shop tutorial when updated for Ganache -->
-<p>The network name at the top will switch to say &quot;Private Network&quot;. Click the left-pointing arrow next to &quot;Settings&quot; to close out of the page and return to the Accounts page.</p>
-<p>Now that we&#39;ve connected MetaMask to Ganache, you&#39;ll be take to the accounts screen. Each account created by Ganache is given 100 ether. The first account should have less than the others because that account supplies the gas for smart contract deployment. Since you&#39;ve deployed your smart contract to the network, this account paid for it.</p>
-<p>Click the account icon in the upper-right to create new accounts, the first 10 of which will correspond to the 10 accounts displayed when you launched Ganache.</p>
-<p><img src="/tutorials/images/pet-shop/metamask-account1.png" alt="MetaMask account"></p>
-<p><em>MetaMask account</em></p>
-<h2><a name="using-metamask-with-truffle-develop" class="anchor" href="#using-metamask-with-truffle-develop"><span class="header-link" style="z-index: 9999999880">&nbsp;</span></a>Using MetaMask with Truffle Develop</h2><p>Truffle Develop is a command-line application that runs a temporary blockchain that is also used for testing purposes. It runs on <code>127.0.0.1:9545</code>.</p>
-<p class="alert alert-info">
-<strong>Note</strong>: We recommend specifying <code>127.0.0.1</code> instead of <code>localhost</code> because the address does not require a network connection and so is more suitable for development.
-</p>
+const initialState = {
+  contracts: generateContractsInitialState(drizzleOptions)
+}
 
-<p>Using MetaMask with Truffle Develop is very similar to that of Ganache. There are only a few notable differences:</p>
-<ul>
-<li>The mnemonic is always <code>candy maple cake sugar pudding cream honey rich smooth crumble sweet treat</code> and can&#39;t be changed.</li>
-<li><p>Truffle Develop runs by default on <code>127.0.0.1:9545</code>, so you&#39;ll want to edit the above web3 code to say:</p>
-<pre><code class="lang-javascript">// Is there is an injected web3 instance?
-if (typeof web3 !== &#39;undefined&#39;) {
-  App.web3Provider = web3.currentProvider;
-  web3 = new Web3(web3.currentProvider);
-} else {
-  // If no injected web3 instance is detected, fallback to Truffle Develop.
-  App.web3Provider = new web3.providers.HttpProvider(&#39;http://127.0.0.1:9545&#39;);
-  web3 = new Web3(App.web3Provider);
-}
+const store = createStore(
+  reducer,
+  initialState,
+  composeEnhancers(
+    applyMiddleware(
+      thunkMiddleware,
+      routingMiddleware,
+      sagaMiddleware
+    )
+  )
+)
+
+sagaMiddleware.run(rootSaga)
 </code></pre>
-</li>
-<li><p>In MetaMask, when entering the &quot;New RPC URL&quot;, enter <code>http://127.0.0.1:9545</code>.</p>
-</li>
-</ul>
-<h2><a name="using-metamask-with-ganache-cli" class="anchor" href="#using-metamask-with-ganache-cli"><span class="header-link" style="z-index: 9999999879">&nbsp;</span></a>Using MetaMask with Ganache CLI</h2><p>Using MetaMask with Ganache CLI is also very similar to that of Ganache. There are only a few notable differences:</p>
-<ul>
-<li><p>Ganache CLI runs by default on <code>http://127.0.0.1:8545</code> so you&#39;ll want to edit the above web3 code to say:</p>
-<pre><code class="lang-javascript">// Is there is an injected web3 instance?
-if (typeof web3 !== &#39;undefined&#39;) {
-  App.web3Provider = web3.currentProvider;
-  web3 = new Web3(web3.currentProvider);
-} else {
-  // If no injected web3 instance is detected, fallback to Ganache CLI.
-  App.web3Provider = new web3.providers.HttpProvider(&#39;http://127.0.0.1:8545&#39;);
-  web3 = new Web3(App.web3Provider);
-}
+<p>Finally, use the store as your normally would. In this example, we&#39;re using the <code>&lt;DrizzleProvider&gt;</code> from <code>drizzle-react</code>.</p>
+<pre><code class="lang-javascript">// ...
+import store from &#39;./store&#39;
+// ...
+
+ReactDOM.render((
+    &lt;DrizzleProvider options={drizzleOptions} store={store}&gt;
+      &lt;LoadingContainer&gt;
+        &lt;Router history={history}&gt;
+          &lt;Route path=&quot;/&quot; component={App}&gt;
+            &lt;IndexRoute component={HomeContainer} /&gt;
+          &lt;/Route&gt;
+        &lt;/Router&gt;
+      &lt;/LoadingContainer&gt;
+    &lt;/DrizzleProvider&gt;
+  ),
+  document.getElementById(&#39;root&#39;)
+);
 </code></pre>
-</li>
-<li><p>In MetaMask, when entering the &quot;New RPC URL&quot;, enter <code>http://127.0.0.1:8545</code>.</p>
-</li>
-</ul>
+<h2><a name="multiple-stores" class="anchor" href="#multiple-stores"><span class="header-link" style="z-index: 9999999736">&nbsp;</span></a>Multiple Stores</h2><p>There are reasons you may want multiple stores in your application. If you&#39;re working with a large, existing webapp, you may want to keep the Ethereum portions of it separated. From the <a href="https://redux.js.org/faq/store-setup#can-or-should-i-create-multiple-stores-can-i-import-my-store-directly-and-use-it-in-components-myself">Redux Documentation&#39;s Store Setup section</a>:</p>
+<blockquote>
+<p>Isolating a Redux app as a component in a bigger application, in which case you might want to create a store per root component instance.</p>
+</blockquote>
+<p>If you&#39;re using React and <code>drizzle-react</code>, you can achieve this by not passing a store to the <code>&lt;DrizzleProvider&gt;</code> and wrapping your existing <code>&lt;Provider&gt;</code> component.</p>
+<pre><code class="lang-javascript">// ...
+import { DrizzleProvider } from &#39;drizzle-react&#39;
+// ...
+
+ReactDOM.render((
+    &lt;DrizzleProvider options={options}&gt;
+      &lt;Provider store={store}&gt;
+        &lt;LoadingContainer&gt;
+          &lt;Router history={history}&gt;
+            &lt;Route path=&quot;/&quot; component={App}&gt;
+              &lt;IndexRoute component={HomeContainer} /&gt;
+            &lt;/Route&gt;
+          &lt;/Router&gt;
+        &lt;/LoadingContainer&gt;
+      &lt;/Provider&gt;
+    &lt;/DrizzleProvider&gt;
+  ),
+  document.getElementById(&#39;root&#39;)
+);
+</code></pre>
 
           <footer class="container-fluid">
-            <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/docs/advanced/truffle-with-metamask.md">Edit here &rarr;</a></p>
+            <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/docs/drizzle/using-an-existing-redux-store.md">Edit here &rarr;</a></p>
           </footer>
         </div>
       </div>
