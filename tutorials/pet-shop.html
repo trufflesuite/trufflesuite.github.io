@@ -578,16 +578,14 @@ web3.eth.getAccounts(function(error, accounts) {
 <p><img src="/tutorials/images/pet-shop/metamask-initial.png" alt="Initial screen"></p>
 <p><em>MetaMask initial screen</em></p>
 </li>
-<li><p>In the box marked <strong>Wallet Seed</strong>, enter the mnemonic that is displayed in Ganache:</p>
-<pre><code class="lang-shell">candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
-</code></pre>
+<li><p>In the box marked <strong>Wallet Seed</strong>, enter the mnemonic that is displayed in Ganache.</p>
 <p class="alert alert-danger">
 <strong>Warning</strong>: Do not use this mnemonic on the main Ethereum network (mainnet). If you send ETH to any account generated from this mnemonic, you will lose it all!
 </p>
 
 <p>Enter a password below that and click <strong>OK</strong>.</p>
 <p><img src="/tutorials/images/pet-shop/metamask-seed.png" alt="MetaMask seed phrase"></p>
-<p><em>MetaMask seed phrase</em></p>
+<p><em>MetaMask seed phrase (for illustration purposes only)</em></p>
 </li>
 <li><p>Now we need to connect MetaMask to the blockchain created by Ganache. Click the menu that shows &quot;Main Network&quot; and select <strong>Custom RPC</strong>.</p>
 <p><img src="/tutorials/images/pet-shop/metamask-networkmenu.png" alt="MetaMask network menu"></p>
@@ -599,7 +597,7 @@ web3.eth.getAccounts(function(error, accounts) {
 <p>The network name at the top will switch to say &quot;Private Network&quot;.</p>
 </li>
 <li><p>Click the left-pointing arrow next to &quot;Settings&quot; to close out of the page and return to the Accounts page.</p>
-<p>Each account created by Truffle Develop is given 100 ether. You&#39;ll notice it&#39;s slightly less on the first account because some gas was used when the contract itself was deployed and when the tests were run.</p>
+<p>Each account created by Ganache is given 100 ether. You&#39;ll notice it&#39;s slightly less on the first account because some gas was used when the contract itself was deployed and when the tests were run.</p>
 <p><img src="/tutorials/images/pet-shop/metamask-account1.png" alt="MetaMask account configured"></p>
 <p><em>MetaMask account configured</em></p>
 <p>Configuration is now complete.</p>
