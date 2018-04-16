@@ -237,7 +237,7 @@
 <h2><a name="using-web3" class="anchor" href="#using-web3"><span class="header-link" style="z-index: 9999999782">&nbsp;</span></a>Using web3</h2><p>A <code>web3</code> instance is available in each test file, configured to the correct provider. So calling <code>web3.eth.getBalance</code> just works!</p>
 <h2><a name="examples" class="anchor" href="#examples"><span class="header-link" style="z-index: 9999999781">&nbsp;</span></a>Examples</h2><h3><a name="using-code-then-code-" class="anchor" href="#using-code-then-code-"><span class="header-link" style="z-index: 9999999780">&nbsp;</span></a>Using <code>.then</code></h3><p>Here&#39;s an example test provided in the <a href="/boxes/metacoin">MetaCoin Truffle Box</a>. Note the use of the <code>contract()</code> function, the <code>accounts</code> array for specifying available Ethereum accounts, and our use of <code>artifacts.require()</code> for interacting directly with our contracts.</p>
 <p>File: <code>./test/metacoin.js</code></p>
-<pre><code class="lang-javascript">var MetaCoin = artifacts.require(&quot;./MetaCoin.sol&quot;);
+<pre><code class="lang-javascript">var MetaCoin = artifacts.require(&quot;MetaCoin&quot;);
 
 contract(&#39;MetaCoin&#39;, function(accounts) {
   it(&quot;should put 10000 MetaCoin in the first account&quot;, function() {
