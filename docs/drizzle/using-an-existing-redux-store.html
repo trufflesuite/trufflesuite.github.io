@@ -223,8 +223,8 @@
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="using-an-existing-redux-store" class="anchor" href="#using-an-existing-redux-store"><span class="header-link" style="z-index: 9999999897">&nbsp;</span></a>Using an Existing Redux Store</h1><p>Drizzle is flexible about its store. It can generate a store if your app doesn&#39;t currently use redux, live alongside your current store (potentially keeping all Ethereum concerns in one place) or integrating its reducers and sagas with your currently existing store.</p>
-<h2><a name="single-store" class="anchor" href="#single-store"><span class="header-link" style="z-index: 9999999896">&nbsp;</span></a>Single Store</h2><p>If you&#39;d like to integrate Drizzle&#39;s reducers and sagas with your existing store, import them for use alongside your existing reducers. In this example, we already have <code>react-router-redux</code> keeping the state of <code>react-router</code> in our store.</p>
+          <h1><a name="using-an-existing-redux-store" class="anchor" href="#using-an-existing-redux-store"><span class="header-link" style="z-index: 9999999844">&nbsp;</span></a>Using an Existing Redux Store</h1><p>Drizzle is flexible about its store. It can generate a store if your app doesn&#39;t currently use redux, live alongside your current store (potentially keeping all Ethereum concerns in one place) or integrating its reducers and sagas with your currently existing store.</p>
+<h2><a name="single-store" class="anchor" href="#single-store"><span class="header-link" style="z-index: 9999999843">&nbsp;</span></a>Single Store</h2><p>If you&#39;d like to integrate Drizzle&#39;s reducers and sagas with your existing store, import them for use alongside your existing reducers. In this example, we already have <code>react-router-redux</code> keeping the state of <code>react-router</code> in our store.</p>
 <pre><code class="lang-javascript">import { combineReducers } from &#39;redux&#39;
 import { routerReducer } from &#39;react-router-redux&#39;
 import { drizzleReducers } from &#39;drizzle&#39;
@@ -289,7 +289,7 @@ ReactDOM.render((
   document.getElementById(&#39;root&#39;)
 );
 </code></pre>
-<h2><a name="multiple-stores" class="anchor" href="#multiple-stores"><span class="header-link" style="z-index: 9999999895">&nbsp;</span></a>Multiple Stores</h2><p>There are reasons you may want multiple stores in your application. If you&#39;re working with a large, existing webapp, you may want to keep the Ethereum portions of it separated. From the <a href="https://redux.js.org/faq/store-setup#can-or-should-i-create-multiple-stores-can-i-import-my-store-directly-and-use-it-in-components-myself">Redux Documentation&#39;s Store Setup section</a>:</p>
+<h2><a name="multiple-stores" class="anchor" href="#multiple-stores"><span class="header-link" style="z-index: 9999999842">&nbsp;</span></a>Multiple Stores</h2><p>There are reasons you may want multiple stores in your application. If you&#39;re working with a large, existing webapp, you may want to keep the Ethereum portions of it separated. From the <a href="https://redux.js.org/faq/store-setup#can-or-should-i-create-multiple-stores-can-i-import-my-store-directly-and-use-it-in-components-myself">Redux Documentation&#39;s Store Setup section</a>:</p>
 <blockquote>
 <p>Isolating a Redux app as a component in a bigger application, in which case you might want to create a store per root component instance.</p>
 </blockquote>
