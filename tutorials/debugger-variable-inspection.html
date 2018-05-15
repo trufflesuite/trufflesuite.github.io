@@ -186,7 +186,7 @@ uint[] fibseries;
 <li>The contract name is called <code>Fibonacci</code>.</li>
 <li>We&#39;re defining an array of integers called <code>fibseries</code>. This will house our Fibonacci series. Note that the variable declaration is happening <em>outside</em> of any function, and therefore the array will be saved in storage (instead of memory), provoking a transaction to occur when the contract is run.</li>
 <li>The function is called <code>generateFib</code> and takes a single argument, which is the number of integers in the sequence to generate.</li>
-<li>The next two commands add an element each to the array via the <code>.push()</code> method. As we our <code>fibseries</code> array is defined in storage, but isn&#39;t size isn&#39;t known until runtime, the <code>.push()</code> method is used to add entries to (the end of) our array. This starts the sequence with the number 1 twice.</li>
+<li>The next two commands add an element each to the array via the <code>.push()</code> method. As we know our <code>fibseries</code> array is defined in storage, but size isn&#39;t known until runtime, the <code>.push()</code> method is used to add entries to (the end of) our array. This starts the sequence with the number 1 twice.</li>
 <li>The for loop iterates through the rest of the array (as determined by the integer <code>n</code>) filling each entry with the appropriate value.</li>
 </ul>
 </li>
@@ -417,7 +417,7 @@ debug(development:0xf47f01da...)&gt;
 
 :{ i, fibseries }
   { i: 0, fibseries: [ 1 ] }
-</code></pre><p>Notices that we have now populated the first entry in the sequence.</p>
+</code></pre><p>Notice that we have now populated the first entry in the sequence.</p>
 </li>
 <li><p>Because the debugger steps through each instruction one at a time, it&#39;s going to take a long time to see results if we don&#39;t pick 
 up our pace. Luckily, the debugger can &quot;step over&quot;, which steps over the current line, moving to the next line, as long as it&#39;s at the same function depth. This will allow us to make progress much more quickly. So type <code>o</code> to step over the current instruction set. The output will be:</p>
@@ -526,7 +526,7 @@ F[n] = F[n-1] - F[n-2]
 </code></pre></li>
 </ol>
 <p>Something seems off here. Obviously, if you were expecting the Fibonacci series, by this point you would realize that you had veered far off course.</p>
-<p>But the jump from <code>0</code> to <code>255</code> should be suspicious too. And in fact, what we&#39;re seeing is a <strong>buffer underflow</strong>, a situation where we have an <a href="https://en.wikipedia.org/wiki/Integer_(computer_science">unsigned integer</a>), which can hold only positive values, being set to less than zero. Specifically, that fourth value is defined as the difference between the previous two elements, so <code>0 - 1 = -1</code>. Our type is <code>uint8[]</code> which mean that each integer in the array is defined by 8 bits, so its maximum value is 2^8 - 1 = 255. Subtract one from zero, and the value &quot;wraps around&quot; to its maximum value.</p>
+<p>But the jump from <code>0</code> to <code>255</code> should be suspicious too. And in fact, what we&#39;re seeing is a <strong>buffer underflow</strong>, a situation where we have an <a href="https://en.wikipedia.org/wiki/Integer_(computer_science">unsigned integer</a>), which can hold only positive values, being set to less than zero. Specifically, that fourth value is defined as the difference between the previous two elements, so <code>0 - 1 = -1</code>. Our type is <code>uint8[]</code> which means that each integer in the array is defined by 8 bits, so its maximum value is 2^8 - 1 = 255. Subtract one from zero, and the value &quot;wraps around&quot; to its maximum value.</p>
 <p>Assuming this was the series we wanted (and that our minus sign was correct), the way to change this is to change the definition of our <code>fibseries</code> array from <code>uint8[]</code> to <code>int8[]</code>. That would make values &quot;signed integers&quot; and able to accept negative values, giving you an array that would look like this instead:</p>
 <pre><code>[ 1, 1, 0, -1 ]
 </code></pre><h2><a name="debugging-errors" class="anchor" href="#debugging-errors"><span class="header-link" style="z-index: 9999999643">&nbsp;</span></a>Debugging errors</h2><p>Sometimes, contracts have errors in them. They may compile just fine, but when you go to use them, problems arise.</p>
