@@ -10351,6 +10351,237 @@ html, body {
   max-width: 100%;
 }
 
+.TruffleCon .navbar {
+  background: #34262a;
+  border-color: #5f474e;
+}
+
+.TruffleCon .navbar .navbar-nav > li > a {
+  color: #fff;
+  transition: opacity .125s ease-in-out;
+}
+
+.TruffleCon .navbar .navbar-nav > li > a:hover {
+  opacity: .6;
+}
+
+.TruffleCon .navbar .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .TruffleCon .navbar .navbar-collapse {
+    background: #34262a;
+  }
+}
+
+.TruffleCon .Footer {
+  background: #34262a;
+  border-color: #5f474e;
+  color: #fff;
+}
+
+.TruffleCon .Footer a {
+  color: #27aae1;
+  transition: opacity .125s ease-in-out;
+}
+
+.TruffleCon .Footer a:hover {
+  opacity: .6;
+  text-decoration: none;
+}
+
+.TruffleCon .Footer .copyright svg path,
+.TruffleCon .Footer .copyright svg ellipse {
+  fill: #fff;
+}
+
+.TruffleCon .Footer h5 {
+  color: #fff;
+  text-shadow: none;
+}
+
+.TruffleCon .MainContent {
+  position: relative;
+  height: calc(100vh - 100px);
+  margin-top: 100px;
+  background: url("/images/trufflecon18/portland-skyline-recolor.jpg");
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+  transition: all .125s ease-in-out;
+}
+
+.TruffleCon .MainContent .groovy-logo {
+  display: none;
+}
+
+.TruffleCon .MainContent.groovy {
+  background: radial-gradient(#3fe0c5, #e4a663, #e911bd);
+  background-size: 600%;
+  background-position: center center;
+  -webkit-animation: GroovyGradient 2s ease;
+  -moz-animation: GroovyGradient 2s ease;
+  animation: GroovyGradient 2s ease;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes GroovyGradient {
+  0% {
+    background-size: 600%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+@-moz-keyframes GroovyGradient {
+  0% {
+    background-size: 600%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+@keyframes GroovyGradient {
+  0% {
+    background-size: 600%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+.TruffleCon .MainContent.groovy .groovy-logo {
+  display: inline-block;
+}
+
+.TruffleCon .MainContent.groovy #LetsGetGroovy {
+  display: none;
+}
+
+.TruffleCon .MainContent.groovy h1 {
+  font-family: "Shrikhand";
+  letter-spacing: normal;
+}
+
+.TruffleCon .MainContent.groovy h1 img {
+  margin-right: 0;
+  margin-left: .075em;
+  height: .8em;
+  margin-top: -.1em;
+}
+
+.TruffleCon .MainContent .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 734px;
+  width: 100%;
+}
+
+.TruffleCon .MainContent h1, .TruffleCon .MainContent h3, .TruffleCon .MainContent p {
+  color: #fff;
+  text-shadow: 0 3px 4px #33262a;
+}
+
+.TruffleCon .MainContent h1 {
+  font-size: 4rem;
+  letter-spacing: .25em;
+  text-align: center;
+}
+
+.TruffleCon .MainContent h1 img {
+  height: 1em;
+  width: auto;
+  margin-top: -.25em;
+  margin-right: .25em;
+}
+
+.TruffleCon .MainContent h1 img:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .TruffleCon .MainContent h1 {
+    font-size: 2.75rem;
+    letter-spacing: .2em;
+  }
+}
+
+.TruffleCon .MainContent h3 {
+  margin-bottom: 2.5rem;
+  letter-spacing: .06em;
+  text-align: center;
+}
+
+.TruffleCon .MainContent p {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.TruffleCon .MainContent .BetaSignup {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background: none;
+  border: none;
+}
+
+.TruffleCon .MainContent .BetaSignup:before, .TruffleCon .MainContent .BetaSignup:after {
+  display: none;
+}
+
+.TruffleCon .MainContent .BetaSignup h5 {
+  color: #fff;
+}
+
+.TruffleCon .MainContent .BetaSignup .FormWrapper {
+  margin: 0;
+  border-color: #5f474e;
+}
+
+.TruffleCon .MainContent .BetaSignup .FormWrapper .mc-field-group:first-child {
+  border-color: #5f474e;
+}
+
+.TruffleCon .MainContent .BetaSignup .FormWrapper .mc-field-group {
+  border-color: #5f474e;
+}
+
+.TruffleCon .MainContent .BetaSignup .FormWrapper label {
+  color: #fff;
+}
+
+.TruffleCon .MainContent .BetaSignup .FormWrapper input {
+  height: 50px;
+}
+
+.TruffleCon .MainContent .BetaSignup .FormWrapper input[type="text"], .TruffleCon .MainContent .BetaSignup .FormWrapper input[type="email"] {
+  background: #34262a;
+}
+
+@media screen and (max-width: 767px) {
+  .TruffleCon .MainContent {
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+  }
+}
+
+.text-truffle {
+  color: #3FE0C5;
+}
+
+.link-truffle {
+  color: #3FE0C5;
+}
+
+.link-truffle:hover {
+  color: #3FE0C5;
+  opacity: .6;
+}
+
 a {
   cursor: pointer;
 }
