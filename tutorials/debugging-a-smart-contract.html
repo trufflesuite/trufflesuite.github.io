@@ -130,7 +130,7 @@
 
   <section class="MainContent">
     <div class="container container-narrow">
-      <h1><a name="debugging-a-smart-contract" class="anchor" href="#debugging-a-smart-contract"><span class="header-link" style="z-index: 9999999642">&nbsp;</span></a>Debugging a smart contract</h1><p class="alert alert-info">
+      <h1><a name="debugging-a-smart-contract" class="anchor" href="#debugging-a-smart-contract"><span class="header-link" style="z-index: 9999999695">&nbsp;</span></a>Debugging a smart contract</h1><p class="alert alert-info">
 <strong>Note</strong>: This tutorial requires Truffle version 4.0 or newer.
 </p>
 
@@ -141,7 +141,7 @@
 <p>If our contracts are not coded correctly, our transactions may fail, which can result in the loss of ether (in the form of gas), not to mention wasted time and effort.</p>
 <p><strong>Luckily, Truffle (as of version 4) has a built in debugger for stepping through your code.</strong> So when something goes wrong, you can find out exactly what it was, and fix it promptly.</p>
 <p>In this tutorial, we will migrate a basic contract to a test blockchain, introduce some errors into it, and solve each one through the use of the built-in Truffle debugger.</p>
-<h2><a name="a-basic-smart-contract" class="anchor" href="#a-basic-smart-contract"><span class="header-link" style="z-index: 9999999641">&nbsp;</span></a>A basic smart contract</h2><p>One of the most basic, non-trivial, types of smart contract is a <strong>simple storage contract</strong>. (This example was adapted from the <a href="https://solidity.readthedocs.io/en/develop/introduction-to-smart-contracts.html">Solidity documentation</a>.)</p>
+<h2><a name="a-basic-smart-contract" class="anchor" href="#a-basic-smart-contract"><span class="header-link" style="z-index: 9999999694">&nbsp;</span></a>A basic smart contract</h2><p>One of the most basic, non-trivial, types of smart contract is a <strong>simple storage contract</strong>. (This example was adapted from the <a href="https://solidity.readthedocs.io/en/develop/introduction-to-smart-contracts.html">Solidity documentation</a>.)</p>
 <pre><code class="lang-javascript">pragma solidity ^0.4.17;
 
 contract SimpleStorage {
@@ -163,7 +163,7 @@ contract SimpleStorage {
 </ul>
 <p>This isn&#39;t a very interesting contract, but that&#39;s not the point here. We want to see what happens when things go wrong.</p>
 <p>First, let&#39;s set up our environment.</p>
-<h2><a name="deploying-the-basic-smart-contract" class="anchor" href="#deploying-the-basic-smart-contract"><span class="header-link" style="z-index: 9999999640">&nbsp;</span></a>Deploying the basic smart contract</h2><ol>
+<h2><a name="deploying-the-basic-smart-contract" class="anchor" href="#deploying-the-basic-smart-contract"><span class="header-link" style="z-index: 9999999693">&nbsp;</span></a>Deploying the basic smart contract</h2><ol>
 <li><p>Create a new directory where we will house our contract locally:</p>
 <pre><code class="lang-shell">mkdir simple-storage
 cd simple-storage
@@ -230,7 +230,7 @@ module.exports = function(deployer) {
 </code></pre>
 </li>
 </ol>
-<h2><a name="interacting-with-the-basic-smart-contract" class="anchor" href="#interacting-with-the-basic-smart-contract"><span class="header-link" style="z-index: 9999999639">&nbsp;</span></a>Interacting with the basic smart contract</h2><p>The smart contract is now deployed to a test network via <code>truffle develop</code>, which launches a <a href="/docs/getting_started/console">console</a> against <a href="/ganache">Ganache</a>, a local development blockchain built right into Truffle.</p>
+<h2><a name="interacting-with-the-basic-smart-contract" class="anchor" href="#interacting-with-the-basic-smart-contract"><span class="header-link" style="z-index: 9999999692">&nbsp;</span></a>Interacting with the basic smart contract</h2><p>The smart contract is now deployed to a test network via <code>truffle develop</code>, which launches a <a href="/docs/getting_started/console">console</a> against <a href="/ganache">Ganache</a>, a local development blockchain built right into Truffle.</p>
 <p>We next want to interact with the smart contract to see how it works when working correctly. We&#39;ll interact using the <code>truffle develop</code> console.</p>
 <p class="alert alert-info">
 <strong>Note</strong>: If you&#39;re wondering why we didn&#39;t need to mine to get the transaction to be secured, the Truffle Develop console already takes care of that for us. If using a different network, you&#39;ll need to make sure you mine to get the transaction on the blockchain.
@@ -274,17 +274,17 @@ module.exports = function(deployer) {
 </code></pre>
 </li>
 </ol>
-<h2><a name="debugging-errors" class="anchor" href="#debugging-errors"><span class="header-link" style="z-index: 9999999638">&nbsp;</span></a>Debugging errors</h2><p>The above shows how the contract <em>should</em> work. Now, we will introduce some small errors to the contract and redeploy it. We will see how the issues present itself, and also <strong>use Truffle&#39;s built-in debug feature to fix the issues</strong>.</p>
+<h2><a name="debugging-errors" class="anchor" href="#debugging-errors"><span class="header-link" style="z-index: 9999999691">&nbsp;</span></a>Debugging errors</h2><p>The above shows how the contract <em>should</em> work. Now, we will introduce some small errors to the contract and redeploy it. We will see how the issues present itself, and also <strong>use Truffle&#39;s built-in debug feature to fix the issues</strong>.</p>
 <p>We will look at the following issues:</p>
 <ul>
 <li>An infinite loop</li>
 <li>Invalid error check </li>
 <li>No error, but a function isn&#39;t operating as desired</li>
 </ul>
-<h3><a name="issue-1-an-infinite-loop" class="anchor" href="#issue-1-an-infinite-loop"><span class="header-link" style="z-index: 9999999637">&nbsp;</span></a>Issue #1: An infinite loop</h3><p>On the Ethereum blockchain, transactions cannot be set to run forever.</p>
+<h3><a name="issue-1-an-infinite-loop" class="anchor" href="#issue-1-an-infinite-loop"><span class="header-link" style="z-index: 9999999690">&nbsp;</span></a>Issue #1: An infinite loop</h3><p>On the Ethereum blockchain, transactions cannot be set to run forever.</p>
 <p>A transaction can run up until its gas limit is reached. Once that happens, the transaction will error out, and an &quot;out of gas&quot; error will be returned.</p>
 <p>Since gas is priced in ether, this could have real-world financial implications. So fixing an out-of-gas error is critical.</p>
-<h4><a name="introducing-the-error" class="anchor" href="#introducing-the-error"><span class="header-link" style="z-index: 9999999636">&nbsp;</span></a>Introducing the error</h4><p>An infinite loop is easy to create.</p>
+<h4><a name="introducing-the-error" class="anchor" href="#introducing-the-error"><span class="header-link" style="z-index: 9999999689">&nbsp;</span></a>Introducing the error</h4><p>An infinite loop is easy to create.</p>
 <ol>
 <li><p>Open <code>Store.sol</code> from the <code>contracts/</code> directory in a text editor.</p>
 </li>
@@ -298,7 +298,7 @@ module.exports = function(deployer) {
 <p>This function will never terminate, because of the <code>while(true)</code> conditional.</p>
 </li>
 </ol>
-<h4><a name="testing-the-contract" class="anchor" href="#testing-the-contract"><span class="header-link" style="z-index: 9999999635">&nbsp;</span></a>Testing the contract</h4><p>The Truffle Develop console has the ability to migrate updated contracts without the need to exit and restart the console. And since the <code>migrate</code> command can compile and migrate in one step, we can reset our contract on the blockchain in one step.</p>
+<h4><a name="testing-the-contract" class="anchor" href="#testing-the-contract"><span class="header-link" style="z-index: 9999999688">&nbsp;</span></a>Testing the contract</h4><p>The Truffle Develop console has the ability to migrate updated contracts without the need to exit and restart the console. And since the <code>migrate</code> command can compile and migrate in one step, we can reset our contract on the blockchain in one step.</p>
 <ol>
 <li><p>In the Truffle Develop console, update the contract:</p>
 <pre><code class="lang-shell">migrate --reset
@@ -328,7 +328,7 @@ module.exports = function(deployer) {
 </li>
 </ol>
 <p>With our failure and our transaction ID, we can now debug the transaction.</p>
-<h4><a name="debugging-the-issue" class="anchor" href="#debugging-the-issue"><span class="header-link" style="z-index: 9999999634">&nbsp;</span></a>Debugging the issue</h4><p>Truffle contains a built-in debugger. The command to launch this is <code>debug &lt;Transaction ID&gt;</code> from the Truffle Develop console, or <code>truffle debug &lt;Transaction ID&gt;</code> from the terminal. Let&#39;s launch this now.</p>
+<h4><a name="debugging-the-issue" class="anchor" href="#debugging-the-issue"><span class="header-link" style="z-index: 9999999687">&nbsp;</span></a>Debugging the issue</h4><p>Truffle contains a built-in debugger. The command to launch this is <code>debug &lt;Transaction ID&gt;</code> from the Truffle Develop console, or <code>truffle debug &lt;Transaction ID&gt;</code> from the terminal. Let&#39;s launch this now.</p>
 <ol>
 <li><p>In the Truffle Develop console, copy the transaction ID from the logs console and paste it as the argument in the <code>debug</code> command:</p>
 <pre><code class="lang-shell">debug 0xe493340792ab92b95ac40e43dca6bc88fba7fd67191989d59ca30f79320e883f
@@ -440,9 +440,9 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 <li><p>Type <code>q</code> to exit the debugger.</p>
 </li>
 </ol>
-<h3><a name="issue-2-an-invalid-error-check" class="anchor" href="#issue-2-an-invalid-error-check"><span class="header-link" style="z-index: 9999999633">&nbsp;</span></a>Issue #2: An invalid error check</h3><p>Smart contracts can use statements like <code>assert()</code> to ensure that certain conditions are met. These can conflict with the state of the contract in ways that are irreconcilable.</p>
+<h3><a name="issue-2-an-invalid-error-check" class="anchor" href="#issue-2-an-invalid-error-check"><span class="header-link" style="z-index: 9999999686">&nbsp;</span></a>Issue #2: An invalid error check</h3><p>Smart contracts can use statements like <code>assert()</code> to ensure that certain conditions are met. These can conflict with the state of the contract in ways that are irreconcilable.</p>
 <p>Here we will introduce such a condition, and then see how the debugger can find it.</p>
-<h4><a name="introducing-the-error" class="anchor" href="#introducing-the-error"><span class="header-link" style="z-index: 9999999632">&nbsp;</span></a>Introducing the error</h4><ol>
+<h4><a name="introducing-the-error" class="anchor" href="#introducing-the-error"><span class="header-link" style="z-index: 9999999685">&nbsp;</span></a>Introducing the error</h4><ol>
 <li><p>Open <code>Store.sol</code> again.</p>
 </li>
 <li><p>Replace the <code>set()</code> function with the following:</p>
@@ -454,7 +454,7 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 <p>This is the same as the original version, but with an <code>assert()</code> function added, testing to make sure that <code>x == 0</code>. This will be fine until we set that value to something else, and then we&#39;ll have a problem.</p>
 </li>
 </ol>
-<h4><a name="testing-the-contract" class="anchor" href="#testing-the-contract"><span class="header-link" style="z-index: 9999999631">&nbsp;</span></a>Testing the contract</h4><p>Just as before, we&#39;ll reset the contract on the blockchain.</p>
+<h4><a name="testing-the-contract" class="anchor" href="#testing-the-contract"><span class="header-link" style="z-index: 9999999684">&nbsp;</span></a>Testing the contract</h4><p>Just as before, we&#39;ll reset the contract on the blockchain.</p>
 <ol>
 <li><p>In the Truffle Develop console, reset the contract on the blockchain to its initially deployed state:</p>
 <pre><code class="lang-shell">migrate --reset
@@ -471,7 +471,7 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 <li><p>In the log window, note the transaction ID with that error.</p>
 </li>
 </ol>
-<h4><a name="debugging-the-issue" class="anchor" href="#debugging-the-issue"><span class="header-link" style="z-index: 9999999630">&nbsp;</span></a>Debugging the issue</h4><ol>
+<h4><a name="debugging-the-issue" class="anchor" href="#debugging-the-issue"><span class="header-link" style="z-index: 9999999683">&nbsp;</span></a>Debugging the issue</h4><ol>
 <li><p>Copy the transaction ID and use it as an argument to the <code>debug</code> command:</p>
 <pre><code class="lang-shell">debug 0xe493340792ab92b95ac40e43dca6bc88fba7fd67191989d59ca30f79320e883f
 </code></pre>
@@ -514,10 +514,10 @@ contract code to determine the meaning of this error.
 <p><strong>It is this last event that is triggering the error.</strong> You can see that it is the <code>assert()</code> that is to blame.</p>
 </li>
 </ol>
-<h3><a name="issue-3-a-function-isn-39-t-operating-as-desired" class="anchor" href="#issue-3-a-function-isn-39-t-operating-as-desired"><span class="header-link" style="z-index: 9999999629">&nbsp;</span></a>Issue #3: A function isn&#39;t operating as desired</h3><p>Sometimes, an error isn&#39;t a true error, in that it doesn&#39;t cause a problem at runtime, but instead is just doing something that you don&#39;t intend it to do.</p>
+<h3><a name="issue-3-a-function-isn-39-t-operating-as-desired" class="anchor" href="#issue-3-a-function-isn-39-t-operating-as-desired"><span class="header-link" style="z-index: 9999999682">&nbsp;</span></a>Issue #3: A function isn&#39;t operating as desired</h3><p>Sometimes, an error isn&#39;t a true error, in that it doesn&#39;t cause a problem at runtime, but instead is just doing something that you don&#39;t intend it to do.</p>
 <p>Take for example an event that would run if our variable was odd and another event that would run if our variable was even. <strong>If we accidentally swapped this conditional so that the opposite function would run, it wouldn&#39;t cause an error; nevertheless, the contract would act unexpectedly.</strong></p>
 <p>Once again, we can use the debugger to see where things go wrong.</p>
-<h4><a name="introducing-the-error" class="anchor" href="#introducing-the-error"><span class="header-link" style="z-index: 9999999628">&nbsp;</span></a>Introducing the error</h4><ol>
+<h4><a name="introducing-the-error" class="anchor" href="#introducing-the-error"><span class="header-link" style="z-index: 9999999681">&nbsp;</span></a>Introducing the error</h4><ol>
 <li><p>Open <code>Store.sol</code> again.</p>
 </li>
 <li><p>Replace the <code>set()</code> function with the following:</p>
@@ -538,7 +538,7 @@ function set(uint x) public {
 <p>But notice that we have the results flipped. If <code>x</code> is divisible by <code>2</code>, the <code>Odd()</code> event will run.</p>
 </li>
 </ol>
-<h4><a name="testing-the-contract" class="anchor" href="#testing-the-contract"><span class="header-link" style="z-index: 9999999627">&nbsp;</span></a>Testing the contract</h4><p>Just as before, we&#39;ll reset the contract on the blockchain.</p>
+<h4><a name="testing-the-contract" class="anchor" href="#testing-the-contract"><span class="header-link" style="z-index: 9999999680">&nbsp;</span></a>Testing the contract</h4><p>Just as before, we&#39;ll reset the contract on the blockchain.</p>
 <ol>
 <li><p>In the Truffle Develop console, update the contract:</p>
 <pre><code class="lang-shell">migrate --reset
@@ -573,7 +573,7 @@ function set(uint x) public {
 <p>But notice the logs of the transaction show the event <code>Odd</code>. That&#39;s wrong, and so our job is to find out why that&#39;s being invoked.</p>
 </li>
 </ol>
-<h4><a name="debugging-the-contract" class="anchor" href="#debugging-the-contract"><span class="header-link" style="z-index: 9999999626">&nbsp;</span></a>Debugging the contract</h4><ol>
+<h4><a name="debugging-the-contract" class="anchor" href="#debugging-the-contract"><span class="header-link" style="z-index: 9999999679">&nbsp;</span></a>Debugging the contract</h4><ol>
 <li><p>Copy that transaction ID and use it as an argument with the <code>debug</code> command:</p>
 <pre><code class="lang-shell">debug 0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42
 </code></pre>
@@ -605,7 +605,7 @@ debug(develop:0x7f799ad5...)&gt;
 <p><strong>The problem is revealed.</strong> The conditional is leading to the wrong event.</p>
 </li>
 </ol>
-<h2><a name="conclusion" class="anchor" href="#conclusion"><span class="header-link" style="z-index: 9999999625">&nbsp;</span></a>Conclusion</h2><p>With the ability to debug your contracts directly within Truffle, you have even more power at your hands to make your smart contracts rock-solid and ready to deploy. Make sure to read more about Truffle Develop console and the debugger in the docs. If you have any questions, please join our <a href="https://gitter.im/ConsenSys/truffle">Gitter channel</a> and ask there.</p>
+<h2><a name="conclusion" class="anchor" href="#conclusion"><span class="header-link" style="z-index: 9999999678">&nbsp;</span></a>Conclusion</h2><p>With the ability to debug your contracts directly within Truffle, you have even more power at your hands to make your smart contracts rock-solid and ready to deploy. Make sure to read more about Truffle Develop console and the debugger in the docs. If you have any questions, please join our <a href="https://gitter.im/ConsenSys/truffle">Gitter channel</a> and ask there.</p>
 <p>Happy debugging!</p>
 
     </div>
