@@ -196,7 +196,7 @@ uint public INITIAL_SUPPLY = 12000;
 </ul>
 </li>
 <li><p>To finish up our contract, we&#39;ll create a constructor function to set the <code>totalSupply</code> equal to our declared <code>INITIAL_SUPPLY</code> and give the entire supply to the deploying account&#39;s address. Add this block below the content added in the previous step:</p>
-<pre><code class="lang-javascript">function TutorialToken() public {
+<pre><code class="lang-javascript">constructor() public {
   totalSupply_ = INITIAL_SUPPLY;
   balances[msg.sender] = INITIAL_SUPPLY;
 }
