@@ -8371,6 +8371,17 @@ html, body {
   background: #fff;
 }
 
+.navbar .nav-trufflecon {
+  letter-spacing: .15em;
+}
+
+.navbar .nav-trufflecon img {
+  height: 1em;
+  width: auto;
+  margin-top: -.25em;
+  margin-right: .15em;
+}
+
 .navbar .navbar-collapse {
   background: transparent;
   max-height: none;
@@ -8415,7 +8426,7 @@ html, body {
   margin-top: -3px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 997px) {
   .navbar {
     height: 60px;
   }
@@ -8439,11 +8450,18 @@ html, body {
     visibility: visible;
     z-index: 300;
   }
+  .navbar .navbar-header {
+    margin-left: -15px;
+    margin-right: -15px;
+    float: none;
+  }
   .navbar .navbar-nav {
     margin: 1.2em 0;
+    float: left !important;
   }
   .navbar .navbar-nav li {
     margin-bottom: 0;
+    float: none;
   }
   .navbar-nav li:not(:last-child) {
     margin-bottom: 1.2em;
@@ -8454,6 +8472,7 @@ html, body {
   }
   .navbar-brand {
     height: 60px;
+    margin-left: -15px;
   }
   .navbar-brand svg {
     width: auto;
@@ -8461,6 +8480,7 @@ html, body {
     margin-top: 14px;
   }
   .navbar-toggle {
+    display: block;
     margin-top: 15px;
     margin-right: 0;
   }
@@ -9095,6 +9115,20 @@ html, body {
 
 .LandingPage .BuiltWith .Right {
   background-color: #fff;
+}
+
+.trufflecon-note {
+  position: absolute;
+  top: 90px;
+  right: 100px;
+  width: 200px;
+  height: auto;
+}
+
+@media screen and (max-width: 997px) {
+  .trufflecon-note {
+    display: none;
+  }
 }
 
 .Tutorials {
@@ -10580,6 +10614,14 @@ html, body {
 .link-truffle:hover {
   color: #3FE0C5;
   opacity: .6;
+}
+
+#st-2 .st-btn[data-network='sharethis'] {
+  background-color: #3fe0c5 !important;
+}
+
+#st-2 .st-toggle {
+  background: #5f474e !important;
 }
 
 a {
