@@ -2,91 +2,89 @@
 
 <!doctype html>
 <html lang="en">
-    
+  
 
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
   
   
-    <!-- Fallback for Font family below in noscript [*] -->
-    <script type="text/javascript">
-      WebFontConfig = {
-        google: { families: [ 'Oswald:300,400,700',  'Open+Sans:400,700',  'Grand+Hotel',  'Shrikhand' ] }
-      };
-      (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-      })(); </script>
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Your Ethereum Swiss Army Knife">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="news_keywords" content="solidity, dapps, contracts, smart contracts" />
-    <meta name="standout" content="http://truffleframework.com" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <meta property="og:site_name" content="Truffle Suite" />
-    <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="truffle-vue Box | Truffle Suite" />
-    <meta property="og:url" content="http://truffleframework.com" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
+  <!-- Fallback for Font family below in noscript [*] -->
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [ 'Oswald:300,400,700',  'Open+Sans:400,700',  'Grand+Hotel',  'Shrikhand' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })(); </script>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Your Ethereum Swiss Army Knife">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="news_keywords" content="solidity, dapps, contracts, smart contracts" />
+  <meta name="standout" content="http://truffleframework.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
+  <meta property="og:title" content="truffle-vue Box | Truffle Suite" />
+  <meta property="og:url" content="http://truffleframework.com/boxes/truffle-vue" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="truffle-vue Box | Truffle Suite" />
-    <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
-    <meta name="twitter:creator" content="Truffle Suite" />
-    <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="truffle-vue Box | Truffle Suite" />
+  <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="truffleframework.com" />
+  <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
-    
-    
+  
+  
 
-    <title>
-    truffle-vue Box | 
-    Truffle Suite
-    
-    </title>
+  <title>
+  truffle-vue Box | 
+  Truffle Suite
+  
+  </title>
+  
+  <link rel="author" href="/humans.txt" />
 
+  <link rel="icon" href="/images/touch/favicon.ico">
 
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/images/touch/chrome-touch-icon-192x192.png">
 
-    <link rel="author" href="/humans.txt" />
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+  <link rel="apple-touch-icon" href="/images/touch/apple-touch-icon.png">
 
-    <link rel="icon" href="/images/touch/favicon.ico">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Truffle Suite">
-    <link rel="icon" sizes="192x192" href="/images/touch/chrome-touch-icon-192x192.png">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
-    <link rel="apple-touch-icon" href="/images/touch/apple-touch-icon.png">
+  
+    <noscript>
+      <!-- [*] Web fonts for no-js -->
+      <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700%7COpen+Sans:400,700%7CGrand+Hotel%7CShrikhand' rel='stylesheet' type='text/css'>
+    </noscript>
+  
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
-
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-    
-      <noscript>
-        <!-- [*] Web fonts for no-js -->
-        <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700%7COpen+Sans:400,700%7CGrand+Hotel%7CShrikhand' rel='stylesheet' type='text/css'>
-      </noscript>
-    
-
-    <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
-  </head>
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+</head>
 
   <body class="
     

@@ -2,91 +2,89 @@
 
 <!doctype html>
 <html lang="en">
-    
+  
 
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
   
   
-    <!-- Fallback for Font family below in noscript [*] -->
-    <script type="text/javascript">
-      WebFontConfig = {
-        google: { families: [ 'Oswald:300,400,700',  'Open+Sans:400,700',  'Grand+Hotel',  'Shrikhand' ] }
-      };
-      (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-      })(); </script>
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Your Ethereum Swiss Army Knife">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="news_keywords" content="solidity, dapps, contracts, smart contracts" />
-    <meta name="standout" content="http://truffleframework.com" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <meta property="og:site_name" content="Truffle Suite" />
-    <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-    <meta property="og:title" content="Quickstart | Truffle Suite" />
-    <meta property="og:url" content="http://truffleframework.com" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
+  <!-- Fallback for Font family below in noscript [*] -->
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [ 'Oswald:300,400,700',  'Open+Sans:400,700',  'Grand+Hotel',  'Shrikhand' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })(); </script>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Your Ethereum Swiss Army Knife">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="news_keywords" content="solidity, dapps, contracts, smart contracts" />
+  <meta name="standout" content="http://truffleframework.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
+  <meta property="og:title" content="Quickstart | Truffle Suite" />
+  <meta property="og:url" content="http://truffleframework.com/docs/getting_started/project" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Quickstart | Truffle Suite" />
-    <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
-    <meta name="twitter:creator" content="Truffle Suite" />
-    <meta name="twitter:domain" content="truffleframework.com" />
-    <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Quickstart | Truffle Suite" />
+  <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="truffleframework.com" />
+  <meta name="twitter:image:src" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
-    
-    
+  
+  
 
-    <title>
-    Quickstart | 
-    Truffle Suite
-    
-    </title>
+  <title>
+  Quickstart | 
+  Truffle Suite
+  
+  </title>
+  
+  <link rel="author" href="/humans.txt" />
 
+  <link rel="icon" href="/images/touch/favicon.ico">
 
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/images/touch/chrome-touch-icon-192x192.png">
 
-    <link rel="author" href="/humans.txt" />
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+  <link rel="apple-touch-icon" href="/images/touch/apple-touch-icon.png">
 
-    <link rel="icon" href="/images/touch/favicon.ico">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Truffle Suite">
-    <link rel="icon" sizes="192x192" href="/images/touch/chrome-touch-icon-192x192.png">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
-    <link rel="apple-touch-icon" href="/images/touch/apple-touch-icon.png">
+  
+    <noscript>
+      <!-- [*] Web fonts for no-js -->
+      <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700%7COpen+Sans:400,700%7CGrand+Hotel%7CShrikhand' rel='stylesheet' type='text/css'>
+    </noscript>
+  
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
-
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-    
-      <noscript>
-        <!-- [*] Web fonts for no-js -->
-        <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700%7COpen+Sans:400,700%7CGrand+Hotel%7CShrikhand' rel='stylesheet' type='text/css'>
-      </noscript>
-    
-
-    <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
-  </head>
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+</head>
 
   <body class="
     body-docs
@@ -225,12 +223,12 @@
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="quickstart" class="anchor" href="#quickstart"><span class="header-link" style="z-index: 9999999743">&nbsp;</span></a>Quickstart</h1><p>This page will take you through the basics of creating a Truffle project and deploying a smart contract to a blockchain.</p>
+          <h1><a name="quickstart" class="anchor" href="#quickstart"><span class="header-link" style="z-index: 9999999746">&nbsp;</span></a>Quickstart</h1><p>This page will take you through the basics of creating a Truffle project and deploying a smart contract to a blockchain.</p>
 <p class="alert alert-info">
 <strong>Note</strong>: Before you begin, make sure that you read our <a href="/tutorials/ethereum-overview">Ethereum Overview</a> page.
 </p>
 
-<h2><a name="table-of-contents" class="anchor" href="#table-of-contents"><span class="header-link" style="z-index: 9999999742">&nbsp;</span></a>Table of Contents</h2><ol>
+<h2><a name="table-of-contents" class="anchor" href="#table-of-contents"><span class="header-link" style="z-index: 9999999745">&nbsp;</span></a>Table of Contents</h2><ol>
 <li><a href="#creating-a-project">Creating a project</a></li>
 <li><a href="#exploring-the-project">Exploring the project</a></li>
 <li><a href="#testing">Testing</a></li>
@@ -239,7 +237,7 @@
 <li><a href="#alternative-migrating-with-ganache">Alternative: Migrating with Ganache</a></li>
 <li><a href="#interacting-with-the-contract">Interacting with the contract</a></li>
 </ol>
-<h2><a name="creating-a-project" class="anchor" href="#creating-a-project"><span class="header-link" style="z-index: 9999999741">&nbsp;</span></a>Creating a project</h2><p>To use most Truffle commands, you need to run them against an existing Truffle project. So the first step is to create a Truffle project.</p>
+<h2><a name="creating-a-project" class="anchor" href="#creating-a-project"><span class="header-link" style="z-index: 9999999744">&nbsp;</span></a>Creating a project</h2><p>To use most Truffle commands, you need to run them against an existing Truffle project. So the first step is to create a Truffle project.</p>
 <p>You can create a bare project template, but for those just getting started, you can use <a href="/boxes">Truffle Boxes</a>, which are example applications and project templates. We&#39;ll use the <a href="/boxes/metacoin">MetaCoin box</a>, which creates a token that can be transferred between accounts:</p>
 <ol>
 <li><p>Create a new directory for your Truffle project:</p>
@@ -267,7 +265,7 @@ cd MetaCoin
 <li><code>test/</code>: Directory for test files for <a href="./testing">testing your application and contracts</a></li>
 <li><code>truffle.js</code>: Truffle <a href="/docs/advanced/configuration">configuration file</a></li>
 </ul>
-<h2><a name="exploring-the-project" class="anchor" href="#exploring-the-project"><span class="header-link" style="z-index: 9999999740">&nbsp;</span></a>Exploring the project</h2><p class="alert alert-info">
+<h2><a name="exploring-the-project" class="anchor" href="#exploring-the-project"><span class="header-link" style="z-index: 9999999743">&nbsp;</span></a>Exploring the project</h2><p class="alert alert-info">
 <strong>Note</strong>: This page is just a quickstart, so we&#39;re not going to go into much detail here. Please see the rest of the Truffle documentation to learn more.
 </p>
 
@@ -287,7 +285,7 @@ cd MetaCoin
 <li><p>Open the <code>truffle.js</code> file. This is the Truffle <a href="/docs/advanced/configuration">configuration file</a>, for setting network information and other project-related settings. The file is blank, but this is okay, as we&#39;ll be using a Truffle command that has some defaults built-in.</p>
 </li>
 </ol>
-<h2><a name="testing" class="anchor" href="#testing"><span class="header-link" style="z-index: 9999999739">&nbsp;</span></a>Testing</h2><ol>
+<h2><a name="testing" class="anchor" href="#testing"><span class="header-link" style="z-index: 9999999742">&nbsp;</span></a>Testing</h2><ol>
 <li><p>On a terminal, run the Solidity test:</p>
 <pre><code class="lang-shell">truffle test TestMetacoin.sol
 </code></pre>
@@ -315,7 +313,7 @@ cd MetaCoin
   3 passing (255ms)
 </code></pre></li>
 </ol>
-<h2><a name="compiling" class="anchor" href="#compiling"><span class="header-link" style="z-index: 9999999738">&nbsp;</span></a>Compiling</h2><ol>
+<h2><a name="compiling" class="anchor" href="#compiling"><span class="header-link" style="z-index: 9999999741">&nbsp;</span></a>Compiling</h2><ol>
 <li><p>Compile the smart contracts:</p>
 <pre><code class="lang-shell">truffle compile
 </code></pre>
@@ -327,7 +325,7 @@ Compiling .\contracts\Migrations.sol...
 Writing artifacts to .\build\contracts
 </code></pre></li>
 </ol>
-<h2><a name="migrating-with-truffle-develop" class="anchor" href="#migrating-with-truffle-develop"><span class="header-link" style="z-index: 9999999737">&nbsp;</span></a>Migrating with Truffle Develop</h2><p class="alert alert-info">
+<h2><a name="migrating-with-truffle-develop" class="anchor" href="#migrating-with-truffle-develop"><span class="header-link" style="z-index: 9999999740">&nbsp;</span></a>Migrating with Truffle Develop</h2><p class="alert alert-info">
 <strong>Note</strong>: To use <a href="/ganache">Ganache</a>, please skip to the next section.
 </p>
 
@@ -408,7 +406,7 @@ Saving artifacts...
 </p>
 
 
-<h2><a name="alternative-migrating-with-ganache" class="anchor" href="#alternative-migrating-with-ganache"><span class="header-link" style="z-index: 9999999736">&nbsp;</span></a>Alternative: Migrating with Ganache</h2><p>While Truffle Develop is an all-in-one personal blockchain and console, you can also use <a href="/ganache">Ganache</a>, a desktop application, to launch your personal blockchain. Ganache can be a more easy-to-understand tool for those new to Ethereum and the blockchain, as it displays much more information up-front.</p>
+<h2><a name="alternative-migrating-with-ganache" class="anchor" href="#alternative-migrating-with-ganache"><span class="header-link" style="z-index: 9999999739">&nbsp;</span></a>Alternative: Migrating with Ganache</h2><p>While Truffle Develop is an all-in-one personal blockchain and console, you can also use <a href="/ganache">Ganache</a>, a desktop application, to launch your personal blockchain. Ganache can be a more easy-to-understand tool for those new to Ethereum and the blockchain, as it displays much more information up-front.</p>
 <p>The only extra step, aside from running Ganache, is that it requires editing the Truffle configuration file to point to the Ganache instance.</p>
 <ol>
 <li><p>Download and install <a href="/ganache">Ganache</a>.</p>
@@ -469,7 +467,7 @@ Saving artifacts...
 <pre><code>truffle(development)&gt;
 </code></pre></li>
 </ol>
-<h2><a name="interacting-with-the-contract" class="anchor" href="#interacting-with-the-contract"><span class="header-link" style="z-index: 9999999735">&nbsp;</span></a>Interacting with the contract</h2><p>Interact with the contract using the console in the following ways:</p>
+<h2><a name="interacting-with-the-contract" class="anchor" href="#interacting-with-the-contract"><span class="header-link" style="z-index: 9999999738">&nbsp;</span></a>Interacting with the contract</h2><p>Interact with the contract using the console in the following ways:</p>
 <p class="alert alert-info">
 <strong>Note</strong>: We&#39;re using <code>web3.eth.accounts[]</code> in these examples, which is an array of all the accounts generated by the mnemonic. So, given the addresses generated by our mnemonic above, specifying <code>web3.eth.accounts[0]</code> is equivalent to the address <code>0x627306090abab3a6e1400e9345bc60c78a8bef57</code>.
 </p>
@@ -496,7 +494,7 @@ Saving artifacts...
 </code></pre>
 </li>
 </ul>
-<h2><a name="continue-learning" class="anchor" href="#continue-learning"><span class="header-link" style="z-index: 9999999734">&nbsp;</span></a>Continue learning</h2><p>This quickstart showed you the basics of the Truffle project lifecycle, but there is much more to learn. Please continue on with the rest of our <a href="/docs">documentation</a> and especially our <a href="/tutorials">tutorials</a> to learn more.</p>
+<h2><a name="continue-learning" class="anchor" href="#continue-learning"><span class="header-link" style="z-index: 9999999737">&nbsp;</span></a>Continue learning</h2><p>This quickstart showed you the basics of the Truffle project lifecycle, but there is much more to learn. Please continue on with the rest of our <a href="/docs">documentation</a> and especially our <a href="/tutorials">tutorials</a> to learn more.</p>
 
           <footer class="container-fluid">
             <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/docs/getting_started/project.md">Edit here &rarr;</a></p>
