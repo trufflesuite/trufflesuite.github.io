@@ -279,21 +279,7 @@
 <li><code>provider</code>: Default web3 provider using <code>host</code> and <code>port</code> options: <code>new Web3.providers.HttpProvider(&quot;http://&lt;host&gt;:&lt;port&gt;&quot;)</code></li>
 </ul>
 <p>For each network, you can specify either <code>host</code> / <code>port</code> or <code>provider</code>, but not both. If you need an HTTP provider, we recommend using <code>host</code> and <code>port</code>, while if you need a custom provider such as <code>HDWalletProvider</code>, you must use <code>provider</code>.</p>
-<h4><a name="managing-multiple-providers" class="anchor" href="#managing-multiple-providers"><span class="header-link" style="z-index: 9999999912">&nbsp;</span></a>Managing multiple providers</h4><p>As seen above, your <code>truffle.js</code> file can contain multiple network configurations, but in general you will only work with a single network at a time. While you can issue a command to migrate to a single network (<code>truffle migrate --network live</code>), a minimal network connection will nevertheless be opened to every network defined with a <code>provider</code>.</p>
-<p>As a workaround to this, you can wrap your network&#39;s provider definition in a function call. This way, the network information is there, but Truffle will ignore it until specifically called.</p>
-<p>For example, consider the following network list consisting of a local test network and a Infura-hosted Ropsten network, both provided by HDWalletProvider:</p>
-<pre><code class="lang-javascript">networks: {
-  ropsten: {
-    provider: new HDWalletProvider(mnemonic, &quot;https://ropsten.infura.io/&quot;),
-    network_id: &#39;3&#39;,
-  },
-  test: {
-    provider: new HDWalletProvider(mnemonic, &quot;http://127.0.0.1:8545/&quot;),
-    network_id: &#39;*&#39;,
-  },
-}
-</code></pre>
-<p>To ensure that only one network is ever connected at a time, modify the <code>provider</code> keys as follows:</p>
+<h4><a name="providers" class="anchor" href="#providers"><span class="header-link" style="z-index: 9999999912">&nbsp;</span></a>Providers</h4><p>The following network list consists of a local test network and an Infura-hosted Ropsten network, both provided by HDWalletProvider. Make sure you wrap <code>truffle-hdwallet</code> providers in a function closure as shown below to ensure that only one network is ever connected at a time. </p>
 <pre><code class="lang-javascript">networks: {
   ropsten: {
     provider: function() {
