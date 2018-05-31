@@ -326,7 +326,11 @@ this.context.drizzle.addContract({contractConfig, events})
   contracts,
   events: {
     contractName: [
-      eventName
+      eventName,
+      {
+        eventName,
+        eventOptions
+      }
     ]
   },
   polls: {
