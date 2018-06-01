@@ -587,7 +587,7 @@ This is likely due to an intentional halting expression, like assert(), require(
 </code></pre><p>Note that the contract is failing at the point where it tries to determine the value of <code>fibseries[i-2]</code> But in our debugger, we know that the current value of <code>i</code> is <code>1</code>, so <code>i-2</code> is going to be <code>-1</code> (or actually <code>2^256 - 1</code>, due to the buffer underflow issue we talked about above, and with <code>i</code> defined as a <code>uint</code>). Since either one of those values are invalid (you can&#39;t have a negative index, and the value at index <code>2^256 - 1</code> is clearly not defined), the contract halts with an error.</p>
 </li>
 </ol>
-<p>These are just some of the ways that you can use variable inspection to debug your contracts. We&#39;re constantly adding functionality of the debugger, so please <a href="https://github.com/trufflesuite/truffle">raise an issue on our Github page</a> or ask in our <a href="https://gitter.im/ConsenSys/truffle">Gitter channel</a>. Happy debugging!</p>
+<p>These are just some of the ways that you can use variable inspection to debug your contracts. We&#39;re constantly adding functionality of the debugger, so please <a href="https://github.com/trufflesuite/truffle">raise an issue on our Github page</a> or ask a fellow Truffler in our <a href="https://gitter.im/ConsenSys/truffle">community Gitter channel</a>. Happy debugging!</p>
 
     </div>
 
