@@ -223,7 +223,7 @@
           </ul>
         </div>
         <div class="col-xs-12 col-md-9 col-md-offset-3 ContentPage">
-          <h1><a name="drizzle-state" class="anchor" href="#drizzle-state"><span class="header-link" style="z-index: 9999999931">&nbsp;</span></a>Drizzle State</h1><pre><code class="lang-javascript">{
+          <h1><a name="drizzle-state" class="anchor" href="#drizzle-state"><span class="header-link" style="z-index: 9999999878">&nbsp;</span></a>Drizzle State</h1><pre><code class="lang-javascript">{
   accounts,
   accountBalances: {
     address
@@ -258,17 +258,17 @@
   }
 }
 </code></pre>
-<h2><a name="-code-accounts-code-array-" class="anchor" href="#-code-accounts-code-array-"><span class="header-link" style="z-index: 9999999930">&nbsp;</span></a><code>accounts</code> (array)</h2><p>An array of account addresses from <code>web3</code>.</p>
-<h2><a name="-code-accountbalances-code-object-" class="anchor" href="#-code-accountbalances-code-object-"><span class="header-link" style="z-index: 9999999929">&nbsp;</span></a><code>accountBalances</code> (object)</h2><p>An object whose keys are account addresses and values are account balances (in Wei).</p>
-<h2><a name="-code-contracts-code-object-" class="anchor" href="#-code-contracts-code-object-"><span class="header-link" style="z-index: 9999999928">&nbsp;</span></a><code>contracts</code> (object)</h2><p>A series of contract state objects, indexed by the contract name as declared in its ABI.</p>
-<h3><a name="-code-contractname-code-object-" class="anchor" href="#-code-contractname-code-object-"><span class="header-link" style="z-index: 9999999927">&nbsp;</span></a><code>contractName</code> (object)</h3><p><code>initialized</code> (boolean): <code>true</code> once contract is fully instantiated.
+<h2><a name="-code-accounts-code-array-" class="anchor" href="#-code-accounts-code-array-"><span class="header-link" style="z-index: 9999999877">&nbsp;</span></a><code>accounts</code> (array)</h2><p>An array of account addresses from <code>web3</code>.</p>
+<h2><a name="-code-accountbalances-code-object-" class="anchor" href="#-code-accountbalances-code-object-"><span class="header-link" style="z-index: 9999999876">&nbsp;</span></a><code>accountBalances</code> (object)</h2><p>An object whose keys are account addresses and values are account balances (in Wei).</p>
+<h2><a name="-code-contracts-code-object-" class="anchor" href="#-code-contracts-code-object-"><span class="header-link" style="z-index: 9999999875">&nbsp;</span></a><code>contracts</code> (object)</h2><p>A series of contract state objects, indexed by the contract name as declared in its ABI.</p>
+<h3><a name="-code-contractname-code-object-" class="anchor" href="#-code-contractname-code-object-"><span class="header-link" style="z-index: 9999999874">&nbsp;</span></a><code>contractName</code> (object)</h3><p><code>initialized</code> (boolean): <code>true</code> once contract is fully instantiated.
 <code>synced</code> (boolean): <code>false</code> if contract state changes have occurred in a block and Drizzle is re-running its calls.</p>
 <p><code>events</code> (array): An array of event objects. Drizzle will only listen for the events we declared in options.</p>
 <p>The contract&#39;s state also includes the state of each constant function called on the contract (<code>callerFunctionName</code>). The functions are indexed by name, and contain the outputs indexed by a hash of the arguments passed during the call (<code>argsHash</code>). If no arguments were passed, the hash is <code>0x0</code>. Drizzle reads from the store for you, so it should be unnecessary to touch this data cache manually.</p>
 <p><code>args</code> (array): Arguments passed to function call.
 <code>value</code> (mixed): Value returned from function call.</p>
-<h2><a name="-code-transactions-code-object-" class="anchor" href="#-code-transactions-code-object-"><span class="header-link" style="z-index: 9999999926">&nbsp;</span></a><code>transactions</code> (object)</h2><p>A series of transaction objects, indexed by transaction hash.</p>
-<h3><a name="-code-txhash-code-object-" class="anchor" href="#-code-txhash-code-object-"><span class="header-link" style="z-index: 9999999925">&nbsp;</span></a><code>txHash</code> (object)</h3><p><code>confirmations</code> (array): After the initial receipt, further confirmation receipts (up to the 24th).
+<h2><a name="-code-transactions-code-object-" class="anchor" href="#-code-transactions-code-object-"><span class="header-link" style="z-index: 9999999873">&nbsp;</span></a><code>transactions</code> (object)</h2><p>A series of transaction objects, indexed by transaction hash.</p>
+<h3><a name="-code-txhash-code-object-" class="anchor" href="#-code-txhash-code-object-"><span class="header-link" style="z-index: 9999999872">&nbsp;</span></a><code>txHash</code> (object)</h3><p><code>confirmations</code> (array): After the initial receipt, further confirmation receipts (up to the 24th).
 <code>error</code> (object): contains the returned error if any.
 <code>receipt</code> (object): contains the first transaction receipt received from a transaction&#39;s <code>success</code> event.</p>
 <p><code>status</code> (string): <code>true</code> or <code>false</code> depending on transaction status</p>
@@ -278,16 +278,16 @@
 <li><code>error</code> if any errors occurred after broadcasting</li>
 </ul>
 <p>For more in-depth information on the Ethereum transaction lifecycle, <a href="https://medium.com/blockchannel/life-cycle-of-an-ethereum-transaction-e5c66bae0f6e">check out this great blog post</a>.</p>
-<h2><a name="-code-transactionstack-code-array-" class="anchor" href="#-code-transactionstack-code-array-"><span class="header-link" style="z-index: 9999999924">&nbsp;</span></a><code>transactionStack</code> (array)</h2><p>In some cases, a transaction may be malformed and not even make it to being broadcasted. To keep track of this, an empty string will be added to this array and replaced with the transaction hash once broascasted. The <code>cacheSend()</code> method will return a <code>stackId</code>, which will allow you to observe this process for your own transaction status indicator UI.</p>
-<h2><a name="-code-drizzlestatus-code-object-" class="anchor" href="#-code-drizzlestatus-code-object-"><span class="header-link" style="z-index: 9999999923">&nbsp;</span></a><code>drizzleStatus</code> (object)</h2><p>An object containing information about the status of Drizzle.</p>
+<h2><a name="-code-transactionstack-code-array-" class="anchor" href="#-code-transactionstack-code-array-"><span class="header-link" style="z-index: 9999999871">&nbsp;</span></a><code>transactionStack</code> (array)</h2><p>In some cases, a transaction may be malformed and not even make it to being broadcasted. To keep track of this, an empty string will be added to this array and replaced with the transaction hash once broascasted. The <code>cacheSend()</code> method will return a <code>stackId</code>, which will allow you to observe this process for your own transaction status indicator UI.</p>
+<h2><a name="-code-drizzlestatus-code-object-" class="anchor" href="#-code-drizzlestatus-code-object-"><span class="header-link" style="z-index: 9999999870">&nbsp;</span></a><code>drizzleStatus</code> (object)</h2><p>An object containing information about the status of Drizzle.</p>
 <p><code>initialized</code> (boolean): <code>true</code> once:</p>
 <ul>
 <li><code>web3</code> is found or instantiated</li>
 <li>Account addresses are stored in state</li>
 <li>All contracts are instantiated</li>
 </ul>
-<h3><a name="-code-initialized-code-boolean-" class="anchor" href="#-code-initialized-code-boolean-"><span class="header-link" style="z-index: 9999999922">&nbsp;</span></a><code>initialized</code> (boolean)</h3><p><code>false</code> by default, becomes true once a <code>web3</code> instance is found and the accounts and contracts are fetched.</p>
-<h2><a name="-code-web3-code-object-" class="anchor" href="#-code-web3-code-object-"><span class="header-link" style="z-index: 9999999921">&nbsp;</span></a><code>web3</code> (object)</h2><p><code>status</code> (string): <code>initializing</code>, <code>initialized</code> and <code>failed</code> are possible options. Useful for triggering warnings if <code>web3</code> fails to instantiate.</p>
+<h3><a name="-code-initialized-code-boolean-" class="anchor" href="#-code-initialized-code-boolean-"><span class="header-link" style="z-index: 9999999869">&nbsp;</span></a><code>initialized</code> (boolean)</h3><p><code>false</code> by default, becomes true once a <code>web3</code> instance is found and the accounts and contracts are fetched.</p>
+<h2><a name="-code-web3-code-object-" class="anchor" href="#-code-web3-code-object-"><span class="header-link" style="z-index: 9999999868">&nbsp;</span></a><code>web3</code> (object)</h2><p><code>status</code> (string): <code>initializing</code>, <code>initialized</code> and <code>failed</code> are possible options. Useful for triggering warnings if <code>web3</code> fails to instantiate.</p>
 
           <footer class="container-fluid">
             <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/docs/drizzle/drizzle-state.md">Edit here &rarr;</a></p>
