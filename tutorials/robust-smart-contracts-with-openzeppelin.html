@@ -168,7 +168,7 @@ cd oz-workspace
 <li><p>In the <code>contracts/</code> directory of your Truffle Box, create the file <code>TutorialToken.sol</code> and add the following contents:</p>
 <pre><code class="lang-javascript">pragma solidity ^0.4.24;
 
-import &#39;openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol&#39;;
+import &quot;openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol&quot;;
 
 contract TutorialToken is StandardToken {
 
@@ -181,8 +181,8 @@ contract TutorialToken is StandardToken {
 </ul>
 </li>
 <li><p>To set our own parameters for the token, we&#39;ll be declaring our own name, symbol, and other details. Add the following content block to the contract (between the curly braces):</p>
-<pre><code class="lang-javascript">string public name = &#39;TutorialToken&#39;;
-string public symbol = &#39;TT&#39;;
+<pre><code class="lang-javascript">string public name = &quot;TutorialToken&quot;;
+string public symbol = &quot;TT&quot;;
 uint8 public decimals = 2;
 uint public INITIAL_SUPPLY = 12000;
 </code></pre>
