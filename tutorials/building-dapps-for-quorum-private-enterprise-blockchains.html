@@ -239,7 +239,7 @@ pragma solidity ^0.4.17;
 contract SimpleStorage {
   uint public storedData;
 
-  function SimpleStorage(uint initVal) public {
+  constructor(uint initVal) public {
     storedData = initVal;
   }
 
@@ -247,7 +247,7 @@ contract SimpleStorage {
     storedData = x;
   }
 
-  function get() constant public returns (uint retVal) {
+  function get() view public returns (uint retVal) {
     return storedData;
   }
 }
