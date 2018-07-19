@@ -128,7 +128,7 @@
 
   <section class="MainContent">
     <div class="container container-narrow">
-      <h1><a name="variable-inspection-going-deeper-with-the-truffle-solidity-debugger" class="anchor" href="#variable-inspection-going-deeper-with-the-truffle-solidity-debugger"><span class="header-link" style="z-index: 9999999644">&nbsp;</span></a>Variable inspection: Going deeper with the Truffle Solidity debugger</h1><p class="alert alert-info">
+      <h1><a name="variable-inspection-going-deeper-with-the-truffle-solidity-debugger" class="anchor" href="#variable-inspection-going-deeper-with-the-truffle-solidity-debugger"><span class="header-link" style="z-index: 9999999639">&nbsp;</span></a>Variable inspection: Going deeper with the Truffle Solidity debugger</h1><p class="alert alert-info">
   <strong>Note</strong>: This tutorial requires Truffle version 4.1.8 or newer.
 </p>
 
@@ -141,7 +141,7 @@
 <li>A working contract with unexpected output</li>
 <li>A broken contract</li>
 </ol>
-<h2><a name="a-basic-smart-contract" class="anchor" href="#a-basic-smart-contract"><span class="header-link" style="z-index: 9999999643">&nbsp;</span></a>A basic smart contract</h2><p>The Fibonacci sequence is an integer sequence where each successive number in the sequence is the sum of the two previous numbers.</p>
+<h2><a name="a-basic-smart-contract" class="anchor" href="#a-basic-smart-contract"><span class="header-link" style="z-index: 9999999638">&nbsp;</span></a>A basic smart contract</h2><p>The Fibonacci sequence is an integer sequence where each successive number in the sequence is the sum of the two previous numbers.</p>
 <p>With the first two numbers set to 1, you can determine every number in the sequence through iteration.</p>
 <p>The Fibonacci sequence is related to the &quot;golden ratio&quot;, which is found in certain areas of nature, such as governing the the arrangement of leaves on branches and petals on flowers.</p>
 <p><img src="/tutorials/images/debugger-variable/flower-golden-ratio.jpg" alt="Golden ratio"></p>
@@ -261,7 +261,7 @@ Saving successful migration to network...
 Saving artifacts...
 </code></pre></li>
 </ol>
-<h2><a name="interacting-with-the-basic-smart-contract" class="anchor" href="#interacting-with-the-basic-smart-contract"><span class="header-link" style="z-index: 9999999642">&nbsp;</span></a>Interacting with the basic smart contract</h2><p>Our contract is now on the blockchain. Ganache has automatically mined the transactions that came from the contract call and creation, as you can see by clicking the &quot;Transactions&quot; button in Ganache:</p>
+<h2><a name="interacting-with-the-basic-smart-contract" class="anchor" href="#interacting-with-the-basic-smart-contract"><span class="header-link" style="z-index: 9999999637">&nbsp;</span></a>Interacting with the basic smart contract</h2><p>Our contract is now on the blockchain. Ganache has automatically mined the transactions that came from the contract call and creation, as you can see by clicking the &quot;Transactions&quot; button in Ganache:</p>
 <p><img src="/tutorials/images/debugger-variable/debugvar-ganache-transactions.png" alt="Ganache transactions"></p>
 <p><em>Ganache transactions</em></p>
 <p>Now it&#39;s time to interact with the contract. First we&#39;ll check to make sure that it&#39;s working correctly.</p>
@@ -297,7 +297,7 @@ Saving artifacts...
 
 </li>
 </ol>
-<h2><a name="debugging-a-transaction" class="anchor" href="#debugging-a-transaction"><span class="header-link" style="z-index: 9999999641">&nbsp;</span></a>Debugging a transaction</h2><p>You can debug a transaction in the Truffle console by typing <code>debug &lt;transactionID&gt;</code>. We&#39;ll now do just that.</p>
+<h2><a name="debugging-a-transaction" class="anchor" href="#debugging-a-transaction"><span class="header-link" style="z-index: 9999999636">&nbsp;</span></a>Debugging a transaction</h2><p>You can debug a transaction in the Truffle console by typing <code>debug &lt;transactionID&gt;</code>. We&#39;ll now do just that.</p>
 <ol>
 <li><p>Type <code>debug</code> and then the value of <code>tx:</code> found in your transaction details. For example:</p>
 <pre><code class="lang-shell">debug 0xf47f01da1a6991f4dc168928cf4c490cb9bb57ca403b428f40a333ea65d1c41c
@@ -445,7 +445,7 @@ up our pace. Luckily, the debugger can &quot;step over&quot;, which steps over t
 </code></pre><p>It can be verified that this is the correct first ten entries in the Fibonacci sequence.</p>
 </li>
 </ol>
-<h2><a name="debugging-unexpected-output" class="anchor" href="#debugging-unexpected-output"><span class="header-link" style="z-index: 9999999640">&nbsp;</span></a>Debugging unexpected output</h2><p>Our contract as we have created it is working as expected. That&#39;s great, but we can&#39;t always get so lucky. Sometimes a contract appears to work fine (no errors are thrown) but the output is not what you&#39;d expect. Let&#39;s examine that here.</p>
+<h2><a name="debugging-unexpected-output" class="anchor" href="#debugging-unexpected-output"><span class="header-link" style="z-index: 9999999635">&nbsp;</span></a>Debugging unexpected output</h2><p>Our contract as we have created it is working as expected. That&#39;s great, but we can&#39;t always get so lucky. Sometimes a contract appears to work fine (no errors are thrown) but the output is not what you&#39;d expect. Let&#39;s examine that here.</p>
 <p>It&#39;s amazing what switching a plus sign for a minus sign can do. Instead of the Fibonacci sequence:</p>
 <pre><code>F[1] = 1
 F[2] = 1
@@ -529,7 +529,7 @@ F[n] = F[n-1] - F[n-2]
 <p>But the jump from <code>0</code> to <code>255</code> should be suspicious too. And in fact, what we&#39;re seeing is a <strong>buffer underflow</strong>, a situation where we have an <a href="https://en.wikipedia.org/wiki/Integer_(computer_science">unsigned integer</a>), which can hold only positive values, being set to less than zero. Specifically, that fourth value is defined as the difference between the previous two elements, so <code>0 - 1 = -1</code>. Our type is <code>uint8[]</code> which means that each integer in the array is defined by 8 bits, so its maximum value is 2^8 - 1 = 255. Subtract one from zero, and the value &quot;wraps around&quot; to its maximum value.</p>
 <p>Assuming this was the series we wanted (and that our minus sign was correct), the way to change this is to change the definition of our <code>fibseries</code> array from <code>uint8[]</code> to <code>int8[]</code>. That would make values &quot;signed integers&quot; and able to accept negative values, giving you an array that would look like this instead:</p>
 <pre><code>[ 1, 1, 0, -1 ]
-</code></pre><h2><a name="debugging-errors" class="anchor" href="#debugging-errors"><span class="header-link" style="z-index: 9999999639">&nbsp;</span></a>Debugging errors</h2><p>Sometimes, contracts have errors in them. They may compile just fine, but when you go to use them, problems arise.</p>
+</code></pre><h2><a name="debugging-errors" class="anchor" href="#debugging-errors"><span class="header-link" style="z-index: 9999999634">&nbsp;</span></a>Debugging errors</h2><p>Sometimes, contracts have errors in them. They may compile just fine, but when you go to use them, problems arise.</p>
 <p>This is one of the reasons to use Ganache over a public testnet: you can easily redeploy a contract without any penalty in time or ether.</p>
 <p>So we&#39;re going to introduce a small error, a misnumbering in our for loop that will cause it to have an invalid index.</p>
 <ol>

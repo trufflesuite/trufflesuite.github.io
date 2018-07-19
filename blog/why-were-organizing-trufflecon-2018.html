@@ -32,14 +32,14 @@
   
   <meta property="og:site_name" content="Truffle Suite" />
   <meta property="og:description" content="Your Ethereum Swiss Army Knife" />
-  <meta property="og:title" content="Creating an Ethereum-enabled command line tool with Truffle 3.0 | Truffle Suite" />
-  <meta property="og:url" content="http://truffleframework.com/tutorials/creating-a-cli-with-truffle-3" />
+  <meta property="og:title" content="Why we're organizing TruffleCon 2018 | Truffle Suite" />
+  <meta property="og:url" content="http://truffleframework.com/blog/why-were-organizing-trufflecon-2018" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://github.com/trufflesuite/trufflesuite.github.io/raw/master/images/truffle-share.png" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="Truffle Suite" />
-  <meta name="twitter:title" content="Creating an Ethereum-enabled command line tool with Truffle 3.0 | Truffle Suite" />
+  <meta name="twitter:title" content="Why we're organizing TruffleCon 2018 | Truffle Suite" />
   <meta name="twitter:description" content="Your Ethereum Swiss Army Knife" />
   <meta name="twitter:creator" content="Truffle Suite" />
   <meta name="twitter:domain" content="truffleframework.com" />
@@ -49,7 +49,7 @@
   
 
   <title>
-  Creating an Ethereum-enabled command line tool with Truffle 3.0 | 
+  Why we're organizing TruffleCon 2018 | 
   Truffle Suite
   
   </title>
@@ -128,152 +128,42 @@
 
   <section class="MainContent">
     <div class="container container-narrow">
-      <h1><a name="creating-an-ethereum-enabled-command-line-tool-with-truffle-3-0" class="anchor" href="#creating-an-ethereum-enabled-command-line-tool-with-truffle-3-0"><span class="header-link" style="z-index: 9999999650">&nbsp;</span></a>Creating an Ethereum-enabled command line tool with Truffle 3.0</h1><p>Truffle 3 <a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">is out</a>, and it switched to a less opinionated build process. In Truffle 2, the default app from <code>truffle init</code> included a frontend example with build process. Now, there&#39;s nothing other than a <code>build</code> folder for your JSON contract artifacts. This opens up the door for testing and building other (<strong>cough</strong> command line <strong>cough</strong>) types of applications!</p>
-<h2><a name="intended-audience" class="anchor" href="#intended-audience"><span class="header-link" style="z-index: 9999999649">&nbsp;</span></a>Intended Audience</h2><p>This is written for those familiar with Truffle and Ethereum, who want to learn how to create a testable, Ethereum-enabled command line application with Truffle.</p>
-<p>For this tutorial, we&#39;ll be building a command line tool that interacts with the <a href="https://ens.readthedocs.io/en/latest/">Ethereum Name Service</a> (ENS).</p>
-<h2><a name="getting-started" class="anchor" href="#getting-started"><span class="header-link" style="z-index: 9999999648">&nbsp;</span></a>Getting Started</h2><p>If you were using Truffle beta 3.0.0-9 or below, <strong>do not immediately upgrade</strong>. Read <a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">these release notes</a> and the <a href="/tutorials/upgrading-from-truffle-2-to-3">upgrade guide</a> first. Next, make a new folder and run the following command:</p>
-<pre><code>$ truffle init
-</code></pre><p>You should see the <code>test</code>, <code>build</code>, and <code>migrations</code> directories were created for you &#8211; but no <code>app</code>. Additionally, the build step in the <code>truffle.js</code> file is mysteriously absent. That&#39;s ok! This means Truffle is getting out of your way and letting you control the build process.</p>
-<h2><a name="let-39-s-look-at-the-example" class="anchor" href="#let-39-s-look-at-the-example"><span class="header-link" style="z-index: 9999999647">&nbsp;</span></a>Let&#39;s Look at the Example</h2><p><a href="https://github.com/dougvk/ens-registrar3">Check out the example app</a> as a reference. I&#39;ll be referring to it often so give it a look over if you haven&#39;t already.</p>
-<p>The first thing to look at is the build process. Since Truffle now puts us in control of the build, I&#39;ve added some custom scripts within <code>package.json</code> to handle building for us:</p>
-<pre><code class="lang-json">...
-&quot;description&quot;: &quot;CLI for ENS deployment&quot;,
-&quot;scripts&quot;: {
-  &quot;ens&quot;: &quot;babel-node ./bin/ensa.js&quot;,
-  &quot;lint&quot;: &quot;eslint ./&quot;
-},
-&quot;author&quot;: &quot;Douglas von Kohorn&quot;,
-&quot;license&quot;: &quot;MIT&quot;,
-...
-</code></pre>
-<p>I&#39;ve defined two scripts here: <code>lint</code> for linting my Javascript to keep my codebase so fresh and so clean, and <code>ens</code> for transpiling my Javascript command line tool (using Babel) and running it. That&#39;s it! That&#39;s the build process. You can run it via <code>npm run lint</code> and <code>npm run ens</code>. Now that that&#39;s out of the way, let&#39;s dig into how and why I structured my app this way.</p>
-<h2><a name="building-our-app-separation-of-concerns" class="anchor" href="#building-our-app-separation-of-concerns"><span class="header-link" style="z-index: 9999999646">&nbsp;</span></a>Building our App: Separation of concerns</h2><p>In order to take advantage of all parts of Truffle while building this tool, we need to separate our code into two distinct pieces. First, we need to write a library which will constitute the bulk of the app, and allow us to perform actions against the ENS contracts quickly and easily from Javascript. Next is the CLI; the CLI will take advantage of the library itself, and will be the user&#39;s interface to our application.</p>
-<h3><a name="the-library" class="anchor" href="#the-library"><span class="header-link" style="z-index: 9999999645">&nbsp;</span></a>The Library</h3><p>The library is <a href="https://github.com/dougvk/ens-registrar3/blob/master/lib/ens_registrar.js">lib/ens_registrar.js</a>. Let&#39;s take a look at the constructor:</p>
-<pre><code class="lang-javascript">...
-constructor (AuctionRegistrar, Deed, registrarAddress, provider, fromAddress) {
-  this.web3 = new Web3(provider)
+      <p><img src="/blog/images/why-were-organizing-trufflecon-2018/trufflecon2018header.jpg" alt="TruffleCon 2018"></p>
+<h1><a name="why-we-39-re-organizing-trufflecon-2018" class="anchor" href="#why-we-39-re-organizing-trufflecon-2018"><span class="header-link" style="z-index: 9999999949">&nbsp;</span></a>Why we&#39;re organizing TruffleCon 2018</h1><p>As you have hopefully heard by now, <a href="http://truffleframework.com/trufflecon2018">TruffleCon</a>, Truffle&#39;s first-ever user conference, will be on <a href="http://truffleframework.com/trufflecon2018">October 5-7, 2018 in Portland, Oregon, U.S.A</a>.</p>
+<p class="m-b-2">
+  <a href="https://trufflecon2018.eventbrite.com" class="btn btn-eventbrite m-t-1" target="_blank">Buy Tickets!</a>
+</p>
 
-  this.Deed = Deed
-  this.Deed.setProvider(provider)
+<h2><a name="why-trufflecon-" class="anchor" href="#why-trufflecon-"><span class="header-link" style="z-index: 9999999948">&nbsp;</span></a>Why TruffleCon?</h2><p>There is certainly no shortage of conferences related to Ethereum. <a href="https://etherealsummit.com">Ethereal</a> recently wrapped up in New York City, and <a href="https://devcon4.ethereum.org">Devcon4</a> is ramping up in Prague later on this year. There&#39;s also <a href="https://edcon.io">EDCON</a>, <a href="https://ethcc.io">EthCC</a>, and plenty more, especially when you count those that intersect with the larger blockchain space.</p>
+<p>And yet, these events usually have a focus on the larger ecosystem. What about the people who are deep in the trenches, building the dapps and deploying the contracts?</p>
+<p><strong>We want TruffleCon to be the place for people who are doing the building.</strong></p>
+<p>Also, many developers are working in silos, connected to other teams only by GitHub, Gitter, StackExchange, Reddit, or other &quot;<a href="https://en.wikipedia.org/wiki/Interpersonal_ties">weak ties</a>&quot;. <strong>We want to strengthen those connections to bring people together</strong>.</p>
+<p>We want people to share their ideas, and talk about their successes and challenges. We want people to promote their projects, of course, and professional networking is always a part of these events, but more than anything else, <strong>we want people to be heard</strong>.</p>
+<h2><a name="why-now-" class="anchor" href="#why-now-"><span class="header-link" style="z-index: 9999999947">&nbsp;</span></a>Why now?</h2><p>We&#39;ve noticed a shift over the past year or so in the usage of Truffle.</p>
+<p>Whereas many of the comments and requests in <a href="https://gitter.im/ConsenSys/truffle">our Gitter channel</a> and GitHub issues were originally regarding local tests, and in sandboxes, we noticed more and more people deploying their contracts to the public test networks and even the mainnet. While this, of course, was always the intention, it shows that <strong>confidence in our tools and the Ethereum ecosystem is growing</strong>.</p>
+<p><strong>We want to help people &quot;go live&quot;.</strong> And so we believe that there has never been a better time than now.</p>
+<h2><a name="why-portland-" class="anchor" href="#why-portland-"><span class="header-link" style="z-index: 9999999946">&nbsp;</span></a>Why Portland?</h2><p>Portland is a vibrant city full of world-class food and drink, unmatched outdoor opportunities, and an excellent transportation system for getting where you need to go. And early October is typically a sweet spot where the days are still warm and dry, while the fall colors are starting to come into view.</p>
+<p>If you&#39;ve never been, you&#39;re missing out. And why not stay awhile once you&#39;re here?
+<img src="/blog/images/why-were-organizing-trufflecon-2018/portlandskyline.jpg" alt="TruffleCon 2018">
+<em>Photo courtesy of Flickr/sama093. <a href="https://flic.kr/p/qg3nwJ">Large version here</a>.</em> </p>
+<h2><a name="see-you-in-october-" class="anchor" href="#see-you-in-october-"><span class="header-link" style="z-index: 9999999945">&nbsp;</span></a>See you in October!</h2><p>From Truffle founder Tim Coulter:</p>
+<blockquote><em>&quot;The best conference we could put on is one where there&#39;s a ton of active engagement. I want people to feel like they are surrounded by other people who can help them. And I want them to leave feeling like they learned something and that the Truffle community is better off because they were there.<br/><br/>
 
-  AuctionRegistrar.setProvider(provider)
-  AuctionRegistrar.defaults({
-    from: fromAddress,
-    gas: 400000
-  })
-  this.registrar = AuctionRegistrar.at(registrarAddress)
-}
-...
-</code></pre>
-<p>The library constructor requires a few things:</p>
-<ol>
-<li>the contract interfaces (<code>AuctionRegistrar</code> &amp; <code>Deed</code>)</li>
-<li>the address on the network of the registrar</li>
-<li>a web3 provider that will be used to connect to the desired Ethereum network</li>
-<li>and the account address that will provide gas for transactions.</li>
-</ol>
-<p>It&#39;s crucial that the library remain ignorant of the creation of these variables if we want to take advantage of <strong>both</strong> Truffle&#39;s testing pipeline and a CLI. As I see it, there are two ways to use the library:</p>
-<ul>
-<li><strong>Through Truffle</strong>, which manages contract addresses for testing against different networks (e.g. local, private, ropsten). Truffle makes testing our library easy.</li>
-<li>Once we&#39;ve convinced ourselves that the library is well tested and works properly, we&#39;ll want to tell the library where to find our own contracts, provider, and account on the mainnet <strong>through the CLI</strong>.</li>
-</ul>
-<p>Let&#39;s take a look at how the library is used in both cases.</p>
-<h3><a name="use-1-truffle-tests" class="anchor" href="#use-1-truffle-tests"><span class="header-link" style="z-index: 9999999644">&nbsp;</span></a>Use #1: Truffle Tests</h3><p>Here&#39;s <a href="https://github.com/dougvk/ens-registrar3/blob/master/test/ENS.js">test/ENS.js</a>, a Truffle test that uses the library:</p>
-<pre><code class="lang-javascript">import { default as ENSAuctionLib } from &#39;../lib/ens_registrar&#39;
-const Registrar = artifacts.require(&#39;./Registrar.sol&#39;)
-const Deed = artifacts.require(&#39;./Deed.sol&#39;)
+If we do it right, people will go home inspired, and will change how they do their development.&quot;</em></blockquote>
 
-contract(&#39;ENS integration&#39;, (accounts) =&gt; {
-  let auctionRegistrar
+<p>We can&#39;t wait to see you there. If you have questions, feel free to tweet us at <a href="http://twitter.com/trufflesuite">@trufflesuite</a>. And please use the hashtag <a href="https://twitter.com/search?l=&amp;q=%23TruffleCon&amp;src=typd">#TruffleCon</a>.</p>
+<p class="m-b-2">
+  <a href="https://trufflecon2018.eventbrite.com" class="btn btn-eventbrite m-t-1" target="_blank">Buy Tickets!</a>
+</p>
 
-  before(&#39;set up auction registrar&#39;, (done) =&gt; {
-    Registrar.deployed().then((instance) =&gt; {
-      auctionRegistrar = new ENSAuctionLib(
-          Registrar,
-          Deed,
-          instance.address,
-          web3.currentProvider,
-          accounts[0]
-      )
-    }).then(() =&gt; done())
-  })
-
-  it(&#39;demonstrates that the domain name is available&#39;, (done) =&gt; {
-    auctionRegistrar.available(&#39;test&#39;)
-      .then((isAvailable) =&gt; {
-        assert.isTrue(isAvailable)
-        done()
-      })
-  })
-...
-}
-</code></pre>
-<p>Truffle injects a global <code>artifacts.require</code> function, a helper for finding the right compiled contract artifacts within the test environment. The test then finds a deployed instance of the Registrar on the test network via <code>Registrar.deployed()</code>. Now, with the addition of <code>accounts</code>, which is passed in via the <code>contract</code> wrapper <a href="http://truffleframework.com/docs/getting_started/javascript-tests">(see here)</a>, we have enough to instantiate the library and use it to test that the domain name <code>&#39;test&#39;</code> is available for auction.</p>
-<h3><a name="use-2-the-cli" class="anchor" href="#use-2-the-cli"><span class="header-link" style="z-index: 9999999643">&nbsp;</span></a>Use #2: the CLI</h3><p>Here&#39;s <a href="https://github.com/dougvk/ens-registrar3/blob/master/index.js">index.js</a>, which provides our command line tool, using the library:</p>
-<pre><code class="lang-javascript">import { default as ENSAuctionLib } from &#39;./lib/ens_registrar&#39;
-import { default as Web3 } from &#39;web3&#39;
-import { default as contract } from &#39;truffle-contract&#39;
-
-const AuctionRegistrar = contract(require(&#39;./build/contracts/Registrar.json&#39;))
-const Deed = contract(require(&#39;./build/contracts/Deed.json&#39;))
-
-export default function (host, port, registrarAddress, fromAddress) {
-  let provider = new Web3.providers.HttpProvider(`http:\/\/${host}:${port}`)
-  return new ENSAuctionLib(
-      AuctionRegistrar,
-      Deed,
-      registrarAddress,
-      provider,
-      fromAddress
-  )
-}
-</code></pre>
-<p>Here I&#39;m using the same library, <code>truffle-contract</code>, that <code>artifacts.require</code> uses under the hood. Because I can&#39;t rely on the Truffle framework within the CLI, I have to include the compiled contract artifacts manually. The rest is passed in through the CLI in <code>bin/ensa.js</code>:</p>
-<pre><code class="lang-javascript">import { default as initializeLib } from &#39;../index&#39;
-...
-let command = argv._[0]
-
-if (command === &#39;bid&#39;) {
-  let { name, host, max, port, registrar, account, secret } = argv
-  let auctionRegistrar = initializeLib(host, port, registrar, account)
-  auctionRegistrar.createBid(name, account, max, secret)
-    .then(() =&gt; console.log(&#39;Created bid for &#39; + name))
-}
-</code></pre>
-<h2><a name="usage" class="anchor" href="#usage"><span class="header-link" style="z-index: 9999999642">&nbsp;</span></a>Usage</h2><p>You can use the command line tool against any network that has an ENS registrar deployed. First, choose a command:</p>
-<pre><code class="lang-shell">$ npm run -s ens
-Usage: bin/ensa.js [command] [options]
-
-Commands:
-  winner  Current winner of bid
-  bid     Place a bid on a domain name
-  reveal  Reveal your bid on a domain name
-
-Options:
-  --help  Show help
-</code></pre>
-<p>Then specify the correct options, including the <code>account</code> and <code>registrar</code>:</p>
-<pre><code class="lang-shell">$ npm run -s ens -- winner -n &#39;NewDomain&#39;
-bin/ensa.js winner
-
-Options:
-  --help           Show help                                           [boolean]
-  --host, -h       HTTP host of Ethereum node               [default: &quot;testrpc&quot;]
-  --port, -p       HTTP port                                   [default: &quot;8545&quot;]
-  --registrar, -r  The address of the registrar              [string] [required]
-  --name, -n       The name you want to register             [string] [required]
-  --account, -a    The address to register the domain name   [string] [required]
-
-Missing required arguments: account, registrar
-</code></pre>
-<h2><a name="recap" class="anchor" href="#recap"><span class="header-link" style="z-index: 9999999641">&nbsp;</span></a>Recap</h2><p>You might be thinking to yourself, &quot;That was a short tutorial&quot;. That&#39;s because it doesn&#39;t need to be much longer: Creating a command line application with Truffle is very similar to creating a web application, but you have to do things a bit differently. For instance, instead of a build process, your command line tool needs to grab your contract artifacts and make them ready for use. Additionally, if you want to take advantage of Truffle&#39;s tests, you need to separate your code into a command line interface and a library &#8211; a good practice anyway &#8211; so you can use Truffle&#39;s testing framework to test your code.</p>
-<h2><a name="stay-tuned" class="anchor" href="#stay-tuned"><span class="header-link" style="z-index: 9999999640">&nbsp;</span></a>Stay Tuned</h2><p>Truffle 3.0 now makes it easier than ever to write <strong>any</strong> Ethereum-enabled application, and not just web apps. Stay tuned for more examples in the future where we explore Desktop and Mobile applications, too. Cheers!</p>
+<hr>
+<p><em>Mike Pumphrey is an Enterprise Trainer at ConsenSys working on the Truffle team. With over a dozen years of experience in documentation, support, and training, Mike is passionate about making technical concepts understandable to a wider audience. Mike is also the lead organizer for TruffleCon 2018.</em></p>
 
     </div>
 
     <footer class="container">
       
-        <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/tutorials/creating-a-cli-with-truffle-3.md">Edit here &rarr;</a></p>
+        <p class="text-center">See a way to make this page better? <br class="visible-xs" /><a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/public/blog/why-were-organizing-trufflecon-2018.md">Edit here &rarr;</a></p>
       
     </footer>
   </section>
