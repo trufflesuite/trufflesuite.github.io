@@ -1,0 +1,150 @@
+.navbar {
+  font-family: 'Oswald', sans-serif;
+  background: #33262a;
+  border-bottom: 2px solid #5e464d;
+}
+
+.navbar a, .navbar-expand-md .navbar-nav .nav-link {
+  color: #fff;
+}
+
+@media (max-width: 767.98px) {
+  .navbar-nav {
+    padding-top: 1rem;
+  }
+}
+
+.navbar a.navbar-brand {
+  line-height: 2rem;
+}
+
+.navbar a.navbar-brand img {
+  display: block;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+}
+
+.navbar .suite-logo {
+  height: 2rem;
+  margin-right: .75rem;
+}
+
+.navbar .trufflecon-link {
+  letter-spacing: .14em;
+}
+
+.navbar .trufflecon-link span {
+  display: none;
+}
+
+.navbar .trufflecon-link img {
+  height: 1em;
+  margin-top: -.25em;
+  margin-right: .14em;
+}
+
+.navbar .navbar-collapse {
+  flex-grow: 0;
+  margin-left: auto;
+}
+
+.navbar .dropdown-menu {
+  background: #33262a;
+  border-bottom: 2px solid #5e464d;
+  border-left: 2px solid #5e464d;
+  border-radius: 0 0 .25rem .25rem;
+  border-right: 2px solid #5e464d;
+  border-top: none;
+  margin: 8.5px 0 0 -4px;
+  padding: 1rem;
+}
+
+.navbar .dropdown-menu a {
+  display: block;
+}
+
+.navbar .dropdown-menu a:hover {
+  text-decoration: none;
+  opacity: .75;
+}
+
+.navbar .dropdown-menu a:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.navbar .dropdown-menu .suite-logo {
+  height: auto;
+  width: 2rem;
+}
+
+.navbar .dropdown-menu .text-ganache {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 767.98px) {
+  .navbar .dropdown-menu {
+    margin: 0;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.navbar-toggler {
+  position: relative;
+  height: 32px;
+  width: 42px;
+  border: none;
+}
+
+.navbar-toggler:focus {
+  outline-color: transparent;
+}
+
+.navbar-toggler .icon-bar {
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  transition: all .25s ease-in-out;
+  background: #fff;
+  transform: none;
+}
+
+.icon-bar:nth-of-type(1) {
+  top: 7px;
+  left: 10px;
+}
+
+.icon-bar:nth-of-type(2) {
+  top: 15px;
+  left: 10px;
+}
+
+.icon-bar:nth-of-type(3) {
+  bottom: 6px;
+  left: 10px;
+}
+
+.navbar-toggler[aria-expanded="true"]:hover {
+  opacity: 1;
+}
+
+.navbar-toggler[aria-expanded="true"] .icon-bar:nth-of-type(1) {
+  top: calc(50% - 2px);
+  left: 11px;
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .icon-bar:nth-of-type(2) {
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .icon-bar:nth-of-type(3) {
+  bottom: calc(50% - 1px);
+  transform: rotate(-45deg);
+}

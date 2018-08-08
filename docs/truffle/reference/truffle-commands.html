@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/img/favicons/favicon.ico">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Truffle Suite">
+    <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+    <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:site_name" content="Truffle Suite" />
+    <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+    <meta property="og:title" content="Truffle Suite | Documentation | Truffle | Truffle Commands" />
+    <meta property="og:url" content="https://trufflesuite.com/docs/truffle/reference/truffle-comman" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://trufflesuite.com/img/favicons/truffle-share.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="Truffle Suite" />
+    <meta name="twitter:title" content="Truffle Suite | Documentation | Truffle | Truffle Commands" />
+    <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+    <meta name="twitter:creator" content="Truffle Suite" />
+    <meta name="twitter:domain" content="trufflesuite.com" />
+    <meta name="twitter:image:src" content="https://trufflesuite.com/img/favicons/truffle-share.png" />
+    
+    <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+
+      <title>Truffle Suite | Documentation | Truffle | Truffle Commands</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+      <a class="navbar-brand current" href="/">
+        <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+      </a>
+    
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+    
+            <div class="dropdown-menu">
+              <a class="text-truffle" href="/truffle">
+                <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+              </a>
+              <a class="text-ganache" href="/ganache">
+                <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+              </a>
+              <a class="text-drizzle" href="/drizzle">
+                <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/docs">DOCS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tutorials">TUTORIALS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/boxes">BOXES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/blog">BLOG</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/community">COMMUNITY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link trufflecon-link" href="/trufflecon2018">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2018</a>
+          </li>
+        </ul>
+      </div>
+    </nav>    
+    <main role="main" class="container-fluid">
+      <!--<div class="row pt-4 pb-4">
+        <div class="col">
+          <form>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="🔍 Search">
+              </div>
+              <div class="col">
+                <select id="inputState" class="form-control">
+                  <option selected>4.1</option>
+                  <option>4.0.6</option>
+                  <option>4.0.5</option>
+                </select>
+              </div>
+              <div class="col">
+                <button type="submit" class="btn btn-truffle">SEARCH</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>-->
+
+      <div class="row row-docs-main">
+        <aside class="col-lg-3 docs-sidebar" id="docsSidebar">
+          <h2 class="space-icon d-lg-none text-center" id="docsSidebarToggle"><i class="fas fa-book"></i> SEARCH &amp; CONTENTS</h2>
+        
+          <form class="mb-4" id="searchForm">
+            <div class="input-group">
+              <input type="text" class="form-control" id="searchInput" placeholder="Search">
+              <div class="input-group-append">
+                <button type="submit" class="btn btn-truffle">SEARCH</button>
+              </div>
+            </div>
+          </form>
+        
+          <a class="suite-link" href="/docs">
+            <h2><i class="fas fa-book"></i> HOME</h2>
+          </a>
+        
+          <a class="toggle-truffle" href="#truffleDocs" data-toggle="collapse">
+            <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
+          </a>
+        
+          <div class="collapse truffle" id="truffleDocs" data-parent="#docsSidebar">
+            <ul>
+              <a href="/docs/truffle/overview"><li>Overview</li></a>
+              <a href="/docs/truffle/quickstart"><li>Quickstart</li></a>
+            </ul>
+              <h3>Getting Started</h3>
+              <ul>
+                  <a href="/docs/truffle/getting-started/installation"><li>Installation</li></a>
+                  <a href="/docs/truffle/getting-started/creating-a-project"><li>Creating a Project</li></a>
+                  <a href="/docs/truffle/getting-started/truffle-boxes"><li>Truffle Boxes</li></a>
+                  <a href="/docs/truffle/getting-started/compiling-contracts"><li>Compiling Contracts</li></a>
+                  <a href="/docs/truffle/getting-started/running-migrations"><li>Running Migrations</li></a>
+                  <a href="/docs/truffle/getting-started/interacting-with-your-contracts"><li>Interacting with Your Contracts</li></a>
+                  <a href="/docs/truffle/getting-started/truffle-with-metamask"><li>Truffle with MetaMask</li></a>
+                  <a href="/docs/truffle/getting-started/package-management-via-ethpm"><li>Package Management via EthPM</li></a>
+                  <a href="/docs/truffle/getting-started/package-management-via-npm"><li>Package Management via NPM</li></a>
+                  <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
+                  <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
+                  <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
+                  <a href="/docs/truffle/getting-started/using-the-build-pipeline"><li>Using The Build Pipeline</li></a>
+              </ul>
+              <h3>Testing</h3>
+              <ul>
+                  <a href="/docs/truffle/testing/testing-your-contracts"><li>Testing Your Contracts</li></a>
+                  <a href="/docs/truffle/testing/writing-tests-in-javascript"><li>Writing Tests in JavaScript</li></a>
+                  <a href="/docs/truffle/testing/writing-tests-in-solidity"><li>Writing Tests in Solidity</li></a>
+              </ul>
+              <h3>Advanced</h3>
+              <ul>
+                  <a href="/docs/truffle/advanced/networks-and-app-deployment"><li>Networks and App Deployment</li></a>
+                  <a href="/docs/truffle/advanced/build-processes"><li>Build Processes</li></a>
+              </ul>
+              <h3>Reference</h3>
+              <ul>
+                  <a href="/docs/truffle/reference/choosing-an-ethereum-client"><li>Choosing an Ethereum Client</li></a>
+                  <a href="/docs/truffle/reference/configuration"><li>Configuration</li></a>
+                  <a href="/docs/truffle/reference/truffle-commands"><li>Truffle Commands</li></a>
+                  <a href="/docs/truffle/reference/contact-the-developers"><li>Contact The Developers</li></a>
+              </ul>
+          </div>
+        
+          <a class="toggle-ganache" href="#ganacheDocs" data-toggle="collapse">
+            <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" /><h2 class="text-ganache">Ganache</h2>
+          </a>
+          
+          <div class="collapse ganache" id="ganacheDocs" data-parent="#docsSidebar">
+            <ul>
+              <a href="/docs/ganache/overview"><li>Overview</li></a>
+              <a href="/docs/ganache/quickstart"><li>Quickstart</li></a>
+            </ul>
+          </div>
+        
+          <a class="toggle-drizzle" href="#drizzleDocs" data-toggle="collapse">
+            <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" /><h2 class="text-drizzle">dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le</h2>
+          </a>
+          
+          <div class="collapse drizzle" id="drizzleDocs" data-parent="#docsSidebar">
+            <ul>
+              <a href="/docs/drizzle/overview"><li>Overview</li></a>
+              <a href="/docs/drizzle/quickstart"><li>Quickstart</li></a>
+            </ul>
+              <h3>Getting Started</h3>
+              <ul>
+                  <a href="/docs/drizzle/getting-started/using-an-existing-redux-store"><li>Using an Existing Redux Store</li></a>
+                  <a href="/docs/drizzle/getting-started/contract-interaction"><li>Contract Interaction</li></a>
+              </ul>
+              <h3>React</h3>
+              <ul>
+                  <a href="/docs/drizzle/react/react-integration"><li>React Integration</li></a>
+                  <a href="/docs/drizzle/react/react-components"><li>React Components</li></a>
+              </ul>
+              <h3>Reference</h3>
+              <ul>
+                  <a href="/docs/drizzle/reference/drizzle-options"><li>Drizzle Options</li></a>
+                  <a href="/docs/drizzle/reference/drizzle-state"><li>Drizzle State</li></a>
+                  <a href="/docs/drizzle/reference/how-data-stays-fresh"><li>How Data Stays Fresh</li></a>
+              </ul>
+          </div>
+        </aside>
+        <div class="col-lg-9 bd-light-cream docs-content">
+          
+    <h1 class="link-markdown">
+      <a href="#truffle-commands" name="truffle-commands"><i class="fas fa-link"></i></a>
+      Truffle Commands
+    </h1>
+  <p>This section will describe every command available in the Truffle application.</p>
+
+    <h2 class="link-markdown">
+      <a href="#usage" name="usage"><i class="fas fa-link"></i></a>
+      Usage
+    </h2>
+  <p>All commands are in the following form:</p>
+<pre><code class="lang-shell">truffle [command] [options]
+</code></pre>
+<p>Passing no arguments is equivalent to <code>truffle help</code>, which will display a list of all commands and then exit.</p>
+
+    <h2 class="link-markdown">
+      <a href="#available-commands" name="available-commands"><i class="fas fa-link"></i></a>
+      Available commands
+    </h2>
+  
+    <h3 class="link-markdown">
+      <a href="#build" name="build"><i class="fas fa-link"></i></a>
+      build
+    </h3>
+  <p>Execute build pipeline (if configuration present).</p>
+<pre><code class="lang-shell">truffle build
+</code></pre>
+<p>Requires the <code>build</code> key to be present in the configuration. See the <a href="/docs/getting_started/build">Building your application</a> and <a href="/docs/advanced/build_processes">Build processes</a> sections for more details.</p>
+<p class="alert alert-warning">
+<strong>Alert</strong>: This command is deprecated. Please use third-party build tools like webpack or grunt, or see our <a href="/boxes">Truffle Boxes</a> for an example.
+</p>
+
+
+
+    <h3 class="link-markdown">
+      <a href="#compile" name="compile"><i class="fas fa-link"></i></a>
+      compile
+    </h3>
+  <p>Compile contract source files.</p>
+<pre><code class="lang-shell">truffle compile [--all] [--network &lt;name&gt;]
+</code></pre>
+<p>This will only compile contracts that have changed since the last compile, unless otherwise specified.</p>
+<p>Optional parameters:</p>
+<ul>
+<li><code>--all</code>: Compile all contracts instead of only the contracts changed since last compile.</li>
+<li><code>--network &lt;name&gt;</code>: Specify the network to use, saving artifacts specific to that network. Network name must exist in the configuration.</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a href="#console" name="console"><i class="fas fa-link"></i></a>
+      console
+    </h3>
+  <p>Run a console with contract abstractions and commands available.</p>
+<pre><code class="lang-shell">truffle console [--network &lt;name&gt;] [--verbose-rpc]
+</code></pre>
+<p>Spawns an interface to interact with contracts via the command line. Additionally, many Truffle commands are available within the console (without the <code>truffle</code> prefix).</p>
+<p>Requires an external Ethereum client, such as <a href="/docs/ganache/using">Ganache</a> or geth. For a console that creates a development and test environment, use <code>truffle develop</code>.</p>
+<p>See the <a href="/docs/getting_started/console">Using the console</a> section for more details.</p>
+<p>Optional parameters:</p>
+<ul>
+<li><code>--network &lt;name&gt;</code>: Specify the network to use. Network name must exist in the configuration.</li>
+<li><code>--verbose-rpc</code>: Log communication between Truffle and the Ethereum client.</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a href="#create" name="create"><i class="fas fa-link"></i></a>
+      create
+    </h3>
+  <p>Helper to create new contracts, migrations and tests.</p>
+<pre><code class="lang-shell">truffle create (contract|migration|test) &lt;ArtifactName&gt;
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><code>contract</code>: Create a new contract definition and file <code>contracts/ArtifactName.sol</code>.</li>
+<li><code>migration</code>: Create a new migration and file <code>migrations/###########_artifact_name.js</code>.</li>
+<li><code>test</code>: Create a new test and file <code>tests/artifact_name.js</code>.</li>
+<li><code>&lt;ArtifactName&gt;</code>: Name of new artifact.</li>
+</ul>
+<p>Camel case names of artifacts will be converted to underscore-separated file names for the migrations and tests. Number prefixes for migrations are automatically generated.</p>
+
+    <h3 class="link-markdown">
+      <a href="#debug" name="debug"><i class="fas fa-link"></i></a>
+      debug
+    </h3>
+  <p>Interactively debug any transaction on the blockchain.</p>
+<pre><code class="lang-shell">truffle debug &lt;transaction_hash&gt;
+</code></pre>
+<p>Will start an interactive debugging session on a particular transaction. Allows you to step through each action and replay. See the <a href="/docs/getting_started/debugging">Debugging your contracts</a> section for more details.</p>
+<p class="alert alert-warning">
+<strong>Alert</strong>: This command is considered experimental.
+</p>
+
+
+<p>Parameters:</p>
+<ul>
+<li><code>&lt;transaction_hash&gt;</code>: Transaction ID to use for debugging.</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a href="#deploy" name="deploy"><i class="fas fa-link"></i></a>
+      deploy
+    </h3>
+  <p>Alias for <code>migrate</code>. See <code>migrate</code> for details.</p>
+
+    <h3 class="link-markdown">
+      <a href="#develop" name="develop"><i class="fas fa-link"></i></a>
+      develop
+    </h3>
+  <p>Open a console with a development blockchain</p>
+<pre><code class="lang-shell">truffle develop
+</code></pre>
+<p>Spawns a local development blockchain, and allows you to interact with contracts via the command line. Additionally, many Truffle commands are available within the console (without the <code>truffle</code> prefix).</p>
+<p>If you want an interactive console but want to use an existing blockchain, use <code>truffle console</code>.</p>
+<p>See the <a href="/docs/getting_started/console">Using the console</a> section for more details.</p>
+
+    <h3 class="link-markdown">
+      <a href="#exec" name="exec"><i class="fas fa-link"></i></a>
+      exec
+    </h3>
+  <p>Execute a JS module within the Truffle environment.</p>
+<pre><code class="lang-shell">truffle exec &lt;script.js&gt; [--network &lt;name&gt;] 
+</code></pre>
+<p>This will include <code>web3</code>, set the default provider based on the network specified (if any), and include your contracts as global objects while executing the script. Your script must export a function that Truffle can run. </p>
+<p>See the <a href="/docs/getting_started/scripts">Writing external scripts</a> section for more details.</p>
+<p>Parameters:</p>
+<ul>
+<li><code>&lt;script.js&gt;</code> JavaScript file to be executed. Can include path information if the script does not exist in the current directory.</li>
+</ul>
+<p>Optional parameters:</p>
+<ul>
+<li><code>--network &lt;name&gt;</code>: Specify the network to use, using artifacts specific to that network. Network name must exist in the configuration.</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a href="#help" name="help"><i class="fas fa-link"></i></a>
+      help
+    </h3>
+  <p>Display a list of all commands and then exit.</p>
+<pre><code class="lang-shell">truffle help
+</code></pre>
+
+    <h3 class="link-markdown">
+      <a href="#init" name="init"><i class="fas fa-link"></i></a>
+      init
+    </h3>
+  <p>Initialize new and empty Ethereum project</p>
+<pre><code class="lang-shell">truffle init
+</code></pre>
+<p>Creates a new and empty Truffle project within the current working directory. Takes no arguments.</p>
+<p class="alert alert-warning">
+<strong>Alert</strong>: Older versions of Truffle used <code>truffle init bare</code> to create an empty project. This usage has been deprecated. Those looking for the MetaCoin example that used to be available through <code>truffle init</code> should use <code>truffle unbox MetaCoin</code> instead.
+</p>
+
+
+
+    <h3 class="link-markdown">
+      <a href="#install" name="install"><i class="fas fa-link"></i></a>
+      install
+    </h3>
+  <p>Install a package from the Ethereum Package Registry.</p>
+<pre><code class="lang-shell">truffle install [package_name]&lt;@version&gt;
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><code>package_name</code>: Name of the package as listed in the Ethereum Package Registry.</li>
+</ul>
+<p>Optional parameters:</p>
+<ul>
+<li><code>&lt;@version&gt;</code>: When specified, will install a specific version of the package, otherwise will install the latest version.</li>
+</ul>
+<p>See the <a href="/docs/getting_started/packages-ethpm">Package Management with EthPM</a> section for more details.</p>
+
+    <h3 class="link-markdown">
+      <a href="#migrate" name="migrate"><i class="fas fa-link"></i></a>
+      migrate
+    </h3>
+  <p>Run migrations to deploy contracts.</p>
+<pre><code class="lang-shell">truffle migrate [--reset] [-f &lt;number&gt;] [--network &lt;name&gt;] [--compile-all] [--verbose-rpc]
+</code></pre>
+<p>Unless specified, this will run from the last completed migration. See the <a href="/docs/getting_started/migrations">Migrations</a> section for more details.</p>
+<p>Optional parameters:</p>
+<ul>
+<li><code>--reset</code>: Run all migrations from the beginning, instead of running from the last completed migration.</li>
+<li><code>-f &lt;number&gt;</code>: Run contracts from a specific migration. The number refers to the prefix of the migration file.</li>
+<li><code>--network &lt;name&gt;</code>: Specify the network to use, saving artifacts specific to that network. Network name must exist in the configuration.</li>
+<li><code>--compile-all</code>: Compile all contracts instead of intelligently choosing which contracts need to be compiled.</li>
+<li><code>--verbose-rpc</code>: Log communication between Truffle and the Ethereum client.</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a href="#networks" name="networks"><i class="fas fa-link"></i></a>
+      networks
+    </h3>
+  <p>Show addresses for deployed contracts on each network.</p>
+<pre><code class="lang-shell">truffle networks [--clean]
+</code></pre>
+<p>Use this command before publishing your package to see if there are any extraneous network artifacts you don&#39;t want published. With no options specified, this package will simply output the current artifact state.</p>
+<p>Optional parameters:</p>
+<ul>
+<li><code>--clean</code>: Remove all network artifacts that aren&#39;t associated with a named network.</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a href="#opcode" name="opcode"><i class="fas fa-link"></i></a>
+      opcode
+    </h3>
+  <p>Print the compiled opcodes for a given contract.</p>
+<pre><code class="lang-shell">truffle opcode &lt;contract_name&gt;
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><code>&lt;contract_name&gt;</code>: Name of the contract to print opcodes for. Must be a contract name, not a file name.</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a href="#publish" name="publish"><i class="fas fa-link"></i></a>
+      publish
+    </h3>
+  <p>Publish a package to the Ethereum Package Registry.</p>
+<pre><code class="lang-shell">truffle publish
+</code></pre>
+<p>All parameters are pulled from your project&#39;s configuration file. Takes no arguments. See the <a href="/docs/getting_started/packages-ethpm">Package Management with EthPM</a> section for more details.</p>
+
+    <h3 class="link-markdown">
+      <a href="#serve" name="serve"><i class="fas fa-link"></i></a>
+      serve
+    </h3>
+  <p>Serve the built app from <code>http://127.0.0.1:8080</code>, rebuilding and redeploying changes as needed. Similar to <code>truffle watch</code>, but with the web server component added.</p>
+<pre><code class="lang-shell">truffle serve [-p &lt;port&gt;] [--network &lt;name&gt;]
+</code></pre>
+<p>Optional parameters:</p>
+<ul>
+<li><code>-p &lt;port&gt;</code>: Specify the port to serve on. Default is 8080.</li>
+<li><code>--network &lt;name&gt;</code>: Specify the network to use, using artifacts specific to that network. Network name must exist in the configuration.</li>
+</ul>
+<p class="alert alert-warning">
+<strong>Alert</strong>: This command is deprecated. Please use third-party development servers like <a href="https://github.com/webpack/webpack-dev-server">webpack-dev-server</a> instead. See our <a href="/boxes/webpack">Webpack Truffle Box</a> for an example.
+</p>
+
+
+
+    <h3 class="link-markdown">
+      <a href="#test" name="test"><i class="fas fa-link"></i></a>
+      test
+    </h3>
+  <p>Run JavaScript and Solidity tests.</p>
+<pre><code class="lang-shell">truffle test &lt;test_file&gt; [--compile-all] [--network &lt;name&gt;] [--verbose-rpc]
+</code></pre>
+<p>Runs some or all tests within the <code>test/</code> directory as specified. See the section on <a href="/docs/getting_started/testing">Testing your contracts</a> for more information.</p>
+<p>Parameters:</p>
+<ul>
+<li><code>&lt;test_file&gt;</code>: Name of the test file to be run. Can include path information if the file does not exist in the current directory.</li>
+</ul>
+<p>Optional parameters:</p>
+<ul>
+<li><code>--compile-all</code>: Compile all contracts instead of intelligently choosing which contracts need to be compiled.</li>
+<li><code>--network &lt;name&gt;</code>: Specify the network to use, using artifacts specific to that network. Network name must exist in the configuration.</li>
+<li><code>--verbose-rpc</code>: Log communication between Truffle and the Ethereum client.</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a href="#unbox" name="unbox"><i class="fas fa-link"></i></a>
+      unbox
+    </h3>
+  <p>Download a Truffle Box, a pre-built Truffle project.</p>
+<pre><code class="lang-shell">truffle unbox &lt;box_name&gt;
+</code></pre>
+<p>Downloads a <a href="/boxes">Truffle Box</a> to the current working directory. See the <a href="/boxes">list of available boxes</a>.</p>
+<p>Parameters:</p>
+<ul>
+<li><code>box_name</code>: Name of the Truffle Box.</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a href="#version" name="version"><i class="fas fa-link"></i></a>
+      version
+    </h3>
+  <p>Show version number and exit.</p>
+<pre><code class="lang-shell">truffle version
+</code></pre>
+
+    <h3 class="link-markdown">
+      <a href="#watch" name="watch"><i class="fas fa-link"></i></a>
+      watch
+    </h3>
+  <p>Watch filesystem for changes and rebuild the project automatically.</p>
+<pre><code class="lang-shell">truffle watch
+</code></pre>
+<p>This command will initiate a watch for changes to contracts, application, and configuration files. When there&#39;s a change, it will rebuild the app as necessary. Similar to <code>truffle serve</code>, but without the web server component.</p>
+<p class="alert alert-warning">
+<strong>Alert</strong>: This command is deprecated. Please use external tools to watch for filesystem changes and rerun tests.
+</p>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/truffle/reference">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/vendor/prism.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="/js/docs.js"></script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="/js/docs-search.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-83874933-3', 'auto');
+      ga('send', 'pageview');
+    </script>  </body>
+</html>

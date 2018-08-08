@@ -1,0 +1,274 @@
+.docs-sidebar, .docs-content {
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+}
+
+.docs-sidebar {
+  padding: 1rem 2rem;
+  z-index: 200;
+  background: #33262a;
+}
+
+.docs-sidebar > a:hover {
+  opacity: .75;
+  text-decoration: none;
+}
+
+.docs-sidebar h2 {
+  font-size: 1.25rem;
+}
+
+.docs-sidebar .toggle-truffle h2 {
+  line-height: 2.5rem;
+}
+
+.docs-sidebar .toggle-ganache h2 {
+  line-height: 2.8rem;
+}
+
+.docs-sidebar .toggle-drizzle h2 {
+  line-height: 2.3rem;
+}
+
+.docs-sidebar h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.docs-sidebar ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.docs-sidebar ul li:not(:last-child) {
+  margin-bottom: .25rem;
+}
+
+.docs-sidebar form {
+  margin-top: 1.5rem;
+}
+
+.docs-sidebar .suite-logo {
+  display: block;
+  float: left;
+  height: auto;
+  margin-right: .75rem;
+  width: 2.5rem;
+}
+
+.docs-sidebar .toggle-truffle, .docs-sidebar .suite-link {
+  color: #fff;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.docs-sidebar .suite-link {
+  margin-top: 2rem;
+  margin-bottom: 1.625rem;
+}
+
+.docs-sidebar .suite-link i {
+  display: block;
+  float: left;
+  margin-left: .25rem;
+  margin-right: 1rem;
+  font-size: 2.125rem;
+  line-height: .75em;
+}
+
+.docs-sidebar .truffle {
+  color: #3fe0c5;
+}
+
+.docs-sidebar .truffle a {
+  color: #3fe0c5;
+}
+
+.docs-sidebar .toggle-ganache {
+  color: #fff;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.docs-sidebar .ganache {
+  color: #e4a663;
+}
+
+.docs-sidebar .ganache a {
+  color: #e4a663;
+}
+
+.docs-sidebar .toggle-drizzle {
+  color: #fff;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.docs-sidebar .drizzle {
+  color: #e911bd;
+}
+
+.docs-sidebar .drizzle a {
+  color: #e911bd;
+}
+
+@media (max-width: 991.98px) {
+  .docs-sidebar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-height: 60px;
+    border-top: 2px solid #5e464d;
+    transition: all .125s ease-in-out;
+    overflow: hidden;
+  }
+  .docs-sidebar.open {
+    max-height: 100vh;
+    border-top: none;
+    overflow: scroll;
+  }
+  .docs-sidebar > h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 58px;
+    width: 100vw;
+    padding-top: 1rem;
+    cursor: pointer;
+  }
+  .docs-sidebar form {
+    margin-top: 3.5rem;
+  }
+}
+
+.docs-content {
+  padding: 2rem 4rem;
+  z-index: 199;
+}
+
+.docs-content h1, .docs-content h2, .docs-content h3, .docs-content h4, .docs-content h5, .docs-content h6 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.docs-content h1:first-child,
+.docs-content p:first-child h1,
+.docs-content p:first-child img {
+  margin-top: 0;
+}
+
+.docs-content p {
+  margin-bottom: 1rem;
+}
+
+.docs-content ol li:not(:last-child), .docs-content ul li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.docs-content pre {
+  margin: 1rem 0;
+}
+
+.docs-content img {
+  display: block;
+  margin: 2rem auto;
+}
+
+.docs-content .img-caption {
+  margin-bottom: 2rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.docs-content video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 2rem auto;
+}
+
+@media (max-width: 991.98px) {
+  .docs-content {
+    padding: 2rem 4rem 5rem 4rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .docs-content {
+    padding: 2rem 15px 5rem 15px;
+  }
+}
+
+.docs-home .card {
+  text-align: center;
+}
+
+.docs-home .card .card-title {
+  color: #5e464d;
+  margin-bottom: 0;
+}
+
+.docs-home .card .card-text {
+  text-align: left;
+}
+
+.docs-home .card.docs-truffle-card .card-img-top {
+  display: inline;
+  max-height: 120px;
+  margin: 0;
+}
+
+.docs-home .card.docs-truffle-card .card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1.25rem;
+}
+
+.docs-home .card.docs-ganache-card .card-img-top {
+  max-height: 120px;
+  margin: 0;
+}
+
+.docs-home .card.docs-ganache-card .card-title {
+  font-size: 2.25rem;
+  margin-top: 1rem;
+}
+
+.docs-home .card.docs-drizzle-card .card-img-top {
+  margin: 20px 0 0 0;
+  max-height: 100px;
+}
+
+.docs-home .card.docs-drizzle-card .card-title {
+  font-size: 2.25rem;
+  margin: 1rem 0 0 0;
+}
+
+.docs-badges a {
+  display: inline-block;
+  height: auto;
+  transform: translateY(-5px);
+  margin-right: .5rem;
+}
+
+.docs-badges img {
+  margin: 0;
+  display: inline-block;
+}
+
+.docs-badges iframe:not(:last-child) {
+  margin-right: .5rem;
+}
+
+.docs-search-results a p {
+  color: #33262a;
+}
+
+.docs-search-results a:hover {
+  text-decoration: none;
+}
+
+.docs-search-results a:hover h3 {
+  text-decoration: underline;
+}
