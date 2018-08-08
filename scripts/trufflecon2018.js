@@ -1,1 +1,0 @@
-$(document).ready(function(){var e=document.createElement("audio");e.setAttribute("src","/files/groovy-strum.mp3"),e.addEventListener("ended",function(){$(".MainContent").removeClass("groovy")},!1),$("#LetsGetGroovy").click(function(){e.play(),$(".MainContent").addClass("groovy")})});
