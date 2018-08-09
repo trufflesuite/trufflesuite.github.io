@@ -64,18 +64,8 @@
   margin-bottom: 1.25rem;
 }
 
-.docs-sidebar .suite-link {
+.docs-sidebar a:first-of-type {
   margin-top: 2rem;
-  margin-bottom: 1.625rem;
-}
-
-.docs-sidebar .suite-link i {
-  display: block;
-  float: left;
-  margin-left: .25rem;
-  margin-right: 1rem;
-  font-size: 2.125rem;
-  line-height: .75em;
 }
 
 .docs-sidebar .truffle {
