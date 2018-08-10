@@ -3,18 +3,18 @@
   max-height: calc(100vh - 60px);
 }
 
-.drizzle-heading-row .drizzle-banner-image {
+.drizzle-heading-row svg {
   margin-top: -40%;
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .drizzle-heading-row .drizzle-banner-image {
+  .drizzle-heading-row svg {
     margin-top: 0;
   }
 }
 
 @media (max-width: 767.98px) {
-  .drizzle-heading-row .drizzle-banner-image {
+  .drizzle-heading-row svg {
     margin-top: -60%;
   }
 }

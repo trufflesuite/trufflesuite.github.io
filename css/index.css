@@ -10309,18 +10309,18 @@ footer form {
   max-height: calc(100vh - 60px);
 }
 
-.drizzle-heading-row .drizzle-banner-image {
+.drizzle-heading-row svg {
   margin-top: -40%;
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .drizzle-heading-row .drizzle-banner-image {
+  .drizzle-heading-row svg {
     margin-top: 0;
   }
 }
 
 @media (max-width: 767.98px) {
-  .drizzle-heading-row .drizzle-banner-image {
+  .drizzle-heading-row svg {
     margin-top: -60%;
   }
 }
@@ -10427,10 +10427,10 @@ footer form {
   opacity: 0;
   visibility: hidden;
   position: fixed;
-  top: 70px;
+  top: 60px;
   right: 0;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
+  width: 100%;
+  border-radius: 0;
   z-index: 2;
   padding: .5rem 1rem;
   transition: all .125s ease-in-out;
@@ -10449,24 +10449,6 @@ footer form {
   .trufflecon-buy {
     padding: .375rem .75rem;
   }
-}
-
-#st-2 {
-  top: 105px !important;
-}
-
-@media (max-width: 980px) {
-  #st-2 {
-    top: auto !important;
-  }
-}
-
-#st-2 .st-btn[data-network='sharethis'] {
-  background-color: #3fe0c5 !important;
-}
-
-#st-2 .st-toggle {
-  background: #5f474e !important;
 }
 
 .policy-container .c27 {
