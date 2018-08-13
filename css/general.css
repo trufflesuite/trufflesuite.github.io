@@ -37,21 +37,21 @@ code.dark {
   background: #5e464d;
 }
 
-.container-post .link-markdown, .docs-content .link-markdown {
+.link-markdown {
   position: relative;
   color: #5e464d;
 }
 
-.container-post .link-markdown:hover, .docs-content .link-markdown:hover {
+.link-markdown:hover {
   color: #5e464d;
   text-decoration: none;
 }
 
-.container-post .link-markdown:hover a i, .docs-content .link-markdown:hover a i {
+.link-markdown:hover a i {
   opacity: 1;
 }
 
-.container-post .link-markdown i, .docs-content .link-markdown i {
+.link-markdown i {
   display: block;
   position: absolute;
   top: 50%;
