@@ -228,7 +228,7 @@
       <a href="#-code-cachecall-code-" name="-code-cachecall-code-"><i class="fas fa-link"></i></a>
       <code>cacheCall()</code>
     </h2>
-  <p>Gets contract data. Calling the <code>cacheCall()</code> function on a contract will execute the desired call and return a corresponding key so the data can be retrieved from the store. When a new block is received, Drizzle will refresh the store automatically _if_ any transactions in the block touched our contract. For more information on how this works, see <a href="#how-data-stays-fresh">How Data Stays Fresh</a>.</p>
+  <p>Gets contract data. Calling the <code>cacheCall()</code> function on a contract will execute the desired call and return a corresponding key so the data can be retrieved from the store. When a new block is received, Drizzle will refresh the store automatically _if_ any transactions in the block touched our contract. For more information on how this works, see <a href="https://truffleframework.com/docs/drizzle/reference/how-data-stays-fresh">How Data Stays Fresh</a>.</p>
 <p><strong>Note:</strong> We have to check that Drizzle is initialized before fetching data. A simple if statement such as below is fine for displaying a few pieces of data, but a better approach for larger dapps is to use a <a href="https://github.com/trufflesuite/drizzle-react#recipe-loading-component">loading component</a>. We&#39;ve already built one for you in our <a href="https://github.com/trufflesuite/drizzle-react-components"><code>drizzle-react-components</code> library</a> as well.</p>
 <pre><code class="lang-javascript">// Assuming we&#39;re observing the store for changes.
 var state = drizzle.store.getState()
@@ -253,7 +253,7 @@ return &#39;Loading...&#39;
       <a href="#-code-cachesend-code-" name="-code-cachesend-code-"><i class="fas fa-link"></i></a>
       <code>cacheSend()</code>
     </h2>
-  <p>Sends a contract transaction. Calling the <code>cacheSend()</code> function on a contract will send the desired transaction and return a corresponding transaction hash so the status can be retrieved from the store. The last argument can optionally be an options object with the typical from, gas and gasPrice keys. Drizzle will update the transaction&#39;s state in the store (pending, success, error) and store the transaction receipt. For more information on how this works, see <a href="#how-data-stays-fresh">How Data Stays Fresh</a>.</p>
+  <p>Sends a contract transaction. Calling the <code>cacheSend()</code> function on a contract will send the desired transaction and return a corresponding transaction hash so the status can be retrieved from the store. The last argument can optionally be an options object with the typical from, gas and gasPrice keys. Drizzle will update the transaction&#39;s state in the store (pending, success, error) and store the transaction receipt. For more information on how this works, see <a href="https://truffleframework.com/docs/drizzle/reference/how-data-stays-fresh">How Data Stays Fresh</a>.</p>
 <p><strong>Note:</strong> We have to check that Drizzle is initialized before fetching data. A simple if statement such as below is fine for displaying a few pieces of data, but a better approach for larger dapps is to use a <a href="https://github.com/trufflesuite/drizzle-react#recipe-loading-component">loading component</a>. We&#39;ve already built one for you in our <a href="https://github.com/trufflesuite/drizzle-react-components"><code>drizzle-react-components</code> library</a> as well.</p>
 <pre><code class="lang-javascript">// Assuming we&#39;re observing the store for changes.
 var state = drizzle.store.getState()
@@ -274,7 +274,7 @@ if (state.drizzleStatus.initialized) {
 // If Drizzle isn&#39;t initialized, display some loading indication.
 return &#39;Loading...&#39;
 </code></pre>
-<p>For more information on what&#39;s contained in transaction state, see <a href="#drizzle-state">Drizzle State</a>.</p>
+<p>For more information on what&#39;s contained in transaction state, see <a href="https://truffleframework.com/docs/drizzle/reference/drizzle-state">Drizzle State</a>.</p>
 <p>The contract instance has all of its standard web3 properties and methods. For example, you could still send as normal if you don&#39;t want a tx in the store:</p>
 <pre><code class="lang-javascript">drizzle.contracts.SimpleStorage.methods.set(2).send({from: &#39;0x3f...&#39;})
 </code></pre>
