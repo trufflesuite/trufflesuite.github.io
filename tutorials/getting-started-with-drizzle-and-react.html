@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/img/favicons/favicon.ico">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Truffle Suite">
+    <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+    <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:site_name" content="Truffle Suite" />
+    <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+    <meta property="og:title" content="Truffle Suite | Tutorials | Getting Started with Drizzle and React" />
+    <meta property="og:url" content="https://trufflesuite.com/tutorials/getting-started-with-drizzle-and-rea" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="Truffle Suite" />
+    <meta name="twitter:title" content="Truffle Suite | Tutorials | Getting Started with Drizzle and React" />
+    <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+    <meta name="twitter:creator" content="Truffle Suite" />
+    <meta name="twitter:domain" content="trufflesuite.com" />
+    <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+    
+    <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+      
+    <title>Truffle Suite | Tutorials | Getting Started with Drizzle and React</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+      <a class="navbar-brand current" href="/">
+        <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+      </a>
+    
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+    
+            <div class="dropdown-menu">
+              <a class="text-truffle" href="/truffle">
+                <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+              </a>
+              <a class="text-ganache" href="/ganache">
+                <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+              </a>
+              <a class="text-drizzle" href="/drizzle">
+                <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/docs">DOCS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tutorials">TUTORIALS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/boxes">BOXES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/blog">BLOG</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/community">COMMUNITY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link trufflecon-link" href="/trufflecon2018">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2018</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="container container-heading container-narrow">
+      <div class="row">
+        <div class="col">
+          <h1>Getting Started with Drizzle and React</h1>
+          <ul class="list-sm-stacker space-icon mb-0">
+            <li><i class="far fa-calendar-alt"></i> 2018-08-28&nbsp;&nbsp;&nbsp;</li>
+            <li><i class="far fa-user"></i> Adrian Li</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <main class="banner banner-light-cream pt-5 pb-5" role="main">
+      <div class="container container-post">
+        <div class="row justify-content-center">
+          <div class="col">
+            <p>Drizzle is the newest member of the Truffle Suite and our first front-end development tool. At its core, <strong>Drizzle</strong> takes care of synchronizing your contract data, transaction data and more from the blockchain to a Redux store. There are also higher-level abstractions on top of the base <code>drizzle</code> library; tools for React compatibility (<a href="/docs/drizzle/react/react-integration"><code>drizzle-react</code></a>) and a set of ready-to-use React components (<a href="/docs/drizzle/react/react-components"><code>drizzle-react-components</code></a>).</p>
+<p>We&#39;re going to focus on the lower levels today, taking you through setting up a Truffle project with React and Drizzle from scratch. This way we can gain the best understanding of how Drizzle works under the hood. With this knowledge, you can leverage the full power of Drizzle with any front-end framework of your choosing, or use the higher-level React abstractions with confidence.</p>
+<p>This will be a very minimal tutorial focused on setting and getting a simple string stored in a contract. It&#39;s meant for those with a basic knowledge of Truffle, who have some knowledge of JavaScript and React.js, but who are new to using Drizzle.</p>
+<p class="alert alert-info">
+<strong>Note</strong>: For Truffle basics, please read through the Truffle <a href="/tutorials/pet-shop">Pet Shop</a> tutorial before proceeding.
+</p>
+
+<p>In this tutorial we will be covering:</p>
+<ol>
+<li>Setting up the development environment</li>
+<li>Creating a Truffle project from scratch</li>
+<li>Writing the smart contract</li>
+<li>Compiling and migrating the smart contract</li>
+<li>Testing the smart contract</li>
+<li>Creating our React.js project</li>
+<li>Setting up the front-end client</li>
+<li>Wire up the React app with Drizzle</li>
+<li>Write a component to read from Drizzle</li>
+<li>Write a component to write to the smart contract</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a href="#setting-up-the-development-environment" name="setting-up-the-development-environment"><i class="fas fa-link"></i></a>
+      Setting up the development environment
+    </h2>
+  <p>There are a few technical requirements before we start. Please install the following:</p>
+<ul>
+<li><a href="https://nodejs.org/en/">Node.js v8+ LTS and npm</a> (comes with Node)</li>
+<li><a href="https://git-scm.com/">Git</a></li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a href="#truffle" name="truffle"><i class="fas fa-link"></i></a>
+      Truffle
+    </h3>
+  <p>Once we have those installed, we only need one command to install Truffle:</p>
+<pre><code class="lang-shell">npm install -g truffle
+</code></pre>
+<p>To verify that Truffle is installed properly, type <code>truffle version</code> on a terminal. If you see an error, make sure that your npm modules are added to your path.</p>
+
+    <h3 class="link-markdown">
+      <a href="#ganache-cli" name="ganache-cli"><i class="fas fa-link"></i></a>
+      Ganache-CLI
+    </h3>
+  <p>We also will be using <a href="https://github.com/trufflesuite/ganache-cli">Ganache-CLI</a>, a personal blockchain for Ethereum development you can use to deploy contracts, develop applications, and run tests on. You can install it globally with this command:</p>
+<pre><code class="lang-shell">npm install -g ganache-cli
+</code></pre>
+
+    <h3 class="link-markdown">
+      <a href="#create-react-app" name="create-react-app"><i class="fas fa-link"></i></a>
+      Create-React-App
+    </h3>
+  <p>Finally, since this is a React.js tutorial, we will be creating our React project with <a href="https://github.com/facebook/create-react-app/">Create-React-App</a>.</p>
+<p>You won&#39;t have to do anything if you have NPM version 5.2 or above. You can check your NPM version by running <code>npm --version</code>. If you do not, then you will need to install the tool globally with this command:</p>
+<pre><code class="lang-shell">npm install -g create-react-app
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a href="#creating-a-truffle-project" name="creating-a-truffle-project"><i class="fas fa-link"></i></a>
+      Creating a Truffle project
+    </h2>
+  <ol>
+<li><p>Truffle initializes in the current directory, so first create a directory in your development folder of choice and then move inside it.</p>
+<pre><code class="lang-shell">mkdir drizzle-react-tutorial
+cd drizzle-react-tutorial
+</code></pre>
+</li>
+<li><p>Now we&#39;re ready to spawn our empty Truffle project by running the following command:</p>
+<pre><code class="lang-shell">truffle init
+</code></pre>
+</li>
+</ol>
+<p>Let&#39;s take a brief look at the directory structure that was just generated.</p>
+
+    <h3 class="link-markdown">
+      <a href="#directory-structure" name="directory-structure"><i class="fas fa-link"></i></a>
+      Directory structure
+    </h3>
+  <p>The default Truffle directory structure contains the following:</p>
+<ul>
+<li><code>contracts/</code>: Contains the <a href="https://solidity.readthedocs.io/">Solidity</a> source files for our smart contracts. There is an important contract in here called <code>Migrations.sol</code>, which we&#39;ll talk about later.</li>
+<li><code>migrations/</code>: Truffle uses a migration system to handle smart contract deployments. A migration is an additional special smart contract that keeps track of changes.</li>
+<li><code>test/</code>: Contains both JavaScript and Solidity tests for our smart contracts</li>
+<li><code>truffle-config.js</code>: Truffle configuration file</li>
+<li><code>truffle.js</code>: Another Truffle configuration file (soon to be deprecated)</li>
+</ul>
+
+    <h2 class="link-markdown">
+      <a href="#writing-our-smart-contract" name="writing-our-smart-contract"><i class="fas fa-link"></i></a>
+      Writing our smart contract
+    </h2>
+  <p>We&#39;ll add a simple smart contract called MyStringStore.</p>
+<ol>
+<li><p>Create a new file named <code>MyStringStore.sol</code> in the <code>contracts/</code> directory.</p>
+</li>
+<li><p>Add the following content to the file:</p>
+<pre><code class="lang-javascript">pragma solidity ^0.4.24;
+
+contract MyStringStore {
+  string public myString = &quot;Hello World&quot;;
+
+  function set(string x) public {
+    myString = x;
+  }
+}
+</code></pre>
+</li>
+</ol>
+<p>Since this isn&#39;t a Solidity tutorial, all you need to know about this is:</p>
+<ul>
+<li>We&#39;ve created a public string variable named <code>myString</code> and initialized it to &quot;Hello World&quot;. This automatically creates a getter (since it&#39;s a public variable) so we don&#39;t have to write one ourselves.</li>
+<li>We&#39;ve created a setter method that simply sets the <code>myString</code> variable with whatever string is passed in.</li>
+</ul>
+
+    <h2 class="link-markdown">
+      <a href="#launching-a-test-blockchain" name="launching-a-test-blockchain"><i class="fas fa-link"></i></a>
+      Launching a test blockchain
+    </h2>
+  <p>Before we move ahead, let&#39;s first launch our test blockchain with Ganache-CLI. </p>
+<p>Open up a new terminal and run the following command:</p>
+<pre><code class="lang-shell">ganache-cli -b 3
+</code></pre>
+<p>This will spawn a new blockchain that listens on <code>127.0.0.1:8545</code> by default and will mine every 3 seconds. If we didn&#39;t specify this, Ganache would mine instantly and we won&#39;t be able to simulate the delay it takes for the real blockchain to mine.</p>
+<p>Leave the terminal window open, you can observe what happens as you interact with it later on.</p>
+
+    <h3 class="link-markdown">
+      <a href="#specify-the-network" name="specify-the-network"><i class="fas fa-link"></i></a>
+      Specify the network
+    </h3>
+  <p>We need to let our Truffle project know how to connect to this blockchain. To do that, we need to put the following inside <code>truffle.js</code> (or <code>truffle-config.js</code> if you are on Windows):</p>
+<pre><code class="lang-javascript">module.exports = {
+  networks: {
+    development: {
+      host: &quot;localhost&quot;,
+      port: 8545,
+      network_id: &quot;*&quot; // Match any network id
+    }
+  }
+};
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a href="#compiling-and-migrating-the-smart-contract" name="compiling-and-migrating-the-smart-contract"><i class="fas fa-link"></i></a>
+      Compiling and migrating the smart contract
+    </h2>
+  <p>Now we are ready to compile and migrate our contract.</p>
+
+    <h3 class="link-markdown">
+      <a href="#compilation" name="compilation"><i class="fas fa-link"></i></a>
+      Compilation
+    </h3>
+  <ol>
+<li><p>In a terminal, make sure you are in the root of the project directory and type:</p>
+<pre><code class="lang-shell">truffle compile
+</code></pre>
+<p class="alert alert-info">
+<strong>Note</strong>: If you&#39;re on Windows and encountering problems running this command, please see the documentation on <a href="/docs/advanced/configuration#resolving-naming-conflicts-on-windows">resolving naming conflicts on Windows</a>.
+</p>
+
+<p>You should see output similar to the following:</p>
+<pre><code class="lang-shell">Compiling ./contracts/Migrations.sol...
+Compiling ./contracts/MyStringStore.sol...
+Writing artifacts to ./build/contracts
+</code></pre>
+</li>
+</ol>
+
+    <h3 class="link-markdown">
+      <a href="#migration" name="migration"><i class="fas fa-link"></i></a>
+      Migration
+    </h3>
+  <p>Now that we&#39;ve successfully compiled our contracts, it&#39;s time to migrate them to the blockchain!</p>
+<p class="alert alert-info">
+  <strong>Note</strong>: Read more about migrations in the <a href="/docs/getting_started/migrations">Truffle documentation</a>.
+</p>
+
+<p>To create our own migration script.</p>
+<ol>
+<li><p>Create a new file named <code>2_deploy_contracts.js</code> in the <code>migrations/</code> directory.</p>
+</li>
+<li><p>Add the following content to the <code>2_deploy_contracts.js</code> file:</p>
+<pre><code class="lang-javascript">const MyStringStore = artifacts.require(&quot;MyStringStore&quot;);
+
+module.exports = function(deployer) {
+  deployer.deploy(MyStringStore);
+};
+</code></pre>
+</li>
+<li><p>Back in our terminal, migrate the contract to the blockchain.</p>
+<pre><code class="lang-shell">truffle migrate
+</code></pre>
+<p>You should see output similar to the following:</p>
+<pre><code class="lang-shell">Using network &#39;development&#39;.
+
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  ... 0xcc1a5aea7c0a8257ba3ae366b83af2d257d73a5772e84393b0576065bf24aedf
+  Migrations: 0x8cdaf0cd259887258bc13a92c0a6da92698644c0
+Saving successful migration to network...
+  ... 0xd7bc86d31bee32fa3988f1c1eabce403a1b5d570340a3a9cdba53a472ee8c956
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+  Deploying MyStringStore...
+  ... 0x43b6a6888c90c38568d4f9ea494b9e2a22f55e506a8197938fb1bb6e5eaa5d34
+  MyStringStore: 0x345ca3e014aaf5dca488057592ee47305d9b3e10
+Saving successful migration to network...
+  ... 0xf36163615f41ef7ed8f4a8f192149a0bf633fe1a2398ce001bf44c43dc7bdda0
+Saving artifacts...
+</code></pre>
+<p>You can see the migrations being executed in order, followed by the blockchain address of each deployed contract (your addresses will differ).</p>
+</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a href="#testing-the-smart-contract" name="testing-the-smart-contract"><i class="fas fa-link"></i></a>
+      Testing the smart contract
+    </h2>
+  <p>Before we proceed, we should write a couple tests to ensure that our contract works as expected.</p>
+<ol>
+<li><p>Create a new file named <code>MyStringStore.js</code> in the <code>test/</code> directory.</p>
+</li>
+<li><p>Add the following content to the <code>MyStringStore.js</code> file:</p>
+<pre><code class="lang-javascript">const MyStringStore = artifacts.require(&quot;./MyStringStore.sol&quot;);
+
+contract(&quot;MyStringStore&quot;, accounts =&gt; {
+  it(&quot;should store the string &#39;Hey there!&#39;&quot;, async () =&gt; {
+    const myStringStore = await MyStringStore.deployed();
+
+    // Set myString to &quot;Hey there!&quot;
+    await myStringStore.set(&quot;Hey there!&quot;, { from: accounts[0] });
+
+    // Get myString from public variable getter
+    const storedString = await myStringStore.myString.call();
+
+    assert.equal(storedString, &quot;Hey there!&quot;, &quot;The string was not stored&quot;);
+  });
+});
+</code></pre>
+</li>
+</ol>
+
+    <h3 class="link-markdown">
+      <a href="#running-the-tests" name="running-the-tests"><i class="fas fa-link"></i></a>
+      Running the tests
+    </h3>
+  <ol>
+<li><p>Back in the terminal, run the tests:</p>
+<pre><code class="lang-shell">truffle test
+</code></pre>
+</li>
+<li><p>If all the tests pass, you&#39;ll see console output similar to this:</p>
+<pre><code class="lang-shell">Using network &#39;development&#39;.
+
+  Contract: MyStringStore
+    ✓ should store the value &#39;Hey there!&#39; (3085ms)
+
+  1 passing (3s)
+</code></pre>
+</li>
+</ol>
+<p>Awesome! Now we know that the contract actually works.</p>
+
+    <h2 class="link-markdown">
+      <a href="#creating-our-react-js-project" name="creating-our-react-js-project"><i class="fas fa-link"></i></a>
+      Creating our React.js project
+    </h2>
+  <p>Now that we are done with the smart contract, we can write our front-end client with React.js! In order to do this, simply run this command (if you have NPM version 5.2 or above):</p>
+<pre><code class="lang-shell">npx create-react-app client
+</code></pre>
+<p><strong>If you have an older version of NPM</strong>, make sure Create-React-App is installed globally as per the instructions in the <a href="#create-react-app">Setting up the development environment</a> section and then run the following:</p>
+<pre><code class="lang-shell">create-react-app client
+</code></pre>
+<p>This should create a <code>client</code> directory in your Truffle project and bootstrap a barebones React.js project for you to start building your front-end with.</p>
+
+    <h2 class="link-markdown">
+      <a href="#setting-up-the-front-end-client" name="setting-up-the-front-end-client"><i class="fas fa-link"></i></a>
+      Setting up the front-end client
+    </h2>
+  <p>Now that we have a front-end client located inside the <code>client</code> directory, change into that directory with the command <code>cd client</code> and continue with the following steps to set it up.</p>
+
+    <h3 class="link-markdown">
+      <a href="#link-up-our-build-artifacts" name="link-up-our-build-artifacts"><i class="fas fa-link"></i></a>
+      Link up our build artifacts
+    </h3>
+  <p>Since Create-React-App&#39;s default behavior disallows importing files from outside of the <code>src</code> folder, we need to bring the contracts in our <code>build</code> folder inside <code>src</code>. We can copy and paste them every time we compile our contracts, but a better way is to create a symlink.</p>
+<p>If you haven&#39;t created a symlink before, think of it as a magical portal in the file system that allows you act as if the file or folder is actually there.</p>
+<p>Let&#39;s change into the <code>src</code> directory and then create our symlinked folder:</p>
+<pre><code class="lang-shell">// For MacOS and Linux
+
+cd src
+ln -s ../../build/contracts contracts
+
+// For Windows 7, 8 and 10
+// Using a Command Prompt as Admin
+
+cd src
+mklink \D contracts ..\..\build\contracts
+</code></pre>
+<p>In effect, this should create what looks like a <code>contracts</code> folder within <code>src</code>, but it actually points to the files inside the <code>build/contracts</code> folder of our Truffle project.</p>
+
+    <h3 class="link-markdown">
+      <a href="#install-drizzle" name="install-drizzle"><i class="fas fa-link"></i></a>
+      Install Drizzle
+    </h3>
+  <p>This is the most delicious part, we install Drizzle:</p>
+<pre><code class="lang-shell">npm install drizzle
+</code></pre>
+<p>And that&#39;s it for dependencies! Note that we don&#39;t need to install Web3.js or Truffle-Contract ourselves. Drizzle contains everything we need to work reactively with our smart contracts.</p>
+
+    <h2 class="link-markdown">
+      <a href="#wire-up-the-react-app-with-drizzle" name="wire-up-the-react-app-with-drizzle"><i class="fas fa-link"></i></a>
+      Wire up the React app with Drizzle
+    </h2>
+  <p>Before we go further, let&#39;s start our React app by running the follow command inside our <code>client</code> directory:</p>
+<pre><code class="lang-shell">npm start
+</code></pre>
+<p>This will serve  the front-end under <code>localhost:3000</code>, so make sure to open that up in your browser. If you already have MetaMask installed in your browser, considering disabling it or using an incognito window for now.</p>
+<p>The reason is because if MetaMask is detected, the app will try to use the network that you have selected through MetaMask rather than the development network that we started with Ganache-CLI under <code>localhost:8545</code>.</p>
+<p>If the default Create-React-App page loaded without any issues, you may proceed.</p>
+
+    <h3 class="link-markdown">
+      <a href="#setup-the-store" name="setup-the-store"><i class="fas fa-link"></i></a>
+      Setup the store
+    </h3>
+  <p>The first thing we need to do is to setup and instantiate the Drizzle store. We are going add the following 5 lines to <code>client/src/index.js</code>:</p>
+<pre><code class="lang-js">// import drizzle functions and contract artifact
+import { Drizzle, generateStore } from &quot;drizzle&quot;;
+import MyStringStore from &quot;./contracts/MyStringStore.json&quot;;
+
+// let drizzle know what contracts we want
+const options = { contracts: [MyStringStore] };
+
+// setup the drizzle store and drizzle
+const drizzleStore = generateStore(options);
+const drizzle = new Drizzle(options, drizzleStore);
+</code></pre>
+<p>First, we imported the tools from Drizzle as well as the contract definition through the linked build artifacts directory (see <a href="#link-up-our-build-artifacts">Link up our build artifacts</a> above).</p>
+<p>We then built our options object for Drizzle, which in this case is just specifying the specific contract we want to be loaded by passing in the JSON build artifact.</p>
+<p>And finally, we created the <code>drizzleStore</code> and used that to create our <code>drizzle</code> instance which we will pass in as a prop to our <code>App</code> component.</p>
+<p>Once that is complete, your <code>index.js</code> should look something like this:</p>
+<pre><code class="lang-js">import React from &quot;react&quot;;
+import ReactDOM from &quot;react-dom&quot;;
+import &quot;./index.css&quot;;
+import App from &quot;./App&quot;;
+import registerServiceWorker from &quot;./registerServiceWorker&quot;;
+
+// import drizzle functions and contract artifact
+import { Drizzle, generateStore } from &quot;drizzle&quot;;
+import MyStringStore from &quot;./contracts/MyStringStore.json&quot;;
+
+// let drizzle know what contracts we want
+const options = { contracts: [MyStringStore] };
+
+// setup the drizzle store and drizzle
+const drizzleStore = generateStore(options);
+const drizzle = new Drizzle(options, drizzleStore);
+
+// pass in the drizzle instance
+ReactDOM.render(&lt;App drizzle={drizzle} /&gt;, document.getElementById(&quot;root&quot;));
+registerServiceWorker();
+</code></pre>
+<p>Note again that the <code>drizzle</code> instance is passed into the <code>App</code> component as props.</p>
+
+    <h3 class="link-markdown">
+      <a href="#wire-up-the-app-component" name="wire-up-the-app-component"><i class="fas fa-link"></i></a>
+      Wire up the App component
+    </h3>
+  <p>Now that we have a <code>drizzle</code> instance to play around with, we can go into <code>client/src/App.js</code> to start working with the React API.</p>
+
+    <h4 class="link-markdown">
+      <a href="#adding-state-variables" name="adding-state-variables"><i class="fas fa-link"></i></a>
+      Adding state variables
+    </h4>
+  <p>First thing we will do is to add the following line inside our App component:</p>
+<pre><code class="lang-js">state = { loading: true, drizzleState: null };
+</code></pre>
+<p>We are going to be using two state variables here:</p>
+<ol>
+<li><code>loading</code> — Indicates if if Drizzle has finished initializing and the app is ready. The initialization process includes instantiating <code>web3</code> and our smart contracts, fetching any available Ethereum accounts and listening (or, in cases where subscriptions are not supported: polling) for new blocks.</li>
+<li><code>drizzleState</code> — This is where we will store the state of the Drizzle store in our top-level component. If we can keep this state variable up-to-date, then we can simply use simple <code>props</code> and <code>state</code> to work with Drizzle (i.e. you don&#39;t have to use any Redux or advanced React patterns).</li>
+</ol>
+
+    <h4 class="link-markdown">
+      <a href="#adding-some-initialization-logic" name="adding-some-initialization-logic"><i class="fas fa-link"></i></a>
+      Adding some initialization logic
+    </h4>
+  <p>Next we will add in our <code>componentDidMount</code> method into the component class so that we can run some initialization logic.</p>
+<pre><code class="lang-js">componentDidMount() {
+  const { drizzle } = this.props;
+
+  // subscribe to changes in the store
+  this.unsubscribe = drizzle.store.subscribe(() =&gt; {
+
+    // every time the store updates, grab the state from drizzle
+    const drizzleState = drizzle.store.getState();
+
+    // check to see if it&#39;s ready, if so, update local component state
+    if (drizzleState.drizzleStatus.initialized) {
+      this.setState({ loading: false, drizzleState });
+    }
+  });
+}
+</code></pre>
+<p>First, we grab the <code>drizzle</code> instance from the props, then we call <code>drizzle.store.subscribe</code> and pass in a callback function. This callback function is called whenever the Drizzle store is updated. Note that this store is actually a Redux store under the hood, so this might look familiar if you&#39;ve used Redux previously.</p>
+<p>Whenever the store is updated, we will try to grab the state with <code>drizzle.store.getState()</code> and then if Drizzle is initialized and ready, we will set <code>loading</code> to false, and also update the <code>drizzleState</code> state variable.</p>
+<p>By doing this, <code>drizzleState</code> will always be up-to-date and we also know exactly when Drizzle is ready so we can use a loading component to let the user know.</p>
+
+    <h5 class="link-markdown">
+      <a href="#unsubscribing-from-the-store" name="unsubscribing-from-the-store"><i class="fas fa-link"></i></a>
+      Unsubscribing from the store
+    </h5>
+  <p>Note that we assign the return value of the <code>subscribe()</code> to a class variable <code>this.unsubscribe</code>. This is because it is always good practice to unsubscribe from any subscriptions you have when the component un-mounts. In order to do this, we save a reference to that subscription (i.e. <code>this.unsubscribe</code>), and inside <code>componentWillUnmount</code>, we have the following:</p>
+<pre><code class="lang-js">compomentWillUnmount() {
+  this.unsubscribe();
+}
+</code></pre>
+<p>This will safely unsubscribe when the App component un-mounts so we can prevent any memory leaks.</p>
+
+    <h4 class="link-markdown">
+      <a href="#replace-the-code-render-code-method" name="replace-the-code-render-code-method"><i class="fas fa-link"></i></a>
+      Replace the <code>render</code> method
+    </h4>
+  <p>Finally, we can replace the boilerplate render method with something that applies to us better:</p>
+<pre><code class="lang-js">render() {
+  if (this.state.loading) return &quot;Loading Drizzle...&quot;;
+  return &lt;div className=&quot;App&quot;&gt;Drizzle is ready&lt;/div&gt;;
+}
+</code></pre>
+<p>In the next section, we will replace &quot;Drizzle is ready&quot; with an actual component that will read from the store. If you refresh your browser and run this app now, you should see &quot;Loading Drizzle...&quot; briefly flash on screen and then subsequently &quot;Drizzle is ready&quot;.</p>
+
+    <h3 class="link-markdown">
+      <a href="#full-component-code" name="full-component-code"><i class="fas fa-link"></i></a>
+      Full component code
+    </h3>
+  <p>When you are done this section, your <code>App</code> component should look like the following:</p>
+<pre><code class="lang-js">class App extends Component {
+  state = { loading: true, drizzleState: null };
+
+  componentDidMount() {
+    const { drizzle } = this.props;
+
+    // subscribe to changes in the store
+    this.unsubscribe = drizzle.store.subscribe(() =&gt; {
+
+      // every time the store updates, grab the state from drizzle
+      const drizzleState = drizzle.store.getState();
+
+      // check to see if it&#39;s ready, if so, update local component state
+      if (drizzleState.drizzleStatus.initialized) {
+        this.setState({ loading: false, drizzleState });
+      }
+    });
+  }
+
+  compomentWillUnmount() {
+    this.unsubscribe();
+  }
+
+  render() {
+    if (this.state.loading) return &quot;Loading Drizzle...&quot;;
+    return &lt;div className=&quot;App&quot;&gt;Drizzle is ready&lt;/div&gt;;
+  }
+}
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a href="#write-a-component-to-read-from-drizzle" name="write-a-component-to-read-from-drizzle"><i class="fas fa-link"></i></a>
+      Write a component to read from Drizzle
+    </h2>
+  <p>First, let&#39;s create a new file at <code>client/src/ReadString.js</code> and paste in the following:</p>
+<pre><code class="lang-js">import React from &quot;react&quot;;
+
+class ReadString extends React.Component {
+  componentDidMount() {
+    const { drizzle, drizzleState } = this.props;
+    console.log(drizzle);
+    console.log(drizzleState);
+  }
+
+  render() {
+    return &lt;div&gt;ReadString Component&lt;/div&gt;;
+  }
+}
+
+export default ReadString;
+</code></pre>
+<p>And then inside <code>App.js</code>, import the new component with this statement:</p>
+<pre><code class="lang-js">import ReadString from &quot;./ReadString&quot;;
+</code></pre>
+<p>Now modify your <code>App.js</code> render method so that we pass in the <code>drizzle</code> instance from props as well as the <code>drizzleState</code> from the component state:</p>
+<pre><code class="lang-js">render() {
+  if (this.state.loading) return &quot;Loading Drizzle...&quot;;
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      &lt;ReadString
+        drizzle={this.props.drizzle}
+        drizzleState={this.state.drizzleState}
+      /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<p>Go back to the browser and open up your console. You should see that the two <code>console.log</code> statements are working and they are displaying both the <code>drizzle</code> instance as well as a <code>drizzleState</code> that is fully initialized.</p>
+<p>What this tells us is that the <code>drizzleState</code> we get in this component will always be fully ready once this component mounts. At this point, you can take some time to explore the <code>drizzle</code> instance object as well as the <code>drizzleState</code> object.</p>
+
+    <h3 class="link-markdown">
+      <a href="#-code-drizzle-code-instance-and-code-drizzlestate-code-" name="-code-drizzle-code-instance-and-code-drizzlestate-code-"><i class="fas fa-link"></i></a>
+      <code>drizzle</code> instance and <code>drizzleState</code>
+    </h3>
+  <p>For the most part, <code>drizzleState</code> is there for you to read information from (i.e. contract state variables, return values, transaction status, account data, etc.), where as the <code>drizzle</code> instance is what you will use to actually get stuff done (i.e. call contract methods, the Web3 instance, etc.).</p>
+
+    <h3 class="link-markdown">
+      <a href="#wiring-up-the-code-readstring-code-component" name="wiring-up-the-code-readstring-code-component"><i class="fas fa-link"></i></a>
+      Wiring up the <code>ReadString</code> component
+    </h3>
+  <p>Now that we have access to our <code>drizzle</code> instance and the <code>drizzleState</code>, we can put in the logic that allows us read the smart contract variable we are interested in. Here is what the full code of <code>ReadString.js</code> should look like:</p>
+<pre><code class="lang-js">import React from &quot;react&quot;;
+
+class ReadString extends React.Component {
+  state = { dataKey: null };
+
+  componentDidMount() {
+    const { drizzle } = this.props;
+    const contract = drizzle.contracts.MyStringStore;
+
+    // let drizzle know we want to watch the `myString` method
+    const dataKey = contract.methods[&quot;myString&quot;].cacheCall();
+
+    // save the `dataKey` to local component state for later reference
+    this.setState({ dataKey });
+  }
+
+  render() {
+    // get the contract state from drizzleState
+    const { MyStringStore } = this.props.drizzleState.contracts;
+
+    // using the saved `dataKey`, get the variable we&#39;re interested in
+    const myString = MyStringStore.myString[this.state.dataKey];
+
+    // if it exists, then we display its value
+    return &lt;p&gt;My stored string: {myString &amp;&amp; myString.value}&lt;/p&gt;;
+  }
+}
+
+export default ReadString;
+</code></pre>
+<p>If everything is working, your app should display &quot;Hello World&quot;. But first, let&#39;s walk through what we did here.</p>
+
+    <h4 class="link-markdown">
+      <a href="#when-the-component-mounts" name="when-the-component-mounts"><i class="fas fa-link"></i></a>
+      When the component mounts
+    </h4>
+  <pre><code class="lang-js">componentDidMount() {
+  const { drizzle } = this.props;
+  const contract = drizzle.contracts.MyStringStore;
+
+  // let drizzle know we want to watch the `myString` method
+  const dataKey = contract.methods[&quot;myString&quot;].cacheCall();
+
+  // save the `dataKey` to local component state for later reference
+  this.setState({ dataKey });
+}
+</code></pre>
+<p>When the component mounts, we first grab a reference to the contract we are interested in and assign it to <code>contract</code>.</p>
+<p>We then need to tell Drizzle to keep track of a variable we are interested in. In order to do that, we call the <code>.cacheCall()</code> function on the <code>myString</code> getter method.</p>
+<p>What we get in return is a <code>dataKey</code> that allows us to reference this variable. We save this to the component&#39;s state so we can use it later.</p>
+
+    <h4 class="link-markdown">
+      <a href="#the-code-render-code-method" name="the-code-render-code-method"><i class="fas fa-link"></i></a>
+      The <code>render</code> method
+    </h4>
+  <pre><code class="lang-js">render() {
+  // get the contract state from drizzleState
+  const { MyStringStore } = this.props.drizzleState.contracts;
+
+  // using the saved `dataKey`, get the variable we&#39;re interested in
+  const myString = MyStringStore.myString[this.state.dataKey];
+
+  // if it exists, then we display its value
+  return &lt;p&gt;My stored string: {myString &amp;&amp; myString.value}&lt;/p&gt;;
+}
+</code></pre>
+<p>From the <code>drizzleState</code>, we grab the slice of the state we are interested in, which in this case is the <code>MyStringStore</code> contract. From there, we use the <code>dataKey</code> we saved from before in order to access the <code>myString</code> variable.</p>
+<p>Finally, we write <code>myString &amp;&amp; myString.value</code> to show the value of the variable if it exists, or nothing otherwise. And in this case, it should show &quot;Hello World&quot; since that is the string the contract is initialized with.</p>
+
+    <h3 class="link-markdown">
+      <a href="#quick-recap" name="quick-recap"><i class="fas fa-link"></i></a>
+      Quick Recap
+    </h3>
+  <p>The most important thing to get out of this section here is that there are two steps to reading a value with Drizzle:</p>
+<ol>
+<li>First, you need to let Drizzle know what variable you want to watch for. Drizzle will give you a <code>dataKey</code> in return and you need to save it for later reference.</li>
+<li>Second, due to the asynchronous nature of how Drizzle works, you should be watching for changes in <code>drizzleState</code>. Once the variable accessed by the <code>dataKey</code> exists, you will be able to get the value you are interested in.</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a href="#write-a-component-to-write-to-the-smart-contract" name="write-a-component-to-write-to-the-smart-contract"><i class="fas fa-link"></i></a>
+      Write a component to write to the smart contract
+    </h2>
+  <p>Of course, simply reading a pre-initialized variable is no fun at all; we want something that we can interact with. In this section, we will create an input box where you can type a string of your choice and have it save to the blockchain forever!</p>
+<p>First, let&#39;s create a new file <code>client/src/SetString.js</code> and paste in the following:</p>
+<pre><code class="lang-js">import React from &quot;react&quot;;
+
+class SetString extends React.Component {
+  state = { stackId: null };
+
+  handleKeyDown = e =&gt; {
+    // if the enter key is pressed, set the value with the string
+    if (e.keyCode === 13) {
+      this.setValue(e.target.value);
+    }
+  };
+
+  setValue = value =&gt; {
+    const { drizzle, drizzleState } = this.props;
+    const contract = drizzle.contracts.MyStringStore;
+
+    // let drizzle know we want to call the `set` method with `value`
+    const stackId = contract.methods[&quot;set&quot;].cacheSend(value, {
+      from: drizzleState.accounts[0]
+    });
+
+    // save the `stackId` for later reference
+    this.setState({ stackId });
+  };
+
+  getTxStatus = () =&gt; {
+    // get the transaction states from the drizzle state
+    const { transactions, transactionStack } = this.props.drizzleState;
+
+    // get the transaction hash using our saved `stackId`
+    const txHash = transactionStack[this.state.stackId];
+
+    // if transaction hash does not exist, don&#39;t display anything
+    if (!txHash) return null;
+
+    // otherwise, return the transaction status
+    return `Transaction status: ${transactions[txHash].status}`;
+  };
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;input type=&quot;text&quot; onKeyDown={this.handleKeyDown} /&gt;
+        &lt;div&gt;{this.getTxStatus()}&lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default SetString;
+</code></pre>
+<p>At this point, import and include it inside <code>App.js</code> just like you did with the <code>ReadString</code> component:</p>
+<pre><code class="lang-js">import SetString from &quot;./SetString&quot;;
+
+// ...
+
+  render() {
+    if (this.state.loading) return &quot;Loading Drizzle...&quot;;
+    return (
+      &lt;div className=&quot;App&quot;&gt;
+        &lt;ReadString
+          drizzle={this.props.drizzle}
+          drizzleState={this.state.drizzleState}
+        /&gt;
+        &lt;SetString
+          drizzle={this.props.drizzle}
+          drizzleState={this.state.drizzleState}
+        /&gt;
+      &lt;/div&gt;
+    );
+  }
+</code></pre>
+<p>At this point, the app should work and you should try it out. You should be able to type something into the input text box, hit Enter, and Drizzle&#39;s react store will automatically display the new string.</p>
+<p>Next, let&#39;s go through <code>SetString.js</code> step-by-step.</p>
+
+    <h3 class="link-markdown">
+      <a href="#general-structure" name="general-structure"><i class="fas fa-link"></i></a>
+      General structure
+    </h3>
+  <p>First let&#39;s take a look at the general React.js boilerplate that we need.</p>
+<pre><code class="lang-js">class SetString extends React.Component {
+  state = { stackId: null };
+
+  handleKeyDown = e =&gt; {
+    // if the enter key is pressed, set the value with the string
+    if (e.keyCode === 13) {
+      this.setValue(e.target.value);
+    }
+  };
+
+  setValue = value =&gt; { ... };
+
+  getTxStatus = () =&gt; { ... };
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;input type=&quot;text&quot; onKeyDown={this.handleKeyDown} /&gt;
+        &lt;div&gt;{this.getTxStatus()}&lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<p>In this component, we will have an input text box for the user to type in a string, and when the Enter key is pressed, the <code>setValue</code> method will be called with the string as a parameter.</p>
+<p>Also, we will display the status of the transaction. The <code>getTxStatus</code> method will return a string displaying the status of the transaction by referencing a <code>stackId</code> state variable (more on this later).</p>
+
+    <h3 class="link-markdown">
+      <a href="#submitting-the-transaction" name="submitting-the-transaction"><i class="fas fa-link"></i></a>
+      Submitting the transaction
+    </h3>
+  <pre><code class="lang-js">setValue = value =&gt; {
+  const { drizzle, drizzleState } = this.props;
+  const contract = drizzle.contracts.MyStringStore;
+
+  // let drizzle know we want to call the `set` method with `value`
+  const stackId = contract.methods[&quot;set&quot;].cacheSend(value, {
+    from: drizzleState.accounts[0]
+  });
+
+  // save the `stackId` for later reference
+  this.setState({ stackId });
+};
+</code></pre>
+<p>We first assign the contract from the <code>drizzle</code> instance into <code>contract</code>, and then we call <code>cacheSend()</code> on the method we are interested in (i.e. <code>set</code>). Then we pass in the string we want to set (i.e. <code>value</code>) as well as our transaction options (in this case, just the <code>from</code> field). Note that we can get our current account address from <code>drizzleState.accounts[0]</code>.</p>
+<p>What we get in return is a <code>stackId</code>, which is a reference to the transaction that we want to execute. Ethereum transactions don&#39;t receive a hash until they&#39;re broadcast to the network. In case an error occurs before broadcast, Drizzle keeps track of these transactions by giving each it&#39;s own ID. Once successfully broadcasted, the <code>stackId</code> will point to the transaction hash, so we save it in our local component state for later usage.</p>
+
+    <h3 class="link-markdown">
+      <a href="#tracking-transaction-status" name="tracking-transaction-status"><i class="fas fa-link"></i></a>
+      Tracking transaction status
+    </h3>
+  <pre><code class="lang-js">getTxStatus = () =&gt; {
+  // get the transaction states from the drizzle state
+  const { transactions, transactionStack } = this.props.drizzleState;
+
+  // get the transaction hash using our saved `stackId`
+  const txHash = transactionStack[this.state.stackId];
+
+  // if transaction hash does not exist, don&#39;t display anything
+  if (!txHash) return null;
+
+  // otherwise, return the transaction status
+  return `Transaction status: ${transactions[txHash].status}`;
+};
+</code></pre>
+<p>Now that we have a <code>stackId</code> saved into our local component state, we can use this to check the status of our transaction. First, we need the <code>transactions</code> and <code>transactionStack</code> slices of state from <code>drizzleState</code>.</p>
+<p>Then, we can get the transaction hash (assigned to <code>txHash</code>) via <code>transactionStack[stackId]</code>. If the hash does not exist, then we know that the transaction has not been broadcasted yet and we return null.</p>
+<p>Otherwise, we display a string to show the status of our transaction. Usually, this will either be &quot;pending&quot; or &quot;success&quot;.</p>
+
+    <h1 class="link-markdown">
+      <a href="#the-end" name="the-end"><i class="fas fa-link"></i></a>
+      The End
+    </h1>
+  <p>Congratulations! You have taken a huge step to understanding how Drizzle works. Of course, this is only the beginning, you can use tools like <a href="https://github.com/trufflesuite/drizzle-react"><code>drizzle-react</code></a> to help you integrate Drizzle into your dapp, reducing the necessary boilerplate that you would have to write.</p>
+<p>Alternatively, you could also bootstrap your Drizzle dapp with our <a href="https://github.com/truffle-box/drizzle-box">Truffle box</a>.</p>
+
+
+            <div class="contribute-link">
+              See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/tutorials">Edit here &raquo;</a>
+            </div>          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-2 mb-4 mb-md-0">
+            <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+          </div>
+    
+          <div class="col-12 col-md-5 mb-3 mb-md-0">
+            <ul>
+              <!--<li><a href="/careers">CAREERS</a></li>-->
+              <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+              <li><a href="/policy">PRIVACY POLICY</a></li>
+              <li><a href="/dashboard">DASHBOARD</a></li>
+              <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+              <li><a href="https://twitter.com/trufflesuite">TWITTER</a></li>
+              <li class="text-truffle">
+                <a href="https://new.consensys.net/">
+                  <img class="consensys-logomark" src="/img/consensys-logomark.svg" alt="ConsenSys Logo" />
+                  &copy; CONSENSYS 2018
+                </a>
+              </li>
+            </ul>
+          </div>
+    
+          <div class="col-12 col-md-5">
+            <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+            <form>
+              <div class="form-group">
+                <input type="email" class="form-control" id="footerMailingEmail" placeholder="Email Address">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="footerMailingFirstName" placeholder="First Name">
+                <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
+              </div>
+              <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/vendor/prism.js"></script>
+    <script src="/js/markdown-cleanup.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-83874933-3', 'auto');
+      ga('send', 'pageview');
+    </script>  </body>
+</html>
