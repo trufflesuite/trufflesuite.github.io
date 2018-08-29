@@ -1,3 +1,7 @@
+.trufflecon-heading {
+  max-height: none;
+}
+
 .trufflecon-heading h1 {
   font-size: 4rem;
   letter-spacing: .35em;
