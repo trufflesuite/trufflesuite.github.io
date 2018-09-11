@@ -338,13 +338,13 @@
       exec
     </h3>
   <p>Execute a JS module within the Truffle environment.</p>
-<pre><code class="lang-shell">truffle exec &lt;script.js&gt; [--network &lt;name&gt;] 
+<pre><code class="lang-shell">truffle exec &lt;script.js&gt; [--network &lt;name&gt;]
 </code></pre>
-<p>This will include <code>web3</code>, set the default provider based on the network specified (if any), and include your contracts as global objects while executing the script. Your script must export a function that Truffle can run. </p>
+<p>This will include <code>web3</code>, set the default provider based on the network specified (if any), and include your contracts as global objects while executing the script. Your script must export a function that Truffle can run.</p>
 <p>See the <a href="/docs/getting_started/scripts">Writing external scripts</a> section for more details.</p>
 <p>Parameters:</p>
 <ul>
-<li><code>&lt;script.js&gt;</code> JavaScript file to be executed. Can include path information if the script does not exist in the current directory.</li>
+<li><code>&lt;script.js&gt;</code>: JavaScript file to be executed. Can include path information if the script does not exist in the current directory.</li>
 </ul>
 <p>Optional parameters:</p>
 <ul>
@@ -488,7 +488,7 @@
 <p>Downloads a <a href="/boxes">Truffle Box</a> to the current working directory. See the <a href="/boxes">list of available boxes</a>.</p>
 <p>Parameters:</p>
 <ul>
-<li><code>box_name</code>: Name of the Truffle Box.</li>
+<li><code>&lt;box_name&gt;</code>: Name of the Truffle Box.</li>
 </ul>
 
     <h3 class="link-markdown">
