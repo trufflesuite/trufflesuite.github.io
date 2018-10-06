@@ -79,6 +79,12 @@
   },
   {
     "userOrg": "truffle-box",
+    "displayName": "azure-hello-blockchain",
+    "repoName": "azure-hello-blockchain-box",
+    "official": true
+  },
+  {
+    "userOrg": "truffle-box",
     "displayName": "azure-refrigerated-transportation",
     "repoName": "azure-refrigerated-transportation-box",
     "official": true
