@@ -399,7 +399,7 @@ module.exports = {
 };
 </code></pre>
 <p>You&#39;ll notice that in version 3.0 we <code>require</code>&#39;d the default builder as a dependency and then passed that object into our configuration. Otherwise, the configuration was the same!</p>
-<p>Now, be aware that the default builder does use the latest contract abstractions (<a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a>), so you will still need to edit your application to account for the breaking changes mentioned above.</p>
+<p>Now, be aware that the default builder does use the latest contract abstractions (<a href="https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract">truffle-contract</a>), so you will still need to edit your application to account for the breaking changes mentioned above.</p>
 
     <h3 class="link-markdown">
       <a href="#use-a-custom-build-process-build-tool" name="use-a-custom-build-process-build-tool"><i class="fas fa-link"></i></a>
@@ -410,7 +410,7 @@ module.exports = {
 <p>When configuring your build tool or application, you&#39;ll need to perform the following steps;</p>
 <ol>
 <li>Get all your contract artifacts into your build pipeline / application. This includes all of the <code>.json</code> files within the <code>./build/contracts</code> directory.</li>
-<li>Turn those <code>.json</code> contract artifacts into contract abstractions that are easy to use, via <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a>.</li>
+<li>Turn those <code>.json</code> contract artifacts into contract abstractions that are easy to use, via <a href="https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract">truffle-contract</a>.</li>
 <li>Provision those contract abstractions with a Web3 provider. In the browser, this provider might come from <a href="https://metamask.io/">Metamask</a> or <a href="https://github.com/ethereum/mist">Mist</a>, but it could also be a custom provider you&#39;ve configured to point to <a href="http://infura.io/">Infura</a> or any other Ethereum client.</li>
 <li>Use your contracts!</li>
 </ol>

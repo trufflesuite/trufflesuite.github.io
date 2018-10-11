@@ -263,7 +263,7 @@ $ npm install example-truffle-library
       <a href="#within-javascript-code" name="within-javascript-code"><i class="fas fa-link"></i></a>
       Within JavaScript code
     </h3>
-  <p>To interact with package&#39;s contracts within JavaScript code, you simply need to <code>require</code> that package&#39;s <code>.json</code> files, and then use the <a href="https://github.com/trufflesuite/truffle-contract">truffle-contract</a> module to turn those into usable abstractions:</p>
+  <p>To interact with package&#39;s contracts within JavaScript code, you simply need to <code>require</code> that package&#39;s <code>.json</code> files, and then use the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract">truffle-contract</a> module to turn those into usable abstractions:</p>
 <pre><code>var contract = require(&quot;truffle-contract&quot;);
 var data = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.json&quot;);
 var SimpleNameRegistry = contract(data);
