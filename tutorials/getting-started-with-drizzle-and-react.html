@@ -409,7 +409,7 @@ ln -s ../../build/contracts contracts
 // Using a Command Prompt as Admin
 
 cd src
-mklink \D contracts ..\..\build\contracts
+mklink /D contracts ..\..\build\contracts
 </code></pre>
 <p>In effect, this should create what looks like a <code>contracts</code> folder within <code>src</code>, but it actually points to the files inside the <code>build/contracts</code> folder of our Truffle project.</p>
 
