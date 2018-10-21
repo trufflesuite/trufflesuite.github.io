@@ -392,7 +392,14 @@ import &quot;truffle/DeployedAddresses.sol&quot;;
 import &quot;../contracts/Adoption.sol&quot;;
 
 contract TestAdoption {
-  Adoption adoption = Adoption(DeployedAddresses.Adoption());
+  // The address of the adoption contract to be tested
+ Adoption adoption = Adoption(DeployedAddresses.Adoption());
+
+ // The id of the pet that will be used for testing
+ uint expectedPetId = 8;
+
+ //The expected owner of adopted pet is this contract
+ address expectedAdopter = this;
 
 }
 </code></pre>
@@ -408,7 +415,12 @@ contract TestAdoption {
   <strong>Note</strong>: The first two imports are referring to global Truffle files, not a <code>truffle</code> directory. You should not see a <code>truffle</code> directory inside your <code>test/</code> directory.
 </p>
 
-<p>Then we define a contract-wide variable containing the smart contract to be tested, calling the <code>DeployedAddresses</code> smart contract to get its address.</p>
+<p>Then we define three contract-wide variables:</p>
+<ul>
+<li>First, one containing the smart contract to be tested, calling the <code>DeployedAddresses</code> smart contract to get its address.</li>
+<li>Second, the id of the pet that will be used to test the adoption functions.</li>
+<li>Third, since the TestAdoption contract will be sending the transaction, we set the expected adopter address to <strong>this</strong>, a contract-wide variable that gets the current contract&#39;s address.</li>
+</ul>
 
     <h3 class="link-markdown">
       <a href="#testing-the-adopt-function" name="testing-the-adopt-function"><i class="fas fa-link"></i></a>
@@ -419,19 +431,16 @@ contract TestAdoption {
 <li><p>Add the following function within the <code>TestAdoption.sol</code> smart contract, after the declaration of <code>Adoption</code>:</p>
 <pre><code class="lang-javascript">// Testing the adopt() function
 function testUserCanAdoptPet() public {
-  uint returnedId = adoption.adopt(8);
+  uint returnedId = adoption.adopt(expectedPetId);
 
-  uint expected = 8;
-
-  Assert.equal(returnedId, expected, &quot;Adoption of pet ID 8 should be recorded.&quot;);
+  Assert.equal(returnedId, expectedPetId, &quot;Adoption of the expected pet should match what is returned.&quot;);
 }
 </code></pre>
 </li>
 </ol>
 <p>Things to notice:</p>
 <ul>
-<li>We call the smart contract we declared earlier with the ID of <code>8</code>.</li>
-<li>We then declare an expected value of <code>8</code> as well.</li>
+<li>We call the smart contract we declared earlier with the ID of <code>expectedPetId</code>.</li>
 <li>Finally, we pass the actual value, the expected value and a failure message (which gets printed to the console if the test does not pass) to <code>Assert.equal()</code>.</li>
 </ul>
 
@@ -439,22 +448,19 @@ function testUserCanAdoptPet() public {
       <a href="#testing-retrieval-of-a-single-pet-39-s-owner" name="testing-retrieval-of-a-single-pet-39-s-owner"><i class="fas fa-link"></i></a>
       Testing retrieval of a single pet&#39;s owner
     </h3>
-  <p>Remembering from above that public variables have automatic getter methods, we can retrieve the address stored by our adoption test above. Stored data will persist for the duration of our tests, so our adoption of pet <code>8</code> above can be retrieved by other tests.</p>
+  <p>Remembering from above that public variables have automatic getter methods, we can retrieve the address stored by our adoption test above. Stored data will persist for the duration of our tests, so our adoption of pet <code>expectedPetId</code> above can be retrieved by other tests.</p>
 <ol>
 <li><p>Add this function below the previously added function in <code>TestAdoption.sol</code>.</p>
 <pre><code class="lang-javascript">// Testing retrieval of a single pet&#39;s owner
 function testGetAdopterAddressByPetId() public {
-  // Expected owner is this contract
-  address expected = this;
+  address adopter = adoption.adopters(expectedPetId);
 
-  address adopter = adoption.adopters(8);
-
-  Assert.equal(adopter, expected, &quot;Owner of pet ID 8 should be recorded.&quot;);
+  Assert.equal(adopter, expectedAdopter, &quot;Owner of the expected pet should be this contract&quot;);
 }
 </code></pre>
 </li>
 </ol>
-<p>Since the TestAdoption contract will be sending the transaction, we set the expected value to <strong>this</strong>, a contract-wide variable that gets the current contract&#39;s address. From there we assert equality as we did above.</p>
+<p>After getting the adopter address stored by the adoption contract, we assert equality as we did above.</p>
 
     <h3 class="link-markdown">
       <a href="#testing-retrieval-of-all-pet-owners" name="testing-retrieval-of-all-pet-owners"><i class="fas fa-link"></i></a>
@@ -465,18 +471,15 @@ function testGetAdopterAddressByPetId() public {
 <li><p>Add this function below the previously added function in <code>TestAdoption.sol</code>.</p>
 <pre><code class="lang-javascript">// Testing retrieval of all pet owners
 function testGetAdopterAddressByPetIdInArray() public {
-  // Expected owner is this contract
-  address expected = this;
-
   // Store adopters in memory rather than contract&#39;s storage
   address[16] memory adopters = adoption.getAdopters();
 
-  Assert.equal(adopters[8], expected, &quot;Owner of pet ID 8 should be recorded.&quot;);
+  Assert.equal(adopters[expectedPetId], expectedAdopter, &quot;Owner of the expected pet should be this contract&quot;);
 }
 </code></pre>
 </li>
 </ol>
-<p>Note the <strong>memory</strong> attribute on <code>adopters</code>. The memory attribute tells Solidity to temporarily store the value in memory, rather than saving it to the contract&#39;s storage. Since <code>adopters</code> is an array, and we know from the first adoption test that we adopted pet <code>8</code>, we compare the testing contracts address with location <code>8</code> in the array.</p>
+<p>Note the <strong>memory</strong> attribute on <code>adopters</code>. The memory attribute tells Solidity to temporarily store the value in memory, rather than saving it to the contract&#39;s storage. Since <code>adopters</code> is an array, and we know from the first adoption test that we adopted pet <code>expectedPetId</code>, we compare the testing contracts address with location <code>expectedPetId</code> in the array.</p>
 
     <h3 class="link-markdown">
       <a href="#running-the-tests" name="running-the-tests"><i class="fas fa-link"></i></a>
