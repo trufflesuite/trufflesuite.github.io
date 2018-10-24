@@ -244,7 +244,7 @@
 <pre><code class="lang-javascript">import { Drizzle, generateStore } from &#39;drizzle&#39;
 </code></pre>
 </li>
-<li><p>Create an <code>options</code> object and pass in the desired contract artifacts for Drizzle to instantiate. Other options are available, see <a href="#options">the Options section</a> below.</p>
+<li><p>Create an <code>options</code> object and pass in the desired contract artifacts for Drizzle to instantiate. Other options are available, see <a href="./reference/drizzle-options">the Options section</a>.</p>
 <pre><code class="lang-javascript">// Import contracts
 import SimpleStorage from &#39;./../build/contracts/SimpleStorage.json&#39;
 import TutorialToken from &#39;./../build/contracts/TutorialToken.json&#39;
@@ -263,6 +263,7 @@ const drizzle = new Drizzle(this.props.options, drizzleStore)
 <p class="alert alert-info m-t-2">
 <strong>Note</strong>: The above assumes you have no existing redux store and generates a new one. To use your existing redux store, see <a href="/docs/drizzle/using-an-existing-redux-store">Using an Existing Redux Store</a>.
 </p>
+
 
           <div class="contribute-link">
             See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/drizzle">Edit here &raquo;</a>
