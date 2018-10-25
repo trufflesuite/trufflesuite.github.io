@@ -141,7 +141,6 @@
   <p>There are a few technical requirements before we start. Please install the following:</p>
 <ul>
 <li><a href="https://nodejs.org/en/">Node.js v8+ LTS and npm</a> (comes with Node)</li>
-<li><a href="https://git-scm.com/">Git</a></li>
 </ul>
 
     <h3 class="link-markdown">
@@ -417,7 +416,7 @@ mklink /D contracts ..\..\build\contracts
       <a href="#install-drizzle" name="install-drizzle"><i class="fas fa-link"></i></a>
       Install Drizzle
     </h3>
-  <p>This is the most delicious part, we install Drizzle:</p>
+  <p>This is the most delicious part, we install Drizzle. Change back into the <code>client</code> directory with the command <code>cd ..</code> and then run the following:</p>
 <pre><code class="lang-shell">npm install drizzle
 </code></pre>
 <p>And that&#39;s it for dependencies! Note that we don&#39;t need to install Web3.js or Truffle-Contract ourselves. Drizzle contains everything we need to work reactively with our smart contracts.</p>
@@ -494,7 +493,7 @@ registerServiceWorker();
 </code></pre>
 <p>We are going to be using two state variables here:</p>
 <ol>
-<li><code>loading</code> — Indicates if if Drizzle has finished initializing and the app is ready. The initialization process includes instantiating <code>web3</code> and our smart contracts, fetching any available Ethereum accounts and listening (or, in cases where subscriptions are not supported: polling) for new blocks.</li>
+<li><code>loading</code> — Indicates if Drizzle has finished initializing and the app is ready. The initialization process includes instantiating <code>web3</code> and our smart contracts, fetching any available Ethereum accounts and listening (or, in cases where subscriptions are not supported: polling) for new blocks.</li>
 <li><code>drizzleState</code> — This is where we will store the state of the Drizzle store in our top-level component. If we can keep this state variable up-to-date, then we can simply use simple <code>props</code> and <code>state</code> to work with Drizzle (i.e. you don&#39;t have to use any Redux or advanced React patterns).</li>
 </ol>
 
@@ -625,7 +624,7 @@ export default ReadString;
       <a href="#-code-drizzle-code-instance-and-code-drizzlestate-code-" name="-code-drizzle-code-instance-and-code-drizzlestate-code-"><i class="fas fa-link"></i></a>
       <code>drizzle</code> instance and <code>drizzleState</code>
     </h3>
-  <p>For the most part, <code>drizzleState</code> is there for you to read information from (i.e. contract state variables, return values, transaction status, account data, etc.), where as the <code>drizzle</code> instance is what you will use to actually get stuff done (i.e. call contract methods, the Web3 instance, etc.).</p>
+  <p>For the most part, <code>drizzleState</code> is there for you to read information from (i.e. contract state variables, return values, transaction status, account data, etc.), whereas the <code>drizzle</code> instance is what you will use to actually get stuff done (i.e. call contract methods, the Web3 instance, etc.).</p>
 
     <h3 class="link-markdown">
       <a href="#wiring-up-the-code-readstring-code-component" name="wiring-up-the-code-readstring-code-component"><i class="fas fa-link"></i></a>
