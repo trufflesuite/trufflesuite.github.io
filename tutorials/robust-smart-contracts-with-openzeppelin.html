@@ -176,9 +176,9 @@ cd oz-workspace
 <li><p>In the <code>contracts/</code> directory of your Truffle Box, create the file <code>TutorialToken.sol</code> and add the following contents:</p>
 <pre><code class="lang-javascript">pragma solidity ^0.4.24;
 
-import &quot;openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol&quot;;
+import &quot;openzeppelin-solidity/contracts/token/ERC20/ERC20.sol&quot;;
 
-contract TutorialToken is StandardToken {
+contract TutorialToken is ERC20 {
 
 }
 </code></pre>
@@ -201,10 +201,9 @@ uint public INITIAL_SUPPLY = 12000;
 <li>The <code>INITIAL_SUPPLY</code> variable determines the number of tokens created when this contract is deployed. In this case, the number is arbitrary.</li>
 </ul>
 </li>
-<li><p>To finish up our contract, we&#39;ll create a constructor function to set the <code>totalSupply</code> equal to our declared <code>INITIAL_SUPPLY</code> and give the entire supply to the deploying account&#39;s address. Add this block below the content added in the previous step:</p>
+<li><p>To finish up our contract, we&#39;ll create a constructor function to mint with the <code>totalSupply</code> equal to our declared <code>INITIAL_SUPPLY</code> and give the entire supply to the deploying account&#39;s address. Add this block below the content added in the previous step:</p>
 <pre><code class="lang-javascript">constructor() public {
-  totalSupply_ = INITIAL_SUPPLY;
-  balances[msg.sender] = INITIAL_SUPPLY;
+  _mint(msg.sender, INITIAL_SUPPLY);
 }
 </code></pre>
 </li>
