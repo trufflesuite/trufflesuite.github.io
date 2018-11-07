@@ -531,11 +531,23 @@ function testGetAdopterAddressByPetIdInArray() public {
 <li><p>Examine the file. Note that there is a global <code>App</code> object to manage our application, load in the pet data in <code>init()</code> and then call the function <code>initWeb3()</code>. The <a href="https://github.com/ethereum/web3.js/">web3 JavaScript library</a> interacts with the Ethereum blockchain. It can retrieve user accounts, send transactions, interact with smart contracts, and more.</p>
 </li>
 <li><p>Remove the multi-line comment from within <code>initWeb3</code> and replace it with the following:</p>
-<pre><code class="lang-javascript">// Is there an injected web3 instance?
-if (typeof web3 !== &#39;undefined&#39;) {
-  App.web3Provider = web3.currentProvider;
-} else {
-  // If no injected web3 instance is detected, fall back to Ganache
+<pre><code class="lang-javascript">// Modern dapp browsers...
+if (window.ethereum) {
+  App.web3Provider = window.ethereum;
+  try {
+    // Request account access
+    await window.ethereum.enable();
+  } catch (error) {
+    // User denied account access...
+    console.error(&quot;User denied account access&quot;)
+  }
+}
+// Legacy dapp browsers...
+else if (window.web3) {
+  App.web3Provider = window.web3.currentProvider;
+}
+// If no injected web3 instance is detected, fall back to Ganache
+else {
   App.web3Provider = new Web3.providers.HttpProvider(&#39;http://localhost:7545&#39;);
 }
 web3 = new Web3(App.web3Provider);
@@ -544,7 +556,9 @@ web3 = new Web3(App.web3Provider);
 </ol>
 <p>Things to notice:</p>
 <ul>
-<li><p>First, we check if there&#39;s a web3 instance already active. (Ethereum browsers like <a href="https://github.com/ethereum/mist">Mist</a> or Chrome with the <a href="https://metamask.io/">MetaMask</a> extension will inject their own web3 instances.) If an injected web3 instance is present, we get its provider and use it to create our web3 object.</p>
+<li><p>First, we check if we are using modern dapp browsers or the more recent versions of <a href="https://github.com/MetaMask">MetaMask</a> where an <code>ethereum</code> provider is injected into the <code>window</code> object. If so, we use it to create our web3 object, but we also need to explicitly request access to the accounts with <code>ethereum.enable()</code>.</p>
+</li>
+<li><p>If the <code>ethereum</code> object does not exist, we then check for an injected <code>web3</code> instance. If it exists, this indicates that we are using an older dapp browser (like <a href="https://github.com/ethereum/mist">Mist</a> or an older version of MetaMask). If so, we get its provider and use it to create our web3 object.</p>
 </li>
 <li><p>If no injected web3 instance is present, we create our web3 object based on our local provider. (This fallback is fine for development environments, but insecure and not suitable for production.)</p>
 </li>

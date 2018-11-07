@@ -144,66 +144,62 @@
   <p>In the 1960&#39;s the first computerized databases emerged. With hardware occupying multiple rooms and the Internet decades away, data naturally existed in central, physical locations. This is a <strong>centralized</strong> approach, meaning the location and accessing of data is controlled by a central authority.</p>
 <p>Centralized systems can be manipulated, from inside or outside, so we have to trust the owners of these systems to have sufficient will and resources to keep their data secure and with integrity. Centralized databases are still the most common today, powering most of our online and offline applications.</p>
 <p>A self-hosted blog is a common example of a centralized database. The owner could potentially edit posts in hindsight or censor users without recourse. Alternately, a hacker could infiltrate the server and commit malicious acts. If there is no database backup, reversing the damage might be impossible.</p>
-<p>  </div><!--/.col-->
-</div><!--/.row--></p>
-<div class="row row-wide justify-content-center">
-    <div class="col" style="max-width: 430px">
-      
+<div class="centralized-db-image">
+
     <img class="img-fluid" src="/img/tutorials/ethereum-overview/db-server.png" title="Centralized Database" alt="Centralized Database" />
     <p class="img-caption">Graphically represented, each arrow crossing a boundary of the main server box is a connection which requires trust</p>
   
-  </div>
 </div>
 
-<div class="row justify-content-center">
-  <div class="col">
-### The need to share data
 
-Sharing large amounts of data can be expensive and cumbersome. We can ease this burden by distributing data across multiple parties. Reading and writing are controlled by one or more parties within the group and therefore subject to similar corruptions as centralized databases.
+    <h3 class="link-markdown">
+      <a href="#the-need-to-share-data" name="the-need-to-share-data"><i class="fas fa-link"></i></a>
+      The need to share data
+    </h3>
+  <p>Sharing large amounts of data can be expensive and cumbersome. We can ease this burden by distributing data across multiple parties. Reading and writing are controlled by one or more parties within the group and therefore subject to similar corruptions as centralized databases.</p>
+<p>Modern shared databases use techniques to minimize this corruption. Some of these overlap with blockchains. Depending on the shared database system, it may feature:</p>
+<ul>
+<li><strong>Immutability</strong>: Rather than overwriting old data, a new copy is created with the old data retained as a historical record. This record can be accessed to prove a piece of data existed at a certain time.</li>
+<li><strong>Consensus</strong>: For a database to be shared, all parties must agree on its contents. There are various methods of reaching consensus, one of which (proof-of-work) will be discussed below.</li>
+</ul>
+<p>Blockchains use these and take them a step further, solving the problem of trust.</p>
 
-Modern shared databases use techniques to minimize this corruption. Some of these overlap with blockchains. Depending on the shared database system, it may feature:
+    <h2 class="link-markdown">
+      <a href="#what-is-a-blockchain-" name="what-is-a-blockchain-"><i class="fas fa-link"></i></a>
+      What is a blockchain?
+    </h2>
+  <p>Fundamentally, <strong>a blockchain is a shared database</strong>, consisting of a ledger of transactions. Much like a bank, the ledgers of simple blockchains keep track of currency (in this case, cryptocurrency) ownership. Unlike a centralized bank, everyone has a copy of the ledger and can verify each other&#39;s accounts. Each connected device with a copy of the ledger is called a &quot;node&quot;.</p>
+<p>Blockchains eliminate the problem of trust that affect other databases in the following ways:</p>
+<ul>
+<li><strong>Full decentralization</strong>: Reading/writing to the database is completely decentralized and secure. No single person or group controls a blockchain.</li>
+<li><strong>Extreme fault tolerance</strong>: Fault tolerance is the ability of a system to handle corrupt data. While fault tolerance is not unique to blockchains, it takes the concept to its logical extreme by having <em>every</em> account sharing the database validate its changes.</li>
+<li><strong>Independent verification</strong>: Transactions can be verified by anyone, without a third party. This is sometimes referred to as &quot;disintermediation&quot;.</li>
+</ul>
 
-<em> <strong>Immutability</strong>: Rather than overwriting old data, a new copy is created with the old data retained as a historical record. This record can be accessed to prove a piece of data existed at a certain time.
-</em> <strong>Consensus</strong>: For a database to be shared, all parties must agree on its contents. There are various methods of reaching consensus, one of which (proof-of-work) will be discussed below.
+    <h2 class="link-markdown">
+      <a href="#how-a-blockchain-works" name="how-a-blockchain-works"><i class="fas fa-link"></i></a>
+      How a blockchain works
+    </h2>
+  <p>Now that we have some idea of why blockchains are useful, let&#39;s dive deeper into how they work.</p>
+<p>Interactions between accounts in a blockchain network are called &quot;transactions&quot;. They can be monetary transactions, such as sending <strong>ether, the cryptocurrency used in Ethereum</strong>. They could also be transmissions of data, such as a comment or user name. A bundle of transactions is called a &quot;block&quot;.</p>
+<p>Every account on the blockchain has a unique signature, which lets everyone know which account initiated the transaction. On a public blockchain, anyone can read or write data. Reading data is free, but writing to the public blockchain is not. This cost, known as &quot;gas&quot; and priced in ether, helps discourage spam and pays to secure the network.</p>
 
-Blockchains use these and take them a step further, solving the problem of trust.
+    <h3 class="link-markdown">
+      <a href="#mining" name="mining"><i class="fas fa-link"></i></a>
+      Mining
+    </h3>
+  <p>Any node on the network can take part in securing the network through a process called &quot;mining&quot;. Nodes which have opted to be miners compete to solve math problems which secure the contents of a block.</p>
+<p>Since mining requires computing power (not to mention electricity cost), miners can be compensated for their service. The winner of the competition receives some cryptocurrency as a reward. This incentivizes nodes to work to secure the network, preventing too much power from being in the hands of any single miner.</p>
 
-
-## What is a blockchain?
-
-Fundamentally, <strong>a blockchain is a shared database</strong>, consisting of a ledger of transactions. Much like a bank, the ledgers of simple blockchains keep track of currency (in this case, cryptocurrency) ownership. Unlike a centralized bank, everyone has a copy of the ledger and can verify each other&#39;s accounts. Each connected device with a copy of the ledger is called a &quot;node&quot;.
-
-Blockchains eliminate the problem of trust that affect other databases in the following ways:
-
-<em> <strong>Full decentralization</strong>: Reading/writing to the database is completely decentralized and secure. No single person or group controls a blockchain.
-</em> <strong>Extreme fault tolerance</strong>: Fault tolerance is the ability of a system to handle corrupt data. While fault tolerance is not unique to blockchains, it takes the concept to its logical extreme by having <em>every</em> account sharing the database validate its changes.
-* <strong>Independent verification</strong>: Transactions can be verified by anyone, without a third party. This is sometimes referred to as &quot;disintermediation&quot;.
-
-
-## How a blockchain works
-
-Now that we have some idea of why blockchains are useful, let&#39;s dive deeper into how they work.
-
-Interactions between accounts in a blockchain network are called &quot;transactions&quot;. They can be monetary transactions, such as sending <strong>ether, the cryptocurrency used in Ethereum</strong>. They could also be transmissions of data, such as a comment or user name. A bundle of transactions is called a &quot;block&quot;.
-
-Every account on the blockchain has a unique signature, which lets everyone know which account initiated the transaction. On a public blockchain, anyone can read or write data. Reading data is free, but writing to the public blockchain is not. This cost, known as &quot;gas&quot; and priced in ether, helps discourage spam and pays to secure the network.
-
-### Mining
-
-Any node on the network can take part in securing the network through a process called &quot;mining&quot;. Nodes which have opted to be miners compete to solve math problems which secure the contents of a block.
-
-Since mining requires computing power (not to mention electricity cost), miners can be compensated for their service. The winner of the competition receives some cryptocurrency as a reward. This incentivizes nodes to work to secure the network, preventing too much power from being in the hands of any single miner.
-
-### Hashing
-
-Once a new block is mined, the other miners are notified and begin verifying and adding this new block to their copies of the chain. This is done through cryptographic hashing (or simply, &quot;hashing&quot;). Hashing is a one-way process which takes in data and gives back a fixed-length string representing that data.
-
-While the original data can&#39;t be reproduced from its hash, the same data will always produce the same hash. Therefore, unverified data can be hashed with the same function and compared to the original. If they are identical, the data is validated.
-
-Once more than half of the miners have validated the new block, the network has &quot;reached consensus&quot; and the block becomes part of the blockchain permanent history. Now this data can be downloaded by all nodes, with its validity assured.
-
-Here&#39;s the whole process visually:
-</div>
+    <h3 class="link-markdown">
+      <a href="#hashing" name="hashing"><i class="fas fa-link"></i></a>
+      Hashing
+    </h3>
+  <p>Once a new block is mined, the other miners are notified and begin verifying and adding this new block to their copies of the chain. This is done through cryptographic hashing (or simply, &quot;hashing&quot;). Hashing is a one-way process which takes in data and gives back a fixed-length string representing that data.</p>
+<p>While the original data can&#39;t be reproduced from its hash, the same data will always produce the same hash. Therefore, unverified data can be hashed with the same function and compared to the original. If they are identical, the data is validated.</p>
+<p>Once more than half of the miners have validated the new block, the network has &quot;reached consensus&quot; and the block becomes part of the blockchain permanent history. Now this data can be downloaded by all nodes, with its validity assured.</p>
+<p>Here&#39;s the whole process visually:
+</div></p>
 <div class="container text-center">
 <div class="row row-steps justify-content-center">
 <div class="col-lg-4">

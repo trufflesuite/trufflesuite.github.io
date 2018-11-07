@@ -10185,6 +10185,11 @@ footer form {
   /* IE6-9 */
 }
 
+.centralized-db-image {
+  margin: 0 auto;
+  max-width: 430px;
+}
+
 .truffle-heading-row {
   position: relative;
   max-height: calc(100vh - 60px);

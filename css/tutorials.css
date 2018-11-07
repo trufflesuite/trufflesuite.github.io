@@ -54,3 +54,8 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3fe0c5', endColorstr='#e911bd',GradientType=0 );
   /* IE6-9 */
 }
+
+.centralized-db-image {
+  margin: 0 auto;
+  max-width: 430px;
+}
