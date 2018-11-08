@@ -9431,15 +9431,15 @@ code.dark {
   margin-right: .75rem;
 }
 
-.navbar .trufflecon-link {
+.trufflecon-link {
   letter-spacing: .14em;
 }
 
-.navbar .trufflecon-link span {
+.trufflecon-link span {
   display: none;
 }
 
-.navbar .trufflecon-link img {
+.trufflecon-link img {
   height: 1em;
   margin-top: -.25em;
   margin-right: .14em;
