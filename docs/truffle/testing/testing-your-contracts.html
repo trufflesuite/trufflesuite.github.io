@@ -146,7 +146,6 @@
               <ul>
                   <a href="/docs/truffle/getting-started/installation"><li>Installation</li></a>
                   <a href="/docs/truffle/getting-started/creating-a-project"><li>Creating a Project</li></a>
-                  <a href="/docs/truffle/getting-started/truffle-boxes"><li>Truffle Boxes</li></a>
                   <a href="/docs/truffle/getting-started/compiling-contracts"><li>Compiling Contracts</li></a>
                   <a href="/docs/truffle/getting-started/running-migrations"><li>Running Migrations</li></a>
                   <a href="/docs/truffle/getting-started/interacting-with-your-contracts"><li>Interacting with Your Contracts</li></a>
@@ -156,7 +155,6 @@
                   <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
                   <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
                   <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
-                  <a href="/docs/truffle/getting-started/using-the-build-pipeline"><li>Using The Build Pipeline</li></a>
               </ul>
               <h3>Testing</h3>
               <ul>
@@ -168,11 +166,13 @@
               <ul>
                   <a href="/docs/truffle/advanced/networks-and-app-deployment"><li>Networks and App Deployment</li></a>
                   <a href="/docs/truffle/advanced/build-processes"><li>Build Processes</li></a>
+                  <a href="/docs/truffle/advanced/creating-a-truffle-box"><li>Creating a Truffle Box</li></a>
               </ul>
               <h3>Reference</h3>
               <ul>
                   <a href="/docs/truffle/reference/choosing-an-ethereum-client"><li>Choosing an Ethereum Client</li></a>
                   <a href="/docs/truffle/reference/configuration"><li>Configuration</li></a>
+                  <a href="/docs/truffle/reference/contract-abstractions"><li>Contract Abstractions</li></a>
                   <a href="/docs/truffle/reference/truffle-commands"><li>Truffle Commands</li></a>
                   <a href="/docs/truffle/reference/contact-the-developers"><li>Contact The Developers</li></a>
               </ul>
@@ -229,7 +229,7 @@
     </h2>
   <p>Truffle comes standard with an automated testing framework to make testing your contracts a breeze. This framework lets you write simple and manageable tests in two different ways:</p>
 <ul>
-<li>In <a href="/docs/getting_started/javascript-tests">Javascript</a>, for exercising your contracts from the outside world, just like your application.</li>
+<li>In <a href="/docs/getting_started/javascript-tests">Javascript</a> and <a href="/docs/getting_started/javascript-tests#typescript-file-support">TypeScript</a>, for exercising your contracts from the outside world, just like your application.</li>
 <li>In <a href="/docs/getting_started/solidity-tests">Solidity</a>, for exercising your contracts in advanced, bare-to-the-metal scenarios.</li>
 </ul>
 <p>Both styles of tests have their advantages and drawbacks. See the next two sections for a discussion of each one.</p>
@@ -238,7 +238,7 @@
       <a href="#location" name="location"><i class="fas fa-link"></i></a>
       Location
     </h2>
-  <p>All test files should be located in the <code>./test</code> directory. Truffle will only run test files with the following file extensions: <code>.js</code>, <code>.es</code>, <code>.es6</code>, and <code>.jsx</code>, and <code>.sol</code>. All other files are ignored.</p>
+  <p>All test files should be located in the <code>./test</code> directory. Truffle will only run test files with the following file extensions: <code>.js</code>, <code>.ts</code>, <code>.es</code>, <code>.es6</code>, and <code>.jsx</code>, and <code>.sol</code>. All other files are ignored.</p>
 
     <h2 class="link-markdown">
       <a href="#command" name="command"><i class="fas fa-link"></i></a>

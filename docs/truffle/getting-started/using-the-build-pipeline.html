@@ -146,7 +146,6 @@
               <ul>
                   <a href="/docs/truffle/getting-started/installation"><li>Installation</li></a>
                   <a href="/docs/truffle/getting-started/creating-a-project"><li>Creating a Project</li></a>
-                  <a href="/docs/truffle/getting-started/truffle-boxes"><li>Truffle Boxes</li></a>
                   <a href="/docs/truffle/getting-started/compiling-contracts"><li>Compiling Contracts</li></a>
                   <a href="/docs/truffle/getting-started/running-migrations"><li>Running Migrations</li></a>
                   <a href="/docs/truffle/getting-started/interacting-with-your-contracts"><li>Interacting with Your Contracts</li></a>
@@ -156,7 +155,6 @@
                   <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
                   <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
                   <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
-                  <a href="/docs/truffle/getting-started/using-the-build-pipeline"><li>Using The Build Pipeline</li></a>
               </ul>
               <h3>Testing</h3>
               <ul>
@@ -168,11 +166,13 @@
               <ul>
                   <a href="/docs/truffle/advanced/networks-and-app-deployment"><li>Networks and App Deployment</li></a>
                   <a href="/docs/truffle/advanced/build-processes"><li>Build Processes</li></a>
+                  <a href="/docs/truffle/advanced/creating-a-truffle-box"><li>Creating a Truffle Box</li></a>
               </ul>
               <h3>Reference</h3>
               <ul>
                   <a href="/docs/truffle/reference/choosing-an-ethereum-client"><li>Choosing an Ethereum Client</li></a>
                   <a href="/docs/truffle/reference/configuration"><li>Configuration</li></a>
+                  <a href="/docs/truffle/reference/contract-abstractions"><li>Contract Abstractions</li></a>
                   <a href="/docs/truffle/reference/truffle-commands"><li>Truffle Commands</li></a>
                   <a href="/docs/truffle/reference/contact-the-developers"><li>Contact The Developers</li></a>
               </ul>
@@ -222,7 +222,11 @@
       <a href="#using-the-build-pipeline" name="using-the-build-pipeline"><i class="fas fa-link"></i></a>
       Using the Build Pipeline
     </h1>
-  <p>Truffle 1.0 and 2.0 came standard with a default build system heavily geared toward web applications (here, the term &quot;build&quot; means turning code artifacts into HTML, Javascript and CSS). That build system has been pulled out into its <a href="https://github.com/trufflesuite/truffle-default-builder/tree/master">own module</a> to make Truffle usable and extensible for all kinds of applications.</p>
+  <p class="alert alert-warning">
+<strong>Alert</strong>: This command is deprecated. Please use third-party build tools like webpack or grunt, or see our <a href="/boxes">Truffle Boxes</a> for an example.
+</p>
+
+<p>Truffle 1.0 and 2.0 came standard with a default build system heavily geared toward web applications (here, the term &quot;build&quot; means turning code artifacts into HTML, Javascript and CSS). That build system has been pulled out into its <a href="https://github.com/trufflesuite/truffle-default-builder/tree/master">own module</a> to make Truffle usable and extensible for all kinds of applications.</p>
 <p>Truffle can be configured for tight integration with any build system. To configure a custom build system, see the <a href="/docs/advanced/build_processes">Advanced Build Processes</a> section for more details.</p>
 
     <h2 class="link-markdown">

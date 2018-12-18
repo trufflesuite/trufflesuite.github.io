@@ -146,7 +146,6 @@
               <ul>
                   <a href="/docs/truffle/getting-started/installation"><li>Installation</li></a>
                   <a href="/docs/truffle/getting-started/creating-a-project"><li>Creating a Project</li></a>
-                  <a href="/docs/truffle/getting-started/truffle-boxes"><li>Truffle Boxes</li></a>
                   <a href="/docs/truffle/getting-started/compiling-contracts"><li>Compiling Contracts</li></a>
                   <a href="/docs/truffle/getting-started/running-migrations"><li>Running Migrations</li></a>
                   <a href="/docs/truffle/getting-started/interacting-with-your-contracts"><li>Interacting with Your Contracts</li></a>
@@ -156,7 +155,6 @@
                   <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
                   <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
                   <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
-                  <a href="/docs/truffle/getting-started/using-the-build-pipeline"><li>Using The Build Pipeline</li></a>
               </ul>
               <h3>Testing</h3>
               <ul>
@@ -168,11 +166,13 @@
               <ul>
                   <a href="/docs/truffle/advanced/networks-and-app-deployment"><li>Networks and App Deployment</li></a>
                   <a href="/docs/truffle/advanced/build-processes"><li>Build Processes</li></a>
+                  <a href="/docs/truffle/advanced/creating-a-truffle-box"><li>Creating a Truffle Box</li></a>
               </ul>
               <h3>Reference</h3>
               <ul>
                   <a href="/docs/truffle/reference/choosing-an-ethereum-client"><li>Choosing an Ethereum Client</li></a>
                   <a href="/docs/truffle/reference/configuration"><li>Configuration</li></a>
+                  <a href="/docs/truffle/reference/contract-abstractions"><li>Contract Abstractions</li></a>
                   <a href="/docs/truffle/reference/truffle-commands"><li>Truffle Commands</li></a>
                   <a href="/docs/truffle/reference/contact-the-developers"><li>Contact The Developers</li></a>
               </ul>
@@ -304,11 +304,8 @@ contract MetaCoin {
 </code></pre>
 <p>This contract has three methods aside from the constructor (<code>sendCoin</code>, <code>getBalanceInEth</code>, and <code>getBalance</code>). All three methods can be executed as either a transaction or a call.</p>
 <p>Now let&#39;s look at the Javascript object called <code>MetaCoin</code> provided for us by Truffle, as made available in the <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console">Truffle console</a>:</p>
-<pre><code class="lang-javascript">// Print the deployed version of MetaCoin.
-// Note that getting the deployed version requires a promise, hence the .then.
-MetaCoin.deployed().then(function(instance) {
-  console.log(instance);
-});
+<pre><code class="lang-javascript">truffle(develop)&gt; let instance = await MetaCoin.deployed()
+truffle(develop)&gt; instance
 
 // outputs:
 //
@@ -334,25 +331,13 @@ MetaCoin.deployed().then(function(instance) {
     </h3>
   <p>There are three functions on the MetaCoin contract that we can execute. If you analyze each of them, you&#39;ll see that <code>sendCoin</code> is the only function that aims to make changes to the network. The goal of <code>sendCoin</code> is to &quot;send&quot; some Meta coins from one account to the next, and these changes should persist.</p>
 <p>When calling <code>sendCoin</code>, we&#39;ll execute it as a transaction. In the following example, we&#39;ll send 10 Meta coin from one account to another, in a way that persists changes on the network:</p>
-<pre><code class="lang-javascript">var account_one = &quot;0x1234...&quot;; // an address
-var account_two = &quot;0xabcd...&quot;; // another address
-
-var meta;
-MetaCoin.deployed().then(function(instance) {
-  meta = instance;
-  return meta.sendCoin(account_two, 10, {from: account_one});
-}).then(function(result) {
-  // If this callback is called, the transaction was successfully processed.
-  alert(&quot;Transaction successful!&quot;)
-}).catch(function(e) {
-  // There was an error! Handle it.
-})
+<pre><code class="lang-javascript">truffle(develop)&gt; let accounts = await web3.eth.getAccounts()
+truffle(develop)&gt; instance.sendCoin(accounts[1], 10, {from: accounts[0]})
 </code></pre>
 <p>There are a few things interesting about the above code:</p>
 <ul>
 <li>We called the abstraction&#39;s <code>sendCoin</code> function directly. This will result in a transaction by default (i.e, writing data) instead of call.</li>
-<li>When the transaction is successful, the callback function isn&#39;t fired until the transaction is processed. This makes life easy and means you don&#39;t have to check the status of the transaction yourself.</li>
-<li>We passed an object as the third parameter to <code>sendCoin</code>. Note that the <code>sendCoin</code> function in our Solidity contract doesn&#39;t have a third parameter. What you see above is a special object that can always be passed as the last parameter to a function that lets you edit specific details about the transaction. Here, we set the <code>from</code> address ensuring this transaction came from <code>account_one</code>.</li>
+<li>We passed an object as the third parameter to <code>sendCoin</code>. Note that the <code>sendCoin</code> function in our Solidity contract doesn&#39;t have a third parameter. What you see above is a special object that can always be passed as the last parameter to a function that lets you edit specific details about the transaction. Here, we set the <code>from</code> address ensuring this transaction came from <code>accounts[0]</code>.</li>
 </ul>
 
     <h3 class="link-markdown">
@@ -360,84 +345,69 @@ MetaCoin.deployed().then(function(instance) {
       Making a call
     </h3>
   <p>Continuing with MetaCoin, notice the <code>getBalance</code> function is a great candidate for reading data from the network. It doesn&#39;t need to make any changes, as it just returns the MetaCoin balance of the address passed to it. Let&#39;s give it a shot:</p>
-<pre><code class="lang-javascript">var account_one = &quot;0x1234...&quot;; // an address
-
-var meta;
-MetaCoin.deployed().then(function(instance) {
-  meta = instance;
-  return meta.getBalance.call(account_one, {from: account_one});
-}).then(function(balance) {
-  // If this callback is called, the call was successfully executed.
-  // Note that this returns immediately without any waiting.
-  // Let&#39;s print the return value.
-  console.log(balance.toNumber());
-}).catch(function(e) {
-  // There was an error! Handle it.
-})
+<pre><code class="lang-javascript">truffle(develop)&gt; let balance = await instance.getBalance(accounts[0])
+truffle(develop)&gt; balance.toNumber()
 </code></pre>
 <p>What&#39;s interesting here:</p>
 <ul>
-<li>We had to execute the <code>.call()</code> function explicitly to let the Ethereum network know we&#39;re not intending to persist any changes.</li>
-<li>We received a return value instead of a transaction id on success. Note that since the Ethereum network can handle very large numbers, we&#39;re given a <a href="https://github.com/MikeMcl/bignumber.js/">BigNumber</a> object which we then convert to a number.</li>
+<li>We received a return value. Note that since the Ethereum network can handle very large numbers, we&#39;re given a <a href="https://github.com/MikeMcl/bignumber.js/">BigNumber</a> object which we then convert to a number.</li>
 </ul>
-<p><strong>Warning:</strong> We convert the return value to a number because in this example the numbers are small. However, if you try to convert a BigNumber that&#39;s larger than the largest integer supported by Javascript, you&#39;ll likely run into errors or unexpected behavior.</p>
+<p class="alert alert-warning">
+<strong>Warning</strong>: We convert the return value to a number because in this example the numbers are small. However, if you try to convert a BigNumber that&#39;s larger than the largest integer supported by Javascript, you&#39;ll likely run into errors or unexpected behavior.
+</p>
 
-    <h3 class="link-markdown">
-      <a href="#catching-events" name="catching-events"><i class="fas fa-link"></i></a>
-      Catching events
-    </h3>
-  <p>Your contracts can fire events that you can catch to gain more insight into what your contracts are doing. The easiest way to handle events is by processing the result object of the transaction that triggered the event, like so:</p>
-<pre><code class="lang-javascript">var account_one = &quot;0x1234...&quot;; // an address
-var account_two = &quot;0xabcd...&quot;; // another address
-
-var meta;
-MetaCoin.deployed().then(function(instance) {
-  meta = instance;  
-  return meta.sendCoin(account_two, 10, {from: account_one});
-}).then(function(result) {
-  // result is an object with the following values:
-  //
-  // result.tx      =&gt; transaction hash, string
-  // result.logs    =&gt; array of decoded events that were triggered within this transaction
-  // result.receipt =&gt; transaction receipt object, which includes gas used
-
-  // We can loop through result.logs to see if we triggered the Transfer event.
-  for (var i = 0; i &lt; result.logs.length; i++) {
-    var log = result.logs[i];
-
-    if (log.event == &quot;Transfer&quot;) {
-      // We found the event!
-      break;
-    }
-  }
-}).catch(function(err) {
-  // There was an error! Handle it.
-});
-</code></pre>
 
     <h3 class="link-markdown">
       <a href="#processing-transaction-results" name="processing-transaction-results"><i class="fas fa-link"></i></a>
       Processing transaction results
     </h3>
-  <p>When you make a transaction, you&#39;re given a <code>result</code> object that gives you a wealth of information about the transaction. Specifically, you get the following:</p>
+  <p>When you make a transaction, you&#39;re given a <code>result</code> object that gives you a wealth of information about the transaction.</p>
+<pre><code class="lang-javascript">truffle(develop)&gt; let result = await contract.sendCoin(accounts[1], 10, {from: accounts[0]})
+truffle(develop)&gt; result
+</code></pre>
+<p>Specifically, you get the following:</p>
 <ul>
 <li><code>result.tx</code> <em>(string)</em> - Transaction hash</li>
 <li><code>result.logs</code> <em>(array)</em> - Decoded events (logs)</li>
-<li><code>result.receipt</code> <em>(object)</em> - Transaction receipt</li>
+<li><code>result.receipt</code> <em>(object)</em> - Transaction receipt (includes the amount of gas used)</li>
 </ul>
 <p>For more information, please see the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract">README</a> in the <code>truffle-contract</code> package.</p>
+
+    <h3 class="link-markdown">
+      <a href="#catching-events" name="catching-events"><i class="fas fa-link"></i></a>
+      Catching events
+    </h3>
+  <p>Your contracts can fire events that you can catch to gain more insight into what your contracts are doing. The easiest way to handle events is by processing the <code>logs</code> array contained within <code>result</code> object of the transaction that triggered the event.</p>
+<p>If we explicitly output the first log entry we can see the details of the event that was emitted as part of the <code>sendCoin</code> call (<code>Transfer(msg.sender, receiver, amount);</code>).</p>
+<pre><code class="lang-javascript">truffle(develop)&gt; result.logs[0]
+{ logIndex: 0,
+  transactionIndex: 0,
+  transactionHash: &#39;0x3b33960e99416f687b983d4a6bb628d38bf7855c6249e71d0d16c7930a588cb2&#39;,
+  blockHash: &#39;0xe36787063e114a763469e7dabc7aa57545e67eb2c395a1e6784988ac065fdd59&#39;,
+  blockNumber: 8,
+  address: &#39;0x6891Ac4E2EF3dA9bc88C96fEDbC9eA4d6D88F768&#39;,
+  type: &#39;mined&#39;,
+  id: &#39;log_3181e274&#39;,
+  event: &#39;Transfer&#39;,
+  args:
+   Result {
+     &#39;0&#39;: &#39;0x8128880DC48cde7e471EF6b99d3877357bb93f01&#39;,
+     &#39;1&#39;: &#39;0x12B6971f6eb35dD138a03Bd6cBdf9Fc9b9a87d7e&#39;,
+     &#39;2&#39;: &lt;BN: a&gt;,
+     __length__: 3,
+     _from: &#39;0x8128880DC48cde7e471EF6b99d3877357bb93f01&#39;,
+     _to: &#39;0x12B6971f6eb35dD138a03Bd6cBdf9Fc9b9a87d7e&#39;,
+     _value: &lt;BN: a&gt; } }
+</code></pre>
 
     <h3 class="link-markdown">
       <a href="#add-a-new-contract-to-the-network" name="add-a-new-contract-to-the-network"><i class="fas fa-link"></i></a>
       Add a new contract to the network
     </h3>
   <p>In all of the above cases, we&#39;ve been using a contract abstraction that has already been deployed. We can deploy our own version to the network using the <code>.new()</code> function:</p>
-<pre><code class="lang-javascript">MetaCoin.new().then(function(instance) {
-  // Print the new address
-  console.log(instance.address);
-}).catch(function(err) {
-  // There was an error! Handle it.
-});
+<pre><code class="lang-javascript">truffle(develop)&gt; let newInstance = await MetaCoin.new()
+truffle(develop)&gt; newInstance.address
+&#39;0x64307b67314b584b1E3Be606255bd683C835A876&#39;
 </code></pre>
 
     <h3 class="link-markdown">
@@ -445,7 +415,7 @@ MetaCoin.deployed().then(function(instance) {
       Use a contract at a specific address
     </h3>
   <p>If you already have an address for a contract, you can create a new abstraction to represent the contract at that address.</p>
-<pre><code class="lang-javascript">var instance = MetaCoin.at(&quot;0x1234...&quot;);
+<pre><code class="lang-javascript">let specificInstance = await MetaCoin.at(&quot;0x1234...&quot;);
 </code></pre>
 
     <h3 class="link-markdown">

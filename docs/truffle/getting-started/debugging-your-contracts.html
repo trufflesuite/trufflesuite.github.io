@@ -146,7 +146,6 @@
               <ul>
                   <a href="/docs/truffle/getting-started/installation"><li>Installation</li></a>
                   <a href="/docs/truffle/getting-started/creating-a-project"><li>Creating a Project</li></a>
-                  <a href="/docs/truffle/getting-started/truffle-boxes"><li>Truffle Boxes</li></a>
                   <a href="/docs/truffle/getting-started/compiling-contracts"><li>Compiling Contracts</li></a>
                   <a href="/docs/truffle/getting-started/running-migrations"><li>Running Migrations</li></a>
                   <a href="/docs/truffle/getting-started/interacting-with-your-contracts"><li>Interacting with Your Contracts</li></a>
@@ -156,7 +155,6 @@
                   <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
                   <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
                   <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
-                  <a href="/docs/truffle/getting-started/using-the-build-pipeline"><li>Using The Build Pipeline</li></a>
               </ul>
               <h3>Testing</h3>
               <ul>
@@ -168,11 +166,13 @@
               <ul>
                   <a href="/docs/truffle/advanced/networks-and-app-deployment"><li>Networks and App Deployment</li></a>
                   <a href="/docs/truffle/advanced/build-processes"><li>Build Processes</li></a>
+                  <a href="/docs/truffle/advanced/creating-a-truffle-box"><li>Creating a Truffle Box</li></a>
               </ul>
               <h3>Reference</h3>
               <ul>
                   <a href="/docs/truffle/reference/choosing-an-ethereum-client"><li>Choosing an Ethereum Client</li></a>
                   <a href="/docs/truffle/reference/configuration"><li>Configuration</li></a>
+                  <a href="/docs/truffle/reference/contract-abstractions"><li>Contract Abstractions</li></a>
                   <a href="/docs/truffle/reference/truffle-commands"><li>Truffle Commands</li></a>
                   <a href="/docs/truffle/reference/contact-the-developers"><li>Contact The Developers</li></a>
               </ul>
@@ -307,6 +307,84 @@
     </h3>
   <p>Quit the debugger.</p>
 
+    <h3 class="link-markdown">
+      <a href="#-r-reset" name="-r-reset"><i class="fas fa-link"></i></a>
+      (r) reset
+    </h3>
+  <p>Reset the debugger to the beginning of the transaction.</p>
+
+    <h3 class="link-markdown">
+      <a href="#-b-set-a-breakpoint" name="-b-set-a-breakpoint"><i class="fas fa-link"></i></a>
+      (b) set a breakpoint
+    </h3>
+  <p>This command allows you to set breakpoints for any line in any of your source files (see <a href="#adding-and-removing-breakpoints">examples</a> below).  These can be given by line number; by relative line number; by line number in a specified source file; or one may simply add a breakpoint at the current point in the code.</p>
+
+    <h3 class="link-markdown">
+      <a href="#-b-remove-a-breakpoint" name="-b-remove-a-breakpoint"><i class="fas fa-link"></i></a>
+      (B) remove a breakpoint
+    </h3>
+  <p>This command allows you to remove any of your existing breakpoints, with the same syntax as for adding them (see <a href="#adding-and-removing-breakpoints">example</a> below).  Type <code>B all</code> to remove all breakpoints.</p>
+
+    <h3 class="link-markdown">
+      <a href="#-c-continue-until-breakpoint" name="-c-continue-until-breakpoint"><i class="fas fa-link"></i></a>
+      (c) continue until breakpoint
+    </h3>
+  <p>This command will cause execution of the code to continue until the next breakpoint is reached or the last line is executed.</p>
+
+    <h3 class="link-markdown">
+      <a href="#-add-watch-expression" name="-add-watch-expression"><i class="fas fa-link"></i></a>
+      (+) add watch expression
+    </h3>
+  <p>This command will add a watch on a provided expression, based on the following syntax: <code>+:&lt;expression&gt;</code>.</p>
+
+    <h3 class="link-markdown">
+      <a href="#-remove-watch-expression" name="-remove-watch-expression"><i class="fas fa-link"></i></a>
+      (-) remove watch expression
+    </h3>
+  <p>This command will remove a watch expression, based on the following syntax: <code>-:&lt;expression&gt;</code>.</p>
+
+    <h3 class="link-markdown">
+      <a href="#-list-existing-watch-expressions" name="-list-existing-watch-expressions"><i class="fas fa-link"></i></a>
+      (?) list existing watch expressions
+    </h3>
+  <p>This command will display a list all the current watch expressions.</p>
+
+    <h3 class="link-markdown">
+      <a href="#-v-display-variables" name="-v-display-variables"><i class="fas fa-link"></i></a>
+      (v) display variables
+    </h3>
+  <p>This command will display the current variables and their values.  Not all types of data are supported yet.</p>
+
+    <h2 class="link-markdown">
+      <a href="#adding-and-removing-breakpoints" name="adding-and-removing-breakpoints"><i class="fas fa-link"></i></a>
+      Adding and removing breakpoints
+    </h2>
+  <p>Below are some examples of adding and removing breakpoints. Note the difference in case between adding (a lowercase &#39;b&#39;) and removing (an uppercase &#39;B&#39;).</p>
+<pre><code>MagicSquare.sol:
+
+11:   event Generated(uint n);
+12:
+13:   function generateMagicSquare(uint n)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+debug(develop:0x91c817a1...)&gt; b 23
+Breakpoint added at line 23.
+
+debug(develop:0x91c817a1...)&gt; B 23
+Breakpoint removed at line 23.
+
+debug(develop:0x91c817a1...)&gt; b SquareLib:5
+Breakpoint added at line 5 in SquareLib.sol.
+
+debug(develop:0x91c817a1...)&gt; b +10
+Breakpoint added at line 23.
+
+debug(develop:0x91c817a1...)&gt; b
+Breakpoint added at this point in line 13.
+
+debug(develop:0x91c817a1...)&gt; B all
+Removed all breakpoints.
+</code></pre>
 
           <div class="contribute-link">
             See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/truffle/getting-started">Edit here &raquo;</a>

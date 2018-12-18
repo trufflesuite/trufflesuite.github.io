@@ -146,7 +146,6 @@
               <ul>
                   <a href="/docs/truffle/getting-started/installation"><li>Installation</li></a>
                   <a href="/docs/truffle/getting-started/creating-a-project"><li>Creating a Project</li></a>
-                  <a href="/docs/truffle/getting-started/truffle-boxes"><li>Truffle Boxes</li></a>
                   <a href="/docs/truffle/getting-started/compiling-contracts"><li>Compiling Contracts</li></a>
                   <a href="/docs/truffle/getting-started/running-migrations"><li>Running Migrations</li></a>
                   <a href="/docs/truffle/getting-started/interacting-with-your-contracts"><li>Interacting with Your Contracts</li></a>
@@ -156,7 +155,6 @@
                   <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
                   <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
                   <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
-                  <a href="/docs/truffle/getting-started/using-the-build-pipeline"><li>Using The Build Pipeline</li></a>
               </ul>
               <h3>Testing</h3>
               <ul>
@@ -168,11 +166,13 @@
               <ul>
                   <a href="/docs/truffle/advanced/networks-and-app-deployment"><li>Networks and App Deployment</li></a>
                   <a href="/docs/truffle/advanced/build-processes"><li>Build Processes</li></a>
+                  <a href="/docs/truffle/advanced/creating-a-truffle-box"><li>Creating a Truffle Box</li></a>
               </ul>
               <h3>Reference</h3>
               <ul>
                   <a href="/docs/truffle/reference/choosing-an-ethereum-client"><li>Choosing an Ethereum Client</li></a>
                   <a href="/docs/truffle/reference/configuration"><li>Configuration</li></a>
+                  <a href="/docs/truffle/reference/contract-abstractions"><li>Contract Abstractions</li></a>
                   <a href="/docs/truffle/reference/truffle-commands"><li>Truffle Commands</li></a>
                   <a href="/docs/truffle/reference/contact-the-developers"><li>Contact The Developers</li></a>
               </ul>
@@ -227,7 +227,7 @@
       <a href="#location" name="location"><i class="fas fa-link"></i></a>
       Location
     </h2>
-  <p>Your configuration file is called <code>truffle.js</code> and is located at the root of your project directory. This file is a Javascript file and can execute any code necessary to create your configuration. It must export an object representing your project configuration like the example below.</p>
+  <p>Your configuration file is called <code>truffle-config.js</code> and is located at the root of your project directory. This file is a Javascript file and can execute any code necessary to create your configuration. It must export an object representing your project configuration like the example below.</p>
 <pre><code class="lang-javascript">module.exports = {
   networks: {
     development: {
@@ -244,7 +244,12 @@
       <a href="#resolving-naming-conflicts-on-windows" name="resolving-naming-conflicts-on-windows"><i class="fas fa-link"></i></a>
       Resolving naming conflicts on Windows
     </h3>
-  <p>When using the Command Prompt on Windows, the default configuration file name can cause a conflict with the <code>truffle</code> executable, and so <strong>you may not be able to run Truffle commands properly on existing projects</strong>.</p>
+  <p class="alert alert-warning">
+<strong>Note</strong>: This only applies to Truffle version 4 and below.
+</p>
+
+
+<p>When using the Command Prompt on Windows, the default configuration file name can cause a conflict with the <code>truffle</code> executable, and so <strong>you may not be able to run Truffle commands properly on existing projects</strong>.</p>
 <p>This is because of the way that command precedence works on the Command Prompt. The <code>truffle.cmd</code> executable is on the path as part of the npm package, but the <code>truffle.js</code> configuration file is in the actual directory where the <code>truffle</code> command is run. Because <code>.js</code> is an acceptable executable extension by default, <code>truffle.js</code> takes precedence over <code>truffle.cmd</code>, causing unexpected results.</p>
 <p>Any of the following solutions will remedy this issue:</p>
 <ul>
@@ -279,7 +284,8 @@
   development: {
     host: &quot;127.0.0.1&quot;,
     port: 8545,
-    network_id: &quot;*&quot; // match any network
+    network_id: &quot;*&quot;, // match any network
+    websockets: true
   },
   live: {
     host: &quot;178.25.19.88&quot;, // Random IP for example purposes (do not use)
@@ -292,6 +298,8 @@
     // provider - web3 provider instance Truffle should use to talk to the Ethereum network.
     //          - function that returns a web3 provider instance (see below.)
     //          - if specified, host and port are ignored.
+    // skipDryRun: - true if you don&#39;t want to test run the migration locally before the actual migration (default is false)
+    // timeoutBlocks: - if a transaction is not mined, keep retrying for this number of blocks (default is 50)
   }
 }
 </code></pre>
@@ -301,6 +309,7 @@
 <li><code>gasPrice</code>: Gas price used for deploys. Default is <code>100000000000</code> (100 Shannon).</li>
 <li><code>from</code>: From address used during migrations. Defaults to the first available account provided by your Ethereum client.</li>
 <li><code>provider</code>: Default web3 provider using <code>host</code> and <code>port</code> options: <code>new Web3.providers.HttpProvider(&quot;http://&lt;host&gt;:&lt;port&gt;&quot;)</code></li>
+<li><code>websockets</code>: You will need this enabled to use the <code>confirmations</code> listener or to hear Events using <code>.on</code> or <code>.once</code>.  Default is <code>false</code>.</li>
 </ul>
 <p>For each network, you can specify either <code>host</code> / <code>port</code> or <code>provider</code>, but not both. If you need an HTTP provider, we recommend using <code>host</code> and <code>port</code>, while if you need a custom provider such as <code>HDWalletProvider</code>, you must use <code>provider</code>.</p>
 
@@ -308,7 +317,7 @@
       <a href="#providers" name="providers"><i class="fas fa-link"></i></a>
       Providers
     </h4>
-  <p>The following network list consists of a local test network and an Infura-hosted Ropsten network, both provided by HDWalletProvider. Make sure you wrap <code>truffle-hdwallet</code> providers in a function closure as shown below to ensure that only one network is ever connected at a time. </p>
+  <p>The following network list consists of a local test network and an Infura-hosted Ropsten network, both provided by HDWalletProvider. Make sure you wrap <code>truffle-hdwallet</code> providers in a function closure as shown below to ensure that only one network is ever connected at a time.</p>
 <pre><code class="lang-javascript">networks: {
   ropsten: {
     provider: function() {
@@ -370,25 +379,134 @@
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#solidity-compiler-configuration" name="solidity-compiler-configuration"><i class="fas fa-link"></i></a>
-      Solidity compiler configuration
+      <a href="#compiler-configuration" name="compiler-configuration"><i class="fas fa-link"></i></a>
+      Compiler configuration
     </h2>
-  <p>Solidity compiler settings. Supports optimizer settings for <code>solc</code>.</p>
+  <p>In the <code>compilers</code> object you can specify settings related to the compilers used by Truffle.</p>
 
     <h3 class="link-markdown">
       <a href="#solc" name="solc"><i class="fas fa-link"></i></a>
       solc
     </h3>
-  <p>Configuration options to pass to the Solidity compiler.</p>
-<p>Example:</p>
-<pre><code class="lang-javascript">solc: {
-  optimizer: {
-    enabled: true,
-    runs: 200
+  <p>Solidity compiler settings. Supports optimizer settings for <code>solc</code>.</p>
+<p>You may specify...</p>
+<ul>
+<li>any solc-js version listed at <a href="http://solc-bin.ethereum.org/bin/list.json">solc-bin</a>. Specify the one you want and Truffle will get it for you.</li>
+<li>a natively compiled solc binary (you&#39;ll need to install this yourself, links to help below).</li>
+<li>a dockerized solc from one of images published <a href="https://hub.docker.com/r/ethereum/solc/tags/">here</a>. (You&#39;ll also need to pull down the docker image yourself but it&#39;s really easy.)</li>
+<li>a path to a locally available solc</li>
+</ul>
+<p>Truffle config example:</p>
+<pre><code class="lang-javascript">module.exports = {
+  compilers: {
+    solc: {
+      version: &lt;string&gt;, // A version or constraint - Ex. &quot;^0.5.0&quot;
+                         // Can also be set to &quot;native&quot; to use a native solc
+      docker: &lt;boolean&gt;, // Use a version obtained through docker
+      settings: {
+        optimizer: {
+          enabled: &lt;boolean&gt;,
+          runs: &lt;number&gt;   // Optimize for how many times you intend to run the code
+        }
+        evmVersion: &lt;string&gt; // Default: &quot;byzantium&quot;
+      }
+    }
   }
 }
 </code></pre>
+<p><em>Note</em>: Truffle does not automatically pull Docker images automatically. Make sure you manually pull down the specified version (run &#39;docker pull ...&#39;) before setting the <code>docker</code> property to <code>true</code>.</p>
 <p>For more information, please see the Solidity documentation on <a href="http://solidity.readthedocs.io/en/develop/using-the-compiler.html#compiler-input-and-output-json-description">Compiler Input and Output JSON Description</a>.</p>
+
+    <h3 class="link-markdown">
+      <a href="#external-compilers" name="external-compilers"><i class="fas fa-link"></i></a>
+      external compilers
+    </h3>
+  <p>For more advanced use cases with artifact creation you can use the external compilers configuration.
+You can use this feature by adding a <code>compilers.external</code> object to your Truffle config:</p>
+<pre><code class="lang-javascript">module.exports = {
+  compilers: {
+    external: {
+      command: &quot;./compile-contracts&quot;,
+      targets: [{
+        /* compilation output */
+      }]
+    }
+  }
+}
+</code></pre>
+<p>When you run truffle compile, Truffle will run the configured command and look for contract artifacts specified by targets.</p>
+<p>This new configuration supports a couple of main use cases:</p>
+<ul>
+<li>Your compilation command outputs Truffle JSON artifacts directly.
+If your compilation command generates artifacts directly, or generates output that contains all the information for an artifact, configure a target as follows:</li>
+</ul>
+<pre><code class="lang-javascript">module.exports = {
+  compilers: {
+    external: {
+      command: &quot;./compile-contracts&quot;,
+      targets: [{
+        path: &quot;./path/to/artifacts/*.json&quot;
+      }]
+    }
+  }
+}
+</code></pre>
+<p>Truffle will execute your script, then expand the glob (*) and find all .json files in the listed path and copy those over as artifacts in the build/contracts/ directory.</p>
+<ul>
+<li>Your compilation command outputs individual parts of an artifact, and you want Truffle to generate the artifacts for you.
+The above use case might not be sufficient for all use cases. You can configure your target to run an arbitrary post-processing command:</li>
+</ul>
+<pre><code class="lang-javascript">module.exports = {
+  compilers: {
+    external: {
+      command: &quot;./compile-contracts&quot;,
+      targets: [{
+        path: &quot;./path/to/preprocessed-artifacts/*.json&quot;,
+        command: &quot;./process-artifact&quot;
+      }]
+    }
+  }
+}
+</code></pre>
+<p>This will run ./process-artifact for each matched .json file, piping the contents of that file as stdin. Your ./process-artifact command is then expected to output a complete Truffle artifact as stdout.</p>
+<p>Want to provide the path as a filename instead? Add <code>stdin: false</code> to your target configuration.</p>
+<ul>
+<li>You can also specify the individual properties of your contracts and have Truffle generate the artifacts itself.</li>
+</ul>
+<pre><code class="lang-javascript">module.exports = {
+  compilers: {
+    external: {
+      command: &quot;./compile-contracts&quot;,
+      targets: [{
+        properties: {
+          contractName: &quot;MyContract&quot;,
+          /* other literal properties */
+        },
+        fileProperties: {
+          abi: &quot;./output/contract.abi&quot;,
+          bytecode: &quot;./output/contract.bytecode&quot;,
+          /* other properties encoded in output files */
+        }
+      }]
+    }
+  }
+}
+</code></pre>
+<p>Specify <code>properties</code> and/or <code>fileProperties</code>, and Truffle will look for those values when building the artifacts.</p>
+
+    <h2 class="link-markdown">
+      <a href="#plugins" name="plugins"><i class="fas fa-link"></i></a>
+      plugins
+    </h2>
+  <p class="alert alert-warning">
+<strong>Note</strong>: This feature is new and still in a barebones state. Please let us
+know how we can improve it!
+</p>
+
+<p>Provides Truffle with a list of installed third-party extensions installed as
+NPM package dependencies.</p>
+<p>Truffle plugin support is currently limited to plugins that define custom
+workflow commands. For more information, see <a href="/docs/truffle/getting-started/writing-external-scripts#third-party-plugin-commands">Third-Party Plugin Commands</a>.</p>
 
     <h2 class="link-markdown">
       <a href="#ethpm-configuration" name="ethpm-configuration"><i class="fas fa-link"></i></a>

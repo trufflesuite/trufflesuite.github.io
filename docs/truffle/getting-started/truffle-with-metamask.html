@@ -146,7 +146,6 @@
               <ul>
                   <a href="/docs/truffle/getting-started/installation"><li>Installation</li></a>
                   <a href="/docs/truffle/getting-started/creating-a-project"><li>Creating a Project</li></a>
-                  <a href="/docs/truffle/getting-started/truffle-boxes"><li>Truffle Boxes</li></a>
                   <a href="/docs/truffle/getting-started/compiling-contracts"><li>Compiling Contracts</li></a>
                   <a href="/docs/truffle/getting-started/running-migrations"><li>Running Migrations</li></a>
                   <a href="/docs/truffle/getting-started/interacting-with-your-contracts"><li>Interacting with Your Contracts</li></a>
@@ -156,7 +155,6 @@
                   <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
                   <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
                   <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
-                  <a href="/docs/truffle/getting-started/using-the-build-pipeline"><li>Using The Build Pipeline</li></a>
               </ul>
               <h3>Testing</h3>
               <ul>
@@ -168,11 +166,13 @@
               <ul>
                   <a href="/docs/truffle/advanced/networks-and-app-deployment"><li>Networks and App Deployment</li></a>
                   <a href="/docs/truffle/advanced/build-processes"><li>Build Processes</li></a>
+                  <a href="/docs/truffle/advanced/creating-a-truffle-box"><li>Creating a Truffle Box</li></a>
               </ul>
               <h3>Reference</h3>
               <ul>
                   <a href="/docs/truffle/reference/choosing-an-ethereum-client"><li>Choosing an Ethereum Client</li></a>
                   <a href="/docs/truffle/reference/configuration"><li>Configuration</li></a>
+                  <a href="/docs/truffle/reference/contract-abstractions"><li>Contract Abstractions</li></a>
                   <a href="/docs/truffle/reference/truffle-commands"><li>Truffle Commands</li></a>
                   <a href="/docs/truffle/reference/contact-the-developers"><li>Contact The Developers</li></a>
               </ul>
@@ -285,34 +285,34 @@ if (typeof web3 !== &#39;undefined&#39;) {
     </h3>
   <p>To use Ganache with MetaMask, click the MetaMask icon in your browser and this screen will appear:</p>
 <p>
-    <img class="img-fluid" src="/img/tutorials/pet-shop/metamask-initial.png" title="MetaMask initial screen" alt="MetaMask initial screen" />
+    <img class="img-fluid" src="/img/docs/truffle/truffle-with-metamask/metamask-create-password.png" title="MetaMask initial screen" alt="MetaMask initial screen" />
     
   </p>
 <p><em>MetaMask initial screen</em></p>
-<p>Click <strong>Import Existing DEN</strong>. In the box marked <strong>Wallet Seed</strong>, enter the mnemonic that was displayed when launching Ganache.</p>
+<p>Click <strong>Import with seed phrase</strong>. In the box marked <strong>Wallet Seed</strong>, enter the mnemonic that was displayed when launching Ganache.</p>
 <p class="alert alert-danger">
 <strong>Warning</strong>: Do not use this mnemonic on the main Ethereum network (mainnet). Make sure that you set the network to &quot;Private Network&quot; (use the &quot;Custom RPC&quot; setting). See below for details.
 </p>
 
 <p>Enter a password below that and click <strong>OK</strong>.</p>
 <p>
-    <img class="img-fluid" src="/img/tutorials/pet-shop/metamask-seed.png" title="MetaMask seed phrase" alt="MetaMask seed phrase" />
+    <img class="img-fluid" src="/img/docs/truffle/truffle-with-metamask/metamask-seed-phrase.png" title="MetaMask seed phrase" alt="MetaMask seed phrase" />
     
   </p>
 <p><em>MetaMask seed phrase</em></p>
 <p>Now we need to connect MetaMask to the blockchain created by Ganache. Click the menu that shows &quot;Main Network&quot; and select <strong>Custom RPC</strong>.</p>
 <p>
-    <img class="img-fluid" src="/img/tutorials/pet-shop/metamask-networkmenu.png" title="MetaMask network menu" alt="MetaMask network menu" />
+    <img class="img-fluid" src="/img/docs/truffle/truffle-with-metamask/metamask-select-network.png" title="MetaMask network menu" alt="MetaMask network menu" />
     
   </p>
 <p><em>MetaMask network menu</em></p>
-<p>In the box titled &quot;New RPC URL&quot; enter <code>http://127.0.0.1:7545</code> and click <strong>Save</strong>.</p>
+<p>In the box titled &quot;New RPC URL&quot; (to the right of &quot;New Network&quot;) enter <code>http://127.0.0.1:7545</code> and click <strong>Save</strong>.</p>
 <!--Add image from pet shop tutorial when updated for Ganache -->
-<p>The network name at the top will switch to say &quot;Private Network&quot;. Click the left-pointing arrow next to &quot;Settings&quot; to close out of the page and return to the Accounts page.</p>
+<p>The network name at the top will switch to say &quot;Private Network&quot;. Click the cross in the top-right of the current window close out of the page and return to the Accounts page.</p>
 <p>Now that we&#39;ve connected MetaMask to Ganache, you&#39;ll be taken to the accounts screen. Each account created by Ganache is given 100 ether. The first account should have less than the others because that account supplies the gas for smart contract deployment. Since you&#39;ve deployed your smart contract to the network, this account paid for it.</p>
 <p>Click the account icon in the upper-right to create new accounts, the first 10 of which will correspond to the 10 accounts displayed when you launched Ganache.</p>
 <p>
-    <img class="img-fluid" src="/img/tutorials/pet-shop/metamask-account1.png" title="MetaMask account" alt="MetaMask account" />
+    <img class="img-fluid" src="/img/docs/truffle/truffle-with-metamask/metamask-account1.png" title="MetaMask account" alt="MetaMask account" />
     
   </p>
 <p><em>MetaMask account</em></p>

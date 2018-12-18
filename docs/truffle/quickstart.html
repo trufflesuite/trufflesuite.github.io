@@ -146,7 +146,6 @@
               <ul>
                   <a href="/docs/truffle/getting-started/installation"><li>Installation</li></a>
                   <a href="/docs/truffle/getting-started/creating-a-project"><li>Creating a Project</li></a>
-                  <a href="/docs/truffle/getting-started/truffle-boxes"><li>Truffle Boxes</li></a>
                   <a href="/docs/truffle/getting-started/compiling-contracts"><li>Compiling Contracts</li></a>
                   <a href="/docs/truffle/getting-started/running-migrations"><li>Running Migrations</li></a>
                   <a href="/docs/truffle/getting-started/interacting-with-your-contracts"><li>Interacting with Your Contracts</li></a>
@@ -156,7 +155,6 @@
                   <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
                   <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
                   <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
-                  <a href="/docs/truffle/getting-started/using-the-build-pipeline"><li>Using The Build Pipeline</li></a>
               </ul>
               <h3>Testing</h3>
               <ul>
@@ -168,11 +166,13 @@
               <ul>
                   <a href="/docs/truffle/advanced/networks-and-app-deployment"><li>Networks and App Deployment</li></a>
                   <a href="/docs/truffle/advanced/build-processes"><li>Build Processes</li></a>
+                  <a href="/docs/truffle/advanced/creating-a-truffle-box"><li>Creating a Truffle Box</li></a>
               </ul>
               <h3>Reference</h3>
               <ul>
                   <a href="/docs/truffle/reference/choosing-an-ethereum-client"><li>Choosing an Ethereum Client</li></a>
                   <a href="/docs/truffle/reference/configuration"><li>Configuration</li></a>
+                  <a href="/docs/truffle/reference/contract-abstractions"><li>Contract Abstractions</li></a>
                   <a href="/docs/truffle/reference/truffle-commands"><li>Truffle Commands</li></a>
                   <a href="/docs/truffle/reference/contact-the-developers"><li>Contact The Developers</li></a>
               </ul>
@@ -403,29 +403,75 @@ truffle(development)&gt;
 <pre><code class="lang-shell">migrate
 </code></pre>
 <p>You will see the following output:</p>
-<pre><code>Using network &#39;develop&#39;.
+<pre><code>Starting migrations...
+======================
+&gt; Network name:    &#39;develop&#39;
+&gt; Network id:      4447
+&gt; Block gas limit: 6721975
 
-Running migration: 1_initial_migration.js
-  Deploying Migrations...
-  ... 0x63b393bd50251ec5aa3e159070609ee7c61da55531ff5dea5b869e762263cb90
-  Migrations: 0x8cdaf0cd259887258bc13a92c0a6da92698644c0
-Saving successful migration to network...
-  ... 0xd7bc86d31bee32fa3988f1c1eabce403a1b5d570340a3a9cdba53a472ee8c956
-Saving artifacts...
-Running migration: 2_deploy_contracts.js
-  Deploying ConvertLib...
-  ... 0xa59221bc26a24f1a2ee7838c36abdf3231a2954b96d28dd7def7b98bbb8a7f35
-  ConvertLib: 0x345ca3e014aaf5dca488057592ee47305d9b3e10
-  Linking ConvertLib to MetaCoin
-  Deploying MetaCoin...
-  ... 0x1cd9e2a790f4795fa40205ef58dbb061065ca235bee8979a705814f1bc141fd5
-  MetaCoin: 0xf25186b5081ff5ce73482ad761db0eb0d25abfbf
-Saving successful migration to network...
-  ... 0x059cf1bbc372b9348ce487de910358801bbbd1c89182853439bec0afaee6c7db
-Saving artifacts...
-</code></pre><p>This shows the transaction IDs and addresses of your deployed contracts.</p>
+1_initial_migration.js
+======================
+
+   Deploying &#39;Migrations&#39;
+   ----------------------
+   &gt; transaction hash:    0x3fd222279dad48583a3320decd0a2d12e82e728ba9a0f19bdaaff98c72a030a2
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0xa0AdaB6E829C818d50c75F17CFCc2e15bfd55a63
+   &gt; account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
+   &gt; balance:             99.99445076
+   &gt; gas used:            277462
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00554924 ETH   
+
+   &gt; Saving migration to chain.
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00554924 ETH
+
+2_deploy_contracts.js
+=====================
+
+   Deploying &#39;ConvertLib&#39;
+   ----------------------
+   &gt; transaction hash:    0x97e8168f1c05fc40dd8ffc529b9a2bf45cc7c55b07b6b9a5a22173235ee247b6
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0xfb39FeaeF3ac3fd46e2123768e559BCe6bD638d6
+   &gt; account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
+   &gt; balance:             99.9914458
+   &gt; gas used:            108240
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.0021648 ETH
+
+   Linking
+   -------
+   * Contract: MetaCoin &lt;--&gt; Library: ConvertLib (at address: 0xfb39FeaeF3ac3fd46e2123768e559BCe6bD638d6)
+
+   Deploying &#39;MetaCoin&#39;
+   --------------------
+   &gt; transaction hash:    0xee4994097c10e7314cc83adf899d67f51f22e08b920e95b6d3f75c5eb498bde4
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0x6891Ac4E2EF3dA9bc88C96fEDbC9eA4d6D88F768
+   &gt; account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
+   &gt; balance:             99.98449716
+   &gt; gas used:            347432
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00694864 ETH
+
+   &gt; Saving migration to chain.
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00911344 ETH
+
+Summary
+=======
+&gt; Total deployments:   3
+&gt; Final cost:          0.01466268 ETH
+</code></pre><p>This shows the transaction IDs and addresses of your deployed contracts. It also includes a cost summary and real-time status updates.</p>
 <p class="alert alert-info">
-  <strong>Note</strong>: Your transaction IDs and contract addresses will be different from the above.
+  <strong>Note</strong>: Your transaction hashes, contract addresses, and accounts will be different from the above.
 </p>
 
 </li>
@@ -471,26 +517,73 @@ Saving artifacts...
 <pre><code class="lang-shell">truffle migrate
 </code></pre>
 <p>You will see the following output</p>
-<pre><code>Using network &#39;development&#39;.
+<pre><code>Starting migrations...
+======================
+&gt; Network name:    &#39;develop&#39;
+&gt; Network id:      4447
+&gt; Block gas limit: 6721975
 
-Running migration: 1_initial_migration.js
-  Replacing Migrations...
-  ... 0x63b393bd50251ec5aa3e159070609ee7c61da55531ff5dea5b869e762263cb90
-  Migrations: 0xd6d1ea53b3a7dae2424a0525d6b1754045a0df9f
-Saving successful migration to network...
-  ... 0xe463b4cb6a3bbba06ab36ac4d7ce04e2a220abd186c8d2bde092c3d5b2217ed6
-Saving artifacts...
-Running migration: 2_deploy_contracts.js
-  Replacing ConvertLib...
-  ... 0xa59221bc26a24f1a2ee7838c36abdf3231a2954b96d28dd7def7b98bbb8a7f35
-  ConvertLib: 0x33b217190208f7b8d2b14d7a30ec3de7bd722ac6
-  Replacing MetaCoin...
-  ... 0x5d51f5dc05e5d926323d580559354ad39035f16db268b91b6db5c7baddef5de5
-  MetaCoin: 0xcd2c65cc0b498cb7a3835cfb1e283ccd25862086
-Saving successful migration to network...
-  ... 0xeca6515f3fb47a477df99c3389d3452a48dfe507980bfd29a3c57837d6ef55c5
-Saving artifacts...
-</code></pre><p>This shows the transaction IDs and addresses of your deployed contracts.</p>
+1_initial_migration.js
+======================
+
+   Deploying &#39;Migrations&#39;
+   ----------------------
+   &gt; transaction hash:    0x3fd222279dad48583a3320decd0a2d12e82e728ba9a0f19bdaaff98c72a030a2
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0xa0AdaB6E829C818d50c75F17CFCc2e15bfd55a63
+   &gt; account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
+   &gt; balance:             99.99445076
+   &gt; gas used:            277462
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00554924 ETH   
+
+   &gt; Saving migration to chain.
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00554924 ETH
+
+2_deploy_contracts.js
+=====================
+
+   Deploying &#39;ConvertLib&#39;
+   ----------------------
+   &gt; transaction hash:    0x97e8168f1c05fc40dd8ffc529b9a2bf45cc7c55b07b6b9a5a22173235ee247b6
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0xfb39FeaeF3ac3fd46e2123768e559BCe6bD638d6
+   &gt; account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
+   &gt; balance:             99.9914458
+   &gt; gas used:            108240
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.0021648 ETH
+
+   Linking
+   -------
+   * Contract: MetaCoin &lt;--&gt; Library: ConvertLib (at address: 0xfb39FeaeF3ac3fd46e2123768e559BCe6bD638d6)
+
+   Deploying &#39;MetaCoin&#39;
+   --------------------
+   &gt; transaction hash:    0xee4994097c10e7314cc83adf899d67f51f22e08b920e95b6d3f75c5eb498bde4
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0x6891Ac4E2EF3dA9bc88C96fEDbC9eA4d6D88F768
+   &gt; account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
+   &gt; balance:             99.98449716
+   &gt; gas used:            347432
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00694864 ETH
+
+   &gt; Saving migration to chain.
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00911344 ETH
+
+Summary
+=======
+&gt; Total deployments:   3
+&gt; Final cost:          0.01466268 ETH
+</code></pre><p>This shows the transaction IDs and addresses of your deployed contracts. It also includes a cost summary and real-time status updates.</p>
 <p class="alert alert-info">
   <strong>Note</strong>: Your transaction IDs and contract addresses will be different from the above.
 </p>
@@ -511,28 +604,38 @@ Saving artifacts...
     </h2>
   <p>Interact with the contract using the console in the following ways:</p>
 <p class="alert alert-info">
-<strong>Note</strong>: We&#39;re using <code>web3.eth.accounts[]</code> in these examples, which is an array of all the accounts generated by the mnemonic. So, given the addresses generated by our mnemonic above, specifying <code>web3.eth.accounts[0]</code> is equivalent to the address <code>0x627306090abab3a6e1400e9345bc60c78a8bef57</code>.
+<strong>Note</strong>: We&#39;re using <code>web3.eth.getAccounts()</code> in these examples, which returns a promise which resolves to an array of all the accounts generated by the mnemonic. So, given the addresses generated by our mnemonic above, specifying <code>(await web3.eth.getAccounts())[0]</code> is equivalent to the address <code>0x627306090abab3a6e1400e9345bc60c78a8bef57</code>.
 </p>
 
+<p>As of Truffle v5, the console supports async/await functions, enabling much simpler interactions with the contract.</p>
 <ul>
+<li><p>Begin by establishing both the deployed MetaCoin contract instance and the accounts created by either Truffle&#39;s built-in blockchain or Ganache:</p>
+<pre><code class="lang-shell">truffle(development)&gt; let instance = await MetaCoin.deployed()
+truffle(development)&gt; let accounts = await web3.eth.getAccounts()
+</code></pre>
+</li>
 <li><p>Check the metacoin balance of the account that deployed the contract:</p>
-<pre><code class="lang-shell">MetaCoin.deployed().then(function(instance){return instance.getBalance(web3.eth.accounts[0]);}).then(function(value){return value.toNumber()});
+<pre><code class="lang-shell">truffle(development)&gt; let balance = await instance.getBalance(accounts[0])
+truffle(development)&gt; balance.toNumber()
 </code></pre>
 </li>
 <li><p>See how much ether that balance is worth (and note that the contract defines a metacoin to be worth 2 ether):</p>
-<pre><code class="lang-shell">MetaCoin.deployed().then(function(instance){return instance.getBalanceInEth(web3.eth.accounts[0]);}).then(function(value){return value.toNumber()});
+<pre><code class="lang-shell">truffle(development)&gt; let ether = await instance.getBalanceInEth(accounts[0])
+truffle(development)&gt; ether.toNumber()
 </code></pre>
 </li>
 <li><p>Transfer some metacoin from one account to another:</p>
-<pre><code class="lang-shell">MetaCoin.deployed().then(function(instance){return instance.sendCoin(web3.eth.accounts[1], 500);});
+<pre><code class="lang-shell">truffle(development)&gt; instance.sendCoin(accounts[1], 500)
 </code></pre>
 </li>
 <li><p>Check the balance of the account that <em>received</em> the metacoin:</p>
-<pre><code class="lang-shell">MetaCoin.deployed().then(function(instance){return instance.getBalance(web3.eth.accounts[1]);}).then(function(value){return value.toNumber()});
+<pre><code class="lang-shell">truffle(development)&gt; let received = await instance.getBalance(accounts[1])
+truffle(development)&gt; received.toNumber()
 </code></pre>
 </li>
 <li><p>Check the balance of the account that <em>sent</em> the metacoin:</p>
-<pre><code class="lang-shell">MetaCoin.deployed().then(function(instance){return instance.getBalance(web3.eth.accounts[0]);}).then(function(value){return value.toNumber()});
+<pre><code class="lang-shell">truffle(development)&gt; let newBalance = await instance.getBalance(accounts[0])
+truffle(development)&gt; newBalance.toNumber()
 </code></pre>
 </li>
 </ul>
