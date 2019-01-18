@@ -272,7 +272,7 @@
   <p>To launch Truffle Develop:</p>
 <pre><code class="lang-shell">truffle develop
 </code></pre>
-<p>This will spawn a development blockchain locally on port <code>9545</code>, regardless of what your <code>truffle.js</code> configuration file calls for.</p>
+<p>This will spawn a development blockchain locally on port <code>9545</code>, regardless of what your <code>truffle-config.js</code> configuration file calls for. If you already have a <code>truffe develop</code> session running, it will instead connect to that development blockchain.</p>
 <p>When you load Truffle Develop, you will see the following:</p>
 <pre><code class="lang-shell">Truffle Develop started at http://localhost:9545/
 
@@ -319,7 +319,7 @@ Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet t
       <a href="#configuring-truffle-develop" name="configuring-truffle-develop"><i class="fas fa-link"></i></a>
       Configuring Truffle Develop
     </h4>
-  <p>You can configure <code>truffle develop</code> to use any of the available 
+  <p>You can configure <code>truffle develop</code> to use any of the available
 <a href="https://github.com/trufflesuite/ganache-core#usage">ganache-core</a> options.</p>
 <p>For example:</p>
 <pre><code class="lang-javascript">module.exports = {
@@ -328,7 +328,7 @@ Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet t
   networks: {
     /* ... other networks */
 
-    &quot;develop&quot;: {
+    develop: {
       accounts: 5,
       defaultEtherBalance: 500,
       blockTime: 3
@@ -342,18 +342,11 @@ Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet t
       Features
     </h2>
   <p>Both Truffle Develop and the console provide most of the features available in the Truffle command line tool. For instance, you can type <code>migrate --reset</code> within the console, and it will be interpreted the same as if you ran <code>truffle migrate --reset</code> on the command line.</p>
-<p>Additionally, both Truffle Develop and the console additionally have the following features:</p>
+<p>Additionally, both Truffle Develop and the console have the following features:</p>
 <ul>
 <li>All of your compiled contracts are available and ready for use.</li>
 <li>After each command (such as <code>migrate --reset</code>) your contracts are reprovisioned so you can start using the newly assigned addresses and binaries immediately.</li>
 <li>The <code>web3</code> library is made available and is set to connect to your Ethereum client.</li>
-<li><p>All commands that return a promise will automatically be resolved, and the result printed, removing the need to use <code>.then()</code> for simple commands. For example, the following command:</p>
-<pre><code class="lang-shell">MyContract.at(&quot;0xabcd...&quot;).getValue.call();
-</code></pre>
-<p>Will return something like:</p>
-<pre><code class="lang-shell">5
-</code></pre>
-</li>
 </ul>
 
     <h3 class="link-markdown">
@@ -365,12 +358,15 @@ Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet t
 <li><code>compile</code></li>
 <li><code>create</code></li>
 <li><code>debug</code></li>
+<li><code>deploy</code></li>
 <li><code>exec</code></li>
+<li><code>help</code></li>
 <li><code>install</code></li>
 <li><code>migrate</code></li>
 <li><code>networks</code></li>
 <li><code>opcode</code></li>
 <li><code>publish</code></li>
+<li><code>run</code></li>
 <li><code>test</code></li>
 <li><code>version</code></li>
 </ul>
