@@ -250,7 +250,7 @@ export default function* root() {
   )
 }
 </code></pre>
-<p>Now we can use the reducers and sagas as we normally would in our store. Note that we must also generate an initial state for our contracts. Drizzle takes care of this for you with the <code></code> function.</p>
+<p>Now we can use the reducers and sagas as we normally would in our store. Note that we must also generate an initial state for our contracts. Drizzle takes care of this for you with the <code>generateContractsInitialState</code> function.</p>
 <pre><code class="lang-javascript">// ...
 import { generateContractsInitialState } from &#39;drizzle&#39;
 import drizzleOptions from &#39;./drizzleOptions&#39;
