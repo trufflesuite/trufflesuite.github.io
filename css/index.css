@@ -11736,3 +11736,7 @@ footer form {
 .university-partner a:hover {
   color: #5e464d;
 }
+
+.events-container .post-thumbnail {
+  border-radius: .5rem;
+}
