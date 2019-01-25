@@ -260,7 +260,7 @@
       compile
     </h3>
   <p>Compile contract source files.</p>
-<pre><code class="lang-shell">truffle compile [--list &lt;filter&gt;] [--all] [--network &lt;name&gt;]
+<pre><code class="lang-shell">truffle compile [--list &lt;filter&gt;] [--all] [--network &lt;name&gt;] [--quiet]
 </code></pre>
 <p>This will only compile contracts that have changed since the last compile, unless otherwise specified.</p>
 <p>Options:</p>
@@ -268,6 +268,7 @@
 <li><code>--list &lt;filter&gt;</code>: List all recent stable releases from solc-bin. If filter is specified then it will display only that type of release or docker tags.  The filter parameter must be one of the following: prereleases, releases, latestRelease or docker.</li>
 <li><code>--all</code>: Compile all contracts instead of only the contracts changed since last compile.</li>
 <li><code>--network &lt;name&gt;</code>: Specify the network to use, saving artifacts specific to that network. Network name must exist in the configuration.</li>
+<li><code>--quiet</code>: Suppress all compilation output.</li>
 </ul>
 
     <h3 class="link-markdown">
