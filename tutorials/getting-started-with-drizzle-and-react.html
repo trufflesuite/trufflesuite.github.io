@@ -216,7 +216,7 @@ cd drizzle-react-tutorial
 contract MyStringStore {
   string public myString = &quot;Hello World&quot;;
 
-  function set(string x) public {
+  function set(string memory x) public {
     myString = x;
   }
 }
