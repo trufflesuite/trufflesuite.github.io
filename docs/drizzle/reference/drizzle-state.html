@@ -243,6 +243,10 @@
       }
     }
   },
+  currentBlock,
+  drizzleStatus: {
+    initialized
+  },
   transactions: {
     txHash: {
       confirmations,
@@ -251,10 +255,7 @@
       status
     }
   },
-  transactionStack
-  drizzleStatus: {
-    initialized
-  }
+  transactionStack,
   web3: {
     status
   }
@@ -290,6 +291,30 @@
 <p><code>args</code> (array): Arguments passed to function call.
 <code>value</code> (mixed): Value returned from function call.</p>
 
+    <h3 class="link-markdown">
+      <a href="#-code-currentblock-code-object-" name="-code-currentblock-code-object-"><i class="fas fa-link"></i></a>
+      <code>currentBlock</code> (object)
+    </h3>
+  <p>An object the latest block as an object resulting from <a href="https://web3js.readthedocs.io/en/1.0/web3-eth.html#getblock"><code>web3.getBlock()</code></a>. This is updated once the block is received from a subscription or fetched via polling, but before any processing takes place.</p>
+
+    <h2 class="link-markdown">
+      <a href="#-code-drizzlestatus-code-object-" name="-code-drizzlestatus-code-object-"><i class="fas fa-link"></i></a>
+      <code>drizzleStatus</code> (object)
+    </h2>
+  <p>An object containing information about the status of Drizzle.</p>
+<p><code>initialized</code> (boolean): <code>true</code> once:</p>
+<ul>
+<li><code>web3</code> is found or instantiated</li>
+<li>Account addresses are stored in state</li>
+<li>All contracts are instantiated</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a href="#-code-initialized-code-boolean-" name="-code-initialized-code-boolean-"><i class="fas fa-link"></i></a>
+      <code>initialized</code> (boolean)
+    </h3>
+  <p><code>false</code> by default, becomes true once a <code>web3</code> instance is found and the accounts and contracts are fetched.</p>
+
     <h2 class="link-markdown">
       <a href="#-code-transactions-code-object-" name="-code-transactions-code-object-"><i class="fas fa-link"></i></a>
       <code>transactions</code> (object)
@@ -315,25 +340,7 @@
       <a href="#-code-transactionstack-code-array-" name="-code-transactionstack-code-array-"><i class="fas fa-link"></i></a>
       <code>transactionStack</code> (array)
     </h2>
-  <p>In some cases, a transaction may be malformed and not even make it to being broadcasted. To keep track of this, an empty string will be added to this array and replaced with the transaction hash once broascasted. The <code>cacheSend()</code> method will return a <code>stackId</code>, which will allow you to observe this process for your own transaction status indicator UI.</p>
-
-    <h2 class="link-markdown">
-      <a href="#-code-drizzlestatus-code-object-" name="-code-drizzlestatus-code-object-"><i class="fas fa-link"></i></a>
-      <code>drizzleStatus</code> (object)
-    </h2>
-  <p>An object containing information about the status of Drizzle.</p>
-<p><code>initialized</code> (boolean): <code>true</code> once:</p>
-<ul>
-<li><code>web3</code> is found or instantiated</li>
-<li>Account addresses are stored in state</li>
-<li>All contracts are instantiated</li>
-</ul>
-
-    <h3 class="link-markdown">
-      <a href="#-code-initialized-code-boolean-" name="-code-initialized-code-boolean-"><i class="fas fa-link"></i></a>
-      <code>initialized</code> (boolean)
-    </h3>
-  <p><code>false</code> by default, becomes true once a <code>web3</code> instance is found and the accounts and contracts are fetched.</p>
+  <p>In cases where a user cancels a transaction or the transaction is malformed and unable to be broadcasted, it won&#39;t receive a hash. To keep track of these cases, a temporary ID will be added to this array and replaced with the transaction hash once broadcasted. The <code>cacheSend()</code> method will return a <code>stackId</code>, which will allow you get the temporary ID to observe this process for your own transaction status indicator UI.</p>
 
     <h2 class="link-markdown">
       <a href="#-code-web3-code-object-" name="-code-web3-code-object-"><i class="fas fa-link"></i></a>

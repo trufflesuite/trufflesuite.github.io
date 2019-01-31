@@ -300,6 +300,20 @@ dispatch({type: &#39;ADD_CONTRACT&#39;, drizzle, contractConfig, events, web3})
 this.context.drizzle.addContract(contractConfig, events)
 </code></pre>
 
+    <h2 class="link-markdown">
+      <a href="#removing-contracts-dynamically" name="removing-contracts-dynamically"><i class="fas fa-link"></i></a>
+      Removing Contracts Dynamically
+    </h2>
+  <p>You can also delete contracts using either <code>drizzle.deleteContract()</code> or the <code>DELETE_CONTRACT</code> action.</p>
+<pre><code class="lang-javascript">const contractName = &quot;MyContract&quot;
+
+// Using an action
+dispatch({type: &#39;DELETE_CONTRACT&#39;, drizzle, contractName})
+
+// Or using the Drizzle context object
+this.context.drizzle.deleteContract(contractName)
+</code></pre>
+
 
           <div class="contribute-link">
             See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/drizzle/getting-started">Edit here &raquo;</a>

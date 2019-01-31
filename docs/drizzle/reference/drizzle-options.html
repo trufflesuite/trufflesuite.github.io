@@ -242,6 +242,7 @@
   },
   syncAlways,
   web3: {
+    customProvider,
     fallback: {
       type
       url
@@ -288,6 +289,24 @@
     </h3>
   <p>Options regarding <code>web3</code> instantiation.</p>
 
+    <h4 class="link-markdown">
+      <a href="#-code-customprovider-code-object-" name="-code-customprovider-code-object-"><i class="fas fa-link"></i></a>
+      <code>customProvider</code> (object)
+    </h4>
+  <p>A valid web3 <code>provider</code> object. For example, you may wish to programatically create a Ganache provider for testing:</p>
+<pre><code>// Create a Ganache provider.
+const testingProvider = Ganache.provider({
+  gasLimit: 7000000
+})
+
+const options = {
+  web3: {
+    customProvider: testingProvider
+  }
+}
+
+const drizzle = new Drizzle(options)
+</code></pre>
     <h4 class="link-markdown">
       <a href="#-code-fallback-code-object-" name="-code-fallback-code-object-"><i class="fas fa-link"></i></a>
       <code>fallback</code> (object)
