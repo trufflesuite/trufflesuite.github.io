@@ -1,3 +1,21 @@
+.banner {
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-close {
+  color: #5e464d;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.banner-close:hover {
+  cursor: pointer;
+}
+
 .banner-light-cream {
   background-color: #f8f5f0;
   color: #5e464d;
@@ -34,4 +52,32 @@
   background-position: -5% center;
   background-size: 80vh;
   border-top: 1px solid #e911bd;
+}
+
+.banner-elevate {
+  background: #f8f5f0;
+  padding: 3rem 0;
+}
+
+.banner-elevate .elevate-body {
+  font-size: 1.15rem;
+}
+
+.banner-elevate .elevate-body p:first-of-type {
+  font-size: 1.5rem;
+}
+
+.banner-elevate .elevate-body .text-date {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.banner-elevate .elevate-hashtag .color-ganache {
+  font-size: 1.333333333333333rem;
+  font-weight: 800;
+}
+
+.banner-elevate .elevate-hashtag .btn-drizzle:hover {
+  color: #e911bd;
 }
