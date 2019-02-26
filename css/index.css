@@ -11926,3 +11926,7 @@ footer form {
 .events-container .post-thumbnail {
   border-radius: .5rem;
 }
+
+.hs-form-iframe {
+  width: 100% !important;
+}
