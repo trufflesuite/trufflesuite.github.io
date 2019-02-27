@@ -347,6 +347,34 @@ contract TestHooks {
     </h3>
   <p>You can easily test if your contract should or shouldn&#39;t raise an exception (i.e., for <code>require()</code>/<code>assert()</code>/<code>revert()</code> statements; <code>throw</code> on previous versions of Solidity).</p>
 <p>This topic was first written about by guest writer Simon de la Rouviere in <a href="/tutorials/testing-for-throws-in-solidity-tests">his tutorial Testing for Throws in Truffle Solidity Tests</a>.  N.B. that the tutorial makes heavy use of exceptions via the deprecated keyword <code>throw</code>, replaced by <code>revert()</code>, <code>require()</code>, and <code>assert()</code> starting in Solidity v0.4.13.</p>
+<p>Also, since Solidity v0.4.17, a function type member was added to enable you to access a function selector (e.g.: <code>this.f.selector</code>), and so, testing for throws with external calls has been made much easier:</p>
+<pre><code class="lang-solidity">pragma solidity ^0.5.0;
+
+import &quot;truffle/Assert.sol&quot;;
+
+contract TestBytesLib2 {
+    function testThrowFunctions() public {
+        bool r;
+
+        // We&#39;re basically calling our contract externally with a raw call, forwarding all available gas, with 
+        // msg.data equal to the throwing function selector that we want to be sure throws and using only the boolean
+        // value associated with the message call&#39;s success
+        (r, ) = address(this).call(abi.encodePacked(this.IThrow1.selector));
+        Assert.isFalse(r, &quot;If this is true, something is broken!&quot;);
+
+        (r, ) = address(this).call(abi.encodePacked(this.IThrow2.selector));
+        Assert.isFalse(r, &quot;What?! 1 is equal to 10?&quot;);
+    }
+
+    function IThrow1() public pure {
+        revert(&quot;I will throw&quot;);
+    }
+
+    function IThrow2() public pure {
+        require(1 == 10, &quot;I will throw, too!&quot;);
+    }
+}
+</code></pre>
 
     <h3 class="link-markdown">
       <a href="#testing-ether-transactions" name="testing-ether-transactions"><i class="fas fa-link"></i></a>
