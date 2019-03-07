@@ -416,7 +416,7 @@
 <ul>
 <li>any solc-js version listed at <a href="http://solc-bin.ethereum.org/bin/list.json">solc-bin</a>. Specify the one you want and Truffle will get it for you.</li>
 <li>a natively compiled solc binary (you&#39;ll need to install this yourself, links to help below).</li>
-<li>a dockerized solc from one of images published <a href="https://hub.docker.com/r/ethereum/solc/tags/">here</a>. (You&#39;ll also need to pull down the docker image yourself but it&#39;s really easy.)</li>
+<li>a dockerized solc from one of images published <a href="https://hub.docker.com/r/ethereum/solc/tags/">here</a>.</li>
 <li>a path to a locally available solc</li>
 </ul>
 <p>Truffle config example:</p>
@@ -437,7 +437,6 @@
   }
 }
 </code></pre>
-<p><em>Note</em>: Truffle does not pull Docker images automatically. Make sure you manually pull down the specified version (run &#39;docker pull ...&#39;) before setting the <code>docker</code> property to <code>true</code>.</p>
 <p>For more information, please see the Solidity documentation on <a href="http://solidity.readthedocs.io/en/develop/using-the-compiler.html#compiler-input-and-output-json-description">Compiler Input and Output JSON Description</a>.</p>
 
     <h3 class="link-markdown">
