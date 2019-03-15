@@ -383,9 +383,9 @@ module.exports = {
       <a href="#setup-the-store" name="setup-the-store"><i class="fas fa-link"></i></a>
       Setup the store
     </h3>
-  <p>The first thing we need to do is to setup and instantiate the Drizzle store. We are going add the following 4 lines to <code>client/src/index.js</code>:</p>
+  <p>The first thing we need to do is to setup and instantiate the Drizzle store. We are going add the following code to <code>client/src/index.js</code>:</p>
 <pre><code class="lang-js">// import drizzle functions and contract artifact
-import { Drizzle, generateStore } from &quot;drizzle&quot;;
+import { Drizzle } from &quot;drizzle&quot;;
 import MyStringStore from &quot;./contracts/MyStringStore.json&quot;;
 
 // let drizzle know what contracts we want and how to access our test blockchain
