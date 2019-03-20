@@ -412,13 +412,14 @@
       migrate
     </h3>
   <p>Run migrations to deploy contracts.</p>
-<pre><code class="lang-shell">truffle migrate [--reset] [-f &lt;number&gt;] [--network &lt;name&gt;] [--compile-all] [--verbose-rpc] [--dry-run] [--interactive]
+<pre><code class="lang-shell">truffle migrate [--reset] [--f &lt;number&gt;] [--to &lt;number&gt;] [--network &lt;name&gt;] [--compile-all] [--verbose-rpc] [--dry-run] [--interactive]
 </code></pre>
 <p>Unless specified, this will run from the last completed migration. See the <a href="/docs/getting_started/migrations">Migrations</a> section for more details.</p>
 <p>Options:</p>
 <ul>
 <li><code>--reset</code>: Run all migrations from the beginning, instead of running from the last completed migration.</li>
-<li><code>-f &lt;number&gt;</code>: Run contracts from a specific migration. The number refers to the prefix of the migration file.</li>
+<li><code>--f &lt;number&gt;</code>: Run contracts from a specific migration. The number refers to the prefix of the migration file.</li>
+<li><code>--to &lt;number&gt;</code>: Run contracts to a specific migration. The number refers to the prefix of the migration file.</li>
 <li><code>--network &lt;name&gt;</code>: Specify the network to use, saving artifacts specific to that network. Network name must exist in the configuration.</li>
 <li><code>--compile-all</code>: Compile all contracts instead of intelligently choosing which contracts need to be compiled.</li>
 <li><code>--verbose-rpc</code>: Log communication between Truffle and the Ethereum client.</li>
