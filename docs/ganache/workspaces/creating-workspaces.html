@@ -25,15 +25,15 @@
     <!-- Facebook OpenGraph -->
     <meta property="og:site_name" content="Truffle Suite" />
     <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
-    <meta property="og:title" content="Truffle Suite | Documentation | Truffle | Installation" />
-    <meta property="og:url" content="https://trufflesuite.com/docs/truffle/getting-started/installati" />
+    <meta property="og:title" content="Truffle Suite | Documentation | Ganache | Creating Workspaces" />
+    <meta property="og:url" content="https://trufflesuite.com/docs/ganache/workspaces/creating-workspac" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Truffle Suite | Documentation | Truffle | Installation" />
+    <meta name="twitter:title" content="Truffle Suite | Documentation | Ganache | Creating Workspaces" />
     <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
     <meta name="twitter:creator" content="Truffle Suite" />
     <meta name="twitter:domain" content="trufflesuite.com" />
@@ -41,7 +41,7 @@
     
     <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
 
-      <title>Truffle Suite | Documentation | Truffle | Installation</title>
+      <title>Truffle Suite | Documentation | Ganache | Creating Workspaces</title>
 
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
@@ -140,7 +140,7 @@
             <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
           </a>
         
-          <div class="collapse truffle show" id="truffleDocs" data-parent="#docsSidebar">
+          <div class="collapse truffle " id="truffleDocs" data-parent="#docsSidebar">
             <ul>
               <a href="/docs/truffle/overview"><li>Overview</li></a>
               <a href="/docs/truffle/quickstart"><li>Quickstart</li></a>
@@ -186,7 +186,7 @@
             <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" /><h2 class="text-ganache">Ganache</h2>
           </a>
           
-          <div class="collapse ganache " id="ganacheDocs" data-parent="#docsSidebar">
+          <div class="collapse ganache show" id="ganacheDocs" data-parent="#docsSidebar">
             <ul>
               <a href="/docs/ganache/overview"><li>Overview</li></a>
               <a href="/docs/ganache/quickstart"><li>Quickstart</li></a>
@@ -244,31 +244,54 @@
         <div class="col-lg-9 bd-light-cream docs-content">
           
     <h1 class="link-markdown">
-      <a href="#installation" name="installation"><i class="fas fa-link"></i></a>
-      Installation
+      <a href="#creating-workspaces" name="creating-workspaces"><i class="fas fa-link"></i></a>
+      Creating Workspaces
     </h1>
-  <pre><code class="lang-bash">npm install -g truffle
-</code></pre>
-
-    <h2 class="link-markdown">
-      <a href="#requirements" name="requirements"><i class="fas fa-link"></i></a>
-      Requirements
-    </h2>
-  <ul>
-<li>NodeJS v8.9.4 or later</li>
-<li>Windows, Linux or Mac OS X</li>
+  <p>The <a href="/docs/ganache/workspaces/the-quickstart-workspace">Quickstart workspace</a> is great for getting a development blockchain up and running instantly, but for Truffle projects already in progress, or users who need custom configurations, we provide two ways to create a full workspace.</p>
+<ul>
+<li>See <a href="#saving-the-current-quickstart-blockchain-as-a-new-workspace">Saving the Current Quickstart Blockchain as a New Workspace</a> if you&#39;ve already created a Quickstart workspace and are ready to add Truffle projects or make customizations.</li>
+<li>If you&#39;re starting fresh chec k out <a href="#creating-a-workspace-from-scratch">Creating a Workspace from Scratch</a>.</li>
 </ul>
-<p>Truffle also requires that you have a running Ethereum client which supports the standard JSON RPC API (which is nearly all of them). There are many to choose from, and some better than others for development. We&#39;ll discuss them in detail in the <a href="/docs/getting_started/client">Choosing an Ethereum client</a> section.</p>
 
     <h2 class="link-markdown">
-      <a href="#recommendations-for-windows" name="recommendations-for-windows"><i class="fas fa-link"></i></a>
-      Recommendations for Windows
+      <a href="#saving-the-current-quickstart-blockchain-as-a-new-workspace" name="saving-the-current-quickstart-blockchain-as-a-new-workspace"><i class="fas fa-link"></i></a>
+      Saving the Current Quickstart Blockchain as a New Workspace
     </h2>
-  <p>If you&#39;re running Truffle on Windows, you may encounter some naming conflicts that could prevent Truffle from executing properly. Please see <a href="/docs/advanced/configuration#resolving-naming-conflicts-on-windows">the section on resolving naming conflicts</a> for solutions.</p>
+  <p>As mentioned above, the <code>Quickstart</code> workspace resets the blockchain on every restart. Perhaps we found ourselves prototyping in the <code>Quickstart</code> workspace to try out a couple of things, but then we want to save the blockchain as a new workspace for later recall.</p>
+<p>To accomplish this, click the <code>SAVE</code> button near the upper right of the screen when in the <code>Quickstart</code> workspace. You will be taken to the <a href="#workspace-configuration">options screen to configure your workspace</a>.</p>
+<p>
+    <img class="img-fluid" src="/img/docs/ganache/v2-shared-seese/save-workspace.png" title="Saving a Workspace" alt="Saving a Workspace" />
+    
+  </p>
+
+    <h2 class="link-markdown">
+      <a href="#creating-a-workspace-from-scratch" name="creating-a-workspace-from-scratch"><i class="fas fa-link"></i></a>
+      Creating a Workspace From Scratch
+    </h2>
+  <p>You can also create a workspace from the home screen. Clicking the <code>NEW WORKSPACE</code> button on the home screen will take us to the <a href="#workspace-configuration">options screen to configure your workspace</a>.</p>
+<p>
+    <img class="img-fluid" src="https://truffleframework.com/img/docs/ganache/v2-shared-seese/home-new-workspace.png" title="New Workspace Button" alt="New Workspace Button" />
+    
+  </p>
+
+    <h2 class="link-markdown">
+      <a href="#workspace-configuration" name="workspace-configuration"><i class="fas fa-link"></i></a>
+      Workspace Configuration
+    </h2>
+  <p>A workspace name will be randomly generated for you, but you can go ahead and change it. You can also change any of the other configuration options. When you&#39;re ready to start the new workspace, click <code>SAVE WORKSPACE</code> in the top right corner.</p>
+<p>
+    <img class="img-fluid" src="https://truffleframework.com/img/docs/ganache/v2-shared-seese/new-workspace.png" title="New Workspace" alt="New Workspace" />
+    
+  </p>
+<p>You will be taken to the accounts screen. Notice the name of your new workspace near the upper right.</p>
+<p>
+    <img class="img-fluid" src="https://truffleframework.com/img/docs/ganache/v2-shared-seese/workspace-name.png" title="Workspace Name" alt="Workspace Name" />
+    
+  </p>
 
 
           <div class="contribute-link">
-            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/truffle/getting-started">Edit here &raquo;</a>
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/ganache/workspaces">Edit here &raquo;</a>
           </div>        </div>
       </div>
     </main>

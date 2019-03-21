@@ -191,6 +191,27 @@
               <a href="/docs/ganache/overview"><li>Overview</li></a>
               <a href="/docs/ganache/quickstart"><li>Quickstart</li></a>
             </ul>
+              <h3>Workspaces</h3>
+              <ul>
+                  <a href="/docs/ganache/workspaces/the-quickstart-workspace"><li>The Quickstart Workspace</li></a>
+                  <a href="/docs/ganache/workspaces/creating-workspaces"><li>Creating Workspaces</li></a>
+                  <a href="/docs/ganache/workspaces/loading-existing-workspaces"><li>Loading Existing Workspaces</li></a>
+                  <a href="/docs/ganache/workspaces/switching-workspaces"><li>Switching Workspaces</li></a>
+                  <a href="/docs/ganache/workspaces/deleting-workspaces"><li>Deleting Workspaces</li></a>
+              </ul>
+              <h3>Truffle Projects</h3>
+              <ul>
+                  <a href="/docs/ganache/truffle-projects/linking-a-truffle-project"><li>Linking a Truffle Project</li></a>
+                  <a href="/docs/ganache/truffle-projects/unlinking-a-truffle-project"><li>Unlinking a Truffle Project</li></a>
+                  <a href="/docs/ganache/truffle-projects/contracts-page"><li>Contracts Page</li></a>
+                  <a href="/docs/ganache/truffle-projects/events-page"><li>Events Page</li></a>
+                  <a href="/docs/ganache/truffle-projects/decoded-transactions"><li>Decoded Transactions</li></a>
+              </ul>
+              <h3>Reference</h3>
+              <ul>
+                  <a href="/docs/ganache/reference/ganache-settings"><li>Ganache Settings</li></a>
+                  <a href="/docs/ganache/reference/workspace-default-configuration"><li>Workspace Default Configuration</li></a>
+              </ul>
           </div>
         
           <a class="toggle-drizzle" href="#drizzleDocs" data-toggle="collapse">
@@ -226,18 +247,17 @@
       <a href="#ganache-quickstart" name="ganache-quickstart"><i class="fas fa-link"></i></a>
       Ganache Quickstart
     </h1>
-  <p><a href="/ganache">Ganache</a> is a personal blockchain for Ethereum development you can use to deploy contracts, develop your applications, and run tests.</p>
-<p>It is available as both a desktop application as well as a command-line tool (formerly known as the TestRPC). Ganache is available for Windows, Mac, and Linux.</p>
+  <p>This quickstart guide will walk you through (1.) installing Ganache and (2.) creating a personal development blockchain via our quickstart workspace.</p>
+<p>If this isn&#39;t your first time using Ganache, or you already know you&#39;ll need custom configuration options, check out the <a href="/docs/ganache/workspaces/creating-workspaces">Creating Workspaces documentation</a>.</p>
+<p class="alert alert-info">
+<strong>Prefer using the command line?</strong>: This page will focus only on the graphical interface. Please see the <a href="https://github.com/trufflesuite/ganache-cli/blob/master/README.md">Ganache CLI Readme</a> for more information on the command line flavor of Ganache.
+</p>
+
 
     <h2 class="link-markdown">
-      <a href="#installation" name="installation"><i class="fas fa-link"></i></a>
-      Installation
+      <a href="#1-install-ganache" name="1-install-ganache"><i class="fas fa-link"></i></a>
+      1. Install Ganache
     </h2>
-  
-    <h3 class="link-markdown">
-      <a href="#ganache" name="ganache"><i class="fas fa-link"></i></a>
-      Ganache
-    </h3>
   <p><a href="https://github.com/trufflesuite/ganache/releases">Download</a> the appropriate version for your OS:</p>
 <ul>
 <li>Windows: <code>Ganache-*.appx</code></li>
@@ -246,55 +266,47 @@
 </ul>
 <p>Double-click on the downloaded file, follow the prompts, and you&#39;re up and running.</p>
 
-    <h3 class="link-markdown">
-      <a href="#ganache-cli" name="ganache-cli"><i class="fas fa-link"></i></a>
-      Ganache CLI
-    </h3>
-  <p>If you are interested in the command-line version (formerly known as the TestRPC), you can get it through npm.</p>
-<pre><code class="lang-shell">npm install -g ganache-cli
-</code></pre>
-<p>This page will focus only on the graphical interface. Please see the <a href="https://github.com/trufflesuite/ganache-cli/blob/master/README.md">README</a> for more information on Ganache CLI.</p>
-
     <h2 class="link-markdown">
-      <a href="#main-interface" name="main-interface"><i class="fas fa-link"></i></a>
-      Main interface
+      <a href="#2-create-a-workspace" name="2-create-a-workspace"><i class="fas fa-link"></i></a>
+      2. Create a Workspace
     </h2>
-  <p>When you launch Ganache, the screen will show some details about the server, and also list out a number of accounts. <strong>Each account is given 100 ether</strong>. Having ether automatically in all accounts allows you to focus on developing your application.</p>
+  <p>When you open Ganache for the first time, you&#39;ll see the home screen. On this screen you&#39;re prompted to load an existing workspace (if any exist), create a new custom workspace, or quickstart a one-click blockchain with <a href="/docs/ganache/reference/workspace-default-configuration">default options</a>. For now, let&#39;s go with the Quickstart workspace.</p>
+<p>
+    <img class="img-fluid" src="/img/docs/ganache/ganache-home-empty.png" title="Empty Home Screen" alt="Empty Home Screen" />
+    
+  </p>
+
+    <h3 class="link-markdown">
+      <a href="#main-interface" name="main-interface"><i class="fas fa-link"></i></a>
+      Main Interface
+    </h3>
+  <p>Once you&#39;ve created a workspace, the screen will show some details about the server, and also list out a number of accounts. <strong>Each account is given 100 ether</strong>. Having ether automatically in all accounts allows you to focus on developing your application.</p>
 <p class="alert alert-info">
 <strong>Note</strong>: The first time you launch Ganache, you will be asked if you want to allow Google Analytics tracking. While optional, turning this on will help the development team gain more insight into how Ganache is used. This tracking is totally anonymous, and no account data or private keys will ever be shared.
 </p>
 
 <p>
-    <img class="img-fluid" src="/img/docs/ganache/quickstart/accounts.png" title="Ganache" alt="Ganache" />
+    <img class="img-fluid" src="/img/docs/ganache/ganache-accounts.png" title="Ganache" alt="Ganache" />
     
   </p>
-<p><em>Ganache Accounts</em></p>
+<p class="text-center"><em>Ganache Accounts</em></p>
+
 <p>There are four pages available:</p>
 <ul>
-<li>The <strong>Accounts</strong> page shows the accounts generated and their balances. This is the default view.</li>
-<li>The <strong>Blocks</strong> page shows each block as mined on the blockchain, along with gas used and transactions.</li>
-<li>The <strong>Transactions</strong> page lists all transactions run against the blockchain.</li>
-<li>The <strong>Logs</strong> page shows the logs for the server, which is useful for debugging. </li>
+<li><strong>Accounts</strong> shows the accounts generated and their balances. This is the default view.</li>
+<li><strong>Blocks</strong> shows each block as mined on the blockchain, along with gas used and transactions.</li>
+<li><strong>Transactions</strong> lists all transactions run against the blockchain.</li>
+<li><strong>Contracts</strong> lists the contracts contained in your workspace&#39;s Truffle projects. For more information on how Ganache handles contracts, see our <a href="/docs/ganache/truffle-projects/contracts-page">Contracts Page documentation</a>.</li>
+<li><strong>Events</strong> lists all events that have been triggered since this workspace&#39;s creation. Ganache will attempt to decode events triggered by contracts in your Truffle project. For more information on events, see our <a href="/docs/ganache/truffle-projects/events-page">Events Page documentation</a>.</li>
+<li><strong>Logs</strong> shows the logs for the server, which is useful for debugging.</li>
 </ul>
 <p>Also note that you can search for block numbers or transaction hashes from a search box at the top.</p>
 
     <h2 class="link-markdown">
-      <a href="#settings" name="settings"><i class="fas fa-link"></i></a>
-      Settings
+      <a href="#you-39-re-up-and-running-" name="you-39-re-up-and-running-"><i class="fas fa-link"></i></a>
+      You&#39;re Up and Running!
     </h2>
-  <p>You can change some features of the generated blockchain through the <strong>Settings</strong> pages, accessed by the gear icon in the top right corner.</p>
-<p>
-    <img class="img-fluid" src="/img/docs/ganache/quickstart/settings.png" title="Ganache Settings" alt="Ganache Settings" />
-    
-  </p>
-<p><em>Ganache Settings</em></p>
-<ul>
-<li>The <strong>Server</strong> page shows details about the network connection, including hostname, port, network ID, and whether to automatically mine each transaction into a block.</li>
-<li>The <strong>Accounts &amp; Keys</strong> page sets details about the number of accounts created, and whether to use a specific mnemonic or let Ganache generate its own.</li>
-<li>The <strong>Chain</strong> page sets details about the actual workings of the generated blockchain, including gas limit and gas price.</li>
-<li>The <strong>Advanced</strong> page toggles Google Analytics, which is useful for the Ganache team to track usage of the application.</li>
-</ul>
-<p>After making changes, you will have to click <strong>Restart</strong> on the application for the changes to take effect.</p>
+  <p>This guide got you started with a zero-config personal development blockchain. If you have an existing Truffle project who&#39;s contracts and events you&#39;d like tracked in this workspace, check out the <a href="/docs/ganache/truffle-projects/linking-a-truffle-project">Linking a Truffle Project docuemntation</a>. If you just need to customize some options and save this workspace for later, check out the <a href="/docs/ganache/workspaces/creating-workspaces#saving-the-current-quickstart-blockchain-as-a-new-workspace">Creating Workspaces documentation</a>.</p>
 
 
           <div class="contribute-link">
