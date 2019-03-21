@@ -25,15 +25,15 @@
     <!-- Facebook OpenGraph -->
     <meta property="og:site_name" content="Truffle Suite" />
     <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
-    <meta property="og:title" content="Truffle Suite | Documentation | Drizzle | React Integration" />
-    <meta property="og:url" content="https://trufflesuite.com/docs/drizzle/react/react-integrati" />
+    <meta property="og:title" content="Truffle Suite | Documentation | Truffle | Working With Quorum" />
+    <meta property="og:url" content="https://trufflesuite.com/docs/truffle/getting-started/working-with-quor" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Truffle Suite | Documentation | Drizzle | React Integration" />
+    <meta name="twitter:title" content="Truffle Suite | Documentation | Truffle | Working With Quorum" />
     <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
     <meta name="twitter:creator" content="Truffle Suite" />
     <meta name="twitter:domain" content="trufflesuite.com" />
@@ -41,7 +41,7 @@
     
     <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
 
-      <title>Truffle Suite | Documentation | Drizzle | React Integration</title>
+      <title>Truffle Suite | Documentation | Truffle | Working With Quorum</title>
 
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
@@ -140,7 +140,7 @@
             <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
           </a>
         
-          <div class="collapse truffle " id="truffleDocs" data-parent="#docsSidebar">
+          <div class="collapse truffle show" id="truffleDocs" data-parent="#docsSidebar">
             <ul>
               <a href="/docs/truffle/overview"><li>Overview</li></a>
               <a href="/docs/truffle/quickstart"><li>Quickstart</li></a>
@@ -197,7 +197,7 @@
             <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" /><h2 class="text-drizzle">dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le</h2>
           </a>
           
-          <div class="collapse drizzle show" id="drizzleDocs" data-parent="#docsSidebar">
+          <div class="collapse drizzle " id="drizzleDocs" data-parent="#docsSidebar">
             <ul>
               <a href="/docs/drizzle/overview"><li>Overview</li></a>
               <a href="/docs/drizzle/quickstart"><li>Quickstart</li></a>
@@ -223,146 +223,54 @@
         <div class="col-lg-9 bd-light-cream docs-content">
           
     <h1 class="link-markdown">
-      <a href="#react-integration" name="react-integration"><i class="fas fa-link"></i></a>
-      React Integration
+      <a href="#working-with-quorum" name="working-with-quorum"><i class="fas fa-link"></i></a>
+      Working With Quorum
     </h1>
-  <p><code>drizzle-react</code> is the official way to integrate Drizzle with your React dapp.</p>
-<p>Check out the <a href="https://github.com/truffle-box/drizzle-box">Drizzle Truffle Box</a> for a complete example (also featuring <code>drizzle-react-components</code>), or continue reading to create your own setup.</p>
+  <p>Truffle supports development with Quorum, a version of Ethereum that adds new features on top of what Ethereum already provides. Specifically, <strong>Quorum adds the ability to create private blockchains between select participants, and more importantly adds transaction privacy on top of normal Ethereum transactions.</strong></p>
+<p>It is highly recommended you read our <a href="/tutorials/building-dapps-for-quorum-private-enterprise-blockchains">tutorial on building a dapp on Quorum</a> before using Truffle with Quorum.</p>
+<p>Both the tutorial and this page have been updated for <em>at least</em> version <code>5.0.9</code> of <code>truffle</code>.</p>
 
     <h2 class="link-markdown">
-      <a href="#installation" name="installation"><i class="fas fa-link"></i></a>
-      Installation
+      <a href="#known-issues" name="known-issues"><i class="fas fa-link"></i></a>
+      Known Issues
     </h2>
-  <p>Install Drizzle React Components via npm:</p>
-<pre><code class="lang-bash">npm install --save drizzle-react
-</code></pre>
-<p><strong>Note</strong>: <code>drizzle-react</code> requires Requires React 0.14 or greater. You&#39;ll also need the <code>drizzle</code> package, if it isn&#39;t already installed.</p>
+  <ul>
+<li>Quorum support was completely broken in version <code>5.0.0</code>, and basic support was restored in <code>5.0.9</code>. Make sure you atleast have <code>5.0.9</code></li>
+<li>The privacy support (via <code>privateFor</code>) is still broken in version <code>5</code> of Truffle. You must use version <code>4</code> (<code>npm i -g truffle@v4</code>).</li>
+</ul>
 
     <h2 class="link-markdown">
-      <a href="#getting-started" name="getting-started"><i class="fas fa-link"></i></a>
-      Getting Started
+      <a href="#configuration" name="configuration"><i class="fas fa-link"></i></a>
+      Configuration
     </h2>
-  <p><strong>Note</strong>: Since Drizzle uses web3 1.0 and web sockets, be sure your development environment can support these.</p>
-<ol>
-<li><p>Import the provider.</p>
-<pre><code class="lang-javascript">import { DrizzleProvider } from &#39;drizzle-react&#39;
-</code></pre>
-</li>
-<li><p>Create an <code>options</code> object and pass in the desired contract artifacts for Drizzle to instantiate. Other options are available, see <a href="https://github.com/trufflesuite/drizzle#options">the Options section of the Drizzle docs</a> below.</p>
-<pre><code class="lang-javascript">// Import contracts
-import SimpleStorage from &#39;./../build/contracts/SimpleStorage.json&#39;
-import TutorialToken from &#39;./../build/contracts/TutorialToken.json&#39;
-
-const options = {
-  contracts: [
-    SimpleStorage,
-    TutorialToken
-  ]
-}
-</code></pre>
-</li>
-<li><p>Wrap your app with <code>DrizzleProvider</code> and pass in an <code>options</code> object.</p>
-<pre><code class="lang-javascript">&lt;DrizzleProvider options={options}&gt;
-  &lt;App /&gt;
-&lt;/DrizzleProvider&gt;
-</code></pre>
-</li>
-<li><p>Wrap your components using the <code>drizzleConnect</code> function. It has the same API as the <code>connect()</code> function in <code>react-redux</code>. <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options">See their docs here</a>.</p>
-<pre><code class="lang-javascript">import { drizzleConnect } from &#39;drizzle-react&#39;
-
-const mapStateToProps = state =&gt; {
-  return {
-    drizzleStatus: state.drizzleStatus,
-    SimpleStorage: state.contracts.SimpleStorage
-  }
-}
-
-const HomeContainer = drizzleConnect(Home, mapStateToProps);
-</code></pre>
-<p>See <a href="https://github.com/trufflesuite/drizzle#drizzle-state">Drizzle State in the Drizzle docs</a> for the entire state tree.</p>
-</li>
-<li><p>Get contract data by accessing the contracts via <code>context</code>. Calling the <code>data()</code> function on a contract will first check the store for a cached result. If empty, Drizzle will query the blockchain and cache the response for future use. For more information on how this works, see <a href="https://github.com/trufflesuite/drizzle#how-data-stays-fresh">How Data Stays Fresh in the Drizzle docs</a>.</p>
-<p><strong>Note:</strong> We have to check that Drizzle is initialized before fetching data. A one-liner such as below is fine for display a few pieces of data, but a better approach for larger dapps is to use a <a href="#recipe-loading-component">loading component</a>.</p>
-<pre><code class="lang-javascript">// For convenience
-constructor(props, context) {
-  super(props)
-
-  this.contracts = context.drizzle.contracts
-}
-
-// If Drizzle is initialized (and therefore web3, accounts and contracts), fetch data.
-// This will update automatically when the contract state is altered.
-var storedData = this.props.drizzleStatus.initialized ? this.contracts.SimpleStorage.methods.storedData.data() : &#39;Loading...&#39;
-</code></pre>
-<p>The contract instance has all of its standard web3 properties and methods. For example, sending a transaction is done as normal:</p>
-<pre><code class="lang-javascript">this.contracts.SimpleStorage.methods.set(this.state.storageAmount).send()
-</code></pre>
-</li>
-</ol>
-
-    <h2 class="link-markdown">
-      <a href="#recipe-loading-component" name="recipe-loading-component"><i class="fas fa-link"></i></a>
-      Recipe: Loading Component
-    </h2>
-  <p>The following wrapper and component will detect when your dapp isn&#39;t ready and allow you to display the appropriate status or course of action:</p>
-<p><code>LoadingContainer.js</code></p>
-<pre><code class="lang-javascript">import Loading from &#39;./Loading.js&#39;
-import { drizzleConnect } from &#39;drizzle-react&#39;
-
-// May still need this even with data function to refresh component on updates for this contract.
-const mapStateToProps = state =&gt; {
-  return {
-    drizzleStatus: state.drizzleStatus,
-    web3: state.web3
-  }
-}
-
-const LoadingContainer = drizzleConnect(Loading, mapStateToProps);
-
-export default LoadingContainer
-</code></pre>
-<p><code>Loading.js</code></p>
-<pre><code class="lang-javascript">import React, { Component, Children } from &#39;react&#39;
-
-class Loading extends Component {
-  constructor(props, context) {
-    super(props)
-  }
-
-  render() {
-    if (this.props.web3.status === &#39;failed&#39;)
-    {
-      return(
-        // Display a web3 warning.
-        &lt;main&gt;
-          &lt;h1&gt;⚠️&lt;/h1&gt;
-          &lt;p&gt;This browser has no connection to the Ethereum network. Please use the Chrome/FireFox extension MetaMask, or dedicated Ethereum browsers Mist or Parity.&lt;/p&gt;
-        &lt;/main&gt;
-      )
+  <p>To use Quorum, you must modify your network in <code>truffle-config.js</code> to include a parameter <code>type</code> set to <code>&quot;quorum&quot;</code>. See the example below.</p>
+<pre><code class="lang-javascript">module.exports = {
+  networks: {
+    development: {
+      host: &quot;127.0.0.1&quot;,
+      port: 22000, // replace with quorum node port you wish to connect to
+      network_id: &quot;*&quot;,
+      type: &quot;quorum&quot;
     }
-
-    if (this.props.drizzleStatus.initialized)
-    {
-      // Load the dapp.
-      return Children.only(this.props.children)
-    }
-
-    return(
-      // Display a loading indicator.
-      &lt;main&gt;
-        &lt;h1&gt;⚙️&lt;/h1&gt;
-        &lt;p&gt;Loading dapp...&lt;/p&gt;
-      &lt;/main&gt;
-    )
   }
-}
-
-export default Loading
+};
 </code></pre>
+
+    <h2 class="link-markdown">
+      <a href="#using-privacy-features" name="using-privacy-features"><i class="fas fa-link"></i></a>
+      Using Privacy Features
+    </h2>
+  <p>Unfortunately, the privacy features are still not working in version <code>5</code> of Truffle. However, they still work in version <code>4</code>.</p>
+<p>Please refer to the <a href="/tutorials/building-dapps-for-quorum-private-enterprise-blockchains">Quorum tutorial</a> to learn more about how to use the privacy features within Quorum. Here are some quick references for privacy within the tutorial:</p>
+<ul>
+<li><a href="/tutorials/building-dapps-for-quorum-private-enterprise-blockchains#deploying-smart-contracts-on-quorum">Deploying contracts privately</a></li>
+<li><a href="/tutorials/building-dapps-for-quorum-private-enterprise-blockchains#using-quorum-39-s-privacy-features-to-make-transactions-private">Making transactions private</a></li>
+<li><a href="/tutorials/building-dapps-for-quorum-private-enterprise-blockchains#interacting-with-contracts-privately">Interacting with your contracts privately</a>.</li>
+</ul>
 
 
           <div class="contribute-link">
-            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/drizzle/react">Edit here &raquo;</a>
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/truffle/getting-started">Edit here &raquo;</a>
           </div>        </div>
       </div>
     </main>

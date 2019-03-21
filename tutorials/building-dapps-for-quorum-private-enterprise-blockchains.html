@@ -215,8 +215,8 @@ truffle init
 </code></pre>
 <p>If you look at the contents of the <code>myproject</code> directory, you&#39;ll notice directories were created for you. See the <a href="/docs/getting_started/project">Truffle documentation</a> for more information about Truffle&#39;s project structure.</p>
 </li>
-<li><p>Before moving onto code, we need to configure Truffle to point to our running Quorum client. For this example, we&#39;ll edit our <code>development</code> network configuration within <code>truffle.js</code> to point to the first node available in the 7nodes example:</p>
-<pre><code class="lang-javascript">// File: `truffle.js` (edited for 7nodes example)
+<li><p>Before moving onto code, we need to configure Truffle to point to our running Quorum client. For this example, we&#39;ll edit our <code>development</code> network configuration within <code>truffle-config.js</code> to point to the first node available in the 7nodes example:</p>
+<pre><code class="lang-javascript">// File: `truffle-config.js` (edited for 7nodes example)
 module.exports = {
   networks: {
     development: {
@@ -224,7 +224,8 @@ module.exports = {
       port: 22000, // was 8545
       network_id: &quot;*&quot;, // Match any network id
       gasPrice: 0,
-      gas: 4500000
+      gas: 4500000,
+      type: &quot;quorum&quot; // needed for Truffle to support Quorum
     }
   }
 };
@@ -309,8 +310,8 @@ Saving artifacts...
     </h2>
   <p>We originally configured Truffle to point our development environment to the first of the seven nodes provided by the example. You can think of the first node as &quot;us&quot;, as if we were developing a dapp for a private network that&#39;s used by multiple other parties. Since the 7nodes example provides us seven nodes to work with, we can tell Truffle about the other nodes so we can &quot;be&quot; someone else, and ensure the contract we deployed was private.</p>
 <ol>
-<li><p>To add a new network configuration, edit your <code>truffle.js</code> file again and add additional network configuration, choosing a network name that best describes the network connection you&#39;re adding. In this case, we&#39;re going to add a connection to node 4 (<code>nodefour</code>) and node 7 (<code>nodeseven</code>):</p>
-<pre><code class="lang-javascript">// File: `truffle.js`
+<li><p>To add a new network configuration, edit your <code>truffle-config.js</code> file again and add additional network configuration, choosing a network name that best describes the network connection you&#39;re adding. In this case, we&#39;re going to add a connection to node 4 (<code>nodefour</code>) and node 7 (<code>nodeseven</code>):</p>
+<pre><code class="lang-javascript">// File: `truffle-config.js`
 module.exports = {
   networks: {
     development: {
@@ -318,21 +319,24 @@ module.exports = {
       port: 22000, // was 8545
       network_id: &quot;*&quot;, // Match any network id
       gasPrice: 0,
-      gas: 4500000
+      gas: 4500000,
+      type: &quot;quorum&quot; // needed for Truffle to support Quorum
     },
     nodefour:  {
       host: &quot;127.0.0.1&quot;,
       port: 22003,
       network_id: &quot;*&quot;, // Match any network id
       gasPrice: 0,
-      gas: 4500000
+      gas: 4500000,
+      type: &quot;quorum&quot; // needed for Truffle to support Quorum
     },
     nodeseven:  {
       host: &quot;127.0.0.1&quot;,
       port: 22006,
       network_id: &quot;*&quot;, // Match any network id
       gasPrice: 0,
-      gas: 4500000
+      gas: 4500000,
+      type: &quot;quorum&quot; // needed for Truffle to support Quorum
     }
   }
 };
@@ -394,7 +398,7 @@ module.exports = {
 <p>Truffle uses its <a href="https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract">truffle-contract</a> contract abstraction wherever contracts are used in JavaScript. When you interacted with <code>SimpleStorage</code> in the console above, for instance, you were using a <code>truffle-contract</code> contract abstraction. These abstractions are also used within your migrations, your JavaScript-based unit tests, as well as executing external scripts with Truffle.</p>
 <p>Truffle&#39;s contract abstraction allow you to make a transaction against any function available on the contract. It does so by evaluating the functions of the contract and making them available to JavaScript. To see these transactions in action, we&#39;re going to use an advanced feature of Truffle that lets us execute external scripts within our Truffle environment.</p>
 <ol>
-<li><p>Creating a file called <code>sampletx.js</code> and save it in the root of your project (the same directory as your <code>truffle.js</code> file). Then fill it with this code:</p>
+<li><p>Creating a file called <code>sampletx.js</code> and save it in the root of your project (the same directory as your <code>truffle-config.js</code> file). Then fill it with this code:</p>
 <pre><code class="lang-javascript">var SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
 
 module.exports = function(done) {
