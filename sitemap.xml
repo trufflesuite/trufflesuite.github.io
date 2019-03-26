@@ -36,6 +36,7 @@
 <url> <loc>https://www.truffleframework.com/boxes/azure-refrigerated-transportation.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/azure-room-thermostat.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/azure-simple-marketplace.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/angulartruffledapp.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/angular-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/cheshire.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/cita-truffle-box.html</loc> </url>
@@ -64,6 +65,7 @@
 <url> <loc>https://www.truffleframework.com/boxes/truffle-vue.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/vue-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/vue-dark-chocolate.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/vueport-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/careers/software-engineer-front-end.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/building-dapps-for-quorum-private-enterprise-blockchains.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/building-testing-frontend-app-truffle-3.html</loc> </url>
@@ -98,8 +100,8 @@
 <url> <loc>https://www.truffleframework.com/blog/removing-installation-issues-continued-testrpc.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/testrpc-is-now-ganache.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-320-released.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/blog/truffle-v5-has-arrived.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-boxes-making-life-sweeter.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/truffle-v5-has-arrived.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/why-were-organizing-trufflecon-2018.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/you-can-now-make-your-own-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/index.html</loc> </url>
