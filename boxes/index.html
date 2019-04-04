@@ -1,988 +1,987 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Favicon -->
-    <link rel="icon" href="/img/favicons/favicon.ico">
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Truffle Suite">
-    <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Truffle Suite">
-    <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
 
-    <!-- Tile icon for Win8/10 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
 
-    <!-- Facebook OpenGraph -->
-    <meta property="og:site_name" content="Truffle Suite" />
-    <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
-    <meta property="og:title" content="Truffle Suite | Boxes" />
-    <meta property="og:url" content="https://trufflesuite.com/boxes/index" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Truffle Suite | Boxes" />
+  <meta property="og:url" content="https://trufflesuite.com/boxes/index" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Truffle Suite | Boxes" />
-    <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
-    <meta name="twitter:creator" content="Truffle Suite" />
-    <meta name="twitter:domain" content="trufflesuite.com" />
-    <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Truffle Suite | Boxes" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
 
-    <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
 
-      <title>Truffle Suite | Boxes</title>
+    <title>Truffle Suite | Boxes</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/index.css">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
-      <a class="navbar-brand current" href="/">
-        <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
-      </a>
-    
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
-    
-            <div class="dropdown-menu">
-              <a class="text-truffle" href="/truffle">
-                <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
-              </a>
-              <a class="text-ganache" href="/ganache">
-                <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
-              </a>
-              <a class="text-drizzle" href="/drizzle">
-                <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
-              </a>
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading boxes-heading">
+    <div class="row align-items-center">
+      <div class="col-sm d-none d-lg-block">
+        <img src="/img/truffle-boxes-header.svg" alt="Truffle Boxes" title="Truffle Boxes" />
+      </div>
+
+      <div class="col-sm">
+        <h1 class="text-truffle"><span class="narrow">T</span>RUFFLE BOXES</h1>
+        <h2 class="mb-4">THE EASIEST WAY TO GET STARTED</h2>
+        <p>Truffle Boxes are helpful boilerplates that allow you to focus on what makes your dapp unique. In addition to Truffle, Truffle Boxes can contain other helpful modules, Solidity contracts &amp; libraries, front-end views and more; all the way up to complete example dapps.</p>
+        <a href="docs/truffle/advanced/creating-a-truffle-box" class="btn btn-truffle">CREATE A BOX</a>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5">
+    <div class="container" role="main">
+      <div class="row mb-5">
+        <div class="col">
+          <input type="text" class="form-control mb-3" id="boxesSearch" placeholder="Search by name or tag...">
+
+          <div class="box-radios" id="isoSort">
+            <div class="form-check form-check-inline">
+              <input id="allBoxes" type="radio" class="form-check-input" name="boxFilters" checked>
+              <label class="form-check-label" for="allBoxes">All</label>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/docs">DOCS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/tutorials">TUTORIALS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/boxes">BOXES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/blog">BLOG</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/events">EVENTS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/community">COMMUNITY</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/university">UNIVERSITY</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <main class="container container-heading boxes-heading">
-      <div class="row align-items-center">
-        <div class="col-sm d-none d-lg-block">
-          <img src="/img/truffle-boxes-header.svg" alt="Truffle Boxes" title="Truffle Boxes" />
-        </div>
-
-        <div class="col-sm">
-          <h1 class="text-truffle"><span class="narrow">T</span>RUFFLE BOXES</h1>
-          <h2 class="mb-4">THE EASIEST WAY TO GET STARTED</h2>
-          <p>Truffle Boxes are helpful boilerplates that allow you to focus on what makes your dapp unique. In addition to Truffle, Truffle Boxes can contain other helpful modules, Solidity contracts &amp; libraries, front-end views and more; all the way up to complete example dapps.</p>
-          <a href="docs/truffle/advanced/creating-a-truffle-box" class="btn btn-truffle">CREATE A BOX</a>
+            <div class="form-check form-check-inline">
+              <input id="officialBoxes" type="radio" data-filter-group="tags" data-filter="official" class="form-check-input" name="boxFilters">
+              <label class="form-check-label" for="officialBoxes">Official Only</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="communityBoxes" type="radio" data-filter-group="tags" data-filter="community" class="form-check-input" name="boxFilters">
+              <label class="form-check-label" for="communityBoxes">Community Only</label>
+            </div>
+          </div>
         </div>
       </div>
-    </main>
 
-    <main class="banner banner-light-cream pt-5 pb-5">
-      <div class="container" role="main">
-        <div class="row mb-5">
-          <div class="col">
-            <input type="text" class="form-control mb-3" id="boxesSearch" placeholder="Search by name or tag...">
+      <div class="row" id="isoContainer">
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/drizzle">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="drizzle-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/drizzle-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
 
-            <div class="box-radios" id="isoSort">
-              <div class="form-check form-check-inline">
-                <input id="allBoxes" type="radio" class="form-check-input" name="boxFilters" checked>
-                <label class="form-check-label" for="allBoxes">All</label>
+                <div class="card-body">
+                    <h5 class="card-title">drizzle</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 161</p>
+                  <p class="card-text box-description">This box comes with everything you need to start using smart contracts from a react app with Drizzle. It includes drizzle, drizzle-react and drizzle-react-components to give you a complete overview of Drizzle&#x27;s capabilities.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">official, drizzle, react, redux</span>
+                  </p>
+                </div>
               </div>
-              <div class="form-check form-check-inline">
-                <input id="officialBoxes" type="radio" data-filter-group="tags" data-filter="official" class="form-check-input" name="boxFilters">
-                <label class="form-check-label" for="officialBoxes">Official Only</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input id="communityBoxes" type="radio" data-filter-group="tags" data-filter="community" class="form-check-input" name="boxFilters">
-                <label class="form-check-label" for="communityBoxes">Community Only</label>
-              </div>
-            </div>
+            </a>
           </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/drizzle-react-native">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="drizzle-react-native-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/drizzle-react-native-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">drizzle-react-native</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 1</p>
+                  <p class="card-text box-description">This box is to help get you started with building dapps with Drizzle on React Native.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">official, drizzle, react-native</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/react">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="react-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/react-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">react</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 379</p>
+                  <p class="card-text box-description">Truffle, Webpack and React boilerplate.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">official, ethereum, ethereumjs, truffle, webpack, react, solidity</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/react-auth">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="react-auth-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/react-auth-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">react-auth</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 171</p>
+                  <p class="card-text box-description">Truffle, Webpack, React, Redux boilerplate with routing and authentication via a smart contract.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">official, ethereum, ethereumjs, react, redux, webpack, truffle, solidity</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/react-uport">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="react-uport-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/react-uport-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">react-uport</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 98</p>
+                  <p class="card-text box-description">Truffle, Webpack, React, Redux boilerplate with routing and authentication via a UPort.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">official, react, redux, truffle, webpack, solidity, ethereum, ethereumjs, uport-identity</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/pet-shop">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="pet-shop-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/pet-shop-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">pet-shop</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 108</p>
+                  <p class="card-text box-description">A box containing all you need to get started with our Pet Shop tutorial.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">official</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/tutorialtoken">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="tutorialtoken-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/tutorialtoken-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">tutorialtoken</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 45</p>
+                  <p class="card-text box-description">A box containing all you need to get started with our OpenZeppelin (TutorialToken) tutorial.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">official</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/webpack">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="webpack-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/webpack-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">webpack</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 34</p>
+                  <p class="card-text box-description">Example webpack-based app for Truffle (boilerplate)</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">official</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/metacoin">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="metacoin-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/metacoin-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">metacoin</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 44</p>
+                  <p class="card-text box-description">MetaCoin smart contracts example box</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">official</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/blueprint">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="blueprint-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/blueprint-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">blueprint</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 13</p>
+                  <p class="card-text box-description">All you need to get started making your own Truffle Box!</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">official</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/vyper-example">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="vyper-example-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/vyper-example-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">vyper-example</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 3</p>
+                  <p class="card-text box-description">A box containing all you need to get started with Vyper development on Truffle.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">official</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/azure-asset-transfer">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="azure-asset-transfer-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/azure-asset-transfer-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">azure-asset-transfer</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
+                  <p class="card-text box-description">Azure Samples - Asset Transfer</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/azure-basic-provenance">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="azure-basic-provenance-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/azure-basic-provenance-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">azure-basic-provenance</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 1</p>
+                  <p class="card-text box-description">Azure Samples - Basic Provenance</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/bazaar-item-listing">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="azure-bazaar-item-listing-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/azure-bazaar-item-listing-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">bazaar-item-listing</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
+                  <p class="card-text box-description">Azure Samples - Bazaar Item Listing</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/azure-digital-locker">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="azure-digital-locker-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/azure-digital-locker-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">azure-digital-locker</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
+                  <p class="card-text box-description">Azure Samples - Digital Locker</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/azure-hello-blockchain">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="azure-hello-blockchain-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/azure-hello-blockchain-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">azure-hello-blockchain</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 2</p>
+                  <p class="card-text box-description">Azure Samples - Hello Blockchain</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/azure-refrigerated-transportation">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="azure-refrigerated-transportation-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/azure-refrigerated-transportation-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">azure-refrigerated-transportation</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
+                  <p class="card-text box-description">Azure Samples - Refrigerated Transportation</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/azure-room-thermostat">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="azure-room-thermostat-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/azure-room-thermostat-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">azure-room-thermostat</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
+                  <p class="card-text box-description">Azure Samples - Room Thermostat</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
+              <a class="link-card" href="/boxes/azure-simple-marketplace">
+              <div class="card box-card" data-userorg="truffle-box" data-repo="azure-simple-marketplace-box">
+                <img class="card-img-top" src="https://github.com/truffle-box/azure-simple-marketplace-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">azure-simple-marketplace</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 1</p>
+                  <p class="card-text box-description">Azure Samples - Simple Marketplace</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/angulartruffledapp">
+              <div class="card box-card" data-userorg="ng-es" data-repo="angulartruffledapp">
+                <img class="card-img-top" src="https://github.com/ng-es/angulartruffledapp/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">ng-es/angulartruffledapp</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
+                  <p class="card-text box-description">This Trufflebox provides a base for Truffle Framework and Angular ÐAPP. and you can make transactions between accounts</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/angular-truffle-box">
+              <div class="card box-card" data-userorg="Quintor" data-repo="angular-truffle-box">
+                <img class="card-img-top" src="https://github.com/Quintor/angular-truffle-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">Quintor/angular-truffle-box</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 49</p>
+                  <p class="card-text box-description">Truffle Box for Angular is a quick-and-easy way to get your Dapp on the road with Truffle and Angular</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/cheshire">
+              <div class="card box-card" data-userorg="endless-nameless-inc" data-repo="cheshire">
+                <img class="card-img-top" src="https://github.com/endless-nameless-inc/cheshire/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">endless-nameless-inc/cheshire</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 69</p>
+                  <p class="card-text box-description">A sandbox for CryptoKitties dApp developers</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, cryptokitties, dapp, ethereum</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/cita-truffle-box">
+              <div class="card box-card" data-userorg="CITA-Toys" data-repo="cita-truffle-box">
+                <img class="card-img-top" src="https://github.com/CITA-Toys/cita-truffle-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">CITA-Toys/cita-truffle-box</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 10</p>
+                  <p class="card-text box-description"></p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/etherplate">
+              <div class="card box-card" data-userorg="chuckbergeron" data-repo="etherplate">
+                <img class="card-img-top" src="https://github.com/chuckbergeron/etherplate/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">chuckbergeron/etherplate</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 39</p>
+                  <p class="card-text box-description"> 🔗 Use this to make your next Ethereum DApp w/ React (&amp;amp; Router), Redux, Bulma &amp;amp; OpenZeppelin ERC721</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/eth-vue">
+              <div class="card box-card" data-userorg="DOkwufulueze" data-repo="eth-vue">
+                <img class="card-img-top" src="https://github.com/DOkwufulueze/eth-vue/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">DOkwufulueze/eth-vue</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 111</p>
+                  <p class="card-text box-description">This Truffle Box provides everything you need to quickly build Ethereum dApps that have authentication features with vue, including configuration for easy deployment to the Ropsten Network. It&#x27;s also Gravatar-enabled. Connecting to a running Ganache blockchain network from Truffle is also possible -- for fast development and testing purposes. Built on Truffle 4, eth-vue uses vuex for state management, vuex-persist for local storage of app state, and vue-router for routing. Authentication functionalities are handled by Smart Contracts running on the Ethereum blockchain.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, vuejs, ethereum, ethereum-contract, dapp, ethereum-dapp, eth-vue, blockchain, truffle, truffle-framework, vue-router, vue-components, contracts, boilerplate, vuex, vuex-persist, web3</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/express-box">
+              <div class="card box-card" data-userorg="arvindkalra" data-repo="express-box">
+                <img class="card-img-top" src="https://github.com/arvindkalra/express-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">arvindkalra/express-box</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 29</p>
+                  <p class="card-text box-description">A truffle box to serve as the foundation of any Truffle and Express.js dApp.  This Box Uses NodeJS(Express JS) to provide API endpoints to the Ethereum Blockchain smart contract so that this smart contract can be used in Android Apps as well.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, truffle-box, truffle, nodejs, ethereum-blockchain, ganache-cli, solidity</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/limelabs-angular-box">
+              <div class="card box-card" data-userorg="LimelabsTech" data-repo="limelabs-angular-box">
+                <img class="card-img-top" src="https://github.com/LimelabsTech/limelabs-angular-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">LimelabsTech/limelabs-angular-box</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 7</p>
+                  <p class="card-text box-description">Truffle Box for Angular is a quick-and-easy way to get your Dapp on the road with Truffle and Angular</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/macroverse-truffle-box">
+              <div class="card box-card" data-userorg="NovakDistributed" data-repo="macroverse-truffle-box">
+                <img class="card-img-top" src="https://github.com/NovakDistributed/macroverse-truffle-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">NovakDistributed/macroverse-truffle-box</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
+                  <p class="card-text box-description">Truffle Box for projects building on Macroverse&#x27;s shared world</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/nuxt-box">
+              <div class="card box-card" data-userorg="Paperchain" data-repo="nuxt-box">
+                <img class="card-img-top" src="https://github.com/Paperchain/nuxt-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">Paperchain/nuxt-box</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 32</p>
+                  <p class="card-text box-description">Truffle, Nuxt and Vue boilerplate</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, ethereum, truffle, vuejs, nuxtjs, vue, nuxt, truffle-framework, solidity</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/peerai-api">
+              <div class="card box-card" data-userorg="peerism" data-repo="peerai-api">
+                <img class="card-img-top" src="https://github.com/peerism/peerai-api/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">peerism/peerai-api</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 14</p>
+                  <p class="card-text box-description">Peerism&#x27;s Peer.ai API built with Truffle, Node.js, Express.js, Solidity, and Ethereum TestRPC</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, node, express, express-middleware, jwt, passport, mongodb, mongoose, curl, truffle, solidity, ethereum, dapp, api, solc</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/rapid-box">
+              <div class="card box-card" data-userorg="hexeight" data-repo="rapid-box">
+                <img class="card-img-top" src="https://github.com/hexeight/rapid-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">hexeight/rapid-box</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
+                  <p class="card-text box-description">A quick start truffle box to host REST APIs interacting with Smart Contracts</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, ethereum, truffle-framework, truffle-box</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/react-box-web3-todo">
+              <div class="card box-card" data-userorg="shanejonas" data-repo="react-box-web3-todo">
+                <img class="card-img-top" src="https://github.com/shanejonas/react-box-web3-todo/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">shanejonas/react-box-web3-todo</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 7</p>
+                  <p class="card-text box-description">Truffle, Webpack, Web3, Redux and React boilerplate.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/react-dapp-boilerplate">
+              <div class="card box-card" data-userorg="hackingbeauty" data-repo="react-dapp-boilerplate">
+                <img class="card-img-top" src="https://github.com/hackingbeauty/react-dapp-boilerplate/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">hackingbeauty/react-dapp-boilerplate</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 24</p>
+                  <p class="card-text box-description">A superior UI setup for Ethereum Smart Contracts.  Check out www.reactdapps.com!</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/scoreboard">
+              <div class="card box-card" data-userorg="3of5of7" data-repo="scoreboard">
+                <img class="card-img-top" src="https://github.com/3of5of7/scoreboard/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">3of5of7/scoreboard</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 15</p>
+                  <p class="card-text box-description"></p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/svelte-box">
+              <div class="card box-card" data-userorg="antony" data-repo="svelte-box">
+                <img class="card-img-top" src="https://github.com/antony/svelte-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">antony/svelte-box</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 9</p>
+                  <p class="card-text box-description">A truffle box for svelte</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, truffle, truffle-framework, truffle-box, truffle-boilerplates, svelte, sveltejs, svelte-components, ethereum, ethereum-dapp, dapp, seed, blockchain, parcel, parcel-bundler, parceljs</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/truffle-ci-box">
+              <div class="card box-card" data-userorg="NFhbar" data-repo="truffle-ci-box">
+                <img class="card-img-top" src="https://github.com/NFhbar/truffle-ci-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">NFhbar/truffle-ci-box</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 2</p>
+                  <p class="card-text box-description">Truffle box for quick integration with Travis CI and Coveralls</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, truffle-box, solidity, travis-ci, coveralls, solidity-coverage</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/truffle-create-react-app">
+              <div class="card box-card" data-userorg="Charterhouse" data-repo="truffle-create-react-app">
+                <img class="card-img-top" src="https://github.com/Charterhouse/truffle-create-react-app/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">Charterhouse/truffle-create-react-app</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 8</p>
+                  <p class="card-text box-description">Basic integration of truffle and React front-end based on the create-react-app without resorting to the &#x27;reject&#x27; mode.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/truffle-next">
+              <div class="card box-card" data-userorg="adrianmcli" data-repo="truffle-next">
+                <img class="card-img-top" src="https://github.com/adrianmcli/truffle-next/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">adrianmcli/truffle-next</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 110</p>
+                  <p class="card-text box-description">️️🛰️ A boilerplate Truffle Box project with Next.js for rapid Ethereum Dapp development</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, truffle, truffle-framework, reactjs, nextjs, solidity, ethereum, ethereum-contract</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/truffle-react-dapp">
+              <div class="card box-card" data-userorg="tpai" data-repo="truffle-react-dapp">
+                <img class="card-img-top" src="https://github.com/tpai/truffle-react-dapp/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">tpai/truffle-react-dapp</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
+                  <p class="card-text box-description">This project is build for react dapp developing, include solidity contract writing and web3.js API using demo.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, web3js, solidity, truffle, dapp</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/truffle-react-redux">
+              <div class="card box-card" data-userorg="gasolin" data-repo="truffle-react-redux">
+                <img class="card-img-top" src="https://github.com/gasolin/truffle-react-redux/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">gasolin/truffle-react-redux</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 11</p>
+                  <p class="card-text box-description">Template for your next dapp with React and Redux</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, truffle, react, redux, dapp</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/truffle-react-ts-template">
+              <div class="card box-card" data-userorg="LibertyLocked" data-repo="truffle-react-ts-template">
+                <img class="card-img-top" src="https://github.com/LibertyLocked/truffle-react-ts-template/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">LibertyLocked/truffle-react-ts-template</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 7</p>
+                  <p class="card-text box-description">Template for Ethereum DApps. Truffle + React + Typescript</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/truffle-security">
+              <div class="card box-card" data-userorg="UtkarshGupta-CS" data-repo="truffle-security">
+                <img class="card-img-top" src="https://github.com/UtkarshGupta-CS/truffle-security/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">UtkarshGupta-CS/truffle-security</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 7</p>
+                  <p class="card-text box-description">Security infrastructure for Truffle DApps</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, solium, truffle-framework, ethereum, blockchain, security, smart-contracts</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/truffle-shavings">
+              <div class="card box-card" data-userorg="okwme" data-repo="truffle-shavings">
+                <img class="card-img-top" src="https://github.com/okwme/truffle-shavings/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">okwme/truffle-shavings</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 2</p>
+                  <p class="card-text box-description">Truffle Boilerplate with solium, linguist, zeppelin, migrations, tests &amp;amp;tc</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/truffle-starter">
+              <div class="card box-card" data-userorg="CasterIO" data-repo="truffle-starter">
+                <img class="card-img-top" src="https://github.com/CasterIO/truffle-starter/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">CasterIO/truffle-starter</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 4</p>
+                  <p class="card-text box-description">A react-based truffle starter box for use with Caster.io blockchain lessons</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/truffle-ts-percel-box">
+              <div class="card box-card" data-userorg="YuichiNukiyama" data-repo="truffle-ts-percel-box">
+                <img class="card-img-top" src="https://github.com/YuichiNukiyama/truffle-ts-percel-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">YuichiNukiyama/truffle-ts-percel-box</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 2</p>
+                  <p class="card-text box-description">boxes for truffle</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, ethereum, truffle, box</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/truffle-vue">
+              <div class="card box-card" data-userorg="wespr" data-repo="truffle-vue">
+                <img class="card-img-top" src="https://github.com/wespr/truffle-vue/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">wespr/truffle-vue</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 62</p>
+                  <p class="card-text box-description">A truffle box to serve as the foundation of any Truffle and Vue.js dApp. Comes with Vue.js, vue-router and Vuex.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, ethereum, truffle, webpack, vuejs, vue-router, vuex, javascript, solidity</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/vue-box">
+              <div class="card box-card" data-userorg="standup75" data-repo="vue-box">
+                <img class="card-img-top" src="https://github.com/standup75/vue-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">standup75/vue-box</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 15</p>
+                  <p class="card-text box-description"></p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/vue-dark-chocolate">
+              <div class="card box-card" data-userorg="kierenh" data-repo="vue-dark-chocolate">
+                <img class="card-img-top" src="https://github.com/kierenh/vue-dark-chocolate/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">kierenh/vue-dark-chocolate</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 13</p>
+                  <p class="card-text box-description">A truffle box that comes with everything you need to start using smart contracts from a Vue App, with Bootstrap styling and components. Supporting frameworks include Vuex, Vue-Router, Bootstrap 4 (via Bootstrap-Vue), and webpack. The sample uses webpack-dev-server for hot-reloading or you can build and serve from Express.</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community, blockchain, truffle-box, solidity-contracts, vue, vue-bootstrap, webpack-boilerplate</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
+              <a class="link-card" href="/boxes/vueport-box">
+              <div class="card box-card" data-userorg="saga-foundation" data-repo="vueport-box">
+                <img class="card-img-top" src="https://github.com/saga-foundation/vueport-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
+
+                <div class="card-body">
+                    <h5 class="card-title">saga-foundation/vueport-box</h5>
+                  <p class="box-star-count"><i class="fas fa-star"></i> 4</p>
+                  <p class="card-text box-description">Truffle box with built in uPort self-sovereign identity authentication and contract interaction using VueJS. Inspired by https://github.com/truffle-box/react-uport-box</p>
+                  <p class="card-text">
+                    <i class="fas fa-tags"></i> <span class="box-tags">community</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
         </div>
-
-        <div class="row" id="isoContainer">
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/drizzle">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="drizzle-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/drizzle-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">drizzle</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 161</p>
-                    <p class="card-text box-description">This box comes with everything you need to start using smart contracts from a react app with Drizzle. It includes drizzle, drizzle-react and drizzle-react-components to give you a complete overview of Drizzle&#x27;s capabilities.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">official, drizzle, react, redux</span>
-                    </p>
-                  </div>
-                </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <!--<li><a href="/careers">CAREERS</a></li>-->
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a href="https://twitter.com/trufflesuite">TWITTER</a></li>
+            <li><a class="trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2019</a></li>
+            <li class="text-truffle">
+              <a href="https://new.consensys.net/">
+                <img class="consensys-logomark" src="/img/consensys-logomark.svg" alt="ConsenSys Logo" />
+                &copy; CONSENSYS 2019
               </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/drizzle-react-native">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="drizzle-react-native-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/drizzle-react-native-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">drizzle-react-native</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 1</p>
-                    <p class="card-text box-description">This box is to help get you started with building dapps with Drizzle on React Native.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">official, drizzle, react-native</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/react">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="react-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/react-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">react</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 379</p>
-                    <p class="card-text box-description">Truffle, Webpack and React boilerplate.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">official, ethereum, ethereumjs, truffle, webpack, react, solidity</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/react-auth">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="react-auth-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/react-auth-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">react-auth</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 171</p>
-                    <p class="card-text box-description">Truffle, Webpack, React, Redux boilerplate with routing and authentication via a smart contract.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">official, ethereum, ethereumjs, react, redux, webpack, truffle, solidity</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/react-uport">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="react-uport-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/react-uport-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">react-uport</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 98</p>
-                    <p class="card-text box-description">Truffle, Webpack, React, Redux boilerplate with routing and authentication via a UPort.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">official, react, redux, truffle, webpack, solidity, ethereum, ethereumjs, uport-identity</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/pet-shop">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="pet-shop-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/pet-shop-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">pet-shop</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 108</p>
-                    <p class="card-text box-description">A box containing all you need to get started with our Pet Shop tutorial.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">official</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/tutorialtoken">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="tutorialtoken-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/tutorialtoken-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">tutorialtoken</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 45</p>
-                    <p class="card-text box-description">A box containing all you need to get started with our OpenZeppelin (TutorialToken) tutorial.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">official</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/webpack">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="webpack-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/webpack-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">webpack</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 34</p>
-                    <p class="card-text box-description">Example webpack-based app for Truffle (boilerplate)</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">official</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/metacoin">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="metacoin-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/metacoin-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">metacoin</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 44</p>
-                    <p class="card-text box-description">MetaCoin smart contracts example box</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">official</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/blueprint">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="blueprint-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/blueprint-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">blueprint</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 13</p>
-                    <p class="card-text box-description">All you need to get started making your own Truffle Box!</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">official</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/vyper-example">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="vyper-example-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/vyper-example-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">vyper-example</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 3</p>
-                    <p class="card-text box-description">A box containing all you need to get started with Vyper development on Truffle.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">official</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/azure-asset-transfer">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="azure-asset-transfer-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/azure-asset-transfer-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">azure-asset-transfer</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
-                    <p class="card-text box-description">Azure Samples - Asset Transfer</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/azure-basic-provenance">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="azure-basic-provenance-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/azure-basic-provenance-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">azure-basic-provenance</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 1</p>
-                    <p class="card-text box-description">Azure Samples - Basic Provenance</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/bazaar-item-listing">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="azure-bazaar-item-listing-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/azure-bazaar-item-listing-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">bazaar-item-listing</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
-                    <p class="card-text box-description">Azure Samples - Bazaar Item Listing</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/azure-digital-locker">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="azure-digital-locker-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/azure-digital-locker-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">azure-digital-locker</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
-                    <p class="card-text box-description">Azure Samples - Digital Locker</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/azure-hello-blockchain">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="azure-hello-blockchain-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/azure-hello-blockchain-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">azure-hello-blockchain</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 2</p>
-                    <p class="card-text box-description">Azure Samples - Hello Blockchain</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/azure-refrigerated-transportation">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="azure-refrigerated-transportation-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/azure-refrigerated-transportation-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">azure-refrigerated-transportation</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
-                    <p class="card-text box-description">Azure Samples - Refrigerated Transportation</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/azure-room-thermostat">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="azure-room-thermostat-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/azure-room-thermostat-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">azure-room-thermostat</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
-                    <p class="card-text box-description">Azure Samples - Room Thermostat</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item official">
-                <a class="link-card" href="/boxes/azure-simple-marketplace">
-                <div class="card box-card" data-userorg="truffle-box" data-repo="azure-simple-marketplace-box">
-                  <img class="card-img-top" src="https://github.com/truffle-box/azure-simple-marketplace-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">azure-simple-marketplace</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 1</p>
-                    <p class="card-text box-description">Azure Samples - Simple Marketplace</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">partner</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/angulartruffledapp">
-                <div class="card box-card" data-userorg="ng-es" data-repo="angulartruffledapp">
-                  <img class="card-img-top" src="https://github.com/ng-es/angulartruffledapp/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">ng-es/angulartruffledapp</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
-                    <p class="card-text box-description">This Trufflebox provides a base for Truffle Framework and Angular ÐAPP. and you can make transactions between accounts</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/angular-truffle-box">
-                <div class="card box-card" data-userorg="Quintor" data-repo="angular-truffle-box">
-                  <img class="card-img-top" src="https://github.com/Quintor/angular-truffle-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">Quintor/angular-truffle-box</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 49</p>
-                    <p class="card-text box-description">Truffle Box for Angular is a quick-and-easy way to get your Dapp on the road with Truffle and Angular</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/cheshire">
-                <div class="card box-card" data-userorg="endless-nameless-inc" data-repo="cheshire">
-                  <img class="card-img-top" src="https://github.com/endless-nameless-inc/cheshire/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">endless-nameless-inc/cheshire</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 69</p>
-                    <p class="card-text box-description">A sandbox for CryptoKitties dApp developers</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, cryptokitties, dapp, ethereum</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/cita-truffle-box">
-                <div class="card box-card" data-userorg="CITA-Toys" data-repo="cita-truffle-box">
-                  <img class="card-img-top" src="https://github.com/CITA-Toys/cita-truffle-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">CITA-Toys/cita-truffle-box</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 10</p>
-                    <p class="card-text box-description"></p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/etherplate">
-                <div class="card box-card" data-userorg="chuckbergeron" data-repo="etherplate">
-                  <img class="card-img-top" src="https://github.com/chuckbergeron/etherplate/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">chuckbergeron/etherplate</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 39</p>
-                    <p class="card-text box-description"> 🔗 Use this to make your next Ethereum DApp w/ React (&amp;amp; Router), Redux, Bulma &amp;amp; OpenZeppelin ERC721</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/eth-vue">
-                <div class="card box-card" data-userorg="DOkwufulueze" data-repo="eth-vue">
-                  <img class="card-img-top" src="https://github.com/DOkwufulueze/eth-vue/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">DOkwufulueze/eth-vue</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 111</p>
-                    <p class="card-text box-description">This Truffle Box provides everything you need to quickly build Ethereum dApps that have authentication features with vue, including configuration for easy deployment to the Ropsten Network. It&#x27;s also Gravatar-enabled. Connecting to a running Ganache blockchain network from Truffle is also possible -- for fast development and testing purposes. Built on Truffle 4, eth-vue uses vuex for state management, vuex-persist for local storage of app state, and vue-router for routing. Authentication functionalities are handled by Smart Contracts running on the Ethereum blockchain.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, vuejs, ethereum, ethereum-contract, dapp, ethereum-dapp, eth-vue, blockchain, truffle, truffle-framework, vue-router, vue-components, contracts, boilerplate, vuex, vuex-persist, web3</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/express-box">
-                <div class="card box-card" data-userorg="arvindkalra" data-repo="express-box">
-                  <img class="card-img-top" src="https://github.com/arvindkalra/express-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">arvindkalra/express-box</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 29</p>
-                    <p class="card-text box-description">A truffle box to serve as the foundation of any Truffle and Express.js dApp.  This Box Uses NodeJS(Express JS) to provide API endpoints to the Ethereum Blockchain smart contract so that this smart contract can be used in Android Apps as well.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, truffle-box, truffle, nodejs, ethereum-blockchain, ganache-cli, solidity</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/limelabs-angular-box">
-                <div class="card box-card" data-userorg="LimelabsTech" data-repo="limelabs-angular-box">
-                  <img class="card-img-top" src="https://github.com/LimelabsTech/limelabs-angular-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">LimelabsTech/limelabs-angular-box</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 7</p>
-                    <p class="card-text box-description">Truffle Box for Angular is a quick-and-easy way to get your Dapp on the road with Truffle and Angular</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/macroverse-truffle-box">
-                <div class="card box-card" data-userorg="NovakDistributed" data-repo="macroverse-truffle-box">
-                  <img class="card-img-top" src="https://github.com/NovakDistributed/macroverse-truffle-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">NovakDistributed/macroverse-truffle-box</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
-                    <p class="card-text box-description">Truffle Box for projects building on Macroverse&#x27;s shared world</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/nuxt-box">
-                <div class="card box-card" data-userorg="Paperchain" data-repo="nuxt-box">
-                  <img class="card-img-top" src="https://github.com/Paperchain/nuxt-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">Paperchain/nuxt-box</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 32</p>
-                    <p class="card-text box-description">Truffle, Nuxt and Vue boilerplate</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, ethereum, truffle, vuejs, nuxtjs, vue, nuxt, truffle-framework, solidity</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/peerai-api">
-                <div class="card box-card" data-userorg="peerism" data-repo="peerai-api">
-                  <img class="card-img-top" src="https://github.com/peerism/peerai-api/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">peerism/peerai-api</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 14</p>
-                    <p class="card-text box-description">Peerism&#x27;s Peer.ai API built with Truffle, Node.js, Express.js, Solidity, and Ethereum TestRPC</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, node, express, express-middleware, jwt, passport, mongodb, mongoose, curl, truffle, solidity, ethereum, dapp, api, solc</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/rapid-box">
-                <div class="card box-card" data-userorg="hexeight" data-repo="rapid-box">
-                  <img class="card-img-top" src="https://github.com/hexeight/rapid-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">hexeight/rapid-box</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
-                    <p class="card-text box-description">A quick start truffle box to host REST APIs interacting with Smart Contracts</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, ethereum, truffle-framework, truffle-box</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/react-box-web3-todo">
-                <div class="card box-card" data-userorg="shanejonas" data-repo="react-box-web3-todo">
-                  <img class="card-img-top" src="https://github.com/shanejonas/react-box-web3-todo/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">shanejonas/react-box-web3-todo</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 7</p>
-                    <p class="card-text box-description">Truffle, Webpack, Web3, Redux and React boilerplate.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/react-dapp-boilerplate">
-                <div class="card box-card" data-userorg="hackingbeauty" data-repo="react-dapp-boilerplate">
-                  <img class="card-img-top" src="https://github.com/hackingbeauty/react-dapp-boilerplate/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">hackingbeauty/react-dapp-boilerplate</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 24</p>
-                    <p class="card-text box-description">A superior UI setup for Ethereum Smart Contracts.  Check out www.reactdapps.com!</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/scoreboard">
-                <div class="card box-card" data-userorg="3of5of7" data-repo="scoreboard">
-                  <img class="card-img-top" src="https://github.com/3of5of7/scoreboard/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">3of5of7/scoreboard</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 15</p>
-                    <p class="card-text box-description"></p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/svelte-box">
-                <div class="card box-card" data-userorg="antony" data-repo="svelte-box">
-                  <img class="card-img-top" src="https://github.com/antony/svelte-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">antony/svelte-box</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 9</p>
-                    <p class="card-text box-description">A truffle box for svelte</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, truffle, truffle-framework, truffle-box, truffle-boilerplates, svelte, sveltejs, svelte-components, ethereum, ethereum-dapp, dapp, seed, blockchain, parcel, parcel-bundler, parceljs</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/truffle-ci-box">
-                <div class="card box-card" data-userorg="NFhbar" data-repo="truffle-ci-box">
-                  <img class="card-img-top" src="https://github.com/NFhbar/truffle-ci-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">NFhbar/truffle-ci-box</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 2</p>
-                    <p class="card-text box-description">Truffle box for quick integration with Travis CI and Coveralls</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, truffle-box, solidity, travis-ci, coveralls, solidity-coverage</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/truffle-create-react-app">
-                <div class="card box-card" data-userorg="Charterhouse" data-repo="truffle-create-react-app">
-                  <img class="card-img-top" src="https://github.com/Charterhouse/truffle-create-react-app/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">Charterhouse/truffle-create-react-app</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 8</p>
-                    <p class="card-text box-description">Basic integration of truffle and React front-end based on the create-react-app without resorting to the &#x27;reject&#x27; mode.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/truffle-next">
-                <div class="card box-card" data-userorg="adrianmcli" data-repo="truffle-next">
-                  <img class="card-img-top" src="https://github.com/adrianmcli/truffle-next/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">adrianmcli/truffle-next</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 110</p>
-                    <p class="card-text box-description">️️🛰️ A boilerplate Truffle Box project with Next.js for rapid Ethereum Dapp development</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, truffle, truffle-framework, reactjs, nextjs, solidity, ethereum, ethereum-contract</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/truffle-react-dapp">
-                <div class="card box-card" data-userorg="tpai" data-repo="truffle-react-dapp">
-                  <img class="card-img-top" src="https://github.com/tpai/truffle-react-dapp/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">tpai/truffle-react-dapp</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 0</p>
-                    <p class="card-text box-description">This project is build for react dapp developing, include solidity contract writing and web3.js API using demo.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, web3js, solidity, truffle, dapp</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/truffle-react-redux">
-                <div class="card box-card" data-userorg="gasolin" data-repo="truffle-react-redux">
-                  <img class="card-img-top" src="https://github.com/gasolin/truffle-react-redux/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">gasolin/truffle-react-redux</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 11</p>
-                    <p class="card-text box-description">Template for your next dapp with React and Redux</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, truffle, react, redux, dapp</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/truffle-react-ts-template">
-                <div class="card box-card" data-userorg="LibertyLocked" data-repo="truffle-react-ts-template">
-                  <img class="card-img-top" src="https://github.com/LibertyLocked/truffle-react-ts-template/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">LibertyLocked/truffle-react-ts-template</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 7</p>
-                    <p class="card-text box-description">Template for Ethereum DApps. Truffle + React + Typescript</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/truffle-security">
-                <div class="card box-card" data-userorg="UtkarshGupta-CS" data-repo="truffle-security">
-                  <img class="card-img-top" src="https://github.com/UtkarshGupta-CS/truffle-security/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">UtkarshGupta-CS/truffle-security</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 7</p>
-                    <p class="card-text box-description">Security infrastructure for Truffle DApps</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, solium, truffle-framework, ethereum, blockchain, security, smart-contracts</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/truffle-shavings">
-                <div class="card box-card" data-userorg="okwme" data-repo="truffle-shavings">
-                  <img class="card-img-top" src="https://github.com/okwme/truffle-shavings/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">okwme/truffle-shavings</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 2</p>
-                    <p class="card-text box-description">Truffle Boilerplate with solium, linguist, zeppelin, migrations, tests &amp;amp;tc</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/truffle-starter">
-                <div class="card box-card" data-userorg="CasterIO" data-repo="truffle-starter">
-                  <img class="card-img-top" src="https://github.com/CasterIO/truffle-starter/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">CasterIO/truffle-starter</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 4</p>
-                    <p class="card-text box-description">A react-based truffle starter box for use with Caster.io blockchain lessons</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/truffle-ts-percel-box">
-                <div class="card box-card" data-userorg="YuichiNukiyama" data-repo="truffle-ts-percel-box">
-                  <img class="card-img-top" src="https://github.com/YuichiNukiyama/truffle-ts-percel-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">YuichiNukiyama/truffle-ts-percel-box</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 2</p>
-                    <p class="card-text box-description">boxes for truffle</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, ethereum, truffle, box</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/truffle-vue">
-                <div class="card box-card" data-userorg="wespr" data-repo="truffle-vue">
-                  <img class="card-img-top" src="https://github.com/wespr/truffle-vue/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">wespr/truffle-vue</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 62</p>
-                    <p class="card-text box-description">A truffle box to serve as the foundation of any Truffle and Vue.js dApp. Comes with Vue.js, vue-router and Vuex.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, ethereum, truffle, webpack, vuejs, vue-router, vuex, javascript, solidity</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/vue-box">
-                <div class="card box-card" data-userorg="standup75" data-repo="vue-box">
-                  <img class="card-img-top" src="https://github.com/standup75/vue-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">standup75/vue-box</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 15</p>
-                    <p class="card-text box-description"></p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/vue-dark-chocolate">
-                <div class="card box-card" data-userorg="kierenh" data-repo="vue-dark-chocolate">
-                  <img class="card-img-top" src="https://github.com/kierenh/vue-dark-chocolate/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">kierenh/vue-dark-chocolate</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 13</p>
-                    <p class="card-text box-description">A truffle box that comes with everything you need to start using smart contracts from a Vue App, with Bootstrap styling and components. Supporting frameworks include Vuex, Vue-Router, Bootstrap 4 (via Bootstrap-Vue), and webpack. The sample uses webpack-dev-server for hot-reloading or you can build and serve from Express.</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community, blockchain, truffle-box, solidity-contracts, vue, vue-bootstrap, webpack-boilerplate</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-              <div class="col-xs-12 col-md-6 col-lg-4 iso-item community">
-                <a class="link-card" href="/boxes/vueport-box">
-                <div class="card box-card" data-userorg="saga-foundation" data-repo="vueport-box">
-                  <img class="card-img-top" src="https://github.com/saga-foundation/vueport-box/blob/master/box-img-sm.png?raw=true" alt="" onerror="javascript:this.src='/img/boxes/loading-banner.png'" />
-
-                  <div class="card-body">
-                      <h5 class="card-title">saga-foundation/vueport-box</h5>
-                    <p class="box-star-count"><i class="fas fa-star"></i> 4</p>
-                    <p class="card-text box-description">Truffle box with built in uPort self-sovereign identity authentication and contract interaction using VueJS. Inspired by https://github.com/truffle-box/react-uport-box</p>
-                    <p class="card-text">
-                      <i class="fas fa-tags"></i> <span class="box-tags">community</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+            <form action="https://truffleframework.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=97cfd4251b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <div class="form-group">
+                <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="footerMailingEmail" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="FNAME" class="form-control" placeholder="First Name" id="footerMailingFirstName">
+                <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
+              </div>
+              <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
+            </form>
         </div>
       </div>
-    </main>
+    </div>
+  </footer>
+  <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="/js/vendor/octokit-rest.min.js"></script>
+  <script src="/js/boxes.js"></script>
 
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-2 mb-4 mb-md-0">
-            <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
-          </div>
-    
-          <div class="col-12 col-md-5 mb-3 mb-md-0">
-            <ul>
-              <!--<li><a href="/careers">CAREERS</a></li>-->
-              <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
-              <li><a href="/policy">PRIVACY POLICY</a></li>
-              <li><a href="/dashboard">DASHBOARD</a></li>
-              <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
-              <li><a href="https://twitter.com/trufflesuite">TWITTER</a></li>
-              <li><a class="trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2019</a></li>
-              <li class="text-truffle">
-                <a href="https://new.consensys.net/">
-                  <img class="consensys-logomark" src="/img/consensys-logomark.svg" alt="ConsenSys Logo" />
-                  &copy; CONSENSYS 2019
-                </a>
-              </li>
-            </ul>
-          </div>
-    
-          <div class="col-12 col-md-5">
-            <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
-              <form action="https://truffleframework.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=97cfd4251b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-                <div class="form-group">
-                  <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="footerMailingEmail" required>
-                </div>
-                <div class="form-group">
-                  <input type="text" name="FNAME" class="form-control" placeholder="First Name" id="footerMailingFirstName">
-                  <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
-                </div>
-                <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
-              </form>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="/js/vendor/octokit-rest.min.js"></script>
-    <script src="/js/boxes.js"></script>
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-83874933-3', 'auto');
-      ga('send', 'pageview');
-    </script>  </body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-83874933-3', 'auto');
+    ga('send', 'pageview');
+  </script></body>
 </html>
