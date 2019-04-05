@@ -11,10 +11,10 @@
 <url> <loc>https://www.truffleframework.com/trufflecon2018.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/trufflecon2019.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/university.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/careers/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/events/index.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/dashboard/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/search.html</loc> </url>
@@ -67,7 +67,6 @@
 <url> <loc>https://www.truffleframework.com/boxes/vue-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/vue-dark-chocolate.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/vueport-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/careers/software-engineer-front-end.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/announcing-full-portable-solidity-debugger.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/designing-the-ganache-logo.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/drizzle-reactive-ethereum-data-for-front-ends.html</loc> </url>
@@ -83,6 +82,7 @@
 <url> <loc>https://www.truffleframework.com/blog/truffle-v5-has-arrived.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/why-were-organizing-trufflecon-2018.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/you-can-now-make-your-own-truffle-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/careers/software-engineer-front-end.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/building-dapps-for-quorum-private-enterprise-blockchains.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/building-testing-frontend-app-truffle-3.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/bundling-with-webpack.html</loc> </url>
