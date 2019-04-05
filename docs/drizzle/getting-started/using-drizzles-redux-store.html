@@ -25,15 +25,15 @@
     <!-- Facebook OpenGraph -->
     <meta property="og:site_name" content="Truffle Suite" />
     <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
-    <meta property="og:title" content="Truffle Suite | Documentation | Drizzle | Using an Existing Redux Store" />
-    <meta property="og:url" content="https://trufflesuite.com/docs/drizzle/getting-started/using-an-existing-redux-sto" />
+    <meta property="og:title" content="Truffle Suite | Documentation | Drizzle | Using Drizzle&#x27;s Redux Store" />
+    <meta property="og:url" content="https://trufflesuite.com/docs/drizzle/getting-started/using-drizzles-redux-sto" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="Truffle Suite" />
-    <meta name="twitter:title" content="Truffle Suite | Documentation | Drizzle | Using an Existing Redux Store" />
+    <meta name="twitter:title" content="Truffle Suite | Documentation | Drizzle | Using Drizzle&#x27;s Redux Store" />
     <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
     <meta name="twitter:creator" content="Truffle Suite" />
     <meta name="twitter:domain" content="trufflesuite.com" />
@@ -41,7 +41,7 @@
     
     <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
 
-      <title>Truffle Suite | Documentation | Drizzle | Using an Existing Redux Store</title>
+      <title>Truffle Suite | Documentation | Drizzle | Using Drizzle&#x27;s Redux Store</title>
 
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
@@ -225,7 +225,7 @@
             </ul>
               <h3>Getting Started</h3>
               <ul>
-                  <a href="/docs/drizzle/getting-started/using-an-existing-redux-store"><li>Using an Existing Redux Store</li></a>
+                  <a href="/docs/drizzle/getting-started/using-drizzles-redux-store"><li>Using Drizzle&#x27;s Redux Store</li></a>
                   <a href="/docs/drizzle/getting-started/contract-interaction"><li>Contract Interaction</li></a>
               </ul>
               <h3>React</h3>
@@ -244,110 +244,114 @@
         <div class="col-lg-9 bd-light-cream docs-content">
           
     <h1 class="link-markdown">
-      <a href="#using-an-existing-redux-store" name="using-an-existing-redux-store"><i class="fas fa-link"></i></a>
-      Using an Existing Redux Store
+      <a href="#using-drizzle-39-s-redux-store" name="using-drizzle-39-s-redux-store"><i class="fas fa-link"></i></a>
+      Using Drizzle&#39;s Redux Store
     </h1>
-  <p>Drizzle is flexible about its store. It can generate a store if your app doesn&#39;t currently use redux, live alongside your current store (potentially keeping all Ethereum concerns in one place) or integrating its reducers and sagas with your currently existing store.</p>
+  <p>For those times when you don&#39;t want to manage your own Redux store, Drizzle has
+you covered. You can pass your Redux sagas, reducers, middleware and
+drizzleOptions to <code>generateStore</code> and drizzle will incorporate them in its own
+Redux Store.</p>
+<p>For an example use case see the <a href="/tutorials/drizzle-and-contract-events">Drizzle and Contract
+Events</a> tutorial.</p>
 
     <h2 class="link-markdown">
-      <a href="#single-store" name="single-store"><i class="fas fa-link"></i></a>
-      Single Store
+      <a href="#add-middleware-to-the-store" name="add-middleware-to-the-store"><i class="fas fa-link"></i></a>
+      Add Middleware to the Store
     </h2>
-  <p>If you&#39;d like to integrate Drizzle&#39;s reducers and sagas with your existing store, import them for use alongside your existing reducers. In this example, we already have <code>react-router-redux</code> keeping the state of <code>react-router</code> in our store.</p>
-<pre><code class="lang-javascript">import { combineReducers } from &#39;redux&#39;
-import { routerReducer } from &#39;react-router-redux&#39;
-import { drizzleReducers } from &#39;drizzle&#39;
+  <p>Drizzle allows you to add redux middleware to it&#39;s redux instance. This gives
+you the ability to react to specific events in a meaningful way, outside of data
+synchronization. For example, you may want to interact with an external service
+whenever a contract event occurs.</p>
+<ol>
+<li><p>Import the drizzle dependencies.</p>
+<pre><code class="lang-javascript">import { generateStore, EventActions } from &#39;drizzle&#39;
+import drizzleOptions from &#39;../drizzleOptions&#39;
+</code></pre>
+</li>
+<li><p>Create a custom middleware. For more information on creating middleware for Redux, see <a href="https://redux.js.org/advanced/middleware">the Redux middleware documentation</a>.</p>
+<pre><code class="lang-javascript">const contractEventNotifier = store =&gt; next =&gt; action =&gt; {
+ if (action.type === EventActions.EVENT_FIRED) {
+   const contract = action.name
+   const contractEvent = action.event.event
+   const contractMessage = action.event.returnValues._message
+   const display = `${contract}(${contractEvent}): ${contractMessage}`
 
-const reducer = combineReducers({
-  routing: routerReducer,
-  ...drizzleReducers
+   // interact with your service
+   console.log(&#39;Contract event fired&#39;, display)
+ }
+ return next(action)
+}
+</code></pre>
+</li>
+<li><p>Create the store passing your Middlewares.</p>
+<pre><code class="lang-javascript">const appMiddlewares = [ contractEventNotifier ]
+
+// create the store
+export default generateStore({
+ drizzleOptions,
+ appMiddlewares,
+ disableReduxDevTools: false  // enable ReduxDevTools!
+})
+</code></pre>
+</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a href="#add-reducers-and-sagas-to-the-store" name="add-reducers-and-sagas-to-the-store"><i class="fas fa-link"></i></a>
+      Add Reducers and Sagas to the Store
+    </h2>
+  <p>Drizzle gives you the option to add your reducers to its Redux store if you choose to use one <code>store</code> for your project.</p>
+<ol>
+<li><p>Import the drizzle dependencies.</p>
+<pre><code class="lang-javascript">import { put, takeEvery } from &#39;redux-saga/effects&#39;
+import { generateStore } from &#39;drizzle&#39;
+import drizzleOptions from &#39;../drizzleOptions&#39;
+</code></pre>
+</li>
+<li><p>Define actions, reducers and sagas</p>
+<pre><code class="lang-javascript">// actions
+const TODOS_FETCH = &#39;MY_APP/TODOS_FETCH&#39;
+const TODOS_RECEIVED = &#39;MY_APP/TODOS_RECEIVED&#39;
+
+// reducers
+const todosReducer = (state = [], action) =&gt; {
+ if (action.type === TODOS_RECEIVED) {
+   // update your state
+   return action.todos
+ }
+ return state
+}
+
+// fetch data from service using sagas
+function *fetchTodos() {
+ const todos = yield fetch(&#39;https://jsonplaceholder.typicode.com/todos&#39;)
+ .then(resp =&gt; response.json())
+ yield put({ type: TODOS_RECEIVED, todos })
+}
+
+// Combine all your redux concerns
+
+// app root saga
+function *appRootSaga() {
+ yield takeEvery(TODOS_FETCH, fetchTodos)
+}
+</code></pre>
+</li>
+<li><p>Create the store passing in reducers and sagas</p>
+<pre><code class="lang-javascript">// app Reducers and Sagas
+const appReducers = { todos: todosReducer }
+const appSagas = [appRootSaga]
+
+const store = generateStore({
+ drizzleOptions,
+ appReducers,
+ appSagas
 })
 
-export default reducer
+export default store
 </code></pre>
-<p>Similarly, we can import Drizzle&#39;s sagas as well. For more information on how this works, see the example just above the &quot;Making our code testable&quot; section of the <a href="https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html"><code>redux-saga</code> beginner tutorial</a>.</p>
-<pre><code class="lang-javascript">import { all, fork } from &#39;redux-saga/effects&#39;
-import { drizzleSagas } from &#39;drizzle&#39;
-
-export default function* root() {
-  yield all(
-    drizzleSagas.map(saga =&gt; fork(saga))
-  )
-}
-</code></pre>
-<p>Now we can use the reducers and sagas as we normally would in our store. Note that we must also generate an initial state for our contracts. Drizzle takes care of this for you with the <code>generateContractsInitialState</code> function.</p>
-<pre><code class="lang-javascript">// ...
-import { generateContractsInitialState } from &#39;drizzle&#39;
-import drizzleOptions from &#39;./drizzleOptions&#39;
-// ...
-
-const initialState = {
-  contracts: generateContractsInitialState(drizzleOptions)
-}
-
-const store = createStore(
-  reducer,
-  initialState,
-  composeEnhancers(
-    applyMiddleware(
-      thunkMiddleware,
-      routingMiddleware,
-      sagaMiddleware
-    )
-  )
-)
-
-sagaMiddleware.run(rootSaga)
-</code></pre>
-<p>Finally, use the store as your normally would. In this example, we&#39;re using the <code>&lt;DrizzleProvider&gt;</code> from <code>drizzle-react</code>.</p>
-<pre><code class="lang-javascript">// ...
-import store from &#39;./store&#39;
-// ...
-
-ReactDOM.render((
-    &lt;DrizzleProvider options={drizzleOptions} store={store}&gt;
-      &lt;LoadingContainer&gt;
-        &lt;Router history={history}&gt;
-          &lt;Route path=&quot;/&quot; component={App}&gt;
-            &lt;IndexRoute component={HomeContainer} /&gt;
-          &lt;/Route&gt;
-        &lt;/Router&gt;
-      &lt;/LoadingContainer&gt;
-    &lt;/DrizzleProvider&gt;
-  ),
-  document.getElementById(&#39;root&#39;)
-);
-</code></pre>
-
-    <h2 class="link-markdown">
-      <a href="#multiple-stores" name="multiple-stores"><i class="fas fa-link"></i></a>
-      Multiple Stores
-    </h2>
-  <p>There are reasons you may want multiple stores in your application. If you&#39;re working with a large, existing webapp, you may want to keep the Ethereum portions of it separated. From the <a href="https://redux.js.org/faq/store-setup#can-or-should-i-create-multiple-stores-can-i-import-my-store-directly-and-use-it-in-components-myself">Redux Documentation&#39;s Store Setup section</a>:</p>
-<blockquote>
-<p>Isolating a Redux app as a component in a bigger application, in which case you might want to create a store per root component instance.</p>
-</blockquote>
-<p>If you&#39;re using React and <code>drizzle-react</code>, you can achieve this by not passing a store to the <code>&lt;DrizzleProvider&gt;</code> and wrapping your existing <code>&lt;Provider&gt;</code> component.</p>
-<pre><code class="lang-javascript">// ...
-import { DrizzleProvider } from &#39;drizzle-react&#39;
-// ...
-
-ReactDOM.render((
-    &lt;DrizzleProvider options={options}&gt;
-      &lt;Provider store={store}&gt;
-        &lt;LoadingContainer&gt;
-          &lt;Router history={history}&gt;
-            &lt;Route path=&quot;/&quot; component={App}&gt;
-              &lt;IndexRoute component={HomeContainer} /&gt;
-            &lt;/Route&gt;
-          &lt;/Router&gt;
-        &lt;/LoadingContainer&gt;
-      &lt;/Provider&gt;
-    &lt;/DrizzleProvider&gt;
-  ),
-  document.getElementById(&#39;root&#39;)
-);
-</code></pre>
+</li>
+</ol>
 
 
           <div class="contribute-link">
