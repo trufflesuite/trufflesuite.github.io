@@ -223,7 +223,7 @@ before passing them to Reducers.</p>
 <p>Now lets register this middleware with Drizzle. <code>generateStore</code> will return a
 Redux store that you can use anywhere you can use a store. We will export it to
 be used by <code>DrizzleProvider</code>.</p>
-<pre><code class="lang-js">const appMiddlewares = [ contractEventNotifier, contractErrorNotifier ]
+<pre><code class="lang-js">const appMiddlewares = [ contractEventNotifier ]
 
 export default generateStore({
   drizzleOptions,
