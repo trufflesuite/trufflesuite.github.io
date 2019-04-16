@@ -12280,7 +12280,8 @@ blockquote {
 
 .university .callout {
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
+  font-style: italic;
 }
 
 .university .spacer {
