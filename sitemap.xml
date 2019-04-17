@@ -21,7 +21,6 @@
 <url> <loc>https://www.truffleframework.com/boxes/drizzle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/drizzle-react-native.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/react.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/boxes/react-auth.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/react-uport.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/pet-shop.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/tutorialtoken.html</loc> </url>
@@ -41,6 +40,7 @@
 <url> <loc>https://www.truffleframework.com/boxes/angular-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/cheshire.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/cita-truffle-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/drizzle-kaleido-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/etherplate.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/eth-vue.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/express-box.html</loc> </url>
@@ -55,6 +55,7 @@
 <url> <loc>https://www.truffleframework.com/boxes/svelte-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/truffle-ci-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/truffle-create-react-app.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/truffle-kaleido-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/truffle-next.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/truffle-react-dapp.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/truffle-react-redux.html</loc> </url>
