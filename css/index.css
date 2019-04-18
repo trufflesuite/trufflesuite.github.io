@@ -10544,6 +10544,10 @@ pre {
   background-color: #F7A34E;
 }
 
+.banner-green {
+  background-color: #3fe0c5;
+}
+
 .banner-taste {
   position: relative;
   background-image: url("/img/truffle-accent.svg");
@@ -10600,6 +10604,22 @@ pre {
 
 .banner-elevate .elevate-hashtag .btn-drizzle:hover {
   color: #e911bd;
+}
+
+.banner-trufflecon {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.banner-trufflecon a {
+  text-decoration: none;
+  color: #58484e;
+}
+
+.banner-trufflecon a:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .btn {
@@ -12167,6 +12187,10 @@ blockquote {
   .trufflecon-nav-inline .btn-eventbrite {
     margin-right: .5rem;
   }
+}
+
+.speak-at-cta {
+  margin-left: 0.5rem;
 }
 
 .trufflecon-opening {
