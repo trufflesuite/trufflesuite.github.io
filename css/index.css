@@ -10622,6 +10622,32 @@ pre {
   text-decoration: none;
 }
 
+.banner-trufflecon img:first-of-type {
+  position: absolute;
+  left: 0px;
+  top: -35px;
+  height: 100px;
+}
+
+@media (max-width: 1085px) {
+  .banner-trufflecon img:first-of-type {
+    display: none;
+  }
+}
+
+.banner-trufflecon img:last-of-type {
+  position: absolute;
+  right: 0px;
+  top: -30 px;
+  height: 100px;
+}
+
+@media (max-width: 1085px) {
+  .banner-trufflecon img:last-of-type {
+    display: none;
+  }
+}
+
 .btn {
   border: none;
   font-family: 'Oswald', sans-serif;
