@@ -11641,6 +11641,20 @@ footer form {
   z-index: 199;
 }
 
+.docs-content .banner-trufflecon {
+  margin: -2rem -4rem 2rem -4rem;
+}
+
+.docs-content .banner-trufflecon img:first-of-type {
+  top: -67px;
+  left: -100px;
+}
+
+.docs-content .banner-trufflecon img:last-of-type {
+  top: -79px;
+  right: -70px;
+}
+
 .docs-content h1, .docs-content h2, .docs-content h3, .docs-content h4, .docs-content h5, .docs-content h6 {
   margin-top: 2rem;
   margin-bottom: 1rem;
