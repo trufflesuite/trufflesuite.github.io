@@ -11491,6 +11491,16 @@ footer form {
   }
 }
 
+.home-container .github-button-wrapper {
+  margin-left: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.home-container h5 {
+  display: inline-block;
+}
+
 .docs-sidebar, .docs-content {
   height: calc(100vh - 60px);
   overflow-y: scroll;
