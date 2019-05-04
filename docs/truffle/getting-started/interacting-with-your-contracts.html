@@ -313,7 +313,7 @@
     </h2>
   <p>Contract abstractions are the bread and butter of interacting with Ethereum contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract">truffle-contract</a> module, and it is this contract abstraction that&#39;s described below.</p>
 <p>In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We&#39;ll use the MetaCoin contract available to you through Truffle Boxes via <code>truffle unbox metacoin</code>.</p>
-<pre><code class="lang-javascript">pragma solidity ^0.4.2;
+<pre><code class="lang-javascript">pragma solidity &gt;=0.4.25 &lt;0.6.0;
 
 import &quot;./ConvertLib.sol&quot;;
 
@@ -327,23 +327,23 @@ contract MetaCoin {
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
 
-    function MetaCoin() {
+    constructor() public {
         balances[tx.origin] = 10000;
     }
 
-    function sendCoin(address receiver, uint amount) returns(bool sufficient) {
+    function sendCoin(address receiver, uint amount) public returns(bool sufficient) {
         if (balances[msg.sender] &lt; amount) return false;
         balances[msg.sender] -= amount;
         balances[receiver] += amount;
-        Transfer(msg.sender, receiver, amount);
+        emit Transfer(msg.sender, receiver, amount);
         return true;
     }
 
-    function getBalanceInEth(address addr) returns(uint){
+    function getBalanceInEth(address addr) public view returns(uint){
         return ConvertLib.convert(getBalance(addr),2);
     }
 
-    function getBalance(address addr) returns(uint) {
+    function getBalance(address addr) public view returns(uint) {
         return balances[addr];
     }
 }
