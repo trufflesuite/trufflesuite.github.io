@@ -561,6 +561,23 @@ The above use case might not be sufficient for all use cases. You can configure 
 }
 </code></pre>
 <p>Specify <code>properties</code> and/or <code>fileProperties</code>, and Truffle will look for those values when building the artifacts.</p>
+<p>To override the working directory for all specified paths and running commands, use the <code>workingDirectory</code> option.
+For instance, the following will run <code>./proj/compile-contracts</code> and read <code>./proj/output/contract.abi</code>:</p>
+<pre><code class="lang-javascript">module.exports = {
+  compilers: {
+    external: {
+      command: &quot;./compile-contracts&quot;,
+      workingDirectory: &quot;./proj&quot;,
+      targets: [{
+        fileProperties: {
+          abi: &quot;./output/contract.abi&quot;,
+          bytecode: &quot;./output/contract.bytecode&quot;,
+        }
+      }]
+    }
+  }
+}
+</code></pre>
 
     <h2 class="link-markdown">
       <a href="#plugins" name="plugins"><i class="fas fa-link"></i></a>
