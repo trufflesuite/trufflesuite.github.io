@@ -349,7 +349,8 @@ module.exports = {
       network_id: &quot;*&quot; // Match any network id
     },
     ropsten: {
-      provider: new HDWalletProvider(mnemonic, &quot;https://ropsten.infura.io/&quot;),
+      provider: () =&gt;
+        new HDWalletProvider(mnemonic, &quot;https://ropsten.infura.io/v3/YOUR-PROJECT-ID&quot;),
       network_id: 3 // official id of the ropsten network
     }
   }
