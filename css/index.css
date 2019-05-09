@@ -10988,6 +10988,10 @@ blockquote {
   border-bottom: 2px solid #5e464d;
 }
 
+.navbar .dropdown-menu {
+  min-width: 10.5rem;
+}
+
 .navbar a, .navbar-expand-md .navbar-nav .nav-link {
   color: #fff;
 }
@@ -11874,6 +11878,12 @@ footer form {
   }
 }
 
+.truffle-heading-row .github-button-wrapper {
+  margin-left: 0.8rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .truffle-heading-row .truffle-down-arrow {
   font-size: 2rem;
   position: absolute;
@@ -11924,6 +11934,12 @@ footer form {
   .ganache-heading-row .ganache-banner-image {
     width: 60%;
   }
+}
+
+.ganache-heading-row .github-button-wrapper {
+  margin-left: 0.8rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .ganache-heading-row .ganache-down-arrow {
@@ -11997,6 +12013,12 @@ footer form {
   .drizzle-heading-row svg {
     margin-top: -60%;
   }
+}
+
+.drizzle-heading-row .github-button-wrapper {
+  margin-left: 0.8rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .drizzle-heading-row .drizzle-down-arrow {

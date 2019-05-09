@@ -19,6 +19,12 @@
   }
 }
 
+.drizzle-heading-row .github-button-wrapper {
+  margin-left: 0.8rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .drizzle-heading-row .drizzle-down-arrow {
   font-size: 2rem;
   position: absolute;
