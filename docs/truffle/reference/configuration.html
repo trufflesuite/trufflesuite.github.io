@@ -437,6 +437,24 @@
 <p>Absolute paths will also work. This is not recommended though, as an absolute path may not exist when compiled on another system. If you use absolute paths on Windows, make sure to use double backslashes for paths (example: <code>C:\\Users\\Username\\output</code>).</p>
 
     <h3 class="link-markdown">
+      <a href="#migrations_directory" name="migrations_directory"><i class="fas fa-link"></i></a>
+      migrations_directory
+    </h3>
+  <p>The default migrations directory is <code>./migrations</code> relative to the project root. This can be changed with the <code>migrations_directory</code> key.</p>
+<p> Example:</p>
+<pre><code class="lang-javascript">module.exports = {
+  migrations_directory: &quot;./allMyStuff/someStuff/theMigrationsFolder&quot;,
+  networks: {
+    development: {
+      host: &quot;127.0.0.1&quot;,
+      port: 8545,
+      network_id: &quot;*&quot;,
+    }
+  }
+};
+</code></pre>
+
+    <h3 class="link-markdown">
       <a href="#mocha" name="mocha"><i class="fas fa-link"></i></a>
       mocha
     </h3>
