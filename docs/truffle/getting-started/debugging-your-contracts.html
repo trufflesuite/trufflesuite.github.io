@@ -297,6 +297,9 @@
 </code></pre><p>Using a transaction starting with <code>0x8e5dadfb921dd...</code> as an example, the command would look as follows:</p>
 <pre><code>$ truffle debug 0x8e5dadfb921ddddfa8f53af1f9bd8beeac6838d52d7e0c2fe5085b42a4f3ca76
 </code></pre><p>This will launch the debugging interface described below.</p>
+<p>If you simply want to open the debugger to get it ready, so that you can debug a transaction later, you can also simply run:</p>
+<pre><code>$ truffle debug
+</code></pre><p>Regardless of how you start the debugger, once it is running you are not limited to debugging only the transaction you launched it with; it is possible to unload the current transaction and load a new one, as described below.</p>
 
     <h2 class="link-markdown">
       <a href="#debugging-interface" name="debugging-interface"><i class="fas fa-link"></i></a>
@@ -339,6 +342,7 @@
       (;) step instruction
     </h3>
   <p>This command allows you to step through each individual instruction evaluated by the virtual machine. This is useful if you&#39;re interested in understanding the low level bytecode created by the Solidity source code. When you use this command, the debugger will also print out the stack data at the time the instruction was evaluated.</p>
+<p>You can also use this command with a numerical argument, to step that many times.</p>
 
     <h3 class="link-markdown">
       <a href="#-p-print-instruction" name="-p-print-instruction"><i class="fas fa-link"></i></a>
@@ -369,6 +373,7 @@
       (b) set a breakpoint
     </h3>
   <p>This command allows you to set breakpoints for any line in any of your source files (see <a href="#adding-and-removing-breakpoints">examples</a> below).  These can be given by line number; by relative line number; by line number in a specified source file; or one may simply add a breakpoint at the current point in the code.</p>
+<p>You don&#39;t need a transaction loaded to set breakpoints, although in that case you will have to specify which source file you mean to set it in.</p>
 
     <h3 class="link-markdown">
       <a href="#-b-remove-a-breakpoint" name="-b-remove-a-breakpoint"><i class="fas fa-link"></i></a>
@@ -395,16 +400,28 @@
   <p>This command will remove a watch expression, based on the following syntax: <code>-:&lt;expression&gt;</code>.</p>
 
     <h3 class="link-markdown">
-      <a href="#-list-existing-watch-expressions" name="-list-existing-watch-expressions"><i class="fas fa-link"></i></a>
-      (?) list existing watch expressions
+      <a href="#-list-existing-watch-expressions-and-breakpoints" name="-list-existing-watch-expressions-and-breakpoints"><i class="fas fa-link"></i></a>
+      (?) list existing watch expressions and breakpoints
     </h3>
-  <p>This command will display a list all the current watch expressions.</p>
+  <p>This command will display a list of all the current watch expressions and breakpoints.</p>
 
     <h3 class="link-markdown">
       <a href="#-v-display-variables" name="-v-display-variables"><i class="fas fa-link"></i></a>
       (v) display variables
     </h3>
-  <p>This command will display the current variables and their values.  Not all types of data are supported yet.</p>
+  <p>This command will display the current variables and their values.</p>
+
+    <h3 class="link-markdown">
+      <a href="#-t-unload-transaction" name="-t-unload-transaction"><i class="fas fa-link"></i></a>
+      (T) unload transaction
+    </h3>
+  <p>This command unloads the current transaction so you can load a new one.</p>
+
+    <h3 class="link-markdown">
+      <a href="#-t-load-transaction" name="-t-load-transaction"><i class="fas fa-link"></i></a>
+      (t) load transaction
+    </h3>
+  <p>This command loads a new transaction (given by its transaction hash).  Note that if you already have a transaction loaded, you must first explicitly unload it before you can load a new one.</p>
 
     <h2 class="link-markdown">
       <a href="#adding-and-removing-breakpoints" name="adding-and-removing-breakpoints"><i class="fas fa-link"></i></a>
