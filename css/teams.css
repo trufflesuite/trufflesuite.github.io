@@ -2,7 +2,6 @@
   background: url(/img/truffle-teams/landing-background.png);
   background-size: cover;
   color: #fff;
-  border-bottom: 3px solid #33262a;
   text-align: center;
 }
 
@@ -14,15 +13,29 @@
   color: #fff;
   display: block;
   margin-top: .5rem;
+  text-decoration: underline;
 }
 
 .tt-hero-banner .sign-in-link:hover {
   color: #fff;
+  opacity: .8;
 }
 
 .tt-hero-banner .tt-screenshot {
   margin: 0;
   transform: translateY(8rem);
+}
+
+.tt-hero-banner .link-truffle {
+  color: #3fe0c5;
+}
+
+.tt-hero-banner .triangle-br {
+  position: absolute;
+  background: transparent;
+  border-width: 0 0 50px 100vw;
+  bottom: 0;
+  border-color: transparent transparent #f8f5f0 transparent;
 }
 
 @media (max-width: 991.98px) {
@@ -78,6 +91,25 @@
   }
 }
 
+.tt-bowtie-container {
+  margin: -145px auto 0 auto;
+}
+
+.tt-bowtie-top, .tt-bowtie-bottom {
+  margin: 0;
+  width: 101vw;
+}
+
+.tt-bowtie-top {
+  position: relative;
+}
+
+.tt-bowtie {
+  background: #8731e8;
+  color: #fff;
+  margin: -1px 0;
+}
+
 .tt-feature {
   text-align: center;
 }
@@ -116,19 +148,31 @@
 
 .tt-pricing .card.free {
   background: #e0dad7;
+  border-radius: 0;
+  transform: skew(-2deg, -1deg);
 }
 
 .tt-pricing .card.free ul {
   list-style-image: url("/img/truffle-teams/checkmark-dark.png");
 }
 
+.tt-pricing .card.free .card-body, .tt-pricing .card.free .card-footer {
+  transform: skew(2deg, 1deg);
+}
+
 .tt-pricing .card.premium {
   background: #e86591;
   color: #fff;
+  border-radius: 0;
+  transform: skew(0, 2deg);
 }
 
 .tt-pricing .card.premium ul {
   list-style-image: url("/img/truffle-teams/checkmark-light.png");
+}
+
+.tt-pricing .card.premium .card-body, .tt-pricing .card.premium .card-footer {
+  transform: skew(0, -2deg);
 }
 
 .tt-pricing .card.premium .btn {
@@ -205,4 +249,56 @@
   display: inline-block;
   padding-top: 50%;
   padding-bottom: 50%;
+}
+
+.triangle-tr {
+  background: #f8f5f0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 0 0 100vw;
+  border-color: transparent transparent transparent #7f9dd1;
+}
+
+.triangle-tr.white {
+  border-width: 0 0 50px 100vw;
+  border-color: transparent transparent #fff transparent;
+}
+
+.triangle-br {
+  background: #f8f5f0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 100vw 0 0;
+  border-color: #7f9dd1 transparent transparent transparent;
+}
+
+.triangle-br.white {
+  border-width: 0 100vw 50px 0;
+  border-color: transparent #fff transparent transparent;
+}
+
+.shadow-dark-chocolate {
+  -webkit-box-shadow: 12px 12px 0px 0px #33262a;
+  -moz-box-shadow: 12px 12px 0px 0px #33262a;
+  box-shadow: 12px 12px 0px 0px #33262a;
+}
+
+.shadow-mint {
+  -webkit-box-shadow: 12px 12px 0px 0px #3fe0c5;
+  -moz-box-shadow: 12px 12px 0px 0px #3fe0c5;
+  box-shadow: 12px 12px 0px 0px #3fe0c5;
+}
+
+.shadow-periwinkle {
+  -webkit-box-shadow: 12px 12px 0px 0px #7f9dd1;
+  -moz-box-shadow: 12px 12px 0px 0px #7f9dd1;
+  box-shadow: 12px 12px 0px 0px #7f9dd1;
+}
+
+.shadow-purple {
+  -webkit-box-shadow: 12px 12px 0px 0px #8731e8;
+  -moz-box-shadow: 12px 12px 0px 0px #8731e8;
+  box-shadow: 12px 12px 0px 0px #8731e8;
 }

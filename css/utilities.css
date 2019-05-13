@@ -58,12 +58,30 @@
   opacity: .8;
 }
 
+.link-watermelon {
+  color: #e86591;
+}
+
+.link-watermelon:hover {
+  color: #e86591;
+  opacity: .8;
+}
+
 .link-drizzle {
   color: #e911bd;
 }
 
 .link-drizzle:hover {
   color: #e911bd;
+  opacity: .8;
+}
+
+.link-white {
+  color: #fff;
+}
+
+.link-white:hover {
+  color: #fff;
   opacity: .8;
 }
 
