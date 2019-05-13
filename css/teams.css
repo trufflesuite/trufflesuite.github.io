@@ -96,8 +96,8 @@
 }
 
 .tt-bowtie-top, .tt-bowtie-bottom {
-  margin: 0;
-  width: 101vw;
+  margin: 0 -5px;
+  width: 100vw;
 }
 
 .tt-bowtie-top {
@@ -108,10 +108,14 @@
   background: #8731e8;
   color: #fff;
   margin: -1px 0;
+  position: relative;
+  z-index: 1;
 }
 
-.tt-feature {
-  text-align: center;
+@media (max-width: 991.98px) {
+  .tt-bowtie {
+    padding: 1.5rem 0;
+  }
 }
 
 .tt-feature i {
@@ -124,9 +128,6 @@
 }
 
 @media (min-width: 768px) {
-  .tt-feature {
-    text-align: left;
-  }
   .tt-feature i {
     margin-bottom: 0;
   }
@@ -137,7 +138,7 @@
 }
 
 .tt-pricing ul li:not(:last-child) {
-  margin-bottom: .5rem;
+  margin-bottom: .75rem;
 }
 
 .tt-pricing .card {
@@ -148,31 +149,25 @@
 
 .tt-pricing .card.free {
   background: #e0dad7;
-  border-radius: 0;
-  transform: skew(-2deg, -1deg);
+  /*.card-body, .card-footer {
+        transform: skew(2deg, 1deg);
+      }*/
 }
 
 .tt-pricing .card.free ul {
   list-style-image: url("/img/truffle-teams/checkmark-dark.png");
 }
 
-.tt-pricing .card.free .card-body, .tt-pricing .card.free .card-footer {
-  transform: skew(2deg, 1deg);
-}
-
 .tt-pricing .card.premium {
   background: #e86591;
   color: #fff;
-  border-radius: 0;
-  transform: skew(0, 2deg);
+  /*.card-body, .card-footer {
+        transform: skew(0, -2deg);
+      }*/
 }
 
 .tt-pricing .card.premium ul {
   list-style-image: url("/img/truffle-teams/checkmark-light.png");
-}
-
-.tt-pricing .card.premium .card-body, .tt-pricing .card.premium .card-footer {
-  transform: skew(0, -2deg);
 }
 
 .tt-pricing .card.premium .btn {
