@@ -236,7 +236,7 @@
   padding-bottom: 50%;
 }
 
-.triangle-tr {
+.tt-container .triangle-tr {
   background: #f8f5f0;
   width: 0;
   height: 0;
@@ -245,12 +245,12 @@
   border-color: transparent transparent transparent #7f9dd1;
 }
 
-.triangle-tr.white {
+.tt-container .triangle-tr.white {
   border-width: 0 0 50px 100vw;
   border-color: transparent transparent #fff transparent;
 }
 
-.triangle-br {
+.tt-container .triangle-br {
   background: #f8f5f0;
   width: 0;
   height: 0;
@@ -259,7 +259,7 @@
   border-color: #7f9dd1 transparent transparent transparent;
 }
 
-.triangle-br.white {
+.tt-container .triangle-br.white {
   border-width: 0 100vw 50px 0;
   border-color: transparent #fff transparent transparent;
 }
