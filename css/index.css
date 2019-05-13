@@ -12631,7 +12631,13 @@ blockquote {
 }
 
 .tt-bowtie-container {
-  margin: -145px auto 0 auto;
+  margin: -80px auto 0 auto;
+}
+
+@media (min-width: 992px) {
+  .tt-bowtie-container {
+    margin: -145px auto 0 auto;
+  }
 }
 
 .tt-bowtie-top, .tt-bowtie-bottom {
@@ -12653,21 +12659,6 @@ blockquote {
 @media (max-width: 991.98px) {
   .tt-bowtie {
     padding: 1.5rem 0;
-  }
-}
-
-.tt-feature i {
-  background: #8731e8;
-  padding: 1rem;
-  border-radius: 50%;
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: .5rem;
-}
-
-@media (min-width: 768px) {
-  .tt-feature i {
-    margin-bottom: 0;
   }
 }
 
