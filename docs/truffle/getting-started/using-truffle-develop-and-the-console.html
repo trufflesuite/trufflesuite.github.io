@@ -278,7 +278,7 @@
     </h1>
   <p>Sometimes it&#39;s nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. Truffle provides you two easy ways to do this via an interactive console, with your contracts available and ready to use.</p>
 <ul>
-<li><strong>Truffle console</strong>: A basic interactive console connecting to any Ethereum client</li>
+<li><strong>Truffle Console</strong>: A basic interactive console connecting to any Ethereum client</li>
 <li><strong>Truffle Develop</strong>: An interactive console that also spawns a development blockchain</li>
 </ul>
 
@@ -287,7 +287,7 @@
       Why two different consoles?
     </h2>
   <p>Having two different consoles allows you to choose the best tool for your needs.</p>
-<p>Reasons to use <strong>Truffle console</strong>:</p>
+<p>Reasons to use <strong>Truffle Console</strong>:</p>
 <ul>
 <li>You have a client you&#39;re already using, such as <a href="/docs/ganache/using">Ganache</a> or geth</li>
 <li>You want to migrate to a testnet (or the main Ethereum network)</li>
@@ -313,7 +313,7 @@
   <p>To launch the console:</p>
 <pre><code class="lang-shell">truffle console
 </code></pre>
-<p>This will look for a network definition called <code>development</code> in the configuration, and connect to it, if available. You can override this using the <code>--network &lt;name&gt;</code> option. See more details in the <a href="/docs/advanced/networks">Networks</a> section as well as the <a href="/docs/advanced/commands">command reference</a>.</p>
+<p>This will look for a network definition called <code>development</code> in the configuration, and connect to it, if available. You can override this using the <code>--network &lt;name&gt;</code> option or <a href="/docs/truffle/reference/configuration#networks">customize</a> the <code>development</code> network settings. See more details in the <a href="/docs/advanced/networks">Networks</a> section as well as the <a href="/docs/advanced/commands">command reference</a>.</p>
 <p>When you load the console, you&#39;ll immediately see the following prompt:</p>
 <pre><code class="lang-shell">truffle(development)&gt;
 </code></pre>
@@ -326,7 +326,7 @@
   <p>To launch Truffle Develop:</p>
 <pre><code class="lang-shell">truffle develop
 </code></pre>
-<p>This will spawn a development blockchain locally on port <code>9545</code>, regardless of what your <code>truffle-config.js</code> configuration file calls for. If you already have a <code>truffe develop</code> session running, it will instead connect to that development blockchain.</p>
+<p>This will spawn a development blockchain locally on port <code>9545</code> by default. If you already have a <code>truffle develop</code> session running, it will instead connect to that development blockchain.</p>
 <p>When you load Truffle Develop, you will see the following:</p>
 <pre><code class="lang-shell">Truffle Develop started at http://localhost:9545/
 
@@ -374,7 +374,7 @@ Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet t
       Configuring Truffle Develop
     </h4>
   <p>You can configure <code>truffle develop</code> to use any of the available
-<a href="https://github.com/trufflesuite/ganache-core#usage">ganache-core</a> options.</p>
+<a href="https://github.com/trufflesuite/ganache-core#usage">ganache-core</a> options and <a href="/docs/truffle/reference/configuration#networks">configurable</a> network settings.</p>
 <p>For example:</p>
 <pre><code class="lang-javascript">module.exports = {
   /* ... rest of config */
@@ -383,6 +383,8 @@ Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet t
     /* ... other networks */
 
     develop: {
+      port: 8545,
+      network_id: 20,
       accounts: 5,
       defaultEtherBalance: 500,
       blockTime: 3
