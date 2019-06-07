@@ -11465,6 +11465,10 @@ footer form {
   color: #5e464d;
 }
 
+.bd-white {
+  background-color: #ffffff;
+}
+
 .space-icon i {
   margin-right: .25rem;
 }
@@ -12412,10 +12416,13 @@ blockquote {
   margin-bottom: 3rem;
 }
 
+.trufflecon-speakers img {
+  border: 4px solid #3fe0c5;
+}
+
 .trufflecon-speakers .circle-image-container {
   margin: 0 auto .5rem auto;
   padding-bottom: 0;
-  border: 4px solid #3fe0c5;
   overflow: hidden;
 }
 
@@ -12432,6 +12439,28 @@ blockquote {
 .trufflecon-speakers h3 {
   text-transform: uppercase;
   color: #3fe0c5;
+}
+
+.trufflecon-guests {
+  text-align: center;
+}
+
+.trufflecon-guests .circle-image-container {
+  margin: 0 2.4rem .5rem 2.4rem;
+  padding-bottom: 0;
+  border: 4px solid #3fe0c5;
+  overflow: hidden;
+}
+
+@media (max-width: 991.98px) {
+  .trufflecon-guests .circle-image-container {
+    margin: 0 auto .5rem auto;
+    width: 200px;
+    height: 200px;
+  }
+  .trufflecon-guests .circle-image-container img {
+    width: 200px;
+  }
 }
 
 .policy-container .c27 {
