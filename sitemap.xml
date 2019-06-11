@@ -188,6 +188,9 @@
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/the-quickstart-workspace.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/quickstart.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/advanced/build-processes.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/advanced/creating-a-truffle-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/advanced/networks-and-app-deployment.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/compiling-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/creating-a-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/debugging-your-contracts.html</loc> </url>
@@ -201,9 +204,6 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/using-truffle-develop-and-the-console.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/working-with-quorum.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/writing-external-scripts.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/advanced/build-processes.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/advanced/creating-a-truffle-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/advanced/networks-and-app-deployment.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/choosing-an-ethereum-client.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/configuration.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/contact-the-developers.html</loc> </url>
