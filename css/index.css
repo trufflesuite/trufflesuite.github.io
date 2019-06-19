@@ -13008,6 +13008,10 @@ blockquote {
   box-shadow: 12px 12px 0px 0px #8731e8;
 }
 
+.pr-row:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
 .flipcard-staff {
   height: 0;
   padding-bottom: 100%;
