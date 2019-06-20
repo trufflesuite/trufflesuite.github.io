@@ -250,6 +250,11 @@
   border-color: transparent transparent #fff transparent;
 }
 
+.tt-container .triangle-tr.cream {
+  border-width: 0 0 50px 100vw;
+  border-color: transparent transparent #f8f5f0 transparent;
+}
+
 .tt-container .triangle-br {
   background: #f8f5f0;
   width: 0;

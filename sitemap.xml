@@ -18,8 +18,8 @@
 <url> <loc>https://www.truffleframework.com/press-releases/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/index.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/dashboard/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/search.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/dashboard/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/drizzle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/drizzle-react-native.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/react.html</loc> </url>
@@ -192,10 +192,17 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/build-processes.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/creating-a-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/networks-and-app-deployment.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/choosing-an-ethereum-client.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/configuration.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/contact-the-developers.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/contract-abstractions.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/truffle-commands.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/testing/testing-your-contracts.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/compiling-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/creating-a-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/debugging-your-contracts.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/installation.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/interacting-with-your-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/package-management-via-ethpm.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/package-management-via-npm.html</loc> </url>
@@ -205,12 +212,5 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/using-truffle-develop-and-the-console.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/working-with-quorum.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/writing-external-scripts.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/choosing-an-ethereum-client.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/configuration.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/contact-the-developers.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/contract-abstractions.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/truffle-commands.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/testing/testing-your-contracts.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/installation.html</loc> </url>
 </urlset>

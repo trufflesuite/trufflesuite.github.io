@@ -12355,6 +12355,10 @@ blockquote {
   border-color: transparent #ca37af transparent transparent;
 }
 
+.triangle-tr.cream {
+  background: #f8f5f0;
+}
+
 .triangle-br {
   background: #f8f5f0;
   width: 0;
@@ -12440,6 +12444,14 @@ blockquote {
 .trufflecon-speakers h3 {
   text-transform: uppercase;
   color: #3fe0c5;
+}
+
+.trufflecon-speakers.featured img {
+  border-color: #fff;
+}
+
+.trufflecon-speakers.featured h3 {
+  color: #5e464d;
 }
 
 .trufflecon-guests {
@@ -12968,6 +12980,11 @@ blockquote {
 .tt-container .triangle-tr.white {
   border-width: 0 0 50px 100vw;
   border-color: transparent transparent #fff transparent;
+}
+
+.tt-container .triangle-tr.cream {
+  border-width: 0 0 50px 100vw;
+  border-color: transparent transparent #f8f5f0 transparent;
 }
 
 .tt-container .triangle-br {
