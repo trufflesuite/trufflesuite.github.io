@@ -10633,11 +10633,11 @@ pre {
 .banner-trufflecon img:first-of-type {
   position: absolute;
   left: 0px;
-  top: -35px;
+  top: -25px;
   height: 100px;
 }
 
-@media (max-width: 1085px) {
+@media (max-width: 1185px) {
   .banner-trufflecon img:first-of-type {
     display: none;
   }
@@ -10650,7 +10650,7 @@ pre {
   height: 100px;
 }
 
-@media (max-width: 1085px) {
+@media (max-width: 1185px) {
   .banner-trufflecon img:last-of-type {
     display: none;
   }
