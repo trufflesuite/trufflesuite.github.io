@@ -470,7 +470,7 @@ Example.numberFormat = &#39;BigNumber&#39;;
     value = val;
     emit ValueSet(value);
   }
-  function getValue() constant returns (uint) {
+  function getValue() view returns (uint) {
     return value;
   }
 }
@@ -539,7 +539,7 @@ in the <code>logs</code> array.</p>
 // value reprsents the `value` storage object in the solidity contract
 // since the contract returns that value.
 </code></pre>
-<p>Even more helpful, however is we <em>don&#39;t even need</em> to use <code>.call</code> when a function is marked as <code>constant</code>, because <code>truffle-contract</code> will automatically know that that function can only be interacted with via a call:</p>
+<p>Even more helpful, however is we <em>don&#39;t even need</em> to use <code>.call</code> when a function is marked as <code>view</code> or <code>pure</code> (or the deprecated <code>constant</code>), because <code>truffle-contract</code> will automatically know that that function can only be interacted with via a call:</p>
 <pre><code class="lang-javascript">const value = await instance.getValue();
 // val reprsents the `value` storage object in the solidity contract
 // since the contract returns that value.
