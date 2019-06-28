@@ -226,22 +226,10 @@ blockquote {
 
 .trufflecon-speakers img {
   border: 4px solid #3fe0c5;
-}
-
-.trufflecon-speakers .circle-image-container {
-  margin: 0 auto .5rem auto;
-  padding-bottom: 0;
-  overflow: hidden;
-}
-
-@media (max-width: 991.98px) {
-  .trufflecon-speakers .circle-image-container {
-    width: 200px;
-    height: 200px;
-  }
-  .trufflecon-speakers .circle-image-container img {
-    width: 200px;
-  }
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .trufflecon-speakers h3 {
@@ -255,6 +243,11 @@ blockquote {
 
 .trufflecon-speakers.featured h3 {
   color: #5e464d;
+}
+
+.trufflecon-speakers.trufflecon-team img {
+  max-width: 240px;
+  width: 100%;
 }
 
 .trufflecon-guests {
@@ -336,6 +329,21 @@ blockquote {
 
 .trufflecon-map iframe {
   width: 100%;
+}
+
+.speaker-icon {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  z-index: 2;
+}
+
+.countdown-align {
+  object-position: center;
+}
+
+.tcon-countdown {
+  margin: 0 auto;
 }
 
 .map-overlay {
