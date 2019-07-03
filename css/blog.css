@@ -1,4 +1,21 @@
-.post-row:not(:last-child) {
+.post-row-link {
+  color: inherit;
+  display: block;
+  transition: all .125s ease-in-out;
+}
+
+.post-row-link:hover {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+}
+
+.post-row-link:hover .btn-truffle {
+  background: #fff;
+  color: #5e464d;
+}
+
+.post-row-link:not(:last-child) {
   margin-bottom: 3rem;
 }
 
