@@ -4,6 +4,10 @@
   transition: all .125s ease-in-out;
 }
 
+.post-row-link h2 {
+  text-transform: uppercase;
+}
+
 .post-row-link:hover {
   color: inherit;
   display: block;
