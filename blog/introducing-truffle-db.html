@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Introducing Truffle DB, part 1: Artifact archeology | Blog | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/blog/introducing-truffle-" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Introducing Truffle DB, part 1: Artifact archeology | Blog | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Introducing Truffle DB, part 1: Artifact archeology | Blog | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg">N</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Introducing Truffle DB, part 1: Artifact archeology</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2019-7-10&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> gnidan (Nick D&#x27;Andrea)</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <div class="post-trufflecon-box mb-5">
+  <strong><a href="https://www.trufflesuite.com/trufflecon2019">TruffleCon 2019</a></strong> is happening August 2-4 on Microsoft’s campus in Redmond, WA. This year’s event will include 60+ speakers from the blockchain ecosystem, along with hands-on workshops geared toward novice users and expert builders alike. The Truffle team is ramping up for TruffleCon 2019 by writing a daily blog post about everything that’s on our minds. We hope you enjoy and we’ll see you in Redmond!
+
+  <div class="text-center">
+    <a class="btn btn-truffle mt-3" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
+  </div>
+</div>
+
+
+    <h2 class="link-markdown">
+      <a href="#introducing-truffle-db-part-1-artifact-archeology" name="introducing-truffle-db-part-1-artifact-archeology"><i class="fas fa-link"></i></a>
+      Introducing Truffle DB, part 1: Artifact archeology
+    </h2>
+  <p>Truffle is not a small utility: it compiles your contracts, deploys them to multiple networks, runs your automated tests, provides an interactive debugger for when things go wrong, offers a library for interacting with your contracts on the frontend, … (<em>the list goes on.</em>) With just over 20,000 lines of code and close to thirty discrete software packages, Truffle has a lot going on.</p>
+<p>Truffle is “not small” on purpose. The tool oversees the development lifecycle in human developer terms. It keeps track of familiar concepts and hides unnecessary, low-level specifics. That’s a big goal.</p>
+<p>So how does this work? Well, Truffle tries to be smart about it. It stores information about your contracts so that it can refer to it later. It tracks compilation results alongside the source code you wrote, maintaining a steady mapping between <em>data for the blockchain</em> and <em>data for developers’ brains</em>.</p>
+<p>Right now, this system of record-keeping is served through Truffle’s <strong>contract artifacts</strong>: the large JSON files that get saved in your <em>build/contracts/</em> directory. Truffle saves your artifacts when you compile and updates your artifacts with address information when you migrate. Pretty much whenever you use any part of Truffle, these artifacts are read from disk and processed, enabling Truffle to paint itself (and you) a picture of what’s happening in human terms.</p>
+<p>Truffle’s artifacts have been enormously useful: the tool simply couldn’t exist without this kind of first-class data capturing. Beyond that, though, being able to count on this data has enabled an ecosystem of other tools and utilities that build on top of Truffle’s functionality using Truffle’s artifacts format. Truffle’s artifacts have served as a common language for representing smart contract development concepts.</p>
+<p>Unfortunately, Truffle’s artifacts format has a number of core limitations that prevent Truffle from offering ideal behavior in several key situations. This post describes a few of these limitations. In this post’s follow-up, we’ll share information about a new system to manage this record-keeping, which we’re calling <strong>Truffle DB</strong>.</p>
+
+    <h2 class="link-markdown">
+      <a href="#so-what-s-the-problem-now-" name="so-what-s-the-problem-now-"><i class="fas fa-link"></i></a>
+      So what’s the problem now?
+    </h2>
+  <p>For starters: artifact files are huge! Too huge! In addition to Truffle reading your contract artifacts, your dapp’s frontend code may read and use your artifacts to let users connect to any deployed network, etc. Problem is—there’s a ton of JSON. It’s a mess, and it’s in your face too much.</p>
+<p>
+    <img class="img-fluid" src="/img/blog/introducing-truffle-db/example-truffle-db.png" title="Example of Truffle DB" alt="Example of Truffle DB" />
+    
+  
+<strong>For example:</strong> Truffle stores the same abstract syntax tree* (AST) in two different formats, in every single artifact! Most applications do not need this.</p>
+<p>*for the curious: the AST is the reason your code works whether you wrote it all on a single line or not. Source gets parsed, and the AST is the result. Truffle and other tools rely on the AST for things like debugging, code coverage, and linting.</p>
+<p>By the byte, almost all of the information in each contract artifact is for internal use or for some specific purpose. <strong>Only a small subset of the data in each artifact is necessary for your frontend or for you to think about directly.</strong> Thus far, users who have struggled with these large files needed to use a tool like <a href="https://stedolan.github.io/jq/">jq</a> or write a custom solution. </p>
+<p>In addition to these files being too large, the information is grouped purely by the idea of “contract name”. What if you want to have two contracts with the same name? You can’t. What if you want to debug an old version of your contract, deployed to a testnet? I hope you backed up your old artifacts directory somehow.</p>
+<p>Although we’ve implemented plenty of workarounds to deal with these limitations, the problems do not go unnoticed. See some long-outstanding open GitHub issues, for example:</p>
+<ul>
+<li><a href="https://github.com/trufflesuite/truffle/issues/1269">Truffle contract artifacts are too big and contain too much sensitive detail to actually deploy on the web (#1269)</a></li>
+<li><a href="https://github.com/trufflesuite/truffle/issues/1087">Artifact is overwritten if there are two contracts with the same name (#1087)</a></li>
+<li><a href="https://github.com/trufflesuite/truffle/issues/1236">Source map indexes are missing in artifacts (#1236)</a></li>
+<li><a href="https://github.com/trufflesuite/truffle/issues/1790">Allow persistency of artifacts remotely (#1790)</a></li>
+</ul>
+<p>Unfortunately, these issues are blocked by the fundamental design of the contract artifacts.</p>
+<p>The root of the problem is that Truffle’s artifacts try to serve two conflicting purposes: they try to serve the developer, but they also try to serve the tool itself.</p>
+
+    <h2 class="link-markdown">
+      <a href="#-stop-talking-about-data-formats-you-say-" name="-stop-talking-about-data-formats-you-say-"><i class="fas fa-link"></i></a>
+      “Stop talking about data formats”, you say.
+    </h2>
+  <p>Right? Ideally, Truffle should silently keep complete records of everything you will ever need, and nothing more. And you, the developer, should only ever come face-to-face with the information you need at any given moment.</p>
+<p>So, for some time, we have been working on a plan to improve the state of affairs of Truffle’s record-keeping.</p>
+<p>We’ll get into it more in the next post, but Truffle DB aims to provide two things:</p>
+<ul>
+<li>a data model: a set of terms that collectively represent various, high-level concepts associated with smart contract development</li>
+<li>a flexible interface: a way to query and update your Truffle project’s records</li>
+</ul>
+<p>In doing this, we’re taking a data-first approach, organizing your project’s information through immutable records and a clean separation of concerns. Stay tuned for the next post, where we’ll talk about this more and outline our release plan for Truffle DB: what we’ll be releasing first, what work still needs to be done, and how we plan to handle backwards compatibility over time.</p>
+<div class="post-trufflecon-box mt-5 text-center">
+  Get your ticket for TruffleCon 2019 Today
+
+  <div class="mt-3">
+    <a class="btn btn-truffle" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
+  </div>
+</div>
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/blog">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2019</a></li>
+            <li><strong>&copy; Truffle Blockchain Group 2019</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+            <form action="https://truffleframework.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=97cfd4251b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <div class="form-group">
+                <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="footerMailingEmail" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="FNAME" class="form-control" placeholder="First Name" id="footerMailingFirstName">
+                <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
+              </div>
+              <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>
