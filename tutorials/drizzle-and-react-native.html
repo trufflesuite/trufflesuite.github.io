@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Drizzle and React Native | Tutorials | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/tutorials/drizzle-and-react-nati" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Drizzle and React Native | Tutorials | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Drizzle and React Native | Tutorials | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg">N</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Drizzle and React Native</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2019-01-31&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Heyse Li</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <p>Starting with Drizzle v1.3, we are very happy to announce official support for React Native (^0.57.7)!</p>
+<p>This tutorial will guide you through how to get Drizzle and Truffle running on your React Native dapps. This tutorial assumes some prior knowledge about Truffle, Drizzle, and React Native, so if you haven&#39;t already, go over the following tutorials first to set up your development environment: </p>
+<ol>
+<li><a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react">Getting started with Drizzle and React</a></li>
+<li><a href="https://facebook.github.io/react-native/docs/getting-started.html">React Native</a><ul>
+<li>Make sure to select <code>Building Projects with Native Code</code> since we will be leveraging some native code.</li>
+</ul>
+</li>
+</ol>
+<p>This tutorial will cover the following:</p>
+<ol>
+<li>Setting up the folder structure</li>
+<li>Shimming web and node libraries on React Native</li>
+<li>Setting up the smart contract</li>
+<li>Connecting your app to your Ganache testnet</li>
+<li>Setting up Drizzle</li>
+<li>Wiring up the app component</li>
+<li>Writing a component to read from Drizzle</li>
+<li>Writing a component to write to the smart contract</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a href="#setting-up-the-folder-structure" name="setting-up-the-folder-structure"><i class="fas fa-link"></i></a>
+      Setting up the folder structure
+    </h2>
+  
+    <h3 class="link-markdown">
+      <a href="#truffle" name="truffle"><i class="fas fa-link"></i></a>
+      Truffle
+    </h3>
+  <p>Truffle requires an empty folder to start, so let&#39;s initialize it first before our React Native project:</p>
+<pre><code class="lang-shell">mkdir truffle-temp
+cd truffle-temp
+truffle init
+</code></pre>
+<p>You should have the following inside the project folder:</p>
+<pre><code class="lang-sh">├── contracts
+├── migrations
+├── test
+└── truffle-config.js
+</code></pre>
+
+    <h3 class="link-markdown">
+      <a href="#react-native" name="react-native"><i class="fas fa-link"></i></a>
+      React Native
+    </h3>
+  <ol>
+<li><p>Initialize your React Native project in its own folder, as a sibling folder of your Truffle project <code>truffle-temp</code>:</p>
+<pre><code class="lang-shell"> react-native init DrizzleReactNativeTutorial
+</code></pre>
+</li>
+<li><p>React Native and Truffle folders should be in root since React Native doesn&#39;t allow you to use symlinks yet, and cannot import from files outside the React Native project folder.</p>
+<p> Copy all the files in <code>truffle-temp</code> into the root folder of your React Native project. Your folder should look like this in the end:</p>
+<pre><code class="lang-sh"> ├── android
+ ├── contracts
+ ├── ios
+ ├── migrations
+ ├── node_modules
+ ├── test
+ ├── App.js
+ ├── app.json
+ ├── index.js
+ ├── package.json
+ ├── truffle-config.js
+ ├── truffle.js
+ └── yarn.lock
+</code></pre>
+</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a href="#shimming-web-and-node-libraries-on-react-native" name="shimming-web-and-node-libraries-on-react-native"><i class="fas fa-link"></i></a>
+      Shimming web and node libraries on React Native
+    </h2>
+  <p>React Native is missing some of the global objects that are available on other platforms such as the web or Node. We will have to provide our own (i.e. a shim) through imported libraries or in some cases our own code.</p>
+<ol>
+<li><p>Install <code>node-libs-react-native</code>, <code>vm-browserify</code>, <code>Base64</code>, and <code>react-native-randombytes</code>:</p>
+<pre><code class="lang-shell"> yarn add node-libs-react-native vm-browserify Base64 react-native-randombytes
+</code></pre>
+</li>
+<li><p>Link the native libraries in <code>react-native-randombytes</code>:</p>
+<pre><code class="lang-shell"> react-native link react-native-randombytes
+</code></pre>
+</li>
+<li><p>Create a new file <code>shims.js</code> in the root folder with the following code:</p>
+<pre><code class="lang-js"> import &quot;node-libs-react-native/globals&quot;;
+ import { btoa } from &quot;Base64&quot;;
+ import nodeUrl from &#39;url&#39;;
+
+ global.btoa = btoa;
+ global.URL = class URL {
+     constructor(url) {
+         return nodeUrl.parse(url)
+     }
+ }
+
+ /**
+ * From https://github.com/facebook/react-native/blob/1151c096dab17e5d9a6ac05b61aacecd4305f3db/Libraries/polyfills/Object.es6.js
+ * This on RN&#39;s master branch as of Sep 11, 2018, however it has not made it into a release yet.
+ *
+ * The only modification made in Truffle&#39;s polyfill was to remove the check for an existing implementation.
+ * RN 0.57.7 (and below I assume) uses the non-spec compliant Object.assign that breaks in dev RN builds
+ * https://github.com/facebook/react-native/issues/16814
+ */
+ Object.defineProperty(Object, &#39;assign&#39;, {
+   value: function assign(target, varArgs) {
+     &#39;use strict&#39;;
+     if (target == null) {
+       throw new TypeError(&#39;Cannot convert undefined or null to object&#39;);
+     }
+
+     let to = Object(target);
+
+     for (let index = 1; index &lt; arguments.length; index++) {
+       let nextSource = arguments[index];
+
+       if (nextSource != null) {
+         for (let nextKey in nextSource) {
+           if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+             to[nextKey] = nextSource[nextKey];
+           }
+         }
+       }
+     }
+     return to;
+   },
+   writable: true,
+   configurable: true,
+ }); 
+</code></pre>
+</li>
+<li><p>Create a new file <code>rn-cli.config.js</code> in the root folder with the following code:</p>
+<pre><code class="lang-js"> const nodeLibs = require(&quot;node-libs-react-native&quot;);
+ nodeLibs.vm = require.resolve(&quot;vm-browserify&quot;);
+
+ module.exports = {
+   resolver: {
+     extraNodeModules: nodeLibs
+   },
+   serializer: {
+     // From https://github.com/facebook/react-native/blob/v0.57.7/rn-get-polyfills.js
+     getPolyfills: () =&gt; [
+       /**
+       * We omit RN&#39;s Object.assign polyfill
+       * If we don&#39;t, then node_modules will be using RN&#39;s polyfill rather than ours.
+       */
+       // require.resolve(&#39;react-native/Libraries/polyfills/Object.es6.js&#39;),
+       require.resolve(&#39;react-native/Libraries/polyfills/console.js&#39;),
+       require.resolve(&#39;react-native/Libraries/polyfills/error-guard.js&#39;),
+       require.resolve(&#39;react-native/Libraries/polyfills/Number.es6.js&#39;),
+       require.resolve(&#39;react-native/Libraries/polyfills/String.prototype.es6.js&#39;),
+       require.resolve(&#39;react-native/Libraries/polyfills/Array.prototype.es6.js&#39;),
+       require.resolve(&#39;react-native/Libraries/polyfills/Array.es6.js&#39;),
+       require.resolve(&#39;react-native/Libraries/polyfills/Object.es7.js&#39;),
+     ]
+   }
+ };
+</code></pre>
+<p> If you&#39;re wondering why we did all that in <code>rn-cli.config.js</code>, refer to <a href="https://gist.github.com/parshap/e3063d9bf6058041b34b26b7166fd6bd">this Gist</a> for a great explanation.</p>
+</li>
+<li><p>Finally let&#39;s import our shims in <code>index.js</code>. The very first line should be the following:</p>
+<pre><code class="lang-js"> import &quot;./shims&quot;
+</code></pre>
+</li>
+</ol>
+<p>We&#39;re now done with replacing all the global objects and functions that Drizzle was expecting.</p>
+
+    <h2 class="link-markdown">
+      <a href="#setting-up-the-smart-contract" name="setting-up-the-smart-contract"><i class="fas fa-link"></i></a>
+      Setting up the smart contract
+    </h2>
+  <p>To add our smart contract we&#39;ll just follow the previous tutorial on Drizzle and React.</p>
+<p>Do the steps from <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#writing-our-smart-contract">Writing our smart contract</a> up to (and including) <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#migration">Migration</a>.</p>
+
+    <h2 class="link-markdown">
+      <a href="#connecting-your-app-to-your-ganache-testnet" name="connecting-your-app-to-your-ganache-testnet"><i class="fas fa-link"></i></a>
+      Connecting your app to your Ganache testnet
+    </h2>
+  <p>When we&#39;re Working with React Native and mobile apps, accessing the Ganache server that&#39;s running on your machine takes a bit more work than when we are building web apps. The sections below detail how to connect to the Ganache testnet with your mobile device/emulator.</p>
+
+    <h3 class="link-markdown">
+      <a href="#running-the-app" name="running-the-app"><i class="fas fa-link"></i></a>
+      Running the app
+    </h3>
+  <ol>
+<li>Start React Native Metro bundler: <code>react-native start</code></li>
+<li>Start your emulator/plug in your device</li>
+</ol>
+
+    <h3 class="link-markdown">
+      <a href="#android-emulator-physical-device-" name="android-emulator-physical-device-"><i class="fas fa-link"></i></a>
+      Android (Emulator/Physical Device)
+    </h3>
+  <p>The main thing for Android devices is that we have to reverse the ports so that we can point to <code>localhost</code> on the Android device to the Ganache server.</p>
+<p>Make sure you&#39;ve setup the <a href="https://developer.android.com/studio/command-line/adb">Android Debug Bridge (adb)</a> before doing these steps.</p>
+<ol>
+<li>Start <code>ganache-cli</code>: <code>ganache-cli -b 3</code></li>
+<li>Compile and migrate contracts: <code>truffle compile &amp;&amp; truffle migrate</code></li>
+<li>Reverse ports: <code>adb reverse tcp:8545 tcp:8545</code></li>
+<li>Install app: <code>react-native run-android</code></li>
+</ol>
+
+    <h3 class="link-markdown">
+      <a href="#ios" name="ios"><i class="fas fa-link"></i></a>
+      iOS
+    </h3>
+  
+    <h4 class="link-markdown">
+      <a href="#simulator" name="simulator"><i class="fas fa-link"></i></a>
+      Simulator
+    </h4>
+  <p>The iOS simulator will see servers on <code>localhost</code> just fine.</p>
+<ol>
+<li>Start <code>ganache-cli</code>: <code>ganache-cli -b 3</code></li>
+<li>Compile and migrate contracts: <code>truffle compile &amp;&amp; truffle migrate</code></li>
+<li>Install app: <code>react-native run-ios</code> (you can also do this through Xcode)</li>
+</ol>
+
+    <h4 class="link-markdown">
+      <a href="#physical-device" name="physical-device"><i class="fas fa-link"></i></a>
+      Physical device
+    </h4>
+  <p>iOS physical devices involve the most manual work relative to other devices. You have to look up the local IP address of your machine and manually handle it every time it changes.</p>
+<ol>
+<li>Find your <code>LOCAL_MACHINE_IP</code> by checking your network settings on your Mac where Ganache is running</li>
+<li>Start <code>ganache-cli</code>: <code>ganache-cli -b 3 -h LOCAL_MACHINE_IP</code></li>
+<li>In <code>truffle.js</code> for <code>development</code>, point Truffle to <code>LOCAL_MACHINE_IP</code> </li>
+<li>Compile and migrate contracts: <code>truffle compile &amp;&amp; truffle migrate</code></li>
+<li>In <code>index.js</code>, point Drizzle to <code>LOCAL_MACHINE_IP</code><pre><code class="lang-js"> const options = {
+   ...
+   web3: {
+     fallback: {
+       type: &quot;ws&quot;,
+       url: &quot;ws://LOCAL_MACHINE_IP:8545&quot;
+     }
+   }
+ };
+</code></pre>
+</li>
+<li>Install: Do it through Xcode</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a href="#setting-up-drizzle" name="setting-up-drizzle"><i class="fas fa-link"></i></a>
+      Setting up Drizzle
+    </h2>
+  <p>Install Drizzle:</p>
+<pre><code class="lang-shell">yarn add drizzle
+</code></pre>
+<p>Set up the Drizzle store by adding the following code to <code>index.js</code>:</p>
+<pre><code class="lang-js">import React from &quot;react&quot;;
+import { Drizzle, generateStore } from &quot;drizzle&quot;;
+import MyStringStore from &quot;./build/contracts/MyStringStore.json&quot;;
+
+const options = {
+  contracts: [MyStringStore]
+};
+const drizzleStore = generateStore(options);
+const drizzle = new Drizzle(options, drizzleStore);
+
+AppRegistry.registerComponent(appName, () =&gt; () =&gt; &lt;App drizzle={drizzle} /&gt;);
+</code></pre>
+<p>Your <code>index.js</code> should look like this in the end: </p>
+<pre><code class="lang-js">/** @format */
+import &quot;./shims&quot;;
+import { AppRegistry } from &quot;react-native&quot;;
+import App from &quot;./app/App&quot;;
+import { name as appName } from &quot;./app.json&quot;;
+
+import React from &quot;react&quot;;
+import { Drizzle, generateStore } from &quot;drizzle&quot;;
+import MyStringStore from &quot;./build/contracts/MyStringStore.json&quot;;
+
+const options = {
+  contracts: [MyStringStore]
+};
+const drizzleStore = generateStore(options);
+const drizzle = new Drizzle(options, drizzleStore);
+
+AppRegistry.registerComponent(appName, () =&gt; () =&gt; &lt;App drizzle={drizzle} /&gt;);
+
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a href="#wiring-up-the-app-component" name="wiring-up-the-app-component"><i class="fas fa-link"></i></a>
+      Wiring up the App component
+    </h2>
+  <p>This is pretty much the same as <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#wire-up-the-app-component">the web tutorial</a>, but with React Native components instead of web ones. Refer to the web tutorial for a more in-depth explanation of what&#39;s going on.</p>
+<p>Let&#39;s create a folder called <code>app</code> in the root of the project. Add a file called <code>App.js</code> to it.</p>
+<p>In <code>app/App.js</code>, your code should look like this in the end:</p>
+<pre><code class="lang-js">/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+
+import React, { Component } from &quot;react&quot;;
+import { Platform, StyleSheet, Text, View } from &quot;react-native&quot;;
+
+type Props = {};
+export default class App extends Component&lt;Props&gt; {
+  state = { loading: true, drizzleState: null };
+
+  componentDidMount() {
+    const { drizzle } = this.props;
+
+    this.unsubscribe = drizzle.store.subscribe(() =&gt; {
+      const drizzleState = drizzle.store.getState();
+
+      if (drizzleState.drizzleStatus.initialized) {
+        this.setState({ loading: false, drizzleState });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+
+  render() {
+    return (
+      &lt;View style={styles.container}&gt;
+        {this.state.loading ? (
+          &lt;Text&gt;Loading Drizzle...&lt;/Text&gt;
+        ) : (
+          &lt;View&gt;
+            &lt;Text&gt;Drizzle is ready&lt;/Text&gt;
+          &lt;/View&gt;
+        )}
+      &lt;/View&gt;
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: &quot;center&quot;,
+    alignItems: &quot;center&quot;,
+    backgroundColor: &quot;#F5FCFF&quot;
+  }
+});
+</code></pre>
+<p>Run the app, and you should see the string <code>Loading Drizzle...</code> while you wait for Drizzle to initialize. Once initialization is complete, the string <code>Drizzle is ready</code> should be visible.</p>
+
+    <h2 class="link-markdown">
+      <a href="#writing-a-component-to-read-from-drizzle" name="writing-a-component-to-read-from-drizzle"><i class="fas fa-link"></i></a>
+      Writing a component to read from Drizzle
+    </h2>
+  <p>Once again, this is very similar to the <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#write-a-component-to-read-from-drizzle">web tutorial</a>, just with React Native components.</p>
+<p>Add <code>ReadString.js</code> to the folder <code>app</code>. <code>app/ReadString.js</code> should look like this:</p>
+<pre><code class="lang-js">import React from &quot;react&quot;;
+import { Text } from &quot;react-native&quot;;
+
+class ReadString extends React.Component {
+  state = { dataKey: null };
+
+  componentDidMount() {
+    const { drizzle } = this.props;
+    const contract = drizzle.contracts.MyStringStore;
+
+    // let drizzle know we want to watch the `myString` method
+    const dataKey = contract.methods[&quot;myString&quot;].cacheCall();
+
+    // save the `dataKey` to local component state for later reference
+    this.setState({ dataKey });
+  }
+
+  render() {
+    // get the contract state from drizzleState
+    const { MyStringStore } = this.props.drizzleState.contracts;
+
+    // using the saved `dataKey`, get the variable we&#39;re interested in
+    const myString = MyStringStore.myString[this.state.dataKey];
+
+    // if it exists, then we display its value
+    return &lt;Text&gt;My stored string: {myString &amp;&amp; myString.value}&lt;/Text&gt;;
+  }
+}
+
+export default ReadString;
+</code></pre>
+<p>Add it to <code>App.js</code> by modifying the <code>render</code> method:</p>
+<pre><code class="lang-js">import ReadString from &quot;./ReadString&quot;;
+// ...
+render() {
+  return (
+    &lt;View style={styles.container}&gt;
+      {this.state.loading ? (
+        &lt;Text&gt;Loading...&lt;/Text&gt;
+      ) : (
+        &lt;View&gt;
+          &lt;ReadString
+            drizzle={this.props.drizzle}
+            drizzleState={this.state.drizzleState}
+          /&gt;
+        &lt;/View&gt;
+      )}
+    &lt;/View&gt;
+  );
+}
+</code></pre>
+<p>You should now see the string <code>Hello World</code> being rendered after Drizzle has finished loading.</p>
+
+    <h2 class="link-markdown">
+      <a href="#writing-a-component-to-write-to-the-smart-contract" name="writing-a-component-to-write-to-the-smart-contract"><i class="fas fa-link"></i></a>
+      Writing a component to write to the smart contract
+    </h2>
+  <p>Once again, this is very similar to the <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#write-a-component-to-write-to-the-smart-contract">web tutorial</a>, just with React Native components.</p>
+<p>Add <code>SetString.js</code> to the folder <code>app</code>. <code>app/SetString.js</code> should look like this:</p>
+<pre><code class="lang-js">import React from &quot;react&quot;;
+import { Text, View, Button, TextInput, StyleSheet } from &quot;react-native&quot;;
+
+class SetString extends React.Component {
+  state = { stackId: null, text: &quot;&quot; };
+
+  submit = () =&gt; {
+    this.setValue(this.state.text);
+  };
+
+  setValue = value =&gt; {
+    const { drizzle, drizzleState } = this.props;
+    const contract = drizzle.contracts.MyStringStore;
+
+    // let drizzle know we want to call the `set` method with `value`
+    const stackId = contract.methods[&quot;set&quot;].cacheSend(value, {
+      from: drizzleState.accounts[0]
+    });
+
+    // save the `stackId` for later reference
+    this.setState({ stackId });
+  };
+
+  getTxStatus = () =&gt; {
+    // get the transaction states from the drizzle state
+    const { transactions, transactionStack } = this.props.drizzleState;
+
+    // get the transaction hash using our saved `stackId`
+    const txHash = transactionStack[this.state.stackId];
+
+    // if transaction hash does not exist, don&#39;t display anything
+    if (!txHash) return null;
+
+    // otherwise, return the transaction status
+    if (transactions[txHash] &amp;&amp; transactions[txHash].status)
+      return `Transaction status: ${transactions[txHash].status}`;
+
+    return null;
+  };
+
+  render() {
+    return (
+      &lt;View&gt;
+        &lt;TextInput
+          style={styles.input}
+          onChangeText={text =&gt; this.setState({ text })}
+          value={this.state.text}
+          placeholder=&quot;Enter some text&quot;
+        /&gt;
+        &lt;Button title=&quot;Submit&quot; onPress={this.submit} /&gt;
+        &lt;Text&gt;{this.getTxStatus()}&lt;/Text&gt;
+      &lt;/View&gt;
+    );
+  }
+}
+
+
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    borderColor: &quot;gray&quot;,
+    borderWidth: 1
+  }
+});
+
+export default SetString;
+</code></pre>
+<p>Add it to <code>App.js</code> by modifying the <code>render</code> function</p>
+<pre><code class="lang-js">
+import ReadString from &quot;./ReadString&quot;;
+import SetString from &quot;./SetString&quot;;
+// ...
+render() {
+  return (
+    &lt;View style={styles.container}&gt;
+      {this.state.loading ? (
+        &lt;Text&gt;Loading...&lt;/Text&gt;
+      ) : (
+        &lt;View&gt;
+          &lt;ReadString
+            drizzle={this.props.drizzle}
+            drizzleState={this.state.drizzleState}
+          /&gt;
+         &lt;SetString
+            drizzle={this.props.drizzle}
+            drizzleState={this.state.drizzleState}
+          /&gt;
+        &lt;/View&gt;
+      )}
+    &lt;/View&gt;
+  );
+}
+</code></pre>
+<p>Run the app, enter a new string, and press the Submit button. A transaction status of <code>pending</code> will show and change to <code>success</code> on completion. This string will persist through reloads of the app since it is connected to your Ganache testnet.</p>
+
+    <h1 class="link-markdown">
+      <a href="#the-finish-line" name="the-finish-line"><i class="fas fa-link"></i></a>
+      The Finish Line
+    </h1>
+  <p>Congratulations, you&#39;ve just successfully integrated the full suite of Drizzle, Truffle, and Ganache tooling into your React Native dapp!</p>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/tutorials">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2019</a></li>
+            <li><strong>&copy; Truffle Blockchain Group 2019</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+            <form action="https://truffleframework.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=97cfd4251b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <div class="form-group">
+                <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="footerMailingEmail" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="FNAME" class="form-control" placeholder="First Name" id="footerMailingFirstName">
+                <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
+              </div>
+              <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>

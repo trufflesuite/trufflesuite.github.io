@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Creating an Ethereum-enabled command line tool with Truffle 3.0 | Tutorials | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/tutorials/creating-a-cli-with-truffle" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Creating an Ethereum-enabled command line tool with Truffle 3.0 | Tutorials | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Creating an Ethereum-enabled command line tool with Truffle 3.0 | Tutorials | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg">N</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Creating an Ethereum-enabled command line tool with Truffle 3.0</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2017-02-09&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Doug von Kohorn</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <p>Truffle 3 <a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">is out</a>, and it switched to a less opinionated build process. In Truffle 2, the default app from <code>truffle init</code> included a frontend example with build process. Now, there&#39;s nothing other than a <code>build</code> folder for your JSON contract artifacts. This opens up the door for testing and building other (<strong>cough</strong> command line <strong>cough</strong>) types of applications!</p>
+
+    <h2 class="link-markdown">
+      <a href="#intended-audience" name="intended-audience"><i class="fas fa-link"></i></a>
+      Intended Audience
+    </h2>
+  <p>This is written for those familiar with Truffle and Ethereum, who want to learn how to create a testable, Ethereum-enabled command line application with Truffle.</p>
+<p>For this tutorial, we&#39;ll be building a command line tool that interacts with the <a href="https://ens.readthedocs.io/en/latest/">Ethereum Name Service</a> (ENS).</p>
+
+    <h2 class="link-markdown">
+      <a href="#getting-started" name="getting-started"><i class="fas fa-link"></i></a>
+      Getting Started
+    </h2>
+  <p>If you were using Truffle beta 3.0.0-9 or below, <strong>do not immediately upgrade</strong>. Read <a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">these release notes</a> and the <a href="/tutorials/upgrading-from-truffle-2-to-3">upgrade guide</a> first. Next, make a new folder and run the following command:</p>
+<pre><code>$ truffle init
+</code></pre><p>You should see the <code>test</code>, <code>build</code>, and <code>migrations</code> directories were created for you -- but no <code>app</code>. Additionally, the build step in the <code>truffle.js</code> file is mysteriously absent. That&#39;s ok! This means Truffle is getting out of your way and letting you control the build process.</p>
+
+    <h2 class="link-markdown">
+      <a href="#let-39-s-look-at-the-example" name="let-39-s-look-at-the-example"><i class="fas fa-link"></i></a>
+      Let&#39;s Look at the Example
+    </h2>
+  <p><a href="https://github.com/dougvk/ens-registrar3">Check out the example app</a> as a reference. I&#39;ll be referring to it often so give it a look over if you haven&#39;t already.</p>
+<p>The first thing to look at is the build process. Since Truffle now puts us in control of the build, I&#39;ve added some custom scripts within <code>package.json</code> to handle building for us:</p>
+<pre><code class="lang-json">...
+&quot;description&quot;: &quot;CLI for ENS deployment&quot;,
+&quot;scripts&quot;: {
+  &quot;ens&quot;: &quot;babel-node ./bin/ensa.js&quot;,
+  &quot;lint&quot;: &quot;eslint ./&quot;
+},
+&quot;author&quot;: &quot;Douglas von Kohorn&quot;,
+&quot;license&quot;: &quot;MIT&quot;,
+...
+</code></pre>
+<p>I&#39;ve defined two scripts here: <code>lint</code> for linting my Javascript to keep my codebase so fresh and so clean, and <code>ens</code> for transpiling my Javascript command line tool (using Babel) and running it. That&#39;s it! That&#39;s the build process. You can run it via <code>npm run lint</code> and <code>npm run ens</code>. Now that that&#39;s out of the way, let&#39;s dig into how and why I structured my app this way.</p>
+
+    <h2 class="link-markdown">
+      <a href="#building-our-app-separation-of-concerns" name="building-our-app-separation-of-concerns"><i class="fas fa-link"></i></a>
+      Building our App: Separation of concerns
+    </h2>
+  <p>In order to take advantage of all parts of Truffle while building this tool, we need to separate our code into two distinct pieces. First, we need to write a library which will constitute the bulk of the app, and allow us to perform actions against the ENS contracts quickly and easily from Javascript. Next is the CLI; the CLI will take advantage of the library itself, and will be the user&#39;s interface to our application.</p>
+
+    <h3 class="link-markdown">
+      <a href="#the-library" name="the-library"><i class="fas fa-link"></i></a>
+      The Library
+    </h3>
+  <p>The library is <a href="https://github.com/dougvk/ens-registrar3/blob/master/lib/ens_registrar.js">lib/ens_registrar.js</a>. Let&#39;s take a look at the constructor:</p>
+<pre><code class="lang-javascript">...
+constructor (AuctionRegistrar, Deed, registrarAddress, provider, fromAddress) {
+  this.web3 = new Web3(provider)
+
+  this.Deed = Deed
+  this.Deed.setProvider(provider)
+
+  AuctionRegistrar.setProvider(provider)
+  AuctionRegistrar.defaults({
+    from: fromAddress,
+    gas: 400000
+  })
+  this.registrar = AuctionRegistrar.at(registrarAddress)
+}
+...
+</code></pre>
+<p>The library constructor requires a few things:</p>
+<ol>
+<li>the contract interfaces (<code>AuctionRegistrar</code> &amp; <code>Deed</code>)</li>
+<li>the address on the network of the registrar</li>
+<li>a web3 provider that will be used to connect to the desired Ethereum network</li>
+<li>and the account address that will provide gas for transactions.</li>
+</ol>
+<p>It&#39;s crucial that the library remain ignorant of the creation of these variables if we want to take advantage of <strong>both</strong> Truffle&#39;s testing pipeline and a CLI. As I see it, there are two ways to use the library:</p>
+<ul>
+<li><strong>Through Truffle</strong>, which manages contract addresses for testing against different networks (e.g. local, private, ropsten). Truffle makes testing our library easy.</li>
+<li>Once we&#39;ve convinced ourselves that the library is well tested and works properly, we&#39;ll want to tell the library where to find our own contracts, provider, and account on the mainnet <strong>through the CLI</strong>.</li>
+</ul>
+<p>Let&#39;s take a look at how the library is used in both cases.</p>
+
+    <h3 class="link-markdown">
+      <a href="#use-1-truffle-tests" name="use-1-truffle-tests"><i class="fas fa-link"></i></a>
+      Use #1: Truffle Tests
+    </h3>
+  <p>Here&#39;s <a href="https://github.com/dougvk/ens-registrar3/blob/master/test/ENS.js">test/ENS.js</a>, a Truffle test that uses the library:</p>
+<pre><code class="lang-javascript">import { default as ENSAuctionLib } from &#39;../lib/ens_registrar&#39;
+const Registrar = artifacts.require(&#39;./Registrar.sol&#39;)
+const Deed = artifacts.require(&#39;./Deed.sol&#39;)
+
+contract(&#39;ENS integration&#39;, (accounts) =&gt; {
+  let auctionRegistrar
+
+  before(&#39;set up auction registrar&#39;, (done) =&gt; {
+    Registrar.deployed().then((instance) =&gt; {
+      auctionRegistrar = new ENSAuctionLib(
+          Registrar,
+          Deed,
+          instance.address,
+          web3.currentProvider,
+          accounts[0]
+      )
+    }).then(() =&gt; done())
+  })
+
+  it(&#39;demonstrates that the domain name is available&#39;, (done) =&gt; {
+    auctionRegistrar.available(&#39;test&#39;)
+      .then((isAvailable) =&gt; {
+        assert.isTrue(isAvailable)
+        done()
+      })
+  })
+...
+}
+</code></pre>
+<p>Truffle injects a global <code>artifacts.require</code> function, a helper for finding the right compiled contract artifacts within the test environment. The test then finds a deployed instance of the Registrar on the test network via <code>Registrar.deployed()</code>. Now, with the addition of <code>accounts</code>, which is passed in via the <code>contract</code> wrapper <a href="http://truffleframework.com/docs/getting_started/javascript-tests">(see here)</a>, we have enough to instantiate the library and use it to test that the domain name <code>&#39;test&#39;</code> is available for auction.</p>
+
+    <h3 class="link-markdown">
+      <a href="#use-2-the-cli" name="use-2-the-cli"><i class="fas fa-link"></i></a>
+      Use #2: the CLI
+    </h3>
+  <p>Here&#39;s <a href="https://github.com/dougvk/ens-registrar3/blob/master/index.js">index.js</a>, which provides our command line tool, using the library:</p>
+<pre><code class="lang-javascript">import { default as ENSAuctionLib } from &#39;./lib/ens_registrar&#39;
+import { default as Web3 } from &#39;web3&#39;
+import { default as contract } from &#39;truffle-contract&#39;
+
+const AuctionRegistrar = contract(require(&#39;./build/contracts/Registrar.json&#39;))
+const Deed = contract(require(&#39;./build/contracts/Deed.json&#39;))
+
+export default function (host, port, registrarAddress, fromAddress) {
+  let provider = new Web3.providers.HttpProvider(`http:\/\/${host}:${port}`)
+  return new ENSAuctionLib(
+      AuctionRegistrar,
+      Deed,
+      registrarAddress,
+      provider,
+      fromAddress
+  )
+}
+</code></pre>
+<p>Here I&#39;m using the same library, <code>truffle-contract</code>, that <code>artifacts.require</code> uses under the hood. Because I can&#39;t rely on the Truffle framework within the CLI, I have to include the compiled contract artifacts manually. The rest is passed in through the CLI in <code>bin/ensa.js</code>:</p>
+<pre><code class="lang-javascript">import { default as initializeLib } from &#39;../index&#39;
+...
+let command = argv._[0]
+
+if (command === &#39;bid&#39;) {
+  let { name, host, max, port, registrar, account, secret } = argv
+  let auctionRegistrar = initializeLib(host, port, registrar, account)
+  auctionRegistrar.createBid(name, account, max, secret)
+    .then(() =&gt; console.log(&#39;Created bid for &#39; + name))
+}
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a href="#usage" name="usage"><i class="fas fa-link"></i></a>
+      Usage
+    </h2>
+  <p>You can use the command line tool against any network that has an ENS registrar deployed. First, choose a command:</p>
+<pre><code class="lang-shell">$ npm run -s ens
+Usage: bin/ensa.js [command] [options]
+
+Commands:
+  winner  Current winner of bid
+  bid     Place a bid on a domain name
+  reveal  Reveal your bid on a domain name
+
+Options:
+  --help  Show help
+</code></pre>
+<p>Then specify the correct options, including the <code>account</code> and <code>registrar</code>:</p>
+<pre><code class="lang-shell">$ npm run -s ens -- winner -n &#39;NewDomain&#39;
+bin/ensa.js winner
+
+Options:
+  --help           Show help                                           [boolean]
+  --host, -h       HTTP host of Ethereum node               [default: &quot;testrpc&quot;]
+  --port, -p       HTTP port                                   [default: &quot;8545&quot;]
+  --registrar, -r  The address of the registrar              [string] [required]
+  --name, -n       The name you want to register             [string] [required]
+  --account, -a    The address to register the domain name   [string] [required]
+
+Missing required arguments: account, registrar
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a href="#recap" name="recap"><i class="fas fa-link"></i></a>
+      Recap
+    </h2>
+  <p>You might be thinking to yourself, &quot;That was a short tutorial&quot;. That&#39;s because it doesn&#39;t need to be much longer: Creating a command line application with Truffle is very similar to creating a web application, but you have to do things a bit differently. For instance, instead of a build process, your command line tool needs to grab your contract artifacts and make them ready for use. Additionally, if you want to take advantage of Truffle&#39;s tests, you need to separate your code into a command line interface and a library -- a good practice anyway -- so you can use Truffle&#39;s testing framework to test your code.</p>
+
+    <h2 class="link-markdown">
+      <a href="#stay-tuned" name="stay-tuned"><i class="fas fa-link"></i></a>
+      Stay Tuned
+    </h2>
+  <p>Truffle 3.0 now makes it easier than ever to write <strong>any</strong> Ethereum-enabled application, and not just web apps. Stay tuned for more examples in the future where we explore Desktop and Mobile applications, too. Cheers!</p>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/tutorials">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2019</a></li>
+            <li><strong>&copy; Truffle Blockchain Group 2019</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+            <form action="https://truffleframework.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=97cfd4251b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <div class="form-group">
+                <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="footerMailingEmail" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="FNAME" class="form-control" placeholder="First Name" id="footerMailingFirstName">
+                <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
+              </div>
+              <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Bundling with Webpack | Tutorials | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/tutorials/bundling-with-webpa" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Bundling with Webpack | Tutorials | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Bundling with Webpack | Tutorials | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg">N</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Bundling with Webpack</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2016-09-16&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Tim Coulter</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <p><a href="https://webpack.github.io/">Webpack</a> is a powerful module bundler that helps turn your code into static assets you can deploy to the web. With the <a href="https://github.com/ConsenSys/truffle-solidity-loader">Truffle Solidity loader</a>, we&#39;ll show you how you can use Webpack with your existing Truffle project.</p>
+
+    <h2 class="link-markdown">
+      <a href="#intended-audience" name="intended-audience"><i class="fas fa-link"></i></a>
+      Intended Audience
+    </h2>
+  <p>This tutorial is for Truffle users who are familiar with Webpack already. Since Webpack requires considerable knowledge to use effectively, we recommend checking out the <a href="http://webpack.github.io/docs/">Webpack documentation</a> as well as the <a href="https://github.com/ConsenSys/truffle-webpack-demo">Truffle + Webpack Demo application</a> before proceeding.</p>
+
+    <h2 class="link-markdown">
+      <a href="#getting-started" name="getting-started"><i class="fas fa-link"></i></a>
+      Getting Started
+    </h2>
+  <p>Navigate to your project in the command line, and then install the required dependencies. These dependencies are in addition to any other Webpack-related dependencies your project might have.</p>
+<pre><code>$ npm install webpack webpack-dev-server truffle-solidity-loader --save-dev
+</code></pre>
+    <h2 class="link-markdown">
+      <a href="#set-up-your-webpack-configuration" name="set-up-your-webpack-configuration"><i class="fas fa-link"></i></a>
+      Set up Your Webpack Configuration
+    </h2>
+  <p>You should already have a webpack configuration for your project. If you don&#39;t, an example configuration file is provided at the bottom of this tutorial. To enable Solidity support, add the <code>truffle-solidity-loader</code> as a plugin within your project:</p>
+<pre><code class="lang-javascript">// your webpack configuration...
+module: {
+  loaders: [
+    // ...,
+    { test: /\.sol/, loader: &#39;truffle-solidity&#39; }
+  ]
+}
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a href="#remove-default-build-configuration" name="remove-default-build-configuration"><i class="fas fa-link"></i></a>
+      Remove Default Build Configuration
+    </h2>
+  <p>Since you&#39;re using Webpack to build your frontend, you won&#39;t want to use the default Truffle build process as the two processes will conflict. To ensure there are no issues if you or your teammates run <code>truffle build</code>, go ahead and delete the <code>build</code> configuration in your <code>truffle.js</code> file, if it exists.</p>
+<pre><code class="lang-javascript">module.exports = {
+  build: {      // Delete this.
+    // ...      // and this.
+  },            // and this too.
+  rpc: {
+    host: &quot;127.0.0.1&quot;,
+    port: 8545
+  }
+}
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a href="#bootstrapping-your-application" name="bootstrapping-your-application"><i class="fas fa-link"></i></a>
+      Bootstrapping Your Application
+    </h2>
+  <p>Since you&#39;re bundling the frontend yourself and not using Truffle&#39;s default build process, certain &quot;magic&quot; provided by Truffle needs to be handled in order to get your application running properly. This includes:</p>
+<ol>
+<li>Detecting the <code>web3</code> object provided to you by the user&#39;s Ethereum client, which as of this writing will likely be either <a href="https://metamask.io/">Metamask</a> or <a href="https://github.com/ethereum/mist">Mist</a>.</li>
+<li>Provisioning your contract abstractions so they can communicate with your user&#39;s Ethereum client.</li>
+</ol>
+
+    <h3 class="link-markdown">
+      <a href="#detecting-web3" name="detecting-web3"><i class="fas fa-link"></i></a>
+      Detecting Web3
+    </h3>
+  <p>In the past, Truffle bootstrapped applications to look for an open Ethereum node running at <code>http://localhost:8545</code>, but this has proven to be insecure for the user as well as highly unlikely in a real world scenario. Instead, users are most likely to use Metamask or Mist to interact with web applications on the Ethereum network, and you should build your application to support that. Both Metamask and Mist inject a <code>web3</code> object when the page is loading so you can hook into their transaction signing processes. Detecting this <code>web3</code> object easy:</p>
+<pre><code class="lang-javascript">var Web3 = require(&quot;web3&quot;);
+
+window.addEventListener(&#39;load&#39;, function() {                    
+  // Supports Metamask and Mist, and other wallets that provide &#39;web3&#39;.      
+  if (typeof web3 !== &#39;undefined&#39;) {                            
+    // Use the Mist/wallet provider.                            
+    window.web3 = new Web3(web3.currentProvider);               
+  } else {                                                      
+    // No web3 detected. Show an error to the user or use Infura: https://infura.io/
+  }                                                                                                                       
+});     
+</code></pre>
+<p>Notice we only use the wallet&#39;s provider and not the whole <code>web3</code> object provided to us. This ensures our application is not dependent on the wallet&#39;s version of Web3, and reduces the surface area in which version errors might occur.</p>
+
+    <h3 class="link-markdown">
+      <a href="#provisioning-your-contract-abstractions" name="provisioning-your-contract-abstractions"><i class="fas fa-link"></i></a>
+      Provisioning Your Contract Abstractions
+    </h3>
+  <p>Provisioning your contract abstractions requires two things: 1) that you include your contracts in your project, and 2) that you set up the Javascript abstractions so that they&#39;re correctly talking to the Ethereum client via Web3.</p>
+<p>When including contracts in your application, the Solidity Loader will resolve all <code>.sol</code> files to their associated contract abstraction, so importing your contracts is simply a matter of performing one of the following within your frontend:</p>
+<pre><code class="lang-javascript">// ES5:
+var MyContract = require(&quot;contracts/MyContract.sol&quot;);
+
+// ES6:
+import MyContract from &quot;contracts/MyContract.sol&quot;;
+</code></pre>
+<p>After making sure your contract is imported, you now need to hook up the <code>web3</code> object you detected above with the contract abstraction provided:</p>
+<pre><code class="lang-javascript">MyContract.setProvider(window.web3.currentProvider);
+</code></pre>
+<p>Finally, you can use the contract abstraction as described within the <a href="/docs/getting_started/contracts">Truffle documentation</a>.</p>
+<p>You can prevent having to perform this provisioning more than once per contract dependency by either setting your contract abstractions to the global object, like <code>window</code>, and provisioning them once when your application loads; or using something like the <a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin">ProvidePlugin</a> to ensure your contract abstractions are available to every file within the bundle (recommended).</p>
+
+    <h2 class="link-markdown">
+      <a href="#running-webpack" name="running-webpack"><i class="fas fa-link"></i></a>
+      Running Webpack
+    </h2>
+  <p>From here you can run webpack like normal, via the normal <code>webpack</code> command or the <code>webpack-dev-server</code>, if you have those installed globally on your machine:</p>
+<pre><code>$ webpack
+$ webpack-dev-server --hot
+</code></pre><p>Alternatively, you can edit your project&#39;s <code>package.json</code> file to run Wepback from the versions you installed at the beginning of this tutorial:</p>
+<pre><code class="lang-javascript">&quot;scripts&quot;: {
+  &quot;build&quot;: &quot;webpack&quot;,
+  &quot;dev&quot;: &quot;webpack-dev-server --hot&quot;
+}
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a href="#example-webpack-config" name="example-webpack-config"><i class="fas fa-link"></i></a>
+      Example Webpack Config
+    </h2>
+  <p>Here&#39;s a very simple Webpack configuration file that uses the Truffle Solidity Loader as well as other plugins. This configration file exists within a React application where its source files exist within the <code>./app</code> directory, and CSS is pulled out using the <code>copy-webpack-plugin</code>. Of course, your dapp&#39;s layout and structure will be different, but this should give you a good example of how the Solidity Loader fits within a simple application.</p>
+<pre><code class="lang-javascript">var webpack = require(&quot;webpack&quot;);
+var CopyWebpackPlugin = require(&#39;copy-webpack-plugin&#39;);
+var ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;);
+
+module.exports = {
+  entry: &#39;./app/javascripts/app.jsx&#39;,
+  output: {
+    path: &quot;./build&quot;,
+    filename: &#39;app.js&#39;
+  },
+  module: {
+    loaders: [
+      { test: /\.(js|jsx|es6)$/, exclude: /node_modules/, loader: &quot;babel-loader&quot;},
+      { test: /\.scss$/i, loader: ExtractTextPlugin.extract([&quot;css&quot;, &quot;sass&quot;])},
+      { test: /\.json$/i, loader: &quot;json-loader&quot;},
+      { test: /\.sol/, loader: &#39;truffle-solidity&#39; }
+    ]
+  },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: &#39;./app/index.html&#39;, to: &quot;index.html&quot; },
+      { from: &#39;./app/images&#39;, to: &quot;images&quot; },
+      { from: &#39;./app/fonts&#39;, to: &quot;fonts&quot; }
+    ]),
+    new ExtractTextPlugin(&quot;app.css&quot;)
+  ],
+  devServer: {
+    stats: &#39;errors-only&#39;,
+  }
+};
+</code></pre>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/tutorials">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2019</a></li>
+            <li><strong>&copy; Truffle Blockchain Group 2019</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+            <form action="https://truffleframework.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=97cfd4251b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <div class="form-group">
+                <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="footerMailingEmail" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="FNAME" class="form-control" placeholder="First Name" id="footerMailingFirstName">
+                <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
+              </div>
+              <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>

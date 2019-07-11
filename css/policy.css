@@ -1,0 +1,29 @@
+.policy-container .c27 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.policy-container .c27:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.policy-container td .c27:last-of-type {
+  margin-bottom: 1rem;
+}
+
+.policy-container .c39 {
+  font-family: 'Oswald', sans-serif;
+}
+
+.policy-container .c6, .policy-container .c37 {
+  font-weight: bold;
+}
+
+.policy-container .c20 {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.policy-container .lst-kix_list_1-1 {
+  padding-left: 2rem;
+}

@@ -1,0 +1,294 @@
+.tt-hero-banner {
+  background: url(/img/truffle-teams/landing-background.png);
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.tt-hero-banner h2 {
+  font-size: 1.75rem;
+}
+
+.tt-hero-banner .sign-in-link {
+  color: #fff;
+  display: block;
+  margin-top: .5rem;
+  text-decoration: underline;
+}
+
+.tt-hero-banner .sign-in-link:hover {
+  color: #fff;
+  opacity: .8;
+}
+
+.tt-hero-banner .tt-screenshot {
+  margin: 0;
+  transform: translateY(8rem);
+}
+
+.tt-hero-banner .link-truffle {
+  color: #3fe0c5;
+}
+
+.tt-hero-banner .triangle-br {
+  position: absolute;
+  background: transparent;
+  border-width: 0 0 50px 100vw;
+  bottom: 0;
+  border-color: transparent transparent #f8f5f0 transparent;
+}
+
+@media (max-width: 991.98px) {
+  .tt-hero-banner {
+    padding: 2.5rem 0;
+  }
+  .tt-hero-banner .tt-screenshot {
+    transform: translateY(5rem);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tt-hero-banner {
+    text-align: center;
+  }
+  .tt-hero-banner .tt-screenshot {
+    margin: 2rem 0 -18rem 0;
+    transform: translateY(0);
+  }
+}
+
+.tt-logo {
+  font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: .125em;
+  position: relative;
+  margin: 0 auto 2rem auto;
+}
+
+.tt-logo img {
+  height: 1.8em;
+  margin-right: .5em;
+}
+
+.tt-logo .badge-container {
+  position: relative;
+}
+
+.tt-logo .badge-container .badge {
+  background: #33262a;
+  color: #fff;
+  position: absolute;
+  top: 3.75em;
+  right: .333em;
+  font-size: .333em;
+  padding-right: .125rem;
+}
+
+@media (min-width: 992px) {
+  .tt-logo {
+    font-size: 2.5rem;
+  }
+}
+
+.tt-bowtie-container {
+  margin: -80px auto 0 auto;
+}
+
+@media (min-width: 992px) {
+  .tt-bowtie-container {
+    margin: -145px auto 0 auto;
+  }
+}
+
+.tt-bowtie-top, .tt-bowtie-bottom {
+  margin: 0 -5px;
+}
+
+.tt-bowtie-top {
+  position: relative;
+}
+
+.tt-bowtie {
+  background: #8731e8;
+  color: #fff;
+  margin: -1px 0;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 991.98px) {
+  .tt-bowtie {
+    padding: 1.5rem 0;
+  }
+}
+
+.tt-pricing ul {
+  padding-left: 20px;
+}
+
+.tt-pricing ul li:not(:last-child) {
+  margin-bottom: .75rem;
+}
+
+.tt-pricing .card {
+  border: none;
+  min-width: unset;
+  padding: 1.5rem;
+}
+
+.tt-pricing .card.free {
+  background: #e0dad7;
+  /*.card-body, .card-footer {
+        transform: skew(2deg, 1deg);
+      }*/
+}
+
+.tt-pricing .card.free ul {
+  list-style-image: url("/img/truffle-teams/checkmark-dark.png");
+}
+
+.tt-pricing .card.premium {
+  background: #e86591;
+  color: #fff;
+  /*.card-body, .card-footer {
+        transform: skew(0, -2deg);
+      }*/
+}
+
+.tt-pricing .card.premium ul {
+  list-style-image: url("/img/truffle-teams/checkmark-light.png");
+}
+
+.tt-pricing .card.premium .btn {
+  background: #fff;
+  color: #e86591;
+  border: 1px solid #fff;
+}
+
+.tt-pricing .card.premium .btn:hover {
+  background: #e86591;
+  color: #fff;
+}
+
+.tt-pricing .card .card-footer {
+  border-top: none;
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .tt-pricing .card {
+    min-width: 0;
+  }
+}
+
+.tt-social-proof {
+  position: relative;
+}
+
+.tt-social-proof > .col-8 {
+  z-index: 1;
+}
+
+.tt-social-proof .truffle-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 150%;
+  opacity: .1;
+  z-index: 0;
+}
+
+.tt-social-proof .stat {
+  font-size: 2rem;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.tt-steps > div {
+  margin-bottom: 1rem;
+}
+
+.tt-steps .enjoy-link {
+  color: inherit;
+}
+
+.tt-steps .enjoy-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tt-steps .number-circle {
+  display: inline-block;
+  border-radius: 50%;
+  background: #8731e8;
+  color: #fff;
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 0px;
+  padding: 1rem;
+}
+
+.tt-steps .number-circle .number {
+  display: inline-block;
+  padding-top: 50%;
+  padding-bottom: 50%;
+}
+
+.tt-container .triangle-tr {
+  background: #f8f5f0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 0 0 100vw;
+  border-color: transparent transparent transparent #7f9dd1;
+}
+
+.tt-container .triangle-tr.white {
+  border-width: 0 0 50px 100vw;
+  border-color: transparent transparent #fff transparent;
+}
+
+.tt-container .triangle-tr.cream {
+  border-width: 0 0 50px 100vw;
+  border-color: transparent transparent #f8f5f0 transparent;
+}
+
+.tt-container .triangle-br {
+  background: #f8f5f0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 100vw 0 0;
+  border-color: #7f9dd1 transparent transparent transparent;
+}
+
+.tt-container .triangle-br.white {
+  border-width: 0 100vw 50px 0;
+  border-color: transparent #fff transparent transparent;
+}
+
+.shadow-dark-chocolate {
+  -webkit-box-shadow: 12px 12px 0px 0px #33262a;
+  -moz-box-shadow: 12px 12px 0px 0px #33262a;
+  box-shadow: 12px 12px 0px 0px #33262a;
+}
+
+.shadow-mint {
+  -webkit-box-shadow: 12px 12px 0px 0px #3fe0c5;
+  -moz-box-shadow: 12px 12px 0px 0px #3fe0c5;
+  box-shadow: 12px 12px 0px 0px #3fe0c5;
+}
+
+.shadow-periwinkle {
+  -webkit-box-shadow: 12px 12px 0px 0px #7f9dd1;
+  -moz-box-shadow: 12px 12px 0px 0px #7f9dd1;
+  box-shadow: 12px 12px 0px 0px #7f9dd1;
+}
+
+.shadow-purple {
+  -webkit-box-shadow: 12px 12px 0px 0px #8731e8;
+  -moz-box-shadow: 12px 12px 0px 0px #8731e8;
+  box-shadow: 12px 12px 0px 0px #8731e8;
+}

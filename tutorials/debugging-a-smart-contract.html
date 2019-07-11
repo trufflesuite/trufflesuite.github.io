@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Debugging a smart contract | Tutorials | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/tutorials/debugging-a-smart-contra" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Debugging a smart contract | Tutorials | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Debugging a smart contract | Tutorials | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg">N</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Debugging a smart contract</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2017-10-23&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Mike Pumphrey</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <p class="alert alert-info">
+<strong>Note</strong>: This tutorial requires Truffle version 4.0 or newer.
+</p>
+
+<!-- TODO: How is the gas limit set? When/how does an out of gas error occur? -->
+<!-- TODO: Link to docs -->
+<p>A smart contract in Ethereum is just code. Unlike the &quot;paper&quot; contracts that you find elsewhere, this contract needs to make sense in a very precise manner.</p>
+<p>(And that&#39;s a good thing. Imagine how much clearer real-world contracts would be if they needed to &quot;compile&quot;?)</p>
+<p>If our contracts are not coded correctly, our transactions may fail, which can result in the loss of ether (in the form of gas), not to mention wasted time and effort.</p>
+<p><strong>Luckily, Truffle (as of version 4) has a built in debugger for stepping through your code.</strong> So when something goes wrong, you can find out exactly what it was, and fix it promptly.</p>
+<p>In this tutorial, we will migrate a basic contract to a test blockchain, introduce some errors into it, and solve each one through the use of the built-in Truffle debugger.</p>
+
+    <h2 class="link-markdown">
+      <a href="#a-basic-smart-contract" name="a-basic-smart-contract"><i class="fas fa-link"></i></a>
+      A basic smart contract
+    </h2>
+  <p>One of the most basic, non-trivial, types of smart contract is a <strong>simple storage contract</strong>. (This example was adapted from the <a href="https://solidity.readthedocs.io/en/develop/introduction-to-smart-contracts.html">Solidity documentation</a>.)</p>
+<pre><code class="lang-javascript">pragma solidity ^0.4.17;
+
+contract SimpleStorage {
+  uint myVariable;
+
+  function set(uint x) public {
+    myVariable = x;
+  }
+
+  function get() constant public returns (uint) {
+    return myVariable;
+  }
+}
+</code></pre>
+<p>This contract does two things:</p>
+<ul>
+<li>Allows you to set a variable (<code>myVariable</code>) to a particular integer value</li>
+<li>Allows you to query that variable to get the selected value</li>
+</ul>
+<p>This isn&#39;t a very interesting contract, but that&#39;s not the point here. We want to see what happens when things go wrong.</p>
+<p>First, let&#39;s set up our environment.</p>
+
+    <h2 class="link-markdown">
+      <a href="#deploying-the-basic-smart-contract" name="deploying-the-basic-smart-contract"><i class="fas fa-link"></i></a>
+      Deploying the basic smart contract
+    </h2>
+  <ol>
+<li><p>Create a new directory where we will house our contract locally:</p>
+<pre><code class="lang-shell">mkdir simple-storage
+cd simple-storage
+</code></pre>
+</li>
+<li><p>Create a bare Truffle project:</p>
+<pre><code class="lang-shell">truffle init
+</code></pre>
+<p>This will create directories such as <code>contracts/</code> and <code>migrations/</code>, and populate them with files we will use when we deploy our contract to the blockchain.</p>
+</li>
+<li><p>Inside the <code>contracts/</code> directory, create a file called <code>Store.sol</code> with the following content:</p>
+<pre><code class="lang-javascript">pragma solidity ^0.4.17;
+
+contract SimpleStorage {
+  uint myVariable;
+
+  function set(uint x) public {
+    myVariable = x;
+  }
+
+  function get() constant public returns (uint) {
+    return myVariable;
+  }
+}
+</code></pre>
+<p>This is the contract that we will be debugging. While the full details of this file are beyond the scope of this tutorial, note that there is a contract named <code>SimpleStorage</code> that contains a numeric variable <code>myVariable</code> and two functions: <code>set()</code> and <code>get()</code>. The first function stores a value in that variable and the second queries that value.</p>
+</li>
+<li><p>Inside the <code>migrations/</code> directory, create a file called <code>2_deploy_contracts.js</code> and populate it with the following content:</p>
+<pre><code class="lang-javascript">var SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
+
+module.exports = function(deployer) {
+  deployer.deploy(SimpleStorage);
+};
+</code></pre>
+<p>This file is the directive that allows us to deploy the <code>SimpleStorage</code> contract to the blockchain.</p>
+</li>
+<li><p>On the terminal, compile the smart contract:</p>
+<pre><code class="lang-shell">truffle compile
+</code></pre>
+</li>
+<li><p>Open a second terminal and run <code>truffle develop</code> to start a development blockchain built directly into Truffle that we can use to test our contract:</p>
+<pre><code class="lang-shell">truffle develop
+</code></pre>
+<p>The console will display a prompt <code>truffle(develop)&gt;</code>. From here, unless otherwise specified, all commands will be typed on this prompt.</p>
+</li>
+<li><p>With the develop console up and running, we can now deploy our contracts to the blockchain by running our migrations:</p>
+<pre><code class="lang-shell">migrate
+</code></pre>
+<p>The response should look something like below, though the specific IDs will differ:</p>
+<pre><code class="lang-shell"> Running migration: 1_initial_migration.js
+   Replacing Migrations...
+   ... 0xe4f911d95904c808a81f28de1e70a377968608348b627a66efa60077a900fb4c
+   Migrations: 0x3ed10fd31b3fbb2c262e6ab074dd3c684b8aa06b
+ Saving successful migration to network...
+   ... 0x429a40ee574664a48753a33ea0c103fc78c5ca7750961d567d518ff7a31eefda
+ Saving artifacts...
+ Running migration: 2_deploy_contracts.js
+   Replacing SimpleStorage...
+   ... 0x6783341ba67d5c0415daa647513771f14cb8a3103cc5c15dab61e86a7ab0cfd2
+   SimpleStorage: 0x377bbcae5327695b32a1784e0e13bedc8e078c9c
+ Saving successful migration to network...
+   ... 0x6e25158c01a403d33079db641cb4d46b6245fd2e9196093d9e5984e45d64a866
+ Saving artifacts... 
+</code></pre>
+</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a href="#interacting-with-the-basic-smart-contract" name="interacting-with-the-basic-smart-contract"><i class="fas fa-link"></i></a>
+      Interacting with the basic smart contract
+    </h2>
+  <p>The smart contract is now deployed to a test network via <code>truffle develop</code>, which launches a <a href="/docs/getting_started/console">console</a> against <a href="/ganache">Ganache</a>, a local development blockchain built right into Truffle.</p>
+<p>We next want to interact with the smart contract to see how it works when working correctly. We&#39;ll interact using the <code>truffle develop</code> console.</p>
+<p class="alert alert-info">
+<strong>Note</strong>: If you&#39;re wondering why we didn&#39;t need to mine to get the transaction to be secured, the Truffle Develop console already takes care of that for us. If using a different network, you&#39;ll need to make sure you mine to get the transaction on the blockchain.
+</p>
+
+<ol>
+<li><p>In the console where <code>truffle develop</code> is running, run the following command:</p>
+<pre><code class="lang-shell">SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
+</code></pre>
+<p>This command looks at the SimpleStorage contract, and then calls the <code>get()</code> function as defined inside it. It then returns the output, which is usually rendered as a string, and converts it to a number:</p>
+<pre><code class="lang-shell">0
+</code></pre>
+<p>This shows us that our variable, <code>myVariable</code>, is set to <code>0</code>, even though we haven&#39;t set this variable to any value (yet). This is because <strong>variables with integer types are automatically populated with the value of zero in Solidity</strong>, unlike other languages where it might be <code>NULL</code> or <code>undefined</code>.</p>
+</li>
+<li><p>Now let&#39;s run a transaction on our contract. We&#39;ll do this by running the <code>set()</code> function, where we can set our variable value to some other integer. Run the following command:</p>
+<pre><code class="lang-shell">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
+</code></pre>
+<p>This sets the variable to <code>4</code>. The output shows some information about the transaction, including the transaction ID (hash), transaction receipt,  and any event logs that were triggered during the course of the transaction:</p>
+<pre><code class="lang-shell"> { tx: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
+   receipt:
+    { transactionHash: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
+      transactionIndex: 0,
+      blockHash: &#39;0x60adbf0523622dc1be52c627f37644ce0a343c8e7c8955b34c5a592da7d7c651&#39;,
+      blockNumber: 5,
+      gasUsed: 41577,
+      cumulativeGasUsed: 41577,
+      contractAddress: null,
+      logs: [] },
+   logs: [] }   
+</code></pre>
+<p>Most important to us is the transaction ID (listed here both as <code>tx</code> and as <code>transactionHash</code>). We&#39;ll need to copy that value when we start to debug.</p>
+<p class="alert alert-info">
+<strong>Note</strong>: Your transaction IDs will likely be different from what is listed here.
+</p>
+</li>
+<li><p>To verify that the variable has changed values, run the <code>get()</code> function again:</p>
+<pre><code class="lang-shell">SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
+</code></pre>
+<p>The output should look like this:</p>
+<pre><code class="lang-shell">4
+</code></pre>
+</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a href="#debugging-errors" name="debugging-errors"><i class="fas fa-link"></i></a>
+      Debugging errors
+    </h2>
+  <p>The above shows how the contract <em>should</em> work. Now, we will introduce some small errors to the contract and redeploy it. We will see how the issues present itself, and also <strong>use Truffle&#39;s built-in debug feature to fix the issues</strong>.</p>
+<p>We will look at the following issues:</p>
+<ul>
+<li>An infinite loop</li>
+<li>Invalid error check </li>
+<li>No error, but a function isn&#39;t operating as desired</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a href="#issue-1-an-infinite-loop" name="issue-1-an-infinite-loop"><i class="fas fa-link"></i></a>
+      Issue #1: An infinite loop
+    </h3>
+  <p>On the Ethereum blockchain, transactions cannot be set to run forever.</p>
+<p>A transaction can run up until its gas limit is reached. Once that happens, the transaction will error out, and an &quot;out of gas&quot; error will be returned.</p>
+<p>Since gas is priced in ether, this could have real-world financial implications. So fixing an out-of-gas error is critical.</p>
+
+    <h4 class="link-markdown">
+      <a href="#introducing-the-error" name="introducing-the-error"><i class="fas fa-link"></i></a>
+      Introducing the error
+    </h4>
+  <p>An infinite loop is easy to create.</p>
+<ol>
+<li><p>Open <code>Store.sol</code> from the <code>contracts/</code> directory in a text editor.</p>
+</li>
+<li><p>Replace the <code>set()</code> function with the following:</p>
+<pre><code class="lang-javascript">function set(uint x) public {
+  while(true) {
+    myVariable = x;
+  }
+}
+</code></pre>
+<p>This function will never terminate, because of the <code>while(true)</code> conditional.</p>
+</li>
+</ol>
+
+    <h4 class="link-markdown">
+      <a href="#testing-the-contract" name="testing-the-contract"><i class="fas fa-link"></i></a>
+      Testing the contract
+    </h4>
+  <p>The Truffle Develop console has the ability to migrate updated contracts without the need to exit and restart the console. And since the <code>migrate</code> command can compile and migrate in one step, we can reset our contract on the blockchain in one step.</p>
+<ol>
+<li><p>In the Truffle Develop console, update the contract:</p>
+<pre><code class="lang-shell">migrate --reset
+</code></pre>
+<p>You will see both the compiler output and the migration output.</p>
+</li>
+<li><p>In order to facilitate error hunting, we will open a second console with logging. This will allow us to, for example, see transaction IDs when a transaction fails. In another terminal window, run the following command:</p>
+<pre><code class="lang-shell">truffle develop --log
+</code></pre>
+<p>Leave that window for now and return to the first console.</p>
+</li>
+<li><p>Now we are ready to run that transaction. Run the <code>set()</code> command from above.</p>
+<pre><code class="lang-shell">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
+</code></pre>
+<p>An error will display:</p>
+<pre><code class="lang-shell">Error: VM Exception while processing transaction: out of gas
+</code></pre>
+<p>Moreover, in the console with the logs, you will see more information:</p>
+<pre><code class="lang-shell"> develop:testrpc eth_sendTransaction +0ms
+ develop:testrpc  +1s
+ develop:testrpc   Transaction: 0xe493340792ab92b95ac40e43dca6bc88fba7fd67191989d59ca30f79320e883f +2ms
+ develop:testrpc   Gas usage: 4712388 +11ms
+ develop:testrpc   Block Number: 6 +15ms
+ develop:testrpc   Runtime Error: out of gas +0ms
+ develop:testrpc  +16ms   
+</code></pre>
+</li>
+</ol>
+<p>With our failure and our transaction ID, we can now debug the transaction.</p>
+
+    <h4 class="link-markdown">
+      <a href="#debugging-the-issue" name="debugging-the-issue"><i class="fas fa-link"></i></a>
+      Debugging the issue
+    </h4>
+  <p>Truffle contains a built-in debugger. The command to launch this is <code>debug &lt;Transaction ID&gt;</code> from the Truffle Develop console, or <code>truffle debug &lt;Transaction ID&gt;</code> from the terminal. Let&#39;s launch this now.</p>
+<ol>
+<li><p>In the Truffle Develop console, copy the transaction ID from the logs console and paste it as the argument in the <code>debug</code> command:</p>
+<pre><code class="lang-shell">debug 0xe493340792ab92b95ac40e43dca6bc88fba7fd67191989d59ca30f79320e883f
+</code></pre>
+<p class="alert alert-info">
+<strong>Note</strong>: Again, your transaction ID will be different from what is listed here.
+</p>
+
+
+</li>
+</ol>
+<p>   You will see the following output:</p>
+<pre><code class="lang-shell">   Gathering transaction data...
+
+   Addresses affected:
+     0x377bbcae5327695b32a1784e0e13bedc8e078c9c - SimpleStorage
+
+   Commands:
+   (enter) last command entered (step next)
+   (o) step over, (i) step into, (u) step out, (n) step next
+   (;) step instruction, (p) print instruction, (h) print this help, (q) quit
+
+   Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+   1: pragma solidity ^0.4.17;
+   2:
+   3: contract SimpleStorage {
+      ^^^^^^^^^^^^^^^^^^^^^^^
+
+   debug(develop:0xe4933407...)&gt;
+</code></pre>
+<p>   This is an interactive console. You can use the commands listed to interact with the code in different ways.</p>
+<ol>
+<li><p>The most common way to interact with the code is to &quot;step next&quot;, which steps through the code one instruction at a time. Do this by pressing <code>Enter</code> or <code>n</code>:</p>
+<p>The output is as follows:</p>
+<pre><code class="lang-shell">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+4:   uint myVariable;
+5:
+6: function set(uint x) public {
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+</code></pre>
+<p>Notice that the program has moved to the next instruction, located on line 6. (The carets point to the exact part of the instruction taking place.)</p>
+</li>
+<li><p>Press <code>Enter</code> again to step to the next instruction:</p>
+<pre><code class="lang-shell">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+5:
+6: function set(uint x) public {
+7:   while(true) {
+     ^^^^^^^^^^^^
+</code></pre>
+</li>
+<li><p>Keep pressing Enter:</p>
+<pre><code class="lang-shell">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+5:
+6: function set(uint x) public {
+7:   while(true) {
+           ^^^^
+
+debug(develop:0xe4933407...)&gt;
+
+Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+5:
+6: function set(uint x) public {
+7:   while(true) {
+     ^^^^^^^^^^^^
+
+debug(develop:0xe4933407...)&gt;
+
+Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+6: function set(uint x) public {
+7:   while(true) {
+8:     myVariable = x;
+                    ^
+
+debug(develop:0xe4933407...)&gt;
+
+Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+6: function set(uint x) public {
+7:   while(true) {
+8:     myVariable = x;
+       ^^^^^^^^^^
+
+debug(develop:0xe4933407...)&gt;
+
+Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+6: function set(uint x) public {
+7:   while(true) {
+8:     myVariable = x;
+       ^^^^^^^^^^^^^^
+
+debug(develop:0xe4933407...)&gt;
+
+Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+5:
+6: function set(uint x) public {
+7:   while(true) {
+     ^^^^^^^^^^^^
+</code></pre>
+<p>Notice that the steps eventually repeat. In fact, pressing <code>Enter</code> over and over will repeat those transactions forever (or at least until the transaction runs out of gas). <strong>This tells you where the problem is.</strong></p>
+</li>
+<li><p>Type <code>q</code> to exit the debugger.</p>
+</li>
+</ol>
+
+    <h3 class="link-markdown">
+      <a href="#issue-2-an-invalid-error-check" name="issue-2-an-invalid-error-check"><i class="fas fa-link"></i></a>
+      Issue #2: An invalid error check
+    </h3>
+  <p>Smart contracts can use statements like <code>assert()</code> to ensure that certain conditions are met. These can conflict with the state of the contract in ways that are irreconcilable.</p>
+<p>Here we will introduce such a condition, and then see how the debugger can find it.</p>
+
+    <h4 class="link-markdown">
+      <a href="#introducing-the-error" name="introducing-the-error"><i class="fas fa-link"></i></a>
+      Introducing the error
+    </h4>
+  <ol>
+<li><p>Open <code>Store.sol</code> again.</p>
+</li>
+<li><p>Replace the <code>set()</code> function with the following:</p>
+<pre><code class="lang-javascript">function set(uint x) public {
+  assert(x == 0);
+  myVariable = x;
+}
+</code></pre>
+<p>This is the same as the original version, but with an <code>assert()</code> function added, testing to make sure that <code>x == 0</code>. This will be fine until we set that value to something else, and then we&#39;ll have a problem.</p>
+</li>
+</ol>
+
+    <h4 class="link-markdown">
+      <a href="#testing-the-contract" name="testing-the-contract"><i class="fas fa-link"></i></a>
+      Testing the contract
+    </h4>
+  <p>Just as before, we&#39;ll reset the contract on the blockchain.</p>
+<ol>
+<li><p>In the Truffle Develop console, reset the contract on the blockchain to its initially deployed state:</p>
+<pre><code class="lang-shell">migrate --reset
+</code></pre>
+</li>
+<li><p>Now we are ready to test the new transaction. Run the same command as above:</p>
+<pre><code class="lang-shell">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
+</code></pre>
+<p>You will see an error:</p>
+<pre><code class="lang-shell">Error: VM Exception while processing transaction: invalid opcode
+</code></pre>
+<p>This means that we have a problem on our hands.</p>
+</li>
+<li><p>In the log window, note the transaction ID with that error.</p>
+</li>
+</ol>
+
+    <h4 class="link-markdown">
+      <a href="#debugging-the-issue" name="debugging-the-issue"><i class="fas fa-link"></i></a>
+      Debugging the issue
+    </h4>
+  <ol>
+<li><p>Copy the transaction ID and use it as an argument to the <code>debug</code> command:</p>
+<pre><code class="lang-shell">debug 0xe493340792ab92b95ac40e43dca6bc88fba7fd67191989d59ca30f79320e883f
+</code></pre>
+<p class="alert alert-info">
+<strong>Note</strong>: Again, your transaction ID will be different from what is listed here.
+</p>
+
+
+</li>
+</ol>
+<p>   Now we are back in the debugger:</p>
+<pre><code class="lang-shell">   Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+   1: pragma solidity ^0.4.17;
+   2:
+   3: contract SimpleStorage {
+      ^^^^^^^^^^^^^^^^^^^^^^^
+
+   debug(develop:0xe4933407...)&gt;
+</code></pre>
+<ol>
+<li><p>Press <code>Enter</code> a few times to step through the code. Eventually, the debugger will halt with an error message:</p>
+<pre><code class="lang-shell">
+Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+5:
+6:   function set(uint x) public {
+7:     assert(x == 0);
+       ^^^^^^^^^^^^^^
+
+debug(develop:0x7e060037...)&gt;
+
+Transaction halted with a RUNTIME ERROR.
+
+This is likely due to an intentional halting expression, like 
+assert(), require() or revert(). It can also be due to out-of-gas
+exceptions. Please inspect your transaction parameters and 
+contract code to determine the meaning of this error.
+</code></pre>
+<p><strong>It is this last event that is triggering the error.</strong> You can see that it is the <code>assert()</code> that is to blame.</p>
+</li>
+</ol>
+
+    <h3 class="link-markdown">
+      <a href="#issue-3-a-function-isn-39-t-operating-as-desired" name="issue-3-a-function-isn-39-t-operating-as-desired"><i class="fas fa-link"></i></a>
+      Issue #3: A function isn&#39;t operating as desired
+    </h3>
+  <p>Sometimes, an error isn&#39;t a true error, in that it doesn&#39;t cause a problem at runtime, but instead is just doing something that you don&#39;t intend it to do.</p>
+<p>Take for example an event that would run if our variable was odd and another event that would run if our variable was even. <strong>If we accidentally swapped this conditional so that the opposite function would run, it wouldn&#39;t cause an error; nevertheless, the contract would act unexpectedly.</strong></p>
+<p>Once again, we can use the debugger to see where things go wrong.</p>
+
+    <h4 class="link-markdown">
+      <a href="#introducing-the-error" name="introducing-the-error"><i class="fas fa-link"></i></a>
+      Introducing the error
+    </h4>
+  <ol>
+<li><p>Open <code>Store.sol</code> again.</p>
+</li>
+<li><p>Replace the <code>set()</code> function with the following:</p>
+<pre><code class="lang-javascript">event Odd();
+
+event Even();
+
+function set(uint x) public {
+  myVariable = x;
+  if (x % 2 == 0) {
+    Odd();
+  } else {
+    Even();
+  }
+}
+</code></pre>
+<p>This code introduces two dummy events, <code>Odd()</code> and <code>Even()</code> that are triggered based on a conditional that checks whether <code>x</code> is divisible by <code>2</code>.</p>
+<p>But notice that we have the results flipped. If <code>x</code> is divisible by <code>2</code>, the <code>Odd()</code> event will run.</p>
+</li>
+</ol>
+
+    <h4 class="link-markdown">
+      <a href="#testing-the-contract" name="testing-the-contract"><i class="fas fa-link"></i></a>
+      Testing the contract
+    </h4>
+  <p>Just as before, we&#39;ll reset the contract on the blockchain.</p>
+<ol>
+<li><p>In the Truffle Develop console, update the contract:</p>
+<pre><code class="lang-shell">migrate --reset
+</code></pre>
+<p>You will see both the compiler output and the migration output.</p>
+</li>
+<li><p>Now we are ready to test the new transaction. Run the same command as above:</p>
+<pre><code class="lang-shell">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
+</code></pre>
+<p><strong>Note that there is no error here.</strong> The response is given as a transaction ID with details:</p>
+<pre><code class="lang-shell">{ tx: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
+  receipt:
+   { transactionHash: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
+     transactionIndex: 0,
+     blockHash: &#39;0x08d7c35904e4a93298ed5be862227fcf18383fec374759202cf9e513b390956f&#39;,
+     blockNumber: 5,
+     gasUsed: 42404,
+     cumulativeGasUsed: 42404,
+     contractAddress: null,
+     logs: [ [Object] ] },
+  logs:
+   [ { logIndex: 0,
+       transactionIndex: 0,
+       transactionHash: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
+       blockHash: &#39;0x08d7c35904e4a93298ed5be862227fcf18383fec374759202cf9e513b390956f&#39;,
+       blockNumber: 5,
+       address: &#39;0x377bbcae5327695b32a1784e0e13bedc8e078c9c&#39;,
+       type: &#39;mined&#39;,
+       event: &#39;Odd&#39;,
+       args: {} } ] }
+</code></pre>
+<p>But notice the logs of the transaction show the event <code>Odd</code>. That&#39;s wrong, and so our job is to find out why that&#39;s being invoked.</p>
+</li>
+</ol>
+
+    <h4 class="link-markdown">
+      <a href="#debugging-the-contract" name="debugging-the-contract"><i class="fas fa-link"></i></a>
+      Debugging the contract
+    </h4>
+  <ol>
+<li><p>Copy that transaction ID and use it as an argument with the <code>debug</code> command:</p>
+<pre><code class="lang-shell">debug 0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42
+</code></pre>
+<p class="alert alert-info">
+<strong>Note</strong>: Again, your transaction ID will be different from what is listed here.
+</p>
+
+<p>You will enter the debugger as before.</p>
+</li>
+<li><p>Press <code>Enter</code> multiple times to cycle through the steps. Eventually you will see that the conditional leads to the <code>Odd()</code> event:</p>
+<pre><code class="lang-shell">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+10:   function set(uint x) public {
+11:     myVariable = x;
+12:     if (x % 2 == 0) {
+        ^^^^^^^^^^^^^^^^
+
+debug(develop:0x7f799ad5...)&gt;
+
+Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+
+11:     myVariable = x;
+12:     if (x % 2 == 0) {
+13:       Odd();
+          ^^^^^
+
+debug(develop:0x7f799ad5...)&gt;
+</code></pre>
+<p><strong>The problem is revealed.</strong> The conditional is leading to the wrong event.</p>
+</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a href="#conclusion" name="conclusion"><i class="fas fa-link"></i></a>
+      Conclusion
+    </h2>
+  <p>With the ability to debug your contracts directly within Truffle, you have even more power at your hands to make your smart contracts rock-solid and ready to deploy. Make sure to read more about Truffle Develop console and the debugger in the docs. If you have any questions, please join our <a href="https://gitter.im/ConsenSys/truffle">community Gitter channel</a> where hundreds of fellow Trufflers congregate to answer your questions!</p>
+<p>Happy debugging!</p>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/tutorials">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2019</a></li>
+            <li><strong>&copy; Truffle Blockchain Group 2019</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+            <form action="https://truffleframework.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=97cfd4251b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <div class="form-group">
+                <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="footerMailingEmail" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="FNAME" class="form-control" placeholder="First Name" id="footerMailingFirstName">
+                <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
+              </div>
+              <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>

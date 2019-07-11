@@ -1,0 +1,29 @@
+.modal {
+  color: #33262a;
+}
+
+.modal .modal-content {
+  background: #e0dad7;
+}
+
+.modal .modal-content .modal-header {
+  border-bottom: none;
+}
+
+.modal .modal-content .modal-header .close {
+  background: #3fe0c5;
+  color: #5e464d;
+  border-radius: .3rem;
+  padding: .45rem .8rem;
+  text-shadow: none;
+  opacity: 1;
+  margin: 0 0 -1rem auto;
+}
+
+.modal .modal-content .modal-header .close:hover {
+  background: #fff;
+}
+
+.modal .modal-content .modal-body {
+  padding: 1rem 1rem 0 1rem;
+}

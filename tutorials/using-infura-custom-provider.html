@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Using Infura (or a custom provider) | Tutorials | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/tutorials/using-infura-custom-provid" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Using Infura (or a custom provider) | Tutorials | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Using Infura (or a custom provider) | Tutorials | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg">N</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Using Infura (or a custom provider)</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2016-09-16&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Tim Coulter</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <p><a href="https://infura.io/">Infura</a> is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet.</p>
+<p>
+    <img class="img-fluid" src="/img/tutorials/infura/infura.png" title="Infura" alt="Infura" />
+    
+  </p>
+<p>You may not be familiar with Infura by name, but if you&#39;ve used <a href="https://metamask.io">MetaMask</a> then you&#39;ve used Infura, as it is the Ethereum provider that powers MetaMask.</p>
+<p>For security reasons, Infura does not manage your private keys, which means Infura cannot sign transactions on your behalf.</p>
+<p>However, Truffle can sign transactions through the use of its <code>HDWalletProvider</code>. This provider can handle the transaction signing as well as the connection to the Ethereum network. (<a href="https://github.com/trufflesuite/truffle-hdwallet-provider">Read more about HDWalletProvider</a>.)</p>
+<p>This tutorial will show you how to use Infura to migrate an existing dapp to an Ethereum network supported by Infura. In this specific instance, we&#39;ll migrate to Ropsten. We&#39;ll assume that you already have a dapp to migrate. If you want a test dapp, feel free to use our <a href="/tutorials/pet-shop">Pet Shop</a> tutorial dapp.</p>
+
+    <h2 class="link-markdown">
+      <a href="#install-hdwalletprovider" name="install-hdwalletprovider"><i class="fas fa-link"></i></a>
+      Install HDWalletProvider
+    </h2>
+  <p>Truffle&#39;s <code>HDWalletProvider</code> is a separate npm package:</p>
+<pre><code class="lang-shell">npm install truffle-hdwallet-provider
+</code></pre>
+<p class="alert alert-info">
+<strong>Note</strong>: If you are on Windows and get an <code>MSBUILD</code> error, you may need to install the Windows build tools. In a terminal with Administrator rights, run <code>npm install -g windows-build-tools</code> and then try installation again.
+</p>
+
+
+    <h2 class="link-markdown">
+      <a href="#register-with-infura-and-create-a-new-project" name="register-with-infura-and-create-a-new-project"><i class="fas fa-link"></i></a>
+      Register with Infura and create a new project
+    </h2>
+  <p>Before you can use Infura, you need to <a href="https://infura.io/signup">register</a>.</p>
+<p>Upon registration you will be able to create a new project, which will in turn generate a new Project ID (and the associated Infura API endpoint URLs). Make sure you save this key and keep it private!</p>
+
+    <h2 class="link-markdown">
+      <a href="#configure-your-truffle-project" name="configure-your-truffle-project"><i class="fas fa-link"></i></a>
+      Configure your Truffle project
+    </h2>
+  <p>The next step is to edit your <code>truffle-config.js</code> file to use <code>HDWalletProvider</code> and provide all the necessary configuration for deploying to Ropsten.</p>
+<ol>
+<li><p>First, define the <code>HDWalletProvider</code> object in your configuration file. Add this line at the top of your <code>truffle-config.js</code> file:</p>
+<pre><code class="lang-javascript">var HDWalletProvider = require(&quot;truffle-hdwallet-provider&quot;);
+</code></pre>
+</li>
+<li><p>Next, provide a reference to your mnemonic that generates your accounts. If you don&#39;t have a mnemonic, you can generate one using an <a href="https://iancoleman.io/bip39">online mnemonic generator</a> or a hardware wallet such as a product from <a href="https://www.ledgerwallet.com">Ledger</a>.</p>
+<pre><code class="lang-javascript">var mnemonic = &quot;orange apple banana ... &quot;;
+</code></pre>
+<p class="alert alert-danger">
+<strong>Warning</strong>: In production, we highly recommend storing the mnemonic in another (secret) file, to reduce the risk of the mnemonic becoming known. If someone knows your mnemonic, they have all of your addresses and private keys!
+</p>
+</li>
+<li><p>Add a Ropsten network definition:</p>
+<pre><code class="lang-javascript">module.exports = {
+  networks: {
+    ropsten: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, &quot;https://ropsten.infura.io/v3/&lt;INFURA_PROJECT_ID&gt;&quot;)
+      },
+      network_id: 3
+    }   
+  }
+};
+</code></pre>
+<p>Things to notice:</p>
+<ul>
+<li><p>While the example has only a single network defined, you can define multiple networks as normal.</p>
+</li>
+<li><p>The <code>provider</code> for the <code>ropsten</code> network definition instantiates the <code>HDWalletProvider</code>.</p>
+</li>
+<li><p>The <code>HDWalletProvider</code> takes as arguments a mnemonic and the desired network. A list of Infura-supported networks is available on the <a href="https://infura.io/">Infura homepage</a>.</p>
+</li>
+<li><p>Make sure to replace <code>&lt;INFURA_PROJECT_ID&gt;</code> with your Infura Project ID.</p>
+</li>
+<li><p>The <code>provider</code> value is wrapped in a function, which ensures that it won&#39;t get initialized until it&#39;s needed. This is especially important if connecting to multiple networks. (See the <a href="http://truffleframework.com/docs/advanced/configuration#networks">Networks configuration</a> section of the documentation for more on this topic.)</p>
+<p class="alert alert-info">
+  <strong>Note</strong>: If you encounter issues with this construction, you can skip the function wrapper and use this instead:<br />
+  <code>provider: new HDWalletProvider(mnemonic, &quot;https://ropsten.infura.io/v3/&lt;INFURA_PROJECT_ID&gt;&quot;),</code>
+</p>
+</li>
+<li><p>Without any other arguments, the account in charge of migration will be the first one generated by the mnemonic. But if desired, you can pass in an argument to specify which account to use. As an example, to use the third account:</p>
+<pre><code class="lang-javascript">new HDWalletProvider(mnemonic, &quot;https://ropsten.infura.io/v3/&lt;INFURA_PROJECT_ID&gt;&quot;, 2);
+</code></pre>
+<p>(Recall that the index is zero-based, so <code>2</code> is the third address.)</p>
+</li>
+</ul>
+</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a href="#use-an-ether-faucet" name="use-an-ether-faucet"><i class="fas fa-link"></i></a>
+      Use an ether faucet
+    </h2>
+  <p>Make sure you have enough ether in your account to do the deployment. You can acquire ether on the Ropsten network through a service known as a faucet. While there are multiple faucet sites out there, one service we recommend is hosted by <a href="https://metamask.io/">MetaMask</a>.</p>
+<ol>
+<li><p>Navigate to <a href="https://faucet.metamask.io/">MetaMask&#39;s Test Ether Faucet</a>.</p>
+</li>
+<li><p>Connect to the Ropsten Test Network using <a href="https://metamask.io/">MetaMask</a>.</p>
+</li>
+<li><p>The faucet will link to your first account. Click &quot;Request 1 Ether From Faucet&quot; to submit your request.</p>
+</li>
+<li><p>Within a short period of time, your account will be populated with the requested ether.</p>
+</li>
+</ol>
+<p>We are now ready to deploy to Ropsten!</p>
+
+    <h2 class="link-markdown">
+      <a href="#deploy-the-contract" name="deploy-the-contract"><i class="fas fa-link"></i></a>
+      Deploy the contract
+    </h2>
+  <ol>
+<li><p>Compile your project, if not already done:</p>
+<pre><code class="lang-shell">truffle compile
+</code></pre>
+</li>
+<li><p>Deploy to the Ropsten network:</p>
+<pre><code class="lang-shell">truffle migrate --network ropsten
+</code></pre>
+<p>If all goes well, you should see a response that looks similar to the following:</p>
+<pre><code class="lang-shell">Using network &#39;ropsten&#39;.
+
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  ... 0xd79bc3c5a7d338a7f85db9f86febbee738ebdec9494f49bda8f9f4c90b649db7
+  Migrations: 0x0c6c4fc8831755595eda4b5724a61ff989e2f8b9
+Saving successful migration to network...
+  ... 0xc37320561d0004dc149ea42d839375c3fc53752bae5776e4e7543ad16c1b06f0
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+  Deploying MyContract...
+  ... 0x7efbb3e4f028aa8834d0078293e0db7ff8aff88e72f33960fc806a618a6ce4d3
+  MyContract: 0xda05d7bfa5b6af7feab7bd156e812b4e564ef2b1
+Saving successful migration to network...
+  ... 0x6257dd237eb8b120c8038b066e257baee03b9c447c3ba43f843d1856de1fe132
+Saving artifacts...
+</code></pre>
+<p>Note that your transaction IDs will be different from the ones above.</p>
+<p class="alert alert-info">
+<strong>Note</strong>: If you receive an error <code>Error: Exceeds block gas limit</code>, you may need to manually set the gas limit for your contract. See the <a href="/docs/advanced/configuration">Truffle Configuration</a> documentation for details.
+</p>
+</li>
+<li><p>If you want to verify that your contract was deployed successfully, you can check this on the <a href="https://ropsten.etherscan.io/">Ropsten section of Etherscan</a>. In the search field, type in the transaction ID for your contract. In the above example, the transaction ID is:</p>
+<pre><code class="lang-shell">0x7efbb3e4f028aa8834d0078293e0db7ff8aff88e72f33960fc806a618a6ce4d3
+</code></pre>
+<p>You should see details about the transaction, including the block number where the transaction was secured.</p>
+</li>
+</ol>
+<p>Congratulations! You&#39;ve deployed your contract to Ropsten using the combined power of Infura and Truffle.</p>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/tutorials">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2019</a></li>
+            <li><strong>&copy; Truffle Blockchain Group 2019</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+            <form action="https://truffleframework.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=97cfd4251b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <div class="form-group">
+                <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="footerMailingEmail" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="FNAME" class="form-control" placeholder="First Name" id="footerMailingFirstName">
+                <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
+              </div>
+              <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>
