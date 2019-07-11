@@ -145,8 +145,8 @@
 
 
     <h2 class="link-markdown">
-      <a href="#introducing-truffle-debugger-part-1-artifact-archeology" name="introducing-truffle-debugger-part-1-artifact-archeology"><i class="fas fa-link"></i></a>
-      Introducing Truffle DeBugger, part 1: Artifact archeology
+      <a href="#introducing-truffle-db-part-1-artifact-archeology" name="introducing-truffle-db-part-1-artifact-archeology"><i class="fas fa-link"></i></a>
+      Introducing Truffle DB, part 1: Artifact archeology
     </h2>
   <p>Truffle is not a small utility: it compiles your contracts, deploys them to multiple networks, runs your automated tests, provides an interactive debugger for when things go wrong, offers a library for interacting with your contracts on the frontend, … (<em>the list goes on.</em>) With just over 20,000 lines of code and close to thirty discrete software packages, Truffle has a lot going on.</p>
 <p>Truffle is “not small” on purpose. The tool oversees the development lifecycle in human developer terms. It keeps track of familiar concepts and hides unnecessary, low-level specifics. That’s a big goal.</p>
@@ -168,21 +168,7 @@
 </figcaption>
 </figure>
 
-<p>
-    <img class="img-fluid" src="/img/blog/introducing-truffle-db/example-truffle-db.png" title="Example of Truffle DB" alt="Example of Truffle DB" />
-    
-  </p>
-
-    <h6 class="link-markdown">
-      <a href="#-strong-for-example-strong-truffle-stores-the-same-abstract-syntax-tree-ast-in-two-different-formats-in-every-single-artifact-most-applications-do-not-need-this-" name="-strong-for-example-strong-truffle-stores-the-same-abstract-syntax-tree-ast-in-two-different-formats-in-every-single-artifact-most-applications-do-not-need-this-"><i class="fas fa-link"></i></a>
-      <strong>For example:</strong> Truffle stores the same abstract syntax tree* (AST) in two different formats, in every single artifact! Most applications do not need this.
-    </h6>
-  
-    <h6 class="link-markdown">
-      <a href="#-for-the-curious-the-ast-is-the-reason-your-code-works-whether-you-wrote-it-all-on-a-single-line-or-not-source-gets-parsed-and-the-ast-is-the-result-truffle-and-other-tools-rely-on-the-ast-for-things-like-debugging-code-coverage-and-linting-" name="-for-the-curious-the-ast-is-the-reason-your-code-works-whether-you-wrote-it-all-on-a-single-line-or-not-source-gets-parsed-and-the-ast-is-the-result-truffle-and-other-tools-rely-on-the-ast-for-things-like-debugging-code-coverage-and-linting-"><i class="fas fa-link"></i></a>
-      *For the curious: the AST is the reason your code works whether you wrote it all on a single line or not. Source gets parsed, and the AST is the result. Truffle and other tools rely on the AST for things like debugging, code coverage, and linting.
-    </h6>
-  <p>By the byte, almost all of the information in each contract artifact is for internal use or for some specific purpose. <strong>Only a small subset of the data in each artifact is necessary for your frontend or for you to think about directly.</strong> Thus far, users who have struggled with these large files needed to use a tool like <a href="https://stedolan.github.io/jq/">jq</a> or write a custom solution. </p>
+<p>By the byte, almost all of the information in each contract artifact is for internal use or for some specific purpose. <strong>Only a small subset of the data in each artifact is necessary for your frontend or for you to think about directly.</strong> Thus far, users who have struggled with these large files needed to use a tool like <a href="https://stedolan.github.io/jq/">jq</a> or write a custom solution. </p>
 <p>In addition to these files being too large, the information is grouped purely by the idea of “contract name”. What if you want to have two contracts with the same name? You can’t. What if you want to debug an old version of your contract, deployed to a testnet? I hope you backed up your old artifacts directory somehow.</p>
 <p>Although we’ve implemented plenty of workarounds to deal with these limitations, the problems do not go unnoticed. See some long-outstanding open GitHub issues, for example:</p>
 <ul>
@@ -213,6 +199,7 @@
     <a class="btn btn-truffle" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
   </div>
 </div>
+
 
           <div class="contribute-link">
             See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/blog">Edit here &raquo;</a>
