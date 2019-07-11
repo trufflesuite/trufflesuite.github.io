@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Introducing Truffle DB, part 2: &#x27;Weight and Switch&#x27; | Blog | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/blog/introducing-truffle-db-part" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Introducing Truffle DB, part 2: &#x27;Weight and Switch&#x27; | Blog | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Introducing Truffle DB, part 2: &#x27;Weight and Switch&#x27; | Blog | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg">N</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Introducing Truffle DB, part 2: &#x27;Weight and Switch&#x27;</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2019-7-11&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Faina Shalts</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <div class="post-trufflecon-box mb-5">
+  <strong><a href="https://www.trufflesuite.com/trufflecon2019">TruffleCon 2019</a></strong> is happening August 2-4 on Microsoft’s campus in Redmond, WA. This year’s event will include 60+ speakers from the blockchain ecosystem, along with hands-on workshops geared toward novice users and expert builders alike. The Truffle team is ramping up for TruffleCon 2019 by writing a daily blog post about everything that’s on our minds. We hope you enjoy and we’ll see you in Redmond!
+
+  <div class="text-center">
+    <a class="btn btn-truffle mt-3" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
+  </div>
+</div>
+
+<p>Welcome back! If you missed the <a href="/blog/introducing-truffle-db-part-1">first part</a> of this post, you may want to read it to learn more about Truffle’s contract artifacts, their current limitations, and why we seek to build a better solution.</p>
+<p>Or, just to catch up:</p>
+<ul>
+<li>Truffle currently stores information about your smart contracts in files that we call “contract artifacts” (or just “artifacts” for short.)</li>
+<li>Truffle uses these artifacts for pretty much everything.</li>
+<li>Plenty of other tools use artifacts too, and rely on their behavior.</li>
+<li>Unfortunately, the artifacts file format has several design flaws, forcing dozens of workarounds and even preventing certain use cases entirely.</li>
+<li>Addressing these flaws head-on risks severe negative impact on other projects.</li>
+<li>We’re excited to share a project we’ve been working on, to offer a deprecation plan and to encourage community involvement.</li>
+</ul>
+<p>So why should you care?</p>
+<ul>
+<li>If you are a tools developer, or rely on Truffle artifacts directly in any way: there will be breaking changes!</li>
+<li>If you use Truffle for smart contract development: the developer experience using Truffle will have fewer roadblocks (“<a href="http://www.catb.org/jargon/html/W/wart.html">software warts</a>”). This will not break existing Truffle projects.</li>
+<li>No matter who you are: better data means better tools.</li>
+</ul>
+<p>Great! I’m convinced. 😁 Now, where were we?</p>
+
+    <h2 class="link-markdown">
+      <a href="#what-is-truffle-db-" name="what-is-truffle-db-"><i class="fas fa-link"></i></a>
+      What is Truffle DB?
+    </h2>
+  <p>Truffle DB comprises two key ideas, currently at different stages of development. These are:</p>
+<ol>
+<li>A data model for organizing your project’s smart contracts: how to keep track of all the different pieces of information, from your contract source files to where they are deployed.</li>
+<li>A flexible JSON data access interface: how to read exactly the data you need and how to update the DB with the data you have.</li>
+</ol>
+
+    <h3 class="link-markdown">
+      <a href="#data-model" name="data-model"><i class="fas fa-link"></i></a>
+      Data model
+    </h3>
+  <figure>
+  <img src="/img/blog/introducing-truffle-db/truffle-db-data-model.png" alt="Truffle DB data model" style="width:100%">
+  <figcaption><strong>Data model excerpt</strong>: how contracts, sources, compilers, and compilations all relate. (<a href="https://github.com/trufflesuite/artifact-updates/blob/master/docs/uml/macros.iuml">Text-accessible version</a> available via diagram source)</figcaption>
+</figure>
+
+<p>What is a smart contract? What is your contract’s bytecode, what is its source code, and how do they relate? By looking at how Truffle expects these relationships in practice, and considering how these concepts are commonly understood, we hope to make life easy by creating a shared vocabulary for interacting with the smart contract domain. </p>
+<p>Diagrams are worth more than words here, so please check out our data model docs to get a broader sense for what this represents.</p>
+<p><strong>Current status</strong>: Implemented as minimally viable, designed to be extended.</p>
+
+    <h3 class="link-markdown">
+      <a href="#flexible-interface" name="flexible-interface"><i class="fas fa-link"></i></a>
+      Flexible interface
+    </h3>
+  <figure>
+  <img src="/img/blog/introducing-truffle-db/concept-query.png" alt="Example of Truffle DB" style="width:100%">
+  <figcaption><strong>Concept image</strong>: Example query to fetch specific project contract info. (<a href="https://gist.github.com/gnidan/c653c57a69adf50f5d60b7d0c1d3c6a2#file-concept-query-graphql">See gist for image text</a>)</figcaption>
+</figure>
+
+<p>Truffle DB uses <a href="https://graphql.org">GraphQL</a> for its primary interface. GraphQL affords flexibility and a data-first design methodology that suits our goals well. This interface is intended for use in tools to build on top of Truffle; as a normal user you won’t have to touch this. (Of course, we hope this will encourage you to find new ways to solve problems by building and sharing tools of your own!)</p>
+<p>Truffle DB is still in development, but we would like to share what we’ve got so far and to talk about where we’re looking to go. Although it’s early, we want to increase awareness about future breaking changes, and we hope to paint a picture of some new foundations that we’re excited will help the smart contract development tools ecosystem.</p>
+<p><strong>Current status</strong>: Internal infrastructure in place, prototyping for public review to begin soon.</p>
+
+    <h2 class="link-markdown">
+      <a href="#what-we-re-releasing-first" name="what-we-re-releasing-first"><i class="fas fa-link"></i></a>
+      What we’re releasing first
+    </h2>
+  <p>We’re gearing up for a minor release (Truffle v5.1), and we plan to make a first version of Truffle DB available as an experimental implementation. This means building blocks to start: key pieces of infrastructure to paint a picture of Truffle DB for review and iteration.</p>
+<p>Day 1, this means you will get:</p>
+<ul>
+<li>The ability to convert your artifacts and load them into Truffle DB</li>
+<li>A mechanism to persist Truffle DB data side-by-side with your artifacts</li>
+<li>Improvements to Truffle that take advantage of this data when it exists</li>
+<li>A bundled GraphQL playground for hands-on exploration</li>
+<li>The ability to easily explore the schema to better understand our system design</li>
+</ul>
+<figure>
+  <img src="/img/blog/introducing-truffle-db/graphql-playground.png" alt="Example of Truffle DB" style="width:100%">
+  <figcaption><strong>Interact with Truffle DB</strong>: Apollo’s <a href="https://www.apollographql.com/docs/apollo-server/features/graphql-playground/">GraphQL Playground</a> provides a handy way to work with GraphQL interfaces. We’re bundling a Playground instance into Truffle DB to make it easier to learn about.
+(For text-accessible version, see <a href="https://gist.github.com/gnidan/c653c57a69adf50f5d60b7d0c1d3c6a2#file-playground-query-graphql">query source</a>, <a href="https://gist.github.com/gnidan/c653c57a69adf50f5d60b7d0c1d3c6a2#file-playground-query-result-json">query variables</a>, and the <a href="https://gist.github.com/gnidan/c653c57a69adf50f5d60b7d0c1d3c6a2#file-playground-query-result-json">query result</a>)</figcaption>
+</figure>
+
+
+    <h2 class="link-markdown">
+      <a href="#what-s-left-to-be-done-soon-" name="what-s-left-to-be-done-soon-"><i class="fas fa-link"></i></a>
+      What’s left to be done (soon)
+    </h2>
+  <p>Since we’ve started by building infrastructure, the work remains to connect the dots into a final design that we can validate for quality and usefulness.</p>
+<p>This includes:</p>
+<ul>
+<li>Documentation, of course! See our current <a href="https://trufflesuite.github.io/artifact-updates/index.html">Truffle DB – Proposal</a> working docs, which include the data model diagrams. Expect us to convert these docs into proper documentation for release.</li>
+<li>Better persistence. Our initial implementation will save JSON files to disk, but we intend to support more robust data storage options, including relational databases and native support in <a href="https://www.trufflesuite.com/teams">Truffle Teams</a>.</li>
+<li>Schema design updates, including support for pagination and proper data filtering.</li>
+<li>A prototype candidate for Truffle DB’s external interface.</li>
+</ul>
+
+    <h2 class="link-markdown">
+      <a href="#the-long-term-plan" name="the-long-term-plan"><i class="fas fa-link"></i></a>
+      The long-term plan
+    </h2>
+  <p>We’re going to introduce Truffle DB gradually, deprecating the old artifacts format and introducing Truffle DB more and more as it’s validated.</p>
+<p>We expect to follow these steps:</p>
+<ol>
+<li>Release initial Truffle DB features as opt-in and experimental.</li>
+<li>Gather feedback and support to build a cohesive Truffle DB release candidate (for broad community use).</li>
+<li>Turn Truffle DB on by default, but continue to use artifacts as the primary data store.</li>
+<li>Convert the rest of Truffle to use Truffle DB as its primary data store, but continue to maintain artifacts alongside it for compatibility.</li>
+<li>Continue to maintain both data stores, and switch to using Truffle DB to manage artifacts (instead of existing artifacts management code).</li>
+<li>Turn off artifacts by default, but maintain legacy support through configuration.</li>
+<li>Eventually, remove artifacts altogether.</li>
+</ol>
+<p>We expect this process, start to finish, to span at least two major (breaking change) releases. We plan to maintain legacy support for artifacts for at least 18 months after we release a Truffle DB release candidate.</p>
+<figure>
+  <div style="width:100%;height:0;padding-bottom:43%;position:relative;"><iframe src="https://giphy.com/embed/26tPcRGbvMEcKmrRe" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/film-cinemagraph-26tPcRGbvMEcKmrRe">via GIPHY</a></p>
+  <figcaption><a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/WeightAndSwitch">Weight and Switch</a>: Dr. Jones demonstrating proper technique for delicate data migration procedures</figcaption>
+</figure>
+
+
+    <h2 class="link-markdown">
+      <a href="#what-do-you-think-" name="what-do-you-think-"><i class="fas fa-link"></i></a>
+      What do you think?
+    </h2>
+  <p>Please reach out with questions/thoughts/use case ideas/implementation strategies, or even just to say hello. Your feedback will help us provide the most value and make sure we do so with enough clarity!</p>
+<p>We’re tracking overall progress in this <a href="https://github.com/trufflesuite/truffle/issues/1718">GitHub issue (trufflesuite/truffle#1718)</a>. Expect to see this filled out more in the coming weeks, so please follow along there if you’re interested.</p>
+<p>Thanks for reading! Hope to see you at TruffleCon!</p>
+<div class="post-trufflecon-box mt-5 text-center">
+  Get your ticket for TruffleCon 2019 Today
+
+  <div class="mt-3">
+    <a class="btn btn-truffle" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
+  </div>
+</div>
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/blog">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2019</a></li>
+            <li><strong>&copy; Truffle Blockchain Group 2019</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+            <form action="https://truffleframework.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=97cfd4251b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <div class="form-group">
+                <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="footerMailingEmail" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="FNAME" class="form-control" placeholder="First Name" id="footerMailingFirstName">
+                <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
+              </div>
+              <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>
