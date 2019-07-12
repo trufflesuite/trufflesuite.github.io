@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Develop using Fluidity Truffle Box | Blog | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/blog/develop-using-fluidity-truffle-b" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Develop using Fluidity Truffle Box | Blog | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Develop using Fluidity Truffle Box | Blog | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg">N</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Develop using Fluidity Truffle Box</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2019-7-12&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Deepa Sathaye, Guest Blogger from Fluidity</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <div class="post-trufflecon-box mb-5">
+  <strong><a href="https://www.trufflesuite.com/trufflecon2019">TruffleCon 2019</a></strong> is happening August 2-4 on Microsoft’s campus in Redmond, WA. This year’s event will include 60+ speakers from the blockchain ecosystem, along with hands-on workshops geared toward novice users and expert builders alike. The Truffle team is ramping up for TruffleCon 2019 by writing a daily blog post about everything that’s on our minds. We hope you enjoy and we’ll see you in Redmond!
+
+  <div class="text-center">
+    <a class="btn btn-truffle mt-3" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
+  </div>
+</div>
+
+<p><strong>TLDR;</strong> Fluidity has a pretty awesome truffle-box with lots of goodies to build secure, well-tested smart contracts. With two simple commands, you’ll be set up for development using these testing and security tools preconfigured.</p>
+<p>To use:</p>
+<pre><code class="lang-shell">npm install -g truffle
+truffle unbox fluidity/fluidity-truffle-box
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a href="#develop-using-fluidity-truffle-box" name="develop-using-fluidity-truffle-box"><i class="fas fa-link"></i></a>
+      Develop using Fluidity Truffle Box
+    </h2>
+  <p>Today, I’d like to share Fluidity’s Truffle Box. It contains a combination of tools we use to develop, test, and analyze our smart contracts. As our team has created several products and proof-of-concepts, we’ve developed a set of standards for creating smart contract repos and having a truffle-box makes this easier. We’ve tried and tested different tools and this box contains our favorite tools for efficient development.</p>
+<p>The Fluidity Truffle Box allows us to bootstrap our smart contract projects. This box focuses primarily on building safe and secure smart contracts that can be easily audited. We’re able to consolidate many of the new tools, as well as ensure that any projects we start always use up to date versions. Prior to starting new projects, we double check that the packages and tools within truffle-box are up to date. We acknowledge this truffle-box is not a kitchen sink of all the tools. It has been curated based upon what we consistently use. The box doesn’t have a UI component and mostly contains configurations and tools that aid in testing.</p>
+
+    <h2 class="link-markdown">
+      <a href="#core-tools" name="core-tools"><i class="fas fa-link"></i></a>
+      Core Tools
+    </h2>
+  <p>At Fluidity we write smart contracts with Solidity using the latest fixed version, currently 0.5.10, and we use Ganache as our primary test chain. We use Open-Zeppelin as the base for many of our contracts’ systems. In addition, there’s a linter for both the smart contracts and tests using <a href="https://www.npmjs.com/package/solhint">solhint</a> and <a href="https://www.npmjs.com/package/standard">standard</a>. A linter analyzes code and tests and then either recommends or updates the code for potential syntax errors and style recommendations. Solhint’s configuration is present in fluidity-truffle-box and tries to closely align with the Solidity documentation. We use standard because it’s opinionated and keeps the codebase consistent with minimal fuss. Thus, standard doesn’t have any custom configurations. </p>
+
+    <h2 class="link-markdown">
+      <a href="#how-we-handle-testing-and-code-coverage" name="how-we-handle-testing-and-code-coverage"><i class="fas fa-link"></i></a>
+      How we handle testing and code coverage
+    </h2>
+  
+    <h3 class="link-markdown">
+      <a href="#gnosis-mock-contract" name="gnosis-mock-contract"><i class="fas fa-link"></i></a>
+      Gnosis Mock Contract
+    </h3>
+  <p>Gnosis-Mock is a comprehensive mocking smart contract that allows us to perform unit-testing of our smart contracts. For those not familiar, mocking means creating dummy objects to simulate the behavior of real objects. Mocking allows one to isolate the behavior of the testable object from any other dependencies. As an example, certain behavior in smart contract designs, such as closing a token sale, may require dependencies on several state variables and contracts to already be triggered to allow it to burn tokens. To close a token sale, let’s say you need to have started the sale, sold some threshold of tokens, reached a certain future block, and given close sale privileges to another user. Any one of these requirements, outside of just calling close sale, would need to be run if mocking were not used. By simulating these states with dummy smart contract, it narrows down exactly what needs to be tested. We heavily use the Gnosis mock library which allows us to test contracts independently before running any integration tests. </p>
+
+    <h3 class="link-markdown">
+      <a href="#truffle-assertions" name="truffle-assertions"><i class="fas fa-link"></i></a>
+      Truffle Assertions
+    </h3>
+  <p>Truffle assertions has streamlined how we test events and states of smart contracts. The packages works inside Truffle tests and provides more assertions to call about smart contract states. It supports revert reason strings so we can be confident that exact cases are hit on revert. In addition, it provides more granular ways to test for function failures.</p>
+
+    <h3 class="link-markdown">
+      <a href="#eth-gas-reporter" name="eth-gas-reporter"><i class="fas fa-link"></i></a>
+      Eth-gas-reporter
+    </h3>
+  <p>Eth gas reporter shows us the gas usage per unit tests in a nice report after running your test suite. We’ve tried many other tools before as well as trying to write custom gas usage with web3. This has been a recent find for us and has made gas analysis much easier.</p>
+
+    <h3 class="link-markdown">
+      <a href="#solidity-coverage" name="solidity-coverage"><i class="fas fa-link"></i></a>
+      Solidity-coverage
+    </h3>
+  <p>We use solidity-coverage to determine what percentage of the codebase is covered by unit tests. We use a forked version by <strong>leapdao</strong> because this version supports many of the breaking changes with Solidity 0.5.0+. Code coverages give a helpful metric to ensure we’re testing as we code and that all branch paths are tested. It has also served for us to remove redundant code paths that we’ve found were not accessible. In addition, we have incorporated code-coverage with our CI process, meaning it is automatically executed on every pull request we make, allowing us to easily check PRs for code coverage. The configuration is stored in <code>&lt;project_rool&gt;/.solcover.js</code>, and can be personalised for your project.</p>
+
+    <h3 class="link-markdown">
+      <a href="#slither-and-mythril" name="slither-and-mythril"><i class="fas fa-link"></i></a>
+      Slither and Mythril
+    </h3>
+  <p>Both slither and mythril are python packages that we’ve included in our truffle-box. They are security tools by <a href="https://www.trailofbits.com/">Trail of Bits</a> that allow us to better self-audit our code and evaluate many of our invariants and assumptions internally. Instructions to run each of these packages are stored in the README.md file of the fluidity-truffle-box.</p>
+<p>Slither is a static code analyzer by Trail of Bits. It runs across the contracts directory fairly quickly (&lt; 1 min) and picks up potentially vulnerable Solidity code. Mythril is a security analysis tool for EVM bytecode from ConsenSys. The program takes much longer to run, and while it’s in the truffle-box, we’ll usually run this tool on AWS or another cloud environment and analyze those results. While there is some overlap of errors that are picked up by truffle-compile, slither, and mythril, each focuses on different types of error. We therefore find it helpful to use all 3 on our contracts.</p>
+
+    <h3 class="link-markdown">
+      <a href="#circle-ci-template" name="circle-ci-template"><i class="fas fa-link"></i></a>
+      Circle CI Template
+    </h3>
+  <p>At Fluidity we use circle-ci for our continuous integration. By having sample templates in the repo, it’s more convenient to making sure we enable it whenever we create new repositories. The new repos therefore constantly have to build successfully and migrate via Ganache, and test coverage is apparent to all members on the team. With the template in place, it’s quick for us to add additional commands such as linting or gas reporting dependent on where we are in the development process.</p>
+
+    <h2 class="link-markdown">
+      <a href="#unique-features" name="unique-features"><i class="fas fa-link"></i></a>
+      Unique features
+    </h2>
+  
+    <h3 class="link-markdown">
+      <a href="#using-allowunlimitedcontractsize" name="using-allowunlimitedcontractsize"><i class="fas fa-link"></i></a>
+      Using allowUnlimitedContractSize
+    </h3>
+  <p>We allow our initial contract designs not to be limited by any contract size constraints with the use of the flag <em>allowUnlimitedContractSize</em>. Ganache has a default gas limit of 6,721,975 which does not reflect the actual gas limit of public testnet and mainnets, being 7,000,000 and 8,000,000 respectively. While our team does want to reduce the gas footprint while developing and iterating through different token designs/debugging, it’s been helpful not to be limited by a strict gas price or gas limit with testing. For example, we use longer descriptive messages in revert reasons when developing, but reduce them to be more succinct for final code versions. Reducing the string lengths saved us 3,000,000 gas. </p>
+<p>Run each line in a different terminal window</p>
+<pre><code class="lang-shell">yarn ganache-unlimited
+yarn truffle truffle-unlimited
+</code></pre>
+<p>After settling on a design, we’ll start iterating to reduce gas usage. As mentioned above, we use eth-gas-reporter to do this. Thus, with 100% test coverage and integration tests, eth-gas-reporter gives a pretty comprehensive understanding of gas usage throughout.</p>
+
+    <h2 class="link-markdown">
+      <a href="#custom-migration-and-test-utilities" name="custom-migration-and-test-utilities"><i class="fas fa-link"></i></a>
+      Custom Migration and Test Utilities
+    </h2>
+  <p>There are two custom utilities files that we have created and keep available for the right circumstance of contracts. First, we have a custom migration utilities script. Truffle has deployed contract management but only stores a single address for each contract deploy per network id; each deployed contract is treated as a singleton. However, there have been cases where we’ve deployed multiple instances of the same contract and have needed to save each of the deployed contract addresses. Our solution was to create a custom migration_utils.js that stored the contract addresses per migration in  a JSON file. From there, integration tests and accessory scripts use the contract addresses while still relying on the build directory for ABIs.</p>
+<p>The second script is related to testing time sensitive smart contracts. We’ve written a post about it called <a href="https://medium.com/fluidity/standing-the-time-of-test-b906fcc374a9">Standing the Time of Test</a> and we’ve used this script and features in Ganache to run both idempotent tests as well as run simulations. </p>
+<p>Running the command for a specific date</p>
+<pre><code class="lang-shell">yarn ganache-unlimited --time &#39;2019-02-15T15:53:00+00:00&#39;
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a href="#anything-else" name="anything-else"><i class="fas fa-link"></i></a>
+      Anything else
+    </h2>
+  <p>Most of the features are in the <a href="https://github.com/airswap/fluidity-truffle-box">README</a> in the directory and I’d love to take any questions or issues using this repository. Linking all these tools allows for a solid, sane development process for our team. They’re always at our fingertips with fluidity-truffle-box. Hopefully, you’ll be able to use the Fluidity Truffle Box to enhance your own smart contract development process!</p>
+
+    <h2 class="link-markdown">
+      <a href="#github-repos" name="github-repos"><i class="fas fa-link"></i></a>
+      Github repos
+    </h2>
+  <ul>
+<li>Fluidity Truffle Box: <a href="https://github.com/fluidity/fluidity-truffle-box">https://github.com/fluidity/fluidity-truffle-box</a></li>
+<li>Gnosis-Mock: <a href="https://github.com/gnosis/mock-contract">https://github.com/gnosis/mock-contract</a></li>
+<li>Truffle Assertions: <a href="https://github.com/rkalis/truffle-assertions">https://github.com/rkalis/truffle-assertions</a></li>
+<li>Eth gas reporter: <a href="https://github.com/cgewecke/eth-gas-reporter">https://github.com/cgewecke/eth-gas-reporter</a></li>
+<li>Leapdao Solidity-Coverage: <a href="https://github.com/leapdao/solidity-coverage">https://github.com/leapdao/solidity-coverage</a></li>
+<li>Original Solidity-Coverage: <a href="https://github.com/sc-forks/solidity-coverage">https://github.com/sc-forks/solidity-coverage</a></li>
+<li>Slither: <a href="https://github.com/crytic/slither">https://github.com/crytic/slither</a></li>
+<li>Mythril: <a href="https://github.com/ConsenSys/mythril">https://github.com/ConsenSys/mythril</a></li>
+</ul>
+
+    <h2 class="link-markdown">
+      <a href="#fluidity-resources-" name="fluidity-resources-"><i class="fas fa-link"></i></a>
+      Fluidity Resources:
+    </h2>
+  <ul>
+<li>Website: <a href="https://fluidity.io">https://fluidity.io</a></li>
+<li>Twitter: <a href="https://twitter.com/fluidityio">https://twitter.com/fluidityio</a></li>
+<li>Facebook: <a href="https://facebook.com/fluidityio/">https://facebook.com/fluidityio/</a></li>
+<li>LinkedIn: <a href="https://linkedin.com/company/fluidityio/">https://linkedin.com/company/fluidityio/</a></li>
+<li>YouTube: <a href="https://youtube.com/c/fluidityio">https://youtube.com/c/fluidityio</a></li>
+<li>Blog: <a href="https://medium.com/fluidity">https://medium.com/fluidity</a></li>
+</ul>
+<div class="post-trufflecon-box mt-5 text-center">
+  Join Deepa along with 60+ speakers from EY,  IBM, Quorum, Runtime Verification, and more!
+
+  <div class="mt-3">
+    <a class="btn btn-truffle" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
+  </div>
+</div>
+
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/blog">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2019</a></li>
+            <li><strong>&copy; Truffle Blockchain Group 2019</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+            <form action="https://truffleframework.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=97cfd4251b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <div class="form-group">
+                <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="footerMailingEmail" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="FNAME" class="form-control" placeholder="First Name" id="footerMailingFirstName">
+                <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
+              </div>
+              <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>

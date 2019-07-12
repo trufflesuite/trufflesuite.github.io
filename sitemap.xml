@@ -47,6 +47,7 @@
 <url> <loc>https://www.truffleframework.com/boxes/etherplate.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/eth-vue.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/express-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/fluidity-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/helloworldbox.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/limelabs-angular-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/macroverse-truffle-box.html</loc> </url>
@@ -101,6 +102,7 @@
 <url> <loc>https://www.truffleframework.com/staff/etherplate.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/eth-vue.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/express-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/staff/fluidity-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/helloworldbox.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/limelabs-angular-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/macroverse-truffle-box.html</loc> </url>
@@ -131,6 +133,7 @@
 <url> <loc>https://www.truffleframework.com/blog/10-things-we-dont-do-that-make-working-at-truffle-awesome.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/announcing-full-portable-solidity-debugger.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/designing-the-ganache-logo.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/develop-using-fluidity-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/drizzle-reactive-ethereum-data-for-front-ends.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/ethereum-gas-exactimation.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/first-ever-truffle-retreat.html</loc> </url>
