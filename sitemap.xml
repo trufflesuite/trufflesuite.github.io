@@ -18,8 +18,8 @@
 <url> <loc>https://www.truffleframework.com/press-releases/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/index.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/search.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/dashboard/index.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/search.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/drizzle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/drizzle-react-native.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/react.html</loc> </url>
@@ -131,6 +131,7 @@
 <url> <loc>https://www.truffleframework.com/staff/vueport-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/zepkit.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/10-things-we-dont-do-that-make-working-at-truffle-awesome.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/5-trends-impacting-the-blockchain-developer-experience.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/announcing-full-portable-solidity-debugger.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/designing-the-ganache-logo.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/develop-using-fluidity-truffle-box.html</loc> </url>
@@ -164,11 +165,11 @@
 <url> <loc>https://www.truffleframework.com/tutorials/chain-forking-exploiting-the-dao.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/configuring-visual-studio-code.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/creating-a-cli-with-truffle-3.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/tutorials/debugger-variable-inspection.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/debugging-a-smart-contract.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/deploying-to-the-live-network.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/drizzle-and-contract-events.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/drizzle-and-react-native.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/tutorials/debugger-variable-inspection.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/ethereum-devops-truffle-testrpc-vsts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/ethereum-overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react.html</loc> </url>
