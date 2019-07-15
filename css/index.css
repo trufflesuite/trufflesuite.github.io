@@ -11696,6 +11696,10 @@ footer form {
   font-size: 1.25rem;
 }
 
+.docs-sidebar .toggle-teams h2 {
+  line-height: 2.5rem;
+}
+
 .docs-sidebar .toggle-truffle h2 {
   line-height: 2.5rem;
 }
@@ -11735,7 +11739,7 @@ footer form {
   width: 2.5rem;
 }
 
-.docs-sidebar .toggle-truffle, .docs-sidebar .suite-link {
+.docs-sidebar .suite-link {
   color: #fff;
   display: block;
   margin-bottom: 1.25rem;
@@ -11743,6 +11747,14 @@ footer form {
 
 .docs-sidebar a:first-of-type {
   margin-top: 2rem;
+}
+
+.docs-sidebar .teams {
+  color: #ffffff;
+}
+
+.docs-sidebar .teams a {
+  color: #ffffff;
 }
 
 .docs-sidebar .truffle {
@@ -11753,24 +11765,12 @@ footer form {
   color: #3fe0c5;
 }
 
-.docs-sidebar .toggle-ganache {
-  color: #fff;
-  display: block;
-  margin-bottom: 1.25rem;
-}
-
 .docs-sidebar .ganache {
   color: #e4a663;
 }
 
 .docs-sidebar .ganache a {
   color: #e4a663;
-}
-
-.docs-sidebar .toggle-drizzle {
-  color: #fff;
-  display: block;
-  margin-bottom: 1.25rem;
 }
 
 .docs-sidebar .drizzle {
@@ -11892,49 +11892,33 @@ footer form {
   }
 }
 
-.docs-home .card {
-  text-align: center;
-}
-
 .docs-home .card .card-title {
   color: #5e464d;
   margin-bottom: 0;
 }
 
-.docs-home .card .card-text {
-  text-align: left;
+.docs-home .card .card-img-top {
+  display: inline-block;
+  margin: 0 .5em 0 0;
+  width: 2.5rem;
 }
 
-.docs-home .card.docs-truffle-card .card-img-top {
-  display: inline;
-  max-height: 120px;
-  margin: 0;
+.docs-home .card.docs-teams-card .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .docs-home .card.docs-truffle-card .card-title {
   font-size: 2rem;
   font-weight: bold;
-  margin-top: 1.25rem;
-}
-
-.docs-home .card.docs-ganache-card .card-img-top {
-  max-height: 120px;
-  margin: 0;
 }
 
 .docs-home .card.docs-ganache-card .card-title {
-  font-size: 2.25rem;
-  margin-top: 1rem;
-}
-
-.docs-home .card.docs-drizzle-card .card-img-top {
-  margin: 20px 0 0 0;
-  max-height: 100px;
+  font-size: 2rem;
 }
 
 .docs-home .card.docs-drizzle-card .card-title {
-  font-size: 2.25rem;
-  margin: 1rem 0 0 0;
+  font-size: 2rem;
 }
 
 .docs-badges a {
@@ -11963,6 +11947,26 @@ footer form {
 
 .docs-search-results a:hover h3 {
   text-decoration: underline;
+}
+
+.inline-button {
+  color: #33262a;
+  background: #3fe0c5;
+  padding: .25em .5em;
+  border-radius: .25em;
+  font-size: .9em;
+  line-height: 2em;
+}
+
+.inline-menu-item {
+  color: #ffffff;
+  background: #33262a;
+  padding: .125em .33em;
+  line-height: 2em;
+}
+
+.inline-menu-item i {
+  margin-right: .25em;
 }
 
 .card-tutorial {
