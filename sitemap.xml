@@ -207,6 +207,13 @@
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/loading-existing-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/switching-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/the-quickstart-workspace.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/overview.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/quickstart.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/contracts/contract-monitoring.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/getting-started/adding-repositories.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/getting-started/creating-an-account.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/reference/permissions-disclosure.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/testing/starting-builds.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/build-processes.html</loc> </url>
@@ -233,11 +240,4 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/testing-your-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/overview.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/quickstart.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/contracts/contract-monitoring.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/getting-started/adding-repositories.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/getting-started/creating-an-account.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/reference/permissions-disclosure.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/testing/starting-builds.html</loc> </url>
 </urlset>
