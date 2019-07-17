@@ -12602,6 +12602,12 @@ blockquote {
   min-width: 17rem;
 }
 
+@media (min-width: 1200px) {
+  .container.keynotes {
+    max-width: 1500px;
+  }
+}
+
 .policy-container .c27 {
   text-align: center;
   margin-bottom: 0;
