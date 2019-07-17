@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://www.truffleframework.com/b2c-onepager.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/404.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/b2c-onepager.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/community.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/drizzle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/ganache.html</loc> </url>
@@ -18,8 +18,8 @@
 <url> <loc>https://www.truffleframework.com/staff/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/search.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/dashboard/index.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/search.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/drizzle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/drizzle-react-native.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/react.html</loc> </url>
@@ -195,6 +195,20 @@
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/drizzle-options.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/drizzle-state.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/how-data-stays-fresh.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/overview.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/quickstart.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/reference/ganache-settings.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/reference/workspace-default-configuration.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/contracts-page.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/decoded-transactions.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/events-page.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/linking-a-truffle-project.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/unlinking-a-truffle-project.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/creating-workspaces.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/deleting-workspaces.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/loading-existing-workspaces.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/switching-workspaces.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/the-quickstart-workspace.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/contracts/contract-monitoring.html</loc> </url>
@@ -228,18 +242,4 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/testing-your-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/overview.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/quickstart.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/reference/ganache-settings.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/reference/workspace-default-configuration.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/contracts-page.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/decoded-transactions.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/events-page.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/linking-a-truffle-project.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/unlinking-a-truffle-project.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/creating-workspaces.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/deleting-workspaces.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/loading-existing-workspaces.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/switching-workspaces.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/the-quickstart-workspace.html</loc> </url>
 </urlset>
