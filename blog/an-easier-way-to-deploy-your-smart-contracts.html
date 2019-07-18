@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="An Easier Way to Deploy Your Smart Contracts | Blog | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/blog/an-easier-way-to-deploy-your-smart-contrac" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="An Easier Way to Deploy Your Smart Contracts | Blog | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>An Easier Way to Deploy Your Smart Contracts | Blog | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg">N</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>An Easier Way to Deploy Your Smart Contracts</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2019-7-19&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Mike Seese</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <div class="post-trufflecon-box mb-5">
+  <strong><a href="/trufflecon2019">TruffleCon 2019</a></strong> is happening August 2-4 on Microsoft&#39;s campus in Redmond, WA. This year&#39;s event will include 60+ speakers from the blockchain ecosystem, along with hands-on workshops geared toward novice users and expert builders alike. The Truffle team is ramping up for TruffleCon 2019 by writing a daily blog post about everything that&#39;s on our minds. We hope you enjoy and we&#39;ll see you in Redmond!
+
+  <div class="text-center">
+    <a class="btn btn-truffle mt-3" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
+  </div>
+</div>
+
+<p><strong>TL;DR</strong> - Deploying your smart contracts shouldn&#39;t be difficult, and the process should be flexible. I give a sneak peek at the next feature we&#39;re building: an <strong>easy to use interface to deploy your Truffle projects with <a href="/teams">Truffle Teams</a></strong>! It&#39;s going to be awesome, and <strong>you can be the first to use it</strong>! I&#39;ll be giving a <strong>hands-on workshop from 9AM-12PM on Friday, August 2nd, at <a href="/trufflecon2019">TruffleCon 2019</a></strong> walking you through through the entire Truffle Teams lifecycle, including the <strong>never-before-used Deployments interface</strong>! See you there!</p>
+<hr>
+<p>So! You&#39;ve finished implementing your dApp, you&#39;ve tested it on <a href="/ganache">Ganache</a>, and you&#39;re ready to push it to a testnet or Mainnet! Congratula—oh wait.</p>
+<p>
+    <img class="img-fluid" src="/img/blog/an-easier-way-to-deploy-your-smart-contracts/got-deploy-mainnet.jpg" title="One Does Not Simply Deploy to Mainnet" alt="One Does Not Simply Deploy to Mainnet" />
+    
+  </p>
+<p>It&#39;s not that easy.</p>
+<p>There are a handful of solutions, and none have <em>really</em> made it painlessly easy. Even our own <code>truffle migrate</code> (aka <code>truffle deploy</code>) has more to be desired.</p>
+<p>Well it&#39;s about to get a whole lot easier with Truffle Teams. <a href="#truffle-teams">Skip to the good stuff.</a></p>
+
+    <h2 class="link-markdown">
+      <a href="#the-not-so-easy-ways-to-deploy-your-smart-contracts" name="the-not-so-easy-ways-to-deploy-your-smart-contracts"><i class="fas fa-link"></i></a>
+      The Not-So-Easy Ways to Deploy Your Smart Contracts
+    </h2>
+  <p>So what&#39;s wrong with what&#39;s already made? Why make <em>yet another</em> tool? I hear you. Let&#39;s take a look at what <strong>is</strong> available, and if you&#39;re still meh, I&#39;d love to talk to you at <a href="/trufflecon2019">TruffleCon</a>!</p>
+<h3 class="link-markdown">
+  <a href="#remix" name="remix">
+    <i class="fas fa-link">
+    </i>
+  </a>
+  <div>
+    <span>Remix</span>
+    <img style="margin: 0 !important; display: inline-block !important;" src="/img/blog/an-easier-way-to-deploy-your-smart-contracts/remix-logo.svg"  width="40px" title="Remix" alt="Remix">
+  </div>
+</h3>
+
+<p>
+    <img class="img-fluid" src="/img/blog/an-easier-way-to-deploy-your-smart-contracts/remix.png" title="Remix IDE" alt="Remix IDE" />
+    
+  </p>
+<p>Oh <a href="https://remix.ethereum.org">Remix</a>, we all have fond memories of you. And many people still use Remix for all sorts of use cases! Remix gives you an in-browser Ethereum IDE, letting you develop, compile, test, debug, and deploy smart contracts for Ethereum. And it&#39;s probably the least amount of work needed to throw a single smart contract onto a testnet or Mainnet (i.e. when deploying a single <code>.sol</code> file).</p>
+<p>Remix, as of version <code>0.7.7</code>, gives you a simple <code>Deploy</code> button. This will send a transaction to the <code>web3</code> provider of your choice (many use <a href="https://metamask.io">MetaMask</a>), and you&#39;re off to the races!</p>
+<p>Great, right?</p>
+<p>Well, Remix gets harder to use as you add more contracts, import 3rd party contracts, work as a whole team, etc. It&#39;s definitely flexible and able to handle these use cases (though not without legwork and configuration), but it&#39;s not my personal preference for developing large, complex dApps.</p>
+<h3 class="link-markdown">
+  <a href="#truffle-cli" name="truffle-cli">
+    <i class="fas fa-link">
+    </i>
+  </a>
+  <div>
+    <span>Truffle CLI</span>
+    <img style="margin: 0 !important; display: inline-block !important;" src="/img/truffle-logo-light.svg"  width="50px" title="Truffle" alt="Truffle">
+  </div>
+</h3>
+
+<p>Enter <a href="/truffle">Truffle</a>.</p>
+<p>It&#39;s a fantastic framework (not to toot our own horns) that lets you develop your dApp in a flexible and extensible way. It provides structure to keep you sane in this chaotic world of Web 3.0.</p>
+<p>It even gives you a mechanism to define what deploying (aka: &quot;migrating&quot;) means for your application. You can specify what contracts get deployed in which order, with whatever arguments you require. For instance, your smart contracts may depend on the deployment of a past contract, which you can easily code in migration scripts.</p>
+<p><strong>And it&#39;s as easy as running <code>truffle migrate</code>!</strong></p>
+<p>And if you were deploying directly to <a href="/ganache">Ganache</a>, that&#39;d be entirely true, requiring very minimal amount of configuration.</p>
+<p>
+    <img class="img-fluid" src="/img/blog/an-easier-way-to-deploy-your-smart-contracts/truffle.png" title="Running `truffle migrate`" alt="Running `truffle migrate`" />
+    
+  </p>
+<p>But that&#39;s not the case when we start talking about testnets or Mainnet.</p>
+<p>The <strong>easiest</strong> way to deploy to an external network is by using <a href="/docs/truffle/reference/configuration#providers">Truffle&#39;s HD Wallet Provider</a>. However, this requires you to somehow get your mnemonic or private key into the <code>truffle-config.js</code> config file, <strong>without committing it to your provider source control provider (PLEASE don&#39;t do this - you&#39;ll get your Ether stolen).</strong> To use an account you created with MetaMask, you&#39;d need to export your private key from MetaMask (or your mnemonic, if you&#39;re feeling lucky 😱) and create the boilerplate code to read in the key from an environment variable (to prevent committing it to your repository and sharing it publicly).</p>
+<p>In all truthfulness, this isn&#39;t too bad, but it&#39;s also a bit too much config for me. I&#39;d much rather use MetaMask directly to authenticate transactions during deployments.</p>
+
+    <h3 class="link-markdown">
+      <a href="#custom-management-web-interface" name="custom-management-web-interface"><i class="fas fa-link"></i></a>
+      Custom Management Web Interface
+    </h3>
+  <p>Some devs will create a small front-end web interface which uses <a href="https://github.com/ethereum/web3.js">web3.js</a> to deploy their smart contracts. I have done this personally in my <a href="https://seesemichaelj.github.io/game-of-thrones-death-pool">Game of Thrones Death Pool</a> project, and I chalked it up to &quot;well I can put this on a website and others can deploy their own versions.&quot;</p>
+<p>
+    <img class="img-fluid" src="/img/blog/an-easier-way-to-deploy-your-smart-contracts/got-death-pool.png" title="Custom Management Web Interface for GoT Death Pool" alt="Custom Management Web Interface for GoT Death Pool" />
+    
+  </p>
+<p>Sometimes this is necessary, but it&#39;s more work if it&#39;s not absolutely needed for your application.</p>
+
+    <h2 class="link-markdown">
+      <a href="#my-version-of-an-ideal-deployment-interface" name="my-version-of-an-ideal-deployment-interface"><i class="fas fa-link"></i></a>
+      My Version of an Ideal Deployment Interface
+    </h2>
+  <p>In an ideal world, I&#39;d like these features in a deployment interface:</p>
+<ul>
+  <li>Let&#39;s you use MetaMask directly for signing transactions
+    <ul>
+      <li style="margin-bottom: 0 !important;">Remix ✔️ | Truffle CLI ❌ | Custom Webapp ✔️</li>
+      <li>A bonus win here is support for Ledger and Trezor wallets!</li>
+    </ul>
+  </li>
+  <li>I can use a framework/toolset/etc. that lets me build complex apps and supports complex deployment processes
+    <ul>
+      <li>Remix ❌ | Truffle CLI ✔️ | Custom Webapp ✔️</li>
+    </ul>
+  </li>
+  <li>I don&#39;t need to do a lot of work to go from finishing development to deploying
+    <ul>
+      <li>Remix ✔️ | Truffle CLI ✔️ | Custom Webapp ❌</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 class="link-markdown">
+  <a href="#truffle-teams" name="truffle-teams">
+    <i class="fas fa-link">
+    </i>
+  </a>
+  <div>
+    <span>Introducing: Truffle Teams Deployments</span>
+    <img style="margin: 0 !important; display: inline-block !important;" src="/img/tt-logomark.svg"  width="50px" title="Truffle Teams" alt="Truffle Teams">
+  </div>
+</h3>
+
+<p>If you haven&#39;t heard about our latest tool, <a href="/teams">Truffle Teams</a>, you really should check it out. Truffle Teams gives you zero-config Continuous Integration (CI) for your Truffle projects, and it also lets you monitor what&#39;s happening with your deployed contracts. Truffle Teams meshes the full Truffle Suite into a cohesive application that enables better collaboration within development teams (even teams of 1!).</p>
+<p>
+    <img class="img-fluid" src="/img/blog/an-easier-way-to-deploy-your-smart-contracts/teams-build.png" title="Truffle Teams Builds" alt="Truffle Teams Builds" />
+    
+  </p>
+<p>The next big feature we&#39;re working on is Deployments. We already compile your contracts from your Truffle project for you when you make a commit to GitHub; why can&#39;t we migrate/deploy them as well? Further, Truffle Teams is a web application, allowing for easy integration with <a href="https://metamask.io">MetaMask</a>.</p>
+<p>We&#39;re looking at this from a <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a> perspective, and we&#39;re trying to create an extensible system that will support projects and teams of <strong>any size</strong>.</p>
+
+    <h3 class="link-markdown">
+      <a href="#connect-your-github-repository-to-truffle-teams" name="connect-your-github-repository-to-truffle-teams"><i class="fas fa-link"></i></a>
+      Connect Your GitHub Repository to Truffle Teams
+    </h3>
+  <p>To get started with Truffle Teams, you must first connect your GitHub repository. This is a simple step, and we have instructions on how to do this <a href="/docs/teams/quickstart">here</a>.</p>
+
+    <h3 class="link-markdown">
+      <a href="#setup-your-migrations-scripts" name="setup-your-migrations-scripts"><i class="fas fa-link"></i></a>
+      Setup Your Migrations Scripts
+    </h3>
+  <p>If you haven&#39;t built a Truffle project, you should really give it a try; the <a href="/tutorials/pet-shop">Pet Shop Tutorial</a> is a great place to start as it gives a good survey of the different facets of Truffle, including the <code>migration</code> scripts. These scripts let you define the behavior of deploying your smart contracts using a language you&#39;re already familiar with. In the tutorial, you deploy a single contract, but it has the flexibility to do so much more (i.e. you can deploy one contract, get its address, and use that in the constructor when deploying another contract).</p>
+<p>Setting up these scripts is part of the development lifecycle of creating a Truffle project, so I won&#39;t cover that here. But that&#39;s great! You should already be done with this step!!</p>
+
+    <h3 class="link-markdown">
+      <a href="#commit-to-github" name="commit-to-github"><i class="fas fa-link"></i></a>
+      Commit to GitHub
+    </h3>
+  <p>Welp. That was easy. 😅</p>
+
+    <h3 class="link-markdown">
+      <a href="#monitor-the-status-of-your-build" name="monitor-the-status-of-your-build"><i class="fas fa-link"></i></a>
+      Monitor the Status of Your Build
+    </h3>
+  <p>Head over to <a href="https://my.truffleteams.com">https://my.truffleteams.com</a> and click on the <code>BUILDS</code> tab if you&#39;re not there already. You can see a build has been queued, or has started to process. You can click on the repository name in the card to see more details. You can also get to this page by clicking on the yellow dot in GitHub next to your commit and pressing <code>Details</code>.</p>
+<p>
+    <img class="img-fluid" src="/img/docs/teams/starting-builds-comp.png" title="Teams Builds More Details" alt="Teams Builds More Details" />
+    
+  </p>
+
+    <h3 class="link-markdown">
+      <a href="#all-your-tests-pass-let-39-s-deploy-but-only-to-a-testnet-just-to-be-sure-" name="all-your-tests-pass-let-39-s-deploy-but-only-to-a-testnet-just-to-be-sure-"><i class="fas fa-link"></i></a>
+      All Your Tests Pass, Let&#39;s Deploy! (but only to a testnet just to be sure)
+    </h3>
+  <blockquote>
+<p>NOTE: This is just a sneak peek of features to come! You won&#39;t be able to follow along (yet, but <a href="https://share.hsforms.com/1OaTglVhGTdWk7spR6nE_AA34pbp">stay tuned</a>!).</p>
+</blockquote>
+<p>Great, your builds are passing, and you&#39;re ready to deploy to a testnet (i.e. Ropsten) to see if everything works.</p>
+<p>Now head over to the <code>DEPLOYMENTS</code> tab and select your repository.</p>
+<p>You&#39;ll now see a screen that shows a list of builds for your commits on the left.</p>
+<p>
+    <img class="img-fluid" src="/img/blog/an-easier-way-to-deploy-your-smart-contracts/deployments-empty.png" title="Deployments Empty" alt="Deployments Empty" />
+    
+  </p>
+<p>Deploying a build is as simple as hovering over the commit, pressing a button, and selecting which network you&#39;d like to deploy to.</p>
+<p>
+    <img class="img-fluid" src="/img/blog/an-easier-way-to-deploy-your-smart-contracts/deployment-wizard-select.png" title="Deployment Wizard Select" alt="Deployment Wizard Select" />
+    
+  </p>
+<p>Truffle Teams will then start the migration/deployment process. Each transaction is sent to the web application and MetaMask will prompt you to confirm transactions. By leveraging MetaMask, we can give you <strong><a href="https://www.ledger.com">Ledger</a> and <a href="https://trezor.io">Trezor</a> hardware wallet support too! 🔒</strong></p>
+<p>
+    <img class="img-fluid" src="/img/blog/an-easier-way-to-deploy-your-smart-contracts/metamask-tx.png" title="MetaMask Transaction" alt="MetaMask Transaction" />
+    
+  </p>
+
+    <h3 class="link-markdown">
+      <a href="#happy-with-a-released-version-promote-it-to-production-aka-deploy-to-mainnet-" name="happy-with-a-released-version-promote-it-to-production-aka-deploy-to-mainnet-"><i class="fas fa-link"></i></a>
+      Happy With a Released Version? Promote it to Production (aka deploy to Mainnet)
+    </h3>
+  <p>But we&#39;re not done yet! You&#39;ve finished your testing on Ropsten, and you&#39;re now ready to deploy to Mainnet. With the upcoming version of Teams, you can select that deployment and promote it to production (aka Mainnet) with just a couple of clicks.</p>
+<p>
+    <img class="img-fluid" src="/img/blog/an-easier-way-to-deploy-your-smart-contracts/deployments-complete.png" title="Deployments Complete" alt="Deployments Complete" />
+    
+  </p>
+
+    <h2 class="link-markdown">
+      <a href="#and-that-39-s-it-pretty-easy-if-you-ask-me-" name="and-that-39-s-it-pretty-easy-if-you-ask-me-"><i class="fas fa-link"></i></a>
+      And that&#39;s it! Pretty easy if you ask me.
+    </h2>
+  <p>
+    <img class="img-fluid" src="/img/blog/an-easier-way-to-deploy-your-smart-contracts/fry-easy.jpg" title="Fry, Easy or Too Easy" alt="Fry, Easy or Too Easy" />
+    
+  </p>
+
+    <h2 class="link-markdown">
+      <a href="#-don-39-t-believe-me-be-the-first-to-try-it-at-my-trufflecon-2019-workshop-" name="-don-39-t-believe-me-be-the-first-to-try-it-at-my-trufflecon-2019-workshop-"><i class="fas fa-link"></i></a>
+      🎉 Don&#39;t Believe Me? Be The First to Try it at My TruffleCon 2019 Workshop! 🎉
+    </h2>
+  <p>I really hope you&#39;re going to TruffleCon; it&#39;s going to be awesome. Even more so because you can <strong>be the first to try Truffle Teams Deployments in my workshop!</strong> In my <code>Push It! Push It Real Good: Truffle Teams Intro &amp; Deployments</code> (9AM-12PM on Friday, Aug, 2nd) workshop, we&#39;ll cover this entire lifecycle: hooking up your repository, getting your first build to pass, deploying to Ropsten, and finally monitoring transactions made against your contracts (we didn&#39;t talk about this here; check out the <a href="/docs/teams/contracts/contract-monitoring">docs</a> for more details on contract monitoring).</p>
+<p>Hopefully there will be time for me to answer any questions you have, and maybe even help get your own Truffle project hooked up with Truffle Teams! If not, I will be available during the office hours at 5PM on Friday! I&#39;m also always happy to chat anytime throughout the conference!</p>
+<p><strong>You can reserve your spot in my workshop <a href="https://trufflecon2019.sched.com/event/RFHD/push-it-push-it-real-good-truffle-teams-intro-deployments">here</a>!</strong></p>
+<p>Haven&#39;t bought your ticket to TruffleCon yet, and really want to get your hands on this cool feature?? It&#39;s not too late! Hope to see you there 👇</p>
+<div class="post-trufflecon-box mt-5 text-center">
+  Get your ticket for TruffleCon 2019 Today
+
+  <div class="mt-3">
+    <a class="btn btn-truffle" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
+  </div>
+</div>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/blog">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2019</a></li>
+            <li><strong>&copy; Truffle Blockchain Group 2019</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+            <form action="https://truffleframework.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=97cfd4251b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <div class="form-group">
+                <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="footerMailingEmail" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="FNAME" class="form-control" placeholder="First Name" id="footerMailingFirstName">
+                <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
+              </div>
+              <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>
