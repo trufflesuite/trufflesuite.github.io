@@ -516,7 +516,7 @@ truffle(develop)&gt; newInstance.address
 });
 </code></pre>
 <p>Option 2: There&#39;s also shorthand for just sending Ether directly:</p>
-<pre><code class="lang-javascript">instance.send(web3.toWei(1, &quot;ether&quot;)).then(function(result) {
+<pre><code class="lang-javascript">instance.send(web3.utils.toWei(1, &quot;ether&quot;)).then(function(result) {
   // Same result object as above.
 });
 </code></pre>
