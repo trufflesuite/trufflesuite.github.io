@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://www.truffleframework.com/404.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/b2c-onepager.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/404.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/community.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/drizzle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/ganache.html</loc> </url>
@@ -237,8 +237,8 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/working-with-quorum.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/writing-external-scripts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/choosing-an-ethereum-client.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/configuration.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/contact-the-developers.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/configuration.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/contract-abstractions.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/truffle-commands.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/testing-your-contracts.html</loc> </url>

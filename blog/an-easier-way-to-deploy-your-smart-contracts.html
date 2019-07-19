@@ -143,7 +143,7 @@
   </div>
 </div>
 
-<p><strong>TL;DR</strong> - Deploying your smart contracts shouldn&#39;t be difficult, and the process should be flexible. I give a sneak peek at the next feature we&#39;re building: an <strong>easy to use interface to deploy your Truffle projects with <a href="/teams">Truffle Teams</a></strong>! It&#39;s going to be awesome, and <strong>you can be the first to use it</strong>! I&#39;ll be giving a <strong>hands-on workshop from 9AM-12PM on Friday, August 2nd, at <a href="/trufflecon2019">TruffleCon 2019</a></strong> walking you through through the entire Truffle Teams lifecycle, including the <strong>never-before-used Deployments interface</strong>! See you there!</p>
+<p><strong>TL;DR</strong> - Deploying your smart contracts shouldn&#39;t be difficult, and the process should be flexible. I give a sneak peek at the next feature we&#39;re building: an <strong>easy to use interface to deploy your Truffle projects with <a href="/teams">Truffle Teams</a></strong>! It&#39;s going to be awesome, and <strong>you can be the first to use it</strong>! I&#39;ll be giving a <strong>hands-on workshop from 9AM-12PM on Friday, August 2nd, at <a href="/trufflecon2019">TruffleCon 2019</a></strong> that will walk you through through the entire Truffle Teams lifecycle, including the <strong>never-before-used Deployments interface</strong>! See you there!</p>
 <hr>
 <p>So! You&#39;ve finished implementing your dApp, you&#39;ve tested it on <a href="/ganache">Ganache</a>, and you&#39;re ready to push it to a testnet or Mainnet! Congratula—oh wait.</p>
 <p>
@@ -151,7 +151,7 @@
     
   </p>
 <p>It&#39;s not that easy.</p>
-<p>There are a handful of solutions, and none have <em>really</em> made it painlessly easy. Even our own <code>truffle migrate</code> (aka <code>truffle deploy</code>) has more to be desired.</p>
+<p>There are a handful of solutions, and none have <em>really</em> made it painlessly easy. Even our own <code>truffle migrate</code> (aka <code>truffle deploy</code>) has left much to be desired.</p>
 <p>Well it&#39;s about to get a whole lot easier with Truffle Teams. <a href="#truffle-teams">Skip to the good stuff.</a></p>
 
     <h2 class="link-markdown">
@@ -191,9 +191,9 @@
 
 <p>Enter <a href="/truffle">Truffle</a>.</p>
 <p>It&#39;s a fantastic framework (not to toot our own horns) that lets you develop your dApp in a flexible and extensible way. It provides structure to keep you sane in this chaotic world of Web 3.0.</p>
-<p>It even gives you a mechanism to define what deploying (aka: &quot;migrating&quot;) means for your application. You can specify what contracts get deployed in which order, with whatever arguments you require. For instance, your smart contracts may depend on the deployment of a past contract, which you can easily code in migration scripts.</p>
+<p>It even gives you a mechanism to define what deploying (aka: &quot;migrating&quot;) means for your application. You can specify what contracts get deployed in which order with whatever arguments you require. For instance, your smart contracts may depend on the deployment of a past contract, which you can easily code in migration scripts.</p>
 <p><strong>And it&#39;s as easy as running <code>truffle migrate</code>!</strong></p>
-<p>And if you were deploying directly to <a href="/ganache">Ganache</a>, that&#39;d be entirely true, requiring very minimal amount of configuration.</p>
+<p>...and if you were deploying directly to <a href="/ganache">Ganache</a>, that&#39;d be entirely true.</p>
 <p>
     <img class="img-fluid" src="/img/blog/an-easier-way-to-deploy-your-smart-contracts/truffle.png" title="Running `truffle migrate`" alt="Running `truffle migrate`" />
     
@@ -219,7 +219,7 @@
     </h2>
   <p>In an ideal world, I&#39;d like these features in a deployment interface:</p>
 <ul>
-  <li>Let&#39;s you use MetaMask directly for signing transactions
+  <li>Lets me use MetaMask directly for signing transactions
     <ul>
       <li style="margin-bottom: 0 !important;">Remix ✔️ | Truffle CLI ❌ | Custom Webapp ✔️</li>
       <li>A bonus win here is support for Ledger and Trezor wallets!</li>
@@ -279,7 +279,7 @@
       <a href="#monitor-the-status-of-your-build" name="monitor-the-status-of-your-build"><i class="fas fa-link"></i></a>
       Monitor the Status of Your Build
     </h3>
-  <p>Head over to <a href="https://my.truffleteams.com">https://my.truffleteams.com</a> and click on the <code>BUILDS</code> tab if you&#39;re not there already. You can see a build has been queued, or has started to process. You can click on the repository name in the card to see more details. You can also get to this page by clicking on the yellow dot in GitHub next to your commit and pressing <code>Details</code>.</p>
+  <p>Head over to <a href="https://my.truffleteams.com">https://my.truffleteams.com</a> and click on the <code>BUILDS</code> tab if you&#39;re not there already. You can see a build has been queued or has started to process. You can click on the repository name in the card to see more details. You can also get to this page by clicking on the yellow dot in GitHub next to your commit and pressing <code>Details</code>.</p>
 <p>
     <img class="img-fluid" src="/img/docs/teams/starting-builds-comp.png" title="Teams Builds More Details" alt="Teams Builds More Details" />
     
@@ -292,7 +292,7 @@
   <blockquote>
 <p>NOTE: This is just a sneak peek of features to come! You won&#39;t be able to follow along (yet, but <a href="https://share.hsforms.com/1OaTglVhGTdWk7spR6nE_AA34pbp">stay tuned</a>!).</p>
 </blockquote>
-<p>Great, your builds are passing, and you&#39;re ready to deploy to a testnet (i.e. Ropsten) to see if everything works.</p>
+<p>Great! Your builds are passing, and you&#39;re ready to deploy to a testnet (i.e. Ropsten) to see if everything works.</p>
 <p>Now head over to the <code>DEPLOYMENTS</code> tab and select your repository.</p>
 <p>You&#39;ll now see a screen that shows a list of builds for your commits on the left.</p>
 <p>
