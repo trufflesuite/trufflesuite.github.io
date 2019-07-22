@@ -34,15 +34,15 @@
   <!-- Facebook OpenGraph -->
   <meta property="og:site_name" content="Truffle Suite" />
   <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
-  <meta property="og:title" content="Ganache | Decoded Transactions | Documentation | Truffle Suite" />
-  <meta property="og:url" content="https://trufflesuite.com/docs/ganache/truffle-projects/decoded-transactio" />
+  <meta property="og:title" content="Truffle | Working With Hyperledger EVM | Documentation | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/docs/truffle/getting-started/working-with-hyperledger-e" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="Truffle Suite" />
-  <meta name="twitter:title" content="Ganache | Decoded Transactions | Documentation | Truffle Suite" />
+  <meta name="twitter:title" content="Truffle | Working With Hyperledger EVM | Documentation | Truffle Suite" />
   <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
   <meta name="twitter:creator" content="Truffle Suite" />
   <meta name="twitter:domain" content="trufflesuite.com" />
@@ -50,7 +50,7 @@
   
   <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
 
-  <title>Ganache | Decoded Transactions | Documentation | Truffle Suite</title>
+  <title>Truffle | Working With Hyperledger EVM | Documentation | Truffle Suite</title>
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
@@ -189,7 +189,7 @@
           <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
         </a>
       
-        <div class="collapse truffle " id="truffleDocs" data-parent="#docsSidebar">
+        <div class="collapse truffle show" id="truffleDocs" data-parent="#docsSidebar">
           <ul>
             <a href="/docs/truffle/overview"><li>Overview</li></a>
             <a href="/docs/truffle/quickstart"><li>Quickstart</li></a>
@@ -236,7 +236,7 @@
           <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" /><h2 class="text-ganache">Ganache</h2>
         </a>
         
-        <div class="collapse ganache show" id="ganacheDocs" data-parent="#docsSidebar">
+        <div class="collapse ganache " id="ganacheDocs" data-parent="#docsSidebar">
           <ul>
             <a href="/docs/ganache/overview"><li>Overview</li></a>
             <a href="/docs/ganache/quickstart"><li>Quickstart</li></a>
@@ -307,22 +307,31 @@
 
         
     <h1 class="link-markdown">
-      <a href="#decoded-transactions" name="decoded-transactions"><i class="fas fa-link"></i></a>
-      Decoded Transactions
+      <a href="#working-with-hyperledger-evm" name="working-with-hyperledger-evm"><i class="fas fa-link"></i></a>
+      Working With Hyperledger EVM
     </h1>
-  <p>Ganache will now attempt to decode transactions that are contract calls. In addition to listing the events (encoded or not) for the transaction, Ganache will show the function signature of the transaction as well as the values of the arguments.</p>
-<p class="alert alert-warning">
-<strong>Why aren&#39;t my transactions being decoded?</strong> Check and make sure you&#39;ve added the corresponding Truffle project with the contract that the transaction is being interacted with.
-</p>
+  <p>As of version <code>5.0.27</code>, Truffle supports development with Hyperledger Fabric&#39;s EVM chaincode, a <strong>permissioned</strong> version of Ethereum.</p>
 
-<p>
-    <img class="img-fluid" src="https://truffleframework.com/img/docs/ganache/v2-shared-seese/decoded-transaction.png" title="Decoded Transaction" alt="Decoded Transaction" />
-    
-  </p>
+    <h2 class="link-markdown">
+      <a href="#configuration" name="configuration"><i class="fas fa-link"></i></a>
+      Configuration
+    </h2>
+  <p>To use Fabric EVM, you must modify your network in <code>truffle-config.js</code> to include a parameter <code>type</code> set to <code>&quot;fabric-evm&quot;</code>. See the example below.</p>
+<pre><code class="lang-javascript">module.exports = {
+  networks: {
+    development: {
+      host: &quot;127.0.0.1&quot;,
+      port: 5000, // default Fab3 port
+      network_id: &quot;*&quot;,
+      type: &quot;fabric-evm&quot;
+    }
+  }
+};
+</code></pre>
 
 
         <div class="contribute-link">
-          See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/ganache/truffle-projects">Edit here &raquo;</a>
+          See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/truffle/getting-started">Edit here &raquo;</a>
         </div>      </div>
     </div>
   </main>
