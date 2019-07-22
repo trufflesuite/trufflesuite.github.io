@@ -175,8 +175,8 @@
 <url> <loc>https://www.truffleframework.com/tutorials/debugging-a-smart-contract.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/deploying-to-the-live-network.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/drizzle-and-contract-events.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/tutorials/ethereum-devops-truffle-testrpc-vsts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/drizzle-and-react-native.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/tutorials/ethereum-devops-truffle-testrpc-vsts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/ethereum-overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development.html</loc> </url>
@@ -193,8 +193,8 @@
 <url> <loc>https://www.truffleframework.com/docs/drizzle/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/getting-started/contract-interaction.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/getting-started/using-drizzles-redux-store.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/drizzle/react/react-integration.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/react/react-components.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/drizzle/react/react-integration.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/drizzle-actions.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/drizzle-options.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/drizzle-state.html</loc> </url>
@@ -225,6 +225,14 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/build-processes.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/creating-a-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/networks-and-app-deployment.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/choosing-an-ethereum-client.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/configuration.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/contact-the-developers.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/contract-abstractions.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/truffle-commands.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/testing/testing-your-contracts.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/compiling-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/creating-a-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/debugging-your-contracts.html</loc> </url>
@@ -239,12 +247,4 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/working-with-hyperledger-evm.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/working-with-quorum.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/writing-external-scripts.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/choosing-an-ethereum-client.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/configuration.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/contact-the-developers.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/contract-abstractions.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/truffle-commands.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/testing/testing-your-contracts.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
 </urlset>
