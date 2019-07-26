@@ -160,6 +160,7 @@
 <url> <loc>https://www.truffleframework.com/blog/the-best-things-to-do-in-seattle-during-trufflecon.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/the-best-ways-to-contribute-to-truffle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/the-blockchain-problem-that-ens-solves.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/token-taxonomy-framework.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-320-released.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-boxes-making-life-sweeter.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-v5-has-arrived.html</loc> </url>
@@ -218,8 +219,8 @@
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/loading-existing-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/switching-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/the-quickstart-workspace.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/overview.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/contracts/contract-monitoring.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/getting-started/adding-repositories.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/getting-started/creating-an-account.html</loc> </url>
