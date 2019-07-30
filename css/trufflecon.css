@@ -379,3 +379,7 @@ blockquote {
     max-width: 1500px;
   }
 }
+
+.media-image {
+  max-width: 150px;
+}

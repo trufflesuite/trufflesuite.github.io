@@ -12608,6 +12608,10 @@ blockquote {
   }
 }
 
+.media-image {
+  max-width: 150px;
+}
+
 .policy-container .c27 {
   text-align: center;
   margin-bottom: 0;
