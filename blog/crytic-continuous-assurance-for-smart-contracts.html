@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Crytic: Continuous Assurance for Smart Contracts | Blog | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/blog/crytic-continuous-assurance-for-smart-contrac" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Crytic: Continuous Assurance for Smart Contracts | Blog | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Crytic: Continuous Assurance for Smart Contracts | Blog | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg">N</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Crytic: Continuous Assurance for Smart Contracts</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2019-7-30&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Josselin Feist, Guest Blogger, Senior Security Engineer from Trail of Bits</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <div class="post-trufflecon-box mb-5">
+  <strong><a href="https://www.trufflesuite.com/trufflecon2019">TruffleCon 2019</a></strong> is happening August 2-4 on Microsoft’s campus in Redmond, WA. This year’s event will include 60+ speakers from the blockchain ecosystem, along with hands-on workshops geared toward novice users and expert builders alike. The Truffle team is ramping up for TruffleCon 2019 by writing a daily blog post about everything that’s on our minds. We hope you enjoy and we’ll see you in Redmond!
+
+  <div class="text-center">
+    <a class="btn btn-truffle mt-3" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
+  </div>
+</div>
+
+<p>We are proud to announce our new Smart contract security product: <a href="https://crytic.io/">https://crytic.io/</a>. Crytic provides continuous assurance for smart contracts. The platform reports build status on every commit and runs a suite of security analyses for immediate feedback. </p>
+<p>The beta access will be open soon. Follow us <a href="https://twitter.com/CryticCI">on twitter</a> to be notified and benefit from the service as soon as possible! The first three months are free.</p>
+
+    <h2 class="link-markdown">
+      <a href="#how-crytic-will-secure-your-smart-contracts" name="how-crytic-will-secure-your-smart-contracts"><i class="fas fa-link"></i></a>
+      How Crytic will secure your smart contracts
+    </h2>
+  <p>Once connected to your GitHub repository, Crytic will:</p>
+<ul>
+<li>Run our static analyzer <a href="https://github.com/crytic/slither/">Slither</a>, which detects the most common smart contracts vulnerabilities and will save you from critical mistakes.</li>
+<li>Run your Truffle tests continuously to ensure that no bug is added while developing your project.</li>
+</ul>
+<p>Slither will analyze your codebase for more than 60 security flaws, including reentrancy, integer overflows, race conditions, and many others. Half of these flaw-detectors are private and were not available to the public. They can detect flaws for which public knowledge is limited and that no other tool can find. The recent <a href="https://blog.trailofbits.com/2019/07/03/avoiding-smart-contract-gridlock-with-slither/">GridLock bug</a> would have been detected ahead of time using Crytic!</p>
+<p>We built this platform for developers, so we integrated it with GitHub. It will watch every commit and branch to ensure that bugs are not added during development. In addition, Crytic will run the checks on every PR to facilitate your code review.</p>
+<p>For every security issue found, Crytic will:</p>
+<ul>
+<li>Show you a detailed report on the bug, including source-code highlighting.</li>
+<li>Allow you to create a GitHub issue to keep track of the fixes easily.</li>
+<li>Let you triage the results, so you can decide what needs to be fixed.</li>
+</ul>
+
+    <h2 class="link-markdown">
+      <a href="#quick-walkthrough" name="quick-walkthrough"><i class="fas fa-link"></i></a>
+      Quick Walkthrough
+    </h2>
+  <p>Adding Crytic to your system is straightforward: you just need to connect to your GitHub repository. We have first-class support for Truffle; it works out of the box! We also support most of the other smart contract platforms, including Embark, Dapp, and Etherlime. After adding your repository, the dashboard (Figure 1) will show you a summary of the project, like this <a href="https://github.com/crytic/crytic-demo">crytic-demo</a>:</p>
+<figure>
+  <img class="mb-2" src="/img/blog/crytic-continuous-assurance-for-smart-contracts/figure-1.png" alt="Crytic Dashboard" style="width:100%">
+  <figcaption class="text-center font-italic">Figure 1: Crytic Dashboard</figcaption>
+</figure>
+
+<p>From now on, you will benefit from continuous security analyses.</p>
+
+    <h3 class="link-markdown">
+      <a href="#issue-reports" name="issue-reports"><i class="fas fa-link"></i></a>
+      Issue reports
+    </h3>
+  <p>Finding an issue is only the first part. Crytic will provide you with detailed information you need about the bug to fix it:</p>
+<figure>
+  <img class="mb-2" src="/img/blog/crytic-continuous-assurance-for-smart-contracts/figure-2.png" alt="Crytic Report" style="width:100%">
+  <figcaption class="text-center font-italic">Figure 2: Report</figcaption>
+</figure>
+
+<p>A careful reader will notice the vulnerability here: <code>function constuctor</code> creates a public function (with a typo!) that is callable by anyone instead of being run only at initialization. Crytic will detect these types of critical mistakes instantaneously.</p>
+
+    <h3 class="link-markdown">
+      <a href="#triaging-issues" name="triaging-issues"><i class="fas fa-link"></i></a>
+      Triaging issues
+    </h3>
+  <p>Once a bug has been found, the user can decide to:</p>
+<ul>
+<li>create a GitHub issue, to easily keep track of the fix, or</li>
+<li>discard the issue.</li>
+</ul>
+<figure>
+  <img class="mb-2" src="/img/blog/crytic-continuous-assurance-for-smart-contracts/figure-3.png" alt="GitHub Issue Generated" style="width:100%">
+  <figcaption class="text-center font-italic">Figure 3: GitHub Issue Generated</figcaption>
+</figure>
+
+<p>Crytic follows the modifications to your code and reports only new bugs that are introduced.  Each new PR will be analyzed automatically:</p>
+<figure>
+  <img class="mb-2" src="/img/blog/crytic-continuous-assurance-for-smart-contracts/figure-4.png" alt="Pull Request Integration" style="width:100%">
+  <figcaption class="text-center font-italic">Figure 4: Pull Request Integration</figcaption>
+</figure>
+
+
+    <h2 class="link-markdown">
+      <a href="#what-s-next-for-crytic" name="what-s-next-for-crytic"><i class="fas fa-link"></i></a>
+      What’s next for Crytic
+    </h2>
+  <p>We are constantly improving Crytic. Expect to see new bug detectors and new features in the future. We are planning to add:</p>
+<ul>
+<li><a href="https://github.com/crytic/echidna">Echidna</a> and <a href="https://github.com/trailofbits/manticore">Manticore</a> integration: to ensure your code is checked for custom security properties.</li>
+<li>Automatic bug repair: Crytic will propose patches to fix the issues it finds.</li>
+<li><a href="https://github.com/crytic/slither/wiki/Printer-documentation">Slither printer integration</a>: to help visualize the underlying details of your code.</li>
+<li>Delegatecall proxy <a href="https://github.com/crytic/slither/wiki/Upgradeability-Checks">checker</a>: to prevent you from making critical—and all too common—mistakes in your <a href="https://blog.trailofbits.com/2018/09/05/contract-upgrade-anti-patterns/">upgradeability process</a>.</li>
+</ul>
+<p>Questions? Bring them to TruffleCon, and pose them to us at our booth or at our Friday workshop <a href="https://trufflecon2019.sched.com/event/RFQL/how-to-build-secure-smart-contracts-a-deep-dive-into-automated-tools?iframe=no&amp;w=100%&amp;sidebar=yes&amp;bg=no">on automated vulnerability detection tools</a>!</p>
+<p>Whether or not you can make it to TruffleCon, join our <a href="https://empireslacking.herokuapp.com/">slack channel</a> (#crytic) for support, and watch <a href="https://twitter.com/CryticCI">@CryticCI</a> to find out as soon as our beta is open.</p>
+<div class="post-trufflecon-box mt-5 text-center">
+  Get your ticket for TruffleCon 2019 Today
+
+  <div class="mt-3">
+    <a class="btn btn-truffle" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
+  </div>
+</div>
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/blog">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="/trufflecon2019">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2019</a></li>
+            <li><strong>&copy; Truffle Blockchain Group 2019</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+            <form action="https://truffleframework.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=97cfd4251b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <div class="form-group">
+                <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="footerMailingEmail" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="FNAME" class="form-control" placeholder="First Name" id="footerMailingFirstName">
+                <small id="firstNameHelp" class="form-text text-muted">So we know how to address you.</small>
+              </div>
+              <button type="submit" class="btn btn-truffle">SUBSCRIBE</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>
