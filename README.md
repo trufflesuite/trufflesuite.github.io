@@ -1,7 +1,7 @@
 # Truffle Suite Website -https://www.truffleframework.com
 ## Clone Repo
 ```
-git clone https://github.com/BboyAkers/trufflesuite.github.io.git
+git clone https://github.com/trufflesuite/trufflesuite.github.io.git
 ``` 
 
 
