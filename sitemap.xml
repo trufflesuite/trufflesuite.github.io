@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://www.truffleframework.com/404.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/b2c-onepager.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/404.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/community.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/drizzle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/ganache.html</loc> </url>
@@ -176,19 +176,19 @@
 <url> <loc>https://www.truffleframework.com/press-releases/truffle-announces-2nd-annual-trufflecon.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/building-dapps-for-quorum-private-enterprise-blockchains.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/building-testing-frontend-app-truffle-3.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/tutorials/bundling-with-webpack.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/chain-forking-exploiting-the-dao.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/configuring-visual-studio-code.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/tutorials/bundling-with-webpack.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/creating-a-cli-with-truffle-3.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/debugger-variable-inspection.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/debugging-a-smart-contract.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/deploying-to-the-live-network.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/drizzle-and-contract-events.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/drizzle-and-react-native.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/tutorials/ethereum-devops-truffle-testrpc-vsts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/ethereum-overview.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/tutorials/ethereum-devops-truffle-testrpc-vsts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/package-management.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/pet-shop.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/robust-smart-contracts-with-openzeppelin.html</loc> </url>
@@ -225,12 +225,12 @@
 <url> <loc>https://www.truffleframework.com/docs/teams/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/contracts/contract-monitoring.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/getting-started/creating-an-account.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/getting-started/adding-repositories.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/getting-started/creating-an-account.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/reference/permissions-disclosure.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/testing/starting-builds.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/overview.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/build-processes.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/creating-a-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/networks-and-app-deployment.html</loc> </url>
