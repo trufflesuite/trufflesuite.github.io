@@ -392,6 +392,24 @@ Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet t
 
 
     <h4 class="link-markdown">
+      <a href="#log-rpc-activity" name="log-rpc-activity"><i class="fas fa-link"></i></a>
+      Log RPC Activity
+    </h4>
+  <p>If you wish to see information regarding RPC activity during your Truffle
+develop session, you can use the <code>--log</code> option.</p>
+<p>When you run <code>truffle develop --log</code>, Truffle will start up a new develop
+session and output the addresses and keys as described in the previous section.
+However, in this terminal window you will not be able to interact with the
+console like you would in a normal Truffle develop session. Instead it will
+only output the RPC activity occurring on the network. If
+you want to interact with the console, you will have to open a new terminal
+window and connect to the current session by running <code>truffle develop</code>.</p>
+<p>If you already have a Truffle develop session running and want to log all
+RPC activity occurring on it, you can run <code>truffle develop --log</code> in a
+separate terminal window. It will then connect to that session
+and act the same way as described above.</p>
+
+    <h4 class="link-markdown">
       <a href="#configuring-truffle-develop" name="configuring-truffle-develop"><i class="fas fa-link"></i></a>
       Configuring Truffle Develop
     </h4>

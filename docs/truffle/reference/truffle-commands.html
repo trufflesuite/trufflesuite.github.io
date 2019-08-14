@@ -415,11 +415,17 @@
       develop
     </h3>
   <p>Open a console with a development blockchain</p>
-<pre><code class="lang-shell">truffle develop
+<pre><code class="lang-shell">truffle develop [--log]
 </code></pre>
 <p>Spawns a local development blockchain, and allows you to interact with contracts via the command line. Additionally, many Truffle commands are available within the console (without the <code>truffle</code> prefix).</p>
 <p>If you want an interactive console but want to use an existing blockchain, use <code>truffle console</code>.</p>
 <p>See the <a href="/docs/getting_started/console">Using the console</a> section for more details.</p>
+<p>Option:</p>
+<ul>
+<li><code>--log</code>: Start/Connect to a Truffle develop session and log all RPC activity.
+See the <a href="docs/getting_started/console#log-rpc-activity">Log RPC Activity</a>
+docs for more information about using this option.</li>
+</ul>
 
     <h3 class="link-markdown">
       <a href="#exec" name="exec"><i class="fas fa-link"></i></a>
