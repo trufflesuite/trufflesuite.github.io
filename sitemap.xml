@@ -12,8 +12,8 @@
 <url> <loc>https://www.truffleframework.com/trufflecon2019.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/university.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/careers/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/index.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/careers/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/events/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/press-releases/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/index.html</loc> </url>
@@ -193,8 +193,8 @@
 <url> <loc>https://www.truffleframework.com/tutorials/pet-shop.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/robust-smart-contracts-with-openzeppelin.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/solidity-unit-tests.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/tutorials/testing-for-throws-in-solidity-tests.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/truffle-and-metamask.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/tutorials/testing-for-throws-in-solidity-tests.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/upgrading-from-truffle-2-to-3.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/using-infura-custom-provider.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/index.html</loc> </url>
@@ -248,9 +248,9 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/working-with-hyperledger-evm.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/working-with-quorum.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/writing-external-scripts.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/choosing-an-ethereum-client.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/configuration.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/contact-the-developers.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/choosing-an-ethereum-client.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/contract-abstractions.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/truffle-commands.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/testing-your-contracts.html</loc> </url>
