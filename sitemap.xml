@@ -177,8 +177,8 @@
 <url> <loc>https://www.truffleframework.com/tutorials/building-dapps-for-quorum-private-enterprise-blockchains.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/building-testing-frontend-app-truffle-3.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/bundling-with-webpack.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/tutorials/chain-forking-exploiting-the-dao.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/configuring-visual-studio-code.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/tutorials/chain-forking-exploiting-the-dao.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/creating-a-cli-with-truffle-3.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/debugger-variable-inspection.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/debugging-a-smart-contract.html</loc> </url>
@@ -193,8 +193,8 @@
 <url> <loc>https://www.truffleframework.com/tutorials/pet-shop.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/robust-smart-contracts-with-openzeppelin.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/solidity-unit-tests.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/tutorials/truffle-and-metamask.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/testing-for-throws-in-solidity-tests.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/tutorials/truffle-and-metamask.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/upgrading-from-truffle-2-to-3.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/using-infura-custom-provider.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/index.html</loc> </url>

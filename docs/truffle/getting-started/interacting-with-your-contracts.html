@@ -413,7 +413,16 @@ truffle(develop)&gt; instance.sendCoin(accounts[1], 10, {from: accounts[0]})
 <p>There are a few things interesting about the above code:</p>
 <ul>
 <li>We called the abstraction&#39;s <code>sendCoin</code> function directly. This will result in a transaction by default (i.e, writing data) instead of call.</li>
-<li>We passed an object as the third parameter to <code>sendCoin</code>. Note that the <code>sendCoin</code> function in our Solidity contract doesn&#39;t have a third parameter. What you see above is a special object that can always be passed as the last parameter to a function that lets you edit specific details about the transaction. Here, we set the <code>from</code> address ensuring this transaction came from <code>accounts[0]</code>.</li>
+<li>We passed an object as the third parameter to <code>sendCoin</code>. Note that the <code>sendCoin</code> function in our Solidity contract doesn&#39;t have a third parameter. What you see above is a special object that can always be passed as the last parameter to a function that lets you edit specific details about the transaction (&quot;transaction params&quot;). Here, we set the <code>from</code> address ensuring this transaction came from <code>accounts[0]</code>.  The transaction params that you can set correspond to the fields in an Ethereum transaction:<ul>
+<li><code>from</code></li>
+<li><code>to</code></li>
+<li><code>gas</code></li>
+<li><code>gasPrice</code></li>
+<li><code>value</code></li>
+<li><code>data</code></li>
+<li><code>nonce</code></li>
+</ul>
+</li>
 </ul>
 
     <h3 class="link-markdown">
