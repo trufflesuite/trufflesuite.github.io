@@ -167,6 +167,7 @@
 <url> <loc>https://www.truffleframework.com/blog/truffle-boxes-making-life-sweeter.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-v5-has-arrived.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/upcoming-improvements-to-encoding-and-decoding.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/using-truffle-to-interact-with-chainlink-smart-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/why-i-love-trufflecon.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/why-were-organizing-trufflecon-2018.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/you-can-now-make-your-own-truffle-box.html</loc> </url>
@@ -177,8 +178,8 @@
 <url> <loc>https://www.truffleframework.com/tutorials/building-dapps-for-quorum-private-enterprise-blockchains.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/building-testing-frontend-app-truffle-3.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/bundling-with-webpack.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/tutorials/configuring-visual-studio-code.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/chain-forking-exploiting-the-dao.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/tutorials/configuring-visual-studio-code.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/creating-a-cli-with-truffle-3.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/debugger-variable-inspection.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/debugging-a-smart-contract.html</loc> </url>
