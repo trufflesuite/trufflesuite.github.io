@@ -451,7 +451,7 @@ deployer.deploy(A).then(function() {
   <p>Deploy a specific contract, specified by the contract object, with optional constructor arguments. This is useful for singleton contracts, such that only one instance of this contract exists for your dapp. This will set the address of the contract after deployment (i.e., <code>Contract.address</code> will equal the newly deployed address), and it will override any previous address stored.</p>
 <p>You can optionally pass an array of contracts, or an array of arrays, to speed up deployment of multiple contracts. Additionally, the last argument is an optional object that can include the key named <code>overwrite</code> as well as other transaction parameters such as <code>gas</code> and <code>from</code>. If <code>overwrite</code> is set to <code>false</code>, the deployer won&#39;t deploy this contract if one has already been deployed. This is useful for certain circumstances where a contract address is provided by an external dependency.</p>
 <p>Note that you will need to deploy and link any libraries your contracts depend on first before calling <code>deploy</code>. See the <code>link</code> function below for more details.</p>
-<p>For more information, please see the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract">truffle-contract</a> documentation.</p>
+<p>For more information, please see the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">truffle-contract</a> documentation.</p>
 <p>Examples:</p>
 <pre><code class="lang-javascript">// Deploy a single contract without constructor arguments
 deployer.deploy(A);

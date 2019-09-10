@@ -400,7 +400,7 @@ Example: <code>truffle-plugin.json</code></p>
     </h2>
   <pre><code class="lang-javascript">const truffle = require(&quot;truffle&quot;);
 </code></pre>
-<p>Beginning with <code>v5.0.30</code>, Truffle exports the methods listed in <a href="https://github.com/trufflesuite/truffle/blob/develop/packages/truffle-core/index.js">truffle-core/index.js</a>. This means
+<p>Beginning with <code>v5.0.30</code>, Truffle exports the methods listed in <a href="https://github.com/trufflesuite/truffle/blob/develop/packages/core/index.js">core/index.js</a>. This means
 your plugin can consume the user&#39;s Truffle instance as a library and access a subset of its internal command APIs.</p>
 <p>These are useful if you need to touch several Truffle commands in succession. For example, imagine a plugin that evaluated how a contract system performed at different levels of solc optimization. Its workflow might look like:</p>
 <pre><code>for a range of solc settings:

@@ -357,7 +357,7 @@ module.exports = {
   <p>Whether you&#39;re building an application to run in the browser, or a command line tool, a Javascript library or a native mobile application, bootstrapping your contracts is the same, and using your deployed contract artifacts follows the same general process no matter the app you&#39;re building.</p>
 <p>When configuring your build tool or application, you&#39;ll need to perform the following steps:</p>
 <p>1) Get all your contract artifacts into your build pipeline / application. This includes all of the <code>.json</code> files within the <code>./build/contracts</code> directory.</p>
-<p>2) Turn those <code>.json</code> contract artifacts into contract abstractions that are easy to use, via <a href="https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract">truffle-contract</a>.</p>
+<p>2) Turn those <code>.json</code> contract artifacts into contract abstractions that are easy to use, via <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">truffle-contract</a>.</p>
 <p>3) Provision those contract abstractions with a Web3 provider. In the browser, this provider might come from <a href="https://metamask.io/">Metamask</a> or <a href="https://github.com/ethereum/mist">Mist</a>, but it could also be a custom provider you&#39;ve configured to point to <a href="http://infura.io/">Infura</a> or any other Ethereum client.</p>
 <p>4) Use your contracts!</p>
 <p>In Node, this is very easy to do. Let&#39;s take a look at an example that shows off the &quot;purest&quot; way of performing the above steps, since it exists outside of any build process or tool.</p>

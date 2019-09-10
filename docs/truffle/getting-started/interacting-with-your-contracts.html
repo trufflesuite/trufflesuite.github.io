@@ -340,7 +340,7 @@
       <a href="#introducing-abstractions" name="introducing-abstractions"><i class="fas fa-link"></i></a>
       Introducing abstractions
     </h2>
-  <p>Contract abstractions are the bread and butter of interacting with Ethereum contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract">truffle-contract</a> module, and it is this contract abstraction that&#39;s described below.</p>
+  <p>Contract abstractions are the bread and butter of interacting with Ethereum contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">truffle-contract</a> module, and it is this contract abstraction that&#39;s described below.</p>
 <p>In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We&#39;ll use the MetaCoin contract available to you through Truffle Boxes via <code>truffle unbox metacoin</code>.</p>
 <pre><code class="lang-javascript">pragma solidity &gt;=0.4.25 &lt;0.6.0;
 
@@ -456,7 +456,7 @@ truffle(develop)&gt; result
 <li><code>result.logs</code> <em>(array)</em> - Decoded events (logs)</li>
 <li><code>result.receipt</code> <em>(object)</em> - Transaction receipt (includes the amount of gas used)</li>
 </ul>
-<p>For more information, please see the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract">README</a> in the <code>truffle-contract</code> package.</p>
+<p>For more information, please see the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">README</a> in the <code>truffle-contract</code> package.</p>
 
     <h3 class="link-markdown">
       <a href="#catching-events" name="catching-events"><i class="fas fa-link"></i></a>
@@ -523,7 +523,7 @@ truffle(develop)&gt; newInstance.address
       <a href="#further-reading" name="further-reading"><i class="fas fa-link"></i></a>
       Further reading
     </h2>
-  <p>The contract abstractions provided by Truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract">truffle-contract</a> documentation for tips, tricks and insights.</p>
+  <p>The contract abstractions provided by Truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">truffle-contract</a> documentation for tips, tricks and insights.</p>
 
 
         <div class="contribute-link">

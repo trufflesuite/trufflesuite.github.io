@@ -173,7 +173,7 @@
   <p>PegaSys and Truffle have teamed up to make a single open call for contributions. This guest blog post is made by the PegaSys team and is to be posted on the Truffle blog and promoted by both teams in order to add code to Truffle codebase to add support for them.</p>
 <p>The solution involves using a Delegation pattern to help make that work.</p>
 <p>The location of the files to be modified can be found here:
-<a href="https://github.com/trufflesuite/truffle/tree/develop/packages/truffle-interface-adapter/lib">truffle/packages/truffle-interface-adapter/lib</a></p>
+<a href="https://github.com/trufflesuite/truffle/tree/develop/packages/interface-adapter/lib">truffle/packages/interface-adapter/lib</a></p>
 <p>In short, when Truffle receives a transaction, it should determine if its a <code>privateFor</code> transaction. If so, it would delegate the rest of the business logic to the EEA library. If not, it should just continue processing the transaction with the original web3 methods.</p>
 <p>Also, it would be very useful to make sure this plays nicely with the getTransactionReceipt methods later in the chain of events.</p>
 
