@@ -301,25 +301,25 @@
   <ol>
 <li><p>Once initialized, Drizzle instantiates <code>web3</code> and our desired contracts, then observes the chain by subscribing to new block headers.</p>
 <p>
-    <img class="img-fluid" src="https://github.com/trufflesuite/drizzle/blob/master/readme/drizzle-sync1.png?raw=true" title="Drizzle Sync Step 1" alt="Drizzle Sync Step 1" />
+    <img class="img-fluid" src="https://github.com/trufflesuite/drizzle/blob/master/packages/store/readme/drizzle-sync1.png?raw=true" title="Drizzle Sync Step 1" alt="Drizzle Sync Step 1" />
     
   </p>
 </li>
 <li><p>Drizzle keeps track of contract calls so it knows what to synchronize.</p>
 <p>
-    <img class="img-fluid" src="https://github.com/trufflesuite/drizzle/blob/master/readme/drizzle-sync2.png?raw=true" title="Drizzle Sync Step 2" alt="Drizzle Sync Step 2" />
+    <img class="img-fluid" src="https://github.com/trufflesuite/drizzle/blob/master/packages/store/readme/drizzle-sync2.png?raw=true" title="Drizzle Sync Step 2" alt="Drizzle Sync Step 2" />
     
   </p>
 </li>
 <li><p>When a new block header comes in, Drizzle checks that the block isn&#39;t pending, then goes through the transactions looking to see if any of them touched our contracts.</p>
 <p>
-    <img class="img-fluid" src="https://github.com/trufflesuite/drizzle/blob/master/readme/drizzle-sync3.png?raw=true" title="Drizzle Sync Step 3" alt="Drizzle Sync Step 3" />
+    <img class="img-fluid" src="https://github.com/trufflesuite/drizzle/blob/master/packages/store/readme/drizzle-sync3.png?raw=true" title="Drizzle Sync Step 3" alt="Drizzle Sync Step 3" />
     
   </p>
 </li>
 <li><p>If they did, we replay the calls already in the store to refresh any potentially altered data. If they didn&#39;t we continue with the store data.</p>
 <p>
-    <img class="img-fluid" src="https://github.com/trufflesuite/drizzle/blob/master/readme/drizzle-sync4.png?raw=true" title="Drizzle Sync Step 4" alt="Drizzle Sync Step 4" />
+    <img class="img-fluid" src="https://github.com/trufflesuite/drizzle/blob/master/packages/store/readme/drizzle-sync4.png?raw=true" title="Drizzle Sync Step 4" alt="Drizzle Sync Step 4" />
     
   </p>
 </li>
