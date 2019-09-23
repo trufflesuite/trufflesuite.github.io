@@ -11,9 +11,9 @@
 <url> <loc>https://www.truffleframework.com/truffle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/trufflecon2019.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/university.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/careers/index.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/events/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/press-releases/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/index.html</loc> </url>
@@ -142,6 +142,7 @@
 <url> <loc>https://www.truffleframework.com/staff/vue-dark-chocolate.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/vueport-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/zepkit.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/careers/software-engineer-front-end.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/10-things-we-dont-do-that-make-working-at-truffle-awesome.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/3-ways-enterprises-are-addressing-blockchain-privacy-concerns.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/5-trends-impacting-the-blockchain-developer-experience.html</loc> </url>
@@ -182,7 +183,6 @@
 <url> <loc>https://www.truffleframework.com/blog/why-i-love-trufflecon.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/why-were-organizing-trufflecon-2018.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/you-can-now-make-your-own-truffle-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/careers/software-engineer-front-end.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/events/webinar-truffle-provable.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/press-releases/truffle-anncounces-microsoft-as-preferred-cloud-and-services-partner.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/press-releases/truffle-announces-2nd-annual-trufflecon.html</loc> </url>
