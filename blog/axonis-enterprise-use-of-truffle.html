@@ -135,15 +135,7 @@
     <div class="container container-post">
       <div class="row justify-content-center">
         <div class="col">
-          <div class="post-trufflecon-box mb-5">
-  <strong><a href="/trufflecon2019">TruffleCon 2019</a></strong> is happening August 2-4 on Microsoft&#39;s campus in Redmond, WA. This year&#39;s event will include 60+ speakers from the blockchain ecosystem, along with hands-on workshops geared toward novice users and expert builders alike. The Truffle team is ramping up for TruffleCon 2019 by writing a daily blog post about everything that&#39;s on our minds. We hope you enjoy and we&#39;ll see you in Redmond!
-
-  <div class="text-center">
-    <a class="btn btn-truffle mt-3" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
-  </div>
-</div>
-
-<p>
+          <p>
     <img class="img-fluid" src="/img/blog/axonis-enterprise-use-of-truffle/truffle-axoni.png" title="Truffle + Axoni" alt="Truffle + Axoni" />
     
   </p>
@@ -196,17 +188,17 @@ upgrade:
 <pre><code class="lang-javascript">const run = async (done) =&gt; {
     let jobParams = args;
 
-        // Configure specific variables for a PROD-like environment: 
+        // Configure specific variables for a PROD-like environment:
     if (process.env.ENV === &#39;PROD&#39;) {
         jobParams = Object.assign(args, handleProd());
     }
 
        //hoisting injected vars to global scope:
-    global.web3 = web3; 
-    global.artifacts = artifacts; 
+    global.web3 = web3;
+    global.artifacts = artifacts;
 
         // Create instance of job based on type
-    const jobInstance = new Job(jobParams.job, jobParams); 
+    const jobInstance = new Job(jobParams.job, jobParams);
 
         //Run job by deploying and invoking an initialization method on each contract
     await jobInstance.run().catch(e =&gt; done(e));
@@ -224,13 +216,6 @@ upgrade:
   <p>I am pleased to announce that we plan to open-source our core Solidity smart contract library, which provides an alternative version of the Proxy pattern, along with this aforementioned deployment tool. We believe both could be useful both for private and public applications and the Axoni team is excited to see what the community builds with these tools.</p>
 <p>In the meantime, we hope the above at least provides a high-level example of an approach to building lightweight extensions within truffle, and as a simplifying approach to the smart contract deployment process, especially for Proxy Pattern topologies.</p>
 <p>The Axoni team and I look forward to discussing this topic and much more (such as <a href="https://axoni.com/axlang/">Axlang, our Scala-based Solidity-alternative</a>) at Trufflecon.</p>
-<div class="post-trufflecon-box mt-5 text-center">
-  Join Jonathan along with 60+ speakers at TruffleCon 2019 in Redmond, WA August 2-4!
-
-  <div class="mt-3">
-    <a class="btn btn-truffle" href="/trufflecon2019">Get your Ticket for TruffleCon 2019 Today</a>
-  </div>
-</div>
 
 
           <div class="contribute-link">
