@@ -142,7 +142,7 @@
   </p>
 <p>You may not be familiar with Infura by name, but if you&#39;ve used <a href="https://metamask.io">MetaMask</a> then you&#39;ve used Infura, as it is the Ethereum provider that powers MetaMask.</p>
 <p>For security reasons, Infura does not manage your private keys, which means Infura cannot sign transactions on your behalf.</p>
-<p>However, Truffle can sign transactions through the use of its <code>HDWalletProvider</code>. This provider can handle the transaction signing as well as the connection to the Ethereum network. (<a href="https://github.com/trufflesuite/truffle-hdwallet-provider">Read more about HDWalletProvider</a>.)</p>
+<p>However, Truffle can sign transactions through the use of its <code>HDWalletProvider</code>. This provider can handle the transaction signing as well as the connection to the Ethereum network. (<a href="https://github.com/trufflesuite/truffle/tree/develop/packages/hdwallet-provider">Read more about HDWalletProvider</a>.)</p>
 <p>This tutorial will show you how to use Infura to migrate an existing dapp to an Ethereum network supported by Infura. In this specific instance, we&#39;ll migrate to Ropsten. We&#39;ll assume that you already have a dapp to migrate. If you want a test dapp, feel free to use our <a href="/tutorials/pet-shop">Pet Shop</a> tutorial dapp.</p>
 
     <h2 class="link-markdown">
@@ -150,7 +150,7 @@
       Install HDWalletProvider
     </h2>
   <p>Truffle&#39;s <code>HDWalletProvider</code> is a separate npm package:</p>
-<pre><code class="lang-shell">npm install truffle-hdwallet-provider
+<pre><code class="lang-shell">npm install @truffle/hdwallet-provider
 </code></pre>
 <p class="alert alert-info">
 <strong>Note</strong>: If you are on Windows and get an <code>MSBUILD</code> error, you may need to install the Windows build tools. In a terminal with Administrator rights, run <code>npm install -g windows-build-tools</code> and then try installation again.
@@ -171,11 +171,11 @@
   <p>The next step is to edit your <code>truffle-config.js</code> file to use <code>HDWalletProvider</code> and provide all the necessary configuration for deploying to Ropsten.</p>
 <ol>
 <li><p>First, define the <code>HDWalletProvider</code> object in your configuration file. Add this line at the top of your <code>truffle-config.js</code> file:</p>
-<pre><code class="lang-javascript">var HDWalletProvider = require(&quot;truffle-hdwallet-provider&quot;);
+<pre><code class="lang-javascript">const HDWalletProvider = require(&quot;@truffle/hdwallet-provider&quot;);
 </code></pre>
 </li>
 <li><p>Next, provide a reference to your mnemonic that generates your accounts. If you don&#39;t have a mnemonic, you can generate one using an <a href="https://iancoleman.io/bip39">online mnemonic generator</a> or a hardware wallet such as a product from <a href="https://www.ledgerwallet.com">Ledger</a>.</p>
-<pre><code class="lang-javascript">var mnemonic = &quot;orange apple banana ... &quot;;
+<pre><code class="lang-javascript">const mnemonic = &quot;orange apple banana ... &quot;;
 </code></pre>
 <p class="alert alert-danger">
 <strong>Warning</strong>: In production, we highly recommend storing the mnemonic in another (secret) file, to reduce the risk of the mnemonic becoming known. If someone knows your mnemonic, they have all of your addresses and private keys!
@@ -203,7 +203,7 @@
 </li>
 <li><p>Make sure to replace <code>&lt;INFURA_PROJECT_ID&gt;</code> with your Infura Project ID.</p>
 </li>
-<li><p>The <code>provider</code> value is wrapped in a function, which ensures that it won&#39;t get initialized until it&#39;s needed. This is especially important if connecting to multiple networks. (See the <a href="http://truffleframework.com/docs/advanced/configuration#networks">Networks configuration</a> section of the documentation for more on this topic.)</p>
+<li><p>The <code>provider</code> value is wrapped in a function, which ensures that it won&#39;t get initialized until it&#39;s needed. This is especially important if connecting to multiple networks. (See the <a href="http://trufflesuite.com/docs/advanced/configuration#networks">Networks configuration</a> section of the documentation for more on this topic.)</p>
 <p class="alert alert-info">
   <strong>Note</strong>: If you encounter issues with this construction, you can skip the function wrapper and use this instead:<br />
   <code>provider: new HDWalletProvider(mnemonic, &quot;https://ropsten.infura.io/v3/&lt;INFURA_PROJECT_ID&gt;&quot;),</code>
@@ -248,34 +248,44 @@
 <pre><code class="lang-shell">truffle migrate --network ropsten
 </code></pre>
 <p>If all goes well, you should see a response that looks similar to the following:</p>
-<pre><code class="lang-shell">Using network &#39;ropsten&#39;.
+<p><code>`</code>shell</p>
 
-Running migration: 1_initial_migration.js
-  Deploying Migrations...
-  ... 0xd79bc3c5a7d338a7f85db9f86febbee738ebdec9494f49bda8f9f4c90b649db7
-  Migrations: 0x0c6c4fc8831755595eda4b5724a61ff989e2f8b9
-Saving successful migration to network...
-  ... 0xc37320561d0004dc149ea42d839375c3fc53752bae5776e4e7543ad16c1b06f0
-Saving artifacts...
-Running migration: 2_deploy_contracts.js
-  Deploying MyContract...
-  ... 0x7efbb3e4f028aa8834d0078293e0db7ff8aff88e72f33960fc806a618a6ce4d3
-  MyContract: 0xda05d7bfa5b6af7feab7bd156e812b4e564ef2b1
-Saving successful migration to network...
-  ... 0x6257dd237eb8b120c8038b066e257baee03b9c447c3ba43f843d1856de1fe132
-Saving artifacts...
-</code></pre>
-<p>Note that your transaction IDs will be different from the ones above.</p>
-<p class="alert alert-info">
-<strong>Note</strong>: If you receive an error <code>Error: Exceeds block gas limit</code>, you may need to manually set the gas limit for your contract. See the <a href="/docs/advanced/configuration">Truffle Configuration</a> documentation for details.
-</p>
-</li>
-<li><p>If you want to verify that your contract was deployed successfully, you can check this on the <a href="https://ropsten.etherscan.io/">Ropsten section of Etherscan</a>. In the search field, type in the transaction ID for your contract. In the above example, the transaction ID is:</p>
-<pre><code class="lang-shell">0x7efbb3e4f028aa8834d0078293e0db7ff8aff88e72f33960fc806a618a6ce4d3
-</code></pre>
-<p>You should see details about the transaction, including the block number where the transaction was secured.</p>
+    <h1 class="link-markdown">
+      <a href="#starting-migrations-" name="starting-migrations-"><i class="fas fa-link"></i></a>
+      Starting migrations...
+    </h1>
+  <blockquote>
+<p>Network name:    &#39;ropsten&#39;
+Network id:      3
+Block gas limit: 0x6691b7</p>
+</blockquote>
 </li>
 </ol>
+
+    <h1 class="link-markdown">
+      <a href="#-1_initial_migration-js" name="-1_initial_migration-js"><i class="fas fa-link"></i></a>
+         1_initial_migration.js
+    </h1>
+  <pre><code>  Deploying &#39;Migrations&#39;
+  ----------------------
+  &gt; transaction hash:    0x166c1791caa73cca6a75fe4258866bd1f2d1bcf2cd4c3a2a1e03fab29c42829d
+  &gt; Blocks: 0            Seconds: 0
+  &gt; contract address:    0x5ccb4dc04600cffA8a67197d5b644ae71856aEE4
+  ......
+  ......
+</code></pre><pre><code>
+   Note that your transaction hash and contract address will be different from the ones above.
+
+   &lt;p class=&quot;alert alert-info&quot;&gt;
+   &lt;strong&gt;Note&lt;/strong&gt;: If you receive an error `Error: Exceeds block gas limit
+`, you may need to manually set the gas limit for your contract. See the [Truffle Configuration](/docs/advanced/configuration) documentation for details.
+   &lt;/p&gt;
+
+1. If you want to verify that your contract was deployed successfully, you can check this on the [Ropsten section of Etherscan](https://ropsten.etherscan.io/). In the search field, type in the transaction ID for your contract. In the above example, the transaction ID is:
+
+   ```shell
+   0x166c1791caa73cca6a75fe4258866bd1f2d1bcf2cd4c3a2a1e03fab29c42829d
+</code></pre><p>   You should see details about the transaction, including the block number where the transaction was secured.</p>
 <p>Congratulations! You&#39;ve deployed your contract to Ropsten using the combined power of Infura and Truffle.</p>
 
 
