@@ -10784,6 +10784,7 @@ pre {
   background-color: #fff;
   border-color: #3fe0c5;
   box-shadow: 0 0 0 0.2rem rgba(63, 224, 197, 0.5);
+  outline: none;
 }
 
 .hs-form input[type="submit"] {
@@ -10816,6 +10817,34 @@ pre {
 .hs-form ul.hs-error-msgs {
   margin-top: -.75rem;
   color: #f2e941;
+}
+
+.hs-form-inline .hs-form .hs-form-field {
+  display: inline-block;
+}
+
+.hs-form-inline .hs-form .hs-email {
+  margin-right: .5rem;
+}
+
+.hs-form-inline .hs-form .hs-fieldtype-booleancheckbox {
+  display: block;
+}
+
+.hs-form-inline .hs-form .inputs-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+@media screen and (max-width: 767.98px) {
+  .hs-form-inline .hs-form .hs-form-field {
+    display: block;
+  }
+}
+
+.hs-form-docs input[type="text"], .hs-form-docs input[type="email"] {
+  background-color: #f8f5f0;
+  color: #495057;
 }
 
 html, body {
