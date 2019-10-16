@@ -11617,6 +11617,7 @@ footer h4 {
 .container-post figcaption {
   font-size: .9rem;
   margin-top: -1rem;
+  font-style: italic;
 }
 
 .boxes-heading img {
