@@ -12708,6 +12708,16 @@ blockquote {
   max-width: 150px;
 }
 
+.alert-slides {
+  border-color: #fff;
+  color: #58484E;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.alert-slides a {
+  color: #58484E;
+}
+
 .policy-container .c27 {
   text-align: center;
   margin-bottom: 0;
