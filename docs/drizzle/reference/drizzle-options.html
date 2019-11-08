@@ -301,7 +301,8 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#drizzle-options" name="drizzle-options"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="drizzle-options"></a>
+      <a href="#drizzle-options"><i class="fas fa-link"></i></a>
       Drizzle Options
     </h1>
   <pre><code class="lang-javascript">{
@@ -331,7 +332,8 @@
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#-code-contracts-code-array-" name="-code-contracts-code-array-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-contracts-code-array-"></a>
+      <a href="#-code-contracts-code-array-"><i class="fas fa-link"></i></a>
       <code>contracts</code> (array)
     </h3>
   <p>An array of either contract artifact files or Web3 contract objects. The objects have a <code>contractName</code> and <code>web3Contract</code> key.</p>
@@ -345,31 +347,36 @@
 ]
 </code></pre>
     <h3 class="link-markdown">
-      <a href="#-code-events-code-object-" name="-code-events-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-events-code-object-"></a>
+      <a href="#-code-events-code-object-"><i class="fas fa-link"></i></a>
       <code>events</code> (object)
     </h3>
   <p>An object consisting of contract names each containing an array of strings of the event names we&#39;d like to listen for and sync with the store. Furthermore, event names may be replaced with an object containing both <code>eventName</code> and <code>eventOptions</code>, where <code>eventOptions</code> field corresponds to the <a href="https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#contract-events">web3 Contract.events options</a>.</p>
 
     <h3 class="link-markdown">
-      <a href="#-code-polls-code-object-" name="-code-polls-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-polls-code-object-"></a>
+      <a href="#-code-polls-code-object-"><i class="fas fa-link"></i></a>
       <code>polls</code> (object)
     </h3>
   <p>An object containing key/value pairs denoting what is being polled and the interval (in ms). Possible polls are accounts and blocks. Accounts will poll for addresses and balances, blocks for new blocks. <strong>Default</strong>: <code>{ blocks: 3000 }</code></p>
 
     <h3 class="link-markdown">
-      <a href="#-code-syncalways-code-boolean-" name="-code-syncalways-code-boolean-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-syncalways-code-boolean-"></a>
+      <a href="#-code-syncalways-code-boolean-"><i class="fas fa-link"></i></a>
       <code>syncAlways</code> (boolean)
     </h3>
   <p>If <code>true</code>, will replay all contract calls at every block. This is useful if your dapp uses a proxy contract which obfuscates your primary contract&#39;s address. By default Drizzle checks blocks to see if a transaction interacting with your contracts has occured. If so, it syncs that contract. <strong>Default</strong>: <code>false</code></p>
 
     <h3 class="link-markdown">
-      <a href="#-code-web3-code-object-" name="-code-web3-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-web3-code-object-"></a>
+      <a href="#-code-web3-code-object-"><i class="fas fa-link"></i></a>
       <code>web3</code> (object)
     </h3>
   <p>Options regarding <code>web3</code> instantiation.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-customprovider-code-object-" name="-code-customprovider-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-customprovider-code-object-"></a>
+      <a href="#-code-customprovider-code-object-"><i class="fas fa-link"></i></a>
       <code>customProvider</code> (object)
     </h4>
   <p>A valid web3 <code>provider</code> object. For example, you may wish to programatically create a Ganache provider for testing:</p>
@@ -387,7 +394,8 @@ const options = {
 const drizzle = new Drizzle(options)
 </code></pre>
     <h4 class="link-markdown">
-      <a href="#-code-fallback-code-object-" name="-code-fallback-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-fallback-code-object-"></a>
+      <a href="#-code-fallback-code-object-"><i class="fas fa-link"></i></a>
       <code>fallback</code> (object)
     </h4>
   <p>An object consisting of the type and url of a fallback web3 provider. This is used if no injected provider, such as MetaMask or Mist, is detected.</p>

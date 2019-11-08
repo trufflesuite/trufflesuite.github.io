@@ -301,19 +301,22 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#networks-and-app-deployment" name="networks-and-app-deployment"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="networks-and-app-deployment"></a>
+      <a href="#networks-and-app-deployment"><i class="fas fa-link"></i></a>
       Networks and App Deployment
     </h1>
   <p>Even the smallest project will interact with at the very least two blockchain nodes: One on the developer&#39;s machine, like <a href="/ganache">Ganache</a> or Truffle Develop, and the other representing the network where the developer will eventually deploy their application (such as the main public Ethereum network or a private consortium network, for instance). Truffle provides a system for managing the compilation and deployment artifacts for each network, and does so in a way that simplifies final application deployment.</p>
 
     <h2 class="link-markdown">
-      <a href="#configuration" name="configuration"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="configuration"></a>
+      <a href="#configuration"><i class="fas fa-link"></i></a>
       Configuration
     </h2>
   <p>See the <a href="/docs/truffle/reference/configuration#networks">Configuration</a> section for more information.</p>
 
     <h2 class="link-markdown">
-      <a href="#specifying-a-network" name="specifying-a-network"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="specifying-a-network"></a>
+      <a href="#specifying-a-network"><i class="fas fa-link"></i></a>
       Specifying a network
     </h2>
   <p>Most Truffle commands will behave differently based on the network specified, and will use that network&#39;s contracts and configuration. You can specify a network using the <code>--network</code> option, like below:</p>
@@ -322,13 +325,15 @@
 <p>In this example, Truffle will run your migrations on the &quot;live&quot; network, which -- if configured like <a href="/docs/truffle/reference/configuration#networks">the example</a> -- is associated with the public Ethereum blockchain.</p>
 
     <h2 class="link-markdown">
-      <a href="#build-artifacts" name="build-artifacts"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="build-artifacts"></a>
+      <a href="#build-artifacts"><i class="fas fa-link"></i></a>
       Build artifacts
     </h2>
   <p>As mentioned in the <a href="/docs/truffle/getting-started/compiling-contracts">Compiling contracts</a> section, build artifacts are stored in the <code>./build/contracts</code> directory as <code>.json</code> files. When you compile your contracts or run your migrations using a specific network, Truffle will update those <code>.json</code> files so they contain the information related to that network. When those artifacts are used later -- such as within your frontend or application via <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">truffle-contract</a> -- they&#39;ll automatically detect which network the Ethereum client is connected to and use the correct contract artifacts accordingly.</p>
 
     <h2 class="link-markdown">
-      <a href="#application-deployment" name="application-deployment"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="application-deployment"></a>
+      <a href="#application-deployment"><i class="fas fa-link"></i></a>
       Application deployment
     </h2>
   <p>Because the network is auto-detected by the contract artifacts at runtime, this means that you only need to deploy your application or frontend <em>once</em>. When you run your application, the running Ethereum client will determine which artifacts are used, and this will make your application very flexible. As an example, if you were to deploy a web application to <a href="http://mydapp.io">http://mydapp.io</a>, you could navigate to that address using your favorite wallet-browser (like MetaMask, or Mist) and your dapp would work correctly regardless of the Ethereum network the wallet-browser was connected to. If the wallet-browser was connected to the live network, your dapp would use the contracts you deployed on the live network. If on Ropsten, the contracts you deployed to Ropsten would be used.</p>

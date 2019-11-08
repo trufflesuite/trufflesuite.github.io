@@ -157,7 +157,8 @@
 <p>Just in case you haven&#39;t used Truffle before, I&#39;m going to start by describing how to scaffold a minimal Truffle dapp. If you already have one set up, feel free to scroll ahead!</p>
 
     <h2 class="link-markdown">
-      <a href="#installing-truffle-dependencies" name="installing-truffle-dependencies"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="installing-truffle-dependencies"></a>
+      <a href="#installing-truffle-dependencies"><i class="fas fa-link"></i></a>
       Installing Truffle Dependencies
     </h2>
   <p>You&#39;re going to need to have installed <a href="https://nodejs.org/">node.js</a>.</p>
@@ -166,7 +167,8 @@
 <p>Next let&#39;s make sure we have our <code>testrpc</code> running in the background.  Open your terminal and run the command <code>testrpc</code>. That&#39;s all!  It runs on port <code>8545</code> by default, just like most Ethereum RPCs, and so does Truffle.</p>
 
     <h2 class="link-markdown">
-      <a href="#quick-note-on-rpcs" name="quick-note-on-rpcs"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="quick-note-on-rpcs"></a>
+      <a href="#quick-note-on-rpcs"><i class="fas fa-link"></i></a>
       Quick Note on RPCs
     </h2>
   <p>Ethereum RPCs can run in a pre-authenticated mode, that allows you to perform transactions without providing any additional credentials. Obviously this would be a dangerous thing to do on the open web, but for local development, it&#39;s the default method that <code>testrpc</code> provides.</p>
@@ -174,7 +176,8 @@
 <p>When you open a normal Truffle Dapp, it takes advantage of your local authenticated rpc, and has access to its account list. The default Truffle dapp just uses the first account in the list.</p>
 
     <h2 class="link-markdown">
-      <a href="#setting-up-a-simple-truffle-dapp" name="setting-up-a-simple-truffle-dapp"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="setting-up-a-simple-truffle-dapp"></a>
+      <a href="#setting-up-a-simple-truffle-dapp"><i class="fas fa-link"></i></a>
       Setting up a Simple Truffle Dapp
     </h2>
   <p>Next, let&#39;s generate a basic Truffle dapp. The default result of <code>truffle init</code> is a simple example currency.</p>
@@ -195,7 +198,8 @@ truffle serve   # Host your web interface on port 8080
 <p>You can now send those coins to any account you want, so let&#39;s now set up some Metamask accounts, and then we can fund them!</p>
 
     <h2 class="link-markdown">
-      <a href="#setting-up-metamask" name="setting-up-metamask"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="setting-up-metamask"></a>
+      <a href="#setting-up-metamask"><i class="fas fa-link"></i></a>
       Setting up Metamask
     </h2>
   <p>Now you&#39;ll want to install <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?authuser=2">Metamask from the Chrome store</a>.</p>
@@ -231,7 +235,8 @@ truffle serve   # Host your web interface on port 8080
 <p>You now you have a copy of your address to send to!</p>
 
     <h2 class="link-markdown">
-      <a href="#switching-between-testrpc-and-metamask-accounts" name="switching-between-testrpc-and-metamask-accounts"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="switching-between-testrpc-and-metamask-accounts"></a>
+      <a href="#switching-between-testrpc-and-metamask-accounts"><i class="fas fa-link"></i></a>
       Switching Between TestRPC and Metamask Accounts
     </h2>
   <p>When Metamask is installed, it intercepts calls and transactions to the Ethereum blockchain, and forwards them to its own RPC (which is currently on the test-network by default).</p>
@@ -239,7 +244,8 @@ truffle serve   # Host your web interface on port 8080
 <p>The easiest way to do this is to open an incognito window.  You can also open another browser.</p>
 
     <h2 class="link-markdown">
-      <a href="#funding-your-metamask-account" name="funding-your-metamask-account"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="funding-your-metamask-account"></a>
+      <a href="#funding-your-metamask-account"><i class="fas fa-link"></i></a>
       Funding Your Metamask Account
     </h2>
   <p>Once you&#39;re connected to your <code>testrpc</code> accounts again, you can send your Metacoin to whoever you please, including your new Metamask accounts.</p>
@@ -249,7 +255,8 @@ truffle serve   # Host your web interface on port 8080
 <pre><code>curl -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_sendTransaction&quot;,&quot;params&quot;: [{&quot;from&quot;:&quot;0x0f91747e3a5df28d81ab30b2d8216c93263c0cf3&quot;, &quot;to&quot;:&quot;0xbbd220f66e989a493c4d48531ea1e283abc385de&quot;, &quot;value&quot;: 1e18}], &quot;id&quot;:1}&#39; -X POST http://127.0.0.1:8545/
 </code></pre>
     <h3 class="link-markdown">
-      <a href="#synchronizing-accounts-between-metamask-and-testrpc" name="synchronizing-accounts-between-metamask-and-testrpc"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="synchronizing-accounts-between-metamask-and-testrpc"></a>
+      <a href="#synchronizing-accounts-between-metamask-and-testrpc"><i class="fas fa-link"></i></a>
       Synchronizing Accounts Between Metamask And Testrpc
     </h3>
   <p>If you want to use testrpc/Metamask combination for development purposes, another route to get the accounts in Metamask to be useful with testrpc is to use the HD wallet generation that both support. If you start testrpc it creates 10 different addresses that can be recovered by the supplied mnemonic. The <code></code>testrpc` output show the 10 inital accounts, the 10 private keys for the accounts and the mnemonic to recreate those accounts.</p>
@@ -272,7 +279,8 @@ Base HD Path:  m/44&#39;/60&#39;/0&#39;/0/{account_index}
 </code></pre><p>If you use that mnemonic in Metamask to <em>restore an existing vault</em> instead of creating a new one Metamask will use the same accounts. Testrpc also support a command line option to supply the mnemonic instead of using a random one. Starting it with <code>testrpc -m &quot;rubber negative firm purity helmet barely six asset imitate nephew october pluck&quot;</code> will give you the same accounts each time. That way you don&#39;t have to setup Metamask every time to use a new mnemonic.</p>
 
     <h2 class="link-markdown">
-      <a href="#sending-metacoin-from-metamask-so-meta-" name="sending-metacoin-from-metamask-so-meta-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="sending-metacoin-from-metamask-so-meta-"></a>
+      <a href="#sending-metacoin-from-metamask-so-meta-"><i class="fas fa-link"></i></a>
       Sending Metacoin from Metamask: So Meta!
     </h2>
   <p>Now if we connect to our Dapp via Metamask, we should see we have some MetaCoin, and if we look in our Metamask plugin, we should have 1 ether too!</p>
@@ -293,7 +301,8 @@ Base HD Path:  m/44&#39;/60&#39;/0&#39;/0/{account_index}
 <p>This is one way that Metamask is a safer Ethereum browsing experience than running your own RPC. While a pre-authenticated RPC automatically approves all requests sent to it, Metamask gives the user an opportunity to review and approve or reject each transaction that&#39;s requested by the dapp. Long term, making transactions easy to intelligently review is an important priority for Ethereum developers.</p>
 
     <h2 class="link-markdown">
-      <a href="#wrapping-up" name="wrapping-up"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="wrapping-up"></a>
+      <a href="#wrapping-up"><i class="fas fa-link"></i></a>
       Wrapping Up
     </h2>
   <p>This has been a simple example, but hopefully shows how Truffle and Metamask work together. They are able to pretty much work out of the box! That&#39;s because Truffle helps you write <code>web3</code>-compliant dapps. Web3 is a Javascript API declared by the core Ethereum team, and since it was standardized early, tools that take advantage of its common methods work well together.</p>

@@ -149,14 +149,16 @@
 <p>My final system will allow you to run “truffle test” locally to see standard test output, but will modify the test runner on the server to output it as JUnit format.</p>
 
     <h2 class="link-markdown">
-      <a href="#the-build-system" name="the-build-system"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="the-build-system"></a>
+      <a href="#the-build-system"><i class="fas fa-link"></i></a>
       The Build system
     </h2>
   <p>The system uses the <a href="https://azure.microsoft.com/en-us/services/visual-studio-team-services/">Visual Studio Team Services</a> (VSTS) build engine to automate this. You can sign up for free, and get unlimited private Git repos.  </p>
 <p>You can have the code hosted on any Git provider. So either within VSTS itself, or GitHub, BitBucket, etc.</p>
 
     <h2 class="link-markdown">
-      <a href="#prepare-truffle-js" name="prepare-truffle-js"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="prepare-truffle-js"></a>
+      <a href="#prepare-truffle-js"><i class="fas fa-link"></i></a>
       Prepare truffle.js
     </h2>
   <p>A pre-step is to define the  test section in the truffle.js file</p>
@@ -169,7 +171,8 @@
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#create-a-build-agent" name="create-a-build-agent"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="create-a-build-agent"></a>
+      <a href="#create-a-build-agent"><i class="fas fa-link"></i></a>
       Create a build agent
     </h2>
   <p>VSTS does provide hosted build agents, which are generic and can build standard .Net projects, Xamarin, etc. But because we are going to use npm packages installed globally on the box to handle the Truffle builds</p>
@@ -195,7 +198,8 @@ $ npm install -g mocha-junit-reporter
 </ul>
 
     <h2 class="link-markdown">
-      <a href="#configure-vsts-build" name="configure-vsts-build"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="configure-vsts-build"></a>
+      <a href="#configure-vsts-build"><i class="fas fa-link"></i></a>
       Configure VSTS build
     </h2>
   <p>Create a new variable with the path to where the npm global path is, for the user you installed the npm packages on above:</p>
@@ -209,7 +213,8 @@ $ npm install -g mocha-junit-reporter
   </p>
 
     <h2 class="link-markdown">
-      <a href="#add-7-powershell-tasks-and-configure-them-like-this" name="add-7-powershell-tasks-and-configure-them-like-this"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="add-7-powershell-tasks-and-configure-them-like-this"></a>
+      <a href="#add-7-powershell-tasks-and-configure-them-like-this"><i class="fas fa-link"></i></a>
       Add 7 PowerShell tasks, and configure them like this
     </h2>
   <ul>
@@ -315,7 +320,8 @@ taskkill /pid $testrpcPID /F /T
 </ul>
 
     <h2 class="link-markdown">
-      <a href="#future-work" name="future-work"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="future-work"></a>
+      <a href="#future-work"><i class="fas fa-link"></i></a>
       Future work
     </h2>
   <p>Things that I would like to add in the future:</p>

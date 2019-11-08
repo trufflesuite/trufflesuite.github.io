@@ -145,7 +145,8 @@
 <p>Though Solidity tests can be quite powerful, they do come with some drawbacks. One of those is testing whether or not a function should <code>throw</code> (without breaking the test!), which I&#39;ll show you how to do right now.</p>
 
     <h2 class="link-markdown">
-      <a href="#diving-in" name="diving-in"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="diving-in"></a>
+      <a href="#diving-in"><i class="fas fa-link"></i></a>
       Diving In
     </h2>
   <p>In Solidity, when performing a contract call that produces an error, Solidity automatically rethrows, meaning it will bubble that error up to the caller. However, with a <em>raw</em> call, the behavior is different: one can catch the error and decide what to do from there on out. If it throws (fails), it will return <code>false</code>. If it succeeds, it will return <code>true</code>. Thus, the following calls will produce a different result.</p>
@@ -217,7 +218,8 @@ contract TestThrower {
 <p>With this proxy, one can still effectively write the interactions as contracts calling other contracts without having to resort to crafting raw calls manually. (Hooray!)</p>
 
     <h2 class="link-markdown">
-      <a href="#gotchas" name="gotchas"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="gotchas"></a>
+      <a href="#gotchas"><i class="fas fa-link"></i></a>
       Gotchas
     </h2>
   <p>An important caveat here is to recognize the contract caller, <code>msg.sender</code>. If you add a proxy in between, then <code>msg.sender</code> will be the proxy, which could break authorization and permissioning algorithms. If your authorization system allows you to change the owner, you can get around this constraint by setting the proxy to be the contract owner. For example:</p>
@@ -239,7 +241,8 @@ throwProxy.execute();
 <p>Because a <code>throw</code> essentially uses up all gas, one must make doubly sure they catch the <code>throw</code> and <strong>not</strong> a legitimate out-of-gas (OOG) error. As well, take care to manage sending Ether through the proxy (for tests that require it) as that can be difficult as well.</p>
 
     <h2 class="link-markdown">
-      <a href="#conclusion" name="conclusion"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="conclusion"></a>
+      <a href="#conclusion"><i class="fas fa-link"></i></a>
       Conclusion
     </h2>
   <p>Testing <code>throws</code> is possible from within Solidity tests, but can be cumbersome if you want to write those tests yourself as raw calls. You can get around this by using a proxy contract, which makes many situations a lot easier and makes your tests much easier to write. But keep a look out for potential caveats as Solidity tests with a lot more power but plenty of drawbacks.</p>

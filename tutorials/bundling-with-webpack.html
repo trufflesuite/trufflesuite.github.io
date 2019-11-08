@@ -141,20 +141,23 @@
           <p><a href="https://webpack.github.io/">Webpack</a> is a powerful module bundler that helps turn your code into static assets you can deploy to the web. With the <a href="https://github.com/ConsenSys/truffle-solidity-loader">Truffle Solidity loader</a>, we&#39;ll show you how you can use Webpack with your existing Truffle project.</p>
 
     <h2 class="link-markdown">
-      <a href="#intended-audience" name="intended-audience"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="intended-audience"></a>
+      <a href="#intended-audience"><i class="fas fa-link"></i></a>
       Intended Audience
     </h2>
   <p>This tutorial is for Truffle users who are familiar with Webpack already. Since Webpack requires considerable knowledge to use effectively, we recommend checking out the <a href="http://webpack.github.io/docs/">Webpack documentation</a> as well as the <a href="https://github.com/ConsenSys/truffle-webpack-demo">Truffle + Webpack Demo application</a> before proceeding.</p>
 
     <h2 class="link-markdown">
-      <a href="#getting-started" name="getting-started"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="getting-started"></a>
+      <a href="#getting-started"><i class="fas fa-link"></i></a>
       Getting Started
     </h2>
   <p>Navigate to your project in the command line, and then install the required dependencies. These dependencies are in addition to any other Webpack-related dependencies your project might have.</p>
 <pre><code>$ npm install webpack webpack-dev-server truffle-solidity-loader --save-dev
 </code></pre>
     <h2 class="link-markdown">
-      <a href="#set-up-your-webpack-configuration" name="set-up-your-webpack-configuration"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="set-up-your-webpack-configuration"></a>
+      <a href="#set-up-your-webpack-configuration"><i class="fas fa-link"></i></a>
       Set up Your Webpack Configuration
     </h2>
   <p>You should already have a webpack configuration for your project. If you don&#39;t, an example configuration file is provided at the bottom of this tutorial. To enable Solidity support, add the <code>truffle-solidity-loader</code> as a plugin within your project:</p>
@@ -168,7 +171,8 @@ module: {
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#remove-default-build-configuration" name="remove-default-build-configuration"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="remove-default-build-configuration"></a>
+      <a href="#remove-default-build-configuration"><i class="fas fa-link"></i></a>
       Remove Default Build Configuration
     </h2>
   <p>Since you&#39;re using Webpack to build your frontend, you won&#39;t want to use the default Truffle build process as the two processes will conflict. To ensure there are no issues if you or your teammates run <code>truffle build</code>, go ahead and delete the <code>build</code> configuration in your <code>truffle.js</code> file, if it exists.</p>
@@ -184,7 +188,8 @@ module: {
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#bootstrapping-your-application" name="bootstrapping-your-application"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="bootstrapping-your-application"></a>
+      <a href="#bootstrapping-your-application"><i class="fas fa-link"></i></a>
       Bootstrapping Your Application
     </h2>
   <p>Since you&#39;re bundling the frontend yourself and not using Truffle&#39;s default build process, certain &quot;magic&quot; provided by Truffle needs to be handled in order to get your application running properly. This includes:</p>
@@ -194,7 +199,8 @@ module: {
 </ol>
 
     <h3 class="link-markdown">
-      <a href="#detecting-web3" name="detecting-web3"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="detecting-web3"></a>
+      <a href="#detecting-web3"><i class="fas fa-link"></i></a>
       Detecting Web3
     </h3>
   <p>In the past, Truffle bootstrapped applications to look for an open Ethereum node running at <code>http://localhost:8545</code>, but this has proven to be insecure for the user as well as highly unlikely in a real world scenario. Instead, users are most likely to use Metamask or Mist to interact with web applications on the Ethereum network, and you should build your application to support that. Both Metamask and Mist inject a <code>web3</code> object when the page is loading so you can hook into their transaction signing processes. Detecting this <code>web3</code> object easy:</p>
@@ -213,7 +219,8 @@ window.addEventListener(&#39;load&#39;, function() {
 <p>Notice we only use the wallet&#39;s provider and not the whole <code>web3</code> object provided to us. This ensures our application is not dependent on the wallet&#39;s version of Web3, and reduces the surface area in which version errors might occur.</p>
 
     <h3 class="link-markdown">
-      <a href="#provisioning-your-contract-abstractions" name="provisioning-your-contract-abstractions"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="provisioning-your-contract-abstractions"></a>
+      <a href="#provisioning-your-contract-abstractions"><i class="fas fa-link"></i></a>
       Provisioning Your Contract Abstractions
     </h3>
   <p>Provisioning your contract abstractions requires two things: 1) that you include your contracts in your project, and 2) that you set up the Javascript abstractions so that they&#39;re correctly talking to the Ethereum client via Web3.</p>
@@ -231,7 +238,8 @@ import MyContract from &quot;contracts/MyContract.sol&quot;;
 <p>You can prevent having to perform this provisioning more than once per contract dependency by either setting your contract abstractions to the global object, like <code>window</code>, and provisioning them once when your application loads; or using something like the <a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin">ProvidePlugin</a> to ensure your contract abstractions are available to every file within the bundle (recommended).</p>
 
     <h2 class="link-markdown">
-      <a href="#running-webpack" name="running-webpack"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="running-webpack"></a>
+      <a href="#running-webpack"><i class="fas fa-link"></i></a>
       Running Webpack
     </h2>
   <p>From here you can run webpack like normal, via the normal <code>webpack</code> command or the <code>webpack-dev-server</code>, if you have those installed globally on your machine:</p>
@@ -245,7 +253,8 @@ $ webpack-dev-server --hot
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#example-webpack-config" name="example-webpack-config"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="example-webpack-config"></a>
+      <a href="#example-webpack-config"><i class="fas fa-link"></i></a>
       Example Webpack Config
     </h2>
   <p>Here&#39;s a very simple Webpack configuration file that uses the Truffle Solidity Loader as well as other plugins. This configration file exists within a React application where its source files exist within the <code>./app</code> directory, and CSS is pulled out using the <code>copy-webpack-plugin</code>. Of course, your dapp&#39;s layout and structure will be different, but this should give you a good example of how the Solidity Loader fits within a simple application.</p>

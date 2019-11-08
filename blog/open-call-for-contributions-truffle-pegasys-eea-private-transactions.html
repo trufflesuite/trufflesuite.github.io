@@ -140,7 +140,8 @@
         <div class="col">
           
     <h1 class="link-markdown">
-      <a href="#open-call-for-contributions-by-truffle-pegasys-eea-private-transactions" name="open-call-for-contributions-by-truffle-pegasys-eea-private-transactions"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="open-call-for-contributions-by-truffle-pegasys-eea-private-transactions"></a>
+      <a href="#open-call-for-contributions-by-truffle-pegasys-eea-private-transactions"><i class="fas fa-link"></i></a>
       Open call for contributions by Truffle + PegaSys: EEA private transactions
     </h1>
   <p>
@@ -149,20 +150,23 @@
   </p>
 
     <h2 class="link-markdown">
-      <a href="#what-39-s-missing-" name="what-39-s-missing-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="what-39-s-missing-"></a>
+      <a href="#what-39-s-missing-"><i class="fas fa-link"></i></a>
       What&#39;s missing?
     </h2>
   <p>In its current state, Truffle doesn&#39;t support EEA private transactions. Support for the web3js-eea library is needed for this to work and PegaSys has recently made an implementation of the v4.0 EEA specification.</p>
 
     <h2 class="link-markdown">
-      <a href="#why-did-this-happen-" name="why-did-this-happen-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="why-did-this-happen-"></a>
+      <a href="#why-did-this-happen-"><i class="fas fa-link"></i></a>
       Why did this happen?
     </h2>
   <p>The <code>interface-adapter</code> in Truffle’s codebase doesn’t provide an adapter for the  EEA 4.0 client spec, therefore private transactions aren’t working.</p>
 <p>The EEA client specification is a developing specification and  Truffle has not yet implemented the EEA client specification around private transactions.  PegaSys is providing an implementation of the specification for private transactions.  Pegasys and Truffle are teaming up to ensure that Truffle supports the EEA JSON RPC API methods.</p>
 
     <h2 class="link-markdown">
-      <a href="#what-39-s-the-solution-" name="what-39-s-the-solution-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="what-39-s-the-solution-"></a>
+      <a href="#what-39-s-the-solution-"><i class="fas fa-link"></i></a>
       What&#39;s the solution?
     </h2>
   <p>PegaSys and Truffle have teamed up to make a single open call for contributions. This guest blog post is made by the PegaSys team and is to be posted on the Truffle blog and promoted by both teams in order to add code to Truffle codebase to add support for them.</p>
@@ -173,7 +177,8 @@
 <p>Also, it would be very useful to make sure this plays nicely with the getTransactionReceipt methods later in the chain of events.</p>
 
     <h2 class="link-markdown">
-      <a href="#what-to-do-exactly-" name="what-to-do-exactly-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="what-to-do-exactly-"></a>
+      <a href="#what-to-do-exactly-"><i class="fas fa-link"></i></a>
       What to do Exactly?
     </h2>
   <p>The initial process involves adding an EEA definition to the shim file. The <code>web3-shim.ts</code> file currently contains the overloads for the different interface definitions and their mappings.</p>
@@ -217,7 +222,8 @@ const initInterface = async(web3Shim: Web3Shim) =&gt; {
   </p>
 
     <h2 class="link-markdown">
-      <a href="#who-can-do-this-" name="who-can-do-this-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="who-can-do-this-"></a>
+      <a href="#who-can-do-this-"><i class="fas fa-link"></i></a>
       Who can do this?
     </h2>
   <p>Anyone who&#39;d like to try can very much do so we will gladly support any developer who wants to help out.

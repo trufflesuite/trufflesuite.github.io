@@ -140,7 +140,8 @@
         <div class="col">
           
     <h2 class="link-markdown">
-      <a href="#introducing-truffle-db-part-1-artifact-archeology" name="introducing-truffle-db-part-1-artifact-archeology"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="introducing-truffle-db-part-1-artifact-archeology"></a>
+      <a href="#introducing-truffle-db-part-1-artifact-archeology"><i class="fas fa-link"></i></a>
       Introducing Truffle DB, part 1: Artifact archeology
     </h2>
   <p>Truffle is not a small utility: it compiles your contracts, deploys them to multiple networks, runs your automated tests, provides an interactive debugger for when things go wrong, offers a library for interacting with your contracts on the frontend, … (<em>the list goes on.</em>) With just over 20,000 lines of code and close to thirty discrete software packages, Truffle has a lot going on.</p>
@@ -151,7 +152,8 @@
 <p>Unfortunately, Truffle’s artifacts format has a number of core limitations that prevent Truffle from offering ideal behavior in several key situations. This post describes a few of these limitations. In this post’s follow-up, we’ll share information about a new system to manage this record-keeping, which we’re calling <strong>Truffle DB</strong>.</p>
 
     <h2 class="link-markdown">
-      <a href="#so-what-s-the-problem-now-" name="so-what-s-the-problem-now-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="so-what-s-the-problem-now-"></a>
+      <a href="#so-what-s-the-problem-now-"><i class="fas fa-link"></i></a>
       So what’s the problem now?
     </h2>
   <p>For starters: artifact files are huge! Too huge! In addition to Truffle reading your contract artifacts, your dapp’s frontend code may read and use your artifacts to let users connect to any deployed network, etc. Problem is—there’s a ton of JSON. It’s a mess, and it’s in your face too much.</p>
@@ -175,7 +177,8 @@
 <p>The root of the problem is that Truffle’s artifacts try to serve two conflicting purposes: they try to serve the developer, but they also try to serve the tool itself.</p>
 
     <h2 class="link-markdown">
-      <a href="#-stop-talking-about-data-formats-you-say-" name="-stop-talking-about-data-formats-you-say-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-stop-talking-about-data-formats-you-say-"></a>
+      <a href="#-stop-talking-about-data-formats-you-say-"><i class="fas fa-link"></i></a>
       “Stop talking about data formats”, you say.
     </h2>
   <p>Right? Ideally, Truffle should silently keep complete records of everything you will ever need, and nothing more. And you, the developer, should only ever come face-to-face with the information you need at any given moment.</p>

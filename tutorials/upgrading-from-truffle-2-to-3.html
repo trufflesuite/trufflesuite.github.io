@@ -141,7 +141,8 @@
           <p><em>Note: This guide also applies to users upgrading from Truffle beta 3.0.0-9 to Truffle 3.0.1</em></p>
 
     <h2 class="link-markdown">
-      <a href="#introduction" name="introduction"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="introduction"></a>
+      <a href="#introduction"><i class="fas fa-link"></i></a>
       Introduction
     </h2>
   <p>Truffle 3.0 offers a ton of new features. With it comes some very important breaking changes. These breaking changes make network management easier, make contract abstractions easier to use, and allow you to install third party packages from any number of sources. We consider these breaking changes helpful -- they&#39;re due to the careful maturation of Ethereum&#39;s most popular development tool, and we&#39;ll guide you through the steps needed to take advantage of all these new features.</p>
@@ -155,7 +156,8 @@
 <p>Now let&#39;s get started!</p>
 
     <h2 class="link-markdown">
-      <a href="#first-things-first-configuration" name="first-things-first-configuration"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="first-things-first-configuration"></a>
+      <a href="#first-things-first-configuration"><i class="fas fa-link"></i></a>
       First Things First: Configuration
     </h2>
   <p>Truffle 2.0 had an odd configuration -- we admit it. Not only can you have a default, unnamed network sitting around (the <code>rpc</code> configuration option) but you can also have named networks like <code>&quot;ropsten&quot;</code> or <code>&quot;live&quot;</code>. A result of this default vs. named distinction came were other oddities, such as accidentally overwriting important network artifacts or deploying to the wrong network. With Truffle 3.0 we fixed all that, but it requires a change in your configuration.</p>
@@ -204,7 +206,8 @@
 <p>Additionally, each network needs to have a network id specified, or a <code>&quot;*&quot;</code>. This is another security measure used during migrations to ensure that even _if_ Truffle connects to the Ethereum client at the specified host and port, if it&#39;s not the network you intend, Truffle will error before attempting any deployments.</p>
 
     <h2 class="link-markdown">
-      <a href="#importing-and-the-ethereum-package-manager-ethpm-" name="importing-and-the-ethereum-package-manager-ethpm-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="importing-and-the-ethereum-package-manager-ethpm-"></a>
+      <a href="#importing-and-the-ethereum-package-manager-ethpm-"><i class="fas fa-link"></i></a>
       Importing and the Ethereum Package Manager (EthPM)
     </h2>
   <p>As Truffle 3.0 uses the new <a href="/docs/getting_started/packages-ethpm">Ethereum Package Manager (EthPM)</a> we need to tell Truffle when the package manager should be used and when to look in the local directory. If you don&#39;t specify the directory to search relative to the <code>contracts/</code> directory, it will assume that EthPM will handle this.</p>
@@ -218,7 +221,8 @@
 <p>The <code>./</code> tells Truffle that the contract is in the current directory. See the <a href="/docs/getting_started/compile">Compiling contracts</a> page for more details.</p>
 
     <h2 class="link-markdown">
-      <a href="#migrations-and-test-dependencies" name="migrations-and-test-dependencies"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="migrations-and-test-dependencies"></a>
+      <a href="#migrations-and-test-dependencies"><i class="fas fa-link"></i></a>
       Migrations and Test Dependencies
     </h2>
   <p>Before package management, Truffle could assume that all the contracts you wrote yourself were the contracts you wanted to interact with via your migrations and tests. Now that package management is here, this is no longer a safe assumption -- contract dependencies can come from any number of sources, and so you have to explicitly ask for those abstractions yourself. This is all in the name of reducing magic. Let&#39;s look at an example migration.</p>
@@ -243,13 +247,15 @@ module.exports = function(deployer) {
 <p>Your Javascript tests need the exact same <code>artifacts.require()</code> statements in order to use those abstractions like before.</p>
 
     <h2 class="link-markdown">
-      <a href="#migrations-no-more-autolink" name="migrations-no-more-autolink"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="migrations-no-more-autolink"></a>
+      <a href="#migrations-no-more-autolink"><i class="fas fa-link"></i></a>
       Migrations: No more autolink
     </h2>
   <p>Like the section above, autolinking was a boon of a very small dependency tree. With package management, Truffle can no longer autolink your contracts because it can&#39;t determine all possible dependencies you might need within your migration. Instead, you need to explicitly link your libraries yourself. Fortunately this is not hard, and you can see the changes we made in the example above.</p>
 
     <h2 class="link-markdown">
-      <a href="#contract-abstractions-all-json-goodbye-sol-js-" name="contract-abstractions-all-json-goodbye-sol-js-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="contract-abstractions-all-json-goodbye-sol-js-"></a>
+      <a href="#contract-abstractions-all-json-goodbye-sol-js-"><i class="fas fa-link"></i></a>
       Contract Abstractions: All JSON (goodbye .sol.js!)
     </h2>
   <p>Truffle had originally saved your contract abstractions on disk in <code>.sol.js</code> files. These files were Javascript files that represented specific solidity files in your project, hence the file extension, and they were originally intended to make your contract artifacts really easy to use, everywhere. Well, it turns out we got it wrong. Really wrong. Not only were these files hard to use <em>within</em> Javascript in certain cases, but they were completely unusable if you wanted to use them outside of Javascript. To overcome this limitation and make your contract artifacts available everywhere, Truffle 3.0 now saves all artifacts within the JSON format.</p>
@@ -275,7 +281,8 @@ Successfully deleted old .sol.js files.
 </code></pre><p>And that&#39;s it! You&#39;re now ready to move onto the next step.</p>
 
     <h2 class="link-markdown">
-      <a href="#contract-abstractions-deployed-is-now-thennable" name="contract-abstractions-deployed-is-now-thennable"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="contract-abstractions-deployed-is-now-thennable"></a>
+      <a href="#contract-abstractions-deployed-is-now-thennable"><i class="fas fa-link"></i></a>
       Contract Abstractions: .deployed() is now thennable
     </h2>
   <p>⚠️ Warning: This change will affect your migrations, your tests, and your application code! ⚠️</p>
@@ -312,7 +319,8 @@ MyContract.deployed().then(function(instance) {
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#contract-abstractions-transaction-result-objects" name="contract-abstractions-transaction-result-objects"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="contract-abstractions-transaction-result-objects"></a>
+      <a href="#contract-abstractions-transaction-result-objects"><i class="fas fa-link"></i></a>
       Contract Abstractions: Transaction result objects
     </h2>
   <p>People have long complained that events are hard to watch for in Web3. Similarly, in most use cases, events aren&#39;t used via a contract observer pattern; instead, in practice, events are used to check specific results of a specific transaction. Though the contract observer pattern for events is still available, we made the latter use case much easier, which required breaking changes to the return value of transactions.</p>
@@ -367,7 +375,8 @@ contract(&quot;PackageIndex&quot;, function(accounts) {
 <p>We have to search through all returned events to ensure we found the one we wanted, but this is certainly better than using <code>PackageIndex.ReleasePublished.watch(...)</code>, and we can keep event processing within our application&#39;s (or test&#39;s) normal control flow.</p>
 
     <h2 class="link-markdown">
-      <a href="#build-pipeline-no-more-builder-by-default" name="build-pipeline-no-more-builder-by-default"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="build-pipeline-no-more-builder-by-default"></a>
+      <a href="#build-pipeline-no-more-builder-by-default"><i class="fas fa-link"></i></a>
       Build Pipeline: No more builder, by default
     </h2>
   <p>In Truffle 1.0 and 2.0, things were heavily geared toward building web applications, and so Truffle shipped with a default build pipeline that could get your dapp up and running quickly. This build pipeline was magical: It did everything for you, and you didn&#39;t have to lift a finger. This was good for some use cases, but it became evidently clear that in any other use case the pipeline was very brittle.</p>
@@ -375,7 +384,8 @@ contract(&quot;PackageIndex&quot;, function(accounts) {
 <p>Now, just because the build pipeline has been removed by default doesn&#39;t mean you don&#39;t have options. At Truffle, we care about your developer experience and so would never leave you hanging. In general there are two options for you to choose from, but for the latter option what you&#39;ll do is heavily dependent on which build tool (i.e., webpack) you choose to use. Let&#39;s go over the options below.</p>
 
     <h3 class="link-markdown">
-      <a href="#use-the-old-pipeline-in-truffle-3-0" name="use-the-old-pipeline-in-truffle-3-0"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="use-the-old-pipeline-in-truffle-3-0"></a>
+      <a href="#use-the-old-pipeline-in-truffle-3-0"><i class="fas fa-link"></i></a>
       Use the old pipeline in Truffle 3.0
     </h3>
   <p>If you&#39;re using the default build pipeline in Truffle 2.0 and would like to upgrade to 3.0, you&#39;re not out of luck. We&#39;ve upgraded the <a href="https://github.com/trufflesuite/truffle-default-builder">truffle-default-builder</a> so it can work seamlessly with Truffle 3.0. This will be the last time we update the default builder though as engineering for all possible use cases is too complex. So we recommend you eventually choose a different build system later down the line.</p>
@@ -427,7 +437,8 @@ module.exports = {
 <p>Now, be aware that the default builder does use the latest contract abstractions (<a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">truffle-contract</a>), so you will still need to edit your application to account for the breaking changes mentioned above.</p>
 
     <h3 class="link-markdown">
-      <a href="#use-a-custom-build-process-build-tool" name="use-a-custom-build-process-build-tool"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="use-a-custom-build-process-build-tool"></a>
+      <a href="#use-a-custom-build-process-build-tool"><i class="fas fa-link"></i></a>
       Use a custom build process / build tool
     </h3>
   <p>Custom build processes are not hard to write. Instead, what&#39;s hard is writing a build process that fits all shapes and sizes. We now recommend you look into the many build tools available to you that best fits your application. We&#39;ve already mentioned <a href="https://webpack.github.io/">webpack</a>, <a href="http://browserify.org/">browserify</a>, <a href="http://gruntjs.com/">Grunt</a>, and <a href="http://www.metalsmith.io/">Metalsmith</a>, but there are many others, and their features run the gamut based on the context of the application being built and the features that you need.</p>
@@ -458,7 +469,8 @@ MyContract.deployed().then(function(deployed) {
 <p>All build processes and contract bootstrapping will follow this pattern. The key when setting up your own custom build process is to ensure you&#39;re consuming all of your contract artifacts and provisioning your abstractions correctly.</p>
 
     <h2 class="link-markdown">
-      <a href="#fin" name="fin"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="fin"></a>
+      <a href="#fin"><i class="fas fa-link"></i></a>
       Fin
     </h2>
   <p>That&#39;s it! That&#39;s all you need to know to upgrade from Truffle 2.0 to 3.0. It might require a bit of work, but the changes are surely worth it. If you have questions, Truffle has a <a href="https://gitter.im/ConsenSys/truffle">vibrant community of Trufflers available 24/7</a> to help you with any issues you may have. Don&#39;t hesitate to ask for help, and we wish you a happy 3.0!</p>

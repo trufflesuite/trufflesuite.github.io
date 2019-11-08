@@ -301,12 +301,14 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#configuration" name="configuration"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="configuration"></a>
+      <a href="#configuration"><i class="fas fa-link"></i></a>
       Configuration
     </h1>
   
     <h2 class="link-markdown">
-      <a href="#location" name="location"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="location"></a>
+      <a href="#location"><i class="fas fa-link"></i></a>
       Location
     </h2>
   <p>Your configuration file is called <code>truffle-config.js</code> and is located at the root of your project directory. This file is a Javascript file and can execute any code necessary to create your configuration. It must export an object representing your project configuration like the example below.</p>
@@ -323,7 +325,8 @@
 <p>The default configuration ships with configuration for a single development network, running on <code>127.0.0.1:8545</code>. There are many other configuration options, detailed below.</p>
 
     <h3 class="link-markdown">
-      <a href="#resolving-naming-conflicts-on-windows" name="resolving-naming-conflicts-on-windows"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="resolving-naming-conflicts-on-windows"></a>
+      <a href="#resolving-naming-conflicts-on-windows"><i class="fas fa-link"></i></a>
       Resolving naming conflicts on Windows
     </h3>
   <p class="alert alert-warning">
@@ -342,18 +345,21 @@
 </ul>
 
     <h2 class="link-markdown">
-      <a href="#general-options" name="general-options"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="general-options"></a>
+      <a href="#general-options"><i class="fas fa-link"></i></a>
       General options
     </h2>
   
     <h3 class="link-markdown">
-      <a href="#build" name="build"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="build"></a>
+      <a href="#build"><i class="fas fa-link"></i></a>
       build
     </h3>
   <p>Build configuration of your application, if your application requires tight integration with Truffle. Most users likely will not need to configure this option. See the <a href="/docs/truffle/advanced/build-processes">Build Processes</a> section for more details.</p>
 
     <h3 class="link-markdown">
-      <a href="#networks" name="networks"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="networks"></a>
+      <a href="#networks"><i class="fas fa-link"></i></a>
       networks
     </h3>
   <p>Specifies which networks are available for deployment during migrations, as well as specific transaction parameters when interacting with each network (such as gas price, from address, etc.). When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your Ethereum client is connected to a specific network, they&#39;ll use the contract artifacts associated that network to simplify app deployment. Networks are identified through Ethereum&#39;s <code>net_version</code> RPC call, as well as blockchain URIs.</p>
@@ -396,7 +402,8 @@
 <p>For each network, you can specify either <code>host</code> / <code>port</code> or <code>provider</code>, but not both. If you need an HTTP provider, we recommend using <code>host</code> and <code>port</code>, while if you need a custom provider such as <code>HDWalletProvider</code>, you must use <code>provider</code>.</p>
 
     <h4 class="link-markdown">
-      <a href="#providers" name="providers"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="providers"></a>
+      <a href="#providers"><i class="fas fa-link"></i></a>
       Providers
     </h4>
   <p>The following network list consists of a local test network and an Infura-hosted Ropsten network, both provided by HDWalletProvider. Make sure you wrap <code>truffle-hdwallet</code> providers in a function closure as shown below to ensure that only one network is ever connected at a time.</p>
@@ -418,7 +425,8 @@
 <p>If you specify <code>host</code> and <code>port</code> instead of <code>provider</code>, Truffle will create its own default HTTP provider using that host and port, and no minimal network connection will be opened, so there is no need to do the function wrapping workaround. That said, you wouldn&#39;t be able to use a custom provider in this case.</p>
 
     <h3 class="link-markdown">
-      <a href="#contracts_directory" name="contracts_directory"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="contracts_directory"></a>
+      <a href="#contracts_directory"><i class="fas fa-link"></i></a>
       contracts_directory
     </h3>
   <p>The default directory for uncompiled contracts is <code>./contracts</code> relative to the project root. If you wish to keep your contracts in a different directory you may specify a <code>contracts_directory</code> property.</p>
@@ -438,7 +446,8 @@
 <p><strong>Note</strong>: In addition to specifying a relative path, you can also use globs/regular expressions to selectively compile contracts.</p>
 
     <h3 class="link-markdown">
-      <a href="#contracts_build_directory" name="contracts_build_directory"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="contracts_build_directory"></a>
+      <a href="#contracts_build_directory"><i class="fas fa-link"></i></a>
       contracts_build_directory
     </h3>
   <p>The default output directory for compiled contracts is <code>./build/contracts</code> relative to the project root. This can be changed with the <code>contracts_build_directory</code> key.</p>
@@ -470,7 +479,8 @@
 <p>Absolute paths will also work. This is not recommended though, as an absolute path may not exist when compiled on another system. If you use absolute paths on Windows, make sure to use double backslashes for paths (example: <code>C:\\Users\\Username\\output</code>).</p>
 
     <h3 class="link-markdown">
-      <a href="#migrations_directory" name="migrations_directory"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="migrations_directory"></a>
+      <a href="#migrations_directory"><i class="fas fa-link"></i></a>
       migrations_directory
     </h3>
   <p>The default migrations directory is <code>./migrations</code> relative to the project root. This can be changed with the <code>migrations_directory</code> key.</p>
@@ -488,7 +498,8 @@
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#mocha" name="mocha"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="mocha"></a>
+      <a href="#mocha"><i class="fas fa-link"></i></a>
       mocha
     </h3>
   <p>Configuration options for the <a href="http://mochajs.org/">MochaJS</a> testing framework. This configuration expects an object as detailed in Mocha&#39;s <a href="https://github.com/mochajs/mocha/wiki/Using-mocha-programmatically#set-options">documentation</a>.</p>
@@ -499,13 +510,15 @@
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#compiler-configuration" name="compiler-configuration"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="compiler-configuration"></a>
+      <a href="#compiler-configuration"><i class="fas fa-link"></i></a>
       Compiler configuration
     </h2>
   <p>In the <code>compilers</code> object you can specify settings related to the compilers used by Truffle.</p>
 
     <h3 class="link-markdown">
-      <a href="#solc" name="solc"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="solc"></a>
+      <a href="#solc"><i class="fas fa-link"></i></a>
       solc
     </h3>
   <p>Solidity compiler settings. Supports optimizer settings for <code>solc</code>.</p>
@@ -537,7 +550,8 @@
 <p>For more information, please see the Solidity documentation on <a href="http://solidity.readthedocs.io/en/develop/using-the-compiler.html#compiler-input-and-output-json-description">Compiler Input and Output JSON Description</a>.</p>
 
     <h3 class="link-markdown">
-      <a href="#external-compilers" name="external-compilers"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="external-compilers"></a>
+      <a href="#external-compilers"><i class="fas fa-link"></i></a>
       external compilers
     </h3>
   <p>For more advanced use cases with artifact creation you can use the external compilers configuration.
@@ -631,7 +645,8 @@ For instance, the following will run <code>./proj/compile-contracts</code> and r
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#plugins" name="plugins"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="plugins"></a>
+      <a href="#plugins"><i class="fas fa-link"></i></a>
       plugins
     </h2>
   <p class="alert alert-warning">
@@ -645,13 +660,15 @@ NPM package dependencies.</p>
 workflow commands. For more information, see <a href="/docs/truffle/getting-started/writing-external-scripts#third-party-plugin-commands">Third-Party Plugin Commands</a>.</p>
 
     <h2 class="link-markdown">
-      <a href="#ethpm-configuration" name="ethpm-configuration"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="ethpm-configuration"></a>
+      <a href="#ethpm-configuration"><i class="fas fa-link"></i></a>
       EthPM configuration
     </h2>
   <p>This configuration applies to the optional <code>ethpm.json</code> file that exists alongside your <code>truffle.js</code> configuration file.</p>
 
     <h3 class="link-markdown">
-      <a href="#package_name" name="package_name"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="package_name"></a>
+      <a href="#package_name"><i class="fas fa-link"></i></a>
       package_name
     </h3>
   <p>Name of the package you&#39;re publishing. Your package name must be unique to the EthPM registry.</p>
@@ -660,7 +677,8 @@ workflow commands. For more information, see <a href="/docs/truffle/getting-star
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#version" name="version"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="version"></a>
+      <a href="#version"><i class="fas fa-link"></i></a>
       version
     </h3>
   <p>Version of this package, using the <a href="http://semver.org/">semver</a> specification.</p>
@@ -669,7 +687,8 @@ workflow commands. For more information, see <a href="/docs/truffle/getting-star
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#description" name="description"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="description"></a>
+      <a href="#description"><i class="fas fa-link"></i></a>
       description
     </h3>
   <p>A text description of your package for human readers.</p>
@@ -678,7 +697,8 @@ workflow commands. For more information, see <a href="/docs/truffle/getting-star
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#authors" name="authors"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="authors"></a>
+      <a href="#authors"><i class="fas fa-link"></i></a>
       authors
     </h3>
   <p>An array of authors. Can have any format, but we recommend the format below.</p>
@@ -689,7 +709,8 @@ workflow commands. For more information, see <a href="/docs/truffle/getting-star
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#keywords" name="keywords"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="keywords"></a>
+      <a href="#keywords"><i class="fas fa-link"></i></a>
       keywords
     </h3>
   <p>An array of keywords that tag this package with helpful categories.</p>
@@ -701,7 +722,8 @@ workflow commands. For more information, see <a href="/docs/truffle/getting-star
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#dependencies" name="dependencies"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="dependencies"></a>
+      <a href="#dependencies"><i class="fas fa-link"></i></a>
       dependencies
     </h3>
   <p>A list of EthPM packages your package depends on, using <a href="http://semver.org/">semver</a> version ranges, like npm.</p>
@@ -713,7 +735,8 @@ workflow commands. For more information, see <a href="/docs/truffle/getting-star
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#license" name="license"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="license"></a>
+      <a href="#license"><i class="fas fa-link"></i></a>
       license
     </h3>
   <p>License to use for this package. Strictly informative.</p>

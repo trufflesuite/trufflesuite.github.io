@@ -301,13 +301,15 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#contract-abstractions" name="contract-abstractions"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="contract-abstractions"></a>
+      <a href="#contract-abstractions"><i class="fas fa-link"></i></a>
       Contract Abstractions
     </h1>
   <p>Truffle provides contract abstractions for interacting with your contracts.  Skip ahead to the <a href="/docs/truffle/reference/contract-abstractions#api">api section</a> for a list of contract methods.</p>
 
     <h3 class="link-markdown">
-      <a href="#usage" name="usage"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="usage"></a>
+      <a href="#usage"><i class="fas fa-link"></i></a>
       Usage
     </h3>
   <p>To obtain a contract abstraction you can require it with the contract name from the <code>artifacts</code> object.  Outside of the console this is an object available in migration files, tests, and exec scripts.
@@ -361,37 +363,43 @@ example
 </code></pre>
 
     <h1 class="link-markdown">
-      <a href="#api" name="api"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="api"></a>
+      <a href="#api"><i class="fas fa-link"></i></a>
       API
     </h1>
   <p>There are two API&#39;s you&#39;ll need to be aware of. One is the static Contract Abstraction API and the other is the Contract Instance API. The Abstraction API is a set of functions that exist for all contract abstractions, and those function exist on the abstraction itself (i.e., <code>MyContract.at()</code>). In contrast, the Instance API is the API available to contract instances -- i.e., abstractions that represent a specific contract on the network -- and that API is created dynamically based on functions available in your Solidity source file.</p>
 
     <h3 class="link-markdown">
-      <a href="#contract-abstraction-api" name="contract-abstraction-api"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="contract-abstraction-api"></a>
+      <a href="#contract-abstraction-api"><i class="fas fa-link"></i></a>
       Contract Abstraction API
     </h3>
   <p>Each contract abstraction -- <code>MyContract</code> in the examples above -- have the following useful functions:</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-new-arg1-arg2-tx-params-code-" name="-code-mycontract-new-arg1-arg2-tx-params-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-new-arg1-arg2-tx-params-code-"></a>
+      <a href="#-code-mycontract-new-arg1-arg2-tx-params-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.new([arg1, arg2, ...], [tx params])</code>
     </h4>
   <p>This function take whatever contructor parameters your contract requires and deploys a new instance of the contract to the network. There&#39;s an optional last argument which you can use to pass transaction parameters including the transaction from address, gas limit and gas price. This function returns a Promise that resolves into a new instance of the contract abstraction at the newly deployed address.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-at-address-code-" name="-code-mycontract-at-address-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-at-address-code-"></a>
+      <a href="#-code-mycontract-at-address-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.at(address)</code>
     </h4>
   <p>This function creates a new instance of the contract abstraction representing the contract at the passed in address. Returns a &quot;thenable&quot; object (not yet an actual Promise for backward compatibility). Resolves to a contract abstraction instance after ensuring code exists at the specified address.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-deployed-code-" name="-code-mycontract-deployed-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-deployed-code-"></a>
+      <a href="#-code-mycontract-deployed-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.deployed()</code>
     </h4>
   <p>Creates an instance of the contract abstraction representing the contract at its deployed address. The deployed address is a special value given to truffle-contract that, when set, saves the address internally so that the deployed address can be inferred from the given Ethereum network being used. This allows you to write code referring to a specific deployed contract without having to manage those addresses yourself. Like <code>at()</code>, <code>deployed()</code> is thenable, and will resolve to a contract abstraction instance representing the deployed contract after ensuring that code exists at that location and that that address exists on the network being used.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-link-instance-code-" name="-code-mycontract-link-instance-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-link-instance-code-"></a>
+      <a href="#-code-mycontract-link-instance-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.link(instance)</code>
     </h4>
   <p>Link a library represented by a contract abstraction instance to MyContract. The library must first be deployed and have its deployed address set. The name and deployed address will be inferred from the contract abstraction instance. When this form of <code>MyContract.link()</code> is used, MyContract will consume all of the linked library&#39;s events and will be able to report that those events occurred during the result of a transaction.</p>
@@ -399,43 +407,50 @@ example
 <p>Note: This method has two other forms, but this form is recommended.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-link-name-address-code-" name="-code-mycontract-link-name-address-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-link-name-address-code-"></a>
+      <a href="#-code-mycontract-link-name-address-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.link(name, address)</code>
     </h4>
   <p>Link a library with a specific name and address to MyContract. The library&#39;s events will not be consumed using this form.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-link-object-code-" name="-code-mycontract-link-object-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-link-object-code-"></a>
+      <a href="#-code-mycontract-link-object-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.link(object)</code>
     </h4>
   <p>Link multiple libraries denoted by an Object to MyContract. The keys must be strings representing the library names and the values must be strings representing the addresses. Like above, libraries&#39; events will not be consumed using this form.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-networks-code-" name="-code-mycontract-networks-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-networks-code-"></a>
+      <a href="#-code-mycontract-networks-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.networks()</code>
     </h4>
   <p>View a list of network ids this contract abstraction has been set up to represent.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-setprovider-provider-code-" name="-code-mycontract-setprovider-provider-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-setprovider-provider-code-"></a>
+      <a href="#-code-mycontract-setprovider-provider-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.setProvider(provider)</code>
     </h4>
   <p>Sets the web3 provider this contract abstraction will use to make transactions.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-setnetwork-network_id-code-" name="-code-mycontract-setnetwork-network_id-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-setnetwork-network_id-code-"></a>
+      <a href="#-code-mycontract-setnetwork-network_id-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.setNetwork(network_id)</code>
     </h4>
   <p>Sets the network that MyContract is currently representing.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-hasnetwork-network_id-code-" name="-code-mycontract-hasnetwork-network_id-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-hasnetwork-network_id-code-"></a>
+      <a href="#-code-mycontract-hasnetwork-network_id-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.hasNetwork(network_id)</code>
     </h4>
   <p>Returns a boolean denoting whether or not this contract abstraction is set up to represent a specific network.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-defaults-new_defaults-code-" name="-code-mycontract-defaults-new_defaults-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-defaults-new_defaults-code-"></a>
+      <a href="#-code-mycontract-defaults-new_defaults-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.defaults([new_defaults])</code>
     </h4>
   <p>Get&#39;s and optionally sets transaction defaults for all instances created from this abstraction. If called without any parameters it will simply return an Object representing current defaults. If an Object is passed, this will set new defaults. Example default transaction values that can be set are:</p>
@@ -449,7 +464,8 @@ example
 <p>Setting a default <code>from</code> address, for instance, is useful when you have a contract abstraction you intend to represent one user (i.e., one address).</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-clone-network_id-code-" name="-code-mycontract-clone-network_id-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-clone-network_id-code-"></a>
+      <a href="#-code-mycontract-clone-network_id-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.clone(network_id)</code>
     </h4>
   <p>Clone a contract abstraction to get another object that manages the same contract artifacts, but using a different <code>network_id</code>. This is useful if you&#39;d like to manage the same contract but on a different network. When using this function, don&#39;t forget to set the correct provider afterward.</p>
@@ -457,7 +473,8 @@ example
 </code></pre>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-numberformat-number_type-code-" name="-code-mycontract-numberformat-number_type-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-numberformat-number_type-code-"></a>
+      <a href="#-code-mycontract-numberformat-number_type-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.numberFormat = number_type</code>
     </h4>
   <p>You can set this property to choose the number format that abstraction methods return.  The default behavior is to return BN.</p>
@@ -467,25 +484,29 @@ Example.numberFormat = &#39;BigNumber&#39;;
 </code></pre>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-timeout-block_timeout-code-" name="-code-mycontract-timeout-block_timeout-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-timeout-block_timeout-code-"></a>
+      <a href="#-code-mycontract-timeout-block_timeout-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.timeout(block_timeout)</code>
     </h4>
   <p>This method allows you to set the block timeout for transactions.  Contract instances created from this abstraction will have the specified transaction block timeout.  This means that if a transaction does not immediately get mined, it will retry for the specified number of blocks.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-autogas-lt-boolean-gt-code-" name="-code-mycontract-autogas-lt-boolean-gt-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-autogas-lt-boolean-gt-code-"></a>
+      <a href="#-code-mycontract-autogas-lt-boolean-gt-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.autoGas = &lt;boolean&gt;</code>
     </h4>
   <p>If this is set to true, instances created from this abstraction will use <code>web3.eth.estimateGas</code> and then apply a gas multiplier to determine the amount of gas to include with the transaction.  The default value for this is <code>true</code>.  See <a href="/docs/truffle/reference/contract-abstractions#-code-mycontract-gasmultiplier-gas_multiplier-code-">gasMultiplier</a>.</p>
 
     <h4 class="link-markdown">
-      <a href="#-code-mycontract-gasmultiplier-gas_multiplier-code-" name="-code-mycontract-gasmultiplier-gas_multiplier-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-mycontract-gasmultiplier-gas_multiplier-code-"></a>
+      <a href="#-code-mycontract-gasmultiplier-gas_multiplier-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.gasMultiplier(gas_multiplier)</code>
     </h4>
   <p>This is the value used when <code>autoGas</code> is enabled to determine the amount of gas to include with transactions.  The gas is computed by using <code>web3.eth.estimateGas</code> and multiplying it by the gas multiplier.  The default value is <code>1.25</code>.</p>
 
     <h3 class="link-markdown">
-      <a href="#contract-instance-api" name="contract-instance-api"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="contract-instance-api"></a>
+      <a href="#contract-instance-api"><i class="fas fa-link"></i></a>
       Contract Instance API
     </h3>
   <p>Each contract instance is different based on the source Solidity contract, and the API is created dynamically. For the purposes of this documentation, let&#39;s use the following Solidity source code below:</p>
@@ -504,7 +525,8 @@ Example.numberFormat = &#39;BigNumber&#39;;
 <p>From Javascript&#39;s point of view, this contract has three functions: <code>setValue</code>, <code>getValue</code> and <code>value</code>. This is because <code>value</code> is public and automatically creates a getter function for it.</p>
 
     <h4 class="link-markdown">
-      <a href="#making-a-transaction-via-a-contract-function" name="making-a-transaction-via-a-contract-function"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="making-a-transaction-via-a-contract-function"></a>
+      <a href="#making-a-transaction-via-a-contract-function"><i class="fas fa-link"></i></a>
       Making a transaction via a contract function
     </h4>
   <p>When we call <code>setValue()</code>, this creates a transaction. From Javascript:</p>
@@ -548,7 +570,8 @@ return value inside this result. You must instead use an event (like <code>Value
 in the <code>logs</code> array.</p>
 
     <h4 class="link-markdown">
-      <a href="#explicitly-making-a-call-instead-of-a-transaction" name="explicitly-making-a-call-instead-of-a-transaction"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="explicitly-making-a-call-instead-of-a-transaction"></a>
+      <a href="#explicitly-making-a-call-instead-of-a-transaction"><i class="fas fa-link"></i></a>
       Explicitly making a call instead of a transaction
     </h4>
   <p>We can call <code>setValue()</code> without creating a transaction by explicitly using <code>.call</code>:</p>
@@ -557,7 +580,8 @@ in the <code>logs</code> array.</p>
 <p>This isn&#39;t very useful in this case, since <code>setValue()</code> sets things, and the value we pass won&#39;t be saved since we&#39;re not creating a transaction.</p>
 
     <h4 class="link-markdown">
-      <a href="#calling-getters" name="calling-getters"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="calling-getters"></a>
+      <a href="#calling-getters"><i class="fas fa-link"></i></a>
       Calling getters
     </h4>
   <p>However, we can <em>get</em> the value using <code>getValue()</code>, using <code>.call()</code>. Calls are always free and don&#39;t cost any Ether, so they&#39;re good for calling functions that read data off the blockchain:</p>
@@ -572,7 +596,8 @@ in the <code>logs</code> array.</p>
 </code></pre>
 
     <h4 class="link-markdown">
-      <a href="#processing-transaction-results" name="processing-transaction-results"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="processing-transaction-results"></a>
+      <a href="#processing-transaction-results"><i class="fas fa-link"></i></a>
       Processing transaction results
     </h4>
   <p>When you make a transaction, you&#39;re given a <code>result</code> object that gives you a wealth of information about the transaction. You&#39;re given the transaction has (<code>result.tx</code>), the decoded events (also known as logs; <code>result.logs</code>), and a transaction receipt (<code>result.receipt</code>). In the below example, you&#39;ll recieve the <code>ValueSet()</code> event because you triggered the event using the <code>setValue()</code> function:</p>
@@ -583,7 +608,8 @@ in the <code>logs</code> array.</p>
 </code></pre>
 
     <h4 class="link-markdown">
-      <a href="#sending-ether-triggering-the-fallback-function" name="sending-ether-triggering-the-fallback-function"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="sending-ether-triggering-the-fallback-function"></a>
+      <a href="#sending-ether-triggering-the-fallback-function"><i class="fas fa-link"></i></a>
       Sending Ether / Triggering the fallback function
     </h4>
   <p>You can trigger the fallback function by sending a transaction to this function:</p>
@@ -597,7 +623,8 @@ in the <code>logs</code> array.</p>
 </code></pre>
 
     <h4 class="link-markdown">
-      <a href="#estimating-gas-usage" name="estimating-gas-usage"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="estimating-gas-usage"></a>
+      <a href="#estimating-gas-usage"><i class="fas fa-link"></i></a>
       Estimating gas usage
     </h4>
   <p>Run this function to estimate the gas usage:</p>

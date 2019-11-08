@@ -151,7 +151,8 @@
 <p>In this tutorial, we will migrate a basic contract to a test blockchain, introduce some errors into it, and solve each one through the use of the built-in Truffle debugger.</p>
 
     <h2 class="link-markdown">
-      <a href="#a-basic-smart-contract" name="a-basic-smart-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="a-basic-smart-contract"></a>
+      <a href="#a-basic-smart-contract"><i class="fas fa-link"></i></a>
       A basic smart contract
     </h2>
   <p>One of the most basic, non-trivial, types of smart contract is a <strong>simple storage contract</strong>. (This example was adapted from the <a href="https://solidity.readthedocs.io/en/develop/introduction-to-smart-contracts.html">Solidity documentation</a>.)</p>
@@ -178,7 +179,8 @@ contract SimpleStorage {
 <p>First, let&#39;s set up our environment.</p>
 
     <h2 class="link-markdown">
-      <a href="#deploying-the-basic-smart-contract" name="deploying-the-basic-smart-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="deploying-the-basic-smart-contract"></a>
+      <a href="#deploying-the-basic-smart-contract"><i class="fas fa-link"></i></a>
       Deploying the basic smart contract
     </h2>
   <ol>
@@ -250,7 +252,8 @@ module.exports = function(deployer) {
 </ol>
 
     <h2 class="link-markdown">
-      <a href="#interacting-with-the-basic-smart-contract" name="interacting-with-the-basic-smart-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="interacting-with-the-basic-smart-contract"></a>
+      <a href="#interacting-with-the-basic-smart-contract"><i class="fas fa-link"></i></a>
       Interacting with the basic smart contract
     </h2>
   <p>The smart contract is now deployed to a test network via <code>truffle develop</code>, which launches a <a href="/docs/getting_started/console">console</a> against <a href="/ganache">Ganache</a>, a local development blockchain built right into Truffle.</p>
@@ -299,7 +302,8 @@ module.exports = function(deployer) {
 </ol>
 
     <h2 class="link-markdown">
-      <a href="#debugging-errors" name="debugging-errors"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="debugging-errors"></a>
+      <a href="#debugging-errors"><i class="fas fa-link"></i></a>
       Debugging errors
     </h2>
   <p>The above shows how the contract <em>should</em> work. Now, we will introduce some small errors to the contract and redeploy it. We will see how the issues present itself, and also <strong>use Truffle&#39;s built-in debug feature to fix the issues</strong>.</p>
@@ -311,7 +315,8 @@ module.exports = function(deployer) {
 </ul>
 
     <h3 class="link-markdown">
-      <a href="#issue-1-an-infinite-loop" name="issue-1-an-infinite-loop"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="issue-1-an-infinite-loop"></a>
+      <a href="#issue-1-an-infinite-loop"><i class="fas fa-link"></i></a>
       Issue #1: An infinite loop
     </h3>
   <p>On the Ethereum blockchain, transactions cannot be set to run forever.</p>
@@ -319,7 +324,8 @@ module.exports = function(deployer) {
 <p>Since gas is priced in ether, this could have real-world financial implications. So fixing an out-of-gas error is critical.</p>
 
     <h4 class="link-markdown">
-      <a href="#introducing-the-error" name="introducing-the-error"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="introducing-the-error"></a>
+      <a href="#introducing-the-error"><i class="fas fa-link"></i></a>
       Introducing the error
     </h4>
   <p>An infinite loop is easy to create.</p>
@@ -338,7 +344,8 @@ module.exports = function(deployer) {
 </ol>
 
     <h4 class="link-markdown">
-      <a href="#testing-the-contract" name="testing-the-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="testing-the-contract"></a>
+      <a href="#testing-the-contract"><i class="fas fa-link"></i></a>
       Testing the contract
     </h4>
   <p>The Truffle Develop console has the ability to migrate updated contracts without the need to exit and restart the console. And since the <code>migrate</code> command can compile and migrate in one step, we can reset our contract on the blockchain in one step.</p>
@@ -373,7 +380,8 @@ module.exports = function(deployer) {
 <p>With our failure and our transaction ID, we can now debug the transaction.</p>
 
     <h4 class="link-markdown">
-      <a href="#debugging-the-issue" name="debugging-the-issue"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="debugging-the-issue"></a>
+      <a href="#debugging-the-issue"><i class="fas fa-link"></i></a>
       Debugging the issue
     </h4>
   <p>Truffle contains a built-in debugger. The command to launch this is <code>debug &lt;Transaction ID&gt;</code> from the Truffle Develop console, or <code>truffle debug &lt;Transaction ID&gt;</code> from the terminal. Let&#39;s launch this now.</p>
@@ -490,14 +498,16 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 </ol>
 
     <h3 class="link-markdown">
-      <a href="#issue-2-an-invalid-error-check" name="issue-2-an-invalid-error-check"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="issue-2-an-invalid-error-check"></a>
+      <a href="#issue-2-an-invalid-error-check"><i class="fas fa-link"></i></a>
       Issue #2: An invalid error check
     </h3>
   <p>Smart contracts can use statements like <code>assert()</code> to ensure that certain conditions are met. These can conflict with the state of the contract in ways that are irreconcilable.</p>
 <p>Here we will introduce such a condition, and then see how the debugger can find it.</p>
 
     <h4 class="link-markdown">
-      <a href="#introducing-the-error" name="introducing-the-error"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="introducing-the-error"></a>
+      <a href="#introducing-the-error"><i class="fas fa-link"></i></a>
       Introducing the error
     </h4>
   <ol>
@@ -514,7 +524,8 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 </ol>
 
     <h4 class="link-markdown">
-      <a href="#testing-the-contract" name="testing-the-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="testing-the-contract"></a>
+      <a href="#testing-the-contract"><i class="fas fa-link"></i></a>
       Testing the contract
     </h4>
   <p>Just as before, we&#39;ll reset the contract on the blockchain.</p>
@@ -536,7 +547,8 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 </ol>
 
     <h4 class="link-markdown">
-      <a href="#debugging-the-issue" name="debugging-the-issue"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="debugging-the-issue"></a>
+      <a href="#debugging-the-issue"><i class="fas fa-link"></i></a>
       Debugging the issue
     </h4>
   <ol>
@@ -584,7 +596,8 @@ contract code to determine the meaning of this error.
 </ol>
 
     <h3 class="link-markdown">
-      <a href="#issue-3-a-function-isn-39-t-operating-as-desired" name="issue-3-a-function-isn-39-t-operating-as-desired"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="issue-3-a-function-isn-39-t-operating-as-desired"></a>
+      <a href="#issue-3-a-function-isn-39-t-operating-as-desired"><i class="fas fa-link"></i></a>
       Issue #3: A function isn&#39;t operating as desired
     </h3>
   <p>Sometimes, an error isn&#39;t a true error, in that it doesn&#39;t cause a problem at runtime, but instead is just doing something that you don&#39;t intend it to do.</p>
@@ -592,7 +605,8 @@ contract code to determine the meaning of this error.
 <p>Once again, we can use the debugger to see where things go wrong.</p>
 
     <h4 class="link-markdown">
-      <a href="#introducing-the-error" name="introducing-the-error"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="introducing-the-error"></a>
+      <a href="#introducing-the-error"><i class="fas fa-link"></i></a>
       Introducing the error
     </h4>
   <ol>
@@ -618,7 +632,8 @@ function set(uint x) public {
 </ol>
 
     <h4 class="link-markdown">
-      <a href="#testing-the-contract" name="testing-the-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="testing-the-contract"></a>
+      <a href="#testing-the-contract"><i class="fas fa-link"></i></a>
       Testing the contract
     </h4>
   <p>Just as before, we&#39;ll reset the contract on the blockchain.</p>
@@ -658,7 +673,8 @@ function set(uint x) public {
 </ol>
 
     <h4 class="link-markdown">
-      <a href="#debugging-the-contract" name="debugging-the-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="debugging-the-contract"></a>
+      <a href="#debugging-the-contract"><i class="fas fa-link"></i></a>
       Debugging the contract
     </h4>
   <ol>
@@ -695,7 +711,8 @@ debug(develop:0x7f799ad5...)&gt;
 </ol>
 
     <h2 class="link-markdown">
-      <a href="#conclusion" name="conclusion"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="conclusion"></a>
+      <a href="#conclusion"><i class="fas fa-link"></i></a>
       Conclusion
     </h2>
   <p>With the ability to debug your contracts directly within Truffle, you have even more power at your hands to make your smart contracts rock-solid and ready to deploy. Make sure to read more about Truffle Develop console and the debugger in the docs. If you have any questions, please join our <a href="https://gitter.im/ConsenSys/truffle">community Gitter channel</a> where hundreds of fellow Trufflers congregate to answer your questions!</p>

@@ -141,14 +141,16 @@
           <p>Truffle 3 <a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">is out</a>, and it switched to a less opinionated build process. In Truffle 2, the default app from <code>truffle init</code> included a frontend example with build process. Now, there&#39;s nothing other than a <code>build</code> folder for your JSON contract artifacts. This opens up the door for testing and building other (<strong>cough</strong> command line <strong>cough</strong>) types of applications!</p>
 
     <h2 class="link-markdown">
-      <a href="#intended-audience" name="intended-audience"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="intended-audience"></a>
+      <a href="#intended-audience"><i class="fas fa-link"></i></a>
       Intended Audience
     </h2>
   <p>This is written for those familiar with Truffle and Ethereum, who want to learn how to create a testable, Ethereum-enabled command line application with Truffle.</p>
 <p>For this tutorial, we&#39;ll be building a command line tool that interacts with the <a href="https://ens.readthedocs.io/en/latest/">Ethereum Name Service</a> (ENS).</p>
 
     <h2 class="link-markdown">
-      <a href="#getting-started" name="getting-started"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="getting-started"></a>
+      <a href="#getting-started"><i class="fas fa-link"></i></a>
       Getting Started
     </h2>
   <p>If you were using Truffle beta 3.0.0-9 or below, <strong>do not immediately upgrade</strong>. Read <a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">these release notes</a> and the <a href="/tutorials/upgrading-from-truffle-2-to-3">upgrade guide</a> first. Next, make a new folder and run the following command:</p>
@@ -156,7 +158,8 @@
 </code></pre><p>You should see the <code>test</code>, <code>build</code>, and <code>migrations</code> directories were created for you -- but no <code>app</code>. Additionally, the build step in the <code>truffle.js</code> file is mysteriously absent. That&#39;s ok! This means Truffle is getting out of your way and letting you control the build process.</p>
 
     <h2 class="link-markdown">
-      <a href="#let-39-s-look-at-the-example" name="let-39-s-look-at-the-example"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="let-39-s-look-at-the-example"></a>
+      <a href="#let-39-s-look-at-the-example"><i class="fas fa-link"></i></a>
       Let&#39;s Look at the Example
     </h2>
   <p><a href="https://github.com/dougvk/ens-registrar3">Check out the example app</a> as a reference. I&#39;ll be referring to it often so give it a look over if you haven&#39;t already.</p>
@@ -174,13 +177,15 @@
 <p>I&#39;ve defined two scripts here: <code>lint</code> for linting my Javascript to keep my codebase so fresh and so clean, and <code>ens</code> for transpiling my Javascript command line tool (using Babel) and running it. That&#39;s it! That&#39;s the build process. You can run it via <code>npm run lint</code> and <code>npm run ens</code>. Now that that&#39;s out of the way, let&#39;s dig into how and why I structured my app this way.</p>
 
     <h2 class="link-markdown">
-      <a href="#building-our-app-separation-of-concerns" name="building-our-app-separation-of-concerns"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="building-our-app-separation-of-concerns"></a>
+      <a href="#building-our-app-separation-of-concerns"><i class="fas fa-link"></i></a>
       Building our App: Separation of concerns
     </h2>
   <p>In order to take advantage of all parts of Truffle while building this tool, we need to separate our code into two distinct pieces. First, we need to write a library which will constitute the bulk of the app, and allow us to perform actions against the ENS contracts quickly and easily from Javascript. Next is the CLI; the CLI will take advantage of the library itself, and will be the user&#39;s interface to our application.</p>
 
     <h3 class="link-markdown">
-      <a href="#the-library" name="the-library"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="the-library"></a>
+      <a href="#the-library"><i class="fas fa-link"></i></a>
       The Library
     </h3>
   <p>The library is <a href="https://github.com/dougvk/ens-registrar3/blob/master/lib/ens_registrar.js">lib/ens_registrar.js</a>. Let&#39;s take a look at the constructor:</p>
@@ -215,7 +220,8 @@ constructor (AuctionRegistrar, Deed, registrarAddress, provider, fromAddress) {
 <p>Let&#39;s take a look at how the library is used in both cases.</p>
 
     <h3 class="link-markdown">
-      <a href="#use-1-truffle-tests" name="use-1-truffle-tests"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="use-1-truffle-tests"></a>
+      <a href="#use-1-truffle-tests"><i class="fas fa-link"></i></a>
       Use #1: Truffle Tests
     </h3>
   <p>Here&#39;s <a href="https://github.com/dougvk/ens-registrar3/blob/master/test/ENS.js">test/ENS.js</a>, a Truffle test that uses the library:</p>
@@ -251,7 +257,8 @@ contract(&#39;ENS integration&#39;, (accounts) =&gt; {
 <p>Truffle injects a global <code>artifacts.require</code> function, a helper for finding the right compiled contract artifacts within the test environment. The test then finds a deployed instance of the Registrar on the test network via <code>Registrar.deployed()</code>. Now, with the addition of <code>accounts</code>, which is passed in via the <code>contract</code> wrapper <a href="http://truffleframework.com/docs/getting_started/javascript-tests">(see here)</a>, we have enough to instantiate the library and use it to test that the domain name <code>&#39;test&#39;</code> is available for auction.</p>
 
     <h3 class="link-markdown">
-      <a href="#use-2-the-cli" name="use-2-the-cli"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="use-2-the-cli"></a>
+      <a href="#use-2-the-cli"><i class="fas fa-link"></i></a>
       Use #2: the CLI
     </h3>
   <p>Here&#39;s <a href="https://github.com/dougvk/ens-registrar3/blob/master/index.js">index.js</a>, which provides our command line tool, using the library:</p>
@@ -287,7 +294,8 @@ if (command === &#39;bid&#39;) {
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#usage" name="usage"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="usage"></a>
+      <a href="#usage"><i class="fas fa-link"></i></a>
       Usage
     </h2>
   <p>You can use the command line tool against any network that has an ENS registrar deployed. First, choose a command:</p>
@@ -318,13 +326,15 @@ Missing required arguments: account, registrar
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#recap" name="recap"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="recap"></a>
+      <a href="#recap"><i class="fas fa-link"></i></a>
       Recap
     </h2>
   <p>You might be thinking to yourself, &quot;That was a short tutorial&quot;. That&#39;s because it doesn&#39;t need to be much longer: Creating a command line application with Truffle is very similar to creating a web application, but you have to do things a bit differently. For instance, instead of a build process, your command line tool needs to grab your contract artifacts and make them ready for use. Additionally, if you want to take advantage of Truffle&#39;s tests, you need to separate your code into a command line interface and a library -- a good practice anyway -- so you can use Truffle&#39;s testing framework to test your code.</p>
 
     <h2 class="link-markdown">
-      <a href="#stay-tuned" name="stay-tuned"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="stay-tuned"></a>
+      <a href="#stay-tuned"><i class="fas fa-link"></i></a>
       Stay Tuned
     </h2>
   <p>Truffle 3.0 now makes it easier than ever to write <strong>any</strong> Ethereum-enabled application, and not just web apps. Stay tuned for more examples in the future where we explore Desktop and Mobile applications, too. Cheers!</p>

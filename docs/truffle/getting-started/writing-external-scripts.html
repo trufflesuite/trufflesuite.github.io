@@ -301,13 +301,15 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#writing-external-scripts" name="writing-external-scripts"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="writing-external-scripts"></a>
+      <a href="#writing-external-scripts"><i class="fas fa-link"></i></a>
       Writing External Scripts
     </h1>
   <p>Often you may want to run external scripts that interact with your contracts. Truffle provides an easy way to do this, bootstrapping your contracts based on your desired network and connecting to your Ethereum client automatically per your <a href="/docs/advanced/configuration">project configuration</a>.</p>
 
     <h2 class="link-markdown">
-      <a href="#command" name="command"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="command"></a>
+      <a href="#command"><i class="fas fa-link"></i></a>
       Command
     </h2>
   <p>To run an external script, perform the following:</p>
@@ -315,7 +317,8 @@
 </code></pre><p>Refer to <a href="/docs/truffle/reference/truffle-commands#exec">Truffle Commands Reference</a> for more information about this command, such as what options it accepts.</p>
 
     <h2 class="link-markdown">
-      <a href="#file-structure" name="file-structure"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="file-structure"></a>
+      <a href="#file-structure"><i class="fas fa-link"></i></a>
       File structure
     </h2>
   <p>In order for external scripts to be run correctly, Truffle expects them to export a function that takes a single parameter as a callback:</p>
@@ -326,7 +329,8 @@
 <p>You can do anything you&#39;d like within this script, so long as the callback is called when the script finishes. The callback accepts an error as its first and only parameter. If an error is provided, execution will halt and the process will return a non-zero exit code.</p>
 
     <h1 class="link-markdown">
-      <a href="#third-party-plugin-commands" name="third-party-plugin-commands"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="third-party-plugin-commands"></a>
+      <a href="#third-party-plugin-commands"><i class="fas fa-link"></i></a>
       Third-party plugin commands
     </h1>
   <p class="alert alert-warning">
@@ -336,7 +340,8 @@ know how we can improve it!
 
 
     <h2 class="link-markdown">
-      <a href="#plugin-installation-usage" name="plugin-installation-usage"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="plugin-installation-usage"></a>
+      <a href="#plugin-installation-usage"><i class="fas fa-link"></i></a>
       Plugin installation / usage
     </h2>
   <ol>
@@ -360,7 +365,8 @@ Hello, World!
 </ol>
 
     <h2 class="link-markdown">
-      <a href="#creating-a-custom-command-plugin" name="creating-a-custom-command-plugin"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="creating-a-custom-command-plugin"></a>
+      <a href="#creating-a-custom-command-plugin"><i class="fas fa-link"></i></a>
       Creating a custom command plugin
     </h2>
   <ol>
@@ -401,7 +407,8 @@ Example: <code>truffle-plugin.json</code></p>
 </ol>
 
     <h2 class="link-markdown">
-      <a href="#importing-truffle-as-a-module" name="importing-truffle-as-a-module"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="importing-truffle-as-a-module"></a>
+      <a href="#importing-truffle-as-a-module"><i class="fas fa-link"></i></a>
       Importing Truffle as a module
     </h2>
   <pre><code class="lang-javascript">const truffle = require(&quot;truffle&quot;);

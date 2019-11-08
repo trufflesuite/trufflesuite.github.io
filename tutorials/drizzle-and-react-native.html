@@ -160,12 +160,14 @@
 </ol>
 
     <h2 class="link-markdown">
-      <a href="#setting-up-the-folder-structure" name="setting-up-the-folder-structure"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="setting-up-the-folder-structure"></a>
+      <a href="#setting-up-the-folder-structure"><i class="fas fa-link"></i></a>
       Setting up the folder structure
     </h2>
   
     <h3 class="link-markdown">
-      <a href="#truffle" name="truffle"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="truffle"></a>
+      <a href="#truffle"><i class="fas fa-link"></i></a>
       Truffle
     </h3>
   <p>Truffle requires an empty folder to start, so let&#39;s initialize it first before our React Native project:</p>
@@ -181,7 +183,8 @@ truffle init
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#react-native" name="react-native"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="react-native"></a>
+      <a href="#react-native"><i class="fas fa-link"></i></a>
       React Native
     </h3>
   <ol>
@@ -209,7 +212,8 @@ truffle init
 </ol>
 
     <h2 class="link-markdown">
-      <a href="#shimming-web-and-node-libraries-on-react-native" name="shimming-web-and-node-libraries-on-react-native"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="shimming-web-and-node-libraries-on-react-native"></a>
+      <a href="#shimming-web-and-node-libraries-on-react-native"><i class="fas fa-link"></i></a>
       Shimming web and node libraries on React Native
     </h2>
   <p>React Native is missing some of the global objects that are available on other platforms such as the web or Node. We will have to provide our own (i.e. a shim) through imported libraries or in some cases our own code.</p>
@@ -306,20 +310,23 @@ truffle init
 <p>We&#39;re now done with replacing all the global objects and functions that Drizzle was expecting.</p>
 
     <h2 class="link-markdown">
-      <a href="#setting-up-the-smart-contract" name="setting-up-the-smart-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="setting-up-the-smart-contract"></a>
+      <a href="#setting-up-the-smart-contract"><i class="fas fa-link"></i></a>
       Setting up the smart contract
     </h2>
   <p>To add our smart contract we&#39;ll just follow the previous tutorial on Drizzle and React.</p>
 <p>Do the steps from <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#writing-our-smart-contract">Writing our smart contract</a> up to (and including) <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#migration">Migration</a>.</p>
 
     <h2 class="link-markdown">
-      <a href="#connecting-your-app-to-your-ganache-testnet" name="connecting-your-app-to-your-ganache-testnet"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="connecting-your-app-to-your-ganache-testnet"></a>
+      <a href="#connecting-your-app-to-your-ganache-testnet"><i class="fas fa-link"></i></a>
       Connecting your app to your Ganache testnet
     </h2>
   <p>When we&#39;re Working with React Native and mobile apps, accessing the Ganache server that&#39;s running on your machine takes a bit more work than when we are building web apps. The sections below detail how to connect to the Ganache testnet with your mobile device/emulator.</p>
 
     <h3 class="link-markdown">
-      <a href="#running-the-app" name="running-the-app"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="running-the-app"></a>
+      <a href="#running-the-app"><i class="fas fa-link"></i></a>
       Running the app
     </h3>
   <ol>
@@ -328,7 +335,8 @@ truffle init
 </ol>
 
     <h3 class="link-markdown">
-      <a href="#android-emulator-physical-device-" name="android-emulator-physical-device-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="android-emulator-physical-device-"></a>
+      <a href="#android-emulator-physical-device-"><i class="fas fa-link"></i></a>
       Android (Emulator/Physical Device)
     </h3>
   <p>The main thing for Android devices is that we have to reverse the ports so that we can point to <code>localhost</code> on the Android device to the Ganache server.</p>
@@ -341,12 +349,14 @@ truffle init
 </ol>
 
     <h3 class="link-markdown">
-      <a href="#ios" name="ios"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="ios"></a>
+      <a href="#ios"><i class="fas fa-link"></i></a>
       iOS
     </h3>
   
     <h4 class="link-markdown">
-      <a href="#simulator" name="simulator"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="simulator"></a>
+      <a href="#simulator"><i class="fas fa-link"></i></a>
       Simulator
     </h4>
   <p>The iOS simulator will see servers on <code>localhost</code> just fine.</p>
@@ -357,7 +367,8 @@ truffle init
 </ol>
 
     <h4 class="link-markdown">
-      <a href="#physical-device" name="physical-device"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="physical-device"></a>
+      <a href="#physical-device"><i class="fas fa-link"></i></a>
       Physical device
     </h4>
   <p>iOS physical devices involve the most manual work relative to other devices. You have to look up the local IP address of your machine and manually handle it every time it changes.</p>
@@ -381,7 +392,8 @@ truffle init
 </ol>
 
     <h2 class="link-markdown">
-      <a href="#setting-up-drizzle" name="setting-up-drizzle"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="setting-up-drizzle"></a>
+      <a href="#setting-up-drizzle"><i class="fas fa-link"></i></a>
       Setting up Drizzle
     </h2>
   <p>Install Drizzle:</p>
@@ -422,7 +434,8 @@ AppRegistry.registerComponent(appName, () =&gt; () =&gt; &lt;App drizzle={drizzl
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#wiring-up-the-app-component" name="wiring-up-the-app-component"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="wiring-up-the-app-component"></a>
+      <a href="#wiring-up-the-app-component"><i class="fas fa-link"></i></a>
       Wiring up the App component
     </h2>
   <p>This is pretty much the same as <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#wire-up-the-app-component">the web tutorial</a>, but with React Native components instead of web ones. Refer to the web tutorial for a more in-depth explanation of what&#39;s going on.</p>
@@ -486,7 +499,8 @@ const styles = StyleSheet.create({
 <p>Run the app, and you should see the string <code>Loading Drizzle...</code> while you wait for Drizzle to initialize. Once initialization is complete, the string <code>Drizzle is ready</code> should be visible.</p>
 
     <h2 class="link-markdown">
-      <a href="#writing-a-component-to-read-from-drizzle" name="writing-a-component-to-read-from-drizzle"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="writing-a-component-to-read-from-drizzle"></a>
+      <a href="#writing-a-component-to-read-from-drizzle"><i class="fas fa-link"></i></a>
       Writing a component to read from Drizzle
     </h2>
   <p>Once again, this is very similar to the <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#write-a-component-to-read-from-drizzle">web tutorial</a>, just with React Native components.</p>
@@ -545,7 +559,8 @@ render() {
 <p>You should now see the string <code>Hello World</code> being rendered after Drizzle has finished loading.</p>
 
     <h2 class="link-markdown">
-      <a href="#writing-a-component-to-write-to-the-smart-contract" name="writing-a-component-to-write-to-the-smart-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="writing-a-component-to-write-to-the-smart-contract"></a>
+      <a href="#writing-a-component-to-write-to-the-smart-contract"><i class="fas fa-link"></i></a>
       Writing a component to write to the smart contract
     </h2>
   <p>Once again, this is very similar to the <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#write-a-component-to-write-to-the-smart-contract">web tutorial</a>, just with React Native components.</p>
@@ -646,7 +661,8 @@ render() {
 <p>Run the app, enter a new string, and press the Submit button. A transaction status of <code>pending</code> will show and change to <code>success</code> on completion. This string will persist through reloads of the app since it is connected to your Ganache testnet.</p>
 
     <h1 class="link-markdown">
-      <a href="#the-finish-line" name="the-finish-line"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="the-finish-line"></a>
+      <a href="#the-finish-line"><i class="fas fa-link"></i></a>
       The Finish Line
     </h1>
   <p>Congratulations, you&#39;ve just successfully integrated the full suite of Drizzle, Truffle, and Ganache tooling into your React Native dapp!</p>

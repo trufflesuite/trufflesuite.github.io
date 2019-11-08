@@ -301,13 +301,15 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#package-management-via-npm" name="package-management-via-npm"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="package-management-via-npm"></a>
+      <a href="#package-management-via-npm"><i class="fas fa-link"></i></a>
       Package Management via NPM
     </h1>
   <p>Truffle comes standard with <code>npm</code> integration, and is aware of the <code>node_modules</code> directory in your project if it exists. This means you can use and distribute contracts, dapps and Ethereum-enabled libraries via <code>npm</code>, making your code available to others and other&#39;s code available to you.</p>
 
     <h2 class="link-markdown">
-      <a href="#package-layout" name="package-layout"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="package-layout"></a>
+      <a href="#package-layout"><i class="fas fa-link"></i></a>
       Package layout
     </h2>
   <p>Projects created with Truffle have a specific layout by default which enables them to be used as packages. This layout isn&#39;t required, but if used as a common convention -- or &quot;de-facto standard&quot; -- then distributing contracts and dapps through NPM will become much easier.</p>
@@ -319,13 +321,15 @@
 <p>The first directory is your contracts directory, which includes your raw Solidity contracts. The second directory is the build directory, and more specifically <code>/build/contracts</code>, which holds build artifacts in the form of <code>.json</code> files. Including raw contracts in your package will allow others to import those contracts within their own solidity code. Similarly, including your <code>.json</code> build artifacts in your package will allow others to seamlessly interact with your contracts from JavaScript, which can be used in dapps, scripts and migrations.</p>
 
     <h2 class="link-markdown">
-      <a href="#using-a-package" name="using-a-package"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="using-a-package"></a>
+      <a href="#using-a-package"><i class="fas fa-link"></i></a>
       Using a package
     </h2>
   <p>When using a package within your own project, it is important to note that there are two places where you might be interested in using other&#39;s contract code: within your contracts and within your Javascript code (migrations and tests). The following provides an example of each case, and discusses techniques for making the most of other&#39;s contracts and build artifacts.</p>
 
     <h3 class="link-markdown">
-      <a href="#installing" name="installing"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="installing"></a>
+      <a href="#installing"><i class="fas fa-link"></i></a>
       Installing
     </h3>
   <p>For this example, we&#39;re going to use the <a href="https://github.com/ConsenSys/example-truffle-library">Example Truffle Library</a>, which provides a simple name registry that is deployed to the Morden test network. In order to use it as a dependency, we must first install it within our project through <code>npm</code>:</p>
@@ -334,7 +338,8 @@ $ npm install example-truffle-library
 </code></pre><p>Note that the last command above downloads the package and places it in <code>my_project/node_modules</code> directory, which is important for the examples below. See the <a href="https://docs.npmjs.com/">npm documentation</a> for help using <code>npm</code> to install packages.</p>
 
     <h3 class="link-markdown">
-      <a href="#within-your-contracts" name="within-your-contracts"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="within-your-contracts"></a>
+      <a href="#within-your-contracts"><i class="fas fa-link"></i></a>
       Within your contracts
     </h3>
   <p>To use a package&#39;s contracts within your contracts, this can be as simple as Solidity&#39;s <a href="http://solidity.readthedocs.io/en/develop/layout-of-source-files.html?#importing-other-source-files">import</a> statement. When your import path isn&#39;t <a href="/docs/getting_started/compile#dependencies">explicitly relative or absolute</a>, this signifies to Truffle that you&#39;re looking for a file from a specific named package. Consider this example using the Example Truffle Library mentioned above:</p>
@@ -342,7 +347,8 @@ $ npm install example-truffle-library
 </code></pre><p>Since the path didn&#39;t start with <code>./</code>, Truffle knows to look in your project&#39;s <code>node_modules</code> directory for the <code>example-truffle-library</code> folder. From there, it resolves the path to provide you the contract you requested.</p>
 
     <h3 class="link-markdown">
-      <a href="#within-javascript-code" name="within-javascript-code"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="within-javascript-code"></a>
+      <a href="#within-javascript-code"><i class="fas fa-link"></i></a>
       Within JavaScript code
     </h3>
   <p>To interact with package&#39;s contracts within JavaScript code, you simply need to <code>require</code> that package&#39;s <code>.json</code> files, and then use the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">truffle-contract</a> module to turn those into usable abstractions:</p>
@@ -352,7 +358,8 @@ var SimpleNameRegistry = contract(data);
 </code></pre><p>To use these abstractions, see the <a href="/docs/getting_started/contracts">Interacting With Your Contracts</a> section for more details.</p>
 
     <h3 class="link-markdown">
-      <a href="#package-39-s-deployed-addresses" name="package-39-s-deployed-addresses"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="package-39-s-deployed-addresses"></a>
+      <a href="#package-39-s-deployed-addresses"><i class="fas fa-link"></i></a>
       Package&#39;s deployed addresses
     </h3>
   <p>Sometimes you want your contracts to interact with the package&#39;s previously deployed contracts. Since the deployed addresses exist within the package&#39;s <code>.json</code> files, you must perform an extra step to get those addresses into your contracts. To do so, make your contract accept the address of the dependency contract, and then use migrations. The following is an example contract that exists within your project as well as an example migration:</p>
@@ -398,7 +405,8 @@ module.exports = function(deployer) {
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#before-publishing" name="before-publishing"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="before-publishing"></a>
+      <a href="#before-publishing"><i class="fas fa-link"></i></a>
       Before publishing
     </h3>
   <p>When using a network like the default <code>develop</code> network that&#39;s configured to match any Ethereum client (like <a href="/ganache">Ganache</a> or Truffle Develop), you&#39;re bound to have network artifacts lying around that you don&#39;t want published. Before publishing your package, consider running the following command to remove any extraneous network artifacts:</p>

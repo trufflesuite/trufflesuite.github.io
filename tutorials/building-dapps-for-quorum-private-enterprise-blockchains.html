@@ -146,7 +146,8 @@
 <p>This tutorial represents Truffle&#39;s official support for Quorum. By the end of this tutorial you&#39;ll learn how to use both Truffle and Quorum together to build privacy-enabled dapps.</p>
 
     <h2 class="link-markdown">
-      <a href="#requirements" name="requirements"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="requirements"></a>
+      <a href="#requirements"><i class="fas fa-link"></i></a>
       Requirements
     </h2>
   <p>This tutorial expects you to have some knowledge of Truffle, Ethereum, Quorum, and Solidity. For more information on these topics, please see the following links:</p>
@@ -164,7 +165,8 @@
 </ul>
 
     <h2 class="link-markdown">
-      <a href="#getting-started" name="getting-started"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="getting-started"></a>
+      <a href="#getting-started"><i class="fas fa-link"></i></a>
       Getting Started
     </h2>
   <p>In this tutorial, we&#39;ll show you how to develop dapps for Quorum using Truffle and Quorum&#39;s <a href="https://github.com/jpmorganchase/quorum-examples/tree/master/examples/7nodes">7nodes example</a>. The steps are as follows:</p>
@@ -178,7 +180,8 @@
 <p>You&#39;ll see that developing for Quorum using Truffle is <em>exactly like</em> developing for the public Ethereum blockchain. Truffle supports Quorum out of the box, and the same strategies and methods for building Ethereum-enabled applications for the Ethereum public blockchain also apply to building dapps on Quorum.</p>
 
     <h2 class="link-markdown">
-      <a href="#setting-up-your-quorum-client" name="setting-up-your-quorum-client"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="setting-up-your-quorum-client"></a>
+      <a href="#setting-up-your-quorum-client"><i class="fas fa-link"></i></a>
       Setting up your Quorum client
     </h2>
   <p>The Quorum client is a replacement for the Ethereum client. Using the Quorum client, you can set up a private blockchain that&#39;s only available to you and the people you allow to participate.</p>
@@ -219,7 +222,8 @@ ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ ./raft-start.sh
 <p>Success! We now have seven Quorum nodes set up that we can use to represent seven different actors on our private network.</p>
 
     <h2 class="link-markdown">
-      <a href="#connecting-truffle-to-quorum" name="connecting-truffle-to-quorum"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="connecting-truffle-to-quorum"></a>
+      <a href="#connecting-truffle-to-quorum"><i class="fas fa-link"></i></a>
       Connecting Truffle to Quorum
     </h2>
   <p>To set up Truffle, we&#39;re going to start by creating a bare Truffle project, without any contracts or code.</p>
@@ -262,7 +266,8 @@ module.exports = {
 <p>Now that we have Truffle set up, we can move onto code.</p>
 
     <h2 class="link-markdown">
-      <a href="#deploying-smart-contracts-on-quorum" name="deploying-smart-contracts-on-quorum"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="deploying-smart-contracts-on-quorum"></a>
+      <a href="#deploying-smart-contracts-on-quorum"><i class="fas fa-link"></i></a>
       Deploying smart contracts on Quorum
     </h2>
   <p>We won&#39;t spend too much time talking about writing or deploying contracts in Truffle since we have <a href="/docs">ample documentation</a>, however we do want to show how deploying contracts applies to Quorum.</p>
@@ -327,7 +332,8 @@ Saving artifacts...
 <p>Now that the contract&#39;s deployed, it&#39;s off to the races.</p>
 
     <h2 class="link-markdown">
-      <a href="#using-quorum-39-s-privacy-features-to-make-transactions-private" name="using-quorum-39-s-privacy-features-to-make-transactions-private"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="using-quorum-39-s-privacy-features-to-make-transactions-private"></a>
+      <a href="#using-quorum-39-s-privacy-features-to-make-transactions-private"><i class="fas fa-link"></i></a>
       Using Quorum&#39;s privacy features to make transactions private
     </h2>
   <p>We originally configured Truffle to point our development environment to the first of the seven nodes provided by the example. You can think of the first node as &quot;us&quot;, as if we were developing a dapp for a private network that&#39;s used by multiple other parties. Since the 7nodes example provides us seven nodes to work with, we can tell Truffle about the other nodes so we can &quot;be&quot; someone else, and ensure the contract we deployed was private.</p>
@@ -413,7 +419,8 @@ module.exports = {
 </ol>
 
     <h2 class="link-markdown">
-      <a href="#interacting-with-contracts-privately" name="interacting-with-contracts-privately"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="interacting-with-contracts-privately"></a>
+      <a href="#interacting-with-contracts-privately"><i class="fas fa-link"></i></a>
       Interacting with contracts privately
     </h2>
   <p>So far, we&#39;ve shown you how to deploy contracts that are private within your migrations. When building a dapp on Quorum, it&#39;d also be helpful to learn how to make <em>all</em> transactions private.</p>
@@ -481,7 +488,8 @@ Finished!
 <p>And we got <code>65</code> again, as we should expect. This is how we can use Truffle&#39;s contract abstractions to make private transactions with Quorum.</p>
 
     <h2 class="link-markdown">
-      <a href="#is-that-all-truffle-can-do-" name="is-that-all-truffle-can-do-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="is-that-all-truffle-can-do-"></a>
+      <a href="#is-that-all-truffle-can-do-"><i class="fas fa-link"></i></a>
       Is that all Truffle can do?
     </h2>
   <p>Absolutely not! What we&#39;ve shown you today is everything that makes building dapps for Quorum different than building dapps for the public Ethereum network. And what you&#39;ll see is it&#39;s not different at all: The only difference is adding the <code>privateFor</code> parameter for deployments and transactions you&#39;d like to keep private. The rest is the same!</p>

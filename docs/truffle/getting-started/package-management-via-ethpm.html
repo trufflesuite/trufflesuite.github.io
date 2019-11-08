@@ -301,13 +301,15 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#package-management-via-ethpm" name="package-management-via-ethpm"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="package-management-via-ethpm"></a>
+      <a href="#package-management-via-ethpm"><i class="fas fa-link"></i></a>
       Package Management via EthPM
     </h1>
   <p>EthPM is the new <a href="https://www.ethpm.com/">Package Registry</a> for Ethereum. It follows the <a href="https://github.com/ethereum/EIPs/issues/190">ERC190 spec</a> for publishing and consuming smart contract packages, and has gained wide support from many diverse Ethereum development tools. To show our support, we&#39;ve integrated the Ethereum Package Registry directly into Truffle.</p>
 
     <h2 class="link-markdown">
-      <a href="#installing-a-package" name="installing-a-package"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="installing-a-package"></a>
+      <a href="#installing-a-package"><i class="fas fa-link"></i></a>
       Installing a package
     </h2>
   <p>Installing a package from EthPM is nearly as easy as installing a package via NPM. You can simply run the following command:</p>
@@ -317,7 +319,8 @@
 </code></pre><p>Like NPM, EthPM versions follow <a href="http://semver.org/">semver</a>. You can find a list of all available packages at <a href="http://explorer.ethpm.com/">the Ethereum Package Registry</a>.</p>
 
     <h2 class="link-markdown">
-      <a href="#installing-dependencies" name="installing-dependencies"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="installing-dependencies"></a>
+      <a href="#installing-dependencies"><i class="fas fa-link"></i></a>
       Installing Dependencies
     </h2>
   <p>Your project can define an <code>ethpm.json</code> file that among other things can pin your project to specific dependencies and versions. To install all dependencies listed in the <code>ethpm.json</code> file, run:</p>
@@ -325,7 +328,8 @@
 </code></pre><p>For more details on the <code>ethpm.json</code> file, see the <a href="/docs/getting_started/packages-ethpm#package-configuration">package configuration</a> below.</p>
 
     <h2 class="link-markdown">
-      <a href="#consuming-installed-contracts" name="consuming-installed-contracts"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="consuming-installed-contracts"></a>
+      <a href="#consuming-installed-contracts"><i class="fas fa-link"></i></a>
       Consuming installed contracts
     </h2>
   <p>Installed packages will be placed in the <code>installed_contracts</code> directory within your project folder. If no <code>installed_contracts</code> directory exists it&#39;ll be created for you. You should treat this folder like you treat the <code>node_modules</code> folder with NPM -- that is, you shouldn&#39;t edit the contents inside unless you know what you&#39;re doing. :)</p>
@@ -355,13 +359,15 @@ module.exports = function(deployer) {
 <p>Note that in the migration above, we consume the <code>ens</code> package and deploy the ENS contract conditionally based on whether or not ENS already has an address set. This is a fancy trick provided to you by the <a href="/docs/getting_started/migrations#deployer-deploy-contract-args-options-">deployer</a> that makes it much easier to write migrations dependent on the the existence of network artifacts. In this case, if we were running our migrations on the Ropsten network, this migration <strong>wouldn&#39;t</strong> deploy the <code>ENS</code> contract because (at the time of this writing) Ropsten is where the canonical <code>ENS</code> contract exists -- we wouldn&#39;t want to deploy our own. But if we were running our migrations against a different network, or a test network perhaps, then we&#39;d want to deploy the <code>ENS</code> contract so that we have a dependency contract to work with.</p>
 
     <h2 class="link-markdown">
-      <a href="#publishing-your-own-package" name="publishing-your-own-package"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="publishing-your-own-package"></a>
+      <a href="#publishing-your-own-package"><i class="fas fa-link"></i></a>
       Publishing your own package
     </h2>
   <p>Publishing your own package is as straightforward as installing, but like NPM, requires a bit more configuration.</p>
 
     <h3 class="link-markdown">
-      <a href="#ropsten-ropsten-ropsten" name="ropsten-ropsten-ropsten"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="ropsten-ropsten-ropsten"></a>
+      <a href="#ropsten-ropsten-ropsten"><i class="fas fa-link"></i></a>
       Ropsten, Ropsten, Ropsten
     </h3>
   <p>The Ethereum Package Registry currently exists on the Ropsten test network. To publish to the registry, we need to set up our own Ropsten configuration because we&#39;ll be making transactions that need to be signed.</p>
@@ -391,7 +397,8 @@ module.exports = {
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#package-configuration" name="package-configuration"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="package-configuration"></a>
+      <a href="#package-configuration"><i class="fas fa-link"></i></a>
       Package configuration
     </h3>
   <p>Like NPM, configuration options for EthPM go in a separate JSON file called <code>ethpm.json</code>. This file sits alongside your Truffle configuration and gives Truffle all the information it needs to publish your package. You can see a full list of available options in the <a href="/docs/advanced/configuration">Configuration</a> section.</p>
@@ -415,7 +422,8 @@ module.exports = {
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#command" name="command"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="command"></a>
+      <a href="#command"><i class="fas fa-link"></i></a>
       Command
     </h3>
   <p>After you have your configuration settled, publishing is a snap:</p>
@@ -428,7 +436,8 @@ Uploading sources and publishing to registry...
 + adder@0.0.3
 </code></pre>
     <h3 class="link-markdown">
-      <a href="#before-publishing" name="before-publishing"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="before-publishing"></a>
+      <a href="#before-publishing"><i class="fas fa-link"></i></a>
       Before publishing
     </h3>
   <p>When using a network like the default <code>develop</code> network that&#39;s configured to match any Ethereum client (like <a href="/ganache">Ganache</a> or Truffle Develop), you&#39;re bound to have network artifacts lying around that you don&#39;t want published. Before publishing your package, consider running the following command to remove any extraneous network artifacts:</p>

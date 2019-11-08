@@ -153,7 +153,8 @@
 </ul>
 
     <h2 class="link-markdown">
-      <a href="#eip-114-or-the-1-64ths-rule-" name="eip-114-or-the-1-64ths-rule-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="eip-114-or-the-1-64ths-rule-"></a>
+      <a href="#eip-114-or-the-1-64ths-rule-"><i class="fas fa-link"></i></a>
       EIP-114, or the “1/64ths rule”
     </h2>
   <p><a href="https://github.com/ethereum/EIPs/issues/114">EIP-114</a> mandates that certain stackdepth-creating opcodes <em>withhold</em> 1/64th of remaining gas from the stack they create. In practice this means:</p>
@@ -165,7 +166,8 @@
 <p>Let’s see it in action.</p>
 
     <h2 class="link-markdown">
-      <a href="#create-a-new-truffle-project" name="create-a-new-truffle-project"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="create-a-new-truffle-project"></a>
+      <a href="#create-a-new-truffle-project"><i class="fas fa-link"></i></a>
       Create a New Truffle Project
     </h2>
   <p>We will use <code>truffle init</code> to create a new Truffle project and then wire up an example <a href="https://solidity.readthedocs.io/en/v0.5.9/index.html">Solidity</a> smart contract and test script.</p>
@@ -174,7 +176,8 @@ $ truffle init
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#setup-an-example-smart-contract" name="setup-an-example-smart-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="setup-an-example-smart-contract"></a>
+      <a href="#setup-an-example-smart-contract"><i class="fas fa-link"></i></a>
       Setup an Example Smart Contract
     </h2>
   <p>With our new project initialized, we will create an example file: <code>ContractFactory.sol</code>.</p>
@@ -196,7 +199,8 @@ contract Contract {
 </code></pre><p>Note the <code>new</code> keyword being used to create a new <code>Contract</code>. A valid statement containing the <code>new</code> keyword gets compiled to bytecode containing the <code>CREATE</code> opcode which is subject to the <a href="https://github.com/ethereum/EIPs/issues/114#issue-160782694">EIP-114</a> 1/64th gas withholding.</p>
 
     <h2 class="link-markdown">
-      <a href="#write-a-test-case" name="write-a-test-case"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="write-a-test-case"></a>
+      <a href="#write-a-test-case"><i class="fas fa-link"></i></a>
       Write a Test Case
     </h2>
   <p>Next, we will write a <code>ContractFactory</code> test case.</p>
@@ -220,7 +224,8 @@ contract(&quot;ContractFactory&quot;, () =&gt; {
 });
 </code></pre>
     <h2 class="link-markdown">
-      <a href="#a-quick-check" name="a-quick-check"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="a-quick-check"></a>
+      <a href="#a-quick-check"><i class="fas fa-link"></i></a>
       A Quick Check
     </h2>
   <p>Before we run our test, we’ll download the most recent version of Truffle that uses Ganache <em>before</em> gas exactimation.</p>
@@ -232,7 +237,8 @@ $ npm i truffle@5.0.13
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#testing-before-and-after" name="testing-before-and-after"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="testing-before-and-after"></a>
+      <a href="#testing-before-and-after"><i class="fas fa-link"></i></a>
       Testing Before and After
     </h2>
   <pre><code class="lang-shell">$ npx truffle test
@@ -253,7 +259,8 @@ Contract: ContractFactory
 <p>!!!!</p>
 
     <h2 class="link-markdown">
-      <a href="#testing-exactimation" name="testing-exactimation"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="testing-exactimation"></a>
+      <a href="#testing-exactimation"><i class="fas fa-link"></i></a>
       Testing Exactimation
     </h2>
   <p>But is gas exactimation actually <em>exact</em>? 🤔</p>

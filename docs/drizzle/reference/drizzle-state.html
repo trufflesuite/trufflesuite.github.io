@@ -301,7 +301,8 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#drizzle-state" name="drizzle-state"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="drizzle-state"></a>
+      <a href="#drizzle-state"><i class="fas fa-link"></i></a>
       Drizzle State
     </h1>
   <pre><code class="lang-javascript">{
@@ -342,25 +343,29 @@
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#-code-accounts-code-array-" name="-code-accounts-code-array-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-accounts-code-array-"></a>
+      <a href="#-code-accounts-code-array-"><i class="fas fa-link"></i></a>
       <code>accounts</code> (array)
     </h2>
   <p>An array of account addresses from <code>web3</code>.</p>
 
     <h2 class="link-markdown">
-      <a href="#-code-accountbalances-code-object-" name="-code-accountbalances-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-accountbalances-code-object-"></a>
+      <a href="#-code-accountbalances-code-object-"><i class="fas fa-link"></i></a>
       <code>accountBalances</code> (object)
     </h2>
   <p>An object whose keys are account addresses and values are account balances (in Wei).</p>
 
     <h2 class="link-markdown">
-      <a href="#-code-contracts-code-object-" name="-code-contracts-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-contracts-code-object-"></a>
+      <a href="#-code-contracts-code-object-"><i class="fas fa-link"></i></a>
       <code>contracts</code> (object)
     </h2>
   <p>A series of contract state objects, indexed by the contract name as declared in its ABI.</p>
 
     <h3 class="link-markdown">
-      <a href="#-code-contractname-code-object-" name="-code-contractname-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-contractname-code-object-"></a>
+      <a href="#-code-contractname-code-object-"><i class="fas fa-link"></i></a>
       <code>contractName</code> (object)
     </h3>
   <p><code>initialized</code> (boolean): <code>true</code> once contract is fully instantiated.
@@ -371,13 +376,15 @@
 <code>value</code> (mixed): Value returned from function call.</p>
 
     <h3 class="link-markdown">
-      <a href="#-code-currentblock-code-object-" name="-code-currentblock-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-currentblock-code-object-"></a>
+      <a href="#-code-currentblock-code-object-"><i class="fas fa-link"></i></a>
       <code>currentBlock</code> (object)
     </h3>
   <p>An object the latest block as an object resulting from <a href="https://web3js.readthedocs.io/en/1.0/web3-eth.html#getblock"><code>web3.getBlock()</code></a>. This is updated once the block is received from a subscription or fetched via polling, but before any processing takes place.</p>
 
     <h2 class="link-markdown">
-      <a href="#-code-drizzlestatus-code-object-" name="-code-drizzlestatus-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-drizzlestatus-code-object-"></a>
+      <a href="#-code-drizzlestatus-code-object-"><i class="fas fa-link"></i></a>
       <code>drizzleStatus</code> (object)
     </h2>
   <p>An object containing information about the status of Drizzle.</p>
@@ -389,19 +396,22 @@
 </ul>
 
     <h3 class="link-markdown">
-      <a href="#-code-initialized-code-boolean-" name="-code-initialized-code-boolean-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-initialized-code-boolean-"></a>
+      <a href="#-code-initialized-code-boolean-"><i class="fas fa-link"></i></a>
       <code>initialized</code> (boolean)
     </h3>
   <p><code>false</code> by default, becomes true once a <code>web3</code> instance is found and the accounts and contracts are fetched.</p>
 
     <h2 class="link-markdown">
-      <a href="#-code-transactions-code-object-" name="-code-transactions-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-transactions-code-object-"></a>
+      <a href="#-code-transactions-code-object-"><i class="fas fa-link"></i></a>
       <code>transactions</code> (object)
     </h2>
   <p>A series of transaction objects, indexed by transaction hash.</p>
 
     <h3 class="link-markdown">
-      <a href="#-code-txhash-code-object-" name="-code-txhash-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-txhash-code-object-"></a>
+      <a href="#-code-txhash-code-object-"><i class="fas fa-link"></i></a>
       <code>txHash</code> (object)
     </h3>
   <p><code>confirmations</code> (array): After the initial receipt, further confirmation receipts (up to the 24th).
@@ -416,13 +426,15 @@
 <p>For more in-depth information on the Ethereum transaction lifecycle, <a href="https://medium.com/blockchannel/life-cycle-of-an-ethereum-transaction-e5c66bae0f6e">check out this great blog post</a>.</p>
 
     <h2 class="link-markdown">
-      <a href="#-code-transactionstack-code-array-" name="-code-transactionstack-code-array-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-transactionstack-code-array-"></a>
+      <a href="#-code-transactionstack-code-array-"><i class="fas fa-link"></i></a>
       <code>transactionStack</code> (array)
     </h2>
   <p>In cases where a user cancels a transaction or the transaction is malformed and unable to be broadcasted, it won&#39;t receive a hash. To keep track of these cases, a temporary ID will be added to this array and replaced with the transaction hash once broadcasted. The <code>cacheSend()</code> method will return a <code>stackId</code>, which will allow you get the temporary ID to observe this process for your own transaction status indicator UI.</p>
 
     <h2 class="link-markdown">
-      <a href="#-code-web3-code-object-" name="-code-web3-code-object-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-web3-code-object-"></a>
+      <a href="#-code-web3-code-object-"><i class="fas fa-link"></i></a>
       <code>web3</code> (object)
     </h2>
   <p><code>status</code> (string): <code>initializing</code>, <code>initialized</code> and <code>failed</code> are possible options. Useful for triggering warnings if <code>web3</code> fails to instantiate.</p>

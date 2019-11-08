@@ -144,14 +144,16 @@
   </p>
 
     <h2 class="link-markdown">
-      <a href="#axoni-background" name="axoni-background"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="axoni-background"></a>
+      <a href="#axoni-background"><i class="fas fa-link"></i></a>
       Axoni Background
     </h2>
   <p>At Axoni, our mission is to make shared information more trusted and reliable. We do this through distributed technology that we call &quot;Ethereum-inspired&quot;, which has both a broad and a specific meaning. In the broad sense, the core technology plays a role for its users analogous to the public blockchain, presenting a powerful and extensible capacity to side-step undesired intermediaries (yes, these exist for banks too...). In a more precise technical sense, our platform borrows certain concepts from Ethereum (e.g. accounts, contracts, gas...) and, importantly, we make efforts to comply with Ethereum-world interfaces (e.g. evm bytecode, web3 JSON-rpc).</p>
 <p>Of course, an up-shot of the last is the ability to take part in all the innovation taking place in the broader Ethereum ecosystem, including client-side libraries that enable a &quot;tastier&quot; application development process. To this end, within the last year we have worked to leverage the Truffle suite and ecosystem to great effect. In fact, as <a href="https://www.forbes.com/sites/michaeldelcastillo/2019/04/29/consensys-spins-off-ethereum-startup-truffle-to-take-blockchain-to-big-business/#1e84a5622e21">reported</a>, it is fair to say that Truffle serves by and large as the main toolset for on-chain application development at Axoni.</p>
 
     <h2 class="link-markdown">
-      <a href="#using-truffle-at-axoni" name="using-truffle-at-axoni"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="using-truffle-at-axoni"></a>
+      <a href="#using-truffle-at-axoni"><i class="fas fa-link"></i></a>
       Using Truffle at Axoni
     </h2>
   <p>It was a delight for us to find that, given our compliance with the web3 JSON-RPC spec, truffle basically works &quot;out-of-the-box&quot; with no extensive customization required for many very useful stages in the application lifecycle: develop, build, test....</p>
@@ -166,7 +168,8 @@
 <p>Thus, we ventured to build a package on top of truffle that manages configuration-driven smart contract deployments and upgrades.</p>
 
     <h2 class="link-markdown">
-      <a href="#building-a-truffle-based-deployment-tool" name="building-a-truffle-based-deployment-tool"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="building-a-truffle-based-deployment-tool"></a>
+      <a href="#building-a-truffle-based-deployment-tool"><i class="fas fa-link"></i></a>
       Building a Truffle-Based Deployment Tool
     </h2>
   <p>The first question is what the configuration file should look like? We determined the &quot;Straw Man&quot; to be, simply, a two-dimensional list of job types and associated contracts specified for deployment. Starting with this, we found another concept we needed to add (&quot;custom-partition&quot;) that is specific to Axcore, relating to the way the node software provisions data across network partitions; certain contracts are provisioned differently from others. In addition to this, we found that the only other concept we needed was a parameter specifying dependencies (&quot;deps&quot;) that linearizes to a certain order to deployment (which may be necessary, for instance, if a given storage address stores reference to another). For concision, we added limited regex support. In the end, we arrived at a yaml-based file looking very much like the below:</p>
@@ -213,7 +216,8 @@ upgrade:
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#future-plans-and-an-announcement" name="future-plans-and-an-announcement"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="future-plans-and-an-announcement"></a>
+      <a href="#future-plans-and-an-announcement"><i class="fas fa-link"></i></a>
       Future Plans and an Announcement
     </h2>
   <p>I am pleased to announce that we plan to open-source our core Solidity smart contract library, which provides an alternative version of the Proxy pattern, along with this aforementioned deployment tool. We believe both could be useful both for private and public applications and the Axoni team is excited to see what the community builds with these tools.</p>

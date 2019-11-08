@@ -147,7 +147,8 @@
 <p>In order to completely sidestep most if not all of the most common installation issues, we had to overcome some technical difficulties as well as rethink how we ship our code. In this post, I&#39;m going to tell you about what we did and how that made installation incredibly simpler, on every platform, for everyone.</p>
 
     <h2 class="link-markdown">
-      <a href="#so-what-was-the-problem-" name="so-what-was-the-problem-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="so-what-was-the-problem-"></a>
+      <a href="#so-what-was-the-problem-"><i class="fas fa-link"></i></a>
       So what was the problem?
     </h2>
   <p>Since Truffle is a Javascript-based application, we (naturally) ship our code using the <a href="https://www.npmjs.com/">Node Package Manager</a> (NPM for short). NPM hosts thousands if not millions of code packages, and it&#39;s the service that makes modern Javascript programming possible. Without NPM, not only would programming Truffle be nearly impossible, but programming <em>anything</em> complex in Javascript would be impossible: NPM lets developers separate and bundle code into its own individual chunks, called &quot;packages&quot;, that any of those other chunks (packages) can then rely on.</p>
@@ -156,7 +157,8 @@
 <p>Bottom line: In order to install a Javascript project, Truffle users need both C and Python. <a href="https://s-media-cache-ak0.pinimg.com/originals/ec/5a/0a/ec5a0a5e4990668ca3f41ed50ca273d3.gif">This is madness.</a></p>
 
     <h2 class="link-markdown">
-      <a href="#so-what-can-we-do-" name="so-what-can-we-do-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="so-what-can-we-do-"></a>
+      <a href="#so-what-can-we-do-"><i class="fas fa-link"></i></a>
       So what can we do?
     </h2>
   <p>Most of the issues people were seeing stem from the compilation process mentioned: Either they didn&#39;t have the right compilers/interpreters installed for C and Python, or C and Python <em>itself</em> required some dependency that wasn&#39;t properly installed. We&#39;ve had a <a href="/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development">tutorial</a> written for awhile that shows Windows users how to correctly set up their environment and get everything installed, but this required considerable effort from novice users and didn&#39;t take into account the many landmines hiding around every corner, waiting to explode at any moment. So we can&#39;t &quot;instruct&quot; our way around this problem. The only way to fix it, then, is to sidestep it completely.</p>
@@ -173,7 +175,8 @@
 <p>Yep. Feel free to party. We did. 🎉</p>
 
     <h2 class="link-markdown">
-      <a href="#so-how-can-you-get-it-" name="so-how-can-you-get-it-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="so-how-can-you-get-it-"></a>
+      <a href="#so-how-can-you-get-it-"><i class="fas fa-link"></i></a>
       So how can you get it?
     </h2>
   <p>Bundling Truffle&#39;s dependencies means releasing a version of the code where certain dependencies have been either replaced or removed. This not only means releasing structurally new code, but it means releasing code that has differing testability characteristics which change our ability to ensure its of the quality you&#39;ve come to expect. We need to build infrastructure to help us do that, so in the meantime <strong>we&#39;ve released the new version of the code in beta.</strong></p>
@@ -184,7 +187,8 @@
 </code></pre><p>You&#39;ll notice that the beta version installs almost instantly, and no compilation is required. Hot-dog.</p>
 
     <h2 class="link-markdown">
-      <a href="#so-what-39-s-next-" name="so-what-39-s-next-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="so-what-39-s-next-"></a>
+      <a href="#so-what-39-s-next-"><i class="fas fa-link"></i></a>
       So what&#39;s next?
     </h2>
   <p>As we gain responses from the community about this new version we&#39;ll likely make changes to ensure we&#39;ve sidestepped all the installation issues that have plagued users in the past. Once that&#39;s finished we&#39;ll make an official release. As well, we&#39;ll be performing this same work for the TestRPC in the coming weeks to ensure the TestRPC has the same hassle-free, instant installation that you&#39;ll soon come to expect from Truffle.</p>

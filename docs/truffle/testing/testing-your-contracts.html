@@ -301,12 +301,14 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#testing-your-contracts" name="testing-your-contracts"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="testing-your-contracts"></a>
+      <a href="#testing-your-contracts"><i class="fas fa-link"></i></a>
       Testing Your Contracts
     </h1>
   
     <h2 class="link-markdown">
-      <a href="#framework" name="framework"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="framework"></a>
+      <a href="#framework"><i class="fas fa-link"></i></a>
       Framework
     </h2>
   <p>Truffle comes standard with an automated testing framework to make testing your contracts a breeze. This framework lets you write simple and manageable tests in two different ways:</p>
@@ -317,13 +319,15 @@
 <p>Both styles of tests have their advantages and drawbacks. See the next two sections for a discussion of each one.</p>
 
     <h2 class="link-markdown">
-      <a href="#location" name="location"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="location"></a>
+      <a href="#location"><i class="fas fa-link"></i></a>
       Location
     </h2>
   <p>All test files should be located in the <code>./test</code> directory. Truffle will only run test files with the following file extensions: <code>.js</code>, <code>.ts</code>, <code>.es</code>, <code>.es6</code>, and <code>.jsx</code>, and <code>.sol</code>. All other files are ignored.</p>
 
     <h2 class="link-markdown">
-      <a href="#command" name="command"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="command"></a>
+      <a href="#command"><i class="fas fa-link"></i></a>
       Command
     </h2>
   <p>To run all tests, simply run:</p>
@@ -333,13 +337,15 @@
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#clean-room-environment" name="clean-room-environment"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="clean-room-environment"></a>
+      <a href="#clean-room-environment"><i class="fas fa-link"></i></a>
       Clean-room environment
     </h2>
   <p>Truffle provides a clean room environment when running your test files. When running your tests against <a href="/ganache">Ganache</a> or Truffle Develop, Truffle will use advanced snapshotting features to ensure your test files don&#39;t share state with each other. When running against other Ethereum clients like <a href="https://github.com/ethereum/go-ethereum">go-ethereum</a>, Truffle will re-deploy all of your migrations at the beginning of every test file to ensure you have a fresh set of contracts to test against.</p>
 
     <h2 class="link-markdown">
-      <a href="#speed-and-reliability-considerations" name="speed-and-reliability-considerations"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="speed-and-reliability-considerations"></a>
+      <a href="#speed-and-reliability-considerations"><i class="fas fa-link"></i></a>
       Speed and reliability considerations
     </h2>
   <p>Both Ganache and Truffle Develop are significantly faster than other clients when running automated tests. Moreover, they contain special features which Truffle takes advantage of to speed up test runtime by almost 90%. As a general workflow, we recommend you use Ganache or Truffle Develop during normal development and testing, and then run your tests once against go-ethereum or another official Ethereum client when you&#39;re gearing up to deploy to live or production networks.</p>

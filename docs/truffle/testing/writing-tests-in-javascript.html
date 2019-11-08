@@ -301,14 +301,16 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#writing-tests-in-javascript" name="writing-tests-in-javascript"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="writing-tests-in-javascript"></a>
+      <a href="#writing-tests-in-javascript"><i class="fas fa-link"></i></a>
       Writing Tests in JavaScript
     </h1>
   <p>Truffle uses the <a href="https://mochajs.org/">Mocha</a> testing framework and <a href="http://chaijs.com/">Chai</a> for assertions to provide you with a solid framework from which to write your JavaScript tests. Let&#39;s dive in and see how Truffle builds on top of Mocha to make testing your contracts a breeze.</p>
 <p>Note: If you&#39;re unfamiliar with writing unit tests in Mocha, please see <a href="https://mochajs.org/">Mocha&#39;s documentation</a> before continuing.</p>
 
     <h2 class="link-markdown">
-      <a href="#use-contract-instead-of-describe-" name="use-contract-instead-of-describe-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="use-contract-instead-of-describe-"></a>
+      <a href="#use-contract-instead-of-describe-"><i class="fas fa-link"></i></a>
       Use contract() instead of describe()
     </h2>
   <p>Structurally, your tests should remain largely unchanged from that of Mocha: Your tests should exist in the <code>./test</code> directory, they should end with a <code>.js</code> extension, and they should contain code that Mocha will recognize as an automated test. What makes Truffle tests different from that of Mocha is the <code>contract()</code> function: This function works exactly like <code>describe()</code> except it enables Truffle&#39;s <a href="/docs/truffle/testing/testing-your-contracts#clean-room-environment">clean-room features</a>. It works like this:</p>
@@ -319,31 +321,36 @@
 <p>Since Truffle uses Mocha under the hood, you can still use <code>describe()</code> to run normal Mocha tests whenever Truffle clean-room features are unnecessary.</p>
 
     <h2 class="link-markdown">
-      <a href="#use-contract-abstractions-within-your-tests" name="use-contract-abstractions-within-your-tests"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="use-contract-abstractions-within-your-tests"></a>
+      <a href="#use-contract-abstractions-within-your-tests"><i class="fas fa-link"></i></a>
       Use contract abstractions within your tests
     </h2>
   <p>Contract abstractions are the basis for making contract interaction possible from JavaScript (they&#39;re basically our <a href="https://www.youtube.com/watch?v=EhU862ONFys">flux capacitor</a>). Because Truffle has no way of detecting which contracts you&#39;ll need to interact with within your tests, you&#39;ll need to ask for those contracts explicitly. You do this by using the <code>artifacts.require()</code> method, a method provided by Truffle that allows you to request a usable contract abstraction for a specific Solidity contract. As you&#39;ll see in the example below, you can then use this abstraction to make sure your contracts are working properly.</p>
 <p>For more information on using contract abstractions, see the <a href="/docs/truffle/getting-started/interacting-with-your-contracts">Interacting With Your Contracts</a> section.</p>
 
     <h2 class="link-markdown">
-      <a href="#using-artifacts-require-" name="using-artifacts-require-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="using-artifacts-require-"></a>
+      <a href="#using-artifacts-require-"><i class="fas fa-link"></i></a>
       Using artifacts.require()
     </h2>
   <p>Using <code>artifacts.require()</code> within your tests works the same way as using it within your migrations; you just need to pass the name of the contract. See the <a href="/docs/truffle/getting-started/running-migrations#artifacts-require-">artifacts.require() documentation</a> in the Migrations section for detailed usage.</p>
 
     <h2 class="link-markdown">
-      <a href="#using-web3" name="using-web3"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="using-web3"></a>
+      <a href="#using-web3"><i class="fas fa-link"></i></a>
       Using web3
     </h2>
   <p>A <code>web3</code> instance is available in each test file, configured to the correct provider. So calling <code>web3.eth.getBalance</code> just works!</p>
 
     <h2 class="link-markdown">
-      <a href="#examples" name="examples"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="examples"></a>
+      <a href="#examples"><i class="fas fa-link"></i></a>
       Examples
     </h2>
   
     <h3 class="link-markdown">
-      <a href="#using-code-then-code-" name="using-code-then-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="using-code-then-code-"></a>
+      <a href="#using-code-then-code-"><i class="fas fa-link"></i></a>
       Using <code>.then</code>
     </h3>
   <p>Here&#39;s an example test provided in the <a href="/boxes/metacoin">MetaCoin Truffle Box</a>. Note the use of the <code>contract()</code> function, the <code>accounts</code> array for specifying available Ethereum accounts, and our use of <code>artifacts.require()</code> for interacting directly with our contracts.</p>
@@ -447,7 +454,8 @@ contract(&quot;MetaCoin&quot;, accounts =&gt; {
   3 passing (293ms)
 </code></pre>
     <h3 class="link-markdown">
-      <a href="#using-async-await" name="using-async-await"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="using-async-await"></a>
+      <a href="#using-async-await"><i class="fas fa-link"></i></a>
       Using async/await
     </h3>
   <p>Here is a similar example, but using <a href="https://javascript.info/async-await">async/await</a> notation: </p>
@@ -508,7 +516,8 @@ contract(&quot;2nd MetaCoin test&quot;, async accounts =&gt; {
 <p>This test will produce identical output to the previous example.</p>
 
     <h2 class="link-markdown">
-      <a href="#specifying-tests" name="specifying-tests"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="specifying-tests"></a>
+      <a href="#specifying-tests"><i class="fas fa-link"></i></a>
       Specifying tests
     </h2>
   <p>You can limit the tests being executed to a specific file as follows:</p>
@@ -516,13 +525,15 @@ contract(&quot;2nd MetaCoin test&quot;, async accounts =&gt; {
 </code></pre><p>See the full <a href="/docs/truffle/reference/truffle-commands#test">command reference</a> for more information.</p>
 
     <h2 class="link-markdown">
-      <a href="#advanced" name="advanced"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="advanced"></a>
+      <a href="#advanced"><i class="fas fa-link"></i></a>
       Advanced
     </h2>
   <p>Truffle gives you access to Mocha&#39;s configuration so you can change how Mocha behaves. See the <a href="/docs/advanced/configuration#mocha">project configuration</a> section for more details.</p>
 
     <h2 class="link-markdown">
-      <a href="#typescript-file-support" name="typescript-file-support"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="typescript-file-support"></a>
+      <a href="#typescript-file-support"><i class="fas fa-link"></i></a>
       TypeScript File Support
     </h2>
   <p>Truffle supports tests saved as a <code>.ts</code> <a href="https://www.typescriptlang.org/">TypeScript</a> file. Please see the <a href="#writing-tests-in-javascript">Writing Tests in JavaScript</a> guide for more information.</p>

@@ -301,13 +301,15 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#debugging-your-contracts" name="debugging-your-contracts"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="debugging-your-contracts"></a>
+      <a href="#debugging-your-contracts"><i class="fas fa-link"></i></a>
       Debugging Your Contracts
     </h1>
   <p>Truffle includes an integrated debugger so that you can debug transactions made against your contracts. This debugger looks and feels like existing command line debuggers available for traditional development environments.</p>
 
     <h2 class="link-markdown">
-      <a href="#overview" name="overview"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="overview"></a>
+      <a href="#overview"><i class="fas fa-link"></i></a>
       Overview
     </h2>
   <p>Debugging a transaction on the blockchain is different than debugging traditional applications (for instance, applications written in C++ or Javascript). When debugging a transaction on the blockchain, you&#39;re not running the code in real-time; instead, you&#39;re stepping over the historical execution of that transaction, and mapping that execution onto its associated code. This gives us many liberties in debugging, in that we can debug any transaction, any time, so long as we have the code and artifacts for the contracts the transaction interacted with. Think of these code and artifacts as akin to the debugging symbols needed by traditional debuggers.</p>
@@ -320,7 +322,8 @@
 <p>Note that it&#39;s okay if your desired transaction resulted in an exception or if it ran out of gas. The transaction still exists on chain, and so you can still debug it!</p>
 
     <h2 class="link-markdown">
-      <a href="#command" name="command"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="command"></a>
+      <a href="#command"><i class="fas fa-link"></i></a>
       Command
     </h2>
   <p>To use the debugger, gather the transaction you&#39;d like to debug then run the following:</p>
@@ -333,7 +336,8 @@
 </code></pre><p>Regardless of how you start the debugger, once it is running you are not limited to debugging only the transaction you launched it with; it is possible to unload the current transaction and load a new one, as described below.</p>
 
     <h2 class="link-markdown">
-      <a href="#debugging-interface" name="debugging-interface"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="debugging-interface"></a>
+      <a href="#debugging-interface"><i class="fas fa-link"></i></a>
       Debugging interface
     </h2>
   <p>Starting the debugger will open an interface familiar to those that have debugged other types of applications. When it starts, you&#39;ll see the following:</p>
@@ -345,117 +349,136 @@
 <p>The <code>enter</code> key is set to perform the last command entered. When the debugger starts, the <code>enter</code> key is set to step to the next logical source code element encountered during execution (i.e., the next expression or statement evaluated by the Ethereum virtual machine). At this point you can press <code>enter</code> to step through the transaction, or enter one of the available commands to analyze the transaction in more detail. The list of commands is detailed below.</p>
 
     <h3 class="link-markdown">
-      <a href="#-o-step-over" name="-o-step-over"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-o-step-over"></a>
+      <a href="#-o-step-over"><i class="fas fa-link"></i></a>
       (o) step over
     </h3>
   <p>This command steps over the current line, relative to the position of the statement or expression currently being evaluated in the Solidity source file. Use this command if you don&#39;t want to step into a function call or contract creation on the current line, or if you&#39;d like to quickly jump to a specific point in the source file.</p>
 
     <h3 class="link-markdown">
-      <a href="#-i-step-into" name="-i-step-into"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-i-step-into"></a>
+      <a href="#-i-step-into"><i class="fas fa-link"></i></a>
       (i) step into
     </h3>
   <p>This command steps into the function call or contract creation currently being evaluated. Use this command to jump into the function and quickly start debugging the code that exists there.</p>
 
     <h3 class="link-markdown">
-      <a href="#-u-step-out" name="-u-step-out"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-u-step-out"></a>
+      <a href="#-u-step-out"><i class="fas fa-link"></i></a>
       (u) step out
     </h3>
   <p>This command steps out of the currently running function. Use this command to quickly get back to the calling function, or end execution of the transaction if this was the entry point of the transaction.</p>
 
     <h3 class="link-markdown">
-      <a href="#-n-step-next" name="-n-step-next"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-n-step-next"></a>
+      <a href="#-n-step-next"><i class="fas fa-link"></i></a>
       (n) step next
     </h3>
   <p>This command steps to the next logical statement or expression in the source code. For example, evaluating sub expressions will need to occur first before the virtual machine can evaluate the full expression. Use this command if you&#39;d like to analyze each logical item the virtual machine evaluates.</p>
 
     <h3 class="link-markdown">
-      <a href="#-step-instruction" name="-step-instruction"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-step-instruction"></a>
+      <a href="#-step-instruction"><i class="fas fa-link"></i></a>
       (;) step instruction
     </h3>
   <p>This command allows you to step through each individual instruction evaluated by the virtual machine. This is useful if you&#39;re interested in understanding the low level bytecode created by the Solidity source code. When you use this command, the debugger will also print out the stack data at the time the instruction was evaluated.</p>
 <p>You can also use this command with a numerical argument, to step that many times.</p>
 
     <h3 class="link-markdown">
-      <a href="#-p-print-instruction" name="-p-print-instruction"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-p-print-instruction"></a>
+      <a href="#-p-print-instruction"><i class="fas fa-link"></i></a>
       (p) print instruction
     </h3>
   <p>This commands prints the current instruction and stack data, but does not step to the next instruction. Use this when you&#39;d like to see the current instruction and stack data after navigating through the transaction with the logical commands described above.</p>
 
     <h3 class="link-markdown">
-      <a href="#-h-print-this-help" name="-h-print-this-help"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-h-print-this-help"></a>
+      <a href="#-h-print-this-help"><i class="fas fa-link"></i></a>
       (h) print this help
     </h3>
   <p>Print the list of available commands.</p>
 
     <h3 class="link-markdown">
-      <a href="#-q-quit" name="-q-quit"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-q-quit"></a>
+      <a href="#-q-quit"><i class="fas fa-link"></i></a>
       (q) quit
     </h3>
   <p>Quit the debugger.</p>
 
     <h3 class="link-markdown">
-      <a href="#-r-reset" name="-r-reset"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-r-reset"></a>
+      <a href="#-r-reset"><i class="fas fa-link"></i></a>
       (r) reset
     </h3>
   <p>Reset the debugger to the beginning of the transaction.</p>
 
     <h3 class="link-markdown">
-      <a href="#-b-set-a-breakpoint" name="-b-set-a-breakpoint"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-b-set-a-breakpoint"></a>
+      <a href="#-b-set-a-breakpoint"><i class="fas fa-link"></i></a>
       (b) set a breakpoint
     </h3>
   <p>This command allows you to set breakpoints for any line in any of your source files (see <a href="#adding-and-removing-breakpoints">examples</a> below).  These can be given by line number; by relative line number; by line number in a specified source file; or one may simply add a breakpoint at the current point in the code.</p>
 <p>You don&#39;t need a transaction loaded to set breakpoints, although in that case you will have to specify which source file you mean to set it in.</p>
 
     <h3 class="link-markdown">
-      <a href="#-b-remove-a-breakpoint" name="-b-remove-a-breakpoint"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-b-remove-a-breakpoint"></a>
+      <a href="#-b-remove-a-breakpoint"><i class="fas fa-link"></i></a>
       (B) remove a breakpoint
     </h3>
   <p>This command allows you to remove any of your existing breakpoints, with the same syntax as for adding them (see <a href="#adding-and-removing-breakpoints">example</a> below).  Type <code>B all</code> to remove all breakpoints.</p>
 
     <h3 class="link-markdown">
-      <a href="#-c-continue-until-breakpoint" name="-c-continue-until-breakpoint"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-c-continue-until-breakpoint"></a>
+      <a href="#-c-continue-until-breakpoint"><i class="fas fa-link"></i></a>
       (c) continue until breakpoint
     </h3>
   <p>This command will cause execution of the code to continue until the next breakpoint is reached or the last line is executed.</p>
 
     <h3 class="link-markdown">
-      <a href="#-add-watch-expression" name="-add-watch-expression"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-add-watch-expression"></a>
+      <a href="#-add-watch-expression"><i class="fas fa-link"></i></a>
       (+) add watch expression
     </h3>
   <p>This command will add a watch on a provided expression, based on the following syntax: <code>+:&lt;expression&gt;</code>.</p>
 
     <h3 class="link-markdown">
-      <a href="#-remove-watch-expression" name="-remove-watch-expression"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-remove-watch-expression"></a>
+      <a href="#-remove-watch-expression"><i class="fas fa-link"></i></a>
       (-) remove watch expression
     </h3>
   <p>This command will remove a watch expression, based on the following syntax: <code>-:&lt;expression&gt;</code>.</p>
 
     <h3 class="link-markdown">
-      <a href="#-list-existing-watch-expressions-and-breakpoints" name="-list-existing-watch-expressions-and-breakpoints"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-list-existing-watch-expressions-and-breakpoints"></a>
+      <a href="#-list-existing-watch-expressions-and-breakpoints"><i class="fas fa-link"></i></a>
       (?) list existing watch expressions and breakpoints
     </h3>
   <p>This command will display a list of all the current watch expressions and breakpoints.</p>
 
     <h3 class="link-markdown">
-      <a href="#-v-display-variables" name="-v-display-variables"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-v-display-variables"></a>
+      <a href="#-v-display-variables"><i class="fas fa-link"></i></a>
       (v) display variables
     </h3>
   <p>This command will display the current variables and their values.</p>
 
     <h3 class="link-markdown">
-      <a href="#-t-unload-transaction" name="-t-unload-transaction"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-t-unload-transaction"></a>
+      <a href="#-t-unload-transaction"><i class="fas fa-link"></i></a>
       (T) unload transaction
     </h3>
   <p>This command unloads the current transaction so you can load a new one.</p>
 
     <h3 class="link-markdown">
-      <a href="#-t-load-transaction" name="-t-load-transaction"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-t-load-transaction"></a>
+      <a href="#-t-load-transaction"><i class="fas fa-link"></i></a>
       (t) load transaction
     </h3>
   <p>This command loads a new transaction (given by its transaction hash).  Note that if you already have a transaction loaded, you must first explicitly unload it before you can load a new one.</p>
 
     <h2 class="link-markdown">
-      <a href="#adding-and-removing-breakpoints" name="adding-and-removing-breakpoints"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="adding-and-removing-breakpoints"></a>
+      <a href="#adding-and-removing-breakpoints"><i class="fas fa-link"></i></a>
       Adding and removing breakpoints
     </h2>
   <p>Below are some examples of adding and removing breakpoints. Note the difference in case between adding (a lowercase &#39;b&#39;) and removing (an uppercase &#39;B&#39;).</p>

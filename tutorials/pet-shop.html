@@ -160,14 +160,16 @@
 </ol>
 
     <h2 class="link-markdown">
-      <a href="#background" name="background"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="background"></a>
+      <a href="#background"><i class="fas fa-link"></i></a>
       Background
     </h2>
   <p>Pete Scandlon of Pete&#39;s Pet Shop is interested in using Ethereum as an efficient way to handle their pet adoptions. The store has space for 16 pets at a given time, and they already have a database of pets. As an initial proof of concept, <strong>Pete wants to see a dapp which associates an Ethereum address with a pet to be adopted.</strong></p>
 <p>The website structure and styling will be supplied. <strong>Our job is to write the smart contract and front-end logic for its usage.</strong></p>
 
     <h2 class="link-markdown">
-      <a href="#setting-up-the-development-environment" name="setting-up-the-development-environment"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="setting-up-the-development-environment"></a>
+      <a href="#setting-up-the-development-environment"><i class="fas fa-link"></i></a>
       Setting up the development environment
     </h2>
   <p>There are a few technical requirements before we start. Please install the following:</p>
@@ -186,7 +188,8 @@
 
 
     <h2 class="link-markdown">
-      <a href="#creating-a-truffle-project-using-a-truffle-box" name="creating-a-truffle-project-using-a-truffle-box"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="creating-a-truffle-project-using-a-truffle-box"></a>
+      <a href="#creating-a-truffle-project-using-a-truffle-box"><i class="fas fa-link"></i></a>
       Creating a Truffle project using a Truffle Box
     </h2>
   <ol>
@@ -207,7 +210,8 @@ cd pet-shop-tutorial
 
 
     <h3 class="link-markdown">
-      <a href="#directory-structure" name="directory-structure"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="directory-structure"></a>
+      <a href="#directory-structure"><i class="fas fa-link"></i></a>
       Directory structure
     </h3>
   <p>The default Truffle directory structure contains the following:</p>
@@ -220,7 +224,8 @@ cd pet-shop-tutorial
 <p>The <code>pet-shop</code> Truffle Box has extra files and folders in it, but we won&#39;t worry about those just yet.</p>
 
     <h2 class="link-markdown">
-      <a href="#writing-the-smart-contract" name="writing-the-smart-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="writing-the-smart-contract"></a>
+      <a href="#writing-the-smart-contract"><i class="fas fa-link"></i></a>
       Writing the smart contract
     </h2>
   <p>We&#39;ll start our dapp by writing the smart contract that acts as the back-end logic and storage.</p>
@@ -243,7 +248,8 @@ contract Adoption {
 </ul>
 
     <h3 class="link-markdown">
-      <a href="#variable-setup" name="variable-setup"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="variable-setup"></a>
+      <a href="#variable-setup"><i class="fas fa-link"></i></a>
       Variable setup
     </h3>
   <p>Solidity is a statically-typed language, meaning data types like strings, integers, and arrays must be defined. <strong>Solidity has a unique type called an address</strong>. Addresses are Ethereum addresses, stored as 20 byte values. Every account and smart contract on the Ethereum blockchain has an address and can send and receive Ether to and from this address.</p>
@@ -262,7 +268,8 @@ contract Adoption {
 </ul>
 
     <h3 class="link-markdown">
-      <a href="#your-first-function-adopting-a-pet" name="your-first-function-adopting-a-pet"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="your-first-function-adopting-a-pet"></a>
+      <a href="#your-first-function-adopting-a-pet"><i class="fas fa-link"></i></a>
       Your first function: Adopting a pet
     </h3>
   <p>Let&#39;s allow users to make adoption requests.</p>
@@ -293,7 +300,8 @@ function adopt(uint petId) public returns (uint) {
 <!-- ADD SOMETHING ABOUT PUBLIC VIEW? -->
 
     <h3 class="link-markdown">
-      <a href="#your-second-function-retrieving-the-adopters" name="your-second-function-retrieving-the-adopters"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="your-second-function-retrieving-the-adopters"></a>
+      <a href="#your-second-function-retrieving-the-adopters"><i class="fas fa-link"></i></a>
       Your second function: Retrieving the adopters
     </h3>
   <p>As mentioned above, array getters return only a single value from a given key. Our UI needs to update all pet adoption statuses, but making 16 API calls is not ideal. So our next step is to write a function to return the entire array.</p>
@@ -313,13 +321,15 @@ function getAdopters() public view returns (address[16] memory) {
 </ol>
 
     <h2 class="link-markdown">
-      <a href="#compiling-and-migrating-the-smart-contract" name="compiling-and-migrating-the-smart-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="compiling-and-migrating-the-smart-contract"></a>
+      <a href="#compiling-and-migrating-the-smart-contract"><i class="fas fa-link"></i></a>
       Compiling and migrating the smart contract
     </h2>
   <p>Now that we have written our smart contract, the next steps are to compile and migrate it.</p>
 
     <h3 class="link-markdown">
-      <a href="#compilation" name="compilation"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="compilation"></a>
+      <a href="#compilation"><i class="fas fa-link"></i></a>
       Compilation
     </h3>
   <p>Solidity is a compiled language, meaning we need to compile our Solidity to bytecode for the Ethereum Virtual Machine (EVM) to execute. Think of it as translating our human-readable Solidity into something the EVM understands.</p>
@@ -344,7 +354,8 @@ function getAdopters() public view returns (address[16] memory) {
 </ol>
 
     <h3 class="link-markdown">
-      <a href="#migration" name="migration"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="migration"></a>
+      <a href="#migration"><i class="fas fa-link"></i></a>
       Migration
     </h3>
   <p>Now that we&#39;ve successfully compiled our contracts, it&#39;s time to migrate them to the blockchain!</p>
@@ -423,7 +434,8 @@ module.exports = function(deployer) {
 <p>You&#39;ve now written your first smart contract and deployed it to a locally running blockchain. It&#39;s time to interact with our smart contract now to make sure it does what we want.</p>
 
     <h2 class="link-markdown">
-      <a href="#testing-the-smart-contract" name="testing-the-smart-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="testing-the-smart-contract"></a>
+      <a href="#testing-the-smart-contract"><i class="fas fa-link"></i></a>
       Testing the smart contract
     </h2>
   <p>Truffle is very flexible when it comes to smart contract testing, in that tests can be written either in JavaScript or Solidity. In this tutorial, we&#39;ll be writing our tests in Solidity.</p>
@@ -469,7 +481,8 @@ contract TestAdoption {
 </ul>
 
     <h3 class="link-markdown">
-      <a href="#testing-the-adopt-function" name="testing-the-adopt-function"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="testing-the-adopt-function"></a>
+      <a href="#testing-the-adopt-function"><i class="fas fa-link"></i></a>
       Testing the adopt() function
     </h3>
   <p>To test the <code>adopt()</code> function, recall that upon success it returns the given <code>petId</code>. We can ensure an ID was returned and that it&#39;s correct by comparing the return value of <code>adopt()</code> to the ID we passed in.</p>
@@ -491,7 +504,8 @@ function testUserCanAdoptPet() public {
 </ul>
 
     <h3 class="link-markdown">
-      <a href="#testing-retrieval-of-a-single-pet-39-s-owner" name="testing-retrieval-of-a-single-pet-39-s-owner"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="testing-retrieval-of-a-single-pet-39-s-owner"></a>
+      <a href="#testing-retrieval-of-a-single-pet-39-s-owner"><i class="fas fa-link"></i></a>
       Testing retrieval of a single pet&#39;s owner
     </h3>
   <p>Remembering from above that public variables have automatic getter methods, we can retrieve the address stored by our adoption test above. Stored data will persist for the duration of our tests, so our adoption of pet <code>expectedPetId</code> above can be retrieved by other tests.</p>
@@ -509,7 +523,8 @@ function testGetAdopterAddressByPetId() public {
 <p>After getting the adopter address stored by the adoption contract, we assert equality as we did above.</p>
 
     <h3 class="link-markdown">
-      <a href="#testing-retrieval-of-all-pet-owners" name="testing-retrieval-of-all-pet-owners"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="testing-retrieval-of-all-pet-owners"></a>
+      <a href="#testing-retrieval-of-all-pet-owners"><i class="fas fa-link"></i></a>
       Testing retrieval of all pet owners
     </h3>
   <p>Since arrays can only return a single value given a single key, we create our own getter for the entire array.</p>
@@ -528,7 +543,8 @@ function testGetAdopterAddressByPetIdInArray() public {
 <p>Note the <strong>memory</strong> attribute on <code>adopters</code>. The memory attribute tells Solidity to temporarily store the value in memory, rather than saving it to the contract&#39;s storage. Since <code>adopters</code> is an array, and we know from the first adoption test that we adopted pet <code>expectedPetId</code>, we compare the testing contracts address with location <code>expectedPetId</code> in the array.</p>
 
     <h3 class="link-markdown">
-      <a href="#running-the-tests" name="running-the-tests"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="running-the-tests"></a>
+      <a href="#running-the-tests"><i class="fas fa-link"></i></a>
       Running the tests
     </h3>
   <ol>
@@ -558,7 +574,8 @@ function testGetAdopterAddressByPetIdInArray() public {
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#creating-a-user-interface-to-interact-with-the-smart-contract" name="creating-a-user-interface-to-interact-with-the-smart-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="creating-a-user-interface-to-interact-with-the-smart-contract"></a>
+      <a href="#creating-a-user-interface-to-interact-with-the-smart-contract"><i class="fas fa-link"></i></a>
       Creating a user interface to interact with the smart contract
     </h2>
   <p>Now that we&#39;ve created the smart contract, deployed it to our local test blockchain and confirmed we can interact with it via the console, it&#39;s time to create a UI so that Pete has something to use for his pet shop!</p>
@@ -566,7 +583,8 @@ function testGetAdopterAddressByPetIdInArray() public {
 <p>The front-end doesn&#39;t use a build system (webpack, grunt, etc.) to be as easy as possible to get started. The structure of the app is already there; we&#39;ll be filling in the functions which are unique to Ethereum. This way, you can take this knowledge and apply it to your own front-end development.</p>
 
     <h3 class="link-markdown">
-      <a href="#instantiating-web3" name="instantiating-web3"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="instantiating-web3"></a>
+      <a href="#instantiating-web3"><i class="fas fa-link"></i></a>
       Instantiating web3
     </h3>
   <ol>
@@ -609,7 +627,8 @@ web3 = new Web3(App.web3Provider);
 </ul>
 
     <h3 class="link-markdown">
-      <a href="#instantiating-the-contract" name="instantiating-the-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="instantiating-the-contract"></a>
+      <a href="#instantiating-the-contract"><i class="fas fa-link"></i></a>
       Instantiating the contract
     </h3>
   <p>Now that we can interact with Ethereum via web3, we need to instantiate our smart contract so web3 knows where to find it and how it works. Truffle has a library to help with this called <code>truffle-contract</code>. It keeps information about the contract in sync with migrations, so you don&#39;t need to change the contract&#39;s deployed address manually.</p>
@@ -642,7 +661,8 @@ web3 = new Web3(App.web3Provider);
 </ul>
 
     <h3 class="link-markdown">
-      <a href="#getting-the-adopted-pets-and-updating-the-ui" name="getting-the-adopted-pets-and-updating-the-ui"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="getting-the-adopted-pets-and-updating-the-ui"></a>
+      <a href="#getting-the-adopted-pets-and-updating-the-ui"><i class="fas fa-link"></i></a>
       Getting The Adopted Pets and Updating The UI
     </h3>
   <ol>
@@ -682,7 +702,8 @@ App.contracts.Adoption.deployed().then(function(instance) {
 </ul>
 
     <h3 class="link-markdown">
-      <a href="#handling-the-adopt-function" name="handling-the-adopt-function"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="handling-the-adopt-function"></a>
+      <a href="#handling-the-adopt-function"><i class="fas fa-link"></i></a>
       Handling the adopt() Function
     </h3>
   <ol>
@@ -721,13 +742,15 @@ web3.eth.getAccounts(function(error, accounts) {
 </ul>
 
     <h2 class="link-markdown">
-      <a href="#interacting-with-the-dapp-in-a-browser" name="interacting-with-the-dapp-in-a-browser"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="interacting-with-the-dapp-in-a-browser"></a>
+      <a href="#interacting-with-the-dapp-in-a-browser"><i class="fas fa-link"></i></a>
       Interacting with the dapp in a browser
     </h2>
   <p>Now we&#39;re ready to use our dapp!</p>
 
     <h3 class="link-markdown">
-      <a href="#installing-and-configuring-metamask" name="installing-and-configuring-metamask"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="installing-and-configuring-metamask"></a>
+      <a href="#installing-and-configuring-metamask"><i class="fas fa-link"></i></a>
       Installing and configuring MetaMask
     </h3>
   <p>The easiest way to interact with our dapp in a browser is through <a href="https://metamask.io/">MetaMask</a>, a browser extension for both Chrome and Firefox.</p>
@@ -793,7 +816,8 @@ web3.eth.getAccounts(function(error, accounts) {
 </ol>
 
     <h3 class="link-markdown">
-      <a href="#installing-and-configuring-lite-server" name="installing-and-configuring-lite-server"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="installing-and-configuring-lite-server"></a>
+      <a href="#installing-and-configuring-lite-server"><i class="fas fa-link"></i></a>
       Installing and configuring lite-server
     </h3>
   <p>We can now start a local web server and use the dapp. We&#39;re using the <code>lite-server</code> library to serve our static files. This shipped with the <code>pet-shop</code> Truffle Box, but let&#39;s take a look at how it works.</p>
@@ -817,7 +841,8 @@ web3.eth.getAccounts(function(error, accounts) {
 </ol>
 
     <h3 class="link-markdown">
-      <a href="#using-the-dapp" name="using-the-dapp"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="using-the-dapp"></a>
+      <a href="#using-the-dapp"><i class="fas fa-link"></i></a>
       Using the dapp
     </h3>
   <ol>

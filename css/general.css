@@ -136,6 +136,14 @@ blockquote {
   margin-bottom: 1rem;
 }
 
+.container-post h1 .anchor-target, .container-post h2 .anchor-target, .container-post h3 .anchor-target, .container-post h4 .anchor-target, .container-post h5 .anchor-target, .container-post h6 .anchor-target {
+  position: relative;
+  top: -4rem;
+  display: block;
+  height: 0;
+  width: 0;
+}
+
 .container-post p {
   margin-bottom: 1rem;
 }

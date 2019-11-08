@@ -301,19 +301,22 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#compiling-contracts" name="compiling-contracts"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="compiling-contracts"></a>
+      <a href="#compiling-contracts"><i class="fas fa-link"></i></a>
       Compiling contracts
     </h1>
   
     <h2 class="link-markdown">
-      <a href="#location" name="location"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="location"></a>
+      <a href="#location"><i class="fas fa-link"></i></a>
       Location
     </h2>
   <p>All of your contracts are located in your project&#39;s <code>contracts/</code> directory. As contracts are written in <a href="https://solidity.readthedocs.io/en/develop/">Solidity</a>, all files containing contracts will have a file extension of <code>.sol</code>. Associated Solidity <a href="http://solidity.readthedocs.org/en/latest/contracts.html#libraries">libraries</a> will also have a <code>.sol</code> extension.</p>
 <p>With a bare Truffle <a href="/docs/truffle/quickstart">project</a> (created through <code>truffle init</code>), you&#39;re given a single <code>Migrations.sol</code> file that helps in the deployment process. If you&#39;re using a <a href="/boxes">Truffle Box</a>, you will have multiple files here.</p>
 
     <h2 class="link-markdown">
-      <a href="#command" name="command"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="command"></a>
+      <a href="#command"><i class="fas fa-link"></i></a>
       Command
     </h2>
   <p>To compile a Truffle project, change to the root of the directory where the project is located and then type the following into a terminal:</p>
@@ -322,20 +325,23 @@
 <p>Upon first run, all contracts will be compiled. Upon subsequent runs, Truffle will compile only the contracts that have been changed since the last compile. If you&#39;d like to override this behavior, run the above command with the <code>--all</code> option.</p>
 
     <h2 class="link-markdown">
-      <a href="#build-artifacts" name="build-artifacts"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="build-artifacts"></a>
+      <a href="#build-artifacts"><i class="fas fa-link"></i></a>
       Build artifacts
     </h2>
   <p>Artifacts of your compilation will be placed in the <code>build/contracts/</code> directory, relative to your project root. (This directory will be created if it does not exist.)</p>
 <p>These artifacts are integral to the inner workings of Truffle, and they play an important part in the successful deployment of your application. <strong>You should not edit these files</strong> as they&#39;ll be overwritten by contract compilation and deployment.</p>
 
     <h2 class="link-markdown">
-      <a href="#dependencies" name="dependencies"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="dependencies"></a>
+      <a href="#dependencies"><i class="fas fa-link"></i></a>
       Dependencies
     </h2>
   <p>You can declare contract dependencies using Solidity&#39;s <a href="http://solidity.readthedocs.org/en/latest/layout-of-source-files.html#importing-other-source-files">import</a> command. Truffle will compile contracts in the correct order and ensure all dependencies are sent to the compiler. Dependencies can be specified in two ways:</p>
 
     <h3 class="link-markdown">
-      <a href="#importing-dependencies-via-file-name" name="importing-dependencies-via-file-name"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="importing-dependencies-via-file-name"></a>
+      <a href="#importing-dependencies-via-file-name"><i class="fas fa-link"></i></a>
       Importing dependencies via file name
     </h3>
   <p>To import contracts from a separate file, add the following code to your Solidity source file:</p>
@@ -344,7 +350,8 @@
 <p>Note that Solidity allows other import syntaxes as well. See the Solidity <a href="http://solidity.readthedocs.org/en/latest/layout-of-source-files.html#importing-other-source-files">import documentation</a> for more information.</p>
 
     <h3 class="link-markdown">
-      <a href="#importing-contracts-from-an-external-package" name="importing-contracts-from-an-external-package"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="importing-contracts-from-an-external-package"></a>
+      <a href="#importing-contracts-from-an-external-package"><i class="fas fa-link"></i></a>
       Importing contracts from an external package
     </h3>
   <p>Truffle supports dependencies installed via both <a href="/docs/truffle/getting-started/package-management-via-ethpm">EthPM</a> and <a href="/docs/truffle/getting-started/package-management-via-npm">NPM</a>. To import contracts from a dependency, use the following syntax</p>

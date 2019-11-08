@@ -301,24 +301,28 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#interacting-with-your-contracts" name="interacting-with-your-contracts"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="interacting-with-your-contracts"></a>
+      <a href="#interacting-with-your-contracts"><i class="fas fa-link"></i></a>
       Interacting with your contracts
     </h1>
   
     <h2 class="link-markdown">
-      <a href="#introduction" name="introduction"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="introduction"></a>
+      <a href="#introduction"><i class="fas fa-link"></i></a>
       Introduction
     </h2>
   <p>If you were writing raw requests to the Ethereum network yourself in order to interact with your contracts, you&#39;d soon realize that writing these requests is clunky and cumbersome. As well, you might find that managing the state for each request you&#39;ve made is <em>complicated</em>. Fortunately, Truffle takes care of this complexity for you, to make interacting with your contracts a breeze.</p>
 
     <h2 class="link-markdown">
-      <a href="#reading-and-writing-data" name="reading-and-writing-data"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="reading-and-writing-data"></a>
+      <a href="#reading-and-writing-data"><i class="fas fa-link"></i></a>
       Reading and writing data
     </h2>
   <p>The Ethereum network makes a distinction between writing data to the network and reading data from it, and this distinction plays a significant part in how you write your application. In general, writing data is called a <strong>transaction</strong> whereas reading data is called a <strong>call</strong>. Transactions and calls are treated very differently, and have the following characteristics.</p>
 
     <h3 class="link-markdown">
-      <a href="#transactions" name="transactions"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="transactions"></a>
+      <a href="#transactions"><i class="fas fa-link"></i></a>
       Transactions
     </h3>
   <p>Transactions fundamentally change the state of the network. A transaction can be as simple as sending Ether to another account, or as complicated as executing a contract function or adding a new contract to the network. The defining characteristic of a transaction is that it writes (or changes) data. Transactions cost Ether to run, known as &quot;gas&quot;, and transactions take time to process. When you execute a contract&#39;s function via a transaction, you cannot receive that function&#39;s return value because the transaction isn&#39;t processed immediately. In general, functions meant to be executed via a transaction will not return a value; they will return a transaction id instead. So in summary, transactions:</p>
@@ -330,7 +334,8 @@
 </ul>
 
     <h3 class="link-markdown">
-      <a href="#calls" name="calls"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="calls"></a>
+      <a href="#calls"><i class="fas fa-link"></i></a>
       Calls
     </h3>
   <p>Calls, on the other hand, are very different. Calls can be used to execute code on the network, though no data will be permanently changed. Calls are free to run, and their defining characteristic is that they read data. When you execute a contract function via a call you will receive the return value immediately. In summary, calls:</p>
@@ -343,7 +348,8 @@
 <p>Choosing between a transaction and a call is as simple as deciding whether you want to read data, or write it.</p>
 
     <h2 class="link-markdown">
-      <a href="#introducing-abstractions" name="introducing-abstractions"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="introducing-abstractions"></a>
+      <a href="#introducing-abstractions"><i class="fas fa-link"></i></a>
       Introducing abstractions
     </h2>
   <p>Contract abstractions are the bread and butter of interacting with Ethereum contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">truffle-contract</a> module, and it is this contract abstraction that&#39;s described below.</p>
@@ -402,13 +408,15 @@ truffle(develop)&gt; instance
 <p>Notice that the abstraction contains the exact same functions that exist within our contract. It also contains an address which points to the deployed version of the MetaCoin contract.</p>
 
     <h2 class="link-markdown">
-      <a href="#executing-contract-functions" name="executing-contract-functions"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="executing-contract-functions"></a>
+      <a href="#executing-contract-functions"><i class="fas fa-link"></i></a>
       Executing contract functions
     </h2>
   <p>Using the abstraction you can easily execute contract functions on the Ethereum network.</p>
 
     <h3 class="link-markdown">
-      <a href="#making-a-transaction" name="making-a-transaction"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="making-a-transaction"></a>
+      <a href="#making-a-transaction"><i class="fas fa-link"></i></a>
       Making a transaction
     </h3>
   <p>There are three functions on the MetaCoin contract that we can execute. If you analyze each of them, you&#39;ll see that <code>sendCoin</code> is the only function that aims to make changes to the network. The goal of <code>sendCoin</code> is to &quot;send&quot; some Meta coins from one account to the next, and these changes should persist.</p>
@@ -432,7 +440,8 @@ truffle(develop)&gt; instance.sendCoin(accounts[1], 10, {from: accounts[0]})
 </ul>
 
     <h3 class="link-markdown">
-      <a href="#making-a-call" name="making-a-call"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="making-a-call"></a>
+      <a href="#making-a-call"><i class="fas fa-link"></i></a>
       Making a call
     </h3>
   <p>Continuing with MetaCoin, notice the <code>getBalance</code> function is a great candidate for reading data from the network. It doesn&#39;t need to make any changes, as it just returns the MetaCoin balance of the address passed to it. Let&#39;s give it a shot:</p>
@@ -449,7 +458,8 @@ truffle(develop)&gt; balance.toNumber()
 
 
     <h3 class="link-markdown">
-      <a href="#processing-transaction-results" name="processing-transaction-results"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="processing-transaction-results"></a>
+      <a href="#processing-transaction-results"><i class="fas fa-link"></i></a>
       Processing transaction results
     </h3>
   <p>When you make a transaction, you&#39;re given a <code>result</code> object that gives you a wealth of information about the transaction.</p>
@@ -465,7 +475,8 @@ truffle(develop)&gt; result
 <p>For more information, please see the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">README</a> in the <code>truffle-contract</code> package.</p>
 
     <h3 class="link-markdown">
-      <a href="#catching-events" name="catching-events"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="catching-events"></a>
+      <a href="#catching-events"><i class="fas fa-link"></i></a>
       Catching events
     </h3>
   <p>Your contracts can fire events that you can catch to gain more insight into what your contracts are doing. The easiest way to handle events is by processing the <code>logs</code> array contained within <code>result</code> object of the transaction that triggered the event.</p>
@@ -492,7 +503,8 @@ truffle(develop)&gt; result
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#add-a-new-contract-to-the-network" name="add-a-new-contract-to-the-network"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="add-a-new-contract-to-the-network"></a>
+      <a href="#add-a-new-contract-to-the-network"><i class="fas fa-link"></i></a>
       Add a new contract to the network
     </h3>
   <p>In all of the above cases, we&#39;ve been using a contract abstraction that has already been deployed. We can deploy our own version to the network using the <code>.new()</code> function:</p>
@@ -502,7 +514,8 @@ truffle(develop)&gt; newInstance.address
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#use-a-contract-at-a-specific-address" name="use-a-contract-at-a-specific-address"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="use-a-contract-at-a-specific-address"></a>
+      <a href="#use-a-contract-at-a-specific-address"><i class="fas fa-link"></i></a>
       Use a contract at a specific address
     </h3>
   <p>If you already have an address for a contract, you can create a new abstraction to represent the contract at that address.</p>
@@ -510,7 +523,8 @@ truffle(develop)&gt; newInstance.address
 </code></pre>
 
     <h3 class="link-markdown">
-      <a href="#sending-ether-to-a-contract" name="sending-ether-to-a-contract"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="sending-ether-to-a-contract"></a>
+      <a href="#sending-ether-to-a-contract"><i class="fas fa-link"></i></a>
       Sending ether to a contract
     </h3>
   <p>You may simply want to send Ether directly to a contract, or trigger a contract&#39;s <a href="http://solidity.readthedocs.io/en/develop/contracts.html#fallback-function">fallback function</a>. You can do so using one of the following two options.</p>
@@ -526,7 +540,8 @@ truffle(develop)&gt; newInstance.address
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#further-reading" name="further-reading"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="further-reading"></a>
+      <a href="#further-reading"><i class="fas fa-link"></i></a>
       Further reading
     </h2>
   <p>The contract abstractions provided by Truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">truffle-contract</a> documentation for tips, tricks and insights.</p>

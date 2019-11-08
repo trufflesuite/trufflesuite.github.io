@@ -301,13 +301,15 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a href="#contract-interaction" name="contract-interaction"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="contract-interaction"></a>
+      <a href="#contract-interaction"><i class="fas fa-link"></i></a>
       Contract Interaction
     </h1>
   <p>Drizzle provides helpful methods on top of the default web3.Contract methods to keep your calls and transactions in sync with the store.</p>
 
     <h2 class="link-markdown">
-      <a href="#-code-cachecall-code-" name="-code-cachecall-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-cachecall-code-"></a>
+      <a href="#-code-cachecall-code-"><i class="fas fa-link"></i></a>
       <code>cacheCall()</code>
     </h2>
   <p>Gets contract data. Calling the <code>cacheCall()</code> function on a contract will execute the desired call and return a corresponding key so the data can be retrieved from the store. When a new block is received, Drizzle will refresh the store automatically _if_ any transactions in the block touched our contract. For more information on how this works, see <a href="https://truffleframework.com/docs/drizzle/reference/how-data-stays-fresh">How Data Stays Fresh</a>.</p>
@@ -332,7 +334,8 @@ return &#39;Loading...&#39;
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#-code-cachesend-code-" name="-code-cachesend-code-"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="-code-cachesend-code-"></a>
+      <a href="#-code-cachesend-code-"><i class="fas fa-link"></i></a>
       <code>cacheSend()</code>
     </h2>
   <p>Sends a contract transaction. Calling the <code>cacheSend()</code> function on a contract will send the desired transaction and return a corresponding transaction hash so the status can be retrieved from the store. The last argument can optionally be an options object with the typical from, gas and gasPrice keys. Drizzle will update the transaction&#39;s state in the store (pending, success, error) and store the transaction receipt. For more information on how this works, see <a href="https://truffleframework.com/docs/drizzle/reference/how-data-stays-fresh">How Data Stays Fresh</a>.</p>
@@ -362,7 +365,8 @@ return &#39;Loading...&#39;
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#adding-contracts-dynamically" name="adding-contracts-dynamically"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="adding-contracts-dynamically"></a>
+      <a href="#adding-contracts-dynamically"><i class="fas fa-link"></i></a>
       Adding Contracts Dynamically
     </h2>
   <p>You can programmatically add contracts to Drizzle using either <code>drizzle.addContract()</code> or the <code>ADD_CONTRACT</code> action.</p>
@@ -380,7 +384,8 @@ this.context.drizzle.addContract(contractConfig, events)
 </code></pre>
 
     <h2 class="link-markdown">
-      <a href="#removing-contracts-dynamically" name="removing-contracts-dynamically"><i class="fas fa-link"></i></a>
+      <a class="anchor-target" name="removing-contracts-dynamically"></a>
+      <a href="#removing-contracts-dynamically"><i class="fas fa-link"></i></a>
       Removing Contracts Dynamically
     </h2>
   <p>You can also delete contracts using either <code>drizzle.deleteContract()</code> or the <code>DELETE_CONTRACT</code> action.</p>
