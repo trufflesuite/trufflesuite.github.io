@@ -255,11 +255,6 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/networks-and-app-deployment.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/distributed-ledger-support/working-with-hyperledger-evm.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/distributed-ledger-support/working-with-quorum.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/choosing-an-ethereum-client.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/configuration.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/contact-the-developers.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/contract-abstractions.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/reference/truffle-commands.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/compiling-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/creating-a-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/debugging-your-contracts.html</loc> </url>
@@ -272,6 +267,11 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/using-the-build-pipeline.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/using-truffle-develop-and-the-console.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/writing-external-scripts.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/choosing-an-ethereum-client.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/configuration.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/contact-the-developers.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/contract-abstractions.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/reference/truffle-commands.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/testing-your-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
