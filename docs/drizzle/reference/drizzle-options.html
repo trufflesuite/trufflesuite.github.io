@@ -339,7 +339,7 @@
     </h3>
   <p>An array of either contract artifact files or Web3 contract objects. The objects have a <code>contractName</code> and <code>web3Contract</code> key.</p>
 <p>i.e.</p>
-<pre><code>contracts: [
+<pre><code class="lang-javascript">contracts: [
   truffleArtifact, // A regular Truffle contract artifact
   {
     contractName: &#39;RegisteredContract&#39;,
@@ -347,6 +347,7 @@
   }
 ]
 </code></pre>
+
     <h3 class="link-markdown">
       <a class="anchor-target" name="-code-events-code-object-"></a>
       <a href="#-code-events-code-object-"><i class="fas fa-link"></i></a>
@@ -381,7 +382,7 @@
       <code>customProvider</code> (object)
     </h4>
   <p>A valid web3 <code>provider</code> object. For example, you may wish to programatically create a Ganache provider for testing:</p>
-<pre><code>// Create a Ganache provider.
+<pre><code class="lang-javascript">// Create a Ganache provider.
 const testingProvider = Ganache.provider({
   gasLimit: 7000000
 })
@@ -394,6 +395,7 @@ const options = {
 
 const drizzle = new Drizzle(options)
 </code></pre>
+
     <h4 class="link-markdown">
       <a class="anchor-target" name="-code-fallback-code-object-"></a>
       <a href="#-code-fallback-code-object-"><i class="fas fa-link"></i></a>

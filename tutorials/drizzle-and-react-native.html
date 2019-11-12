@@ -139,7 +139,7 @@
       <div class="row justify-content-center">
         <div class="col">
           <p>Starting with Drizzle v1.3, we are very happy to announce official support for React Native (^0.57.7)!</p>
-<p>This tutorial will guide you through how to get Drizzle and Truffle running on your React Native dapps. This tutorial assumes some prior knowledge about Truffle, Drizzle, and React Native, so if you haven&#39;t already, go over the following tutorials first to set up your development environment: </p>
+<p>This tutorial will guide you through how to get Drizzle and Truffle running on your React Native dapps. This tutorial assumes some prior knowledge about Truffle, Drizzle, and React Native, so if you haven&#39;t already, go over the following tutorials first to set up your development environment:</p>
 <ol>
 <li><a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react">Getting started with Drizzle and React</a></li>
 <li><a href="https://facebook.github.io/react-native/docs/getting-started.html">React Native</a><ul>
@@ -176,12 +176,11 @@ cd truffle-temp
 truffle init
 </code></pre>
 <p>You should have the following inside the project folder:</p>
-<pre><code class="lang-sh">├── contracts
+<pre><code>├── contracts
 ├── migrations
 ├── test
 └── truffle-config.js
 </code></pre>
-
     <h3 class="link-markdown">
       <a class="anchor-target" name="react-native"></a>
       <a href="#react-native"><i class="fas fa-link"></i></a>
@@ -194,7 +193,7 @@ truffle init
 </li>
 <li><p>React Native and Truffle folders should be in root since React Native doesn&#39;t allow you to use symlinks yet, and cannot import from files outside the React Native project folder.</p>
 <p> Copy all the files in <code>truffle-temp</code> into the root folder of your React Native project. Your folder should look like this in the end:</p>
-<pre><code class="lang-sh"> ├── android
+<pre><code> ├── android
  ├── contracts
  ├── ios
  ├── migrations
@@ -207,8 +206,7 @@ truffle init
  ├── truffle-config.js
  ├── truffle.js
  └── yarn.lock
-</code></pre>
-</li>
+</code></pre></li>
 </ol>
 
     <h2 class="link-markdown">
@@ -227,7 +225,7 @@ truffle init
 </code></pre>
 </li>
 <li><p>Create a new file <code>shims.js</code> in the root folder with the following code:</p>
-<pre><code class="lang-js"> import &quot;node-libs-react-native/globals&quot;;
+<pre><code class="lang-javascript"> import &quot;node-libs-react-native/globals&quot;;
  import { btoa } from &quot;Base64&quot;;
  import nodeUrl from &#39;url&#39;;
 
@@ -270,11 +268,11 @@ truffle init
    },
    writable: true,
    configurable: true,
- }); 
+ });
 </code></pre>
 </li>
 <li><p>Create a new file <code>rn-cli.config.js</code> in the root folder with the following code:</p>
-<pre><code class="lang-js"> const nodeLibs = require(&quot;node-libs-react-native&quot;);
+<pre><code class="lang-javascript"> const nodeLibs = require(&quot;node-libs-react-native&quot;);
  nodeLibs.vm = require.resolve(&quot;vm-browserify&quot;);
 
  module.exports = {
@@ -303,7 +301,7 @@ truffle init
 <p> If you&#39;re wondering why we did all that in <code>rn-cli.config.js</code>, refer to <a href="https://gist.github.com/parshap/e3063d9bf6058041b34b26b7166fd6bd">this Gist</a> for a great explanation.</p>
 </li>
 <li><p>Finally let&#39;s import our shims in <code>index.js</code>. The very first line should be the following:</p>
-<pre><code class="lang-js"> import &quot;./shims&quot;
+<pre><code class="lang-javascript"> import &quot;./shims&quot;
 </code></pre>
 </li>
 </ol>
@@ -375,9 +373,9 @@ truffle init
 <ol>
 <li>Find your <code>LOCAL_MACHINE_IP</code> by checking your network settings on your Mac where Ganache is running</li>
 <li>Start <code>ganache-cli</code>: <code>ganache-cli -b 3 -h LOCAL_MACHINE_IP</code></li>
-<li>In <code>truffle.js</code> for <code>development</code>, point Truffle to <code>LOCAL_MACHINE_IP</code> </li>
+<li>In <code>truffle.js</code> for <code>development</code>, point Truffle to <code>LOCAL_MACHINE_IP</code></li>
 <li>Compile and migrate contracts: <code>truffle compile &amp;&amp; truffle migrate</code></li>
-<li>In <code>index.js</code>, point Drizzle to <code>LOCAL_MACHINE_IP</code><pre><code class="lang-js"> const options = {
+<li>In <code>index.js</code>, point Drizzle to <code>LOCAL_MACHINE_IP</code><pre><code class="lang-javascript"> const options = {
    ...
    web3: {
      fallback: {
@@ -400,7 +398,7 @@ truffle init
 <pre><code class="lang-shell">yarn add drizzle
 </code></pre>
 <p>Set up the Drizzle store by adding the following code to <code>index.js</code>:</p>
-<pre><code class="lang-js">import React from &quot;react&quot;;
+<pre><code class="lang-javascript">import React from &quot;react&quot;;
 import { Drizzle, generateStore } from &quot;@drizzle/store&quot;;
 import MyStringStore from &quot;./build/contracts/MyStringStore.json&quot;;
 
@@ -412,8 +410,8 @@ const drizzle = new Drizzle(options, drizzleStore);
 
 AppRegistry.registerComponent(appName, () =&gt; () =&gt; &lt;App drizzle={drizzle} /&gt;);
 </code></pre>
-<p>Your <code>index.js</code> should look like this in the end: </p>
-<pre><code class="lang-js">/** @format */
+<p>Your <code>index.js</code> should look like this in the end:</p>
+<pre><code class="lang-javascript">/** @format */
 import &quot;./shims&quot;;
 import { AppRegistry } from &quot;react-native&quot;;
 import App from &quot;./app/App&quot;;
@@ -430,7 +428,6 @@ const drizzleStore = generateStore(options);
 const drizzle = new Drizzle(options, drizzleStore);
 
 AppRegistry.registerComponent(appName, () =&gt; () =&gt; &lt;App drizzle={drizzle} /&gt;);
-
 </code></pre>
 
     <h2 class="link-markdown">
@@ -441,7 +438,7 @@ AppRegistry.registerComponent(appName, () =&gt; () =&gt; &lt;App drizzle={drizzl
   <p>This is pretty much the same as <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#wire-up-the-app-component">the web tutorial</a>, but with React Native components instead of web ones. Refer to the web tutorial for a more in-depth explanation of what&#39;s going on.</p>
 <p>Let&#39;s create a folder called <code>app</code> in the root of the project. Add a file called <code>App.js</code> to it.</p>
 <p>In <code>app/App.js</code>, your code should look like this in the end:</p>
-<pre><code class="lang-js">/**
+<pre><code class="lang-javascript">/**
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
@@ -505,7 +502,7 @@ const styles = StyleSheet.create({
     </h2>
   <p>Once again, this is very similar to the <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#write-a-component-to-read-from-drizzle">web tutorial</a>, just with React Native components.</p>
 <p>Add <code>ReadString.js</code> to the folder <code>app</code>. <code>app/ReadString.js</code> should look like this:</p>
-<pre><code class="lang-js">import React from &quot;react&quot;;
+<pre><code class="lang-javascript">import React from &quot;react&quot;;
 import { Text } from &quot;react-native&quot;;
 
 class ReadString extends React.Component {
@@ -537,7 +534,7 @@ class ReadString extends React.Component {
 export default ReadString;
 </code></pre>
 <p>Add it to <code>App.js</code> by modifying the <code>render</code> method:</p>
-<pre><code class="lang-js">import ReadString from &quot;./ReadString&quot;;
+<pre><code class="lang-javascript">import ReadString from &quot;./ReadString&quot;;
 // ...
 render() {
   return (
@@ -565,7 +562,7 @@ render() {
     </h2>
   <p>Once again, this is very similar to the <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#write-a-component-to-write-to-the-smart-contract">web tutorial</a>, just with React Native components.</p>
 <p>Add <code>SetString.js</code> to the folder <code>app</code>. <code>app/SetString.js</code> should look like this:</p>
-<pre><code class="lang-js">import React from &quot;react&quot;;
+<pre><code class="lang-javascript">import React from &quot;react&quot;;
 import { Text, View, Button, TextInput, StyleSheet } from &quot;react-native&quot;;
 
 class SetString extends React.Component {
@@ -633,8 +630,7 @@ const styles = StyleSheet.create({
 export default SetString;
 </code></pre>
 <p>Add it to <code>App.js</code> by modifying the <code>render</code> function</p>
-<pre><code class="lang-js">
-import ReadString from &quot;./ReadString&quot;;
+<pre><code class="lang-javascript">import ReadString from &quot;./ReadString&quot;;
 import SetString from &quot;./SetString&quot;;
 // ...
 render() {

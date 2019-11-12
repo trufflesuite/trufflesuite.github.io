@@ -156,7 +156,7 @@
       A basic smart contract
     </h2>
   <p>One of the most basic, non-trivial, types of smart contract is a <strong>simple storage contract</strong>. (This example was adapted from the <a href="https://solidity.readthedocs.io/en/develop/introduction-to-smart-contracts.html">Solidity documentation</a>.)</p>
-<pre><code class="lang-javascript">pragma solidity ^0.4.17;
+<pre><code class="lang-solidity">pragma solidity ^0.4.17;
 
 contract SimpleStorage {
   uint myVariable;
@@ -195,7 +195,7 @@ cd simple-storage
 <p>This will create directories such as <code>contracts/</code> and <code>migrations/</code>, and populate them with files we will use when we deploy our contract to the blockchain.</p>
 </li>
 <li><p>Inside the <code>contracts/</code> directory, create a file called <code>Store.sol</code> with the following content:</p>
-<pre><code class="lang-javascript">pragma solidity ^0.4.17;
+<pre><code class="lang-solidity">pragma solidity ^0.4.17;
 
 contract SimpleStorage {
   uint myVariable;
@@ -246,7 +246,7 @@ module.exports = function(deployer) {
    SimpleStorage: 0x377bbcae5327695b32a1784e0e13bedc8e078c9c
  Saving successful migration to network...
    ... 0x6e25158c01a403d33079db641cb4d46b6245fd2e9196093d9e5984e45d64a866
- Saving artifacts... 
+ Saving artifacts...
 </code></pre>
 </li>
 </ol>
@@ -264,18 +264,18 @@ module.exports = function(deployer) {
 
 <ol>
 <li><p>In the console where <code>truffle develop</code> is running, run the following command:</p>
-<pre><code class="lang-shell">SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
+<pre><code class="lang-javascript">SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
 </code></pre>
 <p>This command looks at the SimpleStorage contract, and then calls the <code>get()</code> function as defined inside it. It then returns the output, which is usually rendered as a string, and converts it to a number:</p>
-<pre><code class="lang-shell">0
+<pre><code class="lang-javascript">0
 </code></pre>
 <p>This shows us that our variable, <code>myVariable</code>, is set to <code>0</code>, even though we haven&#39;t set this variable to any value (yet). This is because <strong>variables with integer types are automatically populated with the value of zero in Solidity</strong>, unlike other languages where it might be <code>NULL</code> or <code>undefined</code>.</p>
 </li>
 <li><p>Now let&#39;s run a transaction on our contract. We&#39;ll do this by running the <code>set()</code> function, where we can set our variable value to some other integer. Run the following command:</p>
-<pre><code class="lang-shell">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
+<pre><code class="lang-javascript">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
 </code></pre>
 <p>This sets the variable to <code>4</code>. The output shows some information about the transaction, including the transaction ID (hash), transaction receipt,  and any event logs that were triggered during the course of the transaction:</p>
-<pre><code class="lang-shell"> { tx: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
+<pre><code class="lang-javascript"> { tx: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
    receipt:
     { transactionHash: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
       transactionIndex: 0,
@@ -285,7 +285,7 @@ module.exports = function(deployer) {
       cumulativeGasUsed: 41577,
       contractAddress: null,
       logs: [] },
-   logs: [] }   
+   logs: [] }
 </code></pre>
 <p>Most important to us is the transaction ID (listed here both as <code>tx</code> and as <code>transactionHash</code>). We&#39;ll need to copy that value when we start to debug.</p>
 <p class="alert alert-info">
@@ -293,10 +293,10 @@ module.exports = function(deployer) {
 </p>
 </li>
 <li><p>To verify that the variable has changed values, run the <code>get()</code> function again:</p>
-<pre><code class="lang-shell">SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
+<pre><code class="lang-javascript">SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
 </code></pre>
 <p>The output should look like this:</p>
-<pre><code class="lang-shell">4
+<pre><code class="lang-javascript">4
 </code></pre>
 </li>
 </ol>
@@ -310,7 +310,7 @@ module.exports = function(deployer) {
 <p>We will look at the following issues:</p>
 <ul>
 <li>An infinite loop</li>
-<li>Invalid error check </li>
+<li>Invalid error check</li>
 <li>No error, but a function isn&#39;t operating as desired</li>
 </ul>
 
@@ -333,7 +333,7 @@ module.exports = function(deployer) {
 <li><p>Open <code>Store.sol</code> from the <code>contracts/</code> directory in a text editor.</p>
 </li>
 <li><p>Replace the <code>set()</code> function with the following:</p>
-<pre><code class="lang-javascript">function set(uint x) public {
+<pre><code class="lang-solidity">function set(uint x) public {
   while(true) {
     myVariable = x;
   }
@@ -361,19 +361,18 @@ module.exports = function(deployer) {
 <p>Leave that window for now and return to the first console.</p>
 </li>
 <li><p>Now we are ready to run that transaction. Run the <code>set()</code> command from above.</p>
-<pre><code class="lang-shell">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
+<pre><code class="lang-javascript">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
 </code></pre>
 <p>An error will display:</p>
-<pre><code class="lang-shell">Error: VM Exception while processing transaction: out of gas
-</code></pre>
-<p>Moreover, in the console with the logs, you will see more information:</p>
+<pre><code>Error: VM Exception while processing transaction: out of gas
+</code></pre><p>Moreover, in the console with the logs, you will see more information:</p>
 <pre><code class="lang-shell"> develop:testrpc eth_sendTransaction +0ms
  develop:testrpc  +1s
  develop:testrpc   Transaction: 0xe493340792ab92b95ac40e43dca6bc88fba7fd67191989d59ca30f79320e883f +2ms
  develop:testrpc   Gas usage: 4712388 +11ms
  develop:testrpc   Block Number: 6 +15ms
  develop:testrpc   Runtime Error: out of gas +0ms
- develop:testrpc  +16ms   
+ develop:testrpc  +16ms
 </code></pre>
 </li>
 </ol>
@@ -397,7 +396,7 @@ module.exports = function(deployer) {
 </li>
 </ol>
 <p>   You will see the following output:</p>
-<pre><code class="lang-shell">   Gathering transaction data...
+<pre><code class="lang-solidity">   Gathering transaction data...
 
    Addresses affected:
      0x377bbcae5327695b32a1784e0e13bedc8e078c9c - SimpleStorage
@@ -420,7 +419,7 @@ module.exports = function(deployer) {
 <ol>
 <li><p>The most common way to interact with the code is to &quot;step next&quot;, which steps through the code one instruction at a time. Do this by pressing <code>Enter</code> or <code>n</code>:</p>
 <p>The output is as follows:</p>
-<pre><code class="lang-shell">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+<pre><code class="lang-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 4:   uint myVariable;
 5:
@@ -430,7 +429,7 @@ module.exports = function(deployer) {
 <p>Notice that the program has moved to the next instruction, located on line 6. (The carets point to the exact part of the instruction taking place.)</p>
 </li>
 <li><p>Press <code>Enter</code> again to step to the next instruction:</p>
-<pre><code class="lang-shell">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+<pre><code class="lang-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 5:
 6: function set(uint x) public {
@@ -439,7 +438,7 @@ module.exports = function(deployer) {
 </code></pre>
 </li>
 <li><p>Keep pressing Enter:</p>
-<pre><code class="lang-shell">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+<pre><code class="lang-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 5:
 6: function set(uint x) public {
@@ -514,7 +513,7 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 <li><p>Open <code>Store.sol</code> again.</p>
 </li>
 <li><p>Replace the <code>set()</code> function with the following:</p>
-<pre><code class="lang-javascript">function set(uint x) public {
+<pre><code class="lang-solidity">function set(uint x) public {
   assert(x == 0);
   myVariable = x;
 }
@@ -535,12 +534,11 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 </code></pre>
 </li>
 <li><p>Now we are ready to test the new transaction. Run the same command as above:</p>
-<pre><code class="lang-shell">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
+<pre><code class="lang-javascript">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
 </code></pre>
 <p>You will see an error:</p>
-<pre><code class="lang-shell">Error: VM Exception while processing transaction: invalid opcode
-</code></pre>
-<p>This means that we have a problem on our hands.</p>
+<pre><code>Error: VM Exception while processing transaction: invalid opcode
+</code></pre><p>This means that we have a problem on our hands.</p>
 </li>
 <li><p>In the log window, note the transaction ID with that error.</p>
 </li>
@@ -563,7 +561,7 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 </li>
 </ol>
 <p>   Now we are back in the debugger:</p>
-<pre><code class="lang-shell">   Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+<pre><code class="lang-solidity">   Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
    1: pragma solidity ^0.4.17;
    2:
@@ -574,8 +572,7 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 </code></pre>
 <ol>
 <li><p>Press <code>Enter</code> a few times to step through the code. Eventually, the debugger will halt with an error message:</p>
-<pre><code class="lang-shell">
-Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+<pre><code class="lang-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 5:
 6:   function set(uint x) public {
@@ -586,9 +583,9 @@ debug(develop:0x7e060037...)&gt;
 
 Transaction halted with a RUNTIME ERROR.
 
-This is likely due to an intentional halting expression, like 
+This is likely due to an intentional halting expression, like
 assert(), require() or revert(). It can also be due to out-of-gas
-exceptions. Please inspect your transaction parameters and 
+exceptions. Please inspect your transaction parameters and
 contract code to determine the meaning of this error.
 </code></pre>
 <p><strong>It is this last event that is triggering the error.</strong> You can see that it is the <code>assert()</code> that is to blame.</p>
@@ -613,7 +610,7 @@ contract code to determine the meaning of this error.
 <li><p>Open <code>Store.sol</code> again.</p>
 </li>
 <li><p>Replace the <code>set()</code> function with the following:</p>
-<pre><code class="lang-javascript">event Odd();
+<pre><code class="lang-solidity">event Odd();
 
 event Even();
 
@@ -644,10 +641,10 @@ function set(uint x) public {
 <p>You will see both the compiler output and the migration output.</p>
 </li>
 <li><p>Now we are ready to test the new transaction. Run the same command as above:</p>
-<pre><code class="lang-shell">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
+<pre><code class="lang-javascript">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
 </code></pre>
 <p><strong>Note that there is no error here.</strong> The response is given as a transaction ID with details:</p>
-<pre><code class="lang-shell">{ tx: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
+<pre><code class="lang-javascript">{ tx: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
   receipt:
    { transactionHash: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
      transactionIndex: 0,
@@ -688,7 +685,7 @@ function set(uint x) public {
 <p>You will enter the debugger as before.</p>
 </li>
 <li><p>Press <code>Enter</code> multiple times to cycle through the steps. Eventually you will see that the conditional leads to the <code>Odd()</code> event:</p>
-<pre><code class="lang-shell">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+<pre><code class="lang-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 10:   function set(uint x) public {
 11:     myVariable = x;

@@ -191,8 +191,9 @@
       Deploying to the Live Network
     </h2>
   <p>Now that our configuration is set up, we can now deploy to the live network. When deploying, we must specifically ask for the live network or else Truffle will fall back to the default configuration. To do so, we can deploy with the following command:</p>
-<pre><code>$ truffle migrate --network live
-</code></pre><p>Notice that we asked for the <code>&quot;live&quot;</code> network, which is the name we defined in the configuration, and Truffle will connect to the specified host and port -- in this case <code>http://127.0.0.1:8546</code> -- to deploy our contracts.</p>
+<pre><code class="lang-shell">$ truffle migrate --network live
+</code></pre>
+<p>Notice that we asked for the <code>&quot;live&quot;</code> network, which is the name we defined in the configuration, and Truffle will connect to the specified host and port -- in this case <code>http://127.0.0.1:8546</code> -- to deploy our contracts.</p>
 <p>Your <a href="http://truffleframework.com/docs/getting_started/migrations">migrations</a> are run on this network just as they&#39;d run on any other network. If you had previously deployed to the live network before, <code>truffle migrate --network live</code> will check which migration was last run and only start deploying from there.</p>
 
     <h2 class="link-markdown">

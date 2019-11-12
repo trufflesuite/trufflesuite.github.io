@@ -146,10 +146,12 @@
       Get the Beta Version
     </h2>
   <p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
-<pre><code>$ npm uninstall -g truffle
-</code></pre><p>And then install the beta version:</p>
-<pre><code>$ npm install -g truffle@beta
+<pre><code class="lang-shell">$ npm uninstall -g truffle
 </code></pre>
+<p>And then install the beta version:</p>
+<pre><code class="lang-shell">$ npm install -g truffle@beta
+</code></pre>
+
     <h2 class="link-markdown">
       <a class="anchor-target" name="overview"></a>
       <a href="#overview"><i class="fas fa-link"></i></a>
@@ -179,7 +181,7 @@ contract TestMetacoin {
 }
 </code></pre>
 <p>And when running the test:</p>
-<pre><code>$ truffle test
+<pre><code class="lang-shell">$ truffle test
 Compiling ConvertLib.sol...
 Compiling MetaCoin.sol...
 Compiling ../test/TestMetacoin.sol...
@@ -189,7 +191,8 @@ Compiling ../test/TestMetacoin.sol...
     ✓ testInitialBalanceWithNewMetaCoin (69ms)
 
   2 passing (3s)
-</code></pre><p>There are some very important structural items to discuss:</p>
+</code></pre>
+<p>There are some very important structural items to discuss:</p>
 <ul>
 <li><p>First, your assertion functions are provided by the <code>truffle/Assert.sol</code> library. This is the default assertion library, however you can include your own assertion library so long as the library outputs the correct events to the test runner. You can find all available assertion functions in <a href="https://github.com/ConsenSys/truffle/blob/solidity-tests/lib/testing/Assert.sol">Assert.sol</a>. These functions are meant to mimic those available in your Javascript tests, and more documentation will be written about each function in the future.</p>
 </li>

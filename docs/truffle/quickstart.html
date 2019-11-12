@@ -373,7 +373,7 @@ cd MetaCoin
 <ol>
 <li><p>Open the <code>contracts/MetaCoin.sol</code> file in a text editor. This is a smart contract (written in Solidity) that creates a MetaCoin token. Note that this also references another Solidity file <code>contracts/ConvertLib.sol</code> in the same directory.</p>
 </li>
-<li><p>Open the <code>contracts/Migrations.sol</code> file. This is a separate Solidity file that manages and updates <a href="/docs/truffle/getting-started/running-migrations">the status of your deployed smart contract</a>. This file comes with every Truffle project, and is usually not edited. </p>
+<li><p>Open the <code>contracts/Migrations.sol</code> file. This is a separate Solidity file that manages and updates <a href="/docs/truffle/getting-started/running-migrations">the status of your deployed smart contract</a>. This file comes with every Truffle project, and is usually not edited.</p>
 </li>
 <li><p>Open the <code>migrations/1_initial_migration.js</code> file. This file is the migration (deployment) script for the <code>Migrations</code> contract found in the <code>Migrations.sol</code> file.</p>
 </li>
@@ -484,7 +484,7 @@ Private Keys:
 Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
 
 ⚠️  Important ⚠️  : This mnemonic was created for you by Truffle. It is not secure.
-Ensure you do not use it on production blockchains, or else you risk losing funds.   
+Ensure you do not use it on production blockchains, or else you risk losing funds.
 
 truffle(development)&gt;
 </code></pre><p>This shows ten accounts (and their private keys) that can be used when interacting with the blockchain.</p>
@@ -512,7 +512,7 @@ truffle(development)&gt;
    &gt; gas used:            277462
    &gt; gas price:           20 gwei
    &gt; value sent:          0 ETH
-   &gt; total cost:          0.00554924 ETH   
+   &gt; total cost:          0.00554924 ETH
 
    &gt; Saving migration to chain.
    &gt; Saving artifacts
@@ -627,7 +627,7 @@ Summary
    &gt; gas used:            277462
    &gt; gas price:           20 gwei
    &gt; value sent:          0 ETH
-   &gt; total cost:          0.00554924 ETH   
+   &gt; total cost:          0.00554924 ETH
 
    &gt; Saving migration to chain.
    &gt; Saving artifacts
@@ -702,31 +702,31 @@ Summary
 <p>As of Truffle v5, the console supports async/await functions, enabling much simpler interactions with the contract.</p>
 <ul>
 <li><p>Begin by establishing both the deployed MetaCoin contract instance and the accounts created by either Truffle&#39;s built-in blockchain or Ganache:</p>
-<pre><code class="lang-shell">truffle(development)&gt; let instance = await MetaCoin.deployed()
+<pre><code class="lang-javascript">truffle(development)&gt; let instance = await MetaCoin.deployed()
 truffle(development)&gt; let accounts = await web3.eth.getAccounts()
 </code></pre>
 </li>
 <li><p>Check the metacoin balance of the account that deployed the contract:</p>
-<pre><code class="lang-shell">truffle(development)&gt; let balance = await instance.getBalance(accounts[0])
+<pre><code class="lang-javascript">truffle(development)&gt; let balance = await instance.getBalance(accounts[0])
 truffle(development)&gt; balance.toNumber()
 </code></pre>
 </li>
 <li><p>See how much ether that balance is worth (and note that the contract defines a metacoin to be worth 2 ether):</p>
-<pre><code class="lang-shell">truffle(development)&gt; let ether = await instance.getBalanceInEth(accounts[0])
+<pre><code class="lang-javascript">truffle(development)&gt; let ether = await instance.getBalanceInEth(accounts[0])
 truffle(development)&gt; ether.toNumber()
 </code></pre>
 </li>
 <li><p>Transfer some metacoin from one account to another:</p>
-<pre><code class="lang-shell">truffle(development)&gt; instance.sendCoin(accounts[1], 500)
+<pre><code class="lang-javascript">truffle(development)&gt; instance.sendCoin(accounts[1], 500)
 </code></pre>
 </li>
 <li><p>Check the balance of the account that <em>received</em> the metacoin:</p>
-<pre><code class="lang-shell">truffle(development)&gt; let received = await instance.getBalance(accounts[1])
+<pre><code class="lang-javascript">truffle(development)&gt; let received = await instance.getBalance(accounts[1])
 truffle(development)&gt; received.toNumber()
 </code></pre>
 </li>
 <li><p>Check the balance of the account that <em>sent</em> the metacoin:</p>
-<pre><code class="lang-shell">truffle(development)&gt; let newBalance = await instance.getBalance(accounts[0])
+<pre><code class="lang-javascript">truffle(development)&gt; let newBalance = await instance.getBalance(accounts[0])
 truffle(development)&gt; newBalance.toNumber()
 </code></pre>
 </li>

@@ -153,8 +153,9 @@
       Getting Started
     </h2>
   <p>Navigate to your project in the command line, and then install the required dependencies. These dependencies are in addition to any other Webpack-related dependencies your project might have.</p>
-<pre><code>$ npm install webpack webpack-dev-server truffle-solidity-loader --save-dev
+<pre><code class="lang-shell">$ npm install webpack webpack-dev-server truffle-solidity-loader --save-dev
 </code></pre>
+
     <h2 class="link-markdown">
       <a class="anchor-target" name="set-up-your-webpack-configuration"></a>
       <a href="#set-up-your-webpack-configuration"><i class="fas fa-link"></i></a>
@@ -206,15 +207,15 @@ module: {
   <p>In the past, Truffle bootstrapped applications to look for an open Ethereum node running at <code>http://localhost:8545</code>, but this has proven to be insecure for the user as well as highly unlikely in a real world scenario. Instead, users are most likely to use Metamask or Mist to interact with web applications on the Ethereum network, and you should build your application to support that. Both Metamask and Mist inject a <code>web3</code> object when the page is loading so you can hook into their transaction signing processes. Detecting this <code>web3</code> object easy:</p>
 <pre><code class="lang-javascript">var Web3 = require(&quot;web3&quot;);
 
-window.addEventListener(&#39;load&#39;, function() {                    
-  // Supports Metamask and Mist, and other wallets that provide &#39;web3&#39;.      
-  if (typeof web3 !== &#39;undefined&#39;) {                            
-    // Use the Mist/wallet provider.                            
-    window.web3 = new Web3(web3.currentProvider);               
-  } else {                                                      
+window.addEventListener(&#39;load&#39;, function() {
+  // Supports Metamask and Mist, and other wallets that provide &#39;web3&#39;.
+  if (typeof web3 !== &#39;undefined&#39;) {
+    // Use the Mist/wallet provider.
+    window.web3 = new Web3(web3.currentProvider);
+  } else {
     // No web3 detected. Show an error to the user or use Infura: https://infura.io/
-  }                                                                                                                       
-});     
+  }
+});
 </code></pre>
 <p>Notice we only use the wallet&#39;s provider and not the whole <code>web3</code> object provided to us. This ensures our application is not dependent on the wallet&#39;s version of Web3, and reduces the surface area in which version errors might occur.</p>
 
@@ -243,9 +244,10 @@ import MyContract from &quot;contracts/MyContract.sol&quot;;
       Running Webpack
     </h2>
   <p>From here you can run webpack like normal, via the normal <code>webpack</code> command or the <code>webpack-dev-server</code>, if you have those installed globally on your machine:</p>
-<pre><code>$ webpack
+<pre><code class="lang-shell">$ webpack
 $ webpack-dev-server --hot
-</code></pre><p>Alternatively, you can edit your project&#39;s <code>package.json</code> file to run Wepback from the versions you installed at the beginning of this tutorial:</p>
+</code></pre>
+<p>Alternatively, you can edit your project&#39;s <code>package.json</code> file to run Wepback from the versions you installed at the beginning of this tutorial:</p>
 <pre><code class="lang-javascript">&quot;scripts&quot;: {
   &quot;build&quot;: &quot;webpack&quot;,
   &quot;dev&quot;: &quot;webpack-dev-server --hot&quot;

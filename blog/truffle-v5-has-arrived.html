@@ -180,9 +180,10 @@ what you think!</p>
 </li>
 <li><p><strong>Vyper support</strong> - Another added feature is that Truffle will now compile
 <code>*.vy</code> contracts. We have published a Truffle Box to help you get started
-with Vyper. You can access it by running:  </p>
-<pre><code>$ truffle unbox vyper-example
-</code></pre><p>(Make sure you have <a href="https://vyper.readthedocs.io/en/latest/installing-vyper.html">Vyper</a> installed.)</p>
+with Vyper. You can access it by running:</p>
+<pre><code class="lang-shell">$ truffle unbox vyper-example
+</code></pre>
+<p>(Make sure you have <a href="https://vyper.readthedocs.io/en/latest/installing-vyper.html">Vyper</a> installed.)</p>
 </li>
 <li><p><strong>Solidity v0.5.0</strong> - Truffle also now ships with Solidity v0.5.0 by default.
 Solidity v0.4.xx is still supported and can be used by specifying the version
@@ -192,14 +193,16 @@ you wish to use in your Truffle config.</p>
 Web3.js v1.0. This has allowed us to include support for passing/returning
 ‘struct’s in Solidity functions. To use this ability, you need to specify the
 following at the top of your contracts:</p>
-<pre><code>pragma experimental ABIEncoderV2
-</code></pre><p>This feature allows you to use complex function arguments and have the values
+<pre><code class="lang-solidity">pragma experimental ABIEncoderV2
+</code></pre>
+<p>This feature allows you to use complex function arguments and have the values
 returned so that they can interact with other contracts via truffle-contract’s
 JS interface.</p>
 </li>
 <li><p><strong>Help system</strong> - Now access Truffle’s built in help system by running:</p>
-<pre><code>$ truffle help &lt;command&gt;
-</code></pre><p>This allows you to see all the available options for the command as well as a
+<pre><code class="lang-shell">$ truffle help &lt;command&gt;
+</code></pre>
+<p>This allows you to see all the available options for the command as well as a
 description of what it does.</p>
 </li>
 <li><p><strong>Unique <code>truffle develop</code> mnemonics</strong> - Truffle will now generate random mnemonics

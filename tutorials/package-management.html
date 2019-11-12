@@ -146,10 +146,12 @@
       Get the Beta Version
     </h2>
   <p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
-<pre><code>$ npm uninstall -g truffle
-</code></pre><p>And then install the beta version:</p>
-<pre><code>$ npm install -g truffle@beta
+<pre><code class="lang-shell">$ npm uninstall -g truffle
 </code></pre>
+<p>And then install the beta version:</p>
+<pre><code class="lang-shell">$ npm install -g truffle@beta
+</code></pre>
+
     <h2 class="link-markdown">
       <a class="anchor-target" name="overview"></a>
       <a href="#overview"><i class="fas fa-link"></i></a>
@@ -183,9 +185,10 @@
       Installing
     </h3>
   <p>For this example, we&#39;re going to use the <a href="https://github.com/ConsenSys/example-truffle-library">Example Truffle Library</a>, which provides a simple name registry that is deployed to the Morden test network. In order to use it as a dependency, we must first install it within our project through <code>npm</code>:</p>
-<pre><code>$ cd my_project
+<pre><code class="lang-shell">$ cd my_project
 $ npm install example-truffle-library
-</code></pre><p>Note that the last command above downloads the package and places it in <code>my_project/node_modules</code> directory, which is important for the examples below. See the <a href="https://docs.npmjs.com/">npm documentation</a> for help using <code>npm</code> to install packages.</p>
+</code></pre>
+<p>Note that the last command above downloads the package and places it in <code>my_project/node_modules</code> directory, which is important for the examples below. See the <a href="https://docs.npmjs.com/">npm documentation</a> for help using <code>npm</code> to install packages.</p>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="within-your-contracts"></a>
@@ -236,7 +239,6 @@ contract MyContract {
     registry = SimpleNameRegistry(addr);
   }
 }
-
 </code></pre>
 <p>Migration: 3_hook_up_example_library.js</p>
 <pre><code class="lang-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);

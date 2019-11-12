@@ -191,7 +191,7 @@ $ truffle unbox drizzle
 <p>Now let&#39;s start the <code>truffle develop</code> console (which runs a Ganache test blockchain in the background):</p>
 <pre><code>$ truffle develop
 </code></pre><p>Finally, in our Truffle develop console, let&#39;s compile and migrate our smart contracts.</p>
-<pre><code class="lang-bash">truffle(develop)&gt; compile
+<pre><code class="lang-shell">truffle(develop)&gt; compile
 
 # some output here...
 
@@ -207,26 +207,26 @@ truffle(develop)&gt; migrate
   <p>We want to listen for the <code>SimpleStorage</code> contract&#39;s <code>StorageSet</code> event and show a toast notification once it fires.</p>
 <p>The front end code is located under the <code>app</code> folder. Lets add the notification
 library <code>react-toastify</code> to simulate an external interaction.</p>
-<pre><code class="lang-sh">$ cd app
+<pre><code class="lang-shell">$ cd app
 $ npm install react-toastify
 </code></pre>
 <p>For the sake of simplicity, we will work in one file, <code>./app/src/middleware/index.js</code>.</p>
-<pre><code>$ mkdir ./src/middleware
+<pre><code class="lang-shell">$ mkdir ./src/middleware
 $ touch ./src/middleware/index.js
-</code></pre><p>Import <code>EventActions</code> and <code>generateStore</code> from Drizzle as well as
+</code></pre>
+<p>Import <code>EventActions</code> and <code>generateStore</code> from Drizzle as well as
 toast from <code>react-toastify</code>, and <code>drizzleOptions</code>.</p>
-<pre><code class="lang-js">// ./app/middleware/index.js
+<pre><code class="lang-javascript">// ./app/middleware/index.js
 import { generateStore, EventActions } from &#39;@drizzle/store&#39;
 import drizzleOptions from &#39;../drizzleOptions&#39;
 import { toast } from &#39;react-toastify&#39;
-
 </code></pre>
 <p>The action <code>EventActions.EVENT_FIRED</code> is emitted whenever a contract event is
 detected in a Block. We will gain access to it by registering a custom
 middleware with the Redux store. As you know, Redux middleware comprises a set
 of functions executed in a sequence that processes each dispatched actions
 before passing them to Reducers.</p>
-<pre><code class="lang-js">const contractEventNotifier = store =&gt; next =&gt; action =&gt; {
+<pre><code class="lang-javascript">const contractEventNotifier = store =&gt; next =&gt; action =&gt; {
   if (action.type === EventActions.EVENT_FIRED) {
     const contract = action.name
     const contractEvent = action.event.event
@@ -241,14 +241,13 @@ before passing them to Reducers.</p>
 <p>Now lets register this middleware with Drizzle. <code>generateStore</code> will return a
 Redux store that you can use anywhere you can use a store. We will export it to
 be used by <code>DrizzleProvider</code>.</p>
-<pre><code class="lang-js">const appMiddlewares = [ contractEventNotifier ]
+<pre><code class="lang-javascript">const appMiddlewares = [ contractEventNotifier ]
 
 export default generateStore({
   drizzleOptions,
   appMiddlewares,
   disableReduxDevTools: false  // enable ReduxDevTools!
 })
-
 </code></pre>
 
     <h2 class="link-markdown">
@@ -257,13 +256,12 @@ export default generateStore({
       Connect the Store
     </h2>
   <p>Send the <code>store</code> as a prop to <code>DrizzleProvider</code></p>
-<pre><code class="lang-js">// App.js
+<pre><code class="lang-javascript">// App.js
 ...
 import store from &#39;./middleware&#39;
 ...
 &lt;DrizzleProvider store={store} options={drizzleOptions}&gt;
 ...
-
 </code></pre>
 
     <h2 class="link-markdown">
@@ -272,7 +270,7 @@ import store from &#39;./middleware&#39;
       Hook up Display
     </h2>
   <p>Modify <code>MyComponent.js</code> to import <code>ReactToastify.css</code> and configure <code>ToastContainer</code></p>
-<pre><code class="lang-js">...
+<pre><code class="lang-javascript">...
 import { ToastContainer } from &#39;react-toastify&#39;
 import &#39;react-toastify/dist/ReactToastify.css&#39;
 ...
@@ -300,8 +298,9 @@ have ETH funds. Something is amiss if it doesn&#39;t.</li>
 </ol>
 </li>
 <li><p>Fire up the app.</p>
-<pre><code>$ npm run start
-</code></pre></li>
+<pre><code class="lang-shell">$ npm run start
+</code></pre>
+</li>
 <li>Change SimpleStorage&#39;s <code>stored Value</code>
 
     <img class="img-fluid" src="/img/tutorials/drizzle-and-contract-events/stored-value.gif" title="Change SimpleStorage value!" alt="Change SimpleStorage value!" />

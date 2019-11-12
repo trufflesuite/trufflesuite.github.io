@@ -319,7 +319,7 @@
       Example
     </h2>
   <p>Let&#39;s take a look at an example Solidity test before diving too deeply. Here&#39;s the example Solidity test provided for you by <code>truffle unbox metacoin</code>:</p>
-<pre><code class="lang-javascript">pragma solidity &gt;=0.4.25 &lt;0.6.0;
+<pre><code class="lang-solidity">pragma solidity &gt;=0.4.25 &lt;0.6.0;
 
 import &quot;truffle/Assert.sol&quot;;
 import &quot;truffle/DeployedAddresses.sol&quot;;
@@ -435,7 +435,6 @@ contract TestHooks {
     Assert.equal(someValue, expected, &quot;someValue should have been 6&quot;);
   }
 }
-
 </code></pre>
 <p>This test contract also shows that your test functions and hook functions all share the same contract state. You can setup contract data before the test, use that data during the test, and reset it afterward in preparation for the next one. Note that just like your Javascript tests, your next test function will continue from the state of the previous test function that ran.</p>
 
@@ -488,7 +487,7 @@ contract TestBytesLib2 {
       Testing ether transactions
     </h3>
   <p>You can also test how your contracts react to receiving Ether, and script that interaction within Solidity. To do so, your Solidity test should have a public function that returns a <code>uint</code>, called <code>initialBalance</code>. This can be written directly as a function or a public variable, as shown below. When your test contract is deployed to the network, Truffle will send that amount of Ether from your test account to your test contract. Your test contract can then use that Ether to script Ether interactions within your contract under test. Note that <code>initialBalance</code> is optional and not required.</p>
-<pre><code class="lang-javascript">import &quot;truffle/Assert.sol&quot;;
+<pre><code class="lang-solidity">import &quot;truffle/Assert.sol&quot;;
 import &quot;truffle/DeployedAddresses.sol&quot;;
 import &quot;../contracts/MyContract.sol&quot;;
 

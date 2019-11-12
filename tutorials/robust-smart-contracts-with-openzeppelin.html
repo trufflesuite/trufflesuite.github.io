@@ -203,7 +203,7 @@ cd oz-workspace
   <p>With our front-end taken care of, we can focus on the <code>TutorialToken</code> contract.</p>
 <ol>
 <li><p>In the <code>contracts/</code> directory of your Truffle Box, create the file <code>TutorialToken.sol</code> and add the following contents:</p>
-<pre><code class="lang-javascript">pragma solidity ^0.4.24;
+<pre><code class="lang-solidity">pragma solidity ^0.4.24;
 
 import &quot;openzeppelin-solidity/contracts/token/ERC20/ERC20.sol&quot;;
 
@@ -218,7 +218,7 @@ contract TutorialToken is ERC20 {
 </ul>
 </li>
 <li><p>To set our own parameters for the token, we&#39;ll be declaring our own name, symbol, and other details. Add the following content block to the contract (between the curly braces):</p>
-<pre><code class="lang-javascript">string public name = &quot;TutorialToken&quot;;
+<pre><code class="lang-solidity">string public name = &quot;TutorialToken&quot;;
 string public symbol = &quot;TT&quot;;
 uint8 public decimals = 2;
 uint public INITIAL_SUPPLY = 12000;
@@ -231,7 +231,7 @@ uint public INITIAL_SUPPLY = 12000;
 </ul>
 </li>
 <li><p>To finish up our contract, we&#39;ll create a constructor function to mint with the <code>totalSupply</code> equal to our declared <code>INITIAL_SUPPLY</code> and give the entire supply to the deploying account&#39;s address. Add this block below the content added in the previous step:</p>
-<pre><code class="lang-javascript">constructor() public {
+<pre><code class="lang-solidity">constructor() public {
   _mint(msg.sender, INITIAL_SUPPLY);
 }
 </code></pre>

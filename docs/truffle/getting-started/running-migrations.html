@@ -314,7 +314,7 @@
       Command
     </h2>
   <p>To run your migrations, run the following:</p>
-<pre><code class="lang-none">$ truffle migrate
+<pre><code class="lang-shell">$ truffle migrate
 </code></pre>
 <p>This will run all migrations located within your project&#39;s <code>migrations</code> directory. At their simplest, migrations are simply a set of managed deployment scripts. If your migrations were previously run successfully, <code>truffle migrate</code> will start execution from the last migration that was run, running only newly created migrations. If no new migrations exists, <code>truffle migrate</code> won&#39;t perform any action at all. You can use the <code>--reset</code> option to run all your migrations from the beginning. For local testing make sure to have a test blockchain such as <a href="/ganache">Ganache</a> installed and running before executing <code>migrate</code>.</p>
 
@@ -342,8 +342,7 @@ module.exports = function(deployer) {
   <p>At the beginning of the migration, we tell Truffle which contracts we&#39;d like to interact with via the <code>artifacts.require()</code> method. This method is similar to Node&#39;s <code>require</code>, but in our case it specifically returns a contract abstraction that we can use within the rest of our deployment script. The name specified should match <strong>the name of the contract definition</strong> within that source file. Do not pass the name of the source file, as files can contain more than one contract.</p>
 <p>Consider this example where two contracts are specified within the same source file:</p>
 <p>Filename: <code>./contracts/Contracts.sol</code></p>
-<pre><code class="lang-javascript">
-contract ContractOne {
+<pre><code class="lang-solidity">contract ContractOne {
   // ...
 }
 
@@ -352,11 +351,13 @@ contract ContractTwo {
 }
 </code></pre>
 <p>To use only <code>ContractTwo</code>, your <code>artifacts.require()</code> statement would look like this:</p>
-<pre><code>var ContractTwo = artifacts.require(&quot;ContractTwo&quot;);
-</code></pre><p>To use both contracts, you will need two <code>artifacts.require()</code> statements:</p>
-<pre><code>var ContractOne = artifacts.require(&quot;ContractOne&quot;);
+<pre><code class="lang-javascript">var ContractTwo = artifacts.require(&quot;ContractTwo&quot;);
+</code></pre>
+<p>To use both contracts, you will need two <code>artifacts.require()</code> statements:</p>
+<pre><code class="lang-javascript">var ContractOne = artifacts.require(&quot;ContractOne&quot;);
 var ContractTwo = artifacts.require(&quot;ContractTwo&quot;);
 </code></pre>
+
     <h3 class="link-markdown">
       <a class="anchor-target" name="module-exports"></a>
       <a href="#module-exports"><i class="fas fa-link"></i></a>
@@ -372,7 +373,7 @@ var ContractTwo = artifacts.require(&quot;ContractTwo&quot;);
     </h2>
   <p>Truffle requires you to have a Migrations contract in order to use the Migrations feature. This contract must contain a specific interface, but you&#39;re free to edit this contract at will. For most projects, this contract will be deployed initially as the first migration and won&#39;t be updated again. You will also receive this contract by default when creating a new project with <code>truffle init</code>.</p>
 <p>Filename: <code>contracts/Migrations.sol</code></p>
-<pre><code>pragma solidity ^0.4.8;
+<pre><code class="lang-solidity">pragma solidity ^0.4.8;
 
 contract Migrations {
   address public owner;
@@ -398,7 +399,8 @@ contract Migrations {
     upgraded.setCompleted(last_completed_migration);
   }
 }
-</code></pre><p>You must deploy this contract inside your first migration in order to take advantage of the Migrations feature. To do so, create the following migration:</p>
+</code></pre>
+<p>You must deploy this contract inside your first migration in order to take advantage of the Migrations feature. To do so, create the following migration:</p>
 <p>Filename: <code>migrations/1_initial_migration.js</code></p>
 <pre><code class="lang-javascript">var Migrations = artifacts.require(&quot;Migrations&quot;);
 

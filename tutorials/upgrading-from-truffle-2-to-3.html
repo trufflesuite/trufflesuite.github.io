@@ -213,10 +213,10 @@
   <p>As Truffle 3.0 uses the new <a href="/docs/getting_started/packages-ethpm">Ethereum Package Manager (EthPM)</a> we need to tell Truffle when the package manager should be used and when to look in the local directory. If you don&#39;t specify the directory to search relative to the <code>contracts/</code> directory, it will assume that EthPM will handle this.</p>
 <p>So to import a local file:</p>
 <p>v2.0:</p>
-<pre><code class="lang-javascript">import &quot;test.sol&quot;
+<pre><code class="lang-solidity">import &quot;test.sol&quot;
 </code></pre>
 <p>v3.0:</p>
-<pre><code class="lang-javascript">import &quot;./test.sol&quot;
+<pre><code class="lang-solidity">import &quot;./test.sol&quot;
 </code></pre>
 <p>The <code>./</code> tells Truffle that the contract is in the current directory. See the <a href="/docs/getting_started/compile">Compiling contracts</a> page for more details.</p>
 
@@ -261,24 +261,27 @@ module.exports = function(deployer) {
   <p>Truffle had originally saved your contract abstractions on disk in <code>.sol.js</code> files. These files were Javascript files that represented specific solidity files in your project, hence the file extension, and they were originally intended to make your contract artifacts really easy to use, everywhere. Well, it turns out we got it wrong. Really wrong. Not only were these files hard to use <em>within</em> Javascript in certain cases, but they were completely unusable if you wanted to use them outside of Javascript. To overcome this limitation and make your contract artifacts available everywhere, Truffle 3.0 now saves all artifacts within the JSON format.</p>
 <p>So what should you do if you&#39;ve been using Truffle 2.0 and have important contract artifacts you&#39;d like to save? Easy. Upgrade them! We built you a handy tool that does just that.</p>
 <p>To upgrade your <code>.sol.js</code> files, first install <code>truffle-soljs-updater</code> globally via npm:</p>
-<pre><code>$ npm install -g truffle-soljs-updater
-</code></pre><p>This will provide the <code>sjsu</code> command available for your use. Next, navigate to the directory where your <code>.sol.js</code> files are stored (usually <code>./build/contracts</code>), and run <code>sjsu</code>. Your output should look something like this:</p>
-<pre><code>$ cd ./build/contracts
+<pre><code class="lang-shell">$ npm install -g truffle-soljs-updater
+</code></pre>
+<p>This will provide the <code>sjsu</code> command available for your use. Next, navigate to the directory where your <code>.sol.js</code> files are stored (usually <code>./build/contracts</code>), and run <code>sjsu</code>. Your output should look something like this:</p>
+<pre><code class="lang-shell">$ cd ./build/contracts
 $ sjsu
 Converting ConvertLib.sol.js...
 Converting MetaCoin.sol.js...
 Converting Migrations.sol.js...
 Files converted successfully.
-</code></pre><p>By default <code>sjsu</code> only creates newer, <code>.json</code> versions of your artifacts and leaves the original <code>.sol.js</code> files alone. You&#39;ll need to remove the <code>.sol.js</code> files from this directory in order for Truffle 3.0 to function properly. Before removing, check to ensure that the converted <code>.json</code> files were created properly, and perhaps as a safeguard backup your old <code>.sol.js</code> files somewhere else before continuing.</p>
+</code></pre>
+<p>By default <code>sjsu</code> only creates newer, <code>.json</code> versions of your artifacts and leaves the original <code>.sol.js</code> files alone. You&#39;ll need to remove the <code>.sol.js</code> files from this directory in order for Truffle 3.0 to function properly. Before removing, check to ensure that the converted <code>.json</code> files were created properly, and perhaps as a safeguard backup your old <code>.sol.js</code> files somewhere else before continuing.</p>
 <p>Once you&#39;re sure all data was copied correctly and you have a nice backup, you can run <code>sjsu</code> with the <code>-f</code> parameter. This will tell <code>sjsu</code> to delete the existing <code>.sol.js</code> files. Your output should look something like this:</p>
-<pre><code>$ cd ./build/contracts
+<pre><code class="lang-shell">$ cd ./build/contracts
 $ sjsu -f
 Converting ConvertLib.sol.js...
 Converting MetaCoin.sol.js...
 Converting Migrations.sol.js...
 Files converted successfully.
 Successfully deleted old .sol.js files.
-</code></pre><p>And that&#39;s it! You&#39;re now ready to move onto the next step.</p>
+</code></pre>
+<p>And that&#39;s it! You&#39;re now ready to move onto the next step.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="contract-abstractions-deployed-is-now-thennable"></a>
@@ -296,7 +299,7 @@ MyContract.deployed().someFunction().then(function(tx) {
 </code></pre>
 <p>v3.0</p>
 <pre><code class="lang-javascript">MyContract.setProvider(someWeb3Provider);
-MyContract.deployed().then(function(instance) {  
+MyContract.deployed().then(function(instance) {
   return instance.someFunction();
 }).then(function(result) {
   // Do something after the someFunction() transaction executed
@@ -309,7 +312,7 @@ MyContract.deployed().then(function(instance) {
 var deployed;
 
 MyContract.deployed().then(function(instance) {
-  deployed = instance;  
+  deployed = instance;
   return deployed.someFunction();
 }).then(function(result) {
   return deployed.anotherFunction();
@@ -332,7 +335,7 @@ MyContract.deployed().then(function(instance) {
 </code></pre>
 <p>v3.0</p>
 <pre><code class="lang-javascript">MyContract.deployed().then(function(instance) {
-  deployed = instance;  
+  deployed = instance;
   return deployed.someFunction();
 }).then(function(result) {
   // result is an object with the following values:
@@ -390,8 +393,9 @@ contract(&quot;PackageIndex&quot;, function(accounts) {
     </h3>
   <p>If you&#39;re using the default build pipeline in Truffle 2.0 and would like to upgrade to 3.0, you&#39;re not out of luck. We&#39;ve upgraded the <a href="https://github.com/trufflesuite/truffle-default-builder">truffle-default-builder</a> so it can work seamlessly with Truffle 3.0. This will be the last time we update the default builder though as engineering for all possible use cases is too complex. So we recommend you eventually choose a different build system later down the line.</p>
 <p>The default builder no longer ships with Truffle by default. So for Truffle 3.0, you first need to make <code>truffle-default-builder</code> a dependency of your project by running the following command within your project&#39;s folder:</p>
-<pre><code>$ npm install truffle-default-builder --save
-</code></pre><p>Once installed, you can use the default builder within your <code>truffle.js</code> configuration file. Let&#39;s have a look at how your configuration file changes from v2.0 to v3.0, using a very simple build configuration:</p>
+<pre><code class="lang-shell">$ npm install truffle-default-builder --save
+</code></pre>
+<p>Once installed, you can use the default builder within your <code>truffle.js</code> configuration file. Let&#39;s have a look at how your configuration file changes from v2.0 to v3.0, using a very simple build configuration:</p>
 <p>v2.0 : <code>truffle.js</code></p>
 <pre><code class="lang-javascript">module.exports = {
   build: {

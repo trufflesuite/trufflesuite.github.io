@@ -148,7 +148,7 @@
   <strong>Note</strong>: This tutorial requires Truffle version 4.1.8 or newer.
 </p>
 
-<p>The integrated Solidity debugger in Truffle is a powerful tool for inspecting your contracts. </p>
+<p>The integrated Solidity debugger in Truffle is a powerful tool for inspecting your contracts.</p>
 <p>When initially released, the debugger had the ability to to step through Solidity code, but that was it.</p>
 <p>But development has continued apace, and new functionality has been added to make your contract inspection more powerful. Specifically, <strong>you now have the ability to perform variable inspection on your contracts</strong>. With this, you can know exactly the state of your variables at every given point in the instruction list, giving you a much greater ability to truly inhabit the current state of your contracts, and making debugging a breeze.</p>
 <p>In this tutorial, we&#39;re going to take a look at a simple contract and inspect it using the Truffle Solidity debugger. We&#39;ll investigate three scenarios:</p>
@@ -183,7 +183,7 @@ cd fibonacci
 </code></pre>
 </li>
 <li><p>In the <code>contracts/</code> directory, create a file named <code>Fibonacci.sol</code> and add the following content:</p>
-<pre><code class="lang-javascript">pragma solidity ^0.4.22;
+<pre><code class="lang-solidity">pragma solidity ^0.4.22;
 
 contract Fibonacci {
 
@@ -251,8 +251,9 @@ module.exports = function(deployer) {
 <pre><code class="lang-shell">truffle console
 </code></pre>
 <p>You will see a prompt:</p>
-<pre><code>truffle(development)&gt;
-</code></pre><p>We&#39;ll run all of our commands from here.</p>
+<pre><code class="lang-shell">truffle(development)&gt;
+</code></pre>
+<p>We&#39;ll run all of our commands from here.</p>
 </li>
 <li><p>Compile the contract:</p>
 <pre><code class="lang-shell">compile
@@ -267,7 +268,7 @@ Writing artifacts to .\build\contracts
 
 <!--TODO: Update Migrations.sol template to eliminate constructor warning-->
 </li>
-<li><p>Migrate the contract to our blockchain. </p>
+<li><p>Migrate the contract to our blockchain.</p>
 <pre><code class="lang-shell">migrate
 </code></pre>
 <p>You will see output that looks like this, though the addresses and transaction IDs will be different:</p>
@@ -304,17 +305,17 @@ Saving artifacts...
 <p>Now it&#39;s time to interact with the contract. First we&#39;ll check to make sure that it&#39;s working correctly.</p>
 <ol>
 <li><p>In the Truffle console, enter the following command:</p>
-<pre><code class="lang-shell">Fibonacci.deployed().then(function(instance){return instance.generateFib(10);});
+<pre><code class="lang-javascript">Fibonacci.deployed().then(function(instance){return instance.generateFib(10);});
 </code></pre>
 <p>Before we run the command, let&#39;s take a look at it in greater detail. Displayed in a more easily-readable manner, it reads:</p>
-<pre><code class="lang-shell">Fibonacci.deployed().then(function(instance) {
+<pre><code class="lang-javascript">Fibonacci.deployed().then(function(instance) {
   return instance.generateFib(10);
 });
 </code></pre>
 <p>This command uses <a href="https://www.promisejs.org/">JavaScript promises</a>. Specifically, the command says that given a deployed version of the Fibonacci contract, run an instance of that contract, and then run the <code>generateFib</code> function from that contract, passing it the argument <code>10</code>.</p>
 </li>
 <li><p>Run the above command. A transaction will be created on the blockchain because our array that holds the generated Fibonacci sequence is in storage. Because of this, the output of the console will be the transaction details, which will look similar to this:</p>
-<pre><code>{ tx: &#39;0xf47f01da1a6991f4dc168928cf4c490cb9bb57ca403b428f40a333ea65d1c41c&#39;,
+<pre><code class="lang-javascript">{ tx: &#39;0xf47f01da1a6991f4dc168928cf4c490cb9bb57ca403b428f40a333ea65d1c41c&#39;,
   receipt:
    { transactionHash: &#39;0xf47f01da1a6991f4dc168928cf4c490cb9bb57ca403b428f40a333ea65d1c41c&#39;,
      transactionIndex: 0,
@@ -327,7 +328,8 @@ Saving artifacts...
      status: &#39;0x01&#39;,
      logsBloom: &#39;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#39; },
   logs: [] }
-</code></pre><p>The important part of this output for us is the transaction ID (listed as the value of <code>tx:</code>). Because even though we&#39;ve run our function, we don&#39;t actually know what happened. Did it work correctly? Did something unexpected happen? We&#39;ll need the Truffle Solidity debugger to find out.</p>
+</code></pre>
+<p>The important part of this output for us is the transaction ID (listed as the value of <code>tx:</code>). Because even though we&#39;ve run our function, we don&#39;t actually know what happened. Did it work correctly? Did something unexpected happen? We&#39;ll need the Truffle Solidity debugger to find out.</p>
 <p class="alert alert-info">
   <strong>Note</strong>: Your transaction ID will be different from the above.
 </p>
@@ -350,7 +352,7 @@ Saving artifacts...
 </p>
 
 <p>This will enter the debugger. You will see the following output:</p>
-<pre><code>Gathering transaction data...
+<pre><code class="lang-solidity">Gathering transaction data...
 
 Addresses affected:
  0x33b217190208f7b8d2b14d7a30ec3de7bd722ac6 - Fibonacci
@@ -372,7 +374,8 @@ Fibonacci.sol:
    ^^^^^^^^^^^^^^^^^^^^
 
 debug(development:0xf47f01da...)&gt;
-</code></pre><p>Let&#39;s examine what&#39;s going on here.</p>
+</code></pre>
+<p>Let&#39;s examine what&#39;s going on here.</p>
 <ul>
 <li>The debugger names the address of the contract in question that is related to the transaction, as well as the name of that contract. In our case, we&#39;re only dealing with a single contract, though if our transaction dealt with multiple contracts, all addresses would be shown.</li>
 <li>A full list of commands for the debugger is shown. Many of these mirror other code debuggers. We&#39;ll use a few of these throughout the tutorial, but if you ever want to see the list again, type <code>h</code>.</li>
@@ -380,33 +383,37 @@ debug(development:0xf47f01da...)&gt;
 </ul>
 </li>
 <li><p>Type <code>n</code> and <code>&lt;Enter&gt;</code> to step next. This will move to the next instruction:</p>
-<pre><code>6:
+<pre><code class="lang-solidity">6:
 7:   // n = how many in the series to return
 8:   function generateFib(uint n) public {
      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 debug(development:0xf47f01da...)&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>We&#39;ve seen in the <a href="/tutorials/debugging-a-smart-contract">previous tutorial on debugging</a> how you can step through the instructions to debug your contract. But here, we have an additional concern, which is that we don&#39;t actually know the outcome of our function call; we want to know what a <em>variable</em> is set to. You can view the state of all known variables by pressing <code>v</code>:</p>
-<pre><code>  fibseries: []
+<pre><code class="lang-solidity">  fibseries: []
 
 debug(development:0xf47f01da...)&gt;
-</code></pre><p>Here we see one empty array. The arry <code>fibseries</code> will have the <code>n</code> numbers in the Fibonacci sequence.</p>
+</code></pre>
+<p>Here we see one empty array. The arry <code>fibseries</code> will have the <code>n</code> numbers in the Fibonacci sequence.</p>
 </li>
 <li><p>Press <code>Enter</code> to repeat the last command, and step next to the next instruction:</p>
-<pre><code> 9:
+<pre><code class="lang-solidity"> 9:
 10:     // set 1st and 2nd entries
 11:     fibseries.push(1);
         ^^^^^^^^^
 
 debug(development:0xf47f01da...)&gt;
-</code></pre><p>This instruction moves on to the initial seeding of the <code>fibseries</code> variable.</p>
+</code></pre>
+<p>This instruction moves on to the initial seeding of the <code>fibseries</code> variable.</p>
 </li>
 <li><p>Press <code>v</code> to see the current state of the variables:</p>
-<pre><code>          i: 0
+<pre><code class="lang-solidity">          i: 0
           n: 10
   fibseries: []
-</code></pre><p>Now we see three variables, our <code>fibseries</code> array and two others: </p>
+</code></pre>
+<p>Now we see three variables, our <code>fibseries</code> array and two others:</p>
 <ul>
 <li><code>i</code> is an index variable, used to determine the location of the next number in the sequence</li>
 <li><code>n</code> is the integer we passed to the function (<code>10</code> in this case) indicating the number of entries in our Fibonacci sequence</li>
@@ -414,20 +421,21 @@ debug(development:0xf47f01da...)&gt;
 <p>Here we see that <code>n</code> has been passed the value from the contract, while <code>i</code> hasn&#39;t received its value from the for loop yet, since we haven&#39;t gotten to that part of the function.</p>
 </li>
 <li><p>Press <code>Enter</code> to step next to the next instruction:</p>
-<pre><code> 9:
+<pre><code class="lang-solidity"> 9:
 10:     // set 1st and 2nd entries
 11:     fibseries.push(1);
                        ^
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>It&#39;s rather tedious to constantly press <code>v</code> after every state change. Thankfully, you can set certain variables to be &quot;watched&quot;, so that they will display after every movement in the debugger. The syntax to watch a variable is <code>+:&lt;variable&gt;</code>. So let&#39;s watch the variables we care about (<code>i</code> and <code>fibseries</code>) with the following two commands:</p>
-<pre><code class="lang-shell">+:i
+<pre><code class="lang-solidity">+:i
 
 +:fibseries
 </code></pre>
 <p>After each command, the current value of the variable will display. But once done, we&#39;ll get a persistent display of the variables and their values.</p>
 </li>
 <li><p>Press <code>Enter</code> to move to the next instruction:</p>
-<pre><code> 9:
+<pre><code class="lang-solidity"> 9:
 10:     // set 1st and 2nd entries
 11:     fibseries.push(1);
         ^^^^^^^^^^^^^^^^^
@@ -437,55 +445,61 @@ debug(development:0xf47f01da...)&gt;
 
 :fibseries
   []
-</code></pre><p>Notice that after the current instruction, the watched variables are displayed automatically.</p>
+</code></pre>
+<p>Notice that after the current instruction, the watched variables are displayed automatically.</p>
 </li>
 <li><p>You can also watch expressions, not just variables. Run the following expression to make our output a little more compact.</p>
-<pre><code class="lang-shell">+:{ i, fibseries }
+<pre><code class="lang-solidity">+:{ i, fibseries }
 </code></pre>
 <p>This will output as follows:</p>
-<pre><code>{ i: 0, fibseries: [] }
-</code></pre></li>
+<pre><code class="lang-solidity">{ i: 0, fibseries: [] }
+</code></pre>
+</li>
 <li><p>Since we have all we need in this one expression, we can unwatch the individual variables. The syntax to watch a variable is <code>-:&lt;variable&gt;</code>.</p>
-<pre><code class="lang-shell">-:i
+<pre><code class="lang-solidity">-:i
 
 -:fibseries
 </code></pre>
 <p>Now we&#39;ll only be watching the single expression comprising the two variables.</p>
 </li>
 <li><p>Press <code>Enter</code> to move to the next instruction and see the output:</p>
-<pre><code>10:     // set 1st and 2nd entries
+<pre><code class="lang-solidity">10:     // set 1st and 2nd entries
 11:     fibseries.push(1);
 12:     fibseries.push(1);
         ^^^^^^^^^
 
 :{ i, fibseries }
   { i: 0, fibseries: [ 1 ] }
-</code></pre><p>Notice that we have now populated the first entry in the sequence.</p>
+</code></pre>
+<p>Notice that we have now populated the first entry in the sequence.</p>
 </li>
-<li><p>Because the debugger steps through each instruction one at a time, it&#39;s going to take a long time to see results if we don&#39;t pick 
+<li><p>Because the debugger steps through each instruction one at a time, it&#39;s going to take a long time to see results if we don&#39;t pick
 up our pace. Luckily, the debugger can &quot;step over&quot;, which steps over the current line, moving to the next line, as long as it&#39;s at the same function depth. This will allow us to make progress much more quickly. So type <code>o</code> to step over the current instruction set. The output will be:</p>
-<pre><code>13:
+<pre><code class="lang-solidity">13:
 14:     // generate subsequent entries
 15:     for (uint i=2; i &lt; n ; i++) {
                     ^
 
 :{ i, fibseries }
   { i: 0, fibseries: [ 1, 1 ] }
-</code></pre><p>Here we see that we have populated the first two entries in the sequence.</p>
+</code></pre>
+<p>Here we see that we have populated the first two entries in the sequence.</p>
 </li>
 <li><p>Since <code>Enter</code> will replay the previous command, press <code>Enter</code> now to step over again:</p>
-<pre><code>14:     // generate subsequent entries
+<pre><code class="lang-solidity">14:     // generate subsequent entries
 15:     for (uint i=2; i &lt; n ; i++) {
 16:       fibseries.push(fibseries[i-1] + fibseries[i-2]);
           ^^^^^^^^^
 
 :{ i, fibseries }
   { i: 2, fibseries: [ 1, 1 ] }
-</code></pre><p>Now that we have two entries in our sequence, we&#39;ve moved into our for loop.</p>
+</code></pre>
+<p>Now that we have two entries in our sequence, we&#39;ve moved into our for loop.</p>
 </li>
 <li><p>Continue pressing <code>Enter</code> and watching the variable output. You should notice that when <code>i</code> gets to <code>10</code>, the for loop ends (as the loop terminates at <code>i &lt; n</code>). The final array is:</p>
-<pre><code>[1, 1, 2, 3, 5, 8, 13, 21, 34, 55] 
-</code></pre><p>It can be verified that this is the correct first ten entries in the Fibonacci sequence.</p>
+<pre><code class="lang-solidity">[1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+</code></pre>
+<p>It can be verified that this is the correct first ten entries in the Fibonacci sequence.</p>
 </li>
 </ol>
 
@@ -496,25 +510,27 @@ up our pace. Luckily, the debugger can &quot;step over&quot;, which steps over t
     </h2>
   <p>Our contract as we have created it is working as expected. That&#39;s great, but we can&#39;t always get so lucky. Sometimes a contract appears to work fine (no errors are thrown) but the output is not what you&#39;d expect. Let&#39;s examine that here.</p>
 <p>It&#39;s amazing what switching a plus sign for a minus sign can do. Instead of the Fibonacci sequence:</p>
-<pre><code>F[1] = 1
+<pre><code class="lang-solidity">F[1] = 1
 F[2] = 1
 F[n] = F[n-1] + F[n-2]
-</code></pre><p>Let&#39;s switch the plus for a minus sign:</p>
-<pre><code>F[1] = 1
+</code></pre>
+<p>Let&#39;s switch the plus for a minus sign:</p>
+<pre><code class="lang-solidity">F[1] = 1
 F[2] = 1
 F[n] = F[n-1] - F[n-2]
-</code></pre><p>(I don&#39;t know if this series has a name, so we&#39;ll just call it the &quot;Trufflenacci&quot; sequence.)</p>
+</code></pre>
+<p>(I don&#39;t know if this series has a name, so we&#39;ll just call it the &quot;Trufflenacci&quot; sequence.)</p>
 <p>Let&#39;s edit our contract and see what happens.</p>
 <ol>
 <li><p>Open the Fibonacci.sol file. Edit the definition of our <code>fibseries[]</code> array to be of type <code>uint8[]</code>.</p>
-<pre><code class="lang-javascript">uint8[] fibseries;
+<pre><code class="lang-solidity">uint8[] fibseries;
 </code></pre>
 <p class="alert alert-info">
  <strong>Note</strong>: A <code>uint8</code> is an unsigned integer with 8 bits, with a maximum value of 2^8 = 255. Compare this to a <code>uint</code>, which is a 256 bit number with a maximum value of 2^256.
 </p>
 </li>
 <li><p>Edit the for loop so that the terms are subtracted instead of added:</p>
-<pre><code class="lang-javascript">fibseries.push(fibseries[i-1] - fibseries[i-2]);
+<pre><code class="lang-solidity">fibseries.push(fibseries[i-1] - fibseries[i-2]);
 </code></pre>
 </li>
 <li><p>Save this file.</p>
@@ -531,25 +547,26 @@ F[n] = F[n-1] - F[n-2]
 </code></pre>
 </li>
 <li><p>We can now run the same command as before, which will generate a new transaction:</p>
-<pre><code class="lang-shell">Fibonacci.deployed().then(function(instance){return instance.generateFib(10);});
+<pre><code class="lang-javascript">Fibonacci.deployed().then(function(instance){return instance.generateFib(10);});
 </code></pre>
 <p>As before, the output of the console will be the transaction details. Note the transaction hash (the value of <code>tx:</code>).</p>
 </li>
 <li><p>Type <code>debug</code> and then the value of <code>tx:</code> found in your transaction details. This will enter the debugger again.</p>
-<pre><code>Fibonacci.sol:
+<pre><code class="lang-solidity">Fibonacci.sol:
 
 1: pragma solidity ^0.4.22;
 2:
 3: contract Fibonacci {
    ^^^^^^^^^^^^^^^^^^^^
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>We&#39;re curious about what our <code>fibseries</code> array is going to look like, so let&#39;s watch it:</p>
-<pre><code class="lang-shell">+:fibseries
+<pre><code class="lang-solidity">+:fibseries
 </code></pre>
 <p>The response will be <code>undefined</code>, because we haven&#39;t yet gotten to the point in the code where that array was defined.</p>
 </li>
 <li><p>Let&#39;s &quot;step over&quot; execution, so as to speed things up (&quot;step next&quot; takes much longer, as it&#39;s a more granular process). You can &quot;step over&quot; by running the <code>o</code> command.</p>
-<pre><code>Fibonacci.sol:
+<pre><code class="lang-solidity">Fibonacci.sol:
 
 6:
 7:   // n = how many in the series to return
@@ -558,27 +575,31 @@ F[n] = F[n-1] - F[n-2]
 
 :fibseries
   []
-</code></pre><p>The array is defined, but is still empty.</p>
+</code></pre>
+<p>The array is defined, but is still empty.</p>
 </li>
 <li><p>Since <code>Enter</code> repeats the previous command (in our case, &quot;step over&quot;), press Enter twice. You&#39;ll see that the first element of <code>fibseries</code> has been populated.</p>
-<pre><code>10:     // set 1st and 2nd entries
+<pre><code class="lang-solidity">10:     // set 1st and 2nd entries
 11:     fibseries.push(1);
 12:     fibseries.push(1);
         ^^^^^^^^^
 
 :fibseries
   [ 1 ]
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>Keep pressing Enter until four elements have been populated:</p>
-<pre><code>:fibseries
+<pre><code class="lang-solidity">:fibseries
   [ 1, 1, 0, 255 ]
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <p>Something seems off here. Obviously, if you were expecting the Fibonacci series, by this point you would realize that you had veered far off course.</p>
 <p>But the jump from <code>0</code> to <code>255</code> should be suspicious too. And in fact, what we&#39;re seeing is a <strong>buffer underflow</strong>, a situation where we have an <a href="https://en.wikipedia.org/wiki/Integer_(computer_science)">unsigned integer</a>, which can hold only positive values, being set to less than zero. Specifically, that fourth value is defined as the difference between the previous two elements, so <code>0 - 1 = -1</code>. Our type is <code>uint8[]</code> which means that each integer in the array is defined by 8 bits, so its maximum value is 2^8 - 1 = 255. Subtract one from zero, and the value &quot;wraps around&quot; to its maximum value.</p>
 <p>Assuming this was the series we wanted (and that our minus sign was correct), the way to change this is to change the definition of our <code>fibseries</code> array from <code>uint8[]</code> to <code>int8[]</code>. That would make values &quot;signed integers&quot; and able to accept negative values, giving you an array that would look like this instead:</p>
-<pre><code>[ 1, 1, 0, -1 ]
+<pre><code class="lang-solidity">[ 1, 1, 0, -1 ]
 </code></pre>
+
     <h2 class="link-markdown">
       <a class="anchor-target" name="debugging-errors"></a>
       <a href="#debugging-errors"><i class="fas fa-link"></i></a>
@@ -588,10 +609,10 @@ F[n] = F[n-1] - F[n-2]
 <p>This is one of the reasons to use Ganache over a public testnet: you can easily redeploy a contract without any penalty in time or ether.</p>
 <p>So we&#39;re going to introduce a small error, a misnumbering in our for loop that will cause it to have an invalid index.</p>
 <ol>
-<li><p>Open the <code>Fibonacci.sol</code> file again. </p>
+<li><p>Open the <code>Fibonacci.sol</code> file again.</p>
 </li>
 <li><p>Edit the for loop so that the <code>i</code> variable starts from <code>1</code></p>
-<pre><code class="lang-javascript">for (uint i=1; i &lt; n ; i++) {
+<pre><code class="lang-solidity">for (uint i=1; i &lt; n ; i++) {
 </code></pre>
 </li>
 <li><p>Save this file.</p>
@@ -605,7 +626,7 @@ F[n] = F[n-1] - F[n-2]
 </code></pre>
 </li>
 <li><p>Run the same command as before:</p>
-<pre><code class="lang-shell">Fibonacci.deployed().then(function(instance){return instance.generateFib(10);});
+<pre><code class="lang-javascript">Fibonacci.deployed().then(function(instance){return instance.generateFib(10);});
 </code></pre>
 <p>You&#39;ll see an error, which will start with this:</p>
 <pre><code>Error: VM Exception while processing transaction: invalid opcode
@@ -628,11 +649,11 @@ F[n] = F[n-1] - F[n-2]
 <li><p>Back in the console, type <code>debug</code> and paste in the transaction ID. This will enter the debugger again.</p>
 </li>
 <li><p>Let&#39;s watch the same compacted expression as before, showing both the value of <code>i</code> and the value of <code>fibseries</code>.</p>
-<pre><code class="lang-shell">+:{ i, fibseries }
+<pre><code class="lang-solidity">+:{ i, fibseries }
 </code></pre>
 </li>
 <li><p>Continually step next. You will eventually reach a state where the debugger will error out.</p>
-<pre><code>14:     // generate subsequent entries
+<pre><code class="lang-solidity">14:     // generate subsequent entries
 15:     for (uint i=1; i &lt; n ; i++) {
 16:       fibseries.push(fibseries[i-1] - fibseries[i-2]);
                                           ^^^^^^^^^^^^^^
@@ -645,7 +666,8 @@ debug(development:0x948da9db...)&gt;
 Transaction halted with a RUNTIME ERROR.
 
 This is likely due to an intentional halting expression, like assert(), require() or revert(). It can also be due to out-of-gas exceptions. Please inspect your transaction parameters and contract code to determine the meaning of this error.
-</code></pre><p>Note that the contract is failing at the point where it tries to determine the value of <code>fibseries[i-2]</code> But in our debugger, we know that the current value of <code>i</code> is <code>1</code>, so <code>i-2</code> is going to be <code>-1</code> (or actually <code>2^256 - 1</code>, due to the buffer underflow issue we talked about above, and with <code>i</code> defined as a <code>uint</code>). Since either one of those values are invalid (you can&#39;t have a negative index, and the value at index <code>2^256 - 1</code> is clearly not defined), the contract halts with an error.</p>
+</code></pre>
+<p>Note that the contract is failing at the point where it tries to determine the value of <code>fibseries[i-2]</code> But in our debugger, we know that the current value of <code>i</code> is <code>1</code>, so <code>i-2</code> is going to be <code>-1</code> (or actually <code>2^256 - 1</code>, due to the buffer underflow issue we talked about above, and with <code>i</code> defined as a <code>uint</code>). Since either one of those values are invalid (you can&#39;t have a negative index, and the value at index <code>2^256 - 1</code> is clearly not defined), the contract halts with an error.</p>
 </li>
 </ol>
 <p>These are just some of the ways that you can use variable inspection to debug your contracts. We&#39;re constantly adding functionality of the debugger, so please <a href="https://github.com/trufflesuite/truffle">raise an issue on our Github page</a> or ask a fellow Truffler in our <a href="https://gitter.im/ConsenSys/truffle">community Gitter channel</a>. Happy debugging!</p>

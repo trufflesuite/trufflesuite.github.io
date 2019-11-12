@@ -314,10 +314,12 @@
       Installing a package
     </h2>
   <p>Installing a package from EthPM is nearly as easy as installing a package via NPM. You can simply run the following command:</p>
-<pre><code>$ truffle install &lt;package name&gt;
-</code></pre><p>You can also install a package at a specific version:</p>
-<pre><code>$ truffle install &lt;package name&gt;@&lt;version&gt;
-</code></pre><p>Like NPM, EthPM versions follow <a href="http://semver.org/">semver</a>. You can find a list of all available packages at <a href="http://explorer.ethpm.com/">the Ethereum Package Registry</a>.</p>
+<pre><code class="lang-shell">$ truffle install &lt;package name&gt;
+</code></pre>
+<p>You can also install a package at a specific version:</p>
+<pre><code class="lang-shell">$ truffle install &lt;package name&gt;@&lt;version&gt;
+</code></pre>
+<p>Like NPM, EthPM versions follow <a href="http://semver.org/">semver</a>. You can find a list of all available packages at <a href="http://explorer.ethpm.com/">the Ethereum Package Registry</a>.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="installing-dependencies"></a>
@@ -325,8 +327,9 @@
       Installing Dependencies
     </h2>
   <p>Your project can define an <code>ethpm.json</code> file that among other things can pin your project to specific dependencies and versions. To install all dependencies listed in the <code>ethpm.json</code> file, run:</p>
-<pre><code>$ truffle install
-</code></pre><p>For more details on the <code>ethpm.json</code> file, see the <a href="/docs/getting_started/packages-ethpm#package-configuration">package configuration</a> below.</p>
+<pre><code class="lang-shell">$ truffle install
+</code></pre>
+<p>For more details on the <code>ethpm.json</code> file, see the <a href="/docs/getting_started/packages-ethpm#package-configuration">package configuration</a> below.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="consuming-installed-contracts"></a>
@@ -335,7 +338,7 @@
     </h2>
   <p>Installed packages will be placed in the <code>installed_contracts</code> directory within your project folder. If no <code>installed_contracts</code> directory exists it&#39;ll be created for you. You should treat this folder like you treat the <code>node_modules</code> folder with NPM -- that is, you shouldn&#39;t edit the contents inside unless you know what you&#39;re doing. :)</p>
 <p>Installed packages can be consumed within your tests, migrations and solidity contract files by <code>import</code>&#39;ing or <code>require</code>&#39;ing that package and contract by name. For example, the following Solidity contract would import the <code>owned.sol</code> file from the <code>owned</code> package:</p>
-<pre><code class="lang-javascript">pragma solidity ^0.4.2;
+<pre><code class="lang-solidity">pragma solidity ^0.4.2;
 
 import &quot;owned/owned.sol&quot;;
 
@@ -373,8 +376,9 @@ module.exports = function(deployer) {
     </h3>
   <p>The Ethereum Package Registry currently exists on the Ropsten test network. To publish to the registry, we need to set up our own Ropsten configuration because we&#39;ll be making transactions that need to be signed.</p>
 <p>In this example, we&#39;ll use Infura for publishing packages along with the <code>truffle-hdwallet-provider</code> NPM module and a 12-word hd-wallet mnemonic that represents our Ethereum address on the Ropsten network. First, install the <code>truffle-hdwallet-provider</code> via NPM within your project directory:</p>
-<pre><code>$ npm install truffle-hdwallet-provider --save
-</code></pre><p>Then edit your configuration to add the <code>ropsten</code> network using your 12-word mnemonic:</p>
+<pre><code class="lang-shell">$ npm install truffle-hdwallet-provider --save
+</code></pre>
+<p>Then edit your configuration to add the <code>ropsten</code> network using your 12-word mnemonic:</p>
 <p>File: <code>truffle.js</code></p>
 <pre><code class="lang-javascript">var HDWalletProvider = require(&quot;truffle-hdwallet-provider&quot;);
 
@@ -428,22 +432,25 @@ module.exports = {
       Command
     </h3>
   <p>After you have your configuration settled, publishing is a snap:</p>
-<pre><code>$ truffle publish
-</code></pre><p>You&#39;ll see output similar to that below, with confirmation that your package was published successfully.</p>
-<pre><code>$ truffle publish
+<pre><code class="lang-shell">$ truffle publish
+</code></pre>
+<p>You&#39;ll see output similar to that below, with confirmation that your package was published successfully.</p>
+<pre><code class="lang-shell">$ truffle publish
 Gathering contracts...
 Finding publishable artifacts...
 Uploading sources and publishing to registry...
 + adder@0.0.3
 </code></pre>
+
     <h3 class="link-markdown">
       <a class="anchor-target" name="before-publishing"></a>
       <a href="#before-publishing"><i class="fas fa-link"></i></a>
       Before publishing
     </h3>
   <p>When using a network like the default <code>develop</code> network that&#39;s configured to match any Ethereum client (like <a href="/ganache">Ganache</a> or Truffle Develop), you&#39;re bound to have network artifacts lying around that you don&#39;t want published. Before publishing your package, consider running the following command to remove any extraneous network artifacts:</p>
-<pre><code>$ truffle networks --clean
-</code></pre><p>See the <a href="/docs/advanced/commands#networks">command reference</a> for more information.</p>
+<pre><code class="lang-shell">$ truffle networks --clean
+</code></pre>
+<p>See the <a href="/docs/advanced/commands#networks">command reference</a> for more information.</p>
 
 
         <div class="contribute-link">

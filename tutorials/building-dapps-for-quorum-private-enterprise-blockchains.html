@@ -228,7 +228,7 @@ ubuntu@ubuntu-xenial:~/quorum-examples/7nodes$ ./raft-start.sh
     </h2>
   <p>To set up Truffle, we&#39;re going to start by creating a bare Truffle project, without any contracts or code.</p>
 <ol>
-<li><p>We want to leave the old command line window alone and let the Quorum example run without bothering it, so open a second terminal. </p>
+<li><p>We want to leave the old command line window alone and let the Quorum example run without bothering it, so open a second terminal.</p>
 </li>
 <li><p>In the new terminal, navigate to your workspace and create a new directory for your Truffle project.</p>
 <pre><code class="lang-shell">cd workspace
@@ -273,7 +273,7 @@ module.exports = {
   <p>We won&#39;t spend too much time talking about writing or deploying contracts in Truffle since we have <a href="/docs">ample documentation</a>, however we do want to show how deploying contracts applies to Quorum.</p>
 <ol>
 <li><p>First, copy the following contract into a new file, called <code>SimpleStorage.sol</code>. Place it in your <code>contracts/</code> directory:</p>
-<pre><code class="lang-javascript">// File: `./contracts/SimpleStorage.sol`
+<pre><code class="lang-solidity">// File: `./contracts/SimpleStorage.sol`
 
 pragma solidity ^0.4.17;
 
@@ -379,10 +379,10 @@ module.exports = {
 </code></pre>
 </li>
 <li><p>Here, we&#39;ll get the deployed instance of the SimpleStorage contract and then get the integer value we specified on deployment. Enter the following command:</p>
-<pre><code class="lang-shell">truffle(development)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
+<pre><code class="lang-javascript">truffle(development)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
 </code></pre>
 <p>You&#39;ll see the following response:</p>
-<pre><code class="lang-shell">{ [String: &#39;42&#39;] s: 1, e: 1, c: [ 42 ] }
+<pre><code class="lang-javascript">{ [String: &#39;42&#39;] s: 1, e: 1, c: [ 42 ] }
 </code></pre>
 <p>Note that Truffle&#39;s contract abstractions use Promises to interact with Ethereum. This can be a little cumbersome on the console as it requires a few extra key strokes to get things done, but within your application it makes control flow a lot smoother. Additionally, take a look at the output we received: We got <code>42</code> back, but as an object. This is because Ethereum can represent larger numbers than those natively represented by JavaScript, and so we need an abstraction in order to interact with them.</p>
 </li>
@@ -393,11 +393,11 @@ module.exports = {
 <pre><code class="lang-shell">truffle(nodefour)&gt;
 </code></pre>
 </li>
-<li><p>Run the same command as above to get the integer value from the SimpleStorage contract: </p>
-<pre><code class="lang-shell">truffle(nodefour)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
+<li><p>Run the same command as above to get the integer value from the SimpleStorage contract:</p>
+<pre><code class="lang-javascript">truffle(nodefour)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
 </code></pre>
 <p>You&#39;ll see the following response:</p>
-<pre><code class="lang-shell">{ [String: &#39;0&#39;] s: 1, e: 0, c: [ 0 ] }
+<pre><code class="lang-javascript">{ [String: &#39;0&#39;] s: 1, e: 0, c: [ 0 ] }
 </code></pre>
 <p>You&#39;ll notice we got <code>0</code> back instead. This is because the accounts represented by node 4 weren&#39;t privy to this contract.</p>
 </li>
@@ -408,11 +408,11 @@ module.exports = {
 <pre><code class="lang-shell">truffle(nodeseven)&gt;
 </code></pre>
 </li>
-<li><p>Run the same command as above to get the integer value from the SimpleStorage contract: </p>
-<pre><code class="lang-shell">truffle(nodeseven)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
+<li><p>Run the same command as above to get the integer value from the SimpleStorage contract:</p>
+<pre><code class="lang-javascript">truffle(nodeseven)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
 </code></pre>
 <p>You&#39;ll see the following response:</p>
-<pre><code class="lang-shell">{ [String: &#39;42&#39;] s: 1, e: 1, c: [ 42 ] }
+<pre><code class="lang-javascript">{ [String: &#39;42&#39;] s: 1, e: 1, c: [ 42 ] }
 </code></pre>
 <p>As you can see, we get <code>42</code>! This shows that we can deploy contracts that are only available to our desired parties.</p>
 </li>
@@ -462,26 +462,26 @@ Finished!
 <li><p>We can now use the Truffle console, like before, to check the results of this transaction. Let&#39;s see the value as node one:</p>
 <pre><code class="lang-shell">truffle console
 </code></pre>
-<pre><code class="lang-shell">truffle(development)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
+<pre><code class="lang-javascript">truffle(development)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
 </code></pre>
 <p>The response will be:</p>
-<pre><code class="lang-shell">{ [String: &#39;65&#39;] s: 1, e: 1, c: [ 65 ] }
+<pre><code class="lang-javascript">{ [String: &#39;65&#39;] s: 1, e: 1, c: [ 65 ] }
 </code></pre>
 <p>We got <code>65</code>! Now let&#39;s do node 4 (not privy to the transaction):</p>
 <pre><code class="lang-shell">truffle console --network nodefour
 </code></pre>
-<pre><code class="lang-shell">truffle(nodefour)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
+<pre><code class="lang-javascript">truffle(nodefour)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
 </code></pre>
 <p>The response will be:</p>
-<pre><code class="lang-shell">{ [String: &#39;0&#39;] s: 1, e: 0, c: [ 0 ] }
+<pre><code class="lang-javascript">{ [String: &#39;0&#39;] s: 1, e: 0, c: [ 0 ] }
 </code></pre>
 <p>We got zero, as expected. Now let&#39;s try node 7:</p>
 <pre><code class="lang-shell">truffle console --network nodeseven
 </code></pre>
-<pre><code class="lang-shell">truffle(nodeseven)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
+<pre><code class="lang-javascript">truffle(nodeseven)&gt; SimpleStorage.deployed().then(function(instance) { return instance.get(); })
 </code></pre>
 <p>The response will be:</p>
-<pre><code class="lang-shell">{ [String: &#39;65&#39;] s: 1, e: 1, c: [ 65 ] }
+<pre><code class="lang-javascript">{ [String: &#39;65&#39;] s: 1, e: 1, c: [ 65 ] }
 </code></pre>
 </li>
 </ol>
