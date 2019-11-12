@@ -11,9 +11,9 @@
 <url> <loc>https://www.truffleframework.com/truffle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/trufflecon2019.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/university.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/careers/index.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/events/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/press-releases/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/index.html</loc> </url>
@@ -149,7 +149,6 @@
 <url> <loc>https://www.truffleframework.com/staff/vue-dark-chocolate.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/vueport-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/zepkit.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/careers/software-engineer-front-end.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/10-things-we-dont-do-that-make-working-at-truffle-awesome.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/3-ways-enterprises-are-addressing-blockchain-privacy-concerns.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/5-trends-impacting-the-blockchain-developer-experience.html</loc> </url>
@@ -181,9 +180,9 @@
 <url> <loc>https://www.truffleframework.com/blog/the-best-things-to-do-in-seattle-during-trufflecon.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/the-best-ways-to-contribute-to-truffle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/the-blockchain-problem-that-ens-solves.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/token-taxonomy-framework.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-320-released.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-boxes-making-life-sweeter.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/blog/token-taxonomy-framework.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-teams-now-supports-private-repositories.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-v5-has-arrived.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/upcoming-improvements-to-encoding-and-decoding.html</loc> </url>
@@ -191,6 +190,7 @@
 <url> <loc>https://www.truffleframework.com/blog/why-i-love-trufflecon.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/why-were-organizing-trufflecon-2018.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/you-can-now-make-your-own-truffle-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/careers/software-engineer-front-end.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/events/webinar-truffle-provable.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/press-releases/truffle-anncounces-microsoft-as-preferred-cloud-and-services-partner.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/press-releases/truffle-announces-2nd-annual-trufflecon.html</loc> </url>
@@ -252,6 +252,7 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/build-processes.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/creating-a-truffle-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/advanced/ethereum-name-service.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/networks-and-app-deployment.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/distributed-ledger-support/working-with-hyperledger-evm.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/distributed-ledger-support/working-with-quorum.html</loc> </url>

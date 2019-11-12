@@ -40,15 +40,15 @@
   <!-- Facebook OpenGraph -->
   <meta property="og:site_name" content="Truffle Suite" />
   <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
-  <meta property="og:title" content="Drizzle | Drizzle Options | Documentation | Truffle Suite" />
-  <meta property="og:url" content="https://trufflesuite.com/docs/drizzle/reference/drizzle-options" />
+  <meta property="og:title" content="Truffle | Ethereum Name Service | Documentation | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/docs/truffle/advanced/ethereum-name-service" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="Truffle Suite" />
-  <meta name="twitter:title" content="Drizzle | Drizzle Options | Documentation | Truffle Suite" />
+  <meta name="twitter:title" content="Truffle | Ethereum Name Service | Documentation | Truffle Suite" />
   <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
   <meta name="twitter:creator" content="Truffle Suite" />
   <meta name="twitter:domain" content="trufflesuite.com" />
@@ -56,7 +56,7 @@
   
   <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
 
-  <title>Drizzle | Drizzle Options | Documentation | Truffle Suite</title>
+  <title>Truffle | Ethereum Name Service | Documentation | Truffle Suite</title>
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
@@ -192,7 +192,7 @@
           <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
         </a>
       
-        <div class="collapse truffle " id="truffleDocs" data-parent="#docsSidebar">
+        <div class="collapse truffle show" id="truffleDocs" data-parent="#docsSidebar">
           <ul>
             <a href="/docs/truffle/overview"><li>Overview</li></a>
             <a href="/docs/truffle/quickstart"><li>Quickstart</li></a>
@@ -275,7 +275,7 @@
           <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" /><h2 class="text-drizzle">dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le</h2>
         </a>
         
-        <div class="collapse drizzle show" id="drizzleDocs" data-parent="#docsSidebar">
+        <div class="collapse drizzle " id="drizzleDocs" data-parent="#docsSidebar">
           <ul>
             <a href="/docs/drizzle/overview"><li>Overview</li></a>
             <a href="/docs/drizzle/quickstart"><li>Quickstart</li></a>
@@ -302,110 +302,136 @@
       <div class="col-lg-9 bd-light-cream docs-content">
         
     <h1 class="link-markdown">
-      <a class="anchor-target" name="drizzle-options"></a>
-      <a href="#drizzle-options"><i class="fas fa-link"></i></a>
-      Drizzle Options
+      <a class="anchor-target" name="ethereum-name-service"></a>
+      <a href="#ethereum-name-service"><i class="fas fa-link"></i></a>
+      Ethereum Name Service
     </h1>
-  <pre><code class="lang-javascript">{
-  contracts,
-  events: {
-    contractName: [
-      eventName,
-      {
-        eventName,
-        eventOptions
+  <p>Truffle has a built-in Ethereum Name Service (ENS) integration. ENS is a
+mechanism that allows for the mapping of human readable names to Ethereum
+addresses or other resources. With ENS enabled, Truffle allows you to use ENS
+names when interacting with your contracts and it will resolve them for you.
+Wherever you can use an address in your transaction parameters, you can use an
+ENS name as long as you are able to connect successfully to an ENS registry.</p>
+<p>For more information on the Ethereum Name Service, see the
+<a href="https://ens.domains">ENS website</a>.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="configuration"></a>
+      <a href="#configuration"><i class="fas fa-link"></i></a>
+      Configuration
+    </h2>
+  <p>In order to use ENS features in your project, you must first enable it in your
+Truffle config (<code>truffle-config.js</code>). In the config, you must specify an <code>ens</code>
+property and set <code>ens.enabled</code> to <code>true</code>. The simplest configuration you would
+have is the following in your Truffle config:</p>
+<pre><code class="lang-javascript">module.exports = {
+  ens: {
+    enabled: true
+  }
+}
+</code></pre>
+<p>By default, Truffle connects to the official, ENS-deployed registries.
+These four registries can be found on:</p>
+<ul>
+<li><p>Mainnet</p>
+</li>
+<li><p>Ropsten</p>
+</li>
+<li><p>Rinkeby</p>
+</li>
+<li><p>Goerli</p>
+</li>
+</ul>
+<p>If a valid provider is supplied for one of these four networks, Truffle will
+connect and use the official registry for that particular network; that is,
+unless a different registry address is specified in the config. If you need
+to specify a different registry, you can enter it in your config for the
+<code>&lt;networkName&gt;.ens.registry.address</code> property. If your network name were
+<code>myNetwork</code> then this might look like:</p>
+<pre><code class="lang-javascript">module.exports = {
+  networks: {
+    myNetwork: {
+      host: &quot;localhost&quot;,
+      port: 8000,
+      network_id: &quot;*&quot;,
+      ens: {
+        registry: {
+          address: &quot;0x1234567890123456789012345678901234567890&quot;
+        }
       }
-    ]
-  },
-  polls: {
-    accounts: interval,
-    blocks: interval
-  },
-  syncAlways,
-  web3: {
-    customProvider,
-    fallback: {
-      type
-      url
     }
+  },
+  ens: {
+    enabled: true
   }
 }
 </code></pre>
+<p>If you are not connected to one of the above four networks and do not supply
+a registry address. Truffle will attempt to deploy a registry for you to
+use. See the section below on
+<a href="#automatic-registry-deployment">automatic registry deployment</a> for more information.</p>
+<p>It must be noted that the registry address you supply needs to agree with
+whatever provider is present otherwise ENS resolution will not work. In
+other words, if you supply a provider for Kovan, you must also supply a
+registry address for an ENS registry on the Kovan network (since Kovan
+does not have an official ENS registry deployment). As was stated
+above, however, you do not need to supply a registry address for the <a href="#configuration">above
+networks</a> unless you want to use a custom ENS registry.</p>
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-code-contracts-code-array-"></a>
-      <a href="#-code-contracts-code-array-"><i class="fas fa-link"></i></a>
-      <code>contracts</code> (array)
-    </h3>
-  <p>An array of either contract artifact files or Web3 contract objects. The objects have a <code>contractName</code> and <code>web3Contract</code> key.</p>
-<p>i.e.</p>
-<pre><code>contracts: [
-  truffleArtifact, // A regular Truffle contract artifact
-  {
-    contractName: &#39;RegisteredContract&#39;,
-    web3Contract: new web3.eth.Contract(abi, address, {data: &#39;deployedBytecode&#39; }) // An instance of a Web3 contract
-  }
-]
-</code></pre>
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-code-events-code-object-"></a>
-      <a href="#-code-events-code-object-"><i class="fas fa-link"></i></a>
-      <code>events</code> (object)
-    </h3>
-  <p>An object consisting of contract names each containing an array of strings of the event names we&#39;d like to listen for and sync with the store. Furthermore, event names may be replaced with an object containing both <code>eventName</code> and <code>eventOptions</code>, where <code>eventOptions</code> field corresponds to the <a href="https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#contract-events">web3 Contract.events options</a>.</p>
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="ens-module-methods-and-properties"></a>
+      <a href="#ens-module-methods-and-properties"><i class="fas fa-link"></i></a>
+      ens module methods and properties
+    </h2>
+  <ul>
+<li>deployer.ens.registryAddress</li>
+</ul>
+<p>This property returns the address of the registry that Truffle is connected to.</p>
+<ul>
+<li>deployer.ens.setAddress()</li>
+</ul>
+<p>As part of this ENS integration, a new <code>ens</code> module is available on the
+deployer object available during migration functions. Currently there is a
+single method on this module named <code>setAddress</code>. If you own a domain name,
+you can use this method to deploy a resolver and set its address. If the
+resolver already exists, it will set the address that the resolver references
+if it is not the same as the input address.</p>
+<p>The signature for this method is
+<code>setAddress(name: string, addressOrContract: string | TruffleContractInstance&gt;, txParams: object)</code>.</p>
+<p>A quick explanation of these parameters follows:</p>
+<ol>
+<li><p>The <code>name</code> parameter describes the name for which to set the resolver
+address. This name will look something like &quot;myName.eth&quot;.</p>
+</li>
+<li><p>The <code>addressOrContract</code> parameter must either be a string or a Truffle
+contract object that has an address property. If it is a string it must
+be an Ethereum address. If a Truffle contract has been deployed on
+the network you are using, then you can use that object as an argument.
+It will use that contract&#39;s address to set the resolver target.</p>
+</li>
+<li><p>The <code>txParams</code> parameter is an object that must contain a <code>from</code> property
+that specifies the address to send the transaction from. This must be the
+address that owns the domain in question. If this address does not own
+the domain then the transaction will fail.</p>
+</li>
+</ol>
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-code-polls-code-object-"></a>
-      <a href="#-code-polls-code-object-"><i class="fas fa-link"></i></a>
-      <code>polls</code> (object)
-    </h3>
-  <p>An object containing key/value pairs denoting what is being polled and the interval (in ms). Possible polls are accounts and blocks. Accounts will poll for addresses and balances, blocks for new blocks. <strong>Default</strong>: <code>{ blocks: 3000 }</code></p>
-
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-code-syncalways-code-boolean-"></a>
-      <a href="#-code-syncalways-code-boolean-"><i class="fas fa-link"></i></a>
-      <code>syncAlways</code> (boolean)
-    </h3>
-  <p>If <code>true</code>, will replay all contract calls at every block. This is useful if your dapp uses a proxy contract which obfuscates your primary contract&#39;s address. By default Drizzle checks blocks to see if a transaction interacting with your contracts has occured. If so, it syncs that contract. <strong>Default</strong>: <code>false</code></p>
-
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-code-web3-code-object-"></a>
-      <a href="#-code-web3-code-object-"><i class="fas fa-link"></i></a>
-      <code>web3</code> (object)
-    </h3>
-  <p>Options regarding <code>web3</code> instantiation.</p>
-
-    <h4 class="link-markdown">
-      <a class="anchor-target" name="-code-customprovider-code-object-"></a>
-      <a href="#-code-customprovider-code-object-"><i class="fas fa-link"></i></a>
-      <code>customProvider</code> (object)
-    </h4>
-  <p>A valid web3 <code>provider</code> object. For example, you may wish to programatically create a Ganache provider for testing:</p>
-<pre><code>// Create a Ganache provider.
-const testingProvider = Ganache.provider({
-  gasLimit: 7000000
-})
-
-const options = {
-  web3: {
-    customProvider: testingProvider
-  }
-}
-
-const drizzle = new Drizzle(options)
-</code></pre>
-    <h4 class="link-markdown">
-      <a class="anchor-target" name="-code-fallback-code-object-"></a>
-      <a href="#-code-fallback-code-object-"><i class="fas fa-link"></i></a>
-      <code>fallback</code> (object)
-    </h4>
-  <p>An object consisting of the type and url of a fallback web3 provider. This is used if no injected provider, such as MetaMask or Mist, is detected.</p>
-<p><code>type</code> (string): The type of the fallback web3 provider. Currently the only possibility is <code>&#39;ws&#39;</code> (web socket). <strong>Default</strong>: <code>&#39;ws&#39;</code></p>
-<p><code>url</code> (string): The full fallback web3 provider url. <strong>Default</strong>: <code>&#39;ws://127.0.0.1:8545&#39;</code></p>
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="automatic-registry-deployment"></a>
+      <a href="#automatic-registry-deployment"><i class="fas fa-link"></i></a>
+      Automatic registry deployment
+    </h2>
+  <p>Another feature of this integration is the ability to deploy an ENS registry on
+a network. This would be useful when developing locally and testing. If
+Truffle cannot connect to an ENS registry on the network you are using, it
+will check to see if you have &quot;dev mode&quot; enabled. If you do, it will attempt
+to deploy a new registry on the network you are running a migration on. It
+will also set ownership for the names used in calls to <code>setAddress</code> such
+that those calls will be successful.</p>
 
 
         <div class="contribute-link">
-          See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/drizzle/reference">Edit here &raquo;</a>
+          See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/truffle/advanced">Edit here &raquo;</a>
         </div>      </div>
     </div>
   </main>
