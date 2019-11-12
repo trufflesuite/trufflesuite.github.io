@@ -313,7 +313,16 @@
       <a href="#overview"><i class="fas fa-link"></i></a>
       Overview
     </h2>
-  <p>Debugging a transaction on the blockchain is different than debugging traditional applications (for instance, applications written in C++ or Javascript). When debugging a transaction on the blockchain, you&#39;re not running the code in real-time; instead, you&#39;re stepping over the historical execution of that transaction, and mapping that execution onto its associated code. This gives us many liberties in debugging, in that we can debug any transaction, any time, so long as we have the code and artifacts for the contracts the transaction interacted with. Think of these code and artifacts as akin to the debugging symbols needed by traditional debuggers.</p>
+  <p class="alert alert-info m-t-2">
+<strong>
+New in Truffle v5.1: <code>truffle test --debug</code>.
+</strong>
+Set breakpoints in your JavaScript tests with the new <code>debug()</code> global!
+<a href="#in-test-debugging">See below</a>.
+</p>
+
+
+<p>Debugging a transaction on the blockchain is different than debugging traditional applications (for instance, applications written in C++ or Javascript). When debugging a transaction on the blockchain, you&#39;re not running the code in real-time; instead, you&#39;re stepping over the historical execution of that transaction, and mapping that execution onto its associated code. This gives us many liberties in debugging, in that we can debug any transaction, any time, so long as we have the code and artifacts for the contracts the transaction interacted with. Think of these code and artifacts as akin to the debugging symbols needed by traditional debuggers.</p>
 <p>In order to debug transactions, you&#39;ll need the following:</p>
 <ul>
 <li>Truffle 4.0 or above.</li>
@@ -321,6 +330,47 @@
 <li>The source code and artifacts the transaction encounters.</li>
 </ul>
 <p>Note that it&#39;s okay if your desired transaction resulted in an exception or if it ran out of gas. The transaction still exists on chain, and so you can still debug it!</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="in-test-debugging"></a>
+      <a href="#in-test-debugging"><i class="fas fa-link"></i></a>
+      In-test debugging
+    </h2>
+  <p>Truffle v5.1 and above provides the <code>truffle test --debug</code> flag and associated
+<code>debug()</code> global function, allowing you to interrupt tests to debug specific
+operations.</p>
+<p>Instead of capturing the transaction hash as described below, simply wrap
+any contract operation with <code>debug()</code>, like so:</p>
+<pre><code class="lang-javascript">it(&quot;should succeed&quot;, async function() {
+  // wrap what you want to debug with `debug()`:
+  await debug( myContract.myFunction(accounts[1], { from: accounts[0] }) );
+  //           ^^^^^^^^^^^^^^^^^^ wrap contract operation ^^^^^^^^^^^^^^
+});
+</code></pre>
+<p>Then, run <code>truffle test --debug</code>. Truffle will compile your sources and run
+your tests as normal until reaching the operation in question. At this point,
+Truffle will interrupt the normal test flow and start the debugger, allowing
+you to set breakpoints, inspect Solidity variables, etc.</p>
+<p>See <a href="/docs/truffle/writing-tests-in-javascript">Writing tests in JavaScript</a>
+for more information on <code>truffle test</code>, and see
+<a href="/docs/truffle/getting-started/interacting-with-your-contracts">Interacting with your contracts</a>
+to learn about contract operations.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="debugging-read-only-calls"></a>
+      <a href="#debugging-read-only-calls"><i class="fas fa-link"></i></a>
+      Debugging read-only calls
+    </h3>
+  <p>Running the debugger from inside your JS tests allow additional functionality
+beyond which <code>truffle debug &lt;txHash&gt;</code> can provide.</p>
+<p>Beyond just debugging transactions, in-test debugging allows you to debug
+read-only calls as well.</p>
+<pre><code class="lang-javascript">it(&quot;should get latest result&quot;, async function() {
+  // wrap what you want to debug with `debug()`:
+  const result = await debug( myContract.getResult(&quot;latest&quot;) );
+  //                          ^^^^^ read-only function ^^^^^
+});
+</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="command"></a>
