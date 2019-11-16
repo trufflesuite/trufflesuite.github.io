@@ -254,6 +254,8 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/creating-a-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/ethereum-name-service.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/networks-and-app-deployment.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/distributed-ledger-support/working-with-hyperledger-evm.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/distributed-ledger-support/working-with-quorum.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/compiling-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/creating-a-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/debugging-your-contracts.html</loc> </url>
@@ -274,8 +276,6 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/testing-your-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/distributed-ledger-support/working-with-hyperledger-evm.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/distributed-ledger-support/working-with-quorum.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/lib/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/README.html</loc> </url>
