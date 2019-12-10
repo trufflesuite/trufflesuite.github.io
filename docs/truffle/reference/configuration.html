@@ -13,7 +13,9 @@
   <!--[if lte IE 8]>
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
   <![endif]-->
-  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5258293.js"></script>
+  <!-- End of HubSpot Embed Code -->  
   <meta charset="utf-8">
   <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
   
@@ -529,6 +531,7 @@
 <li>a natively compiled solc binary (you&#39;ll need to install this yourself, links to help below).</li>
 <li>a dockerized solc from one of images published <a href="https://hub.docker.com/r/ethereum/solc/tags/">here</a>.</li>
 <li>a path to a locally available solc</li>
+<li>a solc-js parser for faster docker and native compilations</li>
 </ul>
 <p>Truffle config example:</p>
 <pre><code class="lang-javascript">module.exports = {
@@ -537,6 +540,7 @@
       version: &lt;string&gt;, // A version or constraint - Ex. &quot;^0.5.0&quot;
                          // Can also be set to &quot;native&quot; to use a native solc
       docker: &lt;boolean&gt;, // Use a version obtained through docker
+      parser: &quot;solcjs&quot;,  // Leverages solc-js purely for speedy parsing
       settings: {
         optimizer: {
           enabled: &lt;boolean&gt;,
