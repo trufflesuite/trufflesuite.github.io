@@ -437,7 +437,7 @@ read-only calls as well.</p>
       <a href="#-step-instruction"><i class="fas fa-link"></i></a>
       (;) step instruction
     </h3>
-  <p>This command allows you to step through each individual instruction evaluated by the virtual machine. This is useful if you&#39;re interested in understanding the low level bytecode created by the Solidity source code. When you use this command, the debugger will also print out the stack data at the time the instruction was evaluated.</p>
+  <p>This command allows you to step through each individual instruction evaluated by the virtual machine. This is useful if you&#39;re interested in understanding the low level bytecode created by the Solidity source code. When you use this command, the debugger will also print out the stack data at the time the instruction was evaluated.  (If additional data displays have been turned on with the <code>p</code> command, those will be shown too.)</p>
 <p>You can also use this command with a numerical argument, to step that many times.</p>
 
     <h3 class="link-markdown">
@@ -446,6 +446,8 @@ read-only calls as well.</p>
       (p) print instruction
     </h3>
   <p>This commands prints the current instruction and stack data, but does not step to the next instruction. Use this when you&#39;d like to see the current instruction and stack data after navigating through the transaction with the logical commands described above.</p>
+<p>This command can also print locations other than the stack, if you want to view memory, storage, or calldata.  Simply type <code>p memory</code> to show memory along with the other information, <code>p storage</code> for storage, or <code>p calldata</code> for calldata.  Each of these can also be abbreviated, e.g. <code>p mem</code>; they can also be combined, e.g. <code>p mem sto</code>.</p>
+<p>You can also add these extra locations to the default display with <code>+</code>; e.g., <code>p +mem</code> will make it so that memory will always be displayed when you enter <code>p</code> or <code>;</code>, and <code>p -mem</code> will turn this off.  You can even turn off the stack display with <code>p -sta</code>, or force it to display with <code>p sta</code>.  All of these options can again be combined.</p>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="-h-print-this-help"></a>

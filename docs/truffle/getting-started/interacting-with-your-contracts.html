@@ -541,6 +541,55 @@ truffle(develop)&gt; newInstance.address
 });
 </code></pre>
 
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="special-methods-on-truffle-contract-objects"></a>
+      <a href="#special-methods-on-truffle-contract-objects"><i class="fas fa-link"></i></a>
+      Special methods on Truffle contract objects
+    </h3>
+  <p>There are a couple of special functions that you can find on the actual contract
+methods of your contract abstractions:</p>
+<ul>
+<li><code>estimateGas</code></li>
+<li><code>sendTransaction</code></li>
+<li><code>call</code></li>
+</ul>
+<p>The first special method mentioned above is the <code>estimateGas</code> method. This, as you
+probably can guess, estimates the amount of gas that a transaction will require.
+If we wanted to estimate the gas for a transaction, we would call it on the
+contract method itself. It would look something like the following:</p>
+<pre><code class="lang-javascript">const instance = await MyContract.deployed();
+const amountOfGas = await instance.sendTokens.estimateGas(4, myAccount);
+</code></pre>
+<p>This will give us an estimate of how much gas it will take to run the
+transaction specified.</p>
+<p>Note that the arguments above (<code>4</code> and <code>myAccount</code>) correspond to whatever the
+signature of the contract method happens to be.</p>
+<p>Another useful thing to note is that you can also call this on a contract&#39;s
+new method to see how much gas it will take to deploy. So you would do
+<code>Contract.new.estimateGas()</code> to get the gas estimate for the contract&#39;s deployment.</p>
+<p>The next mentioned method is <code>sendTransaction</code>. In general, if you execute a
+contract method, Truffle will intelligently figure out whether it needs
+to make a transaction or a call. If your function can be executed
+as a call, then Truffle will do so and you will be able to avoid gas costs.</p>
+<p>There may be some scenarios, however, where you want to force Truffle to
+make a transaction. In these cases, you can use the <code>sendTransaction</code>
+method found on the method itself. This would look something
+like <code>instance.myMethod.sendTransaction()</code>.</p>
+<p>For example, suppose I have a contract instance with the method
+<code>getTokenBalance</code>. I could do the following to force a transaction to take
+place while executing <code>getTokenBalance</code>:</p>
+<pre><code class="lang-javascript">const instance = await MyContract.deployed();
+const result = await instance.getTokenBalance.sendTransaction(myAccount);
+</code></pre>
+<p>The <code>result</code> variable above will be the same kind of result you would get
+from executing any normal transaction in Truffle. It will contain the
+transaction hash, the logs, etc.</p>
+<p>The last method is <code>call</code> and the syntax is exactly the same as for
+<code>sendTransaction</code>. If you want to explicitly make a call, you can
+use the <code>call</code> method found on your contract abstraction&#39;s method. So you
+would write something that looks like
+<code>const result = await instance.myMethod.call()</code>.</p>
+
     <h2 class="link-markdown">
       <a class="anchor-target" name="further-reading"></a>
       <a href="#further-reading"><i class="fas fa-link"></i></a>
