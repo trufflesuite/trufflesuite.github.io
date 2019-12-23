@@ -465,7 +465,7 @@ truffle(develop)&gt; balance.toNumber()
       Processing transaction results
     </h3>
   <p>When you make a transaction, you&#39;re given a <code>result</code> object that gives you a wealth of information about the transaction.</p>
-<pre><code class="lang-javascript">truffle(develop)&gt; let result = await contract.sendCoin(accounts[1], 10, {from: accounts[0]})
+<pre><code class="lang-javascript">truffle(develop)&gt; let result = await instance.sendCoin(accounts[1], 10, {from: accounts[0]})
 truffle(develop)&gt; result
 </code></pre>
 <p>Specifically, you get the following:</p>
