@@ -29,6 +29,10 @@ ol, ul {
   padding-left: 15px;
 }
 
+ol ol, ol ul, ul ol, ul ul {
+  margin-top: 1rem;
+}
+
 code {
   color: #e911bd;
 }
