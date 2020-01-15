@@ -381,7 +381,7 @@ return &#39;Loading...&#39;
 events = [&#39;Mint&#39;]
 
 // Using an action
-dispatch({type: &#39;ADD_CONTRACT&#39;, drizzle, contractConfig, events, web3})
+dispatch({type: &#39;ADD_CONTRACT&#39;, contractConfig, events})
 
 // Or using the Drizzle context object
 this.context.drizzle.addContract(contractConfig, events)
@@ -396,7 +396,7 @@ this.context.drizzle.addContract(contractConfig, events)
 <pre><code class="lang-javascript">const contractName = &quot;MyContract&quot;
 
 // Using an action
-dispatch({type: &#39;DELETE_CONTRACT&#39;, drizzle, contractName})
+dispatch({type: &#39;DELETE_CONTRACT&#39;, contractName})
 
 // Or using the Drizzle context object
 this.context.drizzle.deleteContract(contractName)

@@ -11,8 +11,8 @@
 <url> <loc>https://www.truffleframework.com/truffle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/trufflecon2019.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/university.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/index.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/careers/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/events/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/press-releases/index.html</loc> </url>
@@ -275,14 +275,14 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/using-the-build-pipeline.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/using-truffle-develop-and-the-console.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/writing-external-scripts.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/testing/testing-your-contracts.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/choosing-an-ethereum-client.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/configuration.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/contact-the-developers.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/contract-abstractions.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/reference/truffle-commands.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/testing/testing-your-contracts.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/lib/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/README.html</loc> </url>
