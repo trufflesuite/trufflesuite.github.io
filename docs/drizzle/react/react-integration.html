@@ -313,141 +313,153 @@
       <a href="#react-integration"><i class="fas fa-link"></i></a>
       React Integration
     </h1>
-  <p><code>drizzle-react</code> is the official way to integrate Drizzle with your React dapp.</p>
-<p>Check out the <a href="https://github.com/truffle-box/drizzle-box">Drizzle Truffle Box</a> for a complete example (also featuring <code>drizzle-react-components</code>), or continue reading to create your own setup.</p>
+  <p><code>@drizzle/react-plugin</code> is the official way to integrate Drizzle with your React dapp.</p>
+<p>Check out the <a href="https://github.com/truffle-box/drizzle-box">Drizzle Truffle Box</a> for a complete example or continue reading to create your own setup.</p>
+<p>Also, check out <code>@drizzle/react-components</code> for Drizzle&#39;s <a href="https://github.com/trufflesuite/drizzle/tree/develop/packages/react-components">prebuilt react components</a>.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="installation"></a>
       <a href="#installation"><i class="fas fa-link"></i></a>
       Installation
     </h2>
-  <p>Install Drizzle React Components via npm:</p>
-<pre><code class="lang-bash">npm install --save drizzle-react
+  <p>Install Drizzle React-Plugin via npm:</p>
+<pre><code class="lang-bash">npm install @drizzle/react-plugin
 </code></pre>
-<p><strong>Note</strong>: <code>drizzle-react</code> requires Requires React 0.14 or greater. You&#39;ll also need the <code>drizzle</code> package, if it isn&#39;t already installed.</p>
+<p><strong>Note</strong>: <code>@drizzle/react-plugin</code> requires Requires React v16.3+ for the Context API. You&#39;ll also need the <code>@drizzle/store</code> package, if it isn&#39;t already installed.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="getting-started"></a>
       <a href="#getting-started"><i class="fas fa-link"></i></a>
       Getting Started
     </h2>
-  <p><strong>Note</strong>: Since Drizzle uses web3 1.0 and web sockets, be sure your development environment can support these.</p>
-<ol>
-<li><p>Import the provider.</p>
-<pre><code class="lang-javascript">import { DrizzleProvider } from &#39;drizzle-react&#39;
+  <ol>
+<li><p>Import the <code>DrizzleContext</code> provider.</p>
+<pre><code class="lang-javascript">import { DrizzleContext } from &#39;@drizzle/react-plugin&#39;
 </code></pre>
 </li>
-<li><p>Create an <code>options</code> object and pass in the desired contract artifacts for Drizzle to instantiate. Other options are available, see <a href="https://github.com/trufflesuite/drizzle#options">the Options section of the Drizzle docs</a> below.</p>
+<li><p>Create a <code>drizzleOptions</code> object and pass in the desired contract artifacts for Drizzle to instantiate. Other options are available, see <a href="https://www.trufflesuite.com/docs/drizzle/reference/drizzle-options">the Options section of the Drizzle docs</a>.</p>
 <pre><code class="lang-javascript">// Import contracts
 import SimpleStorage from &#39;./../build/contracts/SimpleStorage.json&#39;
 import TutorialToken from &#39;./../build/contracts/TutorialToken.json&#39;
 
-const options = {
-  contracts: [
-    SimpleStorage,
-    TutorialToken
-  ]
+const drizzleOptions = {
+ contracts: [
+   SimpleStorage,
+   TutorialToken
+ ],
+ events: {
+   SimpleStorage: [&quot;StorageSet&quot;],
+ },
 }
 </code></pre>
 </li>
-<li><p>Wrap your app with <code>DrizzleProvider</code> and pass in an <code>options</code> object.</p>
-<pre><code class="lang-javascript">&lt;DrizzleProvider options={options}&gt;
-  &lt;App /&gt;
-&lt;/DrizzleProvider&gt;
+<li><p>Import <code>Drizzle</code>.</p>
+<pre><code class="lang-javascript">import { Drizzle } from &quot;@drizzle/store&quot;;
 </code></pre>
 </li>
-<li><p>Wrap your components using the <code>drizzleConnect</code> function. It has the same API as the <code>connect()</code> function in <code>react-redux</code>. <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options">See their docs here</a>.</p>
-<pre><code class="lang-javascript">import { drizzleConnect } from &#39;drizzle-react&#39;
-
-const mapStateToProps = state =&gt; {
-  return {
-    drizzleStatus: state.drizzleStatus,
-    SimpleStorage: state.contracts.SimpleStorage
-  }
-}
-
-const HomeContainer = drizzleConnect(Home, mapStateToProps);
+<li><p>Create a new <code>drizzle</code> instance with the <code>drizzleOptions</code> object.</p>
+<pre><code class="lang-javascript">const drizzle = new Drizzle(drizzleOptions);
 </code></pre>
-<p>See <a href="https://github.com/trufflesuite/drizzle#drizzle-state">Drizzle State in the Drizzle docs</a> for the entire state tree.</p>
 </li>
-<li><p>Get contract data by accessing the contracts via <code>context</code>. Calling the <code>data()</code> function on a contract will first check the store for a cached result. If empty, Drizzle will query the blockchain and cache the response for future use. For more information on how this works, see <a href="https://github.com/trufflesuite/drizzle#how-data-stays-fresh">How Data Stays Fresh in the Drizzle docs</a>.</p>
-<p><strong>Note:</strong> We have to check that Drizzle is initialized before fetching data. A one-liner such as below is fine for display a few pieces of data, but a better approach for larger dapps is to use a <a href="#recipe-loading-component">loading component</a>.</p>
-<pre><code class="lang-javascript">// For convenience
-constructor(props, context) {
-  super(props)
+<li><p>Pass the <code>drizzle</code> object to the <code>DrizzleContext.Provider</code> component.</p>
+<pre><code class="lang-javascript">&lt;DrizzleContext.Provider drizzle={drizzle}&gt;&lt;/DrizzleContext.Provider&gt;
+</code></pre>
+</li>
+<li><p>Use <code>DrizzleContext.Consumer</code> to consume the drizzle context and pass <code>drizzle</code> and <code>drizzleState</code> to your component. Drizzle also provides prebuilt components via the <code>@drizzle/react-components</code>.</p>
+<p><strong>Note</strong>: We have to check that Drizzle is initialized before fetching data. The <code>initialized</code> variable returns the drizzle store&#39;s initialization status.</p>
+<pre><code class="lang-javascript">&lt;DrizzleContext.Provider drizzle={drizzle}&gt;
+ &lt;DrizzleContext.Consumer&gt;
+   {drizzleContext =&gt; {
+     const {drizzle, drizzleState, initialized} = drizzleContext;
 
-  this.contracts = context.drizzle.contracts
+     if(!initialized) {
+       return &quot;Loading...&quot;
+     }
+
+     return (
+         &lt;MyComponent drizzle={drizzle} drizzleState={drizzleState} /&gt;
+       )
+     }}
+ &lt;/DrizzleContext.Consumer&gt;
+&lt;/DrizzleContext.Provider&gt;
+</code></pre>
+</li>
+<li><p>Fetch contract data by accessing contracts via <code>drizzle</code> and <code>drizzleState</code> in <code>props</code>. For more information on how this works, see <a href="https://github.com/trufflesuite/drizzle#how-data-stays-fresh">How Data Stays Fresh in the Drizzle docs</a>. For more info on the drizzle state, see <a href="https://github.com/trufflesuite/drizzle/tree/develop/packages/store#drizzle-state">state tree docs.</a></p>
+<p>The example below utilizes drizzle&#39;s <code>cacheCall</code> feature, which caches and synchronizes the call with the store. For more information on <code>cacheCall</code> and also <code>cacheSend</code>, see <a href="https://www.trufflesuite.com/docs/drizzle/getting-started/contract-interaction">Contract Interaction</a>.</p>
+<pre><code class="lang-javascript">// sample component
+import React from &#39;react&#39;;
+
+class CacheCallExample extends React.Component {
+ state = { dataKey: null };
+
+ componentDidMount() {
+   const { drizzle } = this.props;
+   const contract = drizzle.contracts.SimpleStorage;
+   let dataKey = contract.methods[&quot;storedData&quot;].cacheCall(); // declare this call to be cached and synchronized
+   this.setState({ dataKey });
+ }
+
+ render() {
+   const { SimpleStorage } = this.props.drizzleState.contracts;
+   const displayData = SimpleStorage.storedData[this.state.dataKey]; // if displayData (an object) exists, then we can display the value below
+   return (
+     &lt;p&gt;Hi from Truffle! Here is your storedData: {displayData &amp;&amp; displayData.value}&lt;/p&gt;
+   )
+ }
 }
 
-// If Drizzle is initialized (and therefore web3, accounts and contracts), fetch data.
-// This will update automatically when the contract state is altered.
-var storedData = this.props.drizzleStatus.initialized ? this.contracts.SimpleStorage.methods.storedData.data() : &#39;Loading...&#39;
+export default CacheCallExample
 </code></pre>
-<p>The contract instance has all of its standard web3 properties and methods. For example, sending a transaction is done as normal:</p>
-<pre><code class="lang-javascript">this.contracts.SimpleStorage.methods.set(this.state.storageAmount).send()
+<p><strong>Note</strong>: The contract instances have all the standard web3 properties and methods.</p>
+<pre><code class="lang-javascript">drizzle.contracts.SimpleStorage.methods.set(5).send(); // sets SimpleStorage contract&#39;s storedData state variable to uint 5.
+drizzle.contracts.SimpleStorage.methods.storedData.call(); // gets the storedData value
 </code></pre>
 </li>
 </ol>
 
     <h2 class="link-markdown">
-      <a class="anchor-target" name="recipe-loading-component"></a>
-      <a href="#recipe-loading-component"><i class="fas fa-link"></i></a>
-      Recipe: Loading Component
+      <a class="anchor-target" name="example-code-snippet"></a>
+      <a href="#example-code-snippet"><i class="fas fa-link"></i></a>
+      Example Code Snippet
     </h2>
-  <p>The following wrapper and component will detect when your dapp isn&#39;t ready and allow you to display the appropriate status or course of action:</p>
-<p><code>LoadingContainer.js</code></p>
-<pre><code class="lang-javascript">import Loading from &#39;./Loading.js&#39;
-import { drizzleConnect } from &#39;drizzle-react&#39;
+  <pre><code class="lang-javascript">// App.js
+import React from &quot;react&quot;;
+import { DrizzleContext } from &quot;@drizzle/react-plugin&quot;;
+import { Drizzle } from &quot;@drizzle/store&quot;;
 
-// May still need this even with data function to refresh component on updates for this contract.
-const mapStateToProps = state =&gt; {
-  return {
-    drizzleStatus: state.drizzleStatus,
-    web3: state.web3
-  }
+import SimpleStorage from &quot;./contracts/SimpleStorage.json&quot;;
+import MyComponent from &quot;./MyComponent&quot;; // Check out drizzle&#39;s react components at @drizzle/react-components
+
+const drizzleOptions = {
+  contracts: [SimpleStorage],
+  events: {
+    SimpleStorage: [&quot;StorageSet&quot;],
+  },
+};
+
+const drizzle = new Drizzle(drizzleOptions);
+
+const App = () =&gt; {
+  return (
+    &lt;DrizzleContext.Provider drizzle={drizzle}&gt;
+      &lt;DrizzleContext.Consumer&gt;
+        {drizzleContext =&gt; {
+          const {drizzle, drizzleState, initialized} = drizzleContext;
+
+          if(!initialized) {
+            return &quot;Loading...&quot;
+          }
+
+          return (
+            &lt;MyComponent drizzle={drizzle} drizzleState={drizzleState} /&gt;
+            )
+          }}
+      &lt;/DrizzleContext.Consumer&gt;
+    &lt;/DrizzleContext.Provider&gt;
+  );
 }
 
-const LoadingContainer = drizzleConnect(Loading, mapStateToProps);
-
-export default LoadingContainer
-</code></pre>
-<p><code>Loading.js</code></p>
-<pre><code class="lang-javascript">import React, { Component, Children } from &#39;react&#39;
-
-class Loading extends Component {
-  constructor(props, context) {
-    super(props)
-  }
-
-  render() {
-    if (this.props.web3.status === &#39;failed&#39;)
-    {
-      return(
-        // Display a web3 warning.
-        &lt;main&gt;
-          &lt;h1&gt;⚠️&lt;/h1&gt;
-          &lt;p&gt;This browser has no connection to the Ethereum network. Please use the Chrome/FireFox extension MetaMask, or dedicated Ethereum browsers Mist or Parity.&lt;/p&gt;
-        &lt;/main&gt;
-      )
-    }
-
-    if (this.props.drizzleStatus.initialized)
-    {
-      // Load the dapp.
-      return Children.only(this.props.children)
-    }
-
-    return(
-      // Display a loading indicator.
-      &lt;main&gt;
-        &lt;h1&gt;⚙️&lt;/h1&gt;
-        &lt;p&gt;Loading dapp...&lt;/p&gt;
-      &lt;/main&gt;
-    )
-  }
-}
-
-export default Loading
+export default App;
 </code></pre>
 
 
