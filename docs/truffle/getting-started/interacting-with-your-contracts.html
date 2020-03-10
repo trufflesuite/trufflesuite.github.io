@@ -595,6 +595,23 @@ use the <code>call</code> method found on your contract abstraction&#39;s method
 would write something that looks like
 <code>const result = await instance.myMethod.call()</code>.</p>
 
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="invoking-overloaded-methods"></a>
+      <a href="#invoking-overloaded-methods"><i class="fas fa-link"></i></a>
+      Invoking overloaded methods
+    </h3>
+  <p>The current implementation of Truffle&#39;s contract abstraction can mistakenly
+infer the signature of an overloaded method even though it exists in the
+contract ABI.</p>
+<p>Therefore, some methods may not be accessible through the contract&#39;s
+instance, but their accessors can be invoked explicitly via the <code>.methods</code>
+property of the contract.</p>
+<pre><code class="lang-javascript">const instance = await MyContract.deployed();
+instance.methods[&#39;setValue(uint256)&#39;](123);
+instance.methods[&#39;setValue(uint256,uint256)&#39;](11, 55);
+</code></pre>
+<p>Please see this issue <a href="https://github.com/trufflesuite/truffle/issues/2868">here</a> for more information.</p>
+
     <h2 class="link-markdown">
       <a class="anchor-target" name="further-reading"></a>
       <a href="#further-reading"><i class="fas fa-link"></i></a>

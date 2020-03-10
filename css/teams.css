@@ -269,26 +269,34 @@
   border-color: transparent #fff transparent transparent;
 }
 
+.tt-hero-img {
+  border: 2px solid #33262a;
+}
+
 .shadow-dark-chocolate {
   -webkit-box-shadow: 12px 12px 0px 0px #33262a;
   -moz-box-shadow: 12px 12px 0px 0px #33262a;
   box-shadow: 12px 12px 0px 0px #33262a;
+  border: 2px solid #33262a;
 }
 
 .shadow-mint {
   -webkit-box-shadow: 12px 12px 0px 0px #3fe0c5;
   -moz-box-shadow: 12px 12px 0px 0px #3fe0c5;
   box-shadow: 12px 12px 0px 0px #3fe0c5;
+  border: 2px solid #3fe0c5;
 }
 
 .shadow-periwinkle {
   -webkit-box-shadow: 12px 12px 0px 0px #7f9dd1;
   -moz-box-shadow: 12px 12px 0px 0px #7f9dd1;
   box-shadow: 12px 12px 0px 0px #7f9dd1;
+  border: 2px solid #7f9dd1;
 }
 
 .shadow-purple {
   -webkit-box-shadow: 12px 12px 0px 0px #8731e8;
   -moz-box-shadow: 12px 12px 0px 0px #8731e8;
   box-shadow: 12px 12px 0px 0px #8731e8;
+  border: 2px solid #8731e8;
 }
