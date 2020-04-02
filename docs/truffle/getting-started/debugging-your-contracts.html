@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1584421245504">
+  <link rel="stylesheet" href="/css/index.css?1585867612455">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -395,6 +395,17 @@ read-only calls as well.</p>
 <pre><code class="lang-shell">$ truffle debug
 </code></pre>
 <p>Regardless of how you start the debugger, once it is running you are not limited to debugging only the transaction you launched it with; it is possible to unload the current transaction and load a new one, as described below.</p>
+<p class="alert alert-info m-t-2">
+<strong>
+Faster debugger startup:
+</strong>
+If your project was not compiled all at once (or under certain other
+conditions), the debugger will have to do its own compile of your project on
+startup.  This can be very slow.  If you compile your whole project at once,
+however, the debugger can likely avoid the initial recompile, speeding up
+startup greatly.
+</p>
+
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="debugging-interface"></a>
