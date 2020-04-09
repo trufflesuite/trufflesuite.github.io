@@ -10718,17 +10718,17 @@ div#hubspot-messages-iframe-container {
 .btn-drizzle:hover,
 .btn-eventbrite:hover {
   background: #fff;
-  color: #5e464d;
+  color: #33262a;
 }
 
 .btn-truffle {
   background: #3fe0c5;
-  color: #5e464d;
+  color: #33262a;
 }
 
 .btn-ganache {
   background: #e4a663;
-  color: #5e464d;
+  color: #33262a;
 }
 
 .btn-ganache.btn-download {
@@ -13149,40 +13149,54 @@ blockquote {
   border: none;
   min-width: unset;
   padding: 1.5rem;
+  border: 2px solid #e0dad7;
 }
 
-.tt-pricing .card.free {
-  background: #e0dad7;
-  /*.card-body, .card-footer {
-        transform: skew(2deg, 1deg);
-      }*/
+.tt-pricing .card .card-title {
+  border-radius: .25rem .25rem 0 0;
+  color: #ffffff;
+  margin: -2.75rem -2.75rem 1.5rem -2.75rem;
+  padding: 1rem 2.75rem;
+}
+
+.tt-pricing .card.free .card-title {
+  background: #8c3ae9;
 }
 
 .tt-pricing .card.free ul {
   list-style-image: url("/img/truffle-teams/checkmark-dark.png");
 }
 
-.tt-pricing .card.premium {
-  background: #e86591;
-  color: #fff;
-  /*.card-body, .card-footer {
-        transform: skew(0, -2deg);
-      }*/
+.tt-pricing .card.pro {
+  transform: scale(1.1);
 }
 
-.tt-pricing .card.premium ul {
-  list-style-image: url("/img/truffle-teams/checkmark-light.png");
+.tt-pricing .card.pro .card-title {
+  background: #6926b4;
 }
 
-.tt-pricing .card.premium .btn {
-  background: #fff;
-  color: #e86591;
-  border: 1px solid #fff;
+.tt-pricing .card.pro .badge {
+  background: #FFFBBC;
+  border-radius: .75em;
+  color: #69651A;
+  float: right;
+  padding: .25em .5em;
 }
 
-.tt-pricing .card.premium .btn:hover {
-  background: #e86591;
-  color: #fff;
+.tt-pricing .card.pro ul {
+  list-style-image: url("/img/truffle-teams/checkmark-dark.png");
+}
+
+.tt-pricing .card.enterprise .card-title {
+  background: #4e1c87;
+}
+
+.tt-pricing .card.enterprise ul {
+  list-style-image: url("/img/truffle-teams/checkmark-dark.png");
+}
+
+.tt-pricing .card .btn-truffle:hover {
+  background: #f8f5f0;
 }
 
 .tt-pricing .card .card-footer {
@@ -13196,7 +13210,17 @@ blockquote {
   }
 }
 
+@media (max-width: 991.98px) {
+  .tt-pricing .card {
+    min-width: 100%;
+  }
+  .tt-pricing .card.pro {
+    transform: none;
+  }
+}
+
 .tt-social-proof {
+  margin-top: 9.25rem;
   position: relative;
 }
 
