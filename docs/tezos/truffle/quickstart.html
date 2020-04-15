@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- HubSpot Forms -->
+  <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5258293.js"></script>
+  <!-- End of HubSpot Embed Code -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Truffle | Tezos Quickstart | Documentation | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/docs/tezos/truffle/quickstart" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Truffle | Tezos Quickstart | Documentation | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+
+  <title>Truffle | Tezos Quickstart | Documentation | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/index.css?1586964637335">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>  
+  <main role="main" class="container-fluid">
+    <!--<div class="row pt-4 pb-4">
+      <div class="col">
+        <form>
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="🔍 Search">
+            </div>
+            <div class="col">
+              <select id="inputState" class="form-control">
+                <option selected>4.1</option>
+                <option>4.0.6</option>
+                <option>4.0.5</option>
+              </select>
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-truffle">SEARCH</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>-->
+
+    
+
+    <div class="row row-docs-main">
+      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). --> 
+
+          <aside class="col-lg-3 docs-sidebar" id="docsSidebar">
+            <h2 class="space-icon d-lg-none text-center" id="docsSidebarToggle"><i class="fas fa-book"></i> SEARCH &amp; CONTENTS</h2>
+          
+            <div class="docs-top-nav">
+              <a href="/docs">
+                <div class="docs-back-button">
+                  <i class="fad fa-arrow-square-left"></i>
+                </div>
+                Tezos
+              </a>
+            </div>
+          
+            <div class="docs-wrapper">
+          
+              <form class="mb-4" id="searchForm">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="searchInput" placeholder="Search">
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-truffle">SEARCH</button>
+                  </div>
+                </div>
+              </form>
+          
+              <a class="toggle-truffle suite-link" href="#truffleDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
+              </a>
+          
+              <div class="collapse truffle show" id="truffleDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/tezos/truffle/quickstart"><li>Quickstart</li></a>
+                </ul>
+                  <h3>Getting Started</h3>
+                  <ul>
+                      <a href="/docs/tezos/truffle/getting-started/installing-truffle-with-tezos"><li>Installing Truffle with Tezos</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/creating-a-tezos-project"><li>Creating a Tezos project</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/writing-tezos-contracts"><li>Writing Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/compiling-tezos-contracts"><li>Compiling Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/deploying-tezos-contracts"><li>Deploying Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/interacting-with-your-tezos-contracts"><li>Interacting with Your Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/testing-your-tezos-contracts"><li>Testing your Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/using-the-console-with-tezos"><li>Using the Console with Tezos</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/writing-external-scripts-with-tezos"><li>Writing External Scripts with Tezos</li></a>
+                  </ul>
+                  <h3>Reference</h3>
+                  <ul>
+                      <a href="/docs/tezos/truffle/reference/configuring-tezos-projects"><li>Configuring Tezos Projects</li></a>
+                  </ul>
+              </div>
+          
+            </div>
+          
+          </aside>      
+        <div class="col-lg-9 bd-light-cream docs-content">
+          <p class="alert alert-danger">
+<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by <a href="https://github.com/trufflesuite/truffle/issues">filing issues on Github</a>.
+</p>
+
+
+    <h1 class="link-markdown">
+      <a class="anchor-target" name="tezos-quickstart"></a>
+      <a href="#tezos-quickstart"><i class="fas fa-link"></i></a>
+      Tezos Quickstart
+    </h1>
+  <p>Wanna build apps on Tezos using Truffle? You&#39;re in the right place. </p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="table-of-contents"></a>
+      <a href="#table-of-contents"><i class="fas fa-link"></i></a>
+      Table of Contents
+    </h2>
+  <ol>
+<li><a href="#getting-set-up">Getting set up</a></li>
+<li><a href="#installing-truffle">Installing Truffle</a></li>
+<li><a href="#using-the-tezos-truffle-box">Using the Tezos Truffle Box</a></li>
+<li><a href="#writing-contracts">Writing Contracts</a></li>
+<li><a href="#deploying-contracts">Deploying Contracts</a></li>
+<li><a href="#testing-contracts">Testing Contracts</a></li>
+<li><a href="#further-resources">Further Resources</a></li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="getting-set-up"></a>
+      <a href="#getting-set-up"><i class="fas fa-link"></i></a>
+      Getting Set Up
+    </h2>
+  
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="installing-docker"></a>
+      <a href="#installing-docker"><i class="fas fa-link"></i></a>
+      Installing Docker
+    </h3>
+  <p>Before you can start developing Tezos applications with Truffle, you&#39;ll first need to ensure you have <a href="https://www.docker.com/">Docker</a> installed on your machine. Installing docker let&#39;s Truffle easily use the latest LIGO compiler on any platform.</p>
+<p><a href="https://docs.docker.com/install/">See Docker install instructions for your platform.</a></p>
+<p class="alert alert-info">
+<strong>Docker on Windows:</strong> If you&#39;re developing on Windows, you need to install the <a href="https://docs.docker.com/docker-for-windows/edge-release-notes/">Docker edge release</a> instead of the mainline docker version. Trust us: This is a better experience.
+</p>
+
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="other-requirements"></a>
+      <a href="#other-requirements"><i class="fas fa-link"></i></a>
+      Other Requirements
+    </h3>
+  <ul>
+<li><a href="https://nodejs.org/">NodeJS</a> v8.9.4 or later</li>
+<li>Windows, Linux or Mac OS X</li>
+</ul>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="installing-truffle"></a>
+      <a href="#installing-truffle"><i class="fas fa-link"></i></a>
+      Installing Truffle
+    </h2>
+  <p>You&#39;ll need to download a special version of Truffle to use Tezos. </p>
+<pre><code>$ npm install -g truffle@tezos
+</code></pre><p>If you already have Truffle installed, we recommend uninstalling truffle before running the above command.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="using-the-tezos-truffle-box"></a>
+      <a href="#using-the-tezos-truffle-box"><i class="fas fa-link"></i></a>
+      Using the Tezos Truffle Box
+    </h2>
+  <p>This quick start uses an already-created project to provide the base Truffle project structure and example contracts. </p>
+<p>In your workspace directory, run the following commands:</p>
+<pre><code>$ mdkir tezos-example
+$ cd tezos-example
+$ truffle unbox tezos-example
+</code></pre>
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="writing-contracts"></a>
+      <a href="#writing-contracts"><i class="fas fa-link"></i></a>
+      Writing Contracts
+    </h2>
+  <p>The example box comes with two contracts, which you can find in the <code>./contracts</code> folder:</p>
+<ul>
+<li><code>Counter.ligo</code></li>
+<li><code>SimpleStorage.ligo</code></li>
+</ul>
+<p>You can see that these contracts end in the <code>.ligo</code> file extension. This refers to the <a href="https://ligolang.org/">LIGO programming language</a>. See the <a href="/docs/tezos/truffle/getting-started/writing-tezos-contracts">Writing Tezos contracts</a> section for more info. </p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="deploying-contracts"></a>
+      <a href="#deploying-contracts"><i class="fas fa-link"></i></a>
+      Deploying Contracts
+    </h2>
+  <p>For this quick start, we&#39;re going to configure your project to deploy to the <a href="https://tezos.gitlab.io/#babylonnet-test-network">BabylonNet</a> test network for Tezos. This is the quickest way to get started, though as you get familiar with Tezos, you&#39;ll want to set up a local development environment. See the <a href="https://github.com/truffle-box/tezos-example-box#sandbox-management">example box documentation</a> for an example on using a local flextesa sandbox.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="configuring-truffle-to-point-to-the-babylon-testnet"></a>
+      <a href="#configuring-truffle-to-point-to-the-babylon-testnet"><i class="fas fa-link"></i></a>
+      Configuring Truffle to point to the Babylon testnet
+    </h3>
+  <p>First, navigate to <a href="https://faucet.tzalpha.net/">https://faucet.tzalpha.net/</a> to get a faucet account. This will create a new account for you on the testnet and fill it with some testnet XTZ. Download the file and save it as <code>faucet.json</code> in the root of your project.</p>
+<p>Next, replace the box&#39;s <code>truffle-config.js</code> with the following: </p>
+<pre><code class="lang-javascript">const { mnemonic, secret, password, email } = require(&quot;./faucet.json&quot;);
+
+module.exports = {
+  // see &lt;http://truffleframework.com/docs/advanced/configuration&gt;
+  // for more details on how to specify configuration options!
+  networks: {
+    development: {
+      host: &quot;https://api.tez.ie/rpc/babylonnet&quot;,
+      port: 443,
+      network_id: &quot;*&quot;,
+      secret,
+      mnemonic,
+      password,
+      email,
+      type: &quot;tezos&quot;
+    }
+  }
+};
+</code></pre>
+<p>That&#39;s it! You&#39;re all set to run the box&#39;s deployment scripts against a testnet. </p>
+<p class="alert alert-info">
+<strong>Note:</strong> The default tezos box is configured to deploy to multiple networks, including mainnet. If you&#39;d like to deploy to those networks, you&#39;ll need to first configure the <code>secret</code>, <code>mnemonic</code>, <code>password</code>, and <code>email</code> like the above to represent an account you own that&#39;s funded with XTZ. See the <a href="/docs/tezos/getting-started/configuring-tezos-projects">Configuring Tezos Projects</a> section for more info. 
+</p>
+
+<p class="alert alert-danger">
+<strong>Caution!</strong> Keep your <code>secret</code>, <code>mnemonic</code> and <code>password</code> safe! When not on a testnet, you can quickly lose all your tez if someone else gets ahold of them.
+</p>
+
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="running-truffle-39-s-deployment-scripts"></a>
+      <a href="#running-truffle-39-s-deployment-scripts"><i class="fas fa-link"></i></a>
+      Running Truffle&#39;s deployment scripts
+    </h3>
+  <p>The example box comes default with pre-written deployment scripts, found within the <code>./migrations</code> directory:</p>
+<ul>
+<li><code>1_deploy_simple_storage.js</code></li>
+<li><code>2_deploy_counter.js</code></li>
+</ul>
+<p>Truffle will handle running these scripts when you run the following command:</p>
+<pre><code>$ truffle migrate
+</code></pre><p>See the <a href="">Deploying your Contracts</a> section for more information on how to write and use Truffle&#39;s deployment scripts.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="testing-contracts"></a>
+      <a href="#testing-contracts"><i class="fas fa-link"></i></a>
+      Testing Contracts
+    </h2>
+  <p>The box also comes equipped with tests, showing you how to write automated tests for your Tezos contracts. You can find these tests in the <code>./test</code> directory:</p>
+<ul>
+<li><code>counter.test.js</code></li>
+<li><code>simpleStorage.test.js</code></li>
+</ul>
+<p>See the <a href="">Test your Contracts</a> section for more information on how to write tests for your LIGO congrats.</p>
+<p>Running your tests is easy, by running following command: </p>
+<pre><code>$ truffle test
+</code></pre>
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="further-resources"></a>
+      <a href="#further-resources"><i class="fas fa-link"></i></a>
+      Further Resources
+    </h2>
+  <p>If you&#39;ve reached this point, you now have a Truffle project that lets you compile, test, and deploy LIGO contracts to the Babylon Tezos test network. Congrats! This is a great start, but there&#39;s still much to learn. We suggest you check out the following resources to learn more about Tezos, LIGO, and Truffle:</p>
+<ul>
+<li><a href="https://ligolang.org/docs/intro/what-and-why/">LIGO language documentation</a></li>
+<li><a href="https://tezos.gitlab.io/">Tezos documentation</a></li>
+<li><a href="https://tezostaquito.io/">Taquito communcation library</a></li>
+<li><a href="https://trufflesuite.com/docs">Main Truffle Suite documentation</a></li>
+</ul>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/tezos/truffle">Edit here &raquo;</a>
+          </div>        </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="/js/docs.js"></script>
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+  <script src="/js/docs-search.js"></script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- HubSpot Forms -->
+  <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5258293.js"></script>
+  <!-- End of HubSpot Embed Code -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Truffle | Deploying Tezos Contracts | Documentation | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/docs/tezos/truffle/getting-started/deploying-tezos-contracts" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Truffle | Deploying Tezos Contracts | Documentation | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+
+  <title>Truffle | Deploying Tezos Contracts | Documentation | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/index.css?1586964637335">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>  
+  <main role="main" class="container-fluid">
+    <!--<div class="row pt-4 pb-4">
+      <div class="col">
+        <form>
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="🔍 Search">
+            </div>
+            <div class="col">
+              <select id="inputState" class="form-control">
+                <option selected>4.1</option>
+                <option>4.0.6</option>
+                <option>4.0.5</option>
+              </select>
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-truffle">SEARCH</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>-->
+
+    
+
+    <div class="row row-docs-main">
+      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). --> 
+
+          <aside class="col-lg-3 docs-sidebar" id="docsSidebar">
+            <h2 class="space-icon d-lg-none text-center" id="docsSidebarToggle"><i class="fas fa-book"></i> SEARCH &amp; CONTENTS</h2>
+          
+            <div class="docs-top-nav">
+              <a href="/docs">
+                <div class="docs-back-button">
+                  <i class="fad fa-arrow-square-left"></i>
+                </div>
+                Tezos
+              </a>
+            </div>
+          
+            <div class="docs-wrapper">
+          
+              <form class="mb-4" id="searchForm">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="searchInput" placeholder="Search">
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-truffle">SEARCH</button>
+                  </div>
+                </div>
+              </form>
+          
+              <a class="toggle-truffle suite-link" href="#truffleDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
+              </a>
+          
+              <div class="collapse truffle show" id="truffleDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/tezos/truffle/quickstart"><li>Quickstart</li></a>
+                </ul>
+                  <h3>Getting Started</h3>
+                  <ul>
+                      <a href="/docs/tezos/truffle/getting-started/installing-truffle-with-tezos"><li>Installing Truffle with Tezos</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/creating-a-tezos-project"><li>Creating a Tezos project</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/writing-tezos-contracts"><li>Writing Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/compiling-tezos-contracts"><li>Compiling Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/deploying-tezos-contracts"><li>Deploying Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/interacting-with-your-tezos-contracts"><li>Interacting with Your Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/testing-your-tezos-contracts"><li>Testing your Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/using-the-console-with-tezos"><li>Using the Console with Tezos</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/writing-external-scripts-with-tezos"><li>Writing External Scripts with Tezos</li></a>
+                  </ul>
+                  <h3>Reference</h3>
+                  <ul>
+                      <a href="/docs/tezos/truffle/reference/configuring-tezos-projects"><li>Configuring Tezos Projects</li></a>
+                  </ul>
+              </div>
+          
+            </div>
+          
+          </aside>      
+        <div class="col-lg-9 bd-light-cream docs-content">
+          <p class="alert alert-danger">
+<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by <a href="https://github.com/trufflesuite/truffle/issues">filing issues on Github</a>.
+</p>
+
+
+    <h1 class="link-markdown">
+      <a class="anchor-target" name="deploying-tezos-contracts"></a>
+      <a href="#deploying-tezos-contracts"><i class="fas fa-link"></i></a>
+      Deploying Tezos Contracts
+    </h1>
+  <p>If you&#39;re familiar with Truffle, then you already know about <a href="/docs/truffle/getting-started/running-migrations">Truffle&#39;s deployment framework</a>, called Migrations, used to manage deployment changes over time. Truffle uses a stripped-down version of this system for Tezos. </p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="overview"></a>
+      <a href="#overview"><i class="fas fa-link"></i></a>
+      Overview
+    </h2>
+  <p>To deploy Tezos contracts, you&#39;ll first need to write migration scripts to tell Truffle how to deploy those contracts. In contrast with Truffle&#39;s normal behavior, all scripts defined in the <code>./migrations</code> directory will be run for every deployment. Truffle will not try to determine which scripts have been run previously, though it can be configured at runtime to only run specific deployment scripts. If you only want to run some of the scripts you&#39;ve created, it&#39;ll be up to you to tell Truffle which script to run.</p>
+<p>For the rest of this document, we&#39;ll be referring to deployment scripts as &quot;migrations&quot; to keep in line with Truffle&#39;s normal lingo. Keep in mind that a &quot;migration&quot; is synonymous with &quot;deployment script&quot;. </p>
+<p class="alert alert-warning">
+<strong>Coming from Ethereum?</strong> If you&#39;re already familiar with Truffle projects created for Ethereum, you&#39;ll notice a distinct lack of a <code>Migrations</code> contract. As of now, the migrations system isn&#39;t yet supported by Truffle for Tezos projects, and instead all migration scripts are run during deployment.
+</p>
+
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="migrations"></a>
+      <a href="#migrations"><i class="fas fa-link"></i></a>
+      Migrations
+    </h2>
+  <p>Migrations are JavaScript files that help you deploy contracts to a Tezos network. These files are responsible for staging and running your deployment tasks, and they&#39;re written under the assumption that your deployment needs will change over time (e.g., you&#39;ll add new scripts as time progresses, and your product matures).</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="command"></a>
+      <a href="#command"><i class="fas fa-link"></i></a>
+      Command
+    </h2>
+  <p>To run your migrations, run the following:</p>
+<pre><code class="lang-shell">$ truffle migrate
+</code></pre>
+<p>This will run all migrations located within your project&#39;s <code>migrations</code> directory. At their simplest, migrations are simply a set of managed deployment scripts. Per the description above, for Tezos, <code>truffle migrate</code> will run all migration scripts unless otherwise specified. Note that this is in contrast to Truffle&#39;s default behavior for other blockchains.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="migration-files"></a>
+      <a href="#migration-files"><i class="fas fa-link"></i></a>
+      Migration files
+    </h2>
+  <p>A simple migration file looks like this:</p>
+<p>Filename: <code>4_example_migration.js</code></p>
+<pre><code class="lang-javascript">var MyContract = artifacts.require(&quot;MyContract&quot;);
+
+module.exports = (deployer) =&gt; {
+  // deployment steps
+  deployer.deploy(MyContract);
+};
+</code></pre>
+<p>Note that the filename is prefixed with a number and is suffixed by a description. The numbered prefix is required to tell Truffle which order to run the scripts. The suffix is purely for human readability and comprehension.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="artifacts-require-"></a>
+      <a href="#artifacts-require-"><i class="fas fa-link"></i></a>
+      artifacts.require()
+    </h3>
+  <p>At the beginning of the migration, we tell Truffle which contracts we&#39;d like to interact with via the <code>artifacts.require()</code> method. This method is similar to Node&#39;s <code>require</code>, but in our case it specifically returns a contract abstraction that we can use within the rest of our deployment script. The name specified should match the naem of the source file, without the <code>.ligo</code> extension.</p>
+<p>Consider this example where two contracts are specified within the same source file:</p>
+<p>Filename: <code>./contracts/SimpleStorage.ligo</code></p>
+<pre><code>function main (const newValue : int;  const storedValue : int) : (list(operation) * int) is
+  block { storedValue := newValue } with ((nil : list(operation)), storedValue)
+</code></pre><p>To interact with this contract, in your deployment script, you&#39;d use <code>artifacts.require()</code> like so:</p>
+<pre><code class="lang-javascript">var SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
+</code></pre>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="module-exports"></a>
+      <a href="#module-exports"><i class="fas fa-link"></i></a>
+      module.exports
+    </h3>
+  <p>All migrations must export a function via the <code>module.exports</code> syntax. The function exported of each migration should accept a <code>deployer</code> object as its first parameter. This object aides in deployment by both providing a clear syntax for deploying smart contracts as well as performing some of deployment&#39;s more mundane duties, such as saving deployed artifacts for later use. The <code>deployer</code> object is your main interface for staging deployment tasks, and its API is described at the bottom of this page.</p>
+<p>Your migration function can accept other parameters as well. See the examples below.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="handling-default-values"></a>
+      <a href="#handling-default-values"><i class="fas fa-link"></i></a>
+      Handling default values
+    </h3>
+  <p>A full migration script using <code>SimpleStorage</code> would look like the example below. Note that a default value (<code>3</code>) is passed to the deployer&#39;s <code>deploy()</code> function in order to set the contract&#39;s initial state. Note that the type of this second parameter must represent the type of state held in the contract, and should be represented in a form that is convertable from Javascript. More details on this below.   </p>
+<p class="alert alert-warning">
+<strong>Coming from Ethereum?</strong> You&#39;ll notice that LIGO contracts lack constructors. Passing in default values as part of deployment is the only way to set the initial state of a contract. Constructors may be added to LIGO at a later date.
+</p>
+
+<p>Filename: <code>./migrations/1_deploy_simplestorage.js</code></p>
+<pre><code class="lang-javascript">const SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
+
+module.exports = (deployer) =&gt; {
+  deployer.deploy(SimpleStorage, 3);
+};
+</code></pre>
+<p>From here, you can create new migrations with increasing numbered prefixes to deploy other contracts and perform further deployment steps.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="deployer"></a>
+      <a href="#deployer"><i class="fas fa-link"></i></a>
+      Deployer
+    </h2>
+  <p>Your migration files will use the deployer to stage deployment tasks. As such, you can write deployment tasks synchronously and they&#39;ll be executed in the correct order:</p>
+<pre><code class="lang-javascript">// Stage deploying A before B
+deployer.deploy(A);
+deployer.deploy(B);
+</code></pre>
+<p>Alternatively, each function on the deployer can be used as a Promise, to queue up deployment tasks that depend on the execution of the previous task:</p>
+<pre><code class="lang-javascript">// Deploy A, then deploy B, passing in A&#39;s newly deployed address
+deployer.deploy(A).then(function() {
+  return deployer.deploy(B, A.address);
+});
+</code></pre>
+<p>It is possible to write your deployment as a single promise chain if you find that syntax to be more clear. The deployer API is discussed at the bottom of this page.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="network-considerations"></a>
+      <a href="#network-considerations"><i class="fas fa-link"></i></a>
+      Network considerations
+    </h2>
+  <p>It is possible to run deployment steps conditionally based on the network being deployed to. This is an advanced feature, so see the <a href="/docs/advanced/networks">Networks</a> section first before continuing.</p>
+<p>To conditionally stage deployment steps, write your migrations so that they accept a second parameter, called <code>network</code>. Example:</p>
+<pre><code class="lang-javascript">module.exports = function(deployer, network) {
+  if (network == &quot;babylonnet&quot;) {
+    // Do something specific to the network named &quot;babylonnet&quot;.
+  } else {
+    // Perform a different step otherwise.
+  }
+}
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="available-accounts"></a>
+      <a href="#available-accounts"><i class="fas fa-link"></i></a>
+      Available accounts
+    </h2>
+  <p>Migrations are also passed the list of accounts set up in your wallet, for you to use during your deployments. </p>
+<pre><code class="lang-javascript">module.exports = function(deployer, network, accounts) {
+  console.log(accounts);
+  // =&gt; [ &#39;tz1iGB5P9bZkt356S2PYgAEUWCAuYEvwu152&#39; ]
+
+  // Example contract that takes in an owner as its default state.
+  // In this case we use the same account we&#39;re using to deploy.
+  deployer.deploy(OwnedContract, accounts[0]);
+}
+</code></pre>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="deployer-api"></a>
+      <a href="#deployer-api"><i class="fas fa-link"></i></a>
+      Deployer API
+    </h2>
+  <p>The deployer contains many functions available to simplify your migrations.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="deployer-deploy-contract-initialstate-options-"></a>
+      <a href="#deployer-deploy-contract-initialstate-options-"><i class="fas fa-link"></i></a>
+      deployer.deploy(contract [, initialState] [, options])
+    </h3>
+  <p>Deploy a specific contract, specified by the <code>contract</code> object. This will set the address of the contract after deployment (i.e., <code>Contract.address</code> will equal the newly deployed address), and it will override any previous address stored.</p>
+<p>This function takes an optional initial state as its second argument, that sets the state of your contract on chain when deployed. The type of data passed in this argument should match the type data stored in the state represented by the contract. We use the <a href="https://tezostaquito.io/">Tequito library</a> to perform the translation from Javascript representation to types understood by Tezos. Please see <a href="https://tezostaquito.io/docs/quick_start">their documentation</a> for more information. </p>
+<p>The last argument is an optional object that can include the key named <code>overwrite</code>. If <code>overwrite</code> is set to <code>false</code>, the deployer won&#39;t deploy this contract if one has already been deployed. This is useful for certain circumstances where a contract address is provided by an external dependency.</p>
+<p>For more information, please see the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">truffle-contract</a> documentation.</p>
+<p>Examples:</p>
+<pre><code class="lang-javascript">// Deploy a single contract without any initial state.
+deployer.deploy(A);
+
+// Deploy a single contract with an initial state of 3.
+deployer.deploy(A, 3);
+
+// Don&#39;t deploy this contract if it has already been deployed.
+deployer.deploy(A, {overwrite: false});
+
+// More specific example: 
+//
+// Don&#39;t redeploy if the contract object represents an already-deployed dependency.
+// If it has already been deployed to our target network, we can skip deploying it.
+// This is useful for cases where we _do_ want to deploy that dependency for testing
+// and development networks, but we don&#39;t want to replace it in production. 
+deployer.deploy(SomeDependency, {overwrite: false});
+</code></pre>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="deployer-then-function-"></a>
+      <a href="#deployer-then-function-"><i class="fas fa-link"></i></a>
+      deployer.then(function() {...})
+    </h3>
+  <p>Just like a promise, run an arbitrary deployment step. Use this to call specific contract functions during your migration to add, edit and reorganize contract data.</p>
+<p>Example:</p>
+<pre><code class="lang-javascript">var a, b;
+deployer.then(function() {
+  // Create a new version of A programatically, with 3 as the initial state.
+  return A.new(3);
+}).then(function(instance) {
+  a = instance;
+  // Get the deployed instance of B
+  return B.deployed();
+}).then(function(instance) {
+  b = instance;
+  // Send a transaction with the new instance of A&#39;s address using B&#39;s main() function.
+  return b.main(a.address);
+});
+</code></pre>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/tezos/truffle/getting-started">Edit here &raquo;</a>
+          </div>        </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="/js/docs.js"></script>
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+  <script src="/js/docs-search.js"></script>
+</body>
+</html>

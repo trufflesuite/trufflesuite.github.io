@@ -11840,7 +11840,7 @@ footer h4 {
 }
 
 .docs-sidebar {
-  padding: 1rem 2rem;
+  padding: 0;
   z-index: 200;
   background: #33262a;
 }
@@ -11852,6 +11852,38 @@ footer h4 {
 
 .docs-sidebar h2 {
   font-size: 1.25rem;
+}
+
+.docs-sidebar .docs-top-nav {
+  padding: 0.5rem 1rem;
+  background-color: #5e464d;
+}
+
+.docs-sidebar .docs-top-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.docs-sidebar .docs-top-nav a:hover {
+  color: white;
+}
+
+.docs-sidebar .docs-top-nav .docs-back-button {
+  display: inline-block;
+  vertical-align: middle;
+  color: white;
+  font-size: 2.5rem;
+  margin-right: 0.5rem;
+  text-overflow: ellipsis;
+}
+
+.docs-sidebar .docs-top-nav .docs-back-button .fa-arrow-square-left:after {
+  color: #3fe0c5;
+  opacity: 1;
+}
+
+.docs-sidebar .docs-wrapper {
+  padding: 1rem;
 }
 
 .docs-sidebar .toggle-teams h2 {
@@ -11870,6 +11902,10 @@ footer h4 {
   line-height: 2.3rem;
 }
 
+.docs-sidebar form {
+  margin-top: 1rem;
+}
+
 .docs-sidebar h3 {
   font-size: 1rem;
   font-weight: bold;
@@ -11883,10 +11919,6 @@ footer h4 {
 
 .docs-sidebar ul li:not(:last-child) {
   margin-bottom: .25rem;
-}
-
-.docs-sidebar form {
-  margin-top: 1.5rem;
 }
 
 .docs-sidebar .suite-logo {
@@ -12053,12 +12085,14 @@ footer h4 {
 .docs-home .card .card-title {
   color: #5e464d;
   margin-bottom: 0;
+  display: inline-block;
 }
 
 .docs-home .card .card-img-top {
   display: inline-block;
   margin: 0 .5em 0 0;
   width: 2.5rem;
+  max-height: 2.5rem;
 }
 
 .docs-home .card.docs-teams-card .card-title {
@@ -12077,6 +12111,11 @@ footer h4 {
 
 .docs-home .card.docs-drizzle-card .card-title {
   font-size: 2rem;
+}
+
+.docs-home .card.docs-blockchain-card .card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
 .docs-badges a {

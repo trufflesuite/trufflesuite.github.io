@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- HubSpot Forms -->
+  <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5258293.js"></script>
+  <!-- End of HubSpot Embed Code -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Truffle | Writing Tezos Contracts | Tezos | Documentation | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/docs/tezos/truffle/getting-started/writing-tezos-contracts" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Truffle | Writing Tezos Contracts | Tezos | Documentation | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+
+  <title>Truffle | Writing Tezos Contracts | Tezos | Documentation | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/index.css?1586964637335">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>  
+  <main role="main" class="container-fluid">
+    <!--<div class="row pt-4 pb-4">
+      <div class="col">
+        <form>
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="🔍 Search">
+            </div>
+            <div class="col">
+              <select id="inputState" class="form-control">
+                <option selected>4.1</option>
+                <option>4.0.6</option>
+                <option>4.0.5</option>
+              </select>
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-truffle">SEARCH</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>-->
+
+    
+
+    <div class="row row-docs-main">
+      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). --> 
+
+          <aside class="col-lg-3 docs-sidebar" id="docsSidebar">
+            <h2 class="space-icon d-lg-none text-center" id="docsSidebarToggle"><i class="fas fa-book"></i> SEARCH &amp; CONTENTS</h2>
+          
+            <div class="docs-top-nav">
+              <a href="/docs">
+                <div class="docs-back-button">
+                  <i class="fad fa-arrow-square-left"></i>
+                </div>
+                Tezos
+              </a>
+            </div>
+          
+            <div class="docs-wrapper">
+          
+              <form class="mb-4" id="searchForm">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="searchInput" placeholder="Search">
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-truffle">SEARCH</button>
+                  </div>
+                </div>
+              </form>
+          
+              <a class="toggle-truffle suite-link" href="#truffleDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
+              </a>
+          
+              <div class="collapse truffle show" id="truffleDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/tezos/truffle/quickstart"><li>Quickstart</li></a>
+                </ul>
+                  <h3>Getting Started</h3>
+                  <ul>
+                      <a href="/docs/tezos/truffle/getting-started/installing-truffle-with-tezos"><li>Installing Truffle with Tezos</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/creating-a-tezos-project"><li>Creating a Tezos project</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/writing-tezos-contracts"><li>Writing Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/compiling-tezos-contracts"><li>Compiling Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/deploying-tezos-contracts"><li>Deploying Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/interacting-with-your-tezos-contracts"><li>Interacting with Your Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/testing-your-tezos-contracts"><li>Testing your Tezos Contracts</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/using-the-console-with-tezos"><li>Using the Console with Tezos</li></a>
+                      <a href="/docs/tezos/truffle/getting-started/writing-external-scripts-with-tezos"><li>Writing External Scripts with Tezos</li></a>
+                  </ul>
+                  <h3>Reference</h3>
+                  <ul>
+                      <a href="/docs/tezos/truffle/reference/configuring-tezos-projects"><li>Configuring Tezos Projects</li></a>
+                  </ul>
+              </div>
+          
+            </div>
+          
+          </aside>      
+        <div class="col-lg-9 bd-light-cream docs-content">
+          <p class="alert alert-danger">
+<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by <a href="https://github.com/trufflesuite/truffle/issues">filing issues on Github</a>.
+</p>
+
+
+    <h1 class="link-markdown">
+      <a class="anchor-target" name="writing-tezos-contracts"></a>
+      <a href="#writing-tezos-contracts"><i class="fas fa-link"></i></a>
+      Writing Tezos Contracts
+    </h1>
+  <p>Smart contracts in Tezos are written in the <a href="https://ligolang.org/">LIGO programming language</a>. We recommend you familiarize yourself with the language before continuing. Their documentation is excellent.</p>
+<ul>
+<li><a href="https://ligolang.org/">Main language site</a></li>
+<li><a href="https://ide.ligolang.org/">Online sandbox</a></li>
+<li><a href="https://ligolang.org/docs/intro/what-and-why/">Documentation</a></li>
+</ul>
+<p class="alert alert-warning">
+<strong>Note!</strong> LIGO supports three different syntaxes out of the box: CamelLIGO, PascalLIGO, and ReasonLIGO. For all examples in this documentation, we use PascalLIGO.
+</p>
+
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="example-contract-amp-overview"></a>
+      <a href="#example-contract-amp-overview"><i class="fas fa-link"></i></a>
+      Example Contract &amp; Overview
+    </h2>
+  <p>All contracts within a Tezos-based Truffle project are stored in the <code>./contracts</code> directory. An example contract looks like the following:</p>
+<pre><code>// variant defining pseudo multi-entrypoint actions
+type action is
+| Increment of int
+| Decrement of int
+
+function add (const a : int ; const b : int) : int is a + b
+
+function subtract (const a : int ; const b : int) : int is a - b
+
+// real entrypoint that re-routes the flow based on the action provided
+function main (const p : action ; const s : int) : (list(operation) * int) is 
+  ((nil : list(operation)),
+    case p of
+    | Increment (n) -&gt; add (s, n)
+    | Decrement (n) -&gt; subtract (s, n)
+    end)
+</code></pre><p>There&#39;s some important takeaways to note when writing LIGO contracts: </p>
+<ul>
+<li>By default, all LIGO contracts have a single entry point called <code>main</code>, expected by Truffle. For multiple entry points, see below. </li>
+<li>The last parameter to the entry point function represents the current state of the contract, and is sent to the function via the underlying protocol. </li>
+<li>All LIGO contracts return two things: A list of further operations the protocol should perform, and the final state of the contract after execution of the entry point.</li>
+</ul>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="defining-multiple-entry-points"></a>
+      <a href="#defining-multiple-entry-points"><i class="fas fa-link"></i></a>
+      Defining Multiple Entry Points
+    </h2>
+  <p>You&#39;ll notice that the comments in the example contract above suggest there are multiple entry points beyond <code>main()</code>. Conceptually there <em>are</em> multiple entry points -- <code>increment</code> and <code>decrement</code> -- but under the hood, <code>main()</code> is technically the single entery point of the contract. </p>
+<p>To code a contract with multiple entry points that Truffle can take advantage of, you&#39;ll need to follow the example above. Start by defining an enum-like type called <code>action</code> with values relative to the functions being called, and then pass the action as the first value into <code>main()</code>. As you&#39;ll see in the <a href="/docs/tezos/truffle/getting-started/interacting-with-your-contracts">Interacting With Your Contracts</a> section, if Truffle detects an <code>action</code> type as the first parameter in <code>main()</code>, it&#39;ll treat your contract as though it has multiple entry points, and make those entry points easy to call from outside the blockchain.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="including-other-contracts"></a>
+      <a href="#including-other-contracts"><i class="fas fa-link"></i></a>
+      Including Other Contracts
+    </h2>
+  <p>Sometimes it&#39;s nice to organize your code in multiple files. Fortunately, the LIGO compiler does this for you. To do so, check out the <a href="https://ligolang.org/docs/advanced/include/">LIGO documentation</a> for more. You&#39;ll still need one contract that contains a <code>main()</code> function, though you can organize other contract code in other files as needed.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="how-do-i-compile-"></a>
+      <a href="#how-do-i-compile-"><i class="fas fa-link"></i></a>
+      How do I compile?
+    </h2>
+  <p>It&#39;s easy. See the <a href="/docs/tezos/truffle/getting-started/compiling-tezos-contracts">Compiling Tezos Contracts</a> section for more! </p>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/tezos/truffle/getting-started">Edit here &raquo;</a>
+          </div>        </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="/js/docs.js"></script>
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+  <script src="/js/docs-search.js"></script>
+</body>
+</html>

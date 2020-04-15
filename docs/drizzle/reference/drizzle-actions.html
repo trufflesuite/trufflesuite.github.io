@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1586933750573">
+  <link rel="stylesheet" href="/css/index.css?1586964637335">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -150,164 +150,178 @@
     
 
     <div class="row row-docs-main">
-      <aside class="col-lg-3 docs-sidebar" id="docsSidebar">
-        <h2 class="space-icon d-lg-none text-center" id="docsSidebarToggle"><i class="fas fa-book"></i> SEARCH &amp; CONTENTS</h2>
-      
-        <form class="mb-4" id="searchForm">
-          <div class="input-group">
-            <input type="text" class="form-control" id="searchInput" placeholder="Search">
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-truffle">SEARCH</button>
+      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). --> 
+
+          <aside class="col-lg-3 docs-sidebar" id="docsSidebar">
+            <h2 class="space-icon d-lg-none text-center" id="docsSidebarToggle"><i class="fas fa-book"></i> SEARCH &amp; CONTENTS</h2>
+          
+            <div class="docs-top-nav">
+              <a href="/docs">
+                <div class="docs-back-button">
+                  <i class="fad fa-arrow-square-left"></i>
+                </div>
+                Ethereum & EVM-based chains
+              </a>
             </div>
-          </div>
-        </form>
-      
-        <a class="toggle-teams suite-link" href="#teamsDocs" data-toggle="collapse">
-          <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><h2 class="text-truffle">TRUFFLE TEAMS</h2>
-        </a>
-      
-        <div class="collapse teams " id="teamsDocs" data-parent="#docsSidebar">
-          <ul>
-            <a href="/docs/teams/overview"><li>Overview</li></a>
-            <a href="/docs/teams/quickstart"><li>Quickstart</li></a>
-          </ul>
-            <h3>Getting Started</h3>
-            <ul>
-                <a href="/docs/teams/getting-started/creating-an-account"><li>Creating an Account</li></a>
-                <a href="/docs/teams/getting-started/adding-repositories"><li>Adding Repositories</li></a>
-            </ul>
-            <h3>Testing</h3>
-            <ul>
-                <a href="/docs/teams/testing/starting-builds"><li>Starting Builds</li></a>
-            </ul>
-            <h3>Deployments</h3>
-            <ul>
-                <a href="/docs/teams/deployments/deploying-contracts"><li>Deploying Contracts</li></a>
-            </ul>
-            <h3>Contracts</h3>
-            <ul>
-                <a href="/docs/teams/contracts/contract-monitoring"><li>Contract Monitoring</li></a>
-            </ul>
-            <h3>Reference</h3>
-            <ul>
-                <a href="/docs/teams/reference/permissions-disclosure"><li>Permissions Disclosure</li></a>
-            </ul>
-        </div>
-      
-        <a class="toggle-truffle suite-link" href="#truffleDocs" data-toggle="collapse">
-          <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
-        </a>
-      
-        <div class="collapse truffle " id="truffleDocs" data-parent="#docsSidebar">
-          <ul>
-            <a href="/docs/truffle/overview"><li>Overview</li></a>
-            <a href="/docs/truffle/quickstart"><li>Quickstart</li></a>
-          </ul>
-            <h3>Getting Started</h3>
-            <ul>
-                <a href="/docs/truffle/getting-started/installation"><li>Installation</li></a>
-                <a href="/docs/truffle/getting-started/creating-a-project"><li>Creating a Project</li></a>
-                <a href="/docs/truffle/getting-started/compiling-contracts"><li>Compiling Contracts</li></a>
-                <a href="/docs/truffle/getting-started/running-migrations"><li>Running Migrations</li></a>
-                <a href="/docs/truffle/getting-started/interacting-with-your-contracts"><li>Interacting with Your Contracts</li></a>
-                <a href="/docs/truffle/getting-started/truffle-with-metamask"><li>Truffle with MetaMask</li></a>
-                <a href="/docs/truffle/getting-started/package-management-via-ethpm"><li>Package Management via EthPM</li></a>
-                <a href="/docs/truffle/getting-started/package-management-via-npm"><li>Package Management via NPM</li></a>
-                <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
-                <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
-                <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
-            </ul>
-            <h3>Testing</h3>
-            <ul>
-                <a href="/docs/truffle/testing/testing-your-contracts"><li>Testing Your Contracts</li></a>
-                <a href="/docs/truffle/testing/writing-tests-in-javascript"><li>Writing Tests in JavaScript</li></a>
-                <a href="/docs/truffle/testing/writing-tests-in-solidity"><li>Writing Tests in Solidity</li></a>
-            </ul>
-            <h3>Distributed Ledger Support</h3>
-            <ul>
-                <a href="/docs/truffle/distributed-ledger-support/working-with-quorum"><li>Working With Quorum</li></a>
-                <a href="/docs/truffle/distributed-ledger-support/working-with-hyperledger-evm"><li>Working With Hyperledger EVM</li></a>
-            </ul>
-            <h3>Advanced</h3>
-            <ul>
-                <a href="/docs/truffle/advanced/networks-and-app-deployment"><li>Networks and App Deployment</li></a>
-                <a href="/docs/truffle/advanced/build-processes"><li>Build Processes</li></a>
-                <a href="/docs/truffle/advanced/creating-a-truffle-box"><li>Creating a Truffle Box</li></a>
-                <a href="/docs/truffle/advanced/event-system"><li>Event System</li></a>
-                <a href="/docs/truffle/advanced/ethereum-name-service"><li>Ethereum Name Service</li></a>
-            </ul>
-            <h3>Reference</h3>
-            <ul>
-                <a href="/docs/truffle/reference/choosing-an-ethereum-client"><li>Choosing an Ethereum Client</li></a>
-                <a href="/docs/truffle/reference/configuration"><li>Configuration</li></a>
-                <a href="/docs/truffle/reference/contract-abstractions"><li>Contract Abstractions</li></a>
-                <a href="/docs/truffle/reference/truffle-commands"><li>Truffle Commands</li></a>
-                <a href="/docs/truffle/reference/contact-the-developers"><li>Contact The Developers</li></a>
-            </ul>
-        </div>
-      
-        <a class="toggle-ganache suite-link" href="#ganacheDocs" data-toggle="collapse">
-          <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" /><h2 class="text-ganache">Ganache</h2>
-        </a>
-        
-        <div class="collapse ganache " id="ganacheDocs" data-parent="#docsSidebar">
-          <ul>
-            <a href="/docs/ganache/overview"><li>Overview</li></a>
-            <a href="/docs/ganache/quickstart"><li>Quickstart</li></a>
-          </ul>
-            <h3>Workspaces</h3>
-            <ul>
-                <a href="/docs/ganache/workspaces/the-quickstart-workspace"><li>The Quickstart Workspace</li></a>
-                <a href="/docs/ganache/workspaces/creating-workspaces"><li>Creating Workspaces</li></a>
-                <a href="/docs/ganache/workspaces/loading-existing-workspaces"><li>Loading Existing Workspaces</li></a>
-                <a href="/docs/ganache/workspaces/switching-workspaces"><li>Switching Workspaces</li></a>
-                <a href="/docs/ganache/workspaces/deleting-workspaces"><li>Deleting Workspaces</li></a>
-            </ul>
-            <h3>Truffle Projects</h3>
-            <ul>
-                <a href="/docs/ganache/truffle-projects/linking-a-truffle-project"><li>Linking a Truffle Project</li></a>
-                <a href="/docs/ganache/truffle-projects/unlinking-a-truffle-project"><li>Unlinking a Truffle Project</li></a>
-                <a href="/docs/ganache/truffle-projects/contracts-page"><li>Contracts Page</li></a>
-                <a href="/docs/ganache/truffle-projects/events-page"><li>Events Page</li></a>
-                <a href="/docs/ganache/truffle-projects/decoded-transactions"><li>Decoded Transactions</li></a>
-            </ul>
-            <h3>Reference</h3>
-            <ul>
-                <a href="/docs/ganache/reference/ganache-settings"><li>Ganache Settings</li></a>
-                <a href="/docs/ganache/reference/workspace-default-configuration"><li>Workspace Default Configuration</li></a>
-            </ul>
-        </div>
-      
-        <a class="toggle-drizzle suite-link" href="#drizzleDocs" data-toggle="collapse">
-          <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" /><h2 class="text-drizzle">dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le</h2>
-        </a>
-        
-        <div class="collapse drizzle show" id="drizzleDocs" data-parent="#docsSidebar">
-          <ul>
-            <a href="/docs/drizzle/overview"><li>Overview</li></a>
-            <a href="/docs/drizzle/quickstart"><li>Quickstart</li></a>
-          </ul>
-            <h3>Getting Started</h3>
-            <ul>
-                <a href="/docs/drizzle/getting-started/using-drizzles-redux-store"><li>Using Drizzle&#x27;s Redux Store</li></a>
-                <a href="/docs/drizzle/getting-started/contract-interaction"><li>Contract Interaction</li></a>
-            </ul>
-            <h3>React</h3>
-            <ul>
-                <a href="/docs/drizzle/react/react-integration"><li>React Integration</li></a>
-                <a href="/docs/drizzle/react/react-components"><li>React Components</li></a>
-            </ul>
-            <h3>Reference</h3>
-            <ul>
-                <a href="/docs/drizzle/reference/drizzle-options"><li>Drizzle Options</li></a>
-                <a href="/docs/drizzle/reference/drizzle-state"><li>Drizzle State</li></a>
-                <a href="/docs/drizzle/reference/drizzle-actions"><li>Drizzle Actions</li></a>
-                <a href="/docs/drizzle/reference/how-data-stays-fresh"><li>How Data Stays Fresh</li></a>
-            </ul>
-        </div>
-      </aside>
-      <div class="col-lg-9 bd-light-cream docs-content">
-        
+          
+            <div class="docs-wrapper">
+          
+              <form class="mb-4" id="searchForm">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="searchInput" placeholder="Search">
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-truffle">SEARCH</button>
+                  </div>
+                </div>
+              </form>
+          
+              <a class="toggle-teams suite-link" href="#teamsDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><h2 class="text-truffle">TRUFFLE TEAMS</h2>
+              </a>
+          
+              <div class="collapse teams " id="teamsDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/teams/overview"><li>Overview</li></a>
+                  <a href="/docs/teams/quickstart"><li>Quickstart</li></a>
+                </ul>
+                  <h3>Getting Started</h3>
+                  <ul>
+                      <a href="/docs/teams/getting-started/creating-an-account"><li>Creating an Account</li></a>
+                      <a href="/docs/teams/getting-started/adding-repositories"><li>Adding Repositories</li></a>
+                  </ul>
+                  <h3>Testing</h3>
+                  <ul>
+                      <a href="/docs/teams/testing/starting-builds"><li>Starting Builds</li></a>
+                  </ul>
+                  <h3>Deployments</h3>
+                  <ul>
+                      <a href="/docs/teams/deployments/deploying-contracts"><li>Deploying Contracts</li></a>
+                  </ul>
+                  <h3>Contracts</h3>
+                  <ul>
+                      <a href="/docs/teams/contracts/contract-monitoring"><li>Contract Monitoring</li></a>
+                  </ul>
+                  <h3>Reference</h3>
+                  <ul>
+                      <a href="/docs/teams/reference/permissions-disclosure"><li>Permissions Disclosure</li></a>
+                  </ul>
+              </div>
+          
+              <a class="toggle-truffle suite-link" href="#truffleDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
+              </a>
+          
+              <div class="collapse truffle " id="truffleDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/truffle/overview"><li>Overview</li></a>
+                  <a href="/docs/truffle/quickstart"><li>Quickstart</li></a>
+                </ul>
+                  <h3>Getting Started</h3>
+                  <ul>
+                      <a href="/docs/truffle/getting-started/installation"><li>Installation</li></a>
+                      <a href="/docs/truffle/getting-started/creating-a-project"><li>Creating a Project</li></a>
+                      <a href="/docs/truffle/getting-started/compiling-contracts"><li>Compiling Contracts</li></a>
+                      <a href="/docs/truffle/getting-started/running-migrations"><li>Running Migrations</li></a>
+                      <a href="/docs/truffle/getting-started/interacting-with-your-contracts"><li>Interacting with Your Contracts</li></a>
+                      <a href="/docs/truffle/getting-started/truffle-with-metamask"><li>Truffle with MetaMask</li></a>
+                      <a href="/docs/truffle/getting-started/package-management-via-ethpm"><li>Package Management via EthPM</li></a>
+                      <a href="/docs/truffle/getting-started/package-management-via-npm"><li>Package Management via NPM</li></a>
+                      <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
+                      <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
+                      <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
+                  </ul>
+                  <h3>Testing</h3>
+                  <ul>
+                      <a href="/docs/truffle/testing/testing-your-contracts"><li>Testing Your Contracts</li></a>
+                      <a href="/docs/truffle/testing/writing-tests-in-javascript"><li>Writing Tests in JavaScript</li></a>
+                      <a href="/docs/truffle/testing/writing-tests-in-solidity"><li>Writing Tests in Solidity</li></a>
+                  </ul>
+                  <h3>Distributed Ledger Support</h3>
+                  <ul>
+                      <a href="/docs/truffle/distributed-ledger-support/working-with-quorum"><li>Working With Quorum</li></a>
+                      <a href="/docs/truffle/distributed-ledger-support/working-with-hyperledger-evm"><li>Working With Hyperledger EVM</li></a>
+                  </ul>
+                  <h3>Advanced</h3>
+                  <ul>
+                      <a href="/docs/truffle/advanced/networks-and-app-deployment"><li>Networks and App Deployment</li></a>
+                      <a href="/docs/truffle/advanced/build-processes"><li>Build Processes</li></a>
+                      <a href="/docs/truffle/advanced/creating-a-truffle-box"><li>Creating a Truffle Box</li></a>
+                      <a href="/docs/truffle/advanced/event-system"><li>Event System</li></a>
+                      <a href="/docs/truffle/advanced/ethereum-name-service"><li>Ethereum Name Service</li></a>
+                  </ul>
+                  <h3>Reference</h3>
+                  <ul>
+                      <a href="/docs/truffle/reference/choosing-an-ethereum-client"><li>Choosing an Ethereum Client</li></a>
+                      <a href="/docs/truffle/reference/configuration"><li>Configuration</li></a>
+                      <a href="/docs/truffle/reference/contract-abstractions"><li>Contract Abstractions</li></a>
+                      <a href="/docs/truffle/reference/truffle-commands"><li>Truffle Commands</li></a>
+                      <a href="/docs/truffle/reference/contact-the-developers"><li>Contact The Developers</li></a>
+                  </ul>
+              </div>
+          
+              <a class="toggle-ganache suite-link" href="#ganacheDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" /><h2 class="text-ganache">Ganache</h2>
+              </a>
+              
+              <div class="collapse ganache " id="ganacheDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/ganache/overview"><li>Overview</li></a>
+                  <a href="/docs/ganache/quickstart"><li>Quickstart</li></a>
+                </ul>
+                  <h3>Workspaces</h3>
+                  <ul>
+                      <a href="/docs/ganache/workspaces/the-quickstart-workspace"><li>The Quickstart Workspace</li></a>
+                      <a href="/docs/ganache/workspaces/creating-workspaces"><li>Creating Workspaces</li></a>
+                      <a href="/docs/ganache/workspaces/loading-existing-workspaces"><li>Loading Existing Workspaces</li></a>
+                      <a href="/docs/ganache/workspaces/switching-workspaces"><li>Switching Workspaces</li></a>
+                      <a href="/docs/ganache/workspaces/deleting-workspaces"><li>Deleting Workspaces</li></a>
+                  </ul>
+                  <h3>Truffle Projects</h3>
+                  <ul>
+                      <a href="/docs/ganache/truffle-projects/linking-a-truffle-project"><li>Linking a Truffle Project</li></a>
+                      <a href="/docs/ganache/truffle-projects/unlinking-a-truffle-project"><li>Unlinking a Truffle Project</li></a>
+                      <a href="/docs/ganache/truffle-projects/contracts-page"><li>Contracts Page</li></a>
+                      <a href="/docs/ganache/truffle-projects/events-page"><li>Events Page</li></a>
+                      <a href="/docs/ganache/truffle-projects/decoded-transactions"><li>Decoded Transactions</li></a>
+                  </ul>
+                  <h3>Reference</h3>
+                  <ul>
+                      <a href="/docs/ganache/reference/ganache-settings"><li>Ganache Settings</li></a>
+                      <a href="/docs/ganache/reference/workspace-default-configuration"><li>Workspace Default Configuration</li></a>
+                  </ul>
+              </div>
+          
+              <a class="toggle-drizzle suite-link" href="#drizzleDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" /><h2 class="text-drizzle">dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le</h2>
+              </a>
+              
+              <div class="collapse drizzle show" id="drizzleDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/drizzle/overview"><li>Overview</li></a>
+                  <a href="/docs/drizzle/quickstart"><li>Quickstart</li></a>
+                </ul>
+                  <h3>Getting Started</h3>
+                  <ul>
+                      <a href="/docs/drizzle/getting-started/using-drizzles-redux-store"><li>Using Drizzle&#x27;s Redux Store</li></a>
+                      <a href="/docs/drizzle/getting-started/contract-interaction"><li>Contract Interaction</li></a>
+                  </ul>
+                  <h3>React</h3>
+                  <ul>
+                      <a href="/docs/drizzle/react/react-integration"><li>React Integration</li></a>
+                      <a href="/docs/drizzle/react/react-components"><li>React Components</li></a>
+                  </ul>
+                  <h3>Reference</h3>
+                  <ul>
+                      <a href="/docs/drizzle/reference/drizzle-options"><li>Drizzle Options</li></a>
+                      <a href="/docs/drizzle/reference/drizzle-state"><li>Drizzle State</li></a>
+                      <a href="/docs/drizzle/reference/drizzle-actions"><li>Drizzle Actions</li></a>
+                      <a href="/docs/drizzle/reference/how-data-stays-fresh"><li>How Data Stays Fresh</li></a>
+                  </ul>
+              </div>
+            </div>
+          </aside>      
+        <div class="col-lg-9 bd-light-cream docs-content">
+          
     <h1 class="link-markdown">
       <a class="anchor-target" name="drizzle-actions"></a>
       <a href="#drizzle-actions"><i class="fas fa-link"></i></a>
@@ -542,9 +556,9 @@ A sentence about the event, such as: conditions under which it fires, what it co
 <p><strong><code>stackTempKey</code> (string)</strong>: If the transaction experienced an erorr before broadcasting (such as a rejection), this key will be filled on the <code>transactionStack</code> rather than a transaction hash to prevent stack index collisions.</p>
 
 
-        <div class="contribute-link">
-          See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/drizzle/reference">Edit here &raquo;</a>
-        </div>      </div>
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/drizzle/reference">Edit here &raquo;</a>
+          </div>        </div>
     </div>
   </main>
 

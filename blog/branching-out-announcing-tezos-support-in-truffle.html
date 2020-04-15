@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- HubSpot Forms -->
+  <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5258293.js"></script>
+  <!-- End of HubSpot Embed Code -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Branching Out: Announcing Tezos Support in Truffle | Blog | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/blog/branching-out-announcing-tezos-support-in-truffle" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Branching Out: Announcing Tezos Support in Truffle | Blog | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Branching Out: Announcing Tezos Support in Truffle | Blog | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Branching Out: Announcing Tezos Support in Truffle</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2019-4-15&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Tim Coulter</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <p>
+    <img class="img-fluid" src="/img/blog/branching-out-announcing-tezos-support-in-truffle/chameleon-t3-truffle-blog-header.png" title="Announcing Truffle Integration" alt="Announcing Truffle Integration" />
+    
+  </p>
+<p>If you&#39;ve been following Truffle&#39;s development, you&#39;ll notice that our tools already support a handful of exciting platforms: <a href="https://ethereum.org/">Ethereum</a>, <a href="https://www.goquorum.com/">Quorum</a>, <a href="https://axoni.com/technology/">Axoni</a>, Hyperledger <a href="https://github.com/hyperledger/fabric-chaincode-evm">Fabric-EVM</a>, Hyperledger <a href="https://www.hyperledger.org/projects/sawtooth">Sawtooth</a>, and Hyperledger <a href="https://www.hyperledger.org/projects/hyperledger-burrow">Burrow</a>. What&#39;s common amongst these chains is that they all use the Ethereum Virtual Machine under the hood. Ethereum is very near and dear to our hearts -- it&#39;s where we got our start, and where we are the most competent. But we&#39;re branching out, in large part due to market demand. In December we released a beta <a href="/blog/unwrap-the-corda-flavored-ganache-beta">Corda-flavored Ganache</a> as part of our initial support for the <a href="https://www.r3.com/corda-platform/">Corda platform</a>. And today, we branch out even further.</p>
+<p><strong>I&#39;m excited to announce Tezos integration into the Truffle command line tool.</strong></p>
+<p>Right now, at this very moment, you can <a href="/docs/tezos/truffle/quickstart">download a Tezos-specific version of Truffle</a> and start building smart contracts on Tezos networks using the time-tested tooling you know and love. And if you&#39;re a Tezos native who got your start building on top of the Tezos platform, then this means professional-grade tooling has finally arrived.</p>
+<p>We chose Tezos as our first non-EVM chain because of its blossoming developer community. In our position as tool builders, we go where the market takes us: If enough people ask for Tezos support, we listen. This market demand was coupled with an active and interested group of core developers, and a blockchain architecture that&#39;s similar to Ethereum. Ultimately, Tezos is &quot;EVM-like&quot;. This makes it a great candidate for integration, fitting into Truffle like a glove.</p>
+<p>Are you a developer who wants to build on top of Tezos using Truffle? <a href="/docs/tezos/truffle/quickstart">Check out our documentation</a> and our <a href="/docs/tezos/truffle/quickstart">quick start guide</a>.</p>
+<p>It&#39;s important to note that our integration with Tezos is experimental. As of now you&#39;ll need to download a special version of Truffle to start building on Tezos. This is by design: Integrating a new blockchain into a common workflow takes some work, and we want to ensure we keep the same level of quality for our existing chains while we work out the kinks. You can be extremely helpful here! If you run into an issue using the Tezos version of Truffle, let us know! You can file an issue at our <a href="https://github.com/trufflesuite/truffle/issues">issue tracker</a>, or reach out to us on <a href="https://spectrum.chat/trufflesuite">Spectrum</a>.</p>
+<p>Our plan over the coming months is to harden our Tezos integration and ultimately release it under the mainline version of Truffle. We’ve also expanded our commitment to the Tezos project by finalizing plans for further integrations: 1) a Tezos-flavored <a href="https://www.trufflesuite.com/ganache">Ganache</a>; and 2) full support for the <a href="https://smartpy.io/">SmartPy</a> programming language.</p>
+<p>Though this is our first foray into supporting non-EVM blockchains, I&#39;d like to take this moment to reaffirm our support and interest in Ethereum and Ethereum-based blockchains. You&#39;ll see many more announcements in 2020 about how we&#39;re planning to make development on both Ethereum 1.0 and Ethereum 2.0 better. Stay tuned.</p>
+<p>I&#39;d like to thank some standout developers in the Tezos community for making this integration a reality. First, are the developers from <a href="https://stove-labs.com/">Stove Labs</a>, Matej Šima &amp; Istvan Deak. They helped significantly in stress testing our integration and providing continuous feedback during development. I&#39;d also like to thank <a href="https://tezostaquito.io/">Taquito</a> developers Jev Björsell and Simon B.Robert for creating an easy to use library for communicating with and interacting with the Tezos blockchain (for Ethereum developers, this is the Web3.js equivalent). Last but not least, a big shout out to the developers of the <a href="https://ligolang.org/">LIGO</a> programming language, Gabriel Alfour and the rest of the LIGO development team, for making LIGO compiler integration easy on us. Cheers to you!</p>
+<p>We&#39;re excited to announce Tezos support as one of many integrations to come in 2020. Thank you for your continued support of our work, and the opportunity to make your development life easier. Happy coding!</p>
+<p>Tim</p>
+<p>-- Founder &amp; CEO, Truffle Suite</p>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/blog">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="/trufflecon2020">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2020</a></li>
+            <li><strong>&copy; Truffle Blockchain Group 2020</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+          <script>
+            hbspt.forms.create({
+               portalId: "5258293",
+               formId: "afcfabf3-e2c3-4a08-aace-ef5c7b13c3d8"
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>
