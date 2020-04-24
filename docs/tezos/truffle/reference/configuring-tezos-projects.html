@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1587399050944">
+  <link rel="stylesheet" href="/css/index.css?1587717756412">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -229,7 +229,7 @@ module.exports = {
   // for more details on how to specify configuration options!
   networks: {
     development: {
-      host: &quot;https://api.tez.ie/rpc/babylonnet&quot;,
+      host: &quot;https://api.tez.ie/rpc/carthagenet&quot;,
       port: 443,
       network_id: &quot;*&quot;,
       secret,
@@ -247,7 +247,7 @@ module.exports = {
       <a href="#configuring-your-project-to-deploy-to-a-public-test-network"><i class="fas fa-link"></i></a>
       Configuring your project to deploy to a public test network
     </h2>
-  <p>The above configuration defines a single development network pointed at the public <a href="https://tezos.gitlab.io/#babylonnet-test-network">BabylonNet</a> test network. You can see how this is set up in context by following our <a href="/docs/tezos/quickstart">quickstart</a>.</p>
+  <p>The above configuration defines a single development network pointed at the public <a href="https://tezos.gitlab.io/introduction/test_networks.html">CarthageNet</a> test network. You can see how this is set up in context by following our <a href="/docs/tezos/quickstart">quickstart</a>.</p>
 <p>Developing on public test nets can be limiting for a number of reasons (acquiring test net tokens, performance, and internet connectivity, among others). Fortunately, there&#39;s a local solution.</p>
 
     <h2 class="link-markdown">
@@ -283,7 +283,7 @@ module.exports = {
 <p>Example:</p>
 <pre><code class="lang-javascript">networks: {
   development: {
-    host: &quot;https://babylonnet.smartpy.io&quot;,
+    host: &quot;https://carthagenet.smartpy.io&quot;,
     port: 443,
     network_id: &quot;*&quot;,
     type: &quot;tezos&quot;

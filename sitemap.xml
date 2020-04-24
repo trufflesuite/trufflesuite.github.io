@@ -284,8 +284,8 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/networks-and-app-deployment.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/distributed-ledger-support/working-with-hyperledger-evm.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/distributed-ledger-support/working-with-quorum.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/compiling-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/creating-a-project.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/compiling-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/debugging-your-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/installation.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/interacting-with-your-contracts.html</loc> </url>

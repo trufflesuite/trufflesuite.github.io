@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1587399050944">
+  <link rel="stylesheet" href="/css/index.css?1587717756412">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -359,6 +359,13 @@
       Application deployment
     </h2>
   <p>Because the network is auto-detected by the contract artifacts at runtime, this means that you only need to deploy your application or frontend <em>once</em>. When you run your application, the running Ethereum client will determine which artifacts are used, and this will make your application very flexible. As an example, if you were to deploy a web application to <a href="http://mydapp.io">http://mydapp.io</a>, you could navigate to that address using your favorite wallet-browser (like MetaMask, or Mist) and your dapp would work correctly regardless of the Ethereum network the wallet-browser was connected to. If the wallet-browser was connected to the live network, your dapp would use the contracts you deployed on the live network. If on Ropsten, the contracts you deployed to Ropsten would be used.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="source-code-verification"></a>
+      <a href="#source-code-verification"><i class="fas fa-link"></i></a>
+      Source code verification
+    </h2>
+  <p>After deploying your application, you might want to use <a href="https://etherscan.io/">Etherscan</a>&#39;s source code verification. Etherscan is one of the most popular block explorers for Ethereum, and by verifying your smart contract source code on their platform users can see what your smart contracts do before they use your application. This helps to grow trust in your smart contracts and your application. One way to do this is the <a href="https://etherscan.io/verifyContract">Etherscan web form</a>, but the easiest way is using <a href="https://github.com/rkalis/truffle-plugin-verify">truffle-plugin-verify</a>. This plugin integrates directly with Truffle&#39;s workflow to verify your smart contracts&#39; source code. Read more about setting up and using this plugin in the guide <a href="https://kalis.me/verify-truffle-smart-contracts-etherscan/"><em>Automatically verify Truffle smart contracts on Etherscan</em></a>.</p>
 
 
           <div class="contribute-link">

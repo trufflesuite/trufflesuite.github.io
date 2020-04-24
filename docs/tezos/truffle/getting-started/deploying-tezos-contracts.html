@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1587399050944">
+  <link rel="stylesheet" href="/css/index.css?1587717756412">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -329,8 +329,8 @@ deployer.deploy(A).then(function() {
   <p>It is possible to run deployment steps conditionally based on the network being deployed to. This is an advanced feature, so see the <a href="/docs/advanced/networks">Networks</a> section first before continuing.</p>
 <p>To conditionally stage deployment steps, write your migrations so that they accept a second parameter, called <code>network</code>. Example:</p>
 <pre><code class="lang-javascript">module.exports = function(deployer, network) {
-  if (network == &quot;babylonnet&quot;) {
-    // Do something specific to the network named &quot;babylonnet&quot;.
+  if (network == &quot;carthagenet&quot;) {
+    // Do something specific to the network named &quot;carthagenet&quot;.
   } else {
     // Perform a different step otherwise.
   }
