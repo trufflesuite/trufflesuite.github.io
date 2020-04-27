@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1587760852795">
+  <link rel="stylesheet" href="/css/index.css?1588020260992">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -275,6 +275,7 @@
                       <a href="/docs/ganache/workspaces/loading-existing-workspaces"><li>Loading Existing Workspaces</li></a>
                       <a href="/docs/ganache/workspaces/switching-workspaces"><li>Switching Workspaces</li></a>
                       <a href="/docs/ganache/workspaces/deleting-workspaces"><li>Deleting Workspaces</li></a>
+                      <a href="/docs/ganache/workspaces/editing-workspaces"><li>Editing Workspaces</li></a>
                   </ul>
                   <h3>Truffle Projects</h3>
                   <ul>
@@ -283,6 +284,17 @@
                       <a href="/docs/ganache/truffle-projects/contracts-page"><li>Contracts Page</li></a>
                       <a href="/docs/ganache/truffle-projects/events-page"><li>Events Page</li></a>
                       <a href="/docs/ganache/truffle-projects/decoded-transactions"><li>Decoded Transactions</li></a>
+                  </ul>
+                  <h3>Corda</h3>
+                  <ul>
+                      <a href="/docs/ganache/corda/working-with-corda"><li>Working with Corda</li></a>
+                      <a href="/docs/ganache/corda/workspace-overview"><li>Workspace Overview</li></a>
+                      <a href="/docs/ganache/corda/linking-a-corda-project"><li>Linking a Corda Project</li></a>
+                      <a href="/docs/ganache/corda/unlinking-a-corda-project"><li>Unlinking a Corda Project</li></a>
+                      <a href="/docs/ganache/corda/nodes"><li>Nodes</li></a>
+                      <a href="/docs/ganache/corda/transactions"><li>Transactions</li></a>
+                      <a href="/docs/ganache/corda/cordapps"><li>CorDapps</li></a>
+                      <a href="/docs/ganache/corda/shell"><li>Shell</li></a>
                   </ul>
                   <h3>Reference</h3>
                   <ul>
@@ -327,10 +339,10 @@
       <a href="#ganache-quickstart"><i class="fas fa-link"></i></a>
       Ganache Quickstart
     </h1>
-  <p>This quickstart guide will walk you through (1.) installing Ganache and (2.) creating a personal development blockchain via our quickstart workspace.</p>
+  <p>This quickstart guide will walk you through installing Ganache and creating a personal development blockchain via a quickstart workspace.</p>
 <p>If this isn&#39;t your first time using Ganache, or you already know you&#39;ll need custom configuration options, check out the <a href="/docs/ganache/workspaces/creating-workspaces">Creating Workspaces documentation</a>.</p>
 <p class="alert alert-info">
-<strong>Prefer using the command line?</strong>: This page will focus only on the graphical interface. Please see the <a href="https://github.com/trufflesuite/ganache-cli/blob/master/README.md">Ganache CLI Readme</a> for more information on the command line flavor of Ganache.
+<strong>Working with Ethereum and prefer using the command line?</strong>: This page will focus only on the graphical interface. Please see the <a href="https://github.com/trufflesuite/ganache-cli/blob/master/README.md">Ganache CLI Readme</a> for more information on the command line flavor of Ganache.
 </p>
 
 
@@ -343,54 +355,29 @@
 <ul>
 <li>Windows: <code>Ganache-*.appx</code></li>
 <li>Mac: <code>Ganache-*.dmg</code></li>
-<li>Linux: <code>Ganache-*.AppImage</code></li>
+<li>Linux: <code>ganache-*.AppImage</code></li>
 </ul>
-<p>Double-click on the downloaded file, follow the prompts, and you&#39;re up and running.</p>
+<p>Next, double-click on the downloaded file, follow the prompts, and you&#39;re up and running.</p>
+<p class="alert alert-info">
+<strong>Note</strong>: The first time you launch Ganache, you will be asked if you want to allow Google Analytics tracking. While optional, turning this on will help the development team gain more insight into how Ganache is used. This tracking is totally anonymous, and no account data or private keys will ever be shared.
+</p>
+
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="2-create-a-workspace"></a>
       <a href="#2-create-a-workspace"><i class="fas fa-link"></i></a>
       2. Create a Workspace
     </h2>
-  <p>When you open Ganache for the first time, you&#39;ll see the home screen. On this screen you&#39;re prompted to load an existing workspace (if any exist), create a new custom workspace, or quickstart a one-click blockchain with <a href="/docs/ganache/reference/workspace-default-configuration">default options</a>. For now, let&#39;s go with the Quickstart workspace.</p>
+  <p>When you open Ganache for the first time, you&#39;ll see the home screen. On this screen you&#39;re prompted to load an existing workspace (if any exist), create a new custom workspace, or quickstart a one-click blockchain with <a href="/docs/ganache/reference/workspace-default-configuration">default options</a>. For now, let&#39;s go with a quickstart workspace. Select the desired blockchain from the <code>QUICKSTART</code> drop down; you can choose to start an Ethereum node or Corda network, then click the <code>QUICKSTART</code> button.</p>
 <p>
     <img class="img-fluid" src="/img/docs/ganache/ganache-home-empty.png" title="Empty Home Screen" alt="Empty Home Screen" />
     
   </p>
-
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="main-interface"></a>
-      <a href="#main-interface"><i class="fas fa-link"></i></a>
-      Main Interface
-    </h3>
-  <p>Once you&#39;ve created a workspace, the screen will show some details about the server, and also list out a number of accounts. <strong>Each account is given 100 ether</strong>. Having ether automatically in all accounts allows you to focus on developing your application.</p>
-<p class="alert alert-info">
-<strong>Note</strong>: The first time you launch Ganache, you will be asked if you want to allow Google Analytics tracking. While optional, turning this on will help the development team gain more insight into how Ganache is used. This tracking is totally anonymous, and no account data or private keys will ever be shared.
-</p>
-
-<p>
-    <img class="img-fluid" src="/img/docs/ganache/ganache-accounts.png" title="Ganache" alt="Ganache" />
-    
-  </p>
-<p class="text-center"><em>Ganache Accounts</em></p>
-
-<p>There are four pages available:</p>
+<p>Now that you&#39;ve got a workspace created, let&#39;s take a look at what you can do:</p>
 <ul>
-<li><strong>Accounts</strong> shows the accounts generated and their balances. This is the default view.</li>
-<li><strong>Blocks</strong> shows each block as mined on the blockchain, along with gas used and transactions.</li>
-<li><strong>Transactions</strong> lists all transactions run against the blockchain.</li>
-<li><strong>Contracts</strong> lists the contracts contained in your workspace&#39;s Truffle projects. For more information on how Ganache handles contracts, see our <a href="/docs/ganache/truffle-projects/contracts-page">Contracts Page documentation</a>.</li>
-<li><strong>Events</strong> lists all events that have been triggered since this workspace&#39;s creation. Ganache will attempt to decode events triggered by contracts in your Truffle project. For more information on events, see our <a href="/docs/ganache/truffle-projects/events-page">Events Page documentation</a>.</li>
-<li><strong>Logs</strong> shows the logs for the server, which is useful for debugging.</li>
+<li><strong><a href="./workspaces/ethereum">Ethereum workspace overview</a></strong></li>
+<li><strong><a href="./corda/workspace-overview">Corda workspace overview</a></strong></li>
 </ul>
-<p>Also note that you can search for block numbers or transaction hashes from a search box at the top.</p>
-
-    <h2 class="link-markdown">
-      <a class="anchor-target" name="you-39-re-up-and-running-"></a>
-      <a href="#you-39-re-up-and-running-"><i class="fas fa-link"></i></a>
-      You&#39;re Up and Running!
-    </h2>
-  <p>This guide got you started with a zero-config personal development blockchain. If you have an existing Truffle project who&#39;s contracts and events you&#39;d like tracked in this workspace, check out the <a href="/docs/ganache/truffle-projects/linking-a-truffle-project">Linking a Truffle Project documentation</a>. If you just need to customize some options and save this workspace for later, check out the <a href="/docs/ganache/workspaces/creating-workspaces#saving-the-current-quickstart-blockchain-as-a-new-workspace">Creating Workspaces documentation</a>.</p>
 
 
           <div class="contribute-link">

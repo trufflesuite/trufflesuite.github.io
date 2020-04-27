@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1587760852795">
+  <link rel="stylesheet" href="/css/index.css?1588020260992">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -275,6 +275,7 @@
                       <a href="/docs/ganache/workspaces/loading-existing-workspaces"><li>Loading Existing Workspaces</li></a>
                       <a href="/docs/ganache/workspaces/switching-workspaces"><li>Switching Workspaces</li></a>
                       <a href="/docs/ganache/workspaces/deleting-workspaces"><li>Deleting Workspaces</li></a>
+                      <a href="/docs/ganache/workspaces/editing-workspaces"><li>Editing Workspaces</li></a>
                   </ul>
                   <h3>Truffle Projects</h3>
                   <ul>
@@ -283,6 +284,17 @@
                       <a href="/docs/ganache/truffle-projects/contracts-page"><li>Contracts Page</li></a>
                       <a href="/docs/ganache/truffle-projects/events-page"><li>Events Page</li></a>
                       <a href="/docs/ganache/truffle-projects/decoded-transactions"><li>Decoded Transactions</li></a>
+                  </ul>
+                  <h3>Corda</h3>
+                  <ul>
+                      <a href="/docs/ganache/corda/working-with-corda"><li>Working with Corda</li></a>
+                      <a href="/docs/ganache/corda/workspace-overview"><li>Workspace Overview</li></a>
+                      <a href="/docs/ganache/corda/linking-a-corda-project"><li>Linking a Corda Project</li></a>
+                      <a href="/docs/ganache/corda/unlinking-a-corda-project"><li>Unlinking a Corda Project</li></a>
+                      <a href="/docs/ganache/corda/nodes"><li>Nodes</li></a>
+                      <a href="/docs/ganache/corda/transactions"><li>Transactions</li></a>
+                      <a href="/docs/ganache/corda/cordapps"><li>CorDapps</li></a>
+                      <a href="/docs/ganache/corda/shell"><li>Shell</li></a>
                   </ul>
                   <h3>Reference</h3>
                   <ul>
@@ -628,76 +640,91 @@ Summary
 <li><p>On the terminal, migrate the contract to the blockchain created by Ganache:</p>
 <pre><code class="lang-shell">truffle migrate
 </code></pre>
-<p>You will see the following output</p>
-<pre><code>Starting migrations...
+<p>You will see the following output:</p>
+<pre><code>Compiling your contracts...
+===========================
+&gt; Compiling ./contracts/ConvertLib.sol
+&gt; Compiling ./contracts/MetaCoin.sol
+&gt; Compiling ./contracts/Migrations.sol
+&gt; Artifacts written to /home/david/work/MetaCoin/build/contracts
+&gt; Compiled successfully using:
+   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
+
+Starting migrations...
 ======================
-&gt; Network name:    &#39;develop&#39;
-&gt; Network id:      4447
-&gt; Block gas limit: 6721975
+&gt; Network name:    &#39;development&#39;
+&gt; Network id:      5777
+&gt; Block gas limit: 6721975 (0x6691b7)
 
 1_initial_migration.js
 ======================
 
    Deploying &#39;Migrations&#39;
    ----------------------
-   &gt; transaction hash:    0x3fd222279dad48583a3320decd0a2d12e82e728ba9a0f19bdaaff98c72a030a2
+   &gt; transaction hash:    0x3eef05e35ce694c0b7112cc22ba462b9cc0563abc2cc444ee9683b6d89865e3c
    &gt; Blocks: 0            Seconds: 0
-   &gt; contract address:    0xa0AdaB6E829C818d50c75F17CFCc2e15bfd55a63
-   &gt; account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
-   &gt; balance:             99.99445076
-   &gt; gas used:            277462
+   &gt; contract address:    0x8CdaF0CD259887258Bc13a92C0a6dA92698644C0
+   &gt; block number:        1
+   &gt; block timestamp:     1587421933
+   &gt; account:             0x627306090abaB3A6e1400e9345bC60c78a8BEf57
+   &gt; balance:             99.9967165
+   &gt; gas used:            164175 (0x2814f)
    &gt; gas price:           20 gwei
    &gt; value sent:          0 ETH
-   &gt; total cost:          0.00554924 ETH
+   &gt; total cost:          0.0032835 ETH
 
    &gt; Saving migration to chain.
    &gt; Saving artifacts
    -------------------------------------
-   &gt; Total cost:          0.00554924 ETH
+   &gt; Total cost:           0.0032835 ETH
 
 2_deploy_contracts.js
 =====================
 
    Deploying &#39;ConvertLib&#39;
    ----------------------
-   &gt; transaction hash:    0x97e8168f1c05fc40dd8ffc529b9a2bf45cc7c55b07b6b9a5a22173235ee247b6
+   &gt; transaction hash:    0x23de020bafa41e30615b1d775d2fa9604e876415408e012d1f0faf79eed3a32f
    &gt; Blocks: 0            Seconds: 0
-   &gt; contract address:    0xfb39FeaeF3ac3fd46e2123768e559BCe6bD638d6
-   &gt; account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
-   &gt; balance:             99.9914458
-   &gt; gas used:            108240
+   &gt; contract address:    0x345cA3e014Aaf5dcA488057592ee47305D9B3e10
+   &gt; block number:        3
+   &gt; block timestamp:     1587421933
+   &gt; account:             0x627306090abaB3A6e1400e9345bC60c78a8BEf57
+   &gt; balance:             99.99396028
+   &gt; gas used:            95470 (0x174ee)
    &gt; gas price:           20 gwei
    &gt; value sent:          0 ETH
-   &gt; total cost:          0.0021648 ETH
+   &gt; total cost:          0.0019094 ETH
 
    Linking
    -------
-   * Contract: MetaCoin &lt;--&gt; Library: ConvertLib (at address: 0xfb39FeaeF3ac3fd46e2123768e559BCe6bD638d6)
+   * Contract: MetaCoin &lt;--&gt; Library: ConvertLib (at address: 0x345cA3e014Aaf5dcA488057592ee47305D9B3e10)
 
    Deploying &#39;MetaCoin&#39;
    --------------------
-   &gt; transaction hash:    0xee4994097c10e7314cc83adf899d67f51f22e08b920e95b6d3f75c5eb498bde4
+   &gt; transaction hash:    0x0cc20353422c4d435f72e8e7850f8178f43bf8d00c8c0d09cc8e0ccdfa81b799
    &gt; Blocks: 0            Seconds: 0
-   &gt; contract address:    0x6891Ac4E2EF3dA9bc88C96fEDbC9eA4d6D88F768
-   &gt; account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
-   &gt; balance:             99.98449716
-   &gt; gas used:            347432
+   &gt; contract address:    0xf25186B5081Ff5cE73482AD761DB0eB0d25abfBF
+   &gt; block number:        4
+   &gt; block timestamp:     1587421934
+   &gt; account:             0x627306090abaB3A6e1400e9345bC60c78a8BEf57
+   &gt; balance:             99.98822922
+   &gt; gas used:            286553 (0x45f59)
    &gt; gas price:           20 gwei
    &gt; value sent:          0 ETH
-   &gt; total cost:          0.00694864 ETH
+   &gt; total cost:          0.00573106 ETH
 
    &gt; Saving migration to chain.
    &gt; Saving artifacts
    -------------------------------------
-   &gt; Total cost:          0.00911344 ETH
+   &gt; Total cost:          0.00764046 ETH
 
 Summary
 =======
 &gt; Total deployments:   3
-&gt; Final cost:          0.01466268 ETH
+&gt; Final cost:          0.01092396 ETH
 </code></pre><p>This shows the transaction IDs and addresses of your deployed contracts. It also includes a cost summary and real-time status updates.</p>
 <p class="alert alert-info">
-  <strong>Note</strong>: Your transaction IDs and contract addresses will be different from the above.
+  <strong>Note</strong>: Your transaction IDs and contract addresses may be different from the above.
 </p>
 </li>
 <li><p>In Ganache, click the &quot;Transactions&quot; button to see that the transactions have been processed.</p>

@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1587760852795">
+  <link rel="stylesheet" href="/css/index.css?1588020260992">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -275,6 +275,7 @@
                       <a href="/docs/ganache/workspaces/loading-existing-workspaces"><li>Loading Existing Workspaces</li></a>
                       <a href="/docs/ganache/workspaces/switching-workspaces"><li>Switching Workspaces</li></a>
                       <a href="/docs/ganache/workspaces/deleting-workspaces"><li>Deleting Workspaces</li></a>
+                      <a href="/docs/ganache/workspaces/editing-workspaces"><li>Editing Workspaces</li></a>
                   </ul>
                   <h3>Truffle Projects</h3>
                   <ul>
@@ -283,6 +284,17 @@
                       <a href="/docs/ganache/truffle-projects/contracts-page"><li>Contracts Page</li></a>
                       <a href="/docs/ganache/truffle-projects/events-page"><li>Events Page</li></a>
                       <a href="/docs/ganache/truffle-projects/decoded-transactions"><li>Decoded Transactions</li></a>
+                  </ul>
+                  <h3>Corda</h3>
+                  <ul>
+                      <a href="/docs/ganache/corda/working-with-corda"><li>Working with Corda</li></a>
+                      <a href="/docs/ganache/corda/workspace-overview"><li>Workspace Overview</li></a>
+                      <a href="/docs/ganache/corda/linking-a-corda-project"><li>Linking a Corda Project</li></a>
+                      <a href="/docs/ganache/corda/unlinking-a-corda-project"><li>Unlinking a Corda Project</li></a>
+                      <a href="/docs/ganache/corda/nodes"><li>Nodes</li></a>
+                      <a href="/docs/ganache/corda/transactions"><li>Transactions</li></a>
+                      <a href="/docs/ganache/corda/cordapps"><li>CorDapps</li></a>
+                      <a href="/docs/ganache/corda/shell"><li>Shell</li></a>
                   </ul>
                   <h3>Reference</h3>
                   <ul>
@@ -334,13 +346,22 @@
   </p>
 <p class="text-center"><em>Accessing Ganache Settings</em></p>
 
-<p>We&#39;ve divided the settings into 6 pages:</p>
+<p>We&#39;ve divided the settings into several pages:</p>
 <ul>
-<li><strong>Workspace</strong> sets the workspace name and shows the currently linked Truffle projects. See our more detailed docs on <a href="/docs/ganache/workspaces/creating-workspaces">creating</a> and <a href="/docs/ganache/workspaces/deleting-workspaces">deleting</a> workspaces for more info.</li>
+<li><strong>Workspace</strong> sets the workspace name and shows the currently linked Truffle or Corda projects. See our more detailed docs on <a href="/docs/ganache/workspaces/creating-workspaces">creating</a> and <a href="/docs/ganache/workspaces/deleting-workspaces">deleting</a> workspaces for more info.</li>
+<li><strong>Ethereum</strong><ul>
 <li><strong>Server</strong> shows details about the network connection, including hostname, port, network ID, and whether to automatically mine each transaction into a block.</li>
 <li><strong>Accounts &amp; Keys</strong> sets details about the number of accounts created, and whether to use a specific mnemonic or let Ganache generate its own.</li>
-<li><strong>Chain</strong> sets details about the actual workings of the generated blockchain, including gas limit and gas price.</li>
+<li><strong>Chain</strong> sets configuration details for the genesis and parameters of the generated blockchain, including gas limit and gas price.</li>
 <li><strong>Advanced</strong> toggles Google Analytics, which is useful for the Ganache team to track usage of the application.</li>
+</ul>
+</li>
+<li><strong>Corda</strong><ul>
+<li><strong>Nodes</strong> manages the nodes for the network.</li>
+<li><strong>Notaries</strong> manages the notaries for the network.</li>
+<li><strong>Advanced</strong> sets the default PostgreSQL port and toggles Google Analytics, which is useful for the team to improve Ganache based on anonymous usage metrics.</li>
+</ul>
+</li>
 <li><strong>About</strong> contains information on the currently installed version of Ganache, along with links to our website and the <a href="https://github.com/trufflesuite/ganache">Ganache GitHub repository</a>.</li>
 </ul>
 <p>After making changes, you will have to click <strong>Restart</strong> on the application for the changes to take effect.</p>
