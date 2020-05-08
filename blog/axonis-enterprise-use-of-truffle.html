@@ -165,7 +165,7 @@
 <ol>
 <li><code>truffle-config.js</code> / <code>truffle.js</code> serves as an already existing central source of shared information about various network providers relevant for a particular application developer. It only makes sense to extend this format for use in production-like environments as well.</li>
 <li>Truffle code artifacts, a battle-tested standard for smart contracts and solidity code, in particular, provide a common interface for a toolchain. By virtue of using truffle, there is no need to re-create this format. For a non-development deployment, a <code>contracts_build_directory</code> parameter is supplied, which results in a pull from a remote artifacts repository.</li>
-<li>Obviously <code>truffle-contract</code> itself provides a nice object oriented interface for deploying and performing operations on contracts within this script, thus avoiding any reinventing the wheel within the deployment library itself.</li>
+<li>Obviously <code>@truffle/contract</code> itself provides a nice object oriented interface for deploying and performing operations on contracts within this script, thus avoiding any reinventing the wheel within the deployment library itself.</li>
 </ol>
 <p>Thus, we ventured to build a package on top of truffle that manages configuration-driven smart contract deployments and upgrades.</p>
 

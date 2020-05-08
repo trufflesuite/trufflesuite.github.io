@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1588269540704">
+  <link rel="stylesheet" href="/css/index.css?1588968931122">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -430,7 +430,7 @@ example
       <a href="#-code-mycontract-deployed-code-"><i class="fas fa-link"></i></a>
       <code>MyContract.deployed()</code>
     </h4>
-  <p>Creates an instance of the contract abstraction representing the contract at its deployed address. The deployed address is a special value given to truffle-contract that, when set, saves the address internally so that the deployed address can be inferred from the given Ethereum network being used. This allows you to write code referring to a specific deployed contract without having to manage those addresses yourself. Like <code>at()</code>, <code>deployed()</code> is thenable, and will resolve to a contract abstraction instance representing the deployed contract after ensuring that code exists at that location and that that address exists on the network being used.</p>
+  <p>Creates an instance of the contract abstraction representing the contract at its deployed address. The deployed address is a special value given to @truffle/contract that, when set, saves the address internally so that the deployed address can be inferred from the given Ethereum network being used. This allows you to write code referring to a specific deployed contract without having to manage those addresses yourself. Like <code>at()</code>, <code>deployed()</code> is thenable, and will resolve to a contract abstraction instance representing the deployed contract after ensuring that code exists at that location and that that address exists on the network being used.</p>
 
     <h4 class="link-markdown">
       <a class="anchor-target" name="-code-mycontract-link-instance-code-"></a>
@@ -624,7 +624,7 @@ in the <code>logs</code> array.</p>
 // value reprsents the `value` storage object in the solidity contract
 // since the contract returns that value.
 </code></pre>
-<p>Even more helpful, however is we <em>don&#39;t even need</em> to use <code>.call</code> when a function is marked as <code>view</code> or <code>pure</code> (or the deprecated <code>constant</code>), because <code>truffle-contract</code> will automatically know that that function can only be interacted with via a call:</p>
+<p>Even more helpful, however is we <em>don&#39;t even need</em> to use <code>.call</code> when a function is marked as <code>view</code> or <code>pure</code> (or the deprecated <code>constant</code>), because <code>@truffle/contract</code> will automatically know that that function can only be interacted with via a call:</p>
 <pre><code class="lang-javascript">const value = await instance.getValue();
 // val reprsents the `value` storage object in the solidity contract
 // since the contract returns that value.

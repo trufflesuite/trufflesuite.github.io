@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1588269540704">
+  <link rel="stylesheet" href="/css/index.css?1588968931122">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -388,8 +388,8 @@ $ npm install example-truffle-library
       <a href="#within-javascript-code"><i class="fas fa-link"></i></a>
       Within JavaScript code
     </h3>
-  <p>To interact with package&#39;s contracts within JavaScript code, you simply need to <code>require</code> that package&#39;s <code>.json</code> files, and then use the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">truffle-contract</a> module to turn those into usable abstractions:</p>
-<pre><code class="lang-javascript">var contract = require(&quot;truffle-contract&quot;);
+  <p>To interact with package&#39;s contracts within JavaScript code, you simply need to <code>require</code> that package&#39;s <code>.json</code> files, and then use the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">@truffle/contract</a> module to turn those into usable abstractions:</p>
+<pre><code class="lang-javascript">var contract = require(&quot;@truffle/contract&quot;);
 var data = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.json&quot;);
 var SimpleNameRegistry = contract(data);
 </code></pre>

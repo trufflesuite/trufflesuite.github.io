@@ -141,7 +141,7 @@
       <div class="row justify-content-center">
         <div class="col">
           <p class="alert alert-info">
-<strong>Update</strong>: While this tutorial was originally written for Truffle 3, we have updated it to be fully compatible with newer versions of Truffle. We have kept some of the language unaltered, except where necessary. 
+<strong>Update</strong>: While this tutorial was originally written for Truffle 3, we have updated it to be fully compatible with newer versions of Truffle. We have kept some of the language unaltered, except where necessary.
 </p>
 
 <p>Truffle 3 is out and switched to less opinionated build process that allows any build pipeline to be plugged in. We&#39;re going to take advantage of that feature today, and build a frontend app with a custom pipeline.</p>
@@ -201,7 +201,7 @@ Build failed. See above.
 </p>
 
 <p>Let&#39;s get the contracts on the network:</p>
-<p>First run <code>truffle compile</code>. This will compile the <code>.sol</code> contracts into <code>.json</code> artifacts (specified in the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract"><code>truffle-contract</code></a> library). They will appear in <code>build/contracts/*.json</code>. Now we can include contracts in our app with a simple <code>import</code> or <code>require</code> statement:</p>
+<p>First run <code>truffle compile</code>. This will compile the <code>.sol</code> contracts into <code>.json</code> artifacts (specified in the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract"><code>@truffle/contract</code></a> library). They will appear in <code>build/contracts/*.json</code>. Now we can include contracts in our app with a simple <code>import</code> or <code>require</code> statement:</p>
 <pre><code class="lang-javascript">// Import our contract artifacts and turn them into usable abstractions.
 import metacoin_artifacts from &#39;../../build/contracts/MetaCoin.json&#39;
 </code></pre>

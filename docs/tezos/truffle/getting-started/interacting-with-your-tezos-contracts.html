@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1588269540704">
+  <link rel="stylesheet" href="/css/index.css?1588968931122">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -228,18 +228,18 @@
       <a href="#making-transactions"><i class="fas fa-link"></i></a>
       Making Transactions
     </h2>
-  <p>Every time you call a function against a contract on the Tezos blockchain, a transaction is recorded. Each transaction will cost you XTZ, the Tezos-specific token that powers the blockchain, and will change the blockchain&#39;s state. Transactions are powerful ways to &quot;write&quot; to the blockchain, and make changes that power the backend of your applications. As you&#39;ll see below, all your contract&#39;s data stored on chain, colloquially called &quot;storage&quot;, is read from the blockchain all at once. </p>
+  <p>Every time you call a function against a contract on the Tezos blockchain, a transaction is recorded. Each transaction will cost you XTZ, the Tezos-specific token that powers the blockchain, and will change the blockchain&#39;s state. Transactions are powerful ways to &quot;write&quot; to the blockchain, and make changes that power the backend of your applications. As you&#39;ll see below, all your contract&#39;s data stored on chain, colloquially called &quot;storage&quot;, is read from the blockchain all at once.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="introducing-abstractions"></a>
       <a href="#introducing-abstractions"><i class="fas fa-link"></i></a>
       Introducing abstractions
     </h2>
-  <p>Contract abstractions are the bread and butter of interacting with Tezos contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle/tree/alphaTez/packages/contract">truffle-contract</a> module, extended specifically for Tezos, and it is this contract abstraction that&#39;s described below.</p>
+  <p>Contract abstractions are the bread and butter of interacting with Tezos contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle/tree/alphaTez/packages/contract">@truffle/contract</a> module, extended specifically for Tezos, and it is this contract abstraction that&#39;s described below.</p>
 <p>In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We&#39;ll use the very simple SimpleStorage contract available to you via <code>truffle unbox tezos-example</code> command.</p>
 <pre><code>function main (const newValue : int;  const storedValue : int) : (list(operation) * int) is
   block { storedValue := newValue } with ((nil : list(operation)), storedValue)
-</code></pre><p>This contract has a single method, or &quot;entry point&quot;, called <code>main()</code>. You&#39;ll notice that the first parameter to <code>main()</code> is an integer that gets stored in the contract&#39;s storage. The second parameter represents current state of the contract&#39;s storage at time of the function execution. </p>
+</code></pre><p>This contract has a single method, or &quot;entry point&quot;, called <code>main()</code>. You&#39;ll notice that the first parameter to <code>main()</code> is an integer that gets stored in the contract&#39;s storage. The second parameter represents current state of the contract&#39;s storage at time of the function execution.</p>
 <p>Now let&#39;s look at the Javascript object called <code>SimpleStorage</code> provided for us by Truffle, as made available in the <a href="/docs/tezos/truffle/getting-started/using-the-console-with-Tezos">Truffle console</a>:</p>
 <pre><code class="lang-javascript">truffle(development)&gt; let instance = await SimpleStorage.deployed()
 truffle(development)&gt; instance
@@ -271,13 +271,13 @@ function add (const a : int ; const b : int) : int is a + b
 function subtract (const a : int ; const b : int) : int is a - b
 
 // real entrypoint that re-routes the flow based on the action provided
-function main (const p : action ; const s : int) : (list(operation) * int) is 
+function main (const p : action ; const s : int) : (list(operation) * int) is
   ((nil : list(operation)),
     case p of
     | Increment (n) -&gt; add (s, n)
     | Decrement (n) -&gt; subtract (s, n)
     end)
-</code></pre><p>If you compile this contract and spin up the console, you&#39;ll see the following when you analyze the abstraction Truffle creates for you: </p>
+</code></pre><p>If you compile this contract and spin up the console, you&#39;ll see the following when you analyze the abstraction Truffle creates for you:</p>
 <pre><code class="lang-javascript">truffle(development)&gt; let instance = await Counter.deployed()
 truffle(development)&gt; instance
 
@@ -286,7 +286,7 @@ truffle(development)&gt; instance
 // Contract
 // - address: &quot;KT19mnZBa9KCtfv1t47gz9ieKyoxhY8JUvy8&quot;
 // - increment: ()
-// - decrement: () 
+// - decrement: ()
 // - storage: ()
 // - send: ()
 // ...
@@ -298,14 +298,14 @@ truffle(development)&gt; instance
       <a href="#executing-contract-functions"><i class="fas fa-link"></i></a>
       Executing contract functions
     </h2>
-  <p>Whenever you call contract functions via the abstraction, say <code>main()</code>, <code>increment()</code> or <code>decrement()</code> in the above examples, a transaction request is made against the configured Tezos network. Calling these functions from Javascript will create a transaction on the Tezos blockchain, and make a state change on the blockchain itself. You should consider these functions as &quot;writes&quot;, where executing these functions write data to the blockchain. To perform &quot;reads&quot;, and read storage data, you&#39;ll use the <code>storage()</code> helper function described below. </p>
+  <p>Whenever you call contract functions via the abstraction, say <code>main()</code>, <code>increment()</code> or <code>decrement()</code> in the above examples, a transaction request is made against the configured Tezos network. Calling these functions from Javascript will create a transaction on the Tezos blockchain, and make a state change on the blockchain itself. You should consider these functions as &quot;writes&quot;, where executing these functions write data to the blockchain. To perform &quot;reads&quot;, and read storage data, you&#39;ll use the <code>storage()</code> helper function described below.</p>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="making-a-transaction"></a>
       <a href="#making-a-transaction"><i class="fas fa-link"></i></a>
       Making a transaction
     </h3>
-  <p>Making a transaction is as easy as calling the abstraction functions Truffle provides for you. </p>
+  <p>Making a transaction is as easy as calling the abstraction functions Truffle provides for you.</p>
 <p>To make things easy, let&#39;s start with the SimpleStorage contract defined above. Like before, let&#39;s get the deployed instance of it, but let&#39;s also call the <code>main()</code> function to send the transaction, and then once complete, request the contract&#39;s storage data:</p>
 <pre><code class="lang-javascript">truffle(development)&gt; let instance = await SimpleStorage.deployed()
 truffle(development)&gt; await instance.main(2)    // Make transaction against main() function
@@ -318,9 +318,9 @@ BigNumber { s: 1, e: 0, c: [ 2 ] }
 </code></pre>
 <p>There are a few things interesting about the above code:</p>
 <ul>
-<li>We called the abstraction&#39;s <code>main()</code> function directly. </li>
+<li>We called the abstraction&#39;s <code>main()</code> function directly.</li>
 <li>When calling the <code>main()</code> function, we only passed on parameter. The second (last) parameter of the <code>main()</code> function is provided by the underlying blockchain, and represents the current storage data of the contract. Because it&#39;s sent to the contract for us, we don&#39;t need to send it from the outside.</li>
-<li>We received a transaction response after calling <code>main()</code>, which included a transaction hash (the <code>tx</code> parameter in the response). The transaction hash describe the id of the transaction on the blockchain. </li>
+<li>We received a transaction response after calling <code>main()</code>, which included a transaction hash (the <code>tx</code> parameter in the response). The transaction hash describe the id of the transaction on the blockchain.</li>
 <li>We used the helper function, <code>storage()</code>, to get the storage data of the contract. The data of this particular contract is an integer, and in Javascript is represented by the BigNumber object, in this case with the value of <code>2</code>. This happens to be the value we sent to <code>main()</code> within our transaction!</li>
 </ul>
 <p>This is all well and good. Now let&#39;s try it with a multi-entrypoint contract:</p>
@@ -333,7 +333,7 @@ truffle(development)&gt; await instance.increment(2)    // Make transaction agai
 truffle(development)&gt; await instance.storage()  // Get storage data
 BigNumber { s: 1, e: 0, c: [ 3 ] }
 </code></pre>
-<p>This is very similar to the example above, except in this case we didn&#39;t call <code>main()</code>. We instead called one of the named entry points, <code>increment()</code>, and it was treated as a transaction, exactly as if we had called <code>main()</code>. </p>
+<p>This is very similar to the example above, except in this case we didn&#39;t call <code>main()</code>. We instead called one of the named entry points, <code>increment()</code>, and it was treated as a transaction, exactly as if we had called <code>main()</code>.</p>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="reading-contract-data"></a>
@@ -353,7 +353,7 @@ BigNumber { s: 1, e: 0, c: [ 2 ] }
 <strong>Warning</strong>: If you try to convert a BigNumber that&#39;s larger than the largest integer supported by Javascript, you&#39;ll likely run into errors or unexpected behavior. We suggest using BigNumber throughout your application.
 </p>
 
-<p>Note that the data you get back from the <code>storage()</code> function will represent the types and structure of the underlying data stored in your contract. Let&#39;s take a new example we haven&#39;t seen yet: </p>
+<p>Note that the data you get back from the <code>storage()</code> function will represent the types and structure of the underlying data stored in your contract. Let&#39;s take a new example we haven&#39;t seen yet:</p>
 <pre><code>// ExpandedStorage.ligo - much like SimpleStorage, but stores two values!
 type values is record
   firstValue : int;
@@ -361,7 +361,7 @@ type values is record
 end
 function main (const newValues : values;  const storedValues : values) : (list(operation) * values) is
   block { storedValues := newValues } with ((nil : list(operation)), storedValues)
-</code></pre><p>In this contract, the contract&#39;s storage is represented by a LIGO record object that contains two integers, the first named <code>firstValue</code>, and the second named <code>secondValue</code>. When you call <code>storage()</code> from the Truffle console, you&#39;ll see you&#39;re given data that respresents the same structure: </p>
+</code></pre><p>In this contract, the contract&#39;s storage is represented by a LIGO record object that contains two integers, the first named <code>firstValue</code>, and the second named <code>secondValue</code>. When you call <code>storage()</code> from the Truffle console, you&#39;ll see you&#39;re given data that respresents the same structure:</p>
 <pre><code class="lang-javascript">truffle(development)&gt; let instance = await ExpandedStorage.deployed()
 truffle(development)&gt; await instance.storage()  // Get storage data
 {

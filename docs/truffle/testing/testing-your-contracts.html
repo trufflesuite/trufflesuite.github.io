@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1588269540704">
+  <link rel="stylesheet" href="/css/index.css?1588968931122">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -385,6 +385,14 @@
       Speed and reliability considerations
     </h2>
   <p>Both Ganache and Truffle Develop are significantly faster than other clients when running automated tests. Moreover, they contain special features which Truffle takes advantage of to speed up test runtime by almost 90%. As a general workflow, we recommend you use Ganache or Truffle Develop during normal development and testing, and then run your tests once against go-ethereum or another official Ethereum client when you&#39;re gearing up to deploy to live or production networks.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="stack-traces"></a>
+      <a href="#stack-traces"><i class="fas fa-link"></i></a>
+      Stack Traces
+    </h2>
+  <p>You can obtain Solidity stack traces for failed transactions with <code>truffle test --stacktrace</code>.  This will produce stack traces for transactions and deployments made via Truffle Contract during your tests should one of them revert and thereby causes your test to fail.  This option is still experimental, and stack traces are not currently supported for calls or gas estimates.  Moreover, while it is turned on, <code>PromiEvent</code> functionality of Truffle Contract (as opposed to <code>Promise</code> functionality) may not work.</p>
+<p>There is also the option <code>truffle test --stacktrace-extra</code>.  This will turn on stack traces and will additionally compile contracts in Solidity&#39;s debug mode for additional revert messages.  This debug mode was only introduced in Solidity 0.6.3 so it will have no effect on earlier versions of Solidity.  Using debug mode may cause problems on larger contracts.</p>
 
 
           <div class="contribute-link">

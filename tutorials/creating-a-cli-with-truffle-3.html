@@ -267,7 +267,7 @@ contract(&#39;ENS integration&#39;, (accounts) =&gt; {
   <p>Here&#39;s <a href="https://github.com/dougvk/ens-registrar3/blob/master/index.js">index.js</a>, which provides our command line tool, using the library:</p>
 <pre><code class="lang-javascript">import { default as ENSAuctionLib } from &#39;./lib/ens_registrar&#39;
 import { default as Web3 } from &#39;web3&#39;
-import { default as contract } from &#39;truffle-contract&#39;
+import { default as contract } from &#39;@truffle/contract&#39;
 
 const AuctionRegistrar = contract(require(&#39;./build/contracts/Registrar.json&#39;))
 const Deed = contract(require(&#39;./build/contracts/Deed.json&#39;))
@@ -283,7 +283,7 @@ export default function (host, port, registrarAddress, fromAddress) {
   )
 }
 </code></pre>
-<p>Here I&#39;m using the same library, <code>truffle-contract</code>, that <code>artifacts.require</code> uses under the hood. Because I can&#39;t rely on the Truffle framework within the CLI, I have to include the compiled contract artifacts manually. The rest is passed in through the CLI in <code>bin/ensa.js</code>:</p>
+<p>Here I&#39;m using the same library, <code>@truffle/contract</code>, that <code>artifacts.require</code> uses under the hood. Because I can&#39;t rely on the Truffle framework within the CLI, I have to include the compiled contract artifacts manually. The rest is passed in through the CLI in <code>bin/ensa.js</code>:</p>
 <pre><code class="lang-javascript">import { default as initializeLib } from &#39;../index&#39;
 ...
 let command = argv._[0]

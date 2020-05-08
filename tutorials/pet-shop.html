@@ -633,11 +633,11 @@ web3 = new Web3(App.web3Provider);
       <a href="#instantiating-the-contract"><i class="fas fa-link"></i></a>
       Instantiating the contract
     </h3>
-  <p>Now that we can interact with Ethereum via web3, we need to instantiate our smart contract so web3 knows where to find it and how it works. Truffle has a library to help with this called <code>truffle-contract</code>. It keeps information about the contract in sync with migrations, so you don&#39;t need to change the contract&#39;s deployed address manually.</p>
+  <p>Now that we can interact with Ethereum via web3, we need to instantiate our smart contract so web3 knows where to find it and how it works. Truffle has a library to help with this called <code>@truffle/contract</code>. It keeps information about the contract in sync with migrations, so you don&#39;t need to change the contract&#39;s deployed address manually.</p>
 <ol>
 <li><p>Still in <code>/src/js/app.js</code>, remove the multi-line comment from within <code>initContract</code> and replace it with the following:</p>
 <pre><code class="lang-javascript">$.getJSON(&#39;Adoption.json&#39;, function(data) {
-  // Get the necessary contract artifact file and instantiate it with truffle-contract
+  // Get the necessary contract artifact file and instantiate it with @truffle/contract
   var AdoptionArtifact = data;
   App.contracts.Adoption = TruffleContract(AdoptionArtifact);
 
