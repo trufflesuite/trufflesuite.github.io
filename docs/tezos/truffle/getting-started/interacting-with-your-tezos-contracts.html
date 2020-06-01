@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591033673492">
+  <link rel="stylesheet" href="/css/index.css?1591034288769">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -240,7 +240,7 @@
 <pre><code>function main (const newValue : int;  const storedValue : int) : (list(operation) * int) is
   block { storedValue := newValue } with ((nil : list(operation)), storedValue)
 </code></pre><p>This contract has a single method, or &quot;entry point&quot;, called <code>main()</code>. You&#39;ll notice that the first parameter to <code>main()</code> is an integer that gets stored in the contract&#39;s storage. The second parameter represents current state of the contract&#39;s storage at time of the function execution.</p>
-<p>Now let&#39;s look at the Javascript object called <code>SimpleStorage</code> provided for us by Truffle, as made available in the <a href="/docs/tezos/truffle/getting-started/using-the-console-with-Tezos">Truffle console</a>:</p>
+<p>Now let&#39;s look at the Javascript object called <code>SimpleStorage</code> provided for us by Truffle, as made available in the <a href="/docs/tezos/truffle/getting-started/using-the-console-with-tezos">Truffle console</a>:</p>
 <pre><code class="lang-javascript">truffle(development)&gt; let instance = await SimpleStorage.deployed()
 truffle(development)&gt; instance
 
@@ -260,7 +260,7 @@ truffle(development)&gt; instance
       <a href="#multi-entrypoint-contracts"><i class="fas fa-link"></i></a>
       Multi-Entrypoint Contracts
     </h2>
-  <p>As described in the <a href="/docs/tezos/truffle/writing-tezos-contracts">Writing Tezos Contracts</a> section, you can define contracts that have multiple entry points. When you create a contract as defined in that section, Truffle does a lot of work to make interacting with that contract easier. Let&#39;s take a look:</p>
+  <p>As described in the <a href="/docs/tezos/truffle/getting-started/writing-tezos-contracts">Writing Tezos Contracts</a> section, you can define contracts that have multiple entry points. When you create a contract as defined in that section, Truffle does a lot of work to make interacting with that contract easier. Let&#39;s take a look:</p>
 <pre><code>// variant defining pseudo multi-entrypoint actions
 type action is
 | Increment of int

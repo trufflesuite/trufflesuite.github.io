@@ -236,8 +236,8 @@
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/extras/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/goto/README.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/devcon5/src/plugins/impressConsole/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/help/README.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/devcon5/src/plugins/impressConsole/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/mobile/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/mouse-timeout/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/navigation-ui/README.html</loc> </url>
@@ -261,11 +261,11 @@
 <url> <loc>https://www.truffleframework.com/docs/ganache/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/cordapps.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/linking-a-corda-project.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/corda/nodes.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/shell.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/transactions.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/unlinking-a-corda-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/working-with-corda.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/corda/nodes.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/workspace-overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/reference/ganache-settings.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/reference/workspace-default-configuration.html</loc> </url>
