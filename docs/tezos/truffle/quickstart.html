@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1589467742315">
+  <link rel="stylesheet" href="/css/index.css?1591031433761">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -288,6 +288,7 @@ $ truffle unbox tezos-example
   <p>The example box comes with two contracts, which you can find in the <code>./contracts</code> folder:</p>
 <ul>
 <li><code>Counter.ligo</code></li>
+<li><code>Migrations.ligo</code></li>
 <li><code>SimpleStorage.ligo</code></li>
 </ul>
 <p>You can see that these contracts end in the <code>.ligo</code> file extension. This refers to the <a href="https://ligolang.org/">LIGO programming language</a>. See the <a href="/docs/tezos/truffle/getting-started/writing-tezos-contracts">Writing Tezos contracts</a> section for more info. </p>
@@ -313,7 +314,7 @@ module.exports = {
   // for more details on how to specify configuration options!
   networks: {
     development: {
-      host: &quot;https://api.tez.ie/rpc/carthagenet&quot;,
+      host: &quot;https://carthagenet.smartpy.io&quot;,
       port: 443,
       network_id: &quot;*&quot;,
       secret,
@@ -327,7 +328,7 @@ module.exports = {
 </code></pre>
 <p>That&#39;s it! You&#39;re all set to run the box&#39;s deployment scripts against a testnet. </p>
 <p class="alert alert-info">
-<strong>Note:</strong> The default tezos box is configured to deploy to multiple networks, including mainnet. If you&#39;d like to deploy to those networks, you&#39;ll need to first configure the <code>secret</code>, <code>mnemonic</code>, <code>password</code>, and <code>email</code> like the above to represent an account you own that&#39;s funded with XTZ. See the <a href="/docs/tezos/getting-started/configuring-tezos-projects">Configuring Tezos Projects</a> section for more info. 
+<strong>Note:</strong> The default tezos box is configured to deploy to multiple networks, including mainnet. If you&#39;d like to deploy to those networks, you&#39;ll need to first configure the <code>secret</code>, <code>mnemonic</code>, <code>password</code>, and <code>email</code> like the above to represent an account you own that&#39;s funded with XTZ. See the <a href="/docs/tezos/truffle/reference/configuring-tezos-projects">Configuring Tezos Projects</a> section for more info.
 </p>
 
 <p class="alert alert-danger">
@@ -342,12 +343,13 @@ module.exports = {
     </h3>
   <p>The example box comes default with pre-written deployment scripts, found within the <code>./migrations</code> directory:</p>
 <ul>
-<li><code>1_deploy_simple_storage.js</code></li>
-<li><code>2_deploy_counter.js</code></li>
+<li><code>1_initial_migration.js</code></li>
+<li><code>2_deploy_simple_storage.js</code></li>
+<li><code>3_deploy_counter.js</code></li>
 </ul>
 <p>Truffle will handle running these scripts when you run the following command:</p>
 <pre><code>$ truffle migrate
-</code></pre><p>See the <a href="">Deploying your Contracts</a> section for more information on how to write and use Truffle&#39;s deployment scripts.</p>
+</code></pre><p>See the <a href="/docs/tezos/truffle/quick-start/deploying-tezos-contracts">Deploying Tezos contracts</a> section for more information on how to write and use Truffle&#39;s deployment scripts.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="testing-contracts"></a>
@@ -359,7 +361,7 @@ module.exports = {
 <li><code>counter.test.js</code></li>
 <li><code>simpleStorage.test.js</code></li>
 </ul>
-<p>See the <a href="">Test your Contracts</a> section for more information on how to write tests for your LIGO congrats.</p>
+<p>See the <a href="/docs/tezos/truffle/quick-start/testing-your-tezos-contracts">Testing Tezos contracts</a> section for more information on how to write tests for your LIGO congrats.</p>
 <p>Running your tests is easy, by running following command: </p>
 <pre><code>$ truffle test
 </code></pre>
@@ -370,7 +372,7 @@ module.exports = {
     </h2>
   <p>If you&#39;ve reached this point, you now have a Truffle project that lets you compile, test, and deploy LIGO contracts to the Carthage Tezos test network. Congrats! This is a great start, but there&#39;s still much to learn. We suggest you check out the following resources to learn more about Tezos, LIGO, and Truffle:</p>
 <ul>
-<li><a href="https://ligolang.org/docs/intro/what-and-why/">LIGO language documentation</a></li>
+<li><a href="https://ligolang.org/docs/intro/introduction/">LIGO language documentation</a></li>
 <li><a href="https://tezos.gitlab.io/">Tezos documentation</a></li>
 <li><a href="https://tezostaquito.io/">Taquito communcation library</a></li>
 <li><a href="https://trufflesuite.com/docs">Main Truffle Suite documentation</a></li>

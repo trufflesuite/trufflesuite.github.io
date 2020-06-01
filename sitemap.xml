@@ -257,7 +257,6 @@
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/how-data-stays-fresh.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/quickstart.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/corda/cordapps.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/linking-a-corda-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/nodes.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/shell.html</loc> </url>
@@ -265,6 +264,7 @@
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/unlinking-a-corda-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/working-with-corda.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/workspace-overview.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/corda/cordapps.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/reference/ganache-settings.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/reference/workspace-default-configuration.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/contracts-page.html</loc> </url>
