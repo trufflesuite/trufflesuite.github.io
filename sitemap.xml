@@ -36,6 +36,7 @@
 <url> <loc>https://www.truffleframework.com/boxes/metacoin.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/blueprint.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/vyper-example.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/tezos-example.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/azure-asset-transfer.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/azure-basic-provenance.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/bazaar-item-listing.html</loc> </url>
@@ -99,6 +100,7 @@
 <url> <loc>https://www.truffleframework.com/staff/metacoin.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/blueprint.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/vyper-example.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/staff/tezos-example.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/azure-asset-transfer.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/azure-basic-provenance.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/bazaar-item-listing.html</loc> </url>
@@ -210,9 +212,9 @@
 <url> <loc>https://www.truffleframework.com/tutorials/bundling-with-webpack.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/chain-forking-exploiting-the-dao.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/configuring-visual-studio-code.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/tutorials/creating-a-cli-with-truffle-3.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/debugger-variable-inspection.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/debugging-a-smart-contract.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/tutorials/creating-a-cli-with-truffle-3.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/deploying-to-the-live-network.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/drizzle-and-contract-events.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/drizzle-and-react-native.html</loc> </url>
@@ -257,6 +259,7 @@
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/how-data-stays-fresh.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/quickstart.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/corda/cordapps.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/linking-a-corda-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/nodes.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/shell.html</loc> </url>
@@ -264,7 +267,6 @@
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/unlinking-a-corda-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/working-with-corda.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/workspace-overview.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/corda/cordapps.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/reference/ganache-settings.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/reference/workspace-default-configuration.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/contracts-page.html</loc> </url>
