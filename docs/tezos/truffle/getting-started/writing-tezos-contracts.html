@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591032568544">
+  <link rel="stylesheet" href="/css/index.css?1591032840385">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -219,7 +219,7 @@
 <ul>
 <li><a href="https://ligolang.org/">Main language site</a></li>
 <li><a href="https://ide.ligolang.org/">Online sandbox</a></li>
-<li><a href="https://ligolang.org/docs/intro/what-and-why/">Documentation</a></li>
+<li><a href="https://ligolang.org/docs/intro/introduction/">Documentation</a></li>
 </ul>
 <p class="alert alert-warning">
 <strong>Note!</strong> LIGO supports three different syntaxes out of the box: CamelLIGO, PascalLIGO, and ReasonLIGO. For all examples in this documentation, we use PascalLIGO.
@@ -261,7 +261,7 @@ function main (const p : action ; const s : int) : (list(operation) * int) is
       Defining Multiple Entry Points
     </h2>
   <p>You&#39;ll notice that the comments in the example contract above suggest there are multiple entry points beyond <code>main()</code>. Conceptually there <em>are</em> multiple entry points -- <code>increment</code> and <code>decrement</code> -- but under the hood, <code>main()</code> is technically the single entery point of the contract. </p>
-<p>To code a contract with multiple entry points that Truffle can take advantage of, you&#39;ll need to follow the example above. Start by defining an enum-like type called <code>action</code> with values relative to the functions being called, and then pass the action as the first value into <code>main()</code>. As you&#39;ll see in the <a href="/docs/tezos/truffle/getting-started/interacting-with-your-contracts">Interacting With Your Contracts</a> section, if Truffle detects an <code>action</code> type as the first parameter in <code>main()</code>, it&#39;ll treat your contract as though it has multiple entry points, and make those entry points easy to call from outside the blockchain.</p>
+<p>To code a contract with multiple entry points that Truffle can take advantage of, you&#39;ll need to follow the example above. Start by defining an enum-like type called <code>action</code> with values relative to the functions being called, and then pass the action as the first value into <code>main()</code>. As you&#39;ll see in the <a href="/docs/tezos/truffle/getting-started/interacting-with-your-tezos-contracts">Interacting With Your Contracts</a> section, if Truffle detects an <code>action</code> type as the first parameter in <code>main()</code>, it&#39;ll treat your contract as though it has multiple entry points, and make those entry points easy to call from outside the blockchain.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="including-other-contracts"></a>
