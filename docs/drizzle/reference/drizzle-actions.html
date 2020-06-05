@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -372,8 +372,7 @@
   <p>Fired once Drizzle has successfully fetched accounts.</p>
 <pre><code>{
   accounts
-}
-</code></pre><p><strong><code>accounts</code> (array)</strong>: An array of account addresses.</p>
+}</code></pre><p><strong><code>accounts</code> (array)</strong>: An array of account addresses.</p>
 <!--
 ### `ACCOUNTS_FAILED`
 A sentence about the event, such as: conditions under which it fires, what it contains, etc.
@@ -385,6 +384,7 @@ A sentence about the event, such as: conditions under which it fires, what it co
 `error` (object): An error object.
 -->
 
+
     <h3 class="link-markdown">
       <a class="anchor-target" name="-code-account_balance_fetched-code-"></a>
       <a href="#-code-account_balance_fetched-code-"><i class="fas fa-link"></i></a>
@@ -393,8 +393,7 @@ A sentence about the event, such as: conditions under which it fires, what it co
   <p>Fired when an account balance has been successfully fetched. </p>
 <pre><code>{
   address: balance
-}
-</code></pre><p><strong><code>balance</code> (int)</strong>: The account balance, indexed by account <code>address</code> (string) in gwei.</p>
+}</code></pre><p><strong><code>balance</code> (int)</strong>: The account balance, indexed by account <code>address</code> (string) in gwei.</p>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="-code-accounts_polling-code-"></a>
@@ -417,6 +416,7 @@ A sentence about the event, such as: conditions under which it fires, what it co
 ### `BLOCK_FOUND`
 A sentence about the event, such as: conditions under which it fires, what it contains, etc.-->
 
+
     <h3 class="link-markdown">
       <a class="anchor-target" name="-code-block_processing-code-"></a>
       <a href="#-code-block_processing-code-"><i class="fas fa-link"></i></a>
@@ -424,13 +424,13 @@ A sentence about the event, such as: conditions under which it fires, what it co
     </h3>
   <pre><code>{
   block
-}
-</code></pre><p><strong><code>block</code> (object)</strong>: The block object returned by web3. See the <a href="https://web3js.readthedocs.io/en/1.0/web3-eth.html?highlight=getBlock#id45">web3 getBlock documentation</a> for the block object&#39;s structure.</p>
+}</code></pre><p><strong><code>block</code> (object)</strong>: The block object returned by web3. See the <a href="https://web3js.readthedocs.io/en/1.0/web3-eth.html?highlight=getBlock#id45">web3 getBlock documentation</a> for the block object&#39;s structure.</p>
 <!--### `BLOCKS_LISTENING`
 A sentence about the event, such as: conditions under which it fires, what it contains, etc.
 
 ### `BLOCKS_POLLING`
 A sentence about the event, such as: conditions under which it fires, what it contains, etc.-->
+
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="drizzle"></a>
@@ -439,6 +439,7 @@ A sentence about the event, such as: conditions under which it fires, what it co
     </h2>
   <!--### `DRIZZLE_INITIALIZING`
 A sentence about the event, such as: conditions under which it fires, what it contains, etc.-->
+
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="-code-drizzle_initialized-code-"></a>
@@ -487,6 +488,7 @@ A sentence about the event, such as: conditions under which it fires, what it co
 ### `CONTRACT_INITIALIZED`
 A sentence about the event, such as: conditions under which it fires, what it contains, etc.-->
 
+
     <h2 class="link-markdown">
       <a class="anchor-target" name="contract-events"></a>
       <a href="#contract-events"><i class="fas fa-link"></i></a>
@@ -494,6 +496,7 @@ A sentence about the event, such as: conditions under which it fires, what it co
     </h2>
   <!--### `LISTEN_FOR_EVENT`
 A sentence about the event, such as: conditions under which it fires, what it contains, etc.-->
+
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="-code-event_fired-code-"></a>
@@ -504,14 +507,14 @@ A sentence about the event, such as: conditions under which it fires, what it co
 <pre><code>{
   name,
   event
-}
-</code></pre><p><strong><code>name</code> (string)</strong>: The name of the event.</p>
+}</code></pre><p><strong><code>name</code> (string)</strong>: The name of the event.</p>
 <p><strong><code>event</code> (object)</strong>: The event object returned by web3. See the <a href="https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#contract-events-return">web3 Contract Event documentation</a> for the event object&#39;s structure.</p>
 <!--### `EVENT_CHANGED`
 A sentence about the event, such as: conditions under which it fires, what it contains, etc.
 
 ### `EVENT_ERROR`
 A sentence about the event, such as: conditions under which it fires, what it contains, etc.-->
+
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="transactions"></a>
@@ -521,6 +524,7 @@ A sentence about the event, such as: conditions under which it fires, what it co
   <!--### `PUSH_TO_TXSTACK`
 A sentence about the event, such as: conditions under which it fires, what it contains, etc.-->
 
+
     <h3 class="link-markdown">
       <a class="anchor-target" name="-code-tx_broadcasted-code-"></a>
       <a href="#-code-tx_broadcasted-code-"><i class="fas fa-link"></i></a>
@@ -529,8 +533,7 @@ A sentence about the event, such as: conditions under which it fires, what it co
   <pre><code>{
   txHash,
   stackId
-}
-</code></pre><p><strong><code>txHash</code> (string)</strong>: The transaction hash.</p>
+}</code></pre><p><strong><code>txHash</code> (string)</strong>: The transaction hash.</p>
 <p><strong><code>stackId</code> (int)</strong>: An integer representing an index in the <code>transactionStack</code>.</p>
 
     <h3 class="link-markdown">
@@ -541,8 +544,7 @@ A sentence about the event, such as: conditions under which it fires, what it co
   <pre><code>{
   confirmationReceipt,
   txHash
-}
-</code></pre><p><strong><code>confirmationReceipt</code> (object)</strong>: The confirmation receipt returned by web3. See the <a href="https://web3js.readthedocs.io/en/1.0/web3-eth.html?highlight=confirmation#eth-gettransactionreceipt-return">web3 getTransactionReceipt documentation</a> for the receipt object&#39;s structure.</p>
+}</code></pre><p><strong><code>confirmationReceipt</code> (object)</strong>: The confirmation receipt returned by web3. See the <a href="https://web3js.readthedocs.io/en/1.0/web3-eth.html?highlight=confirmation#eth-gettransactionreceipt-return">web3 getTransactionReceipt documentation</a> for the receipt object&#39;s structure.</p>
 <p><strong><code>txHash</code> (string)</strong>: The transaction hash.</p>
 
     <h3 class="link-markdown">
@@ -553,8 +555,7 @@ A sentence about the event, such as: conditions under which it fires, what it co
   <pre><code>{
   receipt,
   txHash
-}
-</code></pre><p><strong><code>receipt</code> (object)</strong>: The transaction receipt returned by web3. See the <a href="https://web3js.readthedocs.io/en/1.0/web3-eth.html?highlight=confirmation#eth-gettransactionreceipt-return">web3 getTransactionReceipt documentation</a> for the receipt object&#39;s structure.</p>
+}</code></pre><p><strong><code>receipt</code> (object)</strong>: The transaction receipt returned by web3. See the <a href="https://web3js.readthedocs.io/en/1.0/web3-eth.html?highlight=confirmation#eth-gettransactionreceipt-return">web3 getTransactionReceipt documentation</a> for the receipt object&#39;s structure.</p>
 <p><strong><code>txHash</code> (string)</strong>: The transaction hash.</p>
 
     <h3 class="link-markdown">
@@ -565,8 +566,7 @@ A sentence about the event, such as: conditions under which it fires, what it co
   <pre><code>{
   error,
   stackTempKey
-}
-</code></pre><p><strong><code>error</code> (object)</strong>: An error object, containig a <code>message</code>, if provided. Empty object if the transaction failed as a result of user rejection via their wallet.</p>
+}</code></pre><p><strong><code>error</code> (object)</strong>: An error object, containig a <code>message</code>, if provided. Empty object if the transaction failed as a result of user rejection via their wallet.</p>
 <p><strong><code>stackTempKey</code> (string)</strong>: If the transaction experienced an erorr before broadcasting (such as a rejection), this key will be filled on the <code>transactionStack</code> rather than a transaction hash to prevent stack index collisions.</p>
 
 

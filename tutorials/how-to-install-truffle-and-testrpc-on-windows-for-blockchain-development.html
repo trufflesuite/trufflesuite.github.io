@@ -141,7 +141,7 @@
       <div class="row justify-content-center">
         <div class="col">
           <p class="alert alert-info">
-<strong>Update</strong>: Since this tutorial was published, we have released <a href="/ganache">Ganache</a> a personal blockchain and a replacement to the TestRPC. We have left this tutorial unaltered, but we highly recommend checking out our <a href="/docs/ganache/using">Working with Ganache</a> page.
+**Update**: Since this tutorial was published, we have released [Ganache](/ganache) a personal blockchain and a replacement to the TestRPC. We have left this tutorial unaltered, but we highly recommend checking out our [Working with Ganache](/docs/ganache/using) page.
 </p>
 
 <p>This post was originally published by David Burela on his blog <a href="https://davidburela.wordpress.com/2016/11/18/how-to-install-truffle-testrpc-on-windows-for-blockchain-development/">Burela&#39;s House-o-blog</a>. Big thanks to David for allowing us publish it here!</p>
@@ -163,10 +163,9 @@ Review</a> and on <a href="https://news.microsoft.com/en-au/2016/11/08/webjet-an
       Step 1. Install Windows tools with Chocolatey:
     </h2>
   <p>Open a PowerShell prompt as an Administrator and run the following commands (last command optional):</p>
-<pre><code class="lang-shell">$ choco install nodejs.install –y
+<pre><code class="language-shell">$ choco install nodejs.install –y
 $ choco install git –y
-$ choco install VisualStudioCode -y
-</code></pre>
+$ choco install VisualStudioCode -y</code></pre>
 <p><a href="/tutorials/configuring-visual-studio-code">Read more about configuring Visual Studio code for Blockchain development</a>.
 
     <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/11/image.png" title="image" alt="image" />
@@ -179,11 +178,10 @@ $ choco install VisualStudioCode -y
       Step 2. Install the tools via npm:
     </h2>
   <p>Open a NEW PowerShell prompt as Administrator (to ensure that it reloads), then run the following commands:</p>
-<pre><code class="lang-shell">$ npm install -g npm
+<pre><code class="language-shell">$ npm install -g npm
 $ npm install -g -production windows-build-tools
 $ npm install -g ethereumjs-testrpc
-$ npm install -g truffle
-</code></pre>
+$ npm install -g truffle</code></pre>
 <p>You may see some error messages during npm installs. Many of these are just informational / optional components failing. You can test that it is all working by trying to run the commands truffle and testrpc.
 
     <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/11/image1.png" title="image" alt="image" />
@@ -202,11 +200,11 @@ $ npm install -g truffle
   <p>This is how I use Truffle &amp; Visual Studio code together. Make sure you install and configure <a href="https://davidburela.wordpress.com/2016/11/18/configuring-visual-studio-code-for-ethereum-blockchain-development/">Visual Studio Code with the Solidity extensions</a>.</p>
 <p>If you navigate into the folder where your files are, typing “code .” will open Visual Studio Code in the current folder. Running the command after a <code>truffle init</code> gets you up and running quickly
 
-    <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/11/image_thumb6.png?w=1212&amp;h=356" title="image" alt="image" />
+    <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/11/image_thumb6.png?w=1212&h=356" title="image" alt="image" />
     
   
 
-    <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/11/image_thumb7.png?w=1893&amp;h=1563" title="image" alt="image" />
+    <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/11/image_thumb7.png?w=1893&h=1563" title="image" alt="image" />
     
   </p>
 

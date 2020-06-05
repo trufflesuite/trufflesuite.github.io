@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -354,7 +354,7 @@
       Example
     </h2>
   <p>Let&#39;s take a look at an example Solidity test before diving too deeply. Here&#39;s the example Solidity test provided for you by <code>truffle unbox metacoin</code>:</p>
-<pre><code class="lang-solidity">pragma solidity &gt;=0.4.25 &lt;0.6.0;
+<pre><code class="language-solidity">pragma solidity &gt;=0.4.25 &lt;0.6.0;
 
 import &quot;truffle/Assert.sol&quot;;
 import &quot;truffle/DeployedAddresses.sol&quot;;
@@ -376,8 +376,7 @@ contract TestMetaCoin {
 
     Assert.equal(meta.getBalance(tx.origin), expected, &quot;Owner should have 10000 MetaCoin initially&quot;);
   }
-}
-</code></pre>
+}</code></pre>
 <p>This produces the following output:</p>
 <pre><code>$ truffle test
 
@@ -400,8 +399,7 @@ Compiling your contracts...
     ✓ should send coin correctly (120ms)
 
 
-  5 passing (7s)
-</code></pre><p>From the output, you can see reports from two different test files: one
+  5 passing (7s)</code></pre><p>From the output, you can see reports from two different test files: one
 JavaScript (Contract: MetaCoin above) and one Solidity (TestMetaCoin above).
 In this document we will be concerning ourselves exclusively with the
 Solidity test.</p>
@@ -426,8 +424,7 @@ Solidity test.</p>
       Deployed addresses
     </h3>
   <p>The addresses of your deployed contracts (i.e., contracts that were deployed as part of your migrations) are available through the <code>truffle/DeployedAddresses.sol</code> library. This is provided by Truffle and is recompiled and relinked before each suite is run to provide your tests with Truffle&#39;s a clean room environment. This library provides functions for all of your deployed contracts, in the form of:</p>
-<pre><code class="lang-solidity">DeployedAddresses.&lt;contract name&gt;();
-</code></pre>
+<pre><code class="language-solidity">DeployedAddresses.&lt;contract name&gt;();</code></pre>
 <p>This will return an address that you can then use to access that contract. See the example test above for usage.</p>
 <p>In order to use the deployed contract, you&#39;ll have to import the contract code into your test suite. Notice <code>import &quot;../contracts/MetaCoin.sol&quot;;</code> in the example. This import is relative to the test contract, which exists in the <code>./test</code> directory, and it goes outside of the test directory in order to find the MetaCoin contract. It then uses that contract to cast the address to the <code>MetaCoin</code> type.</p>
 
@@ -451,7 +448,7 @@ Solidity test.</p>
       before / after hooks
     </h3>
   <p>You are provided many test hooks, shown in the example below. These hooks are <code>beforeAll</code>, <code>beforeEach</code>, <code>afterAll</code> and <code>afterEach</code>, which are the same hooks provided by Mocha in your Javascript tests. You can use these hooks to perform setup and teardown actions before and after each test, or before and after each suite is run. Like test functions, each hook is executed as a single transaction. Note that some complex tests will need to perform a significant amount of setup that might overflow the gas limit of a single transaction; you can get around this limitation by creating many hooks with different suffixes, like in the example below:</p>
-<pre><code class="lang-solidity">import &quot;truffle/Assert.sol&quot;;
+<pre><code class="language-solidity">import &quot;truffle/Assert.sol&quot;;
 
 contract TestHooks {
   uint someValue;
@@ -469,8 +466,7 @@ contract TestHooks {
 
     Assert.equal(someValue, expected, &quot;someValue should have been 6&quot;);
   }
-}
-</code></pre>
+}</code></pre>
 <p>This test contract also shows that your test functions and hook functions all share the same contract state. You can setup contract data before the test, use that data during the test, and reset it afterward in preparation for the next one. Note that just like your Javascript tests, your next test function will continue from the state of the previous test function that ran.</p>
 
     <h2 class="link-markdown">
@@ -488,7 +484,7 @@ contract TestHooks {
   <p>You can easily test if your contract should or shouldn&#39;t raise an exception (i.e., for <code>require()</code>/<code>assert()</code>/<code>revert()</code> statements; <code>throw</code> on previous versions of Solidity).</p>
 <p>This topic was first written about by guest writer Simon de la Rouviere in <a href="/tutorials/testing-for-throws-in-solidity-tests">his tutorial Testing for Throws in Truffle Solidity Tests</a>.  N.B. that the tutorial makes heavy use of exceptions via the deprecated keyword <code>throw</code>, replaced by <code>revert()</code>, <code>require()</code>, and <code>assert()</code> starting in Solidity v0.4.13.</p>
 <p>Also, since Solidity v0.4.17, a function type member was added to enable you to access a function selector (e.g.: <code>this.f.selector</code>), and so, testing for throws with external calls has been made much easier:</p>
-<pre><code class="lang-solidity">pragma solidity ^0.5.0;
+<pre><code class="language-solidity">pragma solidity ^0.5.0;
 
 import &quot;truffle/Assert.sol&quot;;
 
@@ -513,8 +509,7 @@ contract TestBytesLib2 {
     function IThrow2() public pure {
         require(1 == 10, &quot;I will throw, too!&quot;);
     }
-}
-</code></pre>
+}</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="testing-ether-transactions"></a>
@@ -522,7 +517,7 @@ contract TestBytesLib2 {
       Testing ether transactions
     </h3>
   <p>You can also test how your contracts react to receiving Ether, and script that interaction within Solidity. To do so, your Solidity test should have a public function that returns a <code>uint</code>, called <code>initialBalance</code>. This can be written directly as a function or a public variable, as shown below. When your test contract is deployed to the network, Truffle will send that amount of Ether from your test account to your test contract. Your test contract can then use that Ether to script Ether interactions within your contract under test. Note that <code>initialBalance</code> is optional and not required.</p>
-<pre><code class="lang-solidity">import &quot;truffle/Assert.sol&quot;;
+<pre><code class="language-solidity">import &quot;truffle/Assert.sol&quot;;
 import &quot;truffle/DeployedAddresses.sol&quot;;
 import &quot;../contracts/MyContract.sol&quot;;
 
@@ -540,8 +535,7 @@ contract TestContract {
   function () {
     // This will NOT be executed when Ether is sent. \o/
   }
-}
-</code></pre>
+}</code></pre>
 <p>Note that Truffle sends Ether to your test contract in a way that does <strong>not</strong> execute a fallback function, so you can still use the fallback function within your Solidity tests for advanced test cases.</p>
 
 

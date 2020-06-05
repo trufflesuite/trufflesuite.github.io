@@ -173,9 +173,8 @@
       Create a New Truffle Project
     </h2>
   <p>We will use <code>truffle init</code> to create a new Truffle project and then wire up an example <a href="https://solidity.readthedocs.io/en/v0.5.9/index.html">Solidity</a> smart contract and test script.</p>
-<pre><code class="lang-shell">// In a new project directory...
-$ truffle init
-</code></pre>
+<pre><code class="language-shell">// In a new project directory...
+$ truffle init</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="setup-an-example-smart-contract"></a>
@@ -183,8 +182,7 @@ $ truffle init
       Setup an Example Smart Contract
     </h2>
   <p>With our new project initialized, we will create an example file: <code>ContractFactory.sol</code>.</p>
-<pre><code class="lang-shell">$ touch ./contracts/ContractFactory.sol
-</code></pre>
+<pre><code class="language-shell">$ touch ./contracts/ContractFactory.sol</code></pre>
 <p>Our file will have two contracts, <code>Contract</code> and <code>ContractFactory</code>. <code>ContractFactory</code> will have the method <code>createInstance</code> that we will use to create a new empty <code>Contract</code>.</p>
 <pre><code>// ./contracts/ContractFactory.sol
 pragma solidity ^0.5.0;
@@ -197,8 +195,7 @@ contract ContractFactory {
 
 contract Contract {
   constructor() public {}
-}
-</code></pre><p>Note the <code>new</code> keyword being used to create a new <code>Contract</code>. A valid statement containing the <code>new</code> keyword gets compiled to bytecode containing the <code>CREATE</code> opcode which is subject to the <a href="https://github.com/ethereum/EIPs/issues/114#issue-160782694">EIP-114</a> 1/64th gas withholding.</p>
+}</code></pre><p>Note the <code>new</code> keyword being used to create a new <code>Contract</code>. A valid statement containing the <code>new</code> keyword gets compiled to bytecode containing the <code>CREATE</code> opcode which is subject to the <a href="https://github.com/ethereum/EIPs/issues/114#issue-160782694">EIP-114</a> 1/64th gas withholding.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="write-a-test-case"></a>
@@ -206,8 +203,7 @@ contract Contract {
       Write a Test Case
     </h2>
   <p>Next, we will write a <code>ContractFactory</code> test case.</p>
-<pre><code class="lang-shell">$ touch ./test/ContractFactory.js
-</code></pre>
+<pre><code class="language-shell">$ touch ./test/ContractFactory.js</code></pre>
 <p>This test case will deploy <code>ContractFactory</code> to a Ganache test network and use a gas estimate provided by Ganache to create a new <code>Contract</code>.</p>
 <pre><code>// ./test/ContractFactory.js
 const ContractFactory = artifacts.require(&quot;ContractFactory&quot;);
@@ -223,41 +219,36 @@ contract(&quot;ContractFactory&quot;, () =&gt; {
     });
     assert(tx);
   });
-});
-</code></pre>
+});</code></pre>
     <h2 class="link-markdown">
       <a class="anchor-target" name="a-quick-check"></a>
       <a href="#a-quick-check"><i class="fas fa-link"></i></a>
       A Quick Check
     </h2>
   <p>Before we run our test, we’ll download the most recent version of Truffle that uses Ganache <em>before</em> gas exactimation.</p>
-<pre><code class="lang-shell">// In the project directory...
-$ npm i truffle@5.0.13
-</code></pre>
+<pre><code class="language-shell">// In the project directory...
+$ npm i truffle@5.0.13</code></pre>
 <p>And we’ll make sure we have the latest version of Truffle installed globally that uses Ganache <em>with</em> gas exactimation.</p>
-<pre><code class="lang-shell">$ npm i -g truffle
-</code></pre>
+<pre><code class="language-shell">$ npm i -g truffle</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="testing-before-and-after"></a>
       <a href="#testing-before-and-after"><i class="fas fa-link"></i></a>
       Testing Before and After
     </h2>
-  <pre><code class="lang-shell">$ npx truffle test
+  <pre><code class="language-shell">$ npx truffle test
 ...
 ...
-Error: Returned error: VM Exception while processing transaction: revert
-</code></pre>
+Error: Returned error: VM Exception while processing transaction: revert</code></pre>
 <p>And when we use gas exactimation...</p>
-<pre><code class="lang-shell">$ truffle test
+<pre><code class="language-shell">$ truffle test
 ...
 ...
 Contract: ContractFactory
 
 ✓ ...should deploy and successfully call createInstance using the method&#39;s provided gas estimate (130ms)
 
-1 passing (143ms)
-</code></pre>
+1 passing (143ms)</code></pre>
 <p>!!!!</p>
 
     <h2 class="link-markdown">
@@ -267,7 +258,7 @@ Contract: ContractFactory
     </h2>
   <p>But is gas exactimation actually <em>exact</em>? 🤔</p>
 <p>We’ll open our test file and subtract exactly a single unit of gas from the <code>gasEstimate</code> before sending our test transaction.</p>
-<pre><code class="lang-shell">// ./test/ContractFactory.js
+<pre><code class="language-shell">// ./test/ContractFactory.js
 const ContractFactory = artifacts.require(&quot;ContractFactory&quot;);
 
 contract(&quot;ContractFactory&quot;, () =&gt; {
@@ -281,14 +272,12 @@ const tx = await contractFactoryInstance.createInstance({
     });
     assert(tx);
   });
-});
-</code></pre>
+});</code></pre>
 <p>Running our test again against Ganache with gas exactimation...</p>
-<pre><code class="lang-shell">$ truffle test
+<pre><code class="language-shell">$ truffle test
 ...
 ...
-Error: Returned error: VM Exception while processing transaction: revert
-</code></pre>
+Error: Returned error: VM Exception while processing transaction: revert</code></pre>
 <p>Exactimation confirmed 🚀.</p>
 <p>Note: Since the initial release of gas exactimation, an even more performant iteration of the algorithm is currently in review here.</p>
 

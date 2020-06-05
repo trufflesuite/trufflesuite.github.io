@@ -184,7 +184,7 @@
       What to do Exactly?
     </h2>
   <p>The initial process involves adding an EEA definition to the shim file. The <code>web3-shim.ts</code> file currently contains the overloads for the different interface definitions and their mappings.</p>
-<pre><code class="lang-typescript">import { EthereumDefinition } from &quot;./ethereum-overloads&quot;;
+<pre><code class="language-typescript">import { EthereumDefinition } from &quot;./ethereum-overloads&quot;;
 import { QuorumDefinition } from &quot;./quorum-overloads&quot;;
 import { FabricEvmDefinition } from &quot;./fabric-evm-overloads&quot;;
 
@@ -197,10 +197,9 @@ const initInterface = async(web3Shim: Web3Shim) =&gt; {
     }));
 
     networkTypes.get(web3Shim.networkType).initNetworkType(web3Shim);
-  }
-</code></pre>
+  }</code></pre>
 <p>The initial import and mapping has been done <a href="https://github.com/faraggi/truffle">in this fork</a>.</p>
-<pre><code class="lang-typescript">import { EthereumDefinition } from &quot;./ethereum-overloads&quot;;
+<pre><code class="language-typescript">import { EthereumDefinition } from &quot;./ethereum-overloads&quot;;
 import { EEADefinition } from &quot;./EEA-overloads&quot;;
 import { QuorumDefinition } from &quot;./quorum-overloads&quot;;
 import { FabricEvmDefinition } from &quot;./fabric-evm-overloads&quot;;
@@ -215,8 +214,7 @@ const initInterface = async(web3Shim: Web3Shim) =&gt; {
     }));
 
     networkTypes.get(web3Shim.networkType).initNetworkType(web3Shim);
-  }
-</code></pre>
+  }</code></pre>
 <p>The <a href="https://i.imgur.com/4fVoQoQ.png">rest of the owl</a> is to add the needed logic in the <code>eea-overloads.ts</code> file and the <code>overrides</code> variable for it to interact with the <a href="https://www.npmjs.com/package/web3-eea">web3eeajs library</a>.</p>
 <p>
     <img class="img-fluid" src="https://i.imgur.com/4fVoQoQ.png" title="PegaSys owl" alt="PegaSys owl" />

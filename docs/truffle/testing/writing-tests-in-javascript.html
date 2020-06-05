@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -391,7 +391,7 @@
     </h3>
   <p>Here&#39;s an example test provided in the <a href="/boxes/metacoin">MetaCoin Truffle Box</a>. Note the use of the <code>contract()</code> function, the <code>accounts</code> array for specifying available Ethereum accounts, and our use of <code>artifacts.require()</code> for interacting directly with our contracts.</p>
 <p>File: <code>./test/metacoin.js</code></p>
-<pre><code class="lang-javascript">const MetaCoin = artifacts.require(&quot;MetaCoin&quot;);
+<pre><code class="language-javascript">const MetaCoin = artifacts.require(&quot;MetaCoin&quot;);
 
 contract(&quot;MetaCoin&quot;, accounts =&gt; {
   it(&quot;should put 10000 MetaCoin in the first account&quot;, () =&gt;
@@ -478,8 +478,7 @@ contract(&quot;MetaCoin&quot;, accounts =&gt; {
         );
       });
   });
-});
-</code></pre>
+});</code></pre>
 <p>This test will produce the following output:</p>
 <pre><code>  Contract: MetaCoin
     √ should put 10000 MetaCoin in the first account (83ms)
@@ -487,15 +486,14 @@ contract(&quot;MetaCoin&quot;, accounts =&gt; {
     √ should send coin correctly (122ms)
 
 
-  3 passing (293ms)
-</code></pre>
+  3 passing (293ms)</code></pre>
     <h3 class="link-markdown">
       <a class="anchor-target" name="using-async-await"></a>
       <a href="#using-async-await"><i class="fas fa-link"></i></a>
       Using async/await
     </h3>
   <p>Here is a similar example, but using <a href="https://javascript.info/async-await">async/await</a> notation:</p>
-<pre><code class="lang-javascript">const MetaCoin = artifacts.require(&quot;MetaCoin&quot;);
+<pre><code class="language-javascript">const MetaCoin = artifacts.require(&quot;MetaCoin&quot;);
 
 contract(&quot;2nd MetaCoin test&quot;, async accounts =&gt; {
   it(&quot;should put 10000 MetaCoin in the first account&quot;, async () =&gt; {
@@ -547,8 +545,7 @@ contract(&quot;2nd MetaCoin test&quot;, async accounts =&gt; {
       &quot;Amount wasn&#39;t correctly sent to the receiver&quot;
     );
   });
-});
-</code></pre>
+});</code></pre>
 <p>This test will produce identical output to the previous example.</p>
 
     <h2 class="link-markdown">
@@ -557,8 +554,7 @@ contract(&quot;2nd MetaCoin test&quot;, async accounts =&gt; {
       Specifying tests
     </h2>
   <p>You can limit the tests being executed to a specific file as follows:</p>
-<pre><code class="lang-shell">truffle test ./test/metacoin.js
-</code></pre>
+<pre><code class="language-shell">truffle test ./test/metacoin.js</code></pre>
 <p>See the full <a href="/docs/truffle/reference/truffle-commands#test">command reference</a> for more information.</p>
 
     <h2 class="link-markdown">

@@ -156,8 +156,7 @@
       Getting Started
     </h2>
   <p>If you were using Truffle beta 3.0.0-9 or below, <strong>do not immediately upgrade</strong>. Read <a href="https://github.com/ConsenSys/truffle/releases/tag/v3.0.2">these release notes</a> and the <a href="/tutorials/upgrading-from-truffle-2-to-3">upgrade guide</a> first. Next, make a new folder and run the following command:</p>
-<pre><code class="lang-shell">$ truffle init
-</code></pre>
+<pre><code class="language-shell">$ truffle init</code></pre>
 <p>You should see the <code>test</code>, <code>build</code>, and <code>migrations</code> directories were created for you -- but no <code>app</code>. Additionally, the build step in the <code>truffle.js</code> file is mysteriously absent. That&#39;s ok! This means Truffle is getting out of your way and letting you control the build process.</p>
 
     <h2 class="link-markdown">
@@ -167,7 +166,7 @@
     </h2>
   <p><a href="https://github.com/dougvk/ens-registrar3">Check out the example app</a> as a reference. I&#39;ll be referring to it often so give it a look over if you haven&#39;t already.</p>
 <p>The first thing to look at is the build process. Since Truffle now puts us in control of the build, I&#39;ve added some custom scripts within <code>package.json</code> to handle building for us:</p>
-<pre><code class="lang-json">...
+<pre><code class="language-json">...
 &quot;description&quot;: &quot;CLI for ENS deployment&quot;,
 &quot;scripts&quot;: {
   &quot;ens&quot;: &quot;babel-node ./bin/ensa.js&quot;,
@@ -175,8 +174,7 @@
 },
 &quot;author&quot;: &quot;Douglas von Kohorn&quot;,
 &quot;license&quot;: &quot;MIT&quot;,
-...
-</code></pre>
+...</code></pre>
 <p>I&#39;ve defined two scripts here: <code>lint</code> for linting my Javascript to keep my codebase so fresh and so clean, and <code>ens</code> for transpiling my Javascript command line tool (using Babel) and running it. That&#39;s it! That&#39;s the build process. You can run it via <code>npm run lint</code> and <code>npm run ens</code>. Now that that&#39;s out of the way, let&#39;s dig into how and why I structured my app this way.</p>
 
     <h2 class="link-markdown">
@@ -192,7 +190,7 @@
       The Library
     </h3>
   <p>The library is <a href="https://github.com/dougvk/ens-registrar3/blob/master/lib/ens_registrar.js">lib/ens_registrar.js</a>. Let&#39;s take a look at the constructor:</p>
-<pre><code class="lang-javascript">...
+<pre><code class="language-javascript">...
 constructor (AuctionRegistrar, Deed, registrarAddress, provider, fromAddress) {
   this.web3 = new Web3(provider)
 
@@ -206,8 +204,7 @@ constructor (AuctionRegistrar, Deed, registrarAddress, provider, fromAddress) {
   })
   this.registrar = AuctionRegistrar.at(registrarAddress)
 }
-...
-</code></pre>
+...</code></pre>
 <p>The library constructor requires a few things:</p>
 <ol>
 <li>the contract interfaces (<code>AuctionRegistrar</code> &amp; <code>Deed</code>)</li>
@@ -228,7 +225,7 @@ constructor (AuctionRegistrar, Deed, registrarAddress, provider, fromAddress) {
       Use #1: Truffle Tests
     </h3>
   <p>Here&#39;s <a href="https://github.com/dougvk/ens-registrar3/blob/master/test/ENS.js">test/ENS.js</a>, a Truffle test that uses the library:</p>
-<pre><code class="lang-javascript">import { default as ENSAuctionLib } from &#39;../lib/ens_registrar&#39;
+<pre><code class="language-javascript">import { default as ENSAuctionLib } from &#39;../lib/ens_registrar&#39;
 const Registrar = artifacts.require(&#39;./Registrar.sol&#39;)
 const Deed = artifacts.require(&#39;./Deed.sol&#39;)
 
@@ -255,8 +252,7 @@ contract(&#39;ENS integration&#39;, (accounts) =&gt; {
       })
   })
 ...
-}
-</code></pre>
+}</code></pre>
 <p>Truffle injects a global <code>artifacts.require</code> function, a helper for finding the right compiled contract artifacts within the test environment. The test then finds a deployed instance of the Registrar on the test network via <code>Registrar.deployed()</code>. Now, with the addition of <code>accounts</code>, which is passed in via the <code>contract</code> wrapper <a href="http://truffleframework.com/docs/getting_started/javascript-tests">(see here)</a>, we have enough to instantiate the library and use it to test that the domain name <code>&#39;test&#39;</code> is available for auction.</p>
 
     <h3 class="link-markdown">
@@ -265,7 +261,7 @@ contract(&#39;ENS integration&#39;, (accounts) =&gt; {
       Use #2: the CLI
     </h3>
   <p>Here&#39;s <a href="https://github.com/dougvk/ens-registrar3/blob/master/index.js">index.js</a>, which provides our command line tool, using the library:</p>
-<pre><code class="lang-javascript">import { default as ENSAuctionLib } from &#39;./lib/ens_registrar&#39;
+<pre><code class="language-javascript">import { default as ENSAuctionLib } from &#39;./lib/ens_registrar&#39;
 import { default as Web3 } from &#39;web3&#39;
 import { default as contract } from &#39;@truffle/contract&#39;
 
@@ -281,10 +277,9 @@ export default function (host, port, registrarAddress, fromAddress) {
       provider,
       fromAddress
   )
-}
-</code></pre>
+}</code></pre>
 <p>Here I&#39;m using the same library, <code>@truffle/contract</code>, that <code>artifacts.require</code> uses under the hood. Because I can&#39;t rely on the Truffle framework within the CLI, I have to include the compiled contract artifacts manually. The rest is passed in through the CLI in <code>bin/ensa.js</code>:</p>
-<pre><code class="lang-javascript">import { default as initializeLib } from &#39;../index&#39;
+<pre><code class="language-javascript">import { default as initializeLib } from &#39;../index&#39;
 ...
 let command = argv._[0]
 
@@ -293,8 +288,7 @@ if (command === &#39;bid&#39;) {
   let auctionRegistrar = initializeLib(host, port, registrar, account)
   auctionRegistrar.createBid(name, account, max, secret)
     .then(() =&gt; console.log(&#39;Created bid for &#39; + name))
-}
-</code></pre>
+}</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="usage"></a>
@@ -302,7 +296,7 @@ if (command === &#39;bid&#39;) {
       Usage
     </h2>
   <p>You can use the command line tool against any network that has an ENS registrar deployed. First, choose a command:</p>
-<pre><code class="lang-shell">$ npm run -s ens
+<pre><code class="language-shell">$ npm run -s ens
 Usage: bin/ensa.js [command] [options]
 
 Commands:
@@ -311,10 +305,9 @@ Commands:
   reveal  Reveal your bid on a domain name
 
 Options:
-  --help  Show help
-</code></pre>
+  --help  Show help</code></pre>
 <p>Then specify the correct options, including the <code>account</code> and <code>registrar</code>:</p>
-<pre><code class="lang-shell">$ npm run -s ens -- winner -n &#39;NewDomain&#39;
+<pre><code class="language-shell">$ npm run -s ens -- winner -n &#39;NewDomain&#39;
 bin/ensa.js winner
 
 Options:
@@ -325,8 +318,7 @@ Options:
   --name, -n       The name you want to register             [string] [required]
   --account, -a    The address to register the domain name   [string] [required]
 
-Missing required arguments: account, registrar
-</code></pre>
+Missing required arguments: account, registrar</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="recap"></a>

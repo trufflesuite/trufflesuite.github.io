@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -351,6 +351,7 @@
     </h3>
   <ul>
 <li><a href="#creating-or-destroying-a-sandbox">Creating or Destroying a Sandbox</a></li>
+<li><a href="#sandbox-forking">Sandbox Forking</a></li>
 <li><a href="#renaming-a-sandbox">Renaming a Sandbox</a></li>
 <li><a href="#usage-with-truffle">Usage with Truffle</a></li>
 </ul>
@@ -360,13 +361,30 @@
       <a href="#creating-or-destroying-a-sandbox"><i class="fas fa-link"></i></a>
       Creating or Destroying a Sandbox
     </h2>
-  <p>Creating a sandbox is as easy as hitting the <span class="inline-button">QUICKSTART SANDBOX</span> button. To destroy a box, click the <span class="inline-button red">DELETE</span> button for the desired sandbox.</p>
+  <p>Creating a sandbox is as easy as clicking the <span class="inline-button">NEW SANDBOX</span> button. To destroy a box, click the <span class="inline-button red">DELETE</span> button for the desired sandbox.</p>
 <figure class="screenshot">
   <img class="w-100" src="/img/docs/teams/sandboxes.png" alt="Truffle Teams SANDBOXES screen">
   <figcaption class="text-center">The Truffle Teams Sandboxes screen.</figcaption>
 </figure>
 
 <p>You&#39;ll see all the details necessary to start using this sandbox, including the <code>mnemonic</code> and <code>network_id</code>. See below for complete details on <a href="#usage-with-truffle">usage with Truffle</a>.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="sandbox-forking"></a>
+      <a href="#sandbox-forking"><i class="fas fa-link"></i></a>
+      Sandbox Forking
+    </h2>
+  <p>Forking allows a sandbox to act as a live network from a given block number. We take for granted in web2 that we can get test credentials and interact with an API that will map to our production environment, but in web3 this hasn’t been so easy. With a forked sandbox you can transact, deploy, test, and debug against Mainnet without spending real Ether!</p>
+<figure>
+  <img class="half-width mb-6" src="/img/docs/teams/what-is-forking.png" alt="Forking example">
+</figure>
+
+<p>To fork a network, create a new sandbox by clicking the <span class="inline-button">NEW SANDBOX</span> button. Then, check the <code>Enable forking</code> checkbox. From there, select a network and optionally provide a block number. Clicking the <span class="inline-button">CONFIRM</span> button will spin up a new Ganache instance forked from the given network and block.</p>
+<figure class="screenshot">
+  <img class="w-100" src="/img/docs/teams/sandbox-forking.png" alt="Sandbox forking options">
+  <figcaption class="text-center">Sandbox forking options and details.</figcaption>
+</figure>
+
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="renaming-a-sandbox"></a>
@@ -399,8 +417,7 @@ module.exports = {
       network_id: 1583853263114
     }
   }
-};
-</code></pre>
+};</code></pre>
 
           <div class="contribute-link">
             See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/teams/deployments">Edit here &raquo;</a>

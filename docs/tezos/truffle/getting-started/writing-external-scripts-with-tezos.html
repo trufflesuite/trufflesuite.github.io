@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -206,7 +206,7 @@
           </aside>      
         <div class="col-lg-9 bd-light-cream docs-content">
           <p class="alert alert-danger">
-<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by <a href="https://github.com/trufflesuite/truffle/issues">filing issues on Github</a>.
+<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by [filing issues on Github](https://github.com/trufflesuite/truffle/issues).
 </p>
 
 
@@ -223,8 +223,7 @@
       Command
     </h2>
   <p>To run an external script, perform the following:</p>
-<pre><code class="lang-shell">$ truffle exec &lt;path/to/file.js&gt;
-</code></pre>
+<pre><code class="language-shell">$ truffle exec &lt;path/to/file.js&gt;</code></pre>
 <p>Refer to <a href="/docs/truffle/reference/truffle-commands#exec">Truffle Commands Reference</a> for more information about this command, such as what options it accepts.</p>
 
     <h2 class="link-markdown">
@@ -233,10 +232,9 @@
       File structure
     </h2>
   <p>In order for external scripts to be run correctly, Truffle expects them to export a function that takes a single parameter as a callback:</p>
-<pre><code class="lang-javascript">module.exports = function(callback) {
+<pre><code class="language-javascript">module.exports = function(callback) {
   // perform actions
-}
-</code></pre>
+}</code></pre>
 <p>You can do anything you&#39;d like within this script, so long as the callback is called when the script finishes. The callback accepts an error as its first and only parameter. If an error is provided, execution will halt and the process will return a non-zero exit code.</p>
 
     <h2 class="link-markdown">
@@ -246,21 +244,19 @@
     </h2>
   <p>Note that the <code>artifacts.require()</code> function <a href="/docs/tezos/truffle/getting-started/deploying-tezos-contracts">available in migrations</a> is also available to you within external scripts. Here&#39;s an example of how you might use it to deploy a new contract outside of Truffle&#39;s migration system:</p>
 <p>Filename: <code>./script.js</code></p>
-<pre><code class="lang-javascript">const SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
+<pre><code class="language-javascript">const SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
 
 module.exports = callback =&gt; {
   SimpleStorage.new(3).then((instance) =&gt; {
     console.log(&quot;New address:&quot;, instance.address);
     callback();
   }).catch(callback);
-};
-</code></pre>
+};</code></pre>
 <p>The output would look like this:</p>
-<pre><code class="lang-shell">$ truffle exec ./script.js
+<pre><code class="language-shell">$ truffle exec ./script.js
 Using network &#39;development&#39;.
 
-New address: KT1JZ8JQ4ziGCsQJcTegNcByYGW32ZhXD217
-</code></pre>
+New address: KT1JZ8JQ4ziGCsQJcTegNcByYGW32ZhXD217</code></pre>
 
 
           <div class="contribute-link">

@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -341,13 +341,13 @@
       <a href="#truffle-event-system"><i class="fas fa-link"></i></a>
       Truffle Event System
     </h1>
-  <p class="alert alert-warning"><strong>Note</strong>: The Truffle Event System is currently an experimental feature and we
+  <p class="alert alert-warning">**Note**: The Truffle Event System is currently an experimental feature and we
 anticipate that it will be developing and changing in the near future.
 Please keep this in mind when using this feature as we cannot promise that its
 architecture or the API will remain the same until we declare it as stable.
 Please enjoy and if you discover any issues or bugs, we would love it if you
 created an issue on the
-<a href="https://github.com/trufflesuite/truffle/issues">Truffle GitHub page</a>.
+[Truffle GitHub page](https://github.com/trufflesuite/truffle/issues).
 Thank you!</p>
 
 <p>The Truffle Event System is a system of hooks implemented in several of the
@@ -430,7 +430,7 @@ how to construct event handlers.</p>
 <p>In order to use this file as a Subscriber you must <code>require()</code> it in your
 <a href="/docs/truffle/reference/configuration"><code>truffle-config.js</code></a> under the
 <code>&quot;subscribers&quot;</code> object:</p>
-<pre><code class="lang-javascript">modules.exports = {
+<pre><code class="language-javascript">modules.exports = {
   networks: {
     // ...
   },
@@ -438,8 +438,7 @@ how to construct event handlers.</p>
     mySubscriberName: require(&quot;../my-subscriber-config.js&quot;),
     myOtherSubscriberName: require(&quot;../my-other-subscriber-config.js&quot;)
   }
-}
-</code></pre>
+}</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="how-to-define-your-event-handlers"></a>
@@ -473,7 +472,7 @@ must be an array of functions. These functions will be executed when that
 event matcher matches an emitted event. Every time an event matcher matches
 an emitted event, each of its functions will be executed. Here is a
 simple &quot;hello world&quot; example:</p>
-<pre><code class="lang-javascript">module.exports = {
+<pre><code class="language-javascript">module.exports = {
   handlers: {
     &quot;compile:start&quot;: [
       function() {
@@ -481,8 +480,7 @@ simple &quot;hello world&quot; example:</p>
       }
     ]
   }
-};
-</code></pre>
+};</code></pre>
 <p>In the above example, every time the <code>&quot;compile:start&quot;</code> event is emitted,
 <code>&quot;hello world!&quot;</code> will be logged to the console.</p>
 <p><em>NOTE: Currently you must use <code>function</code> syntax when creating the handler
@@ -504,18 +502,17 @@ the handlers listed under that specific event matcher.</p>
 initialization function. For example: if I wanted to use an external library,
 perhaps one for colorful logging, I would require it in my JavaScript and
 create a reference to it in the initialization like so:</p>
-<pre><code class="lang-javascript">const colors = require(&quot;colors&quot;);
+<pre><code class="language-javascript">const colors = require(&quot;colors&quot;);
 
 module.exports = {
   initialization: function() {
     this.colors = colors;
   },
   // ......
-};
-</code></pre>
+};</code></pre>
 <p>I would then be able to access <code>this.colors</code> in my handlers property! So
 extending the example above could yield the following code:</p>
-<pre><code class="lang-javascript">const colors = require(&quot;colors&quot;);
+<pre><code class="language-javascript">const colors = require(&quot;colors&quot;);
 
 module.exports = {
   initialization: function() {
@@ -530,8 +527,7 @@ module.exports = {
       }
     ]
   }
-};
-</code></pre>
+};</code></pre>
 <p>This would log the source filenames in rainbow colors whenever the
 <code>&quot;compile:compiledSources&quot;</code> event is emitted. Remember, some events (not all)
 provide data to your handlers at the time of execution. The
@@ -579,8 +575,7 @@ the handlers.</p>
       },
       ...one entry per compiler used
     }
-}
-</code></pre>
+}</code></pre>
     <h4 class="link-markdown">
       <a class="anchor-target" name="-code-quot-compile-sourcestocompile-quot-code-"></a>
       <a href="#-code-quot-compile-sourcestocompile-quot-code-"><i class="fas fa-link"></i></a>
@@ -592,8 +587,7 @@ the handlers.</p>
       &lt;string: filenames of sources to compile&gt;,
       ...one string entry for each file
     ]
-}
-</code></pre>
+}</code></pre>
     <h4 class="link-markdown">
       <a class="anchor-target" name="-code-quot-compile-warnings-quot-code-"></a>
       <a href="#-code-quot-compile-warnings-quot-code-"><i class="fas fa-link"></i></a>
@@ -605,8 +599,7 @@ the handlers.</p>
       &lt;string: warnings created by the compiler during compilation&gt;,
       ...one string entry for each warning
     ]
-}
-</code></pre>
+}</code></pre>
     <h4 class="link-markdown">
       <a class="anchor-target" name="-code-quot-compile-nothingtocompile-quot-code-"></a>
       <a href="#-code-quot-compile-nothingtocompile-quot-code-"><i class="fas fa-link"></i></a>
@@ -640,8 +633,7 @@ the handlers.</p>
       name: &lt;string: name of compiler obtained&gt;,
       version: &lt;string: version of compiler obtained&gt;
     }
-}
-</code></pre>
+}</code></pre>
     <h4 class="link-markdown">
       <a class="anchor-target" name="-code-quot-obtain-fail-quot-code-"></a>
       <a href="#-code-quot-obtain-fail-quot-code-"><i class="fas fa-link"></i></a>
@@ -658,8 +650,7 @@ the handlers.</p>
   <p>Emitted before attempting to download a compiler.</p>
 <pre><code>{
   attemptNumber: &lt;number: what number attempt at downloading the compiler&gt;
-}
-</code></pre>
+}</code></pre>
     <h4 class="link-markdown">
       <a class="anchor-target" name="-code-quot-downloadcompiler-succeed-quot-code-"></a>
       <a href="#-code-quot-downloadcompiler-succeed-quot-code-"><i class="fas fa-link"></i></a>
@@ -714,8 +705,7 @@ the handlers.</p>
   <p>Emitted at the end of command flow.</p>
 <pre><code>  {
       boxConfig: &lt;object: contents of the `truffle-box.json` for the given box&gt;
-  }
-</code></pre>
+  }</code></pre>
     <h4 class="link-markdown">
       <a class="anchor-target" name="-code-quot-unbox-fail-quot-code-"></a>
       <a href="#-code-quot-unbox-fail-quot-code-"><i class="fas fa-link"></i></a>

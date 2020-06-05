@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -341,7 +341,7 @@
       <a href="#drizzle-options"><i class="fas fa-link"></i></a>
       Drizzle Options
     </h1>
-  <pre><code class="lang-javascript">{
+  <pre><code class="language-javascript">{
   contracts,
   events: {
     contractName: [
@@ -364,8 +364,7 @@
       url
     }
   }
-}
-</code></pre>
+}</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="-code-contracts-code-array-"></a>
@@ -374,14 +373,13 @@
     </h3>
   <p>An array of either contract artifact files or Web3 contract objects. The objects have a <code>contractName</code> and <code>web3Contract</code> key.</p>
 <p>i.e.</p>
-<pre><code class="lang-javascript">contracts: [
+<pre><code class="language-javascript">contracts: [
   truffleArtifact, // A regular Truffle contract artifact
   {
     contractName: &#39;RegisteredContract&#39;,
     web3Contract: new web3.eth.Contract(abi, address, {data: &#39;deployedBytecode&#39; }) // An instance of a Web3 contract
   }
-]
-</code></pre>
+]</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="-code-events-code-object-"></a>
@@ -417,7 +415,7 @@
       <code>customProvider</code> (object)
     </h4>
   <p>A valid web3 <code>provider</code> object. For example, you may wish to programatically create a Ganache provider for testing:</p>
-<pre><code class="lang-javascript">// Create a Ganache provider.
+<pre><code class="language-javascript">// Create a Ganache provider.
 const testingProvider = Ganache.provider({
   gasLimit: 7000000
 })
@@ -428,8 +426,7 @@ const options = {
   }
 }
 
-const drizzle = new Drizzle(options)
-</code></pre>
+const drizzle = new Drizzle(options)</code></pre>
 
     <h4 class="link-markdown">
       <a class="anchor-target" name="-code-fallback-code-object-"></a>

@@ -150,11 +150,9 @@
   <p>Truffle 3.0 offers a ton of new features. With it comes some very important breaking changes. These breaking changes make network management easier, make contract abstractions easier to use, and allow you to install third party packages from any number of sources. We consider these breaking changes helpful -- they&#39;re due to the careful maturation of Ethereum&#39;s most popular development tool, and we&#39;ll guide you through the steps needed to take advantage of all these new features.</p>
 <p>In order to show you code samples that describe the evolution from 2.0 to 3.0, we&#39;re going to use examples like this:</p>
 <p>v2.0:</p>
-<pre><code class="lang-javascript">// This is old code from Truffle 2.0
-</code></pre>
+<pre><code class="language-javascript">// This is old code from Truffle 2.0</code></pre>
 <p>v3.0:</p>
-<pre><code class="lang-javascript">// This is new code for Truffle 3.0!
-</code></pre>
+<pre><code class="language-javascript">// This is new code for Truffle 3.0!</code></pre>
 <p>Now let&#39;s get started!</p>
 
     <h2 class="link-markdown">
@@ -164,7 +162,7 @@
     </h2>
   <p>Truffle 2.0 had an odd configuration -- we admit it. Not only can you have a default, unnamed network sitting around (the <code>rpc</code> configuration option) but you can also have named networks like <code>&quot;ropsten&quot;</code> or <code>&quot;live&quot;</code>. A result of this default vs. named distinction came were other oddities, such as accidentally overwriting important network artifacts or deploying to the wrong network. With Truffle 3.0 we fixed all that, but it requires a change in your configuration.</p>
 <p>In v2.0, a configuration with a named network might look like this:</p>
-<pre><code class="lang-javascript">module.exports = {
+<pre><code class="language-javascript">module.exports = {
   rpc: {
     host: &quot;localhost&quot;,
     port: 8545
@@ -181,10 +179,9 @@
       network_id: 3
     }
   }
-};
-</code></pre>
+};</code></pre>
 <p>In v3.0, this same configuration would look like this:</p>
-<pre><code class="lang-javascript">module.exports = {
+<pre><code class="language-javascript">module.exports = {
   networks: {
     development: {
       host: &quot;localhost&quot;,
@@ -202,10 +199,9 @@
       network_id: 3
     }
   }
-};
-</code></pre>
+};</code></pre>
 <p>What&#39;s the difference? First, there&#39;s no default network anymore: the <code>rpc</code> configuration item has been removed. In its place is a specially named <code>development</code> network. This is a network that will match any network it connects to at the specified host and port, and when running commands like <code>migrate</code> Truffle will default to this network if none is specified. If you&#39;d like to protect yourself from deploying to the wrong network completely, you can <strong>remove</strong> the <code>development</code> configuration entirely; if you don&#39;t specify the network via <code>truffle migrate --network ropsten</code>, for example, Truffle will exit with an error, ensuring you never deploy to a network you don&#39;t intend to.</p>
-<p>Additionally, each network needs to have a network id specified, or a <code>&quot;*&quot;</code>. This is another security measure used during migrations to ensure that even _if_ Truffle connects to the Ethereum client at the specified host and port, if it&#39;s not the network you intend, Truffle will error before attempting any deployments.</p>
+<p>Additionally, each network needs to have a network id specified, or a <code>&quot;*&quot;</code>. This is another security measure used during migrations to ensure that even <em>if</em> Truffle connects to the Ethereum client at the specified host and port, if it&#39;s not the network you intend, Truffle will error before attempting any deployments.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="importing-and-the-ethereum-package-manager-ethpm-"></a>
@@ -215,11 +211,9 @@
   <p>As Truffle 3.0 uses the new <a href="/docs/getting_started/packages-ethpm">Ethereum Package Manager (EthPM)</a> we need to tell Truffle when the package manager should be used and when to look in the local directory. If you don&#39;t specify the directory to search relative to the <code>contracts/</code> directory, it will assume that EthPM will handle this.</p>
 <p>So to import a local file:</p>
 <p>v2.0:</p>
-<pre><code class="lang-solidity">import &quot;test.sol&quot;
-</code></pre>
+<pre><code class="language-solidity">import &quot;test.sol&quot;</code></pre>
 <p>v3.0:</p>
-<pre><code class="lang-solidity">import &quot;./test.sol&quot;
-</code></pre>
+<pre><code class="language-solidity">import &quot;./test.sol&quot;</code></pre>
 <p>The <code>./</code> tells Truffle that the contract is in the current directory. See the <a href="/docs/getting_started/compile">Compiling contracts</a> page for more details.</p>
 
     <h2 class="link-markdown">
@@ -229,22 +223,20 @@
     </h2>
   <p>Before package management, Truffle could assume that all the contracts you wrote yourself were the contracts you wanted to interact with via your migrations and tests. Now that package management is here, this is no longer a safe assumption -- contract dependencies can come from any number of sources, and so you have to explicitly ask for those abstractions yourself. This is all in the name of reducing magic. Let&#39;s look at an example migration.</p>
 <p>v2.0 : <code>./migrations/2_deploy_contracts.js</code></p>
-<pre><code class="lang-javascript">module.exports = function(deployer) {
+<pre><code class="language-javascript">module.exports = function(deployer) {
   deployer.deploy(ConvertLib);
   deployer.autolink();
   deployer.deploy(MetaCoin);
-};
-</code></pre>
+};</code></pre>
 <p>v3.0 : <code>./migrations/2_deploy_contracts.js</code></p>
-<pre><code class="lang-javascript">var ConvertLib = artifacts.require(&quot;ConvertLib.sol&quot;);
+<pre><code class="language-javascript">var ConvertLib = artifacts.require(&quot;ConvertLib.sol&quot;);
 var MetaCoin = artifacts.require(&quot;MetaCoin.sol&quot;);
 
 module.exports = function(deployer) {
   deployer.deploy(ConvertLib);
   deployer.link(ConvertLib, MetaCoin);
   deployer.deploy(MetaCoin);
-};
-</code></pre>
+};</code></pre>
 <p>Note there are a couple differences. For this section, the changes we&#39;ll focus on are the two lines which use <code>artifacts.require()</code>. This is a function similar to Node&#39;s <code>require()</code> statement provided by Truffle. If given a path to a solidity file local to your project, or the path of a package dependency, this function will locate the correct artifacts and make them ready for use on your current network.</p>
 <p>Your Javascript tests need the exact same <code>artifacts.require()</code> statements in order to use those abstractions like before.</p>
 
@@ -263,26 +255,23 @@ module.exports = function(deployer) {
   <p>Truffle had originally saved your contract abstractions on disk in <code>.sol.js</code> files. These files were Javascript files that represented specific solidity files in your project, hence the file extension, and they were originally intended to make your contract artifacts really easy to use, everywhere. Well, it turns out we got it wrong. Really wrong. Not only were these files hard to use <em>within</em> Javascript in certain cases, but they were completely unusable if you wanted to use them outside of Javascript. To overcome this limitation and make your contract artifacts available everywhere, Truffle 3.0 now saves all artifacts within the JSON format.</p>
 <p>So what should you do if you&#39;ve been using Truffle 2.0 and have important contract artifacts you&#39;d like to save? Easy. Upgrade them! We built you a handy tool that does just that.</p>
 <p>To upgrade your <code>.sol.js</code> files, first install <code>truffle-soljs-updater</code> globally via npm:</p>
-<pre><code class="lang-shell">$ npm install -g truffle-soljs-updater
-</code></pre>
+<pre><code class="language-shell">$ npm install -g truffle-soljs-updater</code></pre>
 <p>This will provide the <code>sjsu</code> command available for your use. Next, navigate to the directory where your <code>.sol.js</code> files are stored (usually <code>./build/contracts</code>), and run <code>sjsu</code>. Your output should look something like this:</p>
-<pre><code class="lang-shell">$ cd ./build/contracts
+<pre><code class="language-shell">$ cd ./build/contracts
 $ sjsu
 Converting ConvertLib.sol.js...
 Converting MetaCoin.sol.js...
 Converting Migrations.sol.js...
-Files converted successfully.
-</code></pre>
+Files converted successfully.</code></pre>
 <p>By default <code>sjsu</code> only creates newer, <code>.json</code> versions of your artifacts and leaves the original <code>.sol.js</code> files alone. You&#39;ll need to remove the <code>.sol.js</code> files from this directory in order for Truffle 3.0 to function properly. Before removing, check to ensure that the converted <code>.json</code> files were created properly, and perhaps as a safeguard backup your old <code>.sol.js</code> files somewhere else before continuing.</p>
 <p>Once you&#39;re sure all data was copied correctly and you have a nice backup, you can run <code>sjsu</code> with the <code>-f</code> parameter. This will tell <code>sjsu</code> to delete the existing <code>.sol.js</code> files. Your output should look something like this:</p>
-<pre><code class="lang-shell">$ cd ./build/contracts
+<pre><code class="language-shell">$ cd ./build/contracts
 $ sjsu -f
 Converting ConvertLib.sol.js...
 Converting MetaCoin.sol.js...
 Converting Migrations.sol.js...
 Files converted successfully.
-Successfully deleted old .sol.js files.
-</code></pre>
+Successfully deleted old .sol.js files.</code></pre>
 <p>And that&#39;s it! You&#39;re now ready to move onto the next step.</p>
 
     <h2 class="link-markdown">
@@ -294,22 +283,20 @@ Successfully deleted old .sol.js files.
 <p>In Truffle 2.0, your contract abstractions managed your networks in a naive way, and added constructs like a &quot;default network&quot; that opened up the possibility of using the wrong network artifacts and deployed addresses at the wrong time. This provided a fancy and easy to use syntax -- i.e., <code>MyContract.deployed().myFunction(...)</code> -- but it left your code open to errors. Truffle 3.0 changes this syntax, where <code>.deployed()</code> is now thennable, like a promise (see example below). Similarly, this makes your contract abstractions seamlessly integrate with <a href="https://github.com/ethereum/EIPs/issues/190">EIP 190</a>, Ethereum&#39;s package management standard. All of this is for the better, but it means you&#39;ll have some changes to make all across the board.</p>
 <p>In the general use case, here is how the new syntax differs from the old:</p>
 <p>v2.0</p>
-<pre><code class="lang-javascript">MyContract.setProvider(someWeb3Provider);
+<pre><code class="language-javascript">MyContract.setProvider(someWeb3Provider);
 MyContract.deployed().someFunction().then(function(tx) {
   // Do something after the someFunction() transaction executed
-});
-</code></pre>
+});</code></pre>
 <p>v3.0</p>
-<pre><code class="lang-javascript">MyContract.setProvider(someWeb3Provider);
+<pre><code class="language-javascript">MyContract.setProvider(someWeb3Provider);
 MyContract.deployed().then(function(instance) {
   return instance.someFunction();
 }).then(function(result) {
   // Do something after the someFunction() transaction executed
-});
-</code></pre>
+});</code></pre>
 <p>This syntax is a little more verbose, but it ensures the correct network artifacts are used based on the Ethereum client the abstraction is connected to.</p>
 <p>Note that in v3.0, you may need to correctly scope your deployed instance if you want to perform multiple actions with it in the same promise chain:</p>
-<pre><code class="lang-javascript">MyContract.setProvider(someWeb3Provider);
+<pre><code class="language-javascript">MyContract.setProvider(someWeb3Provider);
 
 var deployed;
 
@@ -320,8 +307,7 @@ MyContract.deployed().then(function(instance) {
   return deployed.anotherFunction();
 }).then(function(result) {
   // etc.
-});
-</code></pre>
+});</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="contract-abstractions-transaction-result-objects"></a>
@@ -331,12 +317,11 @@ MyContract.deployed().then(function(instance) {
   <p>People have long complained that events are hard to watch for in Web3. Similarly, in most use cases, events aren&#39;t used via a contract observer pattern; instead, in practice, events are used to check specific results of a specific transaction. Though the contract observer pattern for events is still available, we made the latter use case much easier, which required breaking changes to the return value of transactions.</p>
 <p>In v2.0, a transaction simply returned the transaction hash. In v3.0, transactions return a result object with a wealth of information about that transaction.</p>
 <p>v2.0</p>
-<pre><code class="lang-javascript">MyContract.deployed().someFunction().then(function(tx) {
+<pre><code class="language-javascript">MyContract.deployed().someFunction().then(function(tx) {
   // tx is the transaction id (hash) of the transaction executed
-});
-</code></pre>
+});</code></pre>
 <p>v3.0</p>
-<pre><code class="lang-javascript">MyContract.deployed().then(function(instance) {
+<pre><code class="language-javascript">MyContract.deployed().then(function(instance) {
   deployed = instance;
   return deployed.someFunction();
 }).then(function(result) {
@@ -345,10 +330,9 @@ MyContract.deployed().then(function(instance) {
   // result.tx      =&gt; transaction hash, string
   // result.logs    =&gt; array of decoded events that were triggered within this transaction
   // result.receipt =&gt; transaction receipt object, which includes gas used
-});
-</code></pre>
+});</code></pre>
 <p>In Truffle 3.0, it&#39;s now much easier to detect if an event was fired as a result of your transaction. Here&#39;s a Javascript test for a hypothetical PackageIndex contract and ReleasePublished event:</p>
-<pre><code class="lang-javascript">var assert = require(&quot;assert&quot;);
+<pre><code class="language-javascript">var assert = require(&quot;assert&quot;);
 var PackageIndex = artifacts.require(&quot;PackageIndex.sol&quot;);
 
 contract(&quot;PackageIndex&quot;, function(accounts) {
@@ -375,8 +359,7 @@ contract(&quot;PackageIndex&quot;, function(accounts) {
     });
   });
 
-});
-</code></pre>
+});</code></pre>
 <p>We have to search through all returned events to ensure we found the one we wanted, but this is certainly better than using <code>PackageIndex.ReleasePublished.watch(...)</code>, and we can keep event processing within our application&#39;s (or test&#39;s) normal control flow.</p>
 
     <h2 class="link-markdown">
@@ -395,11 +378,10 @@ contract(&quot;PackageIndex&quot;, function(accounts) {
     </h3>
   <p>If you&#39;re using the default build pipeline in Truffle 2.0 and would like to upgrade to 3.0, you&#39;re not out of luck. We&#39;ve upgraded the <a href="https://github.com/trufflesuite/truffle-default-builder">truffle-default-builder</a> so it can work seamlessly with Truffle 3.0. This will be the last time we update the default builder though as engineering for all possible use cases is too complex. So we recommend you eventually choose a different build system later down the line.</p>
 <p>The default builder no longer ships with Truffle by default. So for Truffle 3.0, you first need to make <code>truffle-default-builder</code> a dependency of your project by running the following command within your project&#39;s folder:</p>
-<pre><code class="lang-shell">$ npm install truffle-default-builder --save
-</code></pre>
+<pre><code class="language-shell">$ npm install truffle-default-builder --save</code></pre>
 <p>Once installed, you can use the default builder within your <code>truffle.js</code> configuration file. Let&#39;s have a look at how your configuration file changes from v2.0 to v3.0, using a very simple build configuration:</p>
 <p>v2.0 : <code>truffle.js</code></p>
-<pre><code class="lang-javascript">module.exports = {
+<pre><code class="language-javascript">module.exports = {
   build: {
     &quot;index.html&quot;: &quot;index.html&quot;,
     &quot;app.js&quot;: [
@@ -414,10 +396,9 @@ contract(&quot;PackageIndex&quot;, function(accounts) {
     host: &quot;localhost&quot;,
     port: 8545
   }
-};
-</code></pre>
+};</code></pre>
 <p>v3.0 : <code>truffle.js</code></p>
-<pre><code class="lang-javascript">var DefaultBuilder = require(&quot;truffle-default-builder&quot;);
+<pre><code class="language-javascript">var DefaultBuilder = require(&quot;truffle-default-builder&quot;);
 
 module.exports = {
   build: new DefaultBuilder({
@@ -437,8 +418,7 @@ module.exports = {
       network_id: &quot;*&quot; // Match any network id
     }
   }
-};
-</code></pre>
+};</code></pre>
 <p>You&#39;ll notice that in version 3.0 we <code>require</code>&#39;d the default builder as a dependency and then passed that object into our configuration. Otherwise, the configuration was the same!</p>
 <p>Now, be aware that the default builder does use the latest contract abstractions (<a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">truffle-contract</a>), so you will still need to edit your application to account for the breaking changes mentioned above.</p>
 
@@ -457,7 +437,7 @@ module.exports = {
 <li>Use your contracts!</li>
 </ol>
 <p>In Node, this is very easy to do. Let&#39;s take a look at an example that shows off the &quot;purest&quot; way of performing the above steps, since it exists outside of any build process or tool.</p>
-<pre><code class="lang-javascript">// Step 1: Get a contract into my application
+<pre><code class="language-javascript">// Step 1: Get a contract into my application
 var json = require(&quot;./build/contracts/MyContract.json&quot;);
 
 // Step 2: Turn that contract into an abstraction I can use
@@ -470,8 +450,7 @@ MyContract.setProvider(new Web3.providers.HttpProvider(&quot;http://localhost:85
 // Step 4: Use the contract!
 MyContract.deployed().then(function(deployed) {
   return deployed.someFunction();
-});
-</code></pre>
+});</code></pre>
 <p>All build processes and contract bootstrapping will follow this pattern. The key when setting up your own custom build process is to ensure you&#39;re consuming all of your contract artifacts and provisioning your abstractions correctly.</p>
 
     <h2 class="link-markdown">

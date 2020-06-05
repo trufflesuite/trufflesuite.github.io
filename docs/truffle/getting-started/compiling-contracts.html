@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -356,8 +356,7 @@
       Command
     </h2>
   <p>To compile a Truffle project, change to the root of the directory where the project is located and then type the following into a terminal:</p>
-<pre><code class="lang-shell">truffle compile
-</code></pre>
+<pre><code class="language-shell">truffle compile</code></pre>
 <p>Upon first run, all contracts will be compiled. Upon subsequent runs, Truffle will compile only the contracts that have been changed since the last compile. If you&#39;d like to override this behavior, run the above command with the <code>--all</code> option.</p>
 
     <h2 class="link-markdown">
@@ -381,8 +380,7 @@
       Importing dependencies via file name
     </h3>
   <p>To import contracts from a separate file, add the following code to your Solidity source file:</p>
-<pre><code class="lang-solidity">import &quot;./AnotherContract.sol&quot;;
-</code></pre>
+<pre><code class="language-solidity">import &quot;./AnotherContract.sol&quot;;</code></pre>
 <p>This will make all contracts within <code>AnotherContract.sol</code> available. Here, <code>AnotherContract.sol</code> is relative to the path of the current contract being written.</p>
 <p>Note that Solidity allows other import syntaxes as well. See the Solidity <a href="http://solidity.readthedocs.org/en/latest/layout-of-source-files.html#importing-other-source-files">import documentation</a> for more information.</p>
 
@@ -392,8 +390,7 @@
       Importing contracts from an external package
     </h3>
   <p>Truffle supports dependencies installed via both <a href="/docs/truffle/getting-started/package-management-via-ethpm">EthPM</a> and <a href="/docs/truffle/getting-started/package-management-via-npm">NPM</a>. To import contracts from a dependency, use the following syntax</p>
-<pre><code class="lang-solidity">import &quot;somepackage/SomeContract.sol&quot;;
-</code></pre>
+<pre><code class="language-solidity">import &quot;somepackage/SomeContract.sol&quot;;</code></pre>
 <p>Here, <code>somepackage</code> represents a package installed via EthPM or NPM, and <code>SomeContract.sol</code> represents a Solidity source file provided by that package.</p>
 <p>Note that Truffle will search installed packages from EthPM first before searching for packages installed from NPM, so in the rare case of a naming conflict the package installed via EthPM will be used.</p>
 <p>For more information on how to use Truffle&#39;s package management features, please see the Truffle <a href="/docs/truffle/getting-started/package-management-via-ethpm">EthPM</a> and <a href="/docs/truffle/getting-started/package-management-via-npm">NPM</a> documentation.</p>

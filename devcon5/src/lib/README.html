@@ -16,10 +16,8 @@ communicate isn&#39;t useful.</li>
 document.addEventListener( &quot;impress:init&quot;, function(event){
     api = event.detail.api;
     api().lib.&lt;libraryName&gt;.&lt;libaryFunction&gt;();
-});
-</code></pre><p>...which is equivalent to:</p>
-<pre><code>impress().lib.&lt;libraryName&gt;.&lt;libraryFunction&gt;();
-</code></pre>
+});</code></pre><p>...which is equivalent to:</p>
+<pre><code>impress().lib.&lt;libraryName&gt;.&lt;libraryFunction&gt;();</code></pre>
     <h2 class="link-markdown">
       <a class="anchor-target" name="implementing-a-library"></a>
       <a href="#implementing-a-library"><i class="fas fa-link"></i></a>
@@ -42,8 +40,7 @@ wrapper.</p>
      libFunction1: libFunction1,
      libFunction2: libFunction2
  }
- return lib;
-</code></pre><p> };</p>
+ return lib;</code></pre><p> };</p>
 </li>
 <li><p>While rarely used, impress.js actually supports multiple presentation root div elements on a
 single html page. Each of these have their own API object, identified by the root element id
@@ -101,5 +98,4 @@ initialized more than once, and each of these MUST be treated as a new valid ini
     // Let impress core know about the existence of this library
     window.impress.addLibraryFactory( { libName : libraryFactory } );
 
-})(document, window);
-</code></pre>
+})(document, window);</code></pre>

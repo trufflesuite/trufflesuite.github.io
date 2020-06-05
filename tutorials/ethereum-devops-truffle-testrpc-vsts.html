@@ -141,7 +141,7 @@
       <div class="row justify-content-center">
         <div class="col">
           <p class="alert alert-info">
-<strong>Update</strong>: Since this tutorial was published, we have released <a href="/ganache">Ganache</a> a personal blockchain and a replacement to the TestRPC. We have left this tutorial unaltered, but we highly recommend checking out our <a href="/docs/ganache/using">Working with Ganache</a> page.
+**Update**: Since this tutorial was published, we have released [Ganache](/ganache) a personal blockchain and a replacement to the TestRPC. We have left this tutorial unaltered, but we highly recommend checking out our [Working with Ganache](/docs/ganache/using) page.
 </p>
 
 <p>This post was originally published by David Burela on his blog <a href="https://davidburela.wordpress.com/2016/12/23/ethereum-devops-with-truffle-testrpc-visual-studio-team-services/">Burela&#39;s House-o-blog</a>. Big thanks to David for allowing us publish it here!</p>
@@ -164,13 +164,12 @@
       Prepare truffle.js
     </h2>
   <p>A pre-step is to define the  test section in the truffle.js file</p>
-<pre><code class="lang-javascript">mocha: {
+<pre><code class="language-javascript">mocha: {
   reporter: “spec”,
   reporterOptions: {
     mochaFile: ‘junitresults.xml’
   }
-}
-</code></pre>
+}</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="create-a-build-agent"></a>
@@ -188,19 +187,17 @@ Run the service as another user, or NT AUTHORITY\SYSTEM</li>
 <a href="https://chocolatey.org/install">https://chocolatey.org/install</a></li>
 <li>Install these chocolatey packages</li>
 </ul>
-<pre><code class="lang-shell">$ choco install git -y
-$ choco install nodejs.install –y
-</code></pre>
+<pre><code class="language-shell">$ choco install git -y
+$ choco install nodejs.install –y</code></pre>
 <ul>
 <li>Install npm packages (make sure you open a new PowerShell window so that node is in your path)</li>
 </ul>
-<pre><code class="lang-shell">$ npm install -g npm
+<pre><code class="language-shell">$ npm install -g npm
 $ npm install -g –production windows-build-tools
 $ npm install -g ethereumjs-testrpc
 $ npm install -g truffle
 $ npm install -g mocha
-$ npm install -g mocha-junit-reporter
-</code></pre>
+$ npm install -g mocha-junit-reporter</code></pre>
 <ul>
 <li>Restart the build agent so that all new paths are working</li>
 </ul>
@@ -229,7 +226,7 @@ $ npm install -g mocha-junit-reporter
 <li>Name: System version information</li>
 <li>Script:</li>
 </ul>
-<pre><code class="lang-powershell">#Setting environment paths
+<pre><code class="language-powershell">#Setting environment paths
 $ENV:Path = $ENV:Path + “;” + $env:npm_path
 npm config set prefix $env:npm_path    #only needs to be set once, will update for user
 
@@ -241,8 +238,7 @@ Write-Host “System version information”
 Write-Host -nonewline    “node version: ” ; node -v
 Write-Host -nonewline    “npm version: “; npm -v
 Write-Host -nonewline    “npm prefix: “;  npm prefix -g
-Write-Host -nonewline    “truffle: ” ;    truffle version
-</code></pre>
+Write-Host -nonewline    “truffle: ” ;    truffle version</code></pre>
 <p>
     <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/12/image6.png" title="image" alt="image" />
     
@@ -251,14 +247,13 @@ Write-Host -nonewline    “truffle: ” ;    truffle version
 <li>Name: Config transform &amp; test clean</li>
 <li>Script:</li>
 </ul>
-<pre><code class="lang-powershell"># remove old test results
+<pre><code class="language-powershell"># remove old test results
 rm .\junitresults.xml -ea SilentlyContinue 
 
 # Modify the Truffle test runner to use the JUnit reporter
 Rename-Item .\truffle.js .\truffle_temp.js
 cat .\truffle_temp.js | % { $_ -replace ‘reporter: “spec”‘, ‘reporter: “mocha-junit-reporter”‘ } | Out-File -Encoding ASCII .\truffle.js
-rm .\truffle_temp.js
-</code></pre>
+rm .\truffle_temp.js</code></pre>
 <p>
     <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/12/image7.png" title="image" alt="image" />
     
@@ -267,12 +262,11 @@ rm .\truffle_temp.js
 <li>Name: Truffle build</li>
 <li>Script:</li>
 </ul>
-<pre><code class="lang-powershell">#Setting environment paths
+<pre><code class="language-powershell">#Setting environment paths
 $ENV:Path = $ENV:Path + “;” + $env:npm_path
 
 #Truffle build
-truffle compile
-</code></pre>
+truffle compile</code></pre>
 <p>
     <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/12/image8.png" title="image" alt="image" />
     
@@ -281,7 +275,7 @@ truffle compile
 <li>Name: Launch TestRPC</li>
 <li>Script:</li>
 </ul>
-<pre><code class="lang-powershell">#Setting environment paths
+<pre><code class="language-powershell">#Setting environment paths
 $ENV:Path = $ENV:Path + “;” + $env:npm_path
 
 # launch the process
@@ -290,18 +284,16 @@ $testrpcProcess = Start-Process testrpc -passthru
 
 # persist the PID to disk and display in logs
 $testrpcProcess.Id | Export-CliXml testrpcPID.xml
-cat testrpcPID.xml
-</code></pre>
+cat testrpcPID.xml</code></pre>
 <ul>
 <li>Name: Run Truffle tests</li>
 <li>Script:</li>
 </ul>
-<pre><code class="lang-powershell">#Setting environment paths
+<pre><code class="language-powershell">#Setting environment paths
 $ENV:Path = $ENV:Path + “;” + $env:npm_path
 
 # Run the tests
-truffle test
-</code></pre>
+truffle test</code></pre>
 <p>
     <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/12/image10.png" title="image" alt="image" />
     
@@ -311,14 +303,13 @@ truffle test
 <li>Other Settings: Enable “Always Run” (to make sure it is shutdown if there is an error)</li>
 <li>Script:</li>
 </ul>
-<pre><code class="lang-powershell">#Setting environment paths
+<pre><code class="language-powershell">#Setting environment paths
 $ENV:Path = $ENV:Path + “;” + $env:npm_path
 
 # retrieve the PID and kill the entire processs tree
 cat testrpcPID.xml
 $testrpcPID = Import-CliXml testrpcPID.xml
-taskkill /pid $testrpcPID /F /T
-</code></pre>
+taskkill /pid $testrpcPID /F /T</code></pre>
 <p>
     <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/12/image11.png" title="image" alt="image" />
     

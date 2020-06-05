@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -357,7 +357,7 @@
   <p>We recommend <a href="/ganache">Ganache</a>, a personal blockchain for Ethereum development that runs on your desktop. Part of the Truffle Suite, Ganache simplifies dapp development by placing your contracts and transactions front and center. Using Ganache you can quickly see how your application affects the blockchain, and introspect details like your accounts, balances, contract creations and gas costs. You can also fine tune Ganache&#39;s advanced mining controls to better suit your needs. Ganache is available for Windows, Mac and Linux, and you can <a href="/ganache">download it here</a>.</p>
 <p>Ganache, when launched, runs on <code>http://127.0.0.1:7545</code>. It will display the first 10 accounts and the mnemonic used to create those accounts. (<a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">Read more about account mnemonics</a>.) The mnemonic will persist across restarts of Ganache, though it can be changed to be randomly generated. You can also <a href="/docs/ganache/using">input your own</a>.</p>
 <p class="alert alert-danger">
-<strong>Warning</strong>: Do not use this mnemonic on the main Ethereum network (mainnet).
+**Warning**: Do not use this mnemonic on the main Ethereum network (mainnet).
 </p>
 
 
@@ -367,11 +367,10 @@
       Truffle Develop
     </h3>
   <p>We also recommend using Truffle Develop, a development blockchain built directly into Truffle. Truffle Develop helps you set up an integrated blockchain environment with a single command, no installation required. Run Truffle Develop by typing the following into a terminal:</p>
-<pre><code class="lang-shell">truffle develop
-</code></pre>
+<pre><code class="language-shell">truffle develop</code></pre>
 <p>This will run the client on <code>http://127.0.0.1:9545</code>. It will display the first 10 accounts and the mnemonic used to create those accounts. (<a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">Read more about account mnemonics</a>.) When you run <code>truffle develop</code> for the first time it will generate a random mnemonic that will persist for you and you alone.</p>
 <p class="alert alert-danger">
-<strong>Warning</strong>: Do not use this mnemonic on the main Ethereum network (mainnet). If you send ETH to any account generated from this mnemonic, you will lose it all!
+**Warning**: Do not use this mnemonic on the main Ethereum network (mainnet). If you send ETH to any account generated from this mnemonic, you will lose it all!
 </p>
 
 <p>Once launched, Truffle Develop will provide you with a console you can use to run all available Truffle commands. These commands are input by omitting the <code>truffle</code> prefix. So, for example, to compile your smart contracts, instead of typing <code>truffle compile</code>, you need to only type <code>compile</code>.</p>

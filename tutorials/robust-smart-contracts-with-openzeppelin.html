@@ -183,17 +183,14 @@
   <p>In this tutorial, we are focusing on smart contract creation. To that end, we&#39;ve created the front-end for you in the form of a Truffle Box.</p>
 <ol>
 <li><p>On a terminal, create a project directory and navigate to it:</p>
-<pre><code class="lang-shell">mkdir oz-workspace
-cd oz-workspace
-</code></pre>
+<pre><code class="language-shell">mkdir oz-workspace
+cd oz-workspace</code></pre>
 </li>
 <li><p>Unbox the <code>tutorialtoken</code> Truffle Box. This will give us our project template.</p>
-<pre><code class="lang-shell">truffle unbox tutorialtoken
-</code></pre>
+<pre><code class="language-shell">truffle unbox tutorialtoken</code></pre>
 </li>
 <li><p>Next, we&#39;ll install OpenZeppelin. The most recent version of OpenZeppelin can be found as an npm package.</p>
-<pre><code class="lang-shell">npm install openzeppelin-solidity
-</code></pre>
+<pre><code class="language-shell">npm install openzeppelin-solidity</code></pre>
 </li>
 </ol>
 
@@ -205,14 +202,13 @@ cd oz-workspace
   <p>With our front-end taken care of, we can focus on the <code>TutorialToken</code> contract.</p>
 <ol>
 <li><p>In the <code>contracts/</code> directory of your Truffle Box, create the file <code>TutorialToken.sol</code> and add the following contents:</p>
-<pre><code class="lang-solidity">pragma solidity ^0.4.24;
+<pre><code class="language-solidity">pragma solidity ^0.4.24;
 
 import &quot;openzeppelin-solidity/contracts/token/ERC20/ERC20.sol&quot;;
 
 contract TutorialToken is ERC20 {
 
-}
-</code></pre>
+}</code></pre>
 <p>Things to notice:</p>
 <ul>
 <li>Beyond the standard smart contract setup, we import the <code>StandardToken.sol</code> contract and declare our <code>TutorialToken</code>.</li>
@@ -220,11 +216,10 @@ contract TutorialToken is ERC20 {
 </ul>
 </li>
 <li><p>To set our own parameters for the token, we&#39;ll be declaring our own name, symbol, and other details. Add the following content block to the contract (between the curly braces):</p>
-<pre><code class="lang-solidity">string public name = &quot;TutorialToken&quot;;
+<pre><code class="language-solidity">string public name = &quot;TutorialToken&quot;;
 string public symbol = &quot;TT&quot;;
 uint8 public decimals = 2;
-uint public INITIAL_SUPPLY = 12000;
-</code></pre>
+uint public INITIAL_SUPPLY = 12000;</code></pre>
 <p>Things to notice:</p>
 <ul>
 <li>The <code>name</code> and <code>symbol</code> variables give our token a unique identity.</li>
@@ -233,10 +228,9 @@ uint public INITIAL_SUPPLY = 12000;
 </ul>
 </li>
 <li><p>To finish up our contract, we&#39;ll create a constructor function to mint with the <code>totalSupply</code> equal to our declared <code>INITIAL_SUPPLY</code> and give the entire supply to the deploying account&#39;s address. Add this block below the content added in the previous step:</p>
-<pre><code class="lang-solidity">constructor() public {
+<pre><code class="language-solidity">constructor() public {
   _mint(msg.sender, INITIAL_SUPPLY);
-}
-</code></pre>
+}</code></pre>
 </li>
 </ol>
 <p>Using less than 15 lines of hand-coded Solidity, we&#39;ve created our own Ethereum token!</p>
@@ -248,12 +242,11 @@ uint public INITIAL_SUPPLY = 12000;
     </h2>
   <ol>
 <li><p>In the <code>migrations/</code> directory, create the file <code>2_deploy_contracts.js</code> and add the following content:</p>
-<pre><code class="lang-javascript">var TutorialToken = artifacts.require(&quot;TutorialToken&quot;);
+<pre><code class="language-javascript">var TutorialToken = artifacts.require(&quot;TutorialToken&quot;);
 
 module.exports = function(deployer) {
   deployer.deploy(TutorialToken);
-};
-</code></pre>
+};</code></pre>
 <p>The <code>import</code> statement within our <code>TutorialToken</code> contract will be automatically handled by the compiler, along with any subsequent imports within <code>StandardToken</code>.</p>
 </li>
 <li><p>Now we are ready to compile and deploy your contract to the blockchain. For this tutorial, we will use <a href="/ganache">Ganache</a>, a personal blockchain for Ethereum development you can use to deploy contracts, develop applications, and run tests. If you haven&#39;t already, <a href="/ganache">download Ganache</a> and double click the icon to launch the application. This will generate a blockchain running locally on port 7545.</p>
@@ -262,21 +255,19 @@ module.exports = function(deployer) {
     <p class="img-caption">Ganache</p>
   </p>
 <p class="alert alert-info">
-  <strong>Note</strong>: Read more about Ganache in the <a href="/docs/ganache/using">Truffle documentation</a>.
+  **Note**: Read more about Ganache in the [Truffle documentation](/docs/ganache/using).
 </p>
 </li>
 <li><p>With our blockchain launched, head back to your terminal. Inside your project, run the following command to compile the contract:</p>
-<pre><code class="lang-shell">truffle compile
-</code></pre>
+<pre><code class="language-shell">truffle compile</code></pre>
 <p class="alert alert-info">
-  <strong>Note</strong>: If you&#39;re on Windows and encountering problems running this command, please see the documentation on <a href="/docs/advanced/configuration#resolving-naming-conflicts-on-windows">resolving naming conflicts on Windows</a>.
+  <strong>Note</strong>: If you're on Windows and encountering problems running this command, please see the documentation on [resolving naming conflicts on Windows](/docs/advanced/configuration#resolving-naming-conflicts-on-windows).
 </p>
 </li>
 <li><p>Once the compile has completed, deploy the contract to the blockchain:</p>
-<pre><code class="lang-shell">truffle migrate
-</code></pre>
+<pre><code class="language-shell">truffle migrate</code></pre>
 <p>You will see output that looks similar to this:</p>
-<pre><code class="lang-shell">Using network &#39;development&#39;.
+<pre><code class="language-shell">Using network &#39;development&#39;.
 
 Running migration: 1_initial_migration.js
   Deploying Migrations...
@@ -291,8 +282,7 @@ Running migration: 2_deploy_contracts.js
   TutorialToken: 0x345ca3e014aaf5dca488057592ee47305d9b3e10
 Saving successful migration to network...
   ... 0xf36163615f41ef7ed8f4a8f192149a0bf633fe1a2398ce001bf44c43dc7bdda0
-Saving artifacts...
-</code></pre>
+Saving artifacts...</code></pre>
 <p>Ganache will also list these transactions as well.</p>
 <p>
     <img class="img-fluid" src="/img/tutorials/open-zeppelin/oz-ganache-migrate.png" title="Ganache migration" alt="Ganache migration" />
@@ -309,13 +299,12 @@ Saving artifacts...
   <p>For this portion of the tutorial, we recommend using <a href="http://metamask.io">MetaMask</a>, a browser extension for Chrome and Firefox. It will allow you to switch between accounts quickly, perfect for testing the ability to transfer our newly created tokens. Our <a href="/tutorials/pet-shop">Pet Shop tutorial</a> has more information about <a href="/tutorials/pet-shop#interacting-with-the-dapp-in-a-browser">configuring MetaMask</a>.</p>
 <p>You will want to enter the mnemonic displayed in Ganache into MetaMask, and make sure that MetaMask is listening to the Custom RPC <code>http://127.0.0.1:7545</code>.</p>
 <p class="alert alert-danger">
-<strong>Warning</strong>: Do not use the Main Network in MetaMask. If you send ether to any account generated from Ganache&#39;s default mnemonic, you will lose it all!
+**Warning**: Do not use the Main Network in MetaMask. If you send ether to any account generated from Ganache's default mnemonic, you will lose it all!
 </p>
 
 <ol>
 <li><p>Still in your terminal, run a local web server containing the front-end application:</p>
-<pre><code class="lang-shell">npm run dev
-</code></pre>
+<pre><code class="language-shell">npm run dev</code></pre>
 <p>A browser window should automatically open with the interface below:</p>
 <p>
     <img class="img-fluid" src="/img/tutorials/open-zeppelin/oz-tutorialtoken-initial.png" title="TutorialToken Wallet" alt="TutorialToken Wallet" />

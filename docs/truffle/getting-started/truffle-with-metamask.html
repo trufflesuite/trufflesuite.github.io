@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -343,7 +343,7 @@
     </h1>
   <p>Before you can interact with smart contracts in a browser, make sure they&#39;re compiled, deployed, and that you&#39;re interacting with them via <code>web3</code> in client-side JavaScript. We recommend using the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">@truffle/contract</a> library, as it makes interacting with contracts easier and more robust.</p>
 <p class="alert alert-info">
-<strong>Note</strong>: For more information on these topics, including using <code>@truffle/contract</code>, check out our <a href="/tutorials/pet-shop">Pet Shop</a> or <a href="/tutorials/robust-smart-contracts-with-openzeppelin">TutorialToken</a> tutorials.
+<strong>Note</strong>: For more information on these topics, including using `@truffle/contract`, check out our [Pet Shop](/tutorials/pet-shop) or [TutorialToken](/tutorials/robust-smart-contracts-with-openzeppelin) tutorials.
 </p>
 
 <p>Once you&#39;ve done the above, you&#39;re ready to use MetaMask.</p>
@@ -380,7 +380,7 @@
     </h2>
   <p><a href="/ganache">Ganache</a> is a graphical application that runs a blockchain that can be used for testing purposes. It runs on <code>127.0.0.1:7545</code>.</p>
 <p class="alert alert-info">
-<strong>Note</strong>: We recommend specifying <code>127.0.0.1</code> instead of <code>localhost</code> because the address does not require a network connection and so is more suitable for development.
+**Note**: We recommend specifying `127.0.0.1` instead of `localhost` because the address does not require a network connection and so is more suitable for development.
 </p>
 
 
@@ -391,7 +391,7 @@
     </h3>
   <p>Before diving in, we&#39;ll need to make sure the dapp is checking for MetaMask&#39;s <code>web3</code> instance and that the extension itself is configured properly with Ganache.</p>
 <p>MetaMask injects its own <code>web3</code> instance, so we&#39;ll want to make sure we&#39;re checking for that. After the window has loaded perform the following check:</p>
-<pre><code class="lang-javascript">// Is there is an injected web3 instance?
+<pre><code class="language-javascript">// Is there is an injected web3 instance?
 if (typeof web3 !== &#39;undefined&#39;) {
   App.web3Provider = web3.currentProvider;
   web3 = new Web3(web3.currentProvider);
@@ -399,8 +399,7 @@ if (typeof web3 !== &#39;undefined&#39;) {
   // If no injected web3 instance is detected, fallback to Ganache.
   App.web3Provider = new web3.providers.HttpProvider(&#39;http://127.0.0.1:7545&#39;);
   web3 = new Web3(App.web3Provider);
-}
-</code></pre>
+}</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="setting-up-metamask"></a>
@@ -415,7 +414,7 @@ if (typeof web3 !== &#39;undefined&#39;) {
 <p><em>MetaMask initial screen</em></p>
 <p>Click <strong>Import with seed phrase</strong>. In the box marked <strong>Wallet Seed</strong>, enter the mnemonic that was displayed when launching Ganache.</p>
 <p class="alert alert-danger">
-<strong>Warning</strong>: Do not use this mnemonic on the main Ethereum network (mainnet). Make sure that you set the network to &quot;Private Network&quot; (use the &quot;Custom RPC&quot; setting). See below for details.
+**Warning**: Do not use this mnemonic on the main Ethereum network (mainnet). Make sure that you set the network to "Private Network" (use the "Custom RPC" setting). See below for details.
 </p>
 
 <p>Enter a password below that and click <strong>OK</strong>.</p>
@@ -432,6 +431,7 @@ if (typeof web3 !== &#39;undefined&#39;) {
 <p><em>MetaMask network menu</em></p>
 <p>In the box titled &quot;New RPC URL&quot; (to the right of &quot;New Network&quot;) enter <code>http://127.0.0.1:7545</code> and click <strong>Save</strong>.</p>
 <!--Add image from pet shop tutorial when updated for Ganache -->
+
 <p>The network name at the top will switch to say &quot;Private Network&quot;. Click the cross in the top-right of the current window close out of the page and return to the Accounts page.</p>
 <p>Now that we&#39;ve connected MetaMask to Ganache, you&#39;ll be taken to the accounts screen. Each account created by Ganache is given 100 ether. The first account should have less than the others because that account supplies the gas for smart contract deployment. Since you&#39;ve deployed your smart contract to the network, this account paid for it.</p>
 <p>Click the account icon in the upper-right to create new accounts, the first 10 of which will correspond to the 10 accounts displayed when you launched Ganache.</p>
@@ -448,11 +448,11 @@ if (typeof web3 !== &#39;undefined&#39;) {
     </h2>
   <p>Truffle Develop is a command-line application that runs a temporary blockchain that is also used for testing purposes. It runs on <code>127.0.0.1:9545</code>.</p>
 <p class="alert alert-info">
-<strong>Note</strong>: We recommend specifying <code>127.0.0.1</code> instead of <code>localhost</code> because the address does not require a network connection and so is more suitable for development.
+**Note**: We recommend specifying `127.0.0.1` instead of `localhost` because the address does not require a network connection and so is more suitable for development.
 </p>
 
 <p>Using MetaMask with Truffle Develop is very similar to that of Ganache. The only difference is that Truffle Develop runs by default on <code>127.0.0.1:9545</code>, so you&#39;ll want to edit the above web3 code to say:</p>
-<pre><code class="lang-javascript">  // Is there is an injected web3 instance?
+<pre><code class="language-javascript">  // Is there is an injected web3 instance?
   if (typeof web3 !== &#39;undefined&#39;) {
     App.web3Provider = web3.currentProvider;
     web3 = new Web3(web3.currentProvider);
@@ -460,8 +460,7 @@ if (typeof web3 !== &#39;undefined&#39;) {
     // If no injected web3 instance is detected, fallback to Truffle Develop.
     App.web3Provider = new web3.providers.HttpProvider(&#39;http://127.0.0.1:9545&#39;);
     web3 = new Web3(App.web3Provider);
-  }
-</code></pre>
+  }</code></pre>
 <p>In MetaMask, when entering the &quot;New RPC URL&quot;, enter <code>http://127.0.0.1:9545</code>.</p>
 
     <h2 class="link-markdown">
@@ -470,7 +469,7 @@ if (typeof web3 !== &#39;undefined&#39;) {
       Using MetaMask with Ganache CLI
     </h2>
   <p>Using MetaMask with Ganache CLI is also very similar to that of Ganache. The only difference is that Ganache CLI runs by default on <code>http://127.0.0.1:8545</code> so you&#39;ll want to edit the above web3 code to say:</p>
-<pre><code class="lang-javascript">  // Is there is an injected web3 instance?
+<pre><code class="language-javascript">  // Is there is an injected web3 instance?
   if (typeof web3 !== &#39;undefined&#39;) {
     App.web3Provider = web3.currentProvider;
     web3 = new Web3(web3.currentProvider);
@@ -478,8 +477,7 @@ if (typeof web3 !== &#39;undefined&#39;) {
     // If no injected web3 instance is detected, fallback to Ganache CLI.
     App.web3Provider = new web3.providers.HttpProvider(&#39;http://127.0.0.1:8545&#39;);
     web3 = new Web3(App.web3Provider);
-  }
-</code></pre>
+  }</code></pre>
 <p>In MetaMask, when entering the &quot;New RPC URL&quot;, enter <code>http://127.0.0.1:8545</code>.</p>
 
 

@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -206,7 +206,7 @@
           </aside>      
         <div class="col-lg-9 bd-light-cream docs-content">
           <p class="alert alert-danger">
-<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by <a href="https://github.com/trufflesuite/truffle/issues">filing issues on Github</a>.
+<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by [filing issues on Github](https://github.com/trufflesuite/truffle/issues).
 </p>
 
 
@@ -247,8 +247,7 @@ function main (const p : action ; const s : int) : (list(operation) * int) is
     case p of
     | Increment (n) -&gt; add (s, n)
     | Decrement (n) -&gt; subtract (s, n)
-    end)
-</code></pre><p>There&#39;s some important takeaways to note when writing LIGO contracts: </p>
+    end)</code></pre><p>There&#39;s some important takeaways to note when writing LIGO contracts: </p>
 <ul>
 <li>By default, all LIGO contracts have a single entry point called <code>main</code>, expected by Truffle. For multiple entry points, see below. </li>
 <li>The last parameter to the entry point function represents the current state of the contract, and is sent to the function via the underlying protocol. </li>

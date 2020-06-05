@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -206,7 +206,7 @@
           </aside>      
         <div class="col-lg-9 bd-light-cream docs-content">
           <p class="alert alert-danger">
-<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by <a href="https://github.com/trufflesuite/truffle/issues">filing issues on Github</a>.
+<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by [filing issues on Github](https://github.com/trufflesuite/truffle/issues).
 </p>
 
 
@@ -223,12 +223,10 @@
       Command
     </h2>
   <p>To launch the console, run the following from your project folder:</p>
-<pre><code class="lang-shell">truffle console
-</code></pre>
+<pre><code class="language-shell">truffle console</code></pre>
 <p>Truffle will immediately look for a network definition called <code>development</code> in the configuration, and connect to it, if available. You can override this using the <code>--network &lt;name&gt;</code> option or <a href="#">customize</a> the <code>development</code> network settings. See more details in the <a href="/docs/advanced/networks">Networks</a> section as well as the <a href="#">command reference</a>.</p>
 <p>When you load the console, you&#39;ll immediately see the following prompt:</p>
-<pre><code class="lang-shell">truffle(development)&gt;
-</code></pre>
+<pre><code class="language-shell">truffle(development)&gt;</code></pre>
 <p>This tells you you&#39;re running within a Truffle console using the <code>development</code> network.</p>
 
     <h2 class="link-markdown">
@@ -249,7 +247,7 @@
       Example
     </h2>
   <p>Here&#39;s an example using the <code>SimpleStorage</code> contract that comes with the <code>tezos-example</code> Truffle box. In this example, we first run the deploy command, which deploys our contracts to the configured network (equivalent to running <code>truffle deploy</code> from the shell). We then use the supplied contract abstraction to get an object that represents the deployed <code>SimpleStorage</code> contract; call its <code>main()</code> function, creating a new transaction; and then get the contract&#39;s data after the transaction completed successfully.</p>
-<pre><code class="lang-javascript">truffle(development)&gt; deploy
+<pre><code class="language-javascript">truffle(development)&gt; deploy
 
 1_deploy_simple_storage.js
 ==========================
@@ -269,8 +267,7 @@ truffle(development)&gt; await instance.main(2)    // Make transaction against m
   ...
 } // transaction output
 truffle(development)&gt; await instance.storage()  // Get storage data
-BigNumber { s: 1, e: 0, c: [ 2 ] }
-</code></pre>
+BigNumber { s: 1, e: 0, c: [ 2 ] }</code></pre>
 <p>For more information using the contract abstractions made available in the console, see the <a href="/docs/tezos/truffle/getting-started/interacting-with-your-tezos-contracts">Interacting With Your Tezos Contracts</a> section. </p>
 
     <h3 class="link-markdown">

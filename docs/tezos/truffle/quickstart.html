@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -206,7 +206,7 @@
           </aside>      
         <div class="col-lg-9 bd-light-cream docs-content">
           <p class="alert alert-danger">
-<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by <a href="https://github.com/trufflesuite/truffle/issues">filing issues on Github</a>.
+<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by [filing issues on Github](https://github.com/trufflesuite/truffle/issues).
 </p>
 
 
@@ -246,7 +246,7 @@
   <p>Before you can start developing Tezos applications with Truffle, you&#39;ll first need to ensure you have <a href="https://www.docker.com/">Docker</a> installed on your machine. Installing docker let&#39;s Truffle easily use the latest LIGO compiler on any platform.</p>
 <p><a href="https://docs.docker.com/install/">See Docker install instructions for your platform.</a></p>
 <p class="alert alert-info">
-<strong>Docker on Windows:</strong> If you&#39;re developing on Windows, you need to install the <a href="https://docs.docker.com/docker-for-windows/edge-release-notes/">Docker edge release</a> instead of the mainline docker version. Trust us: This is a better experience.
+<strong>Docker on Windows:</strong> If you're developing on Windows, you need to install the [Docker edge release](https://docs.docker.com/docker-for-windows/edge-release-notes/) instead of the mainline docker version. Trust us: This is a better experience.
 </p>
 
 
@@ -266,8 +266,7 @@
       Installing Truffle
     </h2>
   <p>You&#39;ll need to download a special version of Truffle to use Tezos. </p>
-<pre><code>$ npm install -g truffle@tezos
-</code></pre><p>If you already have Truffle installed, we recommend uninstalling truffle before running the above command.</p>
+<pre><code>$ npm install -g truffle@tezos</code></pre><p>If you already have Truffle installed, we recommend uninstalling truffle before running the above command.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="using-the-tezos-truffle-box"></a>
@@ -278,8 +277,7 @@
 <p>In your workspace directory, run the following commands:</p>
 <pre><code>$ mdkir tezos-example
 $ cd tezos-example
-$ truffle unbox tezos-example
-</code></pre>
+$ truffle unbox tezos-example</code></pre>
     <h2 class="link-markdown">
       <a class="anchor-target" name="writing-contracts"></a>
       <a href="#writing-contracts"><i class="fas fa-link"></i></a>
@@ -307,7 +305,7 @@ $ truffle unbox tezos-example
     </h3>
   <p>First, navigate to <a href="https://faucet.tzalpha.net/">https://faucet.tzalpha.net/</a> to get a faucet account. This will create a new account for you on the testnet and fill it with some testnet XTZ. Download the file and save it as <code>faucet.json</code> in the root of your project.</p>
 <p>Next, replace the box&#39;s <code>truffle-config.js</code> with the following: </p>
-<pre><code class="lang-javascript">const { mnemonic, secret, password, email } = require(&quot;./faucet.json&quot;);
+<pre><code class="language-javascript">const { mnemonic, secret, password, email } = require(&quot;./faucet.json&quot;);
 
 module.exports = {
   // see &lt;http://truffleframework.com/docs/advanced/configuration&gt;
@@ -324,15 +322,14 @@ module.exports = {
       type: &quot;tezos&quot;
     }
   }
-};
-</code></pre>
+};</code></pre>
 <p>That&#39;s it! You&#39;re all set to run the box&#39;s deployment scripts against a testnet. </p>
 <p class="alert alert-info">
-<strong>Note:</strong> The default tezos box is configured to deploy to multiple networks, including mainnet. If you&#39;d like to deploy to those networks, you&#39;ll need to first configure the <code>secret</code>, <code>mnemonic</code>, <code>password</code>, and <code>email</code> like the above to represent an account you own that&#39;s funded with XTZ. See the <a href="/docs/tezos/truffle/reference/configuring-tezos-projects">Configuring Tezos Projects</a> section for more info.
+<strong>Note:</strong> The default tezos box is configured to deploy to multiple networks, including mainnet. If you'd like to deploy to those networks, you'll need to first configure the `secret`, `mnemonic`, `password`, and `email` like the above to represent an account you own that's funded with XTZ. See the [Configuring Tezos Projects](/docs/tezos/truffle/reference/configuring-tezos-projects) section for more info.
 </p>
 
 <p class="alert alert-danger">
-<strong>Caution!</strong> Keep your <code>secret</code>, <code>mnemonic</code> and <code>password</code> safe! When not on a testnet, you can quickly lose all your tez if someone else gets ahold of them.
+<strong>Caution!</strong> Keep your `secret`, `mnemonic` and `password` safe! When not on a testnet, you can quickly lose all your tez if someone else gets ahold of them.
 </p>
 
 
@@ -348,8 +345,7 @@ module.exports = {
 <li><code>3_deploy_counter.js</code></li>
 </ul>
 <p>Truffle will handle running these scripts when you run the following command:</p>
-<pre><code>$ truffle migrate
-</code></pre><p>See the <a href="/docs/tezos/truffle/quick-start/deploying-tezos-contracts">Deploying Tezos contracts</a> section for more information on how to write and use Truffle&#39;s deployment scripts.</p>
+<pre><code>$ truffle migrate</code></pre><p>See the <a href="/docs/tezos/truffle/quick-start/deploying-tezos-contracts">Deploying Tezos contracts</a> section for more information on how to write and use Truffle&#39;s deployment scripts.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="testing-contracts"></a>
@@ -363,8 +359,7 @@ module.exports = {
 </ul>
 <p>See the <a href="/docs/tezos/truffle/quick-start/testing-your-tezos-contracts">Testing Tezos contracts</a> section for more information on how to write tests for your LIGO congrats.</p>
 <p>Running your tests is easy, by running following command: </p>
-<pre><code>$ truffle test
-</code></pre>
+<pre><code>$ truffle test</code></pre>
     <h2 class="link-markdown">
       <a class="anchor-target" name="further-resources"></a>
       <a href="#further-resources"><i class="fas fa-link"></i></a>

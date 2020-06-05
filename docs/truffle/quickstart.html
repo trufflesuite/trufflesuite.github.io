@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -343,7 +343,7 @@
     </h1>
   <p>This page will take you through the basics of creating a Truffle project and deploying a smart contract to a blockchain.</p>
 <p class="alert alert-info">
-<strong>Note</strong>: Before you begin, make sure that you read our <a href="/tutorials/ethereum-overview">Ethereum Overview</a> page.
+<strong>Note</strong>: Before you begin, make sure that you read our [Ethereum Overview](/tutorials/ethereum-overview) page.
 </p>
 
 
@@ -371,19 +371,17 @@
 <p>You can create a bare project template, but for those just getting started, you can use <a href="/boxes">Truffle Boxes</a>, which are example applications and project templates. We&#39;ll use the <a href="/boxes/metacoin">MetaCoin box</a>, which creates a token that can be transferred between accounts:</p>
 <ol>
 <li><p>Create a new directory for your Truffle project:</p>
-<pre><code class="lang-shell">mkdir MetaCoin
-cd MetaCoin
-</code></pre>
+<pre><code class="language-shell">mkdir MetaCoin
+cd MetaCoin</code></pre>
 </li>
 <li><p>Download (&quot;unbox&quot;) the MetaCoin box:</p>
-<pre><code class="lang-shell">truffle unbox metacoin
-</code></pre>
+<pre><code class="language-shell">truffle unbox metacoin</code></pre>
 <p class="alert alert-info">
-<strong>Note</strong>: You can use the <code>truffle unbox &lt;box-name&gt;</code> command to download any of the other Truffle Boxes.
+<strong>Note</strong>: You can use the `truffle unbox <box-name>` command to download any of the other Truffle Boxes.
 </p>
 
 <p class="alert alert-info">
-<strong>Note</strong>: To create a bare Truffle project with no smart contracts included, use <code>truffle init</code>.
+<strong>Note</strong>: To create a bare Truffle project with no smart contracts included, use `truffle init`.
 </p>
 
 </li>
@@ -402,7 +400,7 @@ cd MetaCoin
       Exploring the project
     </h2>
   <p class="alert alert-info">
-<strong>Note</strong>: This page is just a quickstart, so we&#39;re not going to go into much detail here. Please see the rest of the Truffle documentation to learn more.
+<strong>Note</strong>: This page is just a quickstart, so we're not going to go into much detail here. Please see the rest of the Truffle documentation to learn more.
 </p>
 
 <ol>
@@ -429,31 +427,27 @@ cd MetaCoin
     </h2>
   <ol>
 <li><p>On a terminal, run the Solidity test:</p>
-<pre><code class="lang-shell">truffle test ./test/TestMetaCoin.sol
-</code></pre>
+<pre><code class="language-shell">truffle test ./test/TestMetaCoin.sol</code></pre>
 <p>You will see the following output</p>
 <pre><code>  TestMetacoin
     √ testInitialBalanceUsingDeployedContract (71ms)
     √ testInitialBalanceWithNewMetaCoin (59ms)
 
-  2 passing (794ms)
-</code></pre><p class="alert alert-info">
-<strong>Note</strong>: If you&#39;re on Windows and encountering problems running this command, please see the documentation on <a href="/docs/truffle/reference/configuration#resolving-naming-conflicts-on-windows">resolving naming conflicts on Windows</a>.
+  2 passing (794ms)</code></pre><p class="alert alert-info">
+<strong>Note</strong>: If you're on Windows and encountering problems running this command, please see the documentation on [resolving naming conflicts on Windows](/docs/truffle/reference/configuration#resolving-naming-conflicts-on-windows).
 </p>
 
 <p>These tree tests were run against the contract, with descriptions displayed on what the tests are supposed to do.</p>
 </li>
 <li><p>Run the JavaScript test:</p>
-<pre><code class="lang-shell">truffle test ./test/metacoin.js
-</code></pre>
+<pre><code class="language-shell">truffle test ./test/metacoin.js</code></pre>
 <p>You will see the following output</p>
 <pre><code>  Contract: MetaCoin
     √ should put 10000 MetaCoin in the first account
     √ should call a function that depends on a linked library (40ms)
     √ should send coin correctly (129ms)
 
-  3 passing (255ms)
-</code></pre></li>
+  3 passing (255ms)</code></pre></li>
 </ol>
 
     <h2 class="link-markdown">
@@ -463,15 +457,13 @@ cd MetaCoin
     </h2>
   <ol>
 <li><p>Compile the smart contracts:</p>
-<pre><code class="lang-shell">truffle compile
-</code></pre>
+<pre><code class="language-shell">truffle compile</code></pre>
 <p>You will see the following output:</p>
 <pre><code>Compiling .\contracts\ConvertLib.sol...
 Compiling .\contracts\MetaCoin.sol...
 Compiling .\contracts\Migrations.sol...
 
-Writing artifacts to .\build\contracts
-</code></pre></li>
+Writing artifacts to .\build\contracts</code></pre></li>
 </ol>
 
     <h2 class="link-markdown">
@@ -480,15 +472,14 @@ Writing artifacts to .\build\contracts
       Migrating with Truffle Develop
     </h2>
   <p class="alert alert-info">
-<strong>Note</strong>: To use <a href="/ganache">Ganache</a>, please skip to the next section.
+<strong>Note</strong>: To use [Ganache](/ganache), please skip to the next section.
 </p>
 
 <p>To deploy our smart contracts, we&#39;re going to need to connect to a blockchain. Truffle has a built-in personal blockchain that can be used for testing. This blockchain is local to your system and does not interact with the main Ethereum network.</p>
 <p>You can create this blockchain and interact with it using <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console#truffle-develop">Truffle Develop</a>.</p>
 <ol>
 <li><p>Run Truffle Develop:</p>
-<pre><code class="lang-shell">truffle develop
-</code></pre>
+<pre><code class="language-shell">truffle develop</code></pre>
 <p>You will see the following information:</p>
 <pre><code>Truffle Develop started at http://127.0.0.1:9545/
 
@@ -521,12 +512,10 @@ Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet t
 ⚠️  Important ⚠️  : This mnemonic was created for you by Truffle. It is not secure.
 Ensure you do not use it on production blockchains, or else you risk losing funds.
 
-truffle(development)&gt;
-</code></pre><p>This shows ten accounts (and their private keys) that can be used when interacting with the blockchain.</p>
+truffle(development)&gt;</code></pre><p>This shows ten accounts (and their private keys) that can be used when interacting with the blockchain.</p>
 </li>
 <li><p>On the Truffle Develop prompt, Truffle commands can be run by omitting the <code>truffle</code> prefix. For example, to run <code>truffle compile</code> on the prompt, type <code>compile</code>. The command to deploy your compiled contracts to the blockchain is <code>truffle migrate</code>, so at the prompt, type:</p>
-<pre><code class="lang-shell">migrate
-</code></pre>
+<pre><code class="language-shell">migrate</code></pre>
 <p>You will see the following output:</p>
 <pre><code>Starting migrations...
 ======================
@@ -593,8 +582,7 @@ truffle(development)&gt;
 Summary
 =======
 &gt; Total deployments:   3
-&gt; Final cost:          0.01466268 ETH
-</code></pre><p>This shows the transaction IDs and addresses of your deployed contracts. It also includes a cost summary and real-time status updates.</p>
+&gt; Final cost:          0.01466268 ETH</code></pre><p>This shows the transaction IDs and addresses of your deployed contracts. It also includes a cost summary and real-time status updates.</p>
 <p class="alert alert-info">
   <strong>Note</strong>: Your transaction hashes, contract addresses, and accounts will be different from the above.
 </p>
@@ -618,7 +606,7 @@ Summary
 <li><p>Download and install <a href="/ganache">Ganache</a>.</p>
 </li>
 <li><p>Open <code>truffle-config.js</code> in a text editor. Replace the content with the following:</p>
-<pre><code class="lang-javascript">module.exports = {
+<pre><code class="language-javascript">module.exports = {
   networks: {
     development: {
       host: &quot;127.0.0.1&quot;,
@@ -626,8 +614,7 @@ Summary
       network_id: &quot;*&quot;
     }
   }
-};
-</code></pre>
+};</code></pre>
 <p>This will allow a connection using Ganache&#39;s default connection parameters.</p>
 </li>
 <li><p>Save and close that file.</p>
@@ -640,8 +627,7 @@ Summary
 <p><em>Ganache</em></p>
 </li>
 <li><p>On the terminal, migrate the contract to the blockchain created by Ganache:</p>
-<pre><code class="lang-shell">truffle migrate
-</code></pre>
+<pre><code class="language-shell">truffle migrate</code></pre>
 <p>You will see the following output:</p>
 <pre><code>Compiling your contracts...
 ===========================
@@ -723,8 +709,7 @@ Starting migrations...
 Summary
 =======
 &gt; Total deployments:   3
-&gt; Final cost:          0.01092396 ETH
-</code></pre><p>This shows the transaction IDs and addresses of your deployed contracts. It also includes a cost summary and real-time status updates.</p>
+&gt; Final cost:          0.01092396 ETH</code></pre><p>This shows the transaction IDs and addresses of your deployed contracts. It also includes a cost summary and real-time status updates.</p>
 <p class="alert alert-info">
   <strong>Note</strong>: Your transaction IDs and contract addresses may be different from the above.
 </p>
@@ -732,11 +717,9 @@ Summary
 <li><p>In Ganache, click the &quot;Transactions&quot; button to see that the transactions have been processed.</p>
 </li>
 <li><p>To interact with the contract, you can use the Truffle console. The Truffle console is similar to Truffle Develop, except it connects to an existing blockchain (in this case, the one generated by Ganache).</p>
-<pre><code class="lang-shell">truffle console
-</code></pre>
+<pre><code class="language-shell">truffle console</code></pre>
 <p>You will see the following prompt:</p>
-<pre><code>truffle(development)&gt;
-</code></pre></li>
+<pre><code>truffle(development)&gt;</code></pre></li>
 </ol>
 
     <h2 class="link-markdown">
@@ -746,39 +729,33 @@ Summary
     </h2>
   <p>Interact with the contract using the console in the following ways:</p>
 <p class="alert alert-info">
-<strong>Note</strong>: We&#39;re using <code>web3.eth.getAccounts()</code> in these examples, which returns a promise which resolves to an array of all the accounts generated by the mnemonic. So, given the addresses generated by our mnemonic above, specifying <code>(await web3.eth.getAccounts())[0]</code> is equivalent to the address <code>0x627306090abab3a6e1400e9345bc60c78a8bef57</code>.
+<strong>Note</strong>: We're using `web3.eth.getAccounts()` in these examples, which returns a promise which resolves to an array of all the accounts generated by the mnemonic. So, given the addresses generated by our mnemonic above, specifying `(await web3.eth.getAccounts())[0]` is equivalent to the address `0x627306090abab3a6e1400e9345bc60c78a8bef57`.
 </p>
 
 <p>As of Truffle v5, the console supports async/await functions, enabling much simpler interactions with the contract.</p>
 <ul>
 <li><p>Begin by establishing both the deployed MetaCoin contract instance and the accounts created by either Truffle&#39;s built-in blockchain or Ganache:</p>
-<pre><code class="lang-javascript">truffle(development)&gt; let instance = await MetaCoin.deployed()
-truffle(development)&gt; let accounts = await web3.eth.getAccounts()
-</code></pre>
+<pre><code class="language-javascript">truffle(development)&gt; let instance = await MetaCoin.deployed()
+truffle(development)&gt; let accounts = await web3.eth.getAccounts()</code></pre>
 </li>
 <li><p>Check the metacoin balance of the account that deployed the contract:</p>
-<pre><code class="lang-javascript">truffle(development)&gt; let balance = await instance.getBalance(accounts[0])
-truffle(development)&gt; balance.toNumber()
-</code></pre>
+<pre><code class="language-javascript">truffle(development)&gt; let balance = await instance.getBalance(accounts[0])
+truffle(development)&gt; balance.toNumber()</code></pre>
 </li>
 <li><p>See how much ether that balance is worth (and note that the contract defines a metacoin to be worth 2 ether):</p>
-<pre><code class="lang-javascript">truffle(development)&gt; let ether = await instance.getBalanceInEth(accounts[0])
-truffle(development)&gt; ether.toNumber()
-</code></pre>
+<pre><code class="language-javascript">truffle(development)&gt; let ether = await instance.getBalanceInEth(accounts[0])
+truffle(development)&gt; ether.toNumber()</code></pre>
 </li>
 <li><p>Transfer some metacoin from one account to another:</p>
-<pre><code class="lang-javascript">truffle(development)&gt; instance.sendCoin(accounts[1], 500)
-</code></pre>
+<pre><code class="language-javascript">truffle(development)&gt; instance.sendCoin(accounts[1], 500)</code></pre>
 </li>
 <li><p>Check the balance of the account that <em>received</em> the metacoin:</p>
-<pre><code class="lang-javascript">truffle(development)&gt; let received = await instance.getBalance(accounts[1])
-truffle(development)&gt; received.toNumber()
-</code></pre>
+<pre><code class="language-javascript">truffle(development)&gt; let received = await instance.getBalance(accounts[1])
+truffle(development)&gt; received.toNumber()</code></pre>
 </li>
 <li><p>Check the balance of the account that <em>sent</em> the metacoin:</p>
-<pre><code class="lang-javascript">truffle(development)&gt; let newBalance = await instance.getBalance(accounts[0])
-truffle(development)&gt; newBalance.toNumber()
-</code></pre>
+<pre><code class="language-javascript">truffle(development)&gt; let newBalance = await instance.getBalance(accounts[0])
+truffle(development)&gt; newBalance.toNumber()</code></pre>
 </li>
 </ul>
 

@@ -152,13 +152,12 @@
 <p>Our second environment variable will require an RPC URL. Some popular RPC connectivity services include <a href="https://www.trufflesuite.com/tutorials/using-infura-custom-provider">Infura</a>, <a href="https://www.linkpool.io/">LinkPool</a>, and <a href="https://fiews.io/free-rpc">Fiews</a>. After establishing a valid RPC connection and the funded address, you can start deploying smart contracts to public networks.</p>
 <figure>
   <img src="/img/blog/using-truffle-to-interact-with-chainlink-smart-contracts/01.png" alt="Truffle DB data model" style="width:100%">
-  <figcaption><em>Shown above are the environment variables needed to link your MetaMask wallet to Truffle, found in truffle-config.js.</em></figcaption>
+  <figcaption>_Shown above are the environment variables needed to link your MetaMask wallet to Truffle, found in truffle-config.js._</figcaption>
 </figure>
 
 <p>Once you have all the data you need, you can set your environment variables via the terminal commands:</p>
-<pre><code class="lang-shell">export RPC_URL=your_url_here
-export MNEMONIC=’your 12 words here’
-</code></pre>
+<pre><code class="language-shell">export RPC_URL=your_url_here
+export MNEMONIC=’your 12 words here’</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="migration"></a>
@@ -166,13 +165,12 @@ export MNEMONIC=’your 12 words here’
       Migration
     </h2>
   <p>We are now ready to deploy our smart contract on a public network. To begin, run the command:</p>
-<pre><code class="lang-shell">npm run migrate:live
-</code></pre>
+<pre><code class="language-shell">npm run migrate:live</code></pre>
 <p>This will compile all of your smart contracts, and then start deploying (migrating) them.</p>
 <p><em>Note: you may encounter some compilation warnings with the Chainlink contracts. This is simply because the LINK token was originally deployed with an older version of Solidity. Given that this contract is only being deployed when you run tests, these can be ignored.</em></p>
 <figure>
   <img src="/img/blog/using-truffle-to-interact-with-chainlink-smart-contracts/02.png" alt="Truffle DB data model" style="width:100%">
-  <figcaption><em>Console output of one of our contracts deploying. This particular transaction can be found <a href="https://ropsten.etherscan.io/tx/0x4c8125f0e074ce3f65b08f67f9685a0d00c2985c6ebd372507016d78c344d25b">here</a>.</em></figcaption>
+  <figcaption>_Console output of one of our contracts deploying. This particular transaction can be found [here](https://ropsten.etherscan.io/tx/0x4c8125f0e074ce3f65b08f67f9685a0d00c2985c6ebd372507016d78c344d25b)._</figcaption>
 </figure>
 
 <p>Deploying our <code>Migrations</code> and <code>MyContract</code> cost us Ethereum, hence why we needed the faucet from earlier. Now that our contract is deployed, we can utilize the three helper scripts to fund <code>MyContract</code> with LINK (which we got from the Chainlink faucet), create requests, and read the state.</p>
@@ -183,8 +181,7 @@ export MNEMONIC=’your 12 words here’
 <li><code>read-contract.js</code></li>
 </ul>
 <p>They can be used by calling them from <code>npx truffle exec</code>. First, we must fund our contract with LINK, which can be done by running the following command:</p>
-<pre><code class="lang-shell">npx truffle exec scripts/fund-contract.js --network live
-</code></pre>
+<pre><code class="language-shell">npx truffle exec scripts/fund-contract.js --network live</code></pre>
 <figure>
   <img src="/img/blog/using-truffle-to-interact-with-chainlink-smart-contracts/03.png" alt="Truffle DB data model" style="width:100%">
 </figure>
@@ -195,16 +192,14 @@ export MNEMONIC=’your 12 words here’
 </figure>
 
 <p>Notice that upon completion, a payment of 1 LINK was sent during the transaction, clearly indicating that our contract has properly been funded. Next, we can now <code>request data</code> from the contract by running:</p>
-<pre><code class="lang-shell">npx truffle exec scripts/request-data.js --network live
-</code></pre>
+<pre><code class="language-shell">npx truffle exec scripts/request-data.js --network live</code></pre>
 <figure>
   <img src="/img/blog/using-truffle-to-interact-with-chainlink-smart-contracts/05.png" alt="Truffle DB data model" style="width:100%">
-  <figcaption><em>In the Chainlink explorer for the network that you made the request (in our example we use Ropsten, but it would work similarly for Rinkeby, Kovan, and Mainnet). As you can see the Chainlink node that we were requesting data from picked up our request and waited for 3 block confirmations before executing the job. We are now ready to read the contract’s state with the written answer from the Chainlink node, indicated by the fulfillment transaction (highlighted in red).</em></figcaption>
+  <figcaption>_In the Chainlink explorer for the network that you made the request (in our example we use Ropsten, but it would work similarly for Rinkeby, Kovan, and Mainnet). As you can see the Chainlink node that we were requesting data from picked up our request and waited for 3 block confirmations before executing the job. We are now ready to read the contract’s state with the written answer from the Chainlink node, indicated by the fulfillment transaction (highlighted in red)._</figcaption>
 </figure>
 
 <p>And finally, for reading the data we run our read-contract script. In particular, this will run faster because we’re not creating a transaction, we are simply reading the current state of the smart contract.</p>
-<pre><code class="lang-shell">npx truffle exec scripts/read-contract.js --network live
-</code></pre>
+<pre><code class="language-shell">npx truffle exec scripts/read-contract.js --network live</code></pre>
 <figure>
   <img src="/img/blog/using-truffle-to-interact-with-chainlink-smart-contracts/06.png" alt="Truffle DB data model">
 </figure>

@@ -160,15 +160,14 @@ event reducer respectively.</p>
 <div class="alert alert-info">
   <strong>Prerequisite</strong>: You should be familiar with Truffle, Drizzle, React and Redux. If you need an introduction please consult the following resources:
 
-  <br/><br/>
-
+<p>  <br/><br/></p>
   <ol>
-    <li><a href="https://truffleframework.com/docs/truffle/quickstart">Truffle Quickstart</a></li>
-    <li><a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react">Getting Started with Drizzle and React</a></li>
-    <li><a href="https://reactjs.org/tutorial/tutorial.html">Tutorial: Intro to React</a></li>
-    <li><a href="https://redux.js.org/basics/basic-tutorial">Redux Basic Tutorial</a></li>
-    <li><a href="https://redux-saga.js.org/">Redux Saga</a></li>
-    <li><a href="https://redux.js.org/advanced/middleware#middleware">Redux Middleware</a></li>
+    <li>[Truffle Quickstart](https://truffleframework.com/docs/truffle/quickstart)</li>
+    <li>[Getting Started with Drizzle and React](https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react)</li>
+    <li>[Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)</li>
+    <li>[Redux Basic Tutorial](https://redux.js.org/basics/basic-tutorial)</li>
+    <li>[Redux Saga](https://redux-saga.js.org/)</li>
+    <li>[Redux Middleware](https://redux.js.org/advanced/middleware#middleware)</li>
   </ol>
 </div>
 
@@ -183,22 +182,19 @@ event reducer respectively.</p>
 event to a display component by creating a reducer and hook it up to Drizzle&#39;s
 <code>EVENT_FIRED</code> action.</p>
 <p class="alert alert-info">
-  <strong>Note</strong>: More Drizzle actions are listed in our <a href="/docs/drizzle/reference/drizzle-actions">Drizzle Actions documentation</a>.
+  <strong>Note</strong>: More Drizzle actions are listed in our [Drizzle Actions documentation](/docs/drizzle/reference/drizzle-actions).
 </p>
 
 <p>First create an empty directory, navigate to it, and <code>unbox</code> Drizzle.</p>
-<pre><code class="lang-bash">// In the project directory...
-$ truffle unbox drizzle
-</code></pre>
+<pre><code class="language-bash">// In the project directory...
+$ truffle unbox drizzle</code></pre>
 <p>Now let&#39;s start the <code>truffle develop</code> console (which runs a Ganache test blockchain in the background):</p>
-<pre><code>$ truffle develop
-</code></pre><p>Finally, in our Truffle develop console, let&#39;s compile and migrate our smart contracts.</p>
-<pre><code class="lang-shell">truffle(develop)&gt; compile
+<pre><code>$ truffle develop</code></pre><p>Finally, in our Truffle develop console, let&#39;s compile and migrate our smart contracts.</p>
+<pre><code class="language-shell">truffle(develop)&gt; compile
 
 # some output here...
 
-truffle(develop)&gt; migrate
-</code></pre>
+truffle(develop)&gt; migrate</code></pre>
 <p>Now that we have a test chain running and our smart contracts deployed, let&#39;s add a toast notification to the UI.</p>
 
     <h1 class="link-markdown">
@@ -209,26 +205,23 @@ truffle(develop)&gt; migrate
   <p>We want to listen for the <code>SimpleStorage</code> contract&#39;s <code>StorageSet</code> event and show a toast notification once it fires.</p>
 <p>The front end code is located under the <code>app</code> folder. Lets add the notification
 library <code>react-toastify</code> to simulate an external interaction.</p>
-<pre><code class="lang-shell">$ cd app
-$ npm install react-toastify
-</code></pre>
+<pre><code class="language-shell">$ cd app
+$ npm install react-toastify</code></pre>
 <p>For the sake of simplicity, we will work in one file, <code>./app/src/middleware/index.js</code>.</p>
-<pre><code class="lang-shell">$ mkdir ./src/middleware
-$ touch ./src/middleware/index.js
-</code></pre>
+<pre><code class="language-shell">$ mkdir ./src/middleware
+$ touch ./src/middleware/index.js</code></pre>
 <p>Import <code>EventActions</code> and <code>generateStore</code> from Drizzle as well as
 toast from <code>react-toastify</code>, and <code>drizzleOptions</code>.</p>
-<pre><code class="lang-javascript">// ./app/middleware/index.js
+<pre><code class="language-javascript">// ./app/middleware/index.js
 import { generateStore, EventActions } from &#39;@drizzle/store&#39;
 import drizzleOptions from &#39;../drizzleOptions&#39;
-import { toast } from &#39;react-toastify&#39;
-</code></pre>
+import { toast } from &#39;react-toastify&#39;</code></pre>
 <p>The action <code>EventActions.EVENT_FIRED</code> is emitted whenever a contract event is
 detected in a Block. We will gain access to it by registering a custom
 middleware with the Redux store. As you know, Redux middleware comprises a set
 of functions executed in a sequence that processes each dispatched actions
 before passing them to Reducers.</p>
-<pre><code class="lang-javascript">const contractEventNotifier = store =&gt; next =&gt; action =&gt; {
+<pre><code class="language-javascript">const contractEventNotifier = store =&gt; next =&gt; action =&gt; {
   if (action.type === EventActions.EVENT_FIRED) {
     const contract = action.name
     const contractEvent = action.event.event
@@ -238,19 +231,17 @@ before passing them to Reducers.</p>
     toast.success(display, { position: toast.POSITION.TOP_RIGHT })
   }
   return next(action)
-}
-</code></pre>
+}</code></pre>
 <p>Now lets register this middleware with Drizzle. <code>generateStore</code> will return a
 Redux store that you can use anywhere you can use a store. We will export it to
 be used by <code>DrizzleProvider</code>.</p>
-<pre><code class="lang-javascript">const appMiddlewares = [ contractEventNotifier ]
+<pre><code class="language-javascript">const appMiddlewares = [ contractEventNotifier ]
 
 export default generateStore({
   drizzleOptions,
   appMiddlewares,
   disableReduxDevTools: false  // enable ReduxDevTools!
-})
-</code></pre>
+})</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="connect-the-store"></a>
@@ -258,13 +249,12 @@ export default generateStore({
       Connect the Store
     </h2>
   <p>Send the <code>store</code> as a prop to <code>DrizzleProvider</code></p>
-<pre><code class="lang-javascript">// App.js
+<pre><code class="language-javascript">// App.js
 ...
 import store from &#39;./middleware&#39;
 ...
 &lt;DrizzleProvider store={store} options={drizzleOptions}&gt;
-...
-</code></pre>
+...</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="hook-up-display"></a>
@@ -272,7 +262,7 @@ import store from &#39;./middleware&#39;
       Hook up Display
     </h2>
   <p>Modify <code>MyComponent.js</code> to import <code>ReactToastify.css</code> and configure <code>ToastContainer</code></p>
-<pre><code class="lang-javascript">...
+<pre><code class="language-javascript">...
 import { ToastContainer } from &#39;react-toastify&#39;
 import &#39;react-toastify/dist/ReactToastify.css&#39;
 ...
@@ -281,8 +271,7 @@ export default ({ accounts }) =&gt; (
   &lt;div className=&quot;App&quot;&gt;
     &lt;ToastContainer /&gt;
   ...
-  &lt;/div&gt;
-</code></pre>
+  &lt;/div&gt;</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="a-quick-test"></a>
@@ -300,14 +289,14 @@ have ETH funds. Something is amiss if it doesn&#39;t.</li>
 </ol>
 </li>
 <li><p>Fire up the app.</p>
-<pre><code class="lang-shell">$ npm run start
-</code></pre>
+<pre><code class="language-shell">$ npm run start</code></pre>
 </li>
-<li>Change SimpleStorage&#39;s <code>stored Value</code>
+<li><p>Change SimpleStorage&#39;s <code>stored Value</code>
 
     <img class="img-fluid" src="/img/tutorials/drizzle-and-contract-events/stored-value.gif" title="Change SimpleStorage value!" alt="Change SimpleStorage value!" />
     
-  </li>
+  </p>
+</li>
 </ul>
 <ul>
 <li>You&#39;ll be rewarded with a toast notification when the transaction is completed.

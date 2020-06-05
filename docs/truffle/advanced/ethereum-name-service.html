@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -359,12 +359,11 @@ ENS name as long as you are able to connect successfully to an ENS registry.</p>
 Truffle config (<code>truffle-config.js</code>). In the config, you must specify an <code>ens</code>
 property and set <code>ens.enabled</code> to <code>true</code>. The simplest configuration you would
 have is the following in your Truffle config:</p>
-<pre><code class="lang-javascript">module.exports = {
+<pre><code class="language-javascript">module.exports = {
   ens: {
     enabled: true
   }
-}
-</code></pre>
+}</code></pre>
 <p>By default, Truffle connects to the official, ENS-deployed registries.
 These four registries can be found on:</p>
 <ul>
@@ -383,7 +382,7 @@ unless a different registry address is specified in the config. If you need
 to specify a different registry, you can enter it in your config for the
 <code>&lt;networkName&gt;.ens.registry.address</code> property. If your network name were
 <code>myNetwork</code> then this might look like:</p>
-<pre><code class="lang-javascript">module.exports = {
+<pre><code class="language-javascript">module.exports = {
   networks: {
     myNetwork: {
       host: &quot;localhost&quot;,
@@ -399,8 +398,7 @@ to specify a different registry, you can enter it in your config for the
   ens: {
     enabled: true
   }
-}
-</code></pre>
+}</code></pre>
 <p>If you are not connected to one of the above four networks and do not supply
 a registry address. Truffle will attempt to deploy a registry for you to
 use. See the section below on

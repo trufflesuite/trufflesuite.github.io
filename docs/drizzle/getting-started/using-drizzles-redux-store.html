@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -359,12 +359,11 @@ synchronization. For example, you may want to interact with an external service
 whenever a contract event occurs.</p>
 <ol>
 <li><p>Import the drizzle dependencies.</p>
-<pre><code class="lang-javascript">import { generateStore, EventActions } from &#39;drizzle&#39;
-import drizzleOptions from &#39;../drizzleOptions&#39;
-</code></pre>
+<pre><code class="language-javascript">import { generateStore, EventActions } from &#39;drizzle&#39;
+import drizzleOptions from &#39;../drizzleOptions&#39;</code></pre>
 </li>
 <li><p>Create a custom middleware. For more information on creating middleware for Redux, see <a href="https://redux.js.org/advanced/middleware">the Redux middleware documentation</a>.</p>
-<pre><code class="lang-javascript">const contractEventNotifier = store =&gt; next =&gt; action =&gt; {
+<pre><code class="language-javascript">const contractEventNotifier = store =&gt; next =&gt; action =&gt; {
  if (action.type === EventActions.EVENT_FIRED) {
    const contract = action.name
    const contractEvent = action.event.event
@@ -375,19 +374,17 @@ import drizzleOptions from &#39;../drizzleOptions&#39;
    console.log(&#39;Contract event fired&#39;, display)
  }
  return next(action)
-}
-</code></pre>
+}</code></pre>
 </li>
 <li><p>Create the store passing your Middlewares.</p>
-<pre><code class="lang-javascript">const appMiddlewares = [ contractEventNotifier ]
+<pre><code class="language-javascript">const appMiddlewares = [ contractEventNotifier ]
 
 // create the store
 export default generateStore({
  drizzleOptions,
  appMiddlewares,
  disableReduxDevTools: false  // enable ReduxDevTools!
-})
-</code></pre>
+})</code></pre>
 </li>
 </ol>
 
@@ -399,13 +396,12 @@ export default generateStore({
   <p>Drizzle gives you the option to add your reducers to its Redux store if you choose to use one <code>store</code> for your project.</p>
 <ol>
 <li><p>Import the drizzle dependencies.</p>
-<pre><code class="lang-javascript">import { put, takeEvery } from &#39;redux-saga/effects&#39;
+<pre><code class="language-javascript">import { put, takeEvery } from &#39;redux-saga/effects&#39;
 import { generateStore } from &#39;drizzle&#39;
-import drizzleOptions from &#39;../drizzleOptions&#39;
-</code></pre>
+import drizzleOptions from &#39;../drizzleOptions&#39;</code></pre>
 </li>
 <li><p>Define actions, reducers and sagas</p>
-<pre><code class="lang-javascript">// actions
+<pre><code class="language-javascript">// actions
 const TODOS_FETCH = &#39;MY_APP/TODOS_FETCH&#39;
 const TODOS_RECEIVED = &#39;MY_APP/TODOS_RECEIVED&#39;
 
@@ -430,11 +426,10 @@ function *fetchTodos() {
 // app root saga
 function *appRootSaga() {
  yield takeEvery(TODOS_FETCH, fetchTodos)
-}
-</code></pre>
+}</code></pre>
 </li>
 <li><p>Create the store passing in reducers and sagas</p>
-<pre><code class="lang-javascript">// app Reducers and Sagas
+<pre><code class="language-javascript">// app Reducers and Sagas
 const appReducers = { todos: todosReducer }
 const appSagas = [appRootSaga]
 
@@ -444,8 +439,7 @@ const store = generateStore({
  appSagas
 })
 
-export default store
-</code></pre>
+export default store</code></pre>
 </li>
 </ol>
 

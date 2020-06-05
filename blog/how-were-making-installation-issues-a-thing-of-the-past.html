@@ -141,7 +141,7 @@
       <div class="row justify-content-center">
         <div class="col">
           <p class="alert alert-info">
-<strong>Update</strong>: Since this blog post was published, we have released <a href="/ganache">Ganache</a> a personal blockchain and a replacement to the TestRPC. We have left this post unaltered, but we highly recommend checking out our <a href="/docs/ganache/using">Working with Ganache</a> page.
+**Update**: Since this blog post was published, we have released [Ganache](/ganache) a personal blockchain and a replacement to the TestRPC. We have left this post unaltered, but we highly recommend checking out our [Working with Ganache](/docs/ganache/using) page.
 </p>
 
 <p>It doesn&#39;t matter what operating system you&#39;re on -- if you&#39;ve used Truffle in any capacity, you&#39;ve likely run into an install issue in some form or another. This is especially true for Windows, as Windows doesn&#39;t generally ship with the necessary tools to install all of Truffle&#39;s important dependencies. And for most users, this sucks: getting hung up on installation is incredibly frustrating when you&#39;re usually just one error message or two away from creating your first Ethereum-enabled application. Well, I&#39;ve got good news. As of the latest Truffle beta release, I&#39;m happy to tell you that this is an issue no longer.</p>
@@ -183,11 +183,9 @@
     </h2>
   <p>Bundling Truffle&#39;s dependencies means releasing a version of the code where certain dependencies have been either replaced or removed. This not only means releasing structurally new code, but it means releasing code that has differing testability characteristics which change our ability to ensure its of the quality you&#39;ve come to expect. We need to build infrastructure to help us do that, so in the meantime <strong>we&#39;ve released the new version of the code in beta.</strong></p>
 <p>To get the beta version of Truffle, first uninstall the version you currently have (they&#39;ll conflict):</p>
-<pre><code class="lang-shell">$ npm uninstall -g truffle
-</code></pre>
+<pre><code class="language-shell">$ npm uninstall -g truffle</code></pre>
 <p>And now install the beta version:</p>
-<pre><code class="lang-shell">$ npm install -g truffle@beta
-</code></pre>
+<pre><code class="language-shell">$ npm install -g truffle@beta</code></pre>
 <p>You&#39;ll notice that the beta version installs almost instantly, and no compilation is required. Hot-dog.</p>
 
     <h2 class="link-markdown">

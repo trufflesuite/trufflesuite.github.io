@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -350,11 +350,9 @@
     </h3>
   <p>To obtain a contract abstraction you can require it with the contract name from the <code>artifacts</code> object.  Outside of the console this is an object available in migration files, tests, and exec scripts.
 You would require your contract as follows:</p>
-<pre><code class="lang-javascript">const MyContract = artifacts.require(&quot;MyContract&quot;);
-</code></pre>
+<pre><code class="language-javascript">const MyContract = artifacts.require(&quot;MyContract&quot;);</code></pre>
 <p>You can also obtain one in the developer console.  Your contract types are available here and all you need to do is use the <code>at</code>, <code>deployed</code>, or <code>new</code> method.</p>
-<pre><code class="lang-javascript">truffle(development)&gt; const myContract = await MyContract.deployed();
-</code></pre>
+<pre><code class="language-javascript">truffle(development)&gt; const myContract = await MyContract.deployed();</code></pre>
 <p>You now have access to the following functions on <code>MyContract</code>, as well as many others:</p>
 <ul>
 <li><code>at()</code>: Create an instance of <code>MyContract</code> that represents your contract at a specific address.</li>
@@ -362,24 +360,22 @@ You would require your contract as follows:</p>
 <li><code>new()</code>: Deploy a new version of this contract to the network, getting an instance of <code>MyContract</code> that represents the newly deployed instance.</li>
 </ul>
 <p>Each instance is tied to a specific address on the Ethereum network, and each instance has a 1-to-1 mapping from Javascript functions to contract functions. For instance, if your Solidity contract had a function defined <code>someFunction(uint value) {}</code> (solidity), then you could execute that function on the network like so:</p>
-<pre><code class="lang-javascript">let deployed;
+<pre><code class="language-javascript">let deployed;
 MyContract.deployed()
   .then((instance) =&gt; {
     deployed = instance;
     return deployed.someFunction(5);
   }).then((result) =&gt; {
     // Do something with the result or continue with more transactions.
-  });
-</code></pre>
+  });</code></pre>
 <p>You can also use async/await syntax which is often much less verbose.
 We will use async/await for the rest of this document but you may also use a promises for interfacing with contract methods as well.</p>
-<pre><code class="lang-javascript">const deployed = await MyContract.deployed();
+<pre><code class="language-javascript">const deployed = await MyContract.deployed();
 const result = await deployed.someFunction(5);
-// Do something with the result or continue with more transactions.
-</code></pre>
+// Do something with the result or continue with more transactions.</code></pre>
 <p>See the <a href="/docs/truffle/getting-started/interacting-with-your-contracts#processing-transaction-results">processing transaction results</a> section to learn more about the results object obtained from making transactions.</p>
 <p>Contract methods and events have an EventEmitter interface.  So you can set up handlers like the following:</p>
-<pre><code class="lang-javascript">const example = await artifacts.require(&quot;Example&quot;).deployed();
+<pre><code class="language-javascript">const example = await artifacts.require(&quot;Example&quot;).deployed();
 
 example
   .setValue(45)
@@ -387,16 +383,14 @@ example
   .on(&#39;receipt&#39;, receipt =&gt; {})
   .on(&#39;error&#39;, error =&gt; {})
   .on(&#39;confirmation&#39;, (num, receipt) =&gt; {})
-  .then(receipt =&gt; {});
-</code></pre>
-<pre><code class="lang-javascript">example
+  .then(receipt =&gt; {});</code></pre>
+<pre><code class="language-javascript">example
   .ExampleEvent()
   .on(&#39;data&#39;, event =&gt; ... etc ... )
 
 example
   .ExampleEvent()
-  .once(&#39;data&#39;, event =&gt; ... etc ... )
-</code></pre>
+  .once(&#39;data&#39;, event =&gt; ... etc ... )</code></pre>
 
     <h1 class="link-markdown">
       <a class="anchor-target" name="api"></a>
@@ -490,13 +484,12 @@ example
       <code>MyContract.defaults([new_defaults])</code>
     </h4>
   <p>Get&#39;s and optionally sets transaction defaults for all instances created from this abstraction. If called without any parameters it will simply return an Object representing current defaults. If an Object is passed, this will set new defaults. Example default transaction values that can be set are:</p>
-<pre><code class="lang-javascript">MyContract.defaults({
+<pre><code class="language-javascript">MyContract.defaults({
   from: ...,
   gas: ...,
   gasPrice: ...,
   value: ...
-})
-</code></pre>
+})</code></pre>
 <p>Setting a default <code>from</code> address, for instance, is useful when you have a contract abstraction you intend to represent one user (i.e., one address).</p>
 
     <h4 class="link-markdown">
@@ -505,8 +498,7 @@ example
       <code>MyContract.clone(network_id)</code>
     </h4>
   <p>Clone a contract abstraction to get another object that manages the same contract artifacts, but using a different <code>network_id</code>. This is useful if you&#39;d like to manage the same contract but on a different network. When using this function, don&#39;t forget to set the correct provider afterward.</p>
-<pre><code class="lang-javascript">const MyOtherContract = MyContract.clone(1337);
-</code></pre>
+<pre><code class="language-javascript">const MyOtherContract = MyContract.clone(1337);</code></pre>
 
     <h4 class="link-markdown">
       <a class="anchor-target" name="-code-mycontract-numberformat-number_type-code-"></a>
@@ -514,10 +506,9 @@ example
       <code>MyContract.numberFormat = number_type</code>
     </h4>
   <p>You can set this property to choose the number format that abstraction methods return.  The default behavior is to return BN.</p>
-<pre><code class="lang-javascript">// Choices are:  `[&quot;BigNumber&quot;, &quot;BN&quot;, &quot;String&quot;].
+<pre><code class="language-javascript">// Choices are:  `[&quot;BigNumber&quot;, &quot;BN&quot;, &quot;String&quot;].
 const Example = artifacts.require(&#39;Example&#39;);
-Example.numberFormat = &#39;BigNumber&#39;;
-</code></pre>
+Example.numberFormat = &#39;BigNumber&#39;;</code></pre>
 
     <h4 class="link-markdown">
       <a class="anchor-target" name="-code-mycontract-timeout-block_timeout-code-"></a>
@@ -546,7 +537,7 @@ Example.numberFormat = &#39;BigNumber&#39;;
       Contract Instance API
     </h3>
   <p>Each contract instance is different based on the source Solidity contract, and the API is created dynamically. For the purposes of this documentation, let&#39;s use the following Solidity source code below:</p>
-<pre><code class="lang-solidity">contract MyContract {
+<pre><code class="language-solidity">contract MyContract {
   uint public value;
   event ValueSet(uint val);
   function setValue(uint val) {
@@ -556,8 +547,7 @@ Example.numberFormat = &#39;BigNumber&#39;;
   function getValue() view returns (uint) {
     return value;
   }
-}
-</code></pre>
+}</code></pre>
 <p>From Javascript&#39;s point of view, this contract has three functions: <code>setValue</code>, <code>getValue</code> and <code>value</code>. This is because <code>value</code> is public and automatically creates a getter function for it.</p>
 
     <h4 class="link-markdown">
@@ -566,12 +556,11 @@ Example.numberFormat = &#39;BigNumber&#39;;
       Making a transaction via a contract function
     </h4>
   <p>When we call <code>setValue()</code>, this creates a transaction. From Javascript:</p>
-<pre><code class="lang-javascript">const result = await instance.setValue(5);
+<pre><code class="language-javascript">const result = await instance.setValue(5);
 // result object contains import information about the transaction
-console.log(&quot;Value was set to&quot;, result.logs[0].args.val);
-</code></pre>
+console.log(&quot;Value was set to&quot;, result.logs[0].args.val);</code></pre>
 <p>The result object that gets returned looks like this:</p>
-<pre><code class="lang-javascript">{
+<pre><code class="language-javascript">{
   tx: &quot;0x6cb0bbb6466b342ed7bc4a9816f1da8b92db1ccf197c3f91914fc2c721072ebd&quot;,
   receipt: {
     // The return value from web3.eth.getTransactionReceipt(hash)
@@ -599,8 +588,7 @@ console.log(&quot;Value was set to&quot;, result.logs[0].args.val);
         }
     }
   ],
-}
-</code></pre>
+}</code></pre>
 <p>Note that if the function being executed in the transaction has a return value, you will not get that
 return value inside this result. You must instead use an event (like <code>ValueSet</code>) and look up the result
 in the <code>logs</code> array.</p>
@@ -611,8 +599,7 @@ in the <code>logs</code> array.</p>
       Explicitly making a call instead of a transaction
     </h4>
   <p>We can call <code>setValue()</code> without creating a transaction by explicitly using <code>.call</code>:</p>
-<pre><code class="lang-javascript">const value = await instance.setValue.call(5);
-</code></pre>
+<pre><code class="language-javascript">const value = await instance.setValue.call(5);</code></pre>
 <p>This isn&#39;t very useful in this case, since <code>setValue()</code> sets things, and the value we pass won&#39;t be saved since we&#39;re not creating a transaction.</p>
 
     <h4 class="link-markdown">
@@ -621,15 +608,13 @@ in the <code>logs</code> array.</p>
       Calling getters
     </h4>
   <p>However, we can <em>get</em> the value using <code>getValue()</code>, using <code>.call()</code>. Calls are always free and don&#39;t cost any Ether, so they&#39;re good for calling functions that read data off the blockchain:</p>
-<pre><code class="lang-javascript">const value = await instance.getValue.call();
+<pre><code class="language-javascript">const value = await instance.getValue.call();
 // value reprsents the `value` storage object in the solidity contract
-// since the contract returns that value.
-</code></pre>
+// since the contract returns that value.</code></pre>
 <p>Even more helpful, however is we <em>don&#39;t even need</em> to use <code>.call</code> when a function is marked as <code>view</code> or <code>pure</code> (or the deprecated <code>constant</code>), because <code>@truffle/contract</code> will automatically know that that function can only be interacted with via a call:</p>
-<pre><code class="lang-javascript">const value = await instance.getValue();
+<pre><code class="language-javascript">const value = await instance.getValue();
 // val reprsents the `value` storage object in the solidity contract
-// since the contract returns that value.
-</code></pre>
+// since the contract returns that value.</code></pre>
 
     <h4 class="link-markdown">
       <a class="anchor-target" name="processing-transaction-results"></a>
@@ -637,11 +622,10 @@ in the <code>logs</code> array.</p>
       Processing transaction results
     </h4>
   <p>When you make a transaction, you&#39;re given a <code>result</code> object that gives you a wealth of information about the transaction. You&#39;re given the transaction has (<code>result.tx</code>), the decoded events (also known as logs; <code>result.logs</code>), and a transaction receipt (<code>result.receipt</code>). In the below example, you&#39;ll recieve the <code>ValueSet()</code> event because you triggered the event using the <code>setValue()</code> function:</p>
-<pre><code class="lang-javascript">const result = await instance.setValue(5);
+<pre><code class="language-javascript">const result = await instance.setValue(5);
 // result.tx =&gt; transaction hash, string
 // result.logs =&gt; array of trigger events (1 item in this case)
-// result.receipt =&gt; receipt object
-</code></pre>
+// result.receipt =&gt; receipt object</code></pre>
 
     <h4 class="link-markdown">
       <a class="anchor-target" name="sending-ether-triggering-the-fallback-function"></a>
@@ -649,14 +633,12 @@ in the <code>logs</code> array.</p>
       Sending Ether / Triggering the fallback function
     </h4>
   <p>You can trigger the fallback function by sending a transaction to this function:</p>
-<pre><code class="lang-javascript">const result = instance.sendTransaction({...});
-// Same result object as above.
-</code></pre>
+<pre><code class="language-javascript">const result = instance.sendTransaction({...});
+// Same result object as above.</code></pre>
 <p>This is promisified like all available contract instance functions, and has the same API as <code>web3.eth.sendTransaction</code> without the callback. The <code>to</code> value will be automatically filled in for you.</p>
 <p>If you only want to send Ether to the contract a shorthand is available:</p>
-<pre><code class="lang-javascript">const result = await instance.send(web3.toWei(1, &quot;ether&quot;));
-// Same result object as above.
-</code></pre>
+<pre><code class="language-javascript">const result = await instance.send(web3.toWei(1, &quot;ether&quot;));
+// Same result object as above.</code></pre>
 
     <h4 class="link-markdown">
       <a class="anchor-target" name="estimating-gas-usage"></a>
@@ -664,9 +646,8 @@ in the <code>logs</code> array.</p>
       Estimating gas usage
     </h4>
   <p>Run this function to estimate the gas usage:</p>
-<pre><code class="lang-javascript">const result = instance.setValue.estimateGas(5);
-// result =&gt; estimated gas for this transaction
-</code></pre>
+<pre><code class="language-javascript">const result = instance.setValue.estimateGas(5);
+// result =&gt; estimated gas for this transaction</code></pre>
 
 
           <div class="contribute-link">

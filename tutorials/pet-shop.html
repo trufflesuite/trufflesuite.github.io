@@ -147,7 +147,7 @@
 <p>This tutorial will take you through the process of building your first dapp---an adoption tracking system for a pet shop!</p>
 <p>This tutorial is meant for those with a basic knowledge of Ethereum and smart contracts, who have some knowledge of HTML and JavaScript, but who are new to dapps.</p>
 <p class="alert alert-info">
-<strong>Note</strong>: For Ethereum basics, please read the Truffle <a href="/tutorials/ethereum-overview">Ethereum Overview</a> tutorial before proceeding.
+<strong>Note</strong>: For Ethereum basics, please read the Truffle [Ethereum Overview](/tutorials/ethereum-overview) tutorial before proceeding.
 </p>
 
 <p>In this tutorial we will be covering:</p>
@@ -180,12 +180,11 @@
 <li><a href="https://git-scm.com/">Git</a></li>
 </ul>
 <p>Once we have those installed, we only need one command to install Truffle:</p>
-<pre><code class="lang-shell">npm install -g truffle
-</code></pre>
+<pre><code class="language-shell">npm install -g truffle</code></pre>
 <p>To verify that Truffle is installed properly, type <code>truffle version</code> on a terminal. If you see an error, make sure that your npm modules are added to your path.</p>
 <p>We also will be using <a href="/ganache">Ganache</a>, a personal blockchain for Ethereum development you can use to deploy contracts, develop applications, and run tests. You can download Ganache by navigating to <a href="http://truffleframework.com/ganache">http://truffleframework.com/ganache</a> and clicking the &quot;Download&quot; button.</p>
 <p class="alert alert-info">
-<strong>Note</strong>: If you are developing in an environment without a graphical interface, you can also use Truffle Develop, Truffle&#39;s built-in personal blockchain, instead of Ganache. You will need to change some settings---such as the port the blockchain runs on---to adapt the tutorial for Truffle Develop.
+<strong>Note</strong>: If you are developing in an environment without a graphical interface, you can also use Truffle Develop, Truffle's built-in personal blockchain, instead of Ganache. You will need to change some settings---such as the port the blockchain runs on---to adapt the tutorial for Truffle Develop.
 </p>
 
 
@@ -196,18 +195,16 @@
     </h2>
   <ol>
 <li><p>Truffle initializes in the current directory, so first create a directory in your development folder of choice and then moving inside it.</p>
-<pre><code class="lang-shell">mkdir pet-shop-tutorial
+<pre><code class="language-shell">mkdir pet-shop-tutorial
 
-cd pet-shop-tutorial
-</code></pre>
+cd pet-shop-tutorial</code></pre>
 </li>
 <li><p>We&#39;ve created a special <a href="/boxes">Truffle Box</a> just for this tutorial called <code>pet-shop</code>, which includes the basic project structure as well as code for the user interface. Use the <code>truffle unbox</code> command to unpack this Truffle Box.</p>
-<pre><code class="lang-shell">truffle unbox pet-shop
-</code></pre>
+<pre><code class="language-shell">truffle unbox pet-shop</code></pre>
 </li>
 </ol>
 <p class="alert alert-info">
-  <strong>Note</strong>: Truffle can be initialized a few different ways. Another useful initialization command is <code>truffle init</code>, which creates an empty Truffle project with no example contracts included. For more information, please see the documentation on <a href="/docs/getting_started/project">Creating a project</a>.
+  <strong>Note</strong>: Truffle can be initialized a few different ways. Another useful initialization command is `truffle init`, which creates an empty Truffle project with no example contracts included. For more information, please see the documentation on [Creating a project](/docs/getting_started/project).
 </p>
 
 
@@ -235,12 +232,11 @@ cd pet-shop-tutorial
 <li><p>Create a new file named <code>Adoption.sol</code> in the <code>contracts/</code> directory.</p>
 </li>
 <li><p>Add the following content to the file:</p>
-<pre><code class="lang-solidity">pragma solidity ^0.5.0;
+<pre><code class="language-solidity">pragma solidity ^0.5.0;
 
 contract Adoption {
 
-}
-</code></pre>
+}</code></pre>
 </li>
 </ol>
 <p>Things to notice:</p>
@@ -257,8 +253,7 @@ contract Adoption {
   <p>Solidity is a statically-typed language, meaning data types like strings, integers, and arrays must be defined. <strong>Solidity has a unique type called an address</strong>. Addresses are Ethereum addresses, stored as 20 byte values. Every account and smart contract on the Ethereum blockchain has an address and can send and receive Ether to and from this address.</p>
 <ol>
 <li><p>Add the following variable on the next line after <code>contract Adoption {</code>.</p>
-<pre><code class="lang-solidity">address[16] public adopters;
-</code></pre>
+<pre><code class="language-solidity">address[16] public adopters;</code></pre>
 </li>
 </ol>
 <p>Things to notice:</p>
@@ -277,15 +272,14 @@ contract Adoption {
   <p>Let&#39;s allow users to make adoption requests.</p>
 <ol>
 <li><p>Add the following function to the smart contract after the variable declaration we set up above.</p>
-<pre><code class="lang-solidity">// Adopting a pet
+<pre><code class="language-solidity">// Adopting a pet
 function adopt(uint petId) public returns (uint) {
   require(petId &gt;= 0 &amp;&amp; petId &lt;= 15);
 
   adopters[petId] = msg.sender;
 
   return petId;
-}
-</code></pre>
+}</code></pre>
 </li>
 </ol>
 <p>Things to notice:</p>
@@ -301,6 +295,8 @@ function adopt(uint petId) public returns (uint) {
 </ul>
 <!-- ADD SOMETHING ABOUT PUBLIC VIEW? -->
 
+
+
     <h3 class="link-markdown">
       <a class="anchor-target" name="your-second-function-retrieving-the-adopters"></a>
       <a href="#your-second-function-retrieving-the-adopters"><i class="fas fa-link"></i></a>
@@ -309,18 +305,19 @@ function adopt(uint petId) public returns (uint) {
   <p>As mentioned above, array getters return only a single value from a given key. Our UI needs to update all pet adoption statuses, but making 16 API calls is not ideal. So our next step is to write a function to return the entire array.</p>
 <ol>
 <li><p>Add the following <code>getAdopters()</code> function to the smart contract, after the <code>adopt()</code> function we added above:</p>
-<pre><code class="lang-solidity">// Retrieving the adopters
+<pre><code class="language-solidity">// Retrieving the adopters
 function getAdopters() public view returns (address[16] memory) {
   return adopters;
-}
-</code></pre>
+}</code></pre>
 <p>Things to notice:</p>
 </li>
+</ol>
+<ul>
 <li><p>Since <code>adopters</code> is already declared, we can simply return it. Be sure to specify the return type (in this case, the type for <code>adopters</code>) as <code>address[16] memory</code>. <code>memory</code> gives the data location for the variable.</p>
 </li>
 <li><p>The <code>view</code> keyword in the function declaration means that the function will not modify the state of the contract. Further information about the exact limits imposed by view is available <a href="https://solidity.readthedocs.io/en/latest/contracts.html#view-functions">here</a>.</p>
 </li>
-</ol>
+</ul>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="compiling-and-migrating-the-smart-contract"></a>
@@ -337,21 +334,19 @@ function getAdopters() public view returns (address[16] memory) {
   <p>Solidity is a compiled language, meaning we need to compile our Solidity to bytecode for the Ethereum Virtual Machine (EVM) to execute. Think of it as translating our human-readable Solidity into something the EVM understands.</p>
 <ol>
 <li><p>In a terminal, make sure you are in the root of the directory that contains the dapp and type:</p>
-<pre><code class="lang-shell">truffle compile
-</code></pre>
+<pre><code class="language-shell">truffle compile</code></pre>
 <p class="alert alert-info">
-<strong>Note</strong>: If you&#39;re on Windows and encountering problems running this command, please see the documentation on <a href="/docs/advanced/configuration#resolving-naming-conflicts-on-windows">resolving naming conflicts on Windows</a>.
+<strong>Note</strong>: If you're on Windows and encountering problems running this command, please see the documentation on [resolving naming conflicts on Windows](/docs/advanced/configuration#resolving-naming-conflicts-on-windows).
 </p>
 
 <p>You should see output similar to the following:</p>
-<pre><code class="lang-shell">Compiling your contracts...
+<pre><code class="language-shell">Compiling your contracts...
 ===========================
 &gt; Compiling ./contracts/Adoption.sol
 &gt; Compiling ./contracts/Migrations.sol
 &gt; Artifacts written to /Users/cruzmolina/Code/truffle-projects/metacoin/build/contracts
 &gt; Compiled successfully using:
-   - solc: 0.5.0+commit.1d4f565a.Emscripten.clang
-</code></pre>
+   - solc: 0.5.0+commit.1d4f565a.Emscripten.clang</code></pre>
 </li>
 </ol>
 
@@ -363,7 +358,7 @@ function getAdopters() public view returns (address[16] memory) {
   <p>Now that we&#39;ve successfully compiled our contracts, it&#39;s time to migrate them to the blockchain!</p>
 <p><strong>A migration is a deployment script meant to alter the state of your application&#39;s contracts</strong>, moving it from one state to the next. For the first migration, you might just be deploying new code, but over time, other migrations might move data around or replace a contract with a new one.</p>
 <p class="alert alert-info">
-  <strong>Note</strong>: Read more about migrations in the <a href="/docs/getting_started/migrations">Truffle documentation</a>.
+  <strong>Note</strong>: Read more about migrations in the [Truffle documentation](/docs/getting_started/migrations).
 </p>
 
 <p>You&#39;ll see one JavaScript file already in the <code>migrations/</code> directory: <code>1_initial_migration.js</code>. This handles deploying the <code>Migrations.sol</code> contract to observe subsequent smart contract migrations, and ensures we don&#39;t double-migrate unchanged contracts in the future.</p>
@@ -372,16 +367,15 @@ function getAdopters() public view returns (address[16] memory) {
 <li><p>Create a new file named <code>2_deploy_contracts.js</code> in the <code>migrations/</code> directory.</p>
 </li>
 <li><p>Add the following content to the <code>2_deploy_contracts.js</code> file:</p>
-<pre><code class="lang-javascript">var Adoption = artifacts.require(&quot;Adoption&quot;);
+<pre><code class="language-javascript">var Adoption = artifacts.require(&quot;Adoption&quot;);
 
 module.exports = function(deployer) {
   deployer.deploy(Adoption);
-};
-</code></pre>
+};</code></pre>
 </li>
 <li><p>Before we can migrate our contract to the blockchain, we need to have a blockchain running. For this tutorial, we&#39;re going to use <a href="/ganache">Ganache</a>, a personal blockchain for Ethereum development you can use to deploy contracts, develop applications, and run tests. If you haven&#39;t already, <a href="/ganache">download Ganache</a> and double click the icon to launch the application. This will generate a blockchain running locally on port 7545.</p>
 <p class="alert alert-info">
-  <strong>Note</strong>: Read more about Ganache in the <a href="/docs/ganache/using">Truffle documentation</a>.
+  <strong>Note</strong>: Read more about Ganache in the [Truffle documentation](/docs/ganache/using).
 </p>
 
 <p>
@@ -390,12 +384,11 @@ module.exports = function(deployer) {
   </p>
 </li>
 <li><p>Back in our terminal, migrate the contract to the blockchain.</p>
-<pre><code class="lang-shell">truffle migrate
-</code></pre>
+<pre><code class="language-shell">truffle migrate</code></pre>
 <p>You should see output similar to the following:</p>
 </li>
 </ol>
-<pre><code class="lang-shell">  1_initial_migration.js
+<pre><code class="language-shell">  1_initial_migration.js
   ======================
 
      Deploying &#39;Migrations&#39;
@@ -422,8 +415,7 @@ module.exports = function(deployer) {
 
      Deploying &#39;Adoption&#39;
      .............................
-     .............................
-</code></pre>
+     .............................</code></pre>
 <p>   You can see the migrations being executed in order, followed by some information related to each migration. (Your information will differ.)</p>
 <ol>
 <li><p>In Ganache, note that the state of the blockchain has changed. The blockchain now shows that the current block, previously <code>0</code>, is now <code>4</code>. In addition, while the first account originally had 100 ether, it is now lower, due to the transaction costs of migration. We&#39;ll talk more about transaction costs later.</p>
@@ -445,7 +437,7 @@ module.exports = function(deployer) {
 <li><p>Create a new file named <code>TestAdoption.sol</code> in the <code>test/</code> directory.</p>
 </li>
 <li><p>Add the following content to the <code>TestAdoption.sol</code> file:</p>
-<pre><code class="lang-solidity">pragma solidity ^0.5.0;
+<pre><code class="language-solidity">pragma solidity ^0.5.0;
 
 import &quot;truffle/Assert.sol&quot;;
 import &quot;truffle/DeployedAddresses.sol&quot;;
@@ -461,8 +453,7 @@ contract TestAdoption {
  //The expected owner of adopted pet is this contract
  address expectedAdopter = address(this);
 
-}
-</code></pre>
+}</code></pre>
 </li>
 </ol>
 <p>We start the contract off with 3 imports:</p>
@@ -472,7 +463,7 @@ contract TestAdoption {
 <li><code>Adoption.sol</code>: The smart contract we want to test.</li>
 </ul>
 <p class="alert alert-info">
-  <strong>Note</strong>: The first two imports are referring to global Truffle files, not a <code>truffle</code> directory. You should not see a <code>truffle</code> directory inside your <code>test/</code> directory.
+  <strong>Note</strong>: The first two imports are referring to global Truffle files, not a `truffle` directory. You should not see a `truffle` directory inside your `test/` directory.
 </p>
 
 <p>Then we define three contract-wide variables:</p>
@@ -490,13 +481,12 @@ contract TestAdoption {
   <p>To test the <code>adopt()</code> function, recall that upon success it returns the given <code>petId</code>. We can ensure an ID was returned and that it&#39;s correct by comparing the return value of <code>adopt()</code> to the ID we passed in.</p>
 <ol>
 <li><p>Add the following function within the <code>TestAdoption.sol</code> smart contract, after the declaration of <code>Adoption</code>:</p>
-<pre><code class="lang-solidity">// Testing the adopt() function
+<pre><code class="language-solidity">// Testing the adopt() function
 function testUserCanAdoptPet() public {
   uint returnedId = adoption.adopt(expectedPetId);
 
   Assert.equal(returnedId, expectedPetId, &quot;Adoption of the expected pet should match what is returned.&quot;);
-}
-</code></pre>
+}</code></pre>
 </li>
 </ol>
 <p>Things to notice:</p>
@@ -513,13 +503,12 @@ function testUserCanAdoptPet() public {
   <p>Remembering from above that public variables have automatic getter methods, we can retrieve the address stored by our adoption test above. Stored data will persist for the duration of our tests, so our adoption of pet <code>expectedPetId</code> above can be retrieved by other tests.</p>
 <ol>
 <li><p>Add this function below the previously added function in <code>TestAdoption.sol</code>.</p>
-<pre><code class="lang-solidity">// Testing retrieval of a single pet&#39;s owner
+<pre><code class="language-solidity">// Testing retrieval of a single pet&#39;s owner
 function testGetAdopterAddressByPetId() public {
   address adopter = adoption.adopters(expectedPetId);
 
   Assert.equal(adopter, expectedAdopter, &quot;Owner of the expected pet should be this contract&quot;);
-}
-</code></pre>
+}</code></pre>
 </li>
 </ol>
 <p>After getting the adopter address stored by the adoption contract, we assert equality as we did above.</p>
@@ -532,14 +521,13 @@ function testGetAdopterAddressByPetId() public {
   <p>Since arrays can only return a single value given a single key, we create our own getter for the entire array.</p>
 <ol>
 <li><p>Add this function below the previously added function in <code>TestAdoption.sol</code>.</p>
-<pre><code class="lang-solidity">// Testing retrieval of all pet owners
+<pre><code class="language-solidity">// Testing retrieval of all pet owners
 function testGetAdopterAddressByPetIdInArray() public {
   // Store adopters in memory rather than contract&#39;s storage
   address[16] memory adopters = adoption.getAdopters();
 
   Assert.equal(adopters[expectedPetId], expectedAdopter, &quot;Owner of the expected pet should be this contract&quot;);
-}
-</code></pre>
+}</code></pre>
 </li>
 </ol>
 <p>Note the <strong>memory</strong> attribute on <code>adopters</code>. The memory attribute tells Solidity to temporarily store the value in memory, rather than saving it to the contract&#39;s storage. Since <code>adopters</code> is an array, and we know from the first adoption test that we adopted pet <code>expectedPetId</code>, we compare the testing contracts address with location <code>expectedPetId</code> in the array.</p>
@@ -551,13 +539,12 @@ function testGetAdopterAddressByPetIdInArray() public {
     </h3>
   <ol>
 <li><p>Back in the terminal, run the tests:</p>
-<pre><code class="lang-shell">truffle test
-</code></pre>
+<pre><code class="language-shell">truffle test</code></pre>
 </li>
 <li><p>If all the tests pass, you&#39;ll see console output similar to this:</p>
 </li>
 </ol>
-<pre><code class="lang-shell">   Using network &#39;development&#39;.
+<pre><code class="language-shell">   Using network &#39;development&#39;.
 
    Compiling your contracts...
    ===========================
@@ -572,8 +559,7 @@ function testGetAdopterAddressByPetIdInArray() public {
        ✓ testGetAdopterAddressByPetIdInArray (89ms)
 
 
-     3 passing (670ms)
-</code></pre>
+     3 passing (670ms)</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="creating-a-user-interface-to-interact-with-the-smart-contract"></a>
@@ -595,7 +581,7 @@ function testGetAdopterAddressByPetIdInArray() public {
 <li><p>Examine the file. Note that there is a global <code>App</code> object to manage our application, load in the pet data in <code>init()</code> and then call the function <code>initWeb3()</code>. The <a href="https://github.com/ethereum/web3.js/">web3 JavaScript library</a> interacts with the Ethereum blockchain. It can retrieve user accounts, send transactions, interact with smart contracts, and more.</p>
 </li>
 <li><p>Remove the multi-line comment from within <code>initWeb3</code> and replace it with the following:</p>
-<pre><code class="lang-javascript">// Modern dapp browsers...
+<pre><code class="language-javascript">// Modern dapp browsers...
 if (window.ethereum) {
   App.web3Provider = window.ethereum;
   try {
@@ -614,8 +600,7 @@ else if (window.web3) {
 else {
   App.web3Provider = new Web3.providers.HttpProvider(&#39;http://localhost:7545&#39;);
 }
-web3 = new Web3(App.web3Provider);
-</code></pre>
+web3 = new Web3(App.web3Provider);</code></pre>
 </li>
 </ol>
 <p>Things to notice:</p>
@@ -636,7 +621,7 @@ web3 = new Web3(App.web3Provider);
   <p>Now that we can interact with Ethereum via web3, we need to instantiate our smart contract so web3 knows where to find it and how it works. Truffle has a library to help with this called <code>@truffle/contract</code>. It keeps information about the contract in sync with migrations, so you don&#39;t need to change the contract&#39;s deployed address manually.</p>
 <ol>
 <li><p>Still in <code>/src/js/app.js</code>, remove the multi-line comment from within <code>initContract</code> and replace it with the following:</p>
-<pre><code class="lang-javascript">$.getJSON(&#39;Adoption.json&#39;, function(data) {
+<pre><code class="language-javascript">$.getJSON(&#39;Adoption.json&#39;, function(data) {
   // Get the necessary contract artifact file and instantiate it with @truffle/contract
   var AdoptionArtifact = data;
   App.contracts.Adoption = TruffleContract(AdoptionArtifact);
@@ -646,8 +631,7 @@ web3 = new Web3(App.web3Provider);
 
   // Use our contract to retrieve and mark the adopted pets
   return App.markAdopted();
-});
-</code></pre>
+});</code></pre>
 </li>
 </ol>
 <p>Things to notice:</p>
@@ -669,7 +653,7 @@ web3 = new Web3(App.web3Provider);
     </h3>
   <ol>
 <li><p>Still in <code>/src/js/app.js</code>, remove the multi-line comment from <code>markAdopted</code> and replace it with the following:</p>
-<pre><code class="lang-javascript">var adoptionInstance;
+<pre><code class="language-javascript">var adoptionInstance;
 
 App.contracts.Adoption.deployed().then(function(instance) {
   adoptionInstance = instance;
@@ -683,8 +667,7 @@ App.contracts.Adoption.deployed().then(function(instance) {
   }
 }).catch(function(err) {
   console.log(err.message);
-});
-</code></pre>
+});</code></pre>
 </li>
 </ol>
 <p>Things to notice:</p>
@@ -710,7 +693,7 @@ App.contracts.Adoption.deployed().then(function(instance) {
     </h3>
   <ol>
 <li><p>Still in <code>/src/js/app.js</code>, remove the multi-line comment from <code>handleAdopt</code> and replace it with the following:</p>
-<pre><code class="lang-javascript">var adoptionInstance;
+<pre><code class="language-javascript">var adoptionInstance;
 
 web3.eth.getAccounts(function(error, accounts) {
   if (error) {
@@ -729,8 +712,7 @@ web3.eth.getAccounts(function(error, accounts) {
   }).catch(function(err) {
     console.log(err.message);
   });
-});
-</code></pre>
+});</code></pre>
 </li>
 </ol>
 <p>Things to notice:</p>
@@ -779,7 +761,7 @@ web3.eth.getAccounts(function(error, accounts) {
 </li>
 <li><p>In the box marked <strong>Wallet Seed</strong>, enter the mnemonic that is displayed in Ganache.</p>
 <p class="alert alert-danger">
-<strong>Warning</strong>: Do not use this mnemonic on the main Ethereum network (mainnet). If you send ETH to any account generated from this mnemonic, you will lose it all!
+**Warning**: Do not use this mnemonic on the main Ethereum network (mainnet). If you send ETH to any account generated from this mnemonic, you will lose it all!
 </p>
 
 <p>Enter a password below that and click <strong>OK</strong>.</p>
@@ -825,19 +807,17 @@ web3.eth.getAccounts(function(error, accounts) {
   <p>We can now start a local web server and use the dapp. We&#39;re using the <code>lite-server</code> library to serve our static files. This shipped with the <code>pet-shop</code> Truffle Box, but let&#39;s take a look at how it works.</p>
 <ol>
 <li><p>Open <code>bs-config.json</code> in a text editor (in the project&#39;s root directory) and examine the contents:</p>
-<pre><code class="lang-javascript">{
+<pre><code class="language-javascript">{
   &quot;server&quot;: {
     &quot;baseDir&quot;: [&quot;./src&quot;, &quot;./build/contracts&quot;]
   }
-}
-</code></pre>
+}</code></pre>
 <p>This tells <code>lite-server</code> which files to include in our base directory. We add the <code>./src</code> directory for our website files and <code>./build/contracts</code> directory for the contract artifacts.</p>
 <p>We&#39;ve also added a <code>dev</code> command to the <code>scripts</code> object in the <code>package.json</code> file in the project&#39;s root directory. The <code>scripts</code> object allows us to alias console commands to a single npm command. In this case we&#39;re just doing a single command, but it&#39;s possible to have more complex configurations. Here&#39;s what yours should look like:</p>
-<pre><code class="lang-javascript">&quot;scripts&quot;: {
+<pre><code class="language-javascript">&quot;scripts&quot;: {
   &quot;dev&quot;: &quot;lite-server&quot;,
   &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
-},
-</code></pre>
+},</code></pre>
 <p>This tells npm to run our local install of <code>lite-server</code> when we execute <code>npm run dev</code> from the console.</p>
 </li>
 </ol>
@@ -849,8 +829,7 @@ web3.eth.getAccounts(function(error, accounts) {
     </h3>
   <ol>
 <li><p>Start the local web server:</p>
-<pre><code class="lang-shell">npm run dev
-</code></pre>
+<pre><code class="language-shell">npm run dev</code></pre>
 <p>The dev server will launch and automatically open a new browser tab containing your dapp.</p>
 <p>
     <img class="img-fluid" src="/img/tutorials/pet-shop/dapp.png" title="Pete&#39;s Pet Shop" alt="Pete&#39;s Pet Shop" />
@@ -877,7 +856,7 @@ web3.eth.getAccounts(function(error, accounts) {
     <p class="img-caption">Adoption success</p>
   </p>
 <p class="alert alert-info">
-<strong>Note</strong>: If the button doesn&#39;t automatically change to say &quot;Success&quot;, refreshing the app in the browser should trigger it.
+<strong>Note</strong>: If the button doesn't automatically change to say "Success", refreshing the app in the browser should trigger it.
 </p>
 
 <p>And in MetaMask, you&#39;ll see the transaction listed:</p>

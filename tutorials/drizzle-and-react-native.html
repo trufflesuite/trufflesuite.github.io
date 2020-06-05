@@ -173,16 +173,14 @@
       Truffle
     </h3>
   <p>Truffle requires an empty folder to start, so let&#39;s initialize it first before our React Native project:</p>
-<pre><code class="lang-shell">mkdir truffle-temp
+<pre><code class="language-shell">mkdir truffle-temp
 cd truffle-temp
-truffle init
-</code></pre>
+truffle init</code></pre>
 <p>You should have the following inside the project folder:</p>
 <pre><code>├── contracts
 ├── migrations
 ├── test
-└── truffle-config.js
-</code></pre>
+└── truffle-config.js</code></pre>
     <h3 class="link-markdown">
       <a class="anchor-target" name="react-native"></a>
       <a href="#react-native"><i class="fas fa-link"></i></a>
@@ -190,8 +188,7 @@ truffle init
     </h3>
   <ol>
 <li><p>Initialize your React Native project in its own folder, as a sibling folder of your Truffle project <code>truffle-temp</code>:</p>
-<pre><code class="lang-shell"> react-native init DrizzleReactNativeTutorial
-</code></pre>
+<pre><code class="language-shell"> react-native init DrizzleReactNativeTutorial</code></pre>
 </li>
 <li><p>React Native and Truffle folders should be in root since React Native doesn&#39;t allow you to use symlinks yet, and cannot import from files outside the React Native project folder.</p>
 <p> Copy all the files in <code>truffle-temp</code> into the root folder of your React Native project. Your folder should look like this in the end:</p>
@@ -207,8 +204,7 @@ truffle init
  ├── package.json
  ├── truffle-config.js
  ├── truffle.js
- └── yarn.lock
-</code></pre></li>
+ └── yarn.lock</code></pre></li>
 </ol>
 
     <h2 class="link-markdown">
@@ -219,15 +215,13 @@ truffle init
   <p>React Native is missing some of the global objects that are available on other platforms such as the web or Node. We will have to provide our own (i.e. a shim) through imported libraries or in some cases our own code.</p>
 <ol>
 <li><p>Install <code>node-libs-react-native</code>, <code>vm-browserify</code>, <code>Base64</code>, and <code>react-native-randombytes</code>:</p>
-<pre><code class="lang-shell"> yarn add node-libs-react-native vm-browserify Base64 react-native-randombytes
-</code></pre>
+<pre><code class="language-shell"> yarn add node-libs-react-native vm-browserify Base64 react-native-randombytes</code></pre>
 </li>
 <li><p>Link the native libraries in <code>react-native-randombytes</code>:</p>
-<pre><code class="lang-shell"> react-native link react-native-randombytes
-</code></pre>
+<pre><code class="language-shell"> react-native link react-native-randombytes</code></pre>
 </li>
 <li><p>Create a new file <code>shims.js</code> in the root folder with the following code:</p>
-<pre><code class="lang-javascript"> import &quot;node-libs-react-native/globals&quot;;
+<pre><code class="language-javascript"> import &quot;node-libs-react-native/globals&quot;;
  import { btoa } from &quot;Base64&quot;;
  import nodeUrl from &#39;url&#39;;
 
@@ -270,11 +264,10 @@ truffle init
    },
    writable: true,
    configurable: true,
- });
-</code></pre>
+ });</code></pre>
 </li>
 <li><p>Create a new file <code>rn-cli.config.js</code> in the root folder with the following code:</p>
-<pre><code class="lang-javascript"> const nodeLibs = require(&quot;node-libs-react-native&quot;);
+<pre><code class="language-javascript"> const nodeLibs = require(&quot;node-libs-react-native&quot;);
  nodeLibs.vm = require.resolve(&quot;vm-browserify&quot;);
 
  module.exports = {
@@ -298,13 +291,11 @@ truffle init
        require.resolve(&#39;react-native/Libraries/polyfills/Object.es7.js&#39;),
      ]
    }
- };
-</code></pre>
+ };</code></pre>
 <p> If you&#39;re wondering why we did all that in <code>rn-cli.config.js</code>, refer to <a href="https://gist.github.com/parshap/e3063d9bf6058041b34b26b7166fd6bd">this Gist</a> for a great explanation.</p>
 </li>
 <li><p>Finally let&#39;s import our shims in <code>index.js</code>. The very first line should be the following:</p>
-<pre><code class="lang-javascript"> import &quot;./shims&quot;
-</code></pre>
+<pre><code class="language-javascript"> import &quot;./shims&quot;</code></pre>
 </li>
 </ol>
 <p>We&#39;re now done with replacing all the global objects and functions that Drizzle was expecting.</p>
@@ -377,7 +368,7 @@ truffle init
 <li>Start <code>ganache-cli</code>: <code>ganache-cli -b 3 -h LOCAL_MACHINE_IP</code></li>
 <li>In <code>truffle.js</code> for <code>development</code>, point Truffle to <code>LOCAL_MACHINE_IP</code></li>
 <li>Compile and migrate contracts: <code>truffle compile &amp;&amp; truffle migrate</code></li>
-<li>In <code>index.js</code>, point Drizzle to <code>LOCAL_MACHINE_IP</code><pre><code class="lang-javascript"> const options = {
+<li>In <code>index.js</code>, point Drizzle to <code>LOCAL_MACHINE_IP</code><pre><code class="language-javascript"> const options = {
    ...
    web3: {
      fallback: {
@@ -385,8 +376,7 @@ truffle init
        url: &quot;ws://LOCAL_MACHINE_IP:8545&quot;
      }
    }
- };
-</code></pre>
+ };</code></pre>
 </li>
 <li>Install: Do it through Xcode</li>
 </ol>
@@ -397,10 +387,9 @@ truffle init
       Setting up Drizzle
     </h2>
   <p>Install Drizzle:</p>
-<pre><code class="lang-shell">yarn add drizzle
-</code></pre>
+<pre><code class="language-shell">yarn add drizzle</code></pre>
 <p>Set up the Drizzle store by adding the following code to <code>index.js</code>:</p>
-<pre><code class="lang-javascript">import React from &quot;react&quot;;
+<pre><code class="language-javascript">import React from &quot;react&quot;;
 import { Drizzle, generateStore } from &quot;@drizzle/store&quot;;
 import MyStringStore from &quot;./build/contracts/MyStringStore.json&quot;;
 
@@ -410,10 +399,9 @@ const options = {
 const drizzleStore = generateStore(options);
 const drizzle = new Drizzle(options, drizzleStore);
 
-AppRegistry.registerComponent(appName, () =&gt; () =&gt; &lt;App drizzle={drizzle} /&gt;);
-</code></pre>
+AppRegistry.registerComponent(appName, () =&gt; () =&gt; &lt;App drizzle={drizzle} /&gt;);</code></pre>
 <p>Your <code>index.js</code> should look like this in the end:</p>
-<pre><code class="lang-javascript">/** @format */
+<pre><code class="language-javascript">/** @format */
 import &quot;./shims&quot;;
 import { AppRegistry } from &quot;react-native&quot;;
 import App from &quot;./app/App&quot;;
@@ -429,8 +417,7 @@ const options = {
 const drizzleStore = generateStore(options);
 const drizzle = new Drizzle(options, drizzleStore);
 
-AppRegistry.registerComponent(appName, () =&gt; () =&gt; &lt;App drizzle={drizzle} /&gt;);
-</code></pre>
+AppRegistry.registerComponent(appName, () =&gt; () =&gt; &lt;App drizzle={drizzle} /&gt;);</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="wiring-up-the-app-component"></a>
@@ -440,7 +427,7 @@ AppRegistry.registerComponent(appName, () =&gt; () =&gt; &lt;App drizzle={drizzl
   <p>This is pretty much the same as <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#wire-up-the-app-component">the web tutorial</a>, but with React Native components instead of web ones. Refer to the web tutorial for a more in-depth explanation of what&#39;s going on.</p>
 <p>Let&#39;s create a folder called <code>app</code> in the root of the project. Add a file called <code>App.js</code> to it.</p>
 <p>In <code>app/App.js</code>, your code should look like this in the end:</p>
-<pre><code class="lang-javascript">/**
+<pre><code class="language-javascript">/**
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
@@ -493,8 +480,7 @@ const styles = StyleSheet.create({
     alignItems: &quot;center&quot;,
     backgroundColor: &quot;#F5FCFF&quot;
   }
-});
-</code></pre>
+});</code></pre>
 <p>Run the app, and you should see the string <code>Loading Drizzle...</code> while you wait for Drizzle to initialize. Once initialization is complete, the string <code>Drizzle is ready</code> should be visible.</p>
 
     <h2 class="link-markdown">
@@ -504,7 +490,7 @@ const styles = StyleSheet.create({
     </h2>
   <p>Once again, this is very similar to the <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#write-a-component-to-read-from-drizzle">web tutorial</a>, just with React Native components.</p>
 <p>Add <code>ReadString.js</code> to the folder <code>app</code>. <code>app/ReadString.js</code> should look like this:</p>
-<pre><code class="lang-javascript">import React from &quot;react&quot;;
+<pre><code class="language-javascript">import React from &quot;react&quot;;
 import { Text } from &quot;react-native&quot;;
 
 class ReadString extends React.Component {
@@ -533,10 +519,9 @@ class ReadString extends React.Component {
   }
 }
 
-export default ReadString;
-</code></pre>
+export default ReadString;</code></pre>
 <p>Add it to <code>App.js</code> by modifying the <code>render</code> method:</p>
-<pre><code class="lang-javascript">import ReadString from &quot;./ReadString&quot;;
+<pre><code class="language-javascript">import ReadString from &quot;./ReadString&quot;;
 // ...
 render() {
   return (
@@ -553,8 +538,7 @@ render() {
       )}
     &lt;/View&gt;
   );
-}
-</code></pre>
+}</code></pre>
 <p>You should now see the string <code>Hello World</code> being rendered after Drizzle has finished loading.</p>
 
     <h2 class="link-markdown">
@@ -564,7 +548,7 @@ render() {
     </h2>
   <p>Once again, this is very similar to the <a href="https://www.truffleframework.com/tutorials/getting-started-with-drizzle-and-react#write-a-component-to-write-to-the-smart-contract">web tutorial</a>, just with React Native components.</p>
 <p>Add <code>SetString.js</code> to the folder <code>app</code>. <code>app/SetString.js</code> should look like this:</p>
-<pre><code class="lang-javascript">import React from &quot;react&quot;;
+<pre><code class="language-javascript">import React from &quot;react&quot;;
 import { Text, View, Button, TextInput, StyleSheet } from &quot;react-native&quot;;
 
 class SetString extends React.Component {
@@ -629,10 +613,9 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SetString;
-</code></pre>
+export default SetString;</code></pre>
 <p>Add it to <code>App.js</code> by modifying the <code>render</code> function</p>
-<pre><code class="lang-javascript">import ReadString from &quot;./ReadString&quot;;
+<pre><code class="language-javascript">import ReadString from &quot;./ReadString&quot;;
 import SetString from &quot;./SetString&quot;;
 // ...
 render() {
@@ -654,8 +637,7 @@ render() {
       )}
     &lt;/View&gt;
   );
-}
-</code></pre>
+}</code></pre>
 <p>Run the app, enter a new string, and press the Submit button. A transaction status of <code>pending</code> will show and change to <code>success</code> on completion. This string will persist through reloads of the app since it is connected to your Ganache testnet.</p>
 
     <h1 class="link-markdown">

@@ -87,8 +87,7 @@ plugins that you may want to use or adapt.</p>
   &lt;script type=&quot;text/javascript&quot; src=&quot;../../extras/mermaid/mermaid.min.js&quot;&gt;&lt;/script&gt;
   &lt;script type=&quot;text/javascript&quot; src=&quot;../../extras/markdown/markdown.js&quot;&gt;&lt;/script&gt;
   &lt;script type=&quot;text/javascript&quot; src=&quot;../../extras/mathjax/MathJax.js?config=TeX-AMS_CHTML&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
+&lt;/body&gt;</code></pre>
     <h3 class="link-markdown">
       <a class="anchor-target" name="sample-css-related-to-plugins-and-extra-addons"></a>
       <a href="#sample-css-related-to-plugins-and-extra-addons"><i class="fas fa-link"></i></a>
@@ -175,8 +174,7 @@ plugins that you may want to use or adapt.</p>
 .impress-enabled #impress-help td {
     padding-left: 1em;
     padding-right: 1em;
-}
-</code></pre>
+}</code></pre>
     <h1 class="link-markdown">
       <a class="anchor-target" name="for-developers"></a>
       <a href="#for-developers"><i class="fas fa-link"></i></a>
@@ -223,8 +221,7 @@ Error
     at prog1 (/home/hingo/hacking/impress.js/node_modules/uglify-js/lib/parse-js.js:1314:21)
     at simple_statement (/home/hingo/hacking/impress.js/node_modules/uglify-js/lib/parse-js.js:906:27)
     at /home/hingo/hacking/impress.js/node_modules/uglify-js/lib/parse-js.js:814:19
-    at block_ (/home/hingo/hacking/impress.js/node_modules/uglify-js/lib/parse-js.js:1003:20)
-</code></pre><p>You will be pleased to know, that the concatenation of the unminified file
+    at block_ (/home/hingo/hacking/impress.js/node_modules/uglify-js/lib/parse-js.js:1003:20)</code></pre><p>You will be pleased to know, that the concatenation of the unminified file
 <a href="../../js/impress.js">js/impress.js</a> has already succeeded at this point. Just
 open a test in your browser, and the browser will show you the line and error.</p>
 
@@ -235,10 +232,8 @@ open a test in your browser, and the browser will show you the line and error.</
     </h3>
   <p>Each plugin is contained within its own directory. The name of the directory
 is the name of the plugin. For example, imagine a plugin called <em>pluginA</em>:</p>
-<pre><code>src/plugins/plugina/
-</code></pre><p>The main javascript file should use the directory name as its root name:</p>
-<pre><code>src/plugins/plugina/plugina.js
-</code></pre><p>For most plugins, a single <code>.js</code> file is enough.</p>
+<pre><code>src/plugins/plugina/</code></pre><p>The main javascript file should use the directory name as its root name:</p>
+<pre><code>src/plugins/plugina/plugina.js</code></pre><p>For most plugins, a single <code>.js</code> file is enough.</p>
 <p>Note that the plugin name is also used as a namespace for various things. For
 example, the <em>autoplay</em> plugin can be configured by setting the <code>data-autoplay=&quot;5&quot;</code>
 attribute on a <code>div</code>.</p>
@@ -298,8 +293,7 @@ standard javascript anonymous function:</p>
 
     // Plugin implementation...
 
-})(document, window);
-</code></pre>
+})(document, window);</code></pre>
     <h3 class="link-markdown">
       <a class="anchor-target" name="init-plugins"></a>
       <a href="#init-plugins"><i class="fas fa-link"></i></a>
@@ -341,19 +335,16 @@ calling <code>impress()</code> from the global namespace.</p>
         var foo = data.pluginaFoo;
         // ...
     }
-})(document, window);
-</code></pre><p>Both <a href="navigation/navigation.js">Navigation</a> and <a href="autoplay/autoplay.js">Autoplay</a>
+})(document, window);</code></pre><p>Both <a href="navigation/navigation.js">Navigation</a> and <a href="autoplay/autoplay.js">Autoplay</a>
 are init plugins.</p>
 <p>To provide end user configurability in your plugin, a good idea might be to
 read html attributes from the impress presentation. The
 <a href="autoplay/autoplay.js">Autoplay</a> plugin does exactly this, you can provide
 a default value in the <code>div#impress</code> element, or in each <code>div.step</code>.</p>
 <p>A plugin must only use html attributes in its designated namespace, which is</p>
-<pre><code>data-pluginName-*=&quot;value&quot;
-</code></pre><p>For example, if <em>pluginA</em> offers config options <code>foo</code> and <code>bar</code>, it would look
+<pre><code>data-pluginName-*=&quot;value&quot;</code></pre><p>For example, if <em>pluginA</em> offers config options <code>foo</code> and <code>bar</code>, it would look
 like this:</p>
-<pre><code>&lt;div id=&quot;impress&quot; data-plugina-foo=&quot;5&quot; data-plugina-bar=&quot;auto&quot; &gt;
-</code></pre>
+<pre><code>&lt;div id=&quot;impress&quot; data-plugina-foo=&quot;5&quot; data-plugina-bar=&quot;auto&quot; &gt;</code></pre>
     <h3 class="link-markdown">
       <a class="anchor-target" name="pre-init-plugins"></a>
       <a href="#pre-init-plugins"><i class="fas fa-link"></i></a>
@@ -365,8 +356,7 @@ impress.js core parses the presentation. We call these <em>pre-init plugins</em>
 <p>A pre-init plugin must be called synchronously, before <code>impress().init()</code> is
 executed. Plugins can register themselves to be called in the pre-init phase
 by calling:</p>
-<pre><code>impress.addPreInitPlugin( plugin [, weight] );
-</code></pre><p>The argument <code>plugin</code> must be a function. <code>weight</code> is optional and defaults to
+<pre><code>impress.addPreInitPlugin( plugin [, weight] );</code></pre><p>The argument <code>plugin</code> must be a function. <code>weight</code> is optional and defaults to
 <code>10</code>. Plugins are ordered by weight when they are executed, with lower weight
 first.</p>
 <p>The <a href="rel/rel.js">Relative Positioning Plugin</a> is an example of a pre-init plugin.</p>
@@ -379,8 +369,7 @@ first.</p>
   <p>A <em>pre-stepleave plugin</em> is called synchronously from impress.js core at the
 beginning of <code>impress().goto()</code>. </p>
 <p>To register a plugin, call</p>
-<pre><code>impress.addPreStepLeavePlugin( plugin [, weight] );
-</code></pre><p>When the plugin function is executed, it will be passed an argument
+<pre><code>impress.addPreStepLeavePlugin( plugin [, weight] );</code></pre><p>When the plugin function is executed, it will be passed an argument
 that resembles the <code>event</code> object from DOM event handlers:</p>
 <p><code>event.target</code> contains the current step, which we are about to leave. </p>
 <p><code>event.detail.next</code> contains the element we are about to transition to.</p>
@@ -405,8 +394,7 @@ provide clickable buttons to go to the next and previous slide. </p>
 html elements unless the user asks for it. A recommended best practice is to let 
 the user add a div element, with an id equaling the plugin&#39;s namespace, in the 
 place where he wants to see whatever visual UI elements the plugin is providing:</p>
-<pre><code>&lt;div id=&quot;impress-plugina&quot;&gt;&lt;/div&gt;
-</code></pre><p>Another way to show the elements of a UI plugin might be by allowing the user
+<pre><code>&lt;div id=&quot;impress-plugina&quot;&gt;&lt;/div&gt;</code></pre><p>Another way to show the elements of a UI plugin might be by allowing the user
 to explicitly press a key, like &quot;H&quot; for a help dialog.</p>
 <p><a href="toolbar/README.md">Toolbar plugin</a> is an example of a GUI plugin. It presents
 a toolbar where other plugins can add their buttons in a centralized fashion.</p>
@@ -438,7 +426,6 @@ document.addEventListener(&quot;impress:init&quot;, function (event) {
 // pluginB
 document.addEventListener(&quot;impress:plugina:init&quot;, function (event) {
     // plugin B implementation
-}, false);
-</code></pre><p>A plugin should use the namespace <code>impress:pluginname:*</code> for any events it sends.</p>
+}, false);</code></pre><p>A plugin should use the namespace <code>impress:pluginname:*</code> for any events it sends.</p>
 <p>In theory all plugins could always send an <code>init</code> and other events, but in
 practice we&#39;re adding them on an as needed basis.</p>

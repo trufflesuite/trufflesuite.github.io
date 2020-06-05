@@ -174,10 +174,7 @@
 <p>Centralized systems can be manipulated, from inside or outside, so we have to trust the owners of these systems to have sufficient will and resources to keep their data secure and with integrity. Centralized databases are still the most common today, powering most of our online and offline applications.</p>
 <p>A self-hosted blog is a common example of a centralized database. The owner could potentially edit posts in hindsight or censor users without recourse. Alternately, a hacker could infiltrate the server and commit malicious acts. If there is no database backup, reversing the damage might be impossible.</p>
 <div class="centralized-db-image">
-
-    <img class="img-fluid" src="/img/tutorials/ethereum-overview/db-server.png" title="Centralized Database" alt="Centralized Database" />
-    <p class="img-caption">Graphically represented, each arrow crossing a boundary of the main server box is a connection which requires trust</p>
-  
+![Centralized Database](/img/tutorials/ethereum-overview/db-server.png "Graphically represented, each arrow crossing a boundary of the main server box is a connection which requires trust")
 </div>
 
 
@@ -232,45 +229,30 @@
   <p>Once a new block is mined, the other miners are notified and begin verifying and adding this new block to their copies of the chain. This is done through cryptographic hashing (or simply, &quot;hashing&quot;). Hashing is a one-way process which takes in data and gives back a fixed-length string representing that data.</p>
 <p>While the original data can&#39;t be reproduced from its hash, the same data will always produce the same hash. Therefore, unverified data can be hashed with the same function and compared to the original. If they are identical, the data is validated.</p>
 <p>Once more than half of the miners have validated the new block, the network has &quot;reached consensus&quot; and the block becomes part of the blockchain permanent history. Now this data can be downloaded by all nodes, with its validity assured.</p>
-<p>Here&#39;s the whole process visually:
-</div></p>
+<p>Here&#39;s the whole process visually:</p>
+</div>
 <div class="container text-center">
 <div class="row row-steps justify-content-center">
 <div class="col-lg-4">
-
-    <img class="img-fluid" src="/img/tutorials/ethereum-overview/chain-step1.png" title="Mining Step 1" alt="Mining Step 1" />
-    <p class="img-caption">1. Bob attempts to send Alice 1 ETH</p>
-  
+![Mining Step 1](/img/tutorials/ethereum-overview/chain-step1.png "1. Bob attempts to send Alice 1 ETH")
 </div>
 
 <div class="col-lg-4">
-
-    <img class="img-fluid" src="/img/tutorials/ethereum-overview/chain-step2.png" title="Mining Step 2" alt="Mining Step 2" />
-    <p class="img-caption">2. Bob and Alice&#39;s transaction is combined with other transactions that have occurred since the last block</p>
-  
+![Mining Step 2](/img/tutorials/ethereum-overview/chain-step2.png "2. Bob and Alice's transaction is combined with other transactions that have occurred since the last block")
 </div>
 
 <div class="col-lg-4">
-
-    <img class="img-fluid" src="/img/tutorials/ethereum-overview/chain-step3.png" title="Mining Step 3" alt="Mining Step 3" />
-    <p class="img-caption">3. Miners compete to validate the block with the new set of transactions</p>
-  
+![Mining Step 3](/img/tutorials/ethereum-overview/chain-step3.png "3. Miners compete to validate the block with the new set of transactions")
 </div>
 </div>
 
 <div class="row row-steps justify-content-center">
 <div class="col-lg-4">
-
-    <img class="img-fluid" src="/img/tutorials/ethereum-overview/chain-step4.png" title="Mining Step 4" alt="Mining Step 4" />
-    <p class="img-caption">4. The victorious miner creates a new block and receives a reward</p>
-  
+![Mining Step 4](/img/tutorials/ethereum-overview/chain-step4.png "4. The victorious miner creates a new block and receives a reward")
 </div>
 
 <div class="col-lg-4">
-
-    <img class="img-fluid" src="/img/tutorials/ethereum-overview/chain-step5.png" title="Mining Step 5" alt="Mining Step 5" />
-    <p class="img-caption">5. With the transaction validated, Alice receives 1 ETH</p>
-  
+![Mining Step 5](/img/tutorials/ethereum-overview/chain-step5.png "5. With the transaction validated, Alice receives 1 ETH")
 </div>
 </div>
 </div>
@@ -279,7 +261,7 @@
 
 <p><strong>Ethereum is a blockchain that allows you to run programs in its trusted environment.</strong> This contrasts with the Bitcoin blockchain, which only allows you to manage cryptocurrency.</p>
 
-<p>To this end, Ethereum has a virtual machine, called the Ethereum Virtual Machine (EVM). The EVM allows code to be verified and executed on the blockchain, providing guarantees it will be run the same way on everyone&#39;s machine. This code is contained in &quot;smart contracts&quot; (more on these below).</p>
+<p>To this end, Ethereum has a virtual machine, called the Ethereum Virtual Machine (EVM). The EVM allows code to be verified and executed on the blockchain, providing guarantees it will be run the same way on everyone's machine. This code is contained in "smart contracts" (more on these below).</p>
 
 <p>Beyond just tracking account balances, Ethereum maintains the state of the EVM on the blockchain. All nodes process smart contracts to verify the integrity of the contracts and their outputs.</p>
 
@@ -288,34 +270,25 @@
 
 <p><strong>A smart contract is code that runs on the EVM.</strong> Smart contracts can accept and store ether, data, or a combination of both. Then, using the logic programmed into the contract, it can distribute that ether to other accounts or even other smart contracts.</p>
 
-<p>Here&#39;s a smart contract example with Bob and Alice again. Alice wants to hire Bob to build her a patio, and they are using an escrow contract (a place to store money until a condition is fulfilled) to store their ether before the final transaction.</p>
+<p>Here's a smart contract example with Bob and Alice again. Alice wants to hire Bob to build her a patio, and they are using an escrow contract (a place to store money until a condition is fulfilled) to store their ether before the final transaction.</p>
 
 </div>
 
 <div class="container">
 <div class="row row-steps text-center">
 <div class="col-lg-4">
-
-    <img class="img-fluid" src="/img/tutorials/ethereum-overview/smart-contract-step1.png" title="Smart Contract Step 1" alt="Smart Contract Step 1" />
-    <p class="img-caption">1. Alice agrees to store her payment for the patio within the escrow contract, and Bob agrees to deposit an equal amount</p>
-  
+![Smart Contract Step 1](/img/tutorials/ethereum-overview/smart-contract-step1.png "1. Alice agrees to store her payment for the patio within the escrow contract, and Bob agrees to deposit an equal amount")
 </div>
 
 <div class="col-lg-4">
-
-    <img class="img-fluid" src="/img/tutorials/ethereum-overview/smart-contract-step2.png" title="Smart Contract Step 2" alt="Smart Contract Step 2" />
-    <p class="img-caption">2. Bob completes the patio project and Alice gives the smart contract permission to release the funds</p>
-  
+![Smart Contract Step 2](/img/tutorials/ethereum-overview/smart-contract-step2.png "2. Bob completes the patio project and Alice gives the smart contract permission to release the funds")
 </div>
 
-<p><div class="col-lg-4">
-
-    <img class="img-fluid" src="/img/tutorials/ethereum-overview/smart-contract-step3.png" title="Smart Contract Step 3" alt="Smart Contract Step 3" />
-    <p class="img-caption">3. Bob receives Alice&#39;s payment along with his collateral</p>
-  
+<div class="col-lg-4">
+![Smart Contract Step 3](/img/tutorials/ethereum-overview/smart-contract-step3.png "3. Bob receives Alice's payment along with his collateral")
 </div>
 </div>
-</div></p>
+</div>
 <div class="container container-narrow">
 
 <p>(Provisions could be written into the contract code releasing Bob&#39;s collateral to Alice if Bob were to fail to build the patio or if he were to perform a poor job.)</p>

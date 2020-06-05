@@ -161,9 +161,9 @@
   <p>For starters: artifact files are huge! Too huge! In addition to Truffle reading your contract artifacts, your dapp’s frontend code may read and use your artifacts to let users connect to any deployed network, etc. Problem is—there’s a ton of JSON. It’s a mess, and it’s in your face too much.</p>
 <figure>
   <img src="/img/blog/introducing-truffle-db/example-truffle-db.png" alt="Example of Truffle DB" style="width:100%">
-  <figcaption><strong>For example:</strong> Truffle stores the same abstract syntax tree<em> (AST) in two different formats, in every single artifact! Most applications do not need this.
+  <figcaption>**For example:** Truffle stores the same abstract syntax tree* (AST) in two different formats, in every single artifact! Most applications do not need this.
 
-  </em>for the curious: the AST is the reason your code works whether you wrote it all on a single line or not. Source gets parsed, and the AST is the result. Truffle and other tools rely on the AST for things like debugging, code coverage, and linting.</figcaption>
+<p>  *for the curious: the AST is the reason your code works whether you wrote it all on a single line or not. Source gets parsed, and the AST is the result. Truffle and other tools rely on the AST for things like debugging, code coverage, and linting.</figcaption></p>
 </figure>
 
 <p>By the byte, almost all of the information in each contract artifact is for internal use or for some specific purpose. <strong>Only a small subset of the data in each artifact is necessary for your frontend or for you to think about directly.</strong> Thus far, users who have struggled with these large files needed to use a tool like <a href="https://stedolan.github.io/jq/">jq</a> or write a custom solution.</p>

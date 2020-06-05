@@ -142,9 +142,8 @@
         <div class="col">
           <p><strong>TLDR;</strong> Fluidity has a pretty awesome truffle-box with lots of goodies to build secure, well-tested smart contracts. With two simple commands, you’ll be set up for development using these testing and security tools preconfigured.</p>
 <p>To use:</p>
-<pre><code class="lang-shell">npm install -g truffle
-truffle unbox fluidity/fluidity-truffle-box
-</code></pre>
+<pre><code class="language-shell">npm install -g truffle
+truffle unbox fluidity/fluidity-truffle-box</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="develop-using-fluidity-truffle-box"></a>
@@ -223,9 +222,8 @@ truffle unbox fluidity/fluidity-truffle-box
     </h3>
   <p>We allow our initial contract designs not to be limited by any contract size constraints with the use of the flag <em>allowUnlimitedContractSize</em>. Ganache has a default gas limit of 6,721,975 which does not reflect the actual gas limit of public testnet and mainnets, being 7,000,000 and 8,000,000 respectively. While our team does want to reduce the gas footprint while developing and iterating through different token designs/debugging, it’s been helpful not to be limited by a strict gas price or gas limit with testing. For example, we use longer descriptive messages in revert reasons when developing, but reduce them to be more succinct for final code versions. Reducing the string lengths saved us 3,000,000 gas.</p>
 <p>Run each line in a different terminal window</p>
-<pre><code class="lang-shell">yarn ganache-unlimited
-yarn truffle truffle-unlimited
-</code></pre>
+<pre><code class="language-shell">yarn ganache-unlimited
+yarn truffle truffle-unlimited</code></pre>
 <p>After settling on a design, we’ll start iterating to reduce gas usage. As mentioned above, we use eth-gas-reporter to do this. Thus, with 100% test coverage and integration tests, eth-gas-reporter gives a pretty comprehensive understanding of gas usage throughout.</p>
 
     <h2 class="link-markdown">
@@ -236,8 +234,7 @@ yarn truffle truffle-unlimited
   <p>There are two custom utilities files that we have created and keep available for the right circumstance of contracts. First, we have a custom migration utilities script. Truffle has deployed contract management but only stores a single address for each contract deploy per network id; each deployed contract is treated as a singleton. However, there have been cases where we’ve deployed multiple instances of the same contract and have needed to save each of the deployed contract addresses. Our solution was to create a custom migration_utils.js that stored the contract addresses per migration in  a JSON file. From there, integration tests and accessory scripts use the contract addresses while still relying on the build directory for ABIs.</p>
 <p>The second script is related to testing time sensitive smart contracts. We’ve written a post about it called <a href="https://medium.com/fluidity/standing-the-time-of-test-b906fcc374a9">Standing the Time of Test</a> and we’ve used this script and features in Ganache to run both idempotent tests as well as run simulations.</p>
 <p>Running the command for a specific date</p>
-<pre><code class="lang-shell">yarn ganache-unlimited --time &#39;2019-02-15T15:53:00+00:00&#39;
-</code></pre>
+<pre><code class="language-shell">yarn ganache-unlimited --time &#39;2019-02-15T15:53:00+00:00&#39;</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="anything-else"></a>

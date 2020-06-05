@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -369,9 +369,8 @@
       Installing
     </h3>
   <p>For this example, we&#39;re going to use the <a href="https://github.com/ConsenSys/example-truffle-library">Example Truffle Library</a>, which provides a simple name registry that is deployed to the Morden test network. In order to use it as a dependency, we must first install it within our project through <code>npm</code>:</p>
-<pre><code class="lang-shell">$ cd my_project
-$ npm install example-truffle-library
-</code></pre>
+<pre><code class="language-shell">$ cd my_project
+$ npm install example-truffle-library</code></pre>
 <p>Note that the last command above downloads the package and places it in <code>my_project/node_modules</code> directory, which is important for the examples below. See the <a href="https://docs.npmjs.com/">npm documentation</a> for help using <code>npm</code> to install packages.</p>
 
     <h3 class="link-markdown">
@@ -380,8 +379,7 @@ $ npm install example-truffle-library
       Within your contracts
     </h3>
   <p>To use a package&#39;s contracts within your contracts, this can be as simple as Solidity&#39;s <a href="http://solidity.readthedocs.io/en/develop/layout-of-source-files.html?#importing-other-source-files">import</a> statement. When your import path isn&#39;t <a href="/docs/getting_started/compile#dependencies">explicitly relative or absolute</a>, this signifies to Truffle that you&#39;re looking for a file from a specific named package. Consider this example using the Example Truffle Library mentioned above:</p>
-<pre><code class="lang-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
-</code></pre>
+<pre><code class="language-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;</code></pre>
 <p>Since the path didn&#39;t start with <code>./</code>, Truffle knows to look in your project&#39;s <code>node_modules</code> directory for the <code>example-truffle-library</code> folder. From there, it resolves the path to provide you the contract you requested.</p>
 
     <h3 class="link-markdown">
@@ -390,10 +388,9 @@ $ npm install example-truffle-library
       Within JavaScript code
     </h3>
   <p>To interact with package&#39;s contracts within JavaScript code, you simply need to <code>require</code> that package&#39;s <code>.json</code> files, and then use the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">@truffle/contract</a> module to turn those into usable abstractions:</p>
-<pre><code class="lang-javascript">var contract = require(&quot;@truffle/contract&quot;);
+<pre><code class="language-javascript">var contract = require(&quot;@truffle/contract&quot;);
 var data = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.json&quot;);
-var SimpleNameRegistry = contract(data);
-</code></pre>
+var SimpleNameRegistry = contract(data);</code></pre>
 <p>To use these abstractions, see the <a href="/docs/getting_started/contracts">Interacting With Your Contracts</a> section for more details.</p>
 
     <h3 class="link-markdown">
@@ -403,7 +400,7 @@ var SimpleNameRegistry = contract(data);
     </h3>
   <p>Sometimes you want your contracts to interact with the package&#39;s previously deployed contracts. Since the deployed addresses exist within the package&#39;s <code>.json</code> files, you must perform an extra step to get those addresses into your contracts. To do so, make your contract accept the address of the dependency contract, and then use migrations. The following is an example contract that exists within your project as well as an example migration:</p>
 <p>Contract: <code>MyContract.sol</code></p>
-<pre><code class="lang-solidity">pragma solidity ^0.4.13;
+<pre><code class="language-solidity">pragma solidity ^0.4.13;
 
 import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
 
@@ -426,10 +423,9 @@ contract MyContract {
 
     registry = SimpleNameRegistry(addr);
   }
-}
-</code></pre>
+}</code></pre>
 <p>Migration: <code>3_hook_up_example_library.js</code></p>
-<pre><code class="lang-javascript">// Note that artifacts.require takes care of creating an abstraction for us.
+<pre><code class="language-javascript">// Note that artifacts.require takes care of creating an abstraction for us.
 var SimpleNameRegistry = artifacts.require(&quot;example-truffle-library/SimpleNameRegistry&quot;);
 
 module.exports = function(deployer) {
@@ -439,8 +435,7 @@ module.exports = function(deployer) {
   }).then(function(deployed) {
     return deployed.setRegistry(SimpleNameRegistry.address);
   });
-};
-</code></pre>
+};</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="before-publishing"></a>
@@ -448,8 +443,7 @@ module.exports = function(deployer) {
       Before publishing
     </h3>
   <p>When using a network like the default <code>develop</code> network that&#39;s configured to match any Ethereum client (like <a href="/ganache">Ganache</a> or Truffle Develop), you&#39;re bound to have network artifacts lying around that you don&#39;t want published. Before publishing your package, consider running the following command to remove any extraneous network artifacts:</p>
-<pre><code class="lang-shell">$ truffle networks --clean
-</code></pre>
+<pre><code class="language-shell">$ truffle networks --clean</code></pre>
 <p>See the <a href="/docs/advanced/commands#networks">command reference</a> for more information.</p>
 
 

@@ -14,13 +14,11 @@ core.</p>
 &lt;div class=&quot;step&quot; data-rel-x=&quot;1000&quot; data-rel-y=&quot;500&quot;&gt;
 
 &lt;!-- Position step 1000 px to the left and 750 px up from the step with id &quot;title&quot;. --&gt;
-&lt;div class=&quot;step&quot; data-rel-x=&quot;-1000&quot; data-rel-y=&quot;750&quot; data-rel-to=&quot;title&quot;&gt;
-</code></pre><p>Following html attributes are supported for step elements:</p>
+&lt;div class=&quot;step&quot; data-rel-x=&quot;-1000&quot; data-rel-y=&quot;750&quot; data-rel-to=&quot;title&quot;&gt;</code></pre><p>Following html attributes are supported for step elements:</p>
 <pre><code>data-rel-x
 data-rel-y
 data-rel-z
-data-rel-to
-</code></pre><p>Non-zero values are also inherited from the previous step. This makes it easy to 
+data-rel-to</code></pre><p>Non-zero values are also inherited from the previous step. This makes it easy to 
 create a boring presentation where each slide shifts for example 1000px down 
 from the previous.</p>
 <p>The above relative values are ignored, or set to zero, if the corresponding 
@@ -30,14 +28,12 @@ resetting the inheritance functionality.</p>
 define relative positions as a multiple of screen height and width, using
 a unit of &quot;h&quot; and &quot;w&quot;, respectively, appended to the number.</p>
 <p>Example:</p>
-<pre><code>&lt;div class=&quot;step&quot; data-rel-x=&quot;1.5w&quot; data-rel-y=&quot;1.5h&quot;&gt;
-</code></pre><p>Note that referencing a special step with the <code>data-rel-to</code> attribute is <em>limited to previous steps</em> to avoid the possibility of circular or offending positioning.
+<pre><code>&lt;div class=&quot;step&quot; data-rel-x=&quot;1.5w&quot; data-rel-y=&quot;1.5h&quot;&gt;</code></pre><p>Note that referencing a special step with the <code>data-rel-to</code> attribute is <em>limited to previous steps</em> to avoid the possibility of circular or offending positioning.
 If you need a reference to a step that is shown later make use of the goto plugin:</p>
 <pre><code>&lt;div id=&quot;shown-first&quot; class=&quot;step&quot; data-goto-next=&quot;shown-earlier&quot;&gt;
 &lt;div id=&quot;shown-later&quot; class=&quot;step&quot; data-goto-prev=&quot;shown-earlier&quot; data-goto-next=&quot;shown-last&quot;&gt;
 &lt;div id=&quot;shown-earlier&quot; class=&quot;step&quot; data-rel-to=&quot;shown-later&quot; data-rel-x=&quot;1000&quot; data-rel-y=&quot;500&quot; data-goto-prev=&quot;shown-first&quot; data-goto-next=&quot;shown-later&quot;&gt;
-&lt;div id=&quot;shown-last&quot; class=&quot;step&quot; data-goto-prev=&quot;shown-later&quot;&gt;
-</code></pre>
+&lt;div id=&quot;shown-last&quot; class=&quot;step&quot; data-goto-prev=&quot;shown-later&quot;&gt;</code></pre>
     <h2 class="link-markdown">
       <a class="anchor-target" name="important-incompatible-change"></a>
       <a href="#important-incompatible-change"><i class="fas fa-link"></i></a>
@@ -51,21 +47,20 @@ will inherit the value from the previous step. (The first step will inherit the 
 differently when using a version of impress.js that includes this plugin:</p>
 <pre><code>&lt;div class=&quot;step&quot; data-x=&quot;100&quot; data-y=&quot;100&quot; data-z=&quot;100&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;step&quot; data-x=&quot;100&quot; data-y=&quot;100&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;step&quot; data-x=&quot;100&quot; data-y=&quot;100&quot;&gt;&lt;/div&gt;
-</code></pre><p>To get the same rendering now, you need to add an explicit <code>data-z=&quot;0&quot;</code> to the second step:</p>
+&lt;div class=&quot;step&quot; data-x=&quot;100&quot; data-y=&quot;100&quot;&gt;&lt;/div&gt;</code></pre><p>To get the same rendering now, you need to add an explicit <code>data-z=&quot;0&quot;</code> to the second step:</p>
 <pre><code>&lt;div class=&quot;step&quot; data-x=&quot;100&quot; data-y=&quot;100&quot; data-z=&quot;100&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;step&quot; data-x=&quot;100&quot; data-y=&quot;100&quot; data-z=&quot;0&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;step&quot; data-x=&quot;100&quot; data-y=&quot;100&quot;&gt;&lt;/div&gt;
-</code></pre><p>Note that the latter code will render correctly also in old versions of impress.js.</p>
+&lt;div class=&quot;step&quot; data-x=&quot;100&quot; data-y=&quot;100&quot;&gt;&lt;/div&gt;</code></pre><p>Note that the latter code will render correctly also in old versions of impress.js.</p>
 <p>If you have an old presentation that doesn&#39;t use relative positioning, and for some reason you
 cannot or don&#39;t want to add the explicit 0 values where needed, your last resort is to simply
 remove the <code>rel.js</code> plugin completely. You can either:</p>
 <ul>
-<li>Remove <code>rel.js</code> from <a href="../../../build.js">/build.js</a> and recompile <code>impress.js</code> with: <code>npm build</code></li>
-<li>Just open [/js/impress.js] in an editor and delete the <code>rel.js</code> code.</li>
+<li><p>Remove <code>rel.js</code> from <a href="../../../build.js">/build.js</a> and recompile <code>impress.js</code> with: <code>npm build</code></p>
+</li>
+<li><p>Just open [/js/impress.js] in an editor and delete the <code>rel.js</code> code.</p>
+</li>
 <li><p>Or, just uncomment the following single line, which is the last line of the plugin:</p>
-<pre><code>  impress.addPreInitPlugin( rel );
-</code></pre></li>
+<pre><code>  impress.addPreInitPlugin( rel );</code></pre></li>
 </ul>
 
     <h2 class="link-markdown">

@@ -148,11 +148,9 @@
       Get the Beta Version
     </h2>
   <p>As this feature is in beta, you must first get the beta version of Truffle. To make sure the beta version doesn&#39;t conflict with the released version, first remove the Truffle version you have currently installed:</p>
-<pre><code class="lang-shell">$ npm uninstall -g truffle
-</code></pre>
+<pre><code class="language-shell">$ npm uninstall -g truffle</code></pre>
 <p>And then install the beta version:</p>
-<pre><code class="lang-shell">$ npm install -g truffle@beta
-</code></pre>
+<pre><code class="language-shell">$ npm install -g truffle@beta</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="overview"></a>
@@ -187,9 +185,8 @@
       Installing
     </h3>
   <p>For this example, we&#39;re going to use the <a href="https://github.com/ConsenSys/example-truffle-library">Example Truffle Library</a>, which provides a simple name registry that is deployed to the Morden test network. In order to use it as a dependency, we must first install it within our project through <code>npm</code>:</p>
-<pre><code class="lang-shell">$ cd my_project
-$ npm install example-truffle-library
-</code></pre>
+<pre><code class="language-shell">$ cd my_project
+$ npm install example-truffle-library</code></pre>
 <p>Note that the last command above downloads the package and places it in <code>my_project/node_modules</code> directory, which is important for the examples below. See the <a href="https://docs.npmjs.com/">npm documentation</a> for help using <code>npm</code> to install packages.</p>
 
     <h3 class="link-markdown">
@@ -198,8 +195,7 @@ $ npm install example-truffle-library
       Within Your Contracts
     </h3>
   <p>To use a package&#39;s contracts within your contracts, this can be as simple as Solidity&#39;s <a href="http://solidity.readthedocs.io/en/develop/layout-of-source-files.html?#importing-other-source-files">import</a> statement. When your import path isn&#39;t explicitly relative or absolute, this signifies to Truffle that you&#39;re looking for a file from a specific named package. Consider this example using the Example Truffle Library mentioned above:</p>
-<pre><code class="lang-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
-</code></pre>
+<pre><code class="language-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;</code></pre>
 <p>Since the path didn&#39;t start with <code>./</code>, Truffle knows to look in your project&#39;s <code>node_modules</code> directory for the <code>example-truffle-library</code> folder. From there, it resolves the path to provide you the contract you requested.</p>
 
     <h3 class="link-markdown">
@@ -208,8 +204,7 @@ $ npm install example-truffle-library
       Within Javascript Code
     </h3>
   <p>To interact with package&#39;s contracts within Javascript code, you simply need to <code>require</code> that package&#39;s <code>.sol.js</code> files like so:</p>
-<pre><code class="lang-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
-</code></pre>
+<pre><code class="language-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);</code></pre>
 <p>These files are provided by <a href="https://github.com/ConsenSys/ether-pudding">EtherPudding</a>, which Truffle uses internally. See EtherPudding&#39;s documentation for more information.</p>
 
     <h3 class="link-markdown">
@@ -219,7 +214,7 @@ $ npm install example-truffle-library
     </h3>
   <p>Sometimes you want your contracts to interact with the package&#39;s previously deployed contracts. Since the deployed addresses exist within the package&#39;s <code>.sol.js</code> files, you must perform an extra step to get those addresses into your contracts. To do so, make your contract accept the address of the dependency contract, and then use migrations. The following is an example contract that exists within your project as well as an example migration:</p>
 <p>Contract: MyContract.sol</p>
-<pre><code class="lang-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
+<pre><code class="language-solidity">import &quot;example-truffle-library/contracts/SimpleNameRegistry.sol&quot;;
 
 contract MyContract {
   SimpleNameRegistry registry;
@@ -240,18 +235,16 @@ contract MyContract {
 
     registry = SimpleNameRegistry(addr);
   }
-}
-</code></pre>
+}</code></pre>
 <p>Migration: 3_hook_up_example_library.js</p>
-<pre><code class="lang-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
+<pre><code class="language-javascript">var SimpleNameRegistry = require(&quot;example-truffle-library/build/contracts/SimpleNameRegistry.sol.js&quot;);
 
 module.exports = function(deployer) {
   // Deploy our contract, then set the address of the registry.
   deployer.deploy(MyContract).then(function() {
     MyContract.deployed().setRegistry(SimpleNameRegistry.address);
   });
-};
-</code></pre>
+};</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="recommendation-use-the-testrpc"></a>
@@ -259,7 +252,7 @@ module.exports = function(deployer) {
       Recommendation: Use the TestRPC
     </h2>
   <p class="alert alert-info">
-<strong>Update</strong>: Since this tutorial was published, we have released <a href="/ganache">Ganache</a> a personal blockchain and a replacement to the TestRPC. We have left this tutorial unaltered, but we highly recommend checking out our <a href="/docs/ganache/using">Working with Ganache</a> page.
+**Update**: Since this tutorial was published, we have released [Ganache](/ganache) a personal blockchain and a replacement to the TestRPC. We have left this tutorial unaltered, but we highly recommend checking out our [Working with Ganache](/docs/ganache/using) page.
 </p>
 
 <p>The <a href="https://github.com/ethereumjs/testrpc">ethereumjs-testrpc</a> is wildly useful for packages that were previously deployed to the live network. The TestRPC includes a <code>--fork</code> feature which allows you to fork from the main chain while developing your application. What this means for you is that you can develop and test against packages that are deployed live, using <strong>real data</strong>, without having to worry about deploying your dependency&#39;s contracts yourself.</p>

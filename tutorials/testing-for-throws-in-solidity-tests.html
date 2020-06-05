@@ -141,8 +141,9 @@
       <div class="row justify-content-center">
         <div class="col">
           <p><br/><p class="alert alert-warning" style="margin-top: -2rem; margin-bottom: 3rem;">
-  <strong>NOTE</strong>: This tutorial is written for versions of Solidity prior to v0.4.13. It relies on the deprecated <code>throw</code> keyword, now replaced by <code>revert()</code>, <code>require()</code>, and <code>assert()</code>. See Solidity documentation for <a href="http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require#error-handling-assert-require-revert-and-exceptions">error handling</a> for more information.
-</p></p>
+  <strong>NOTE</strong>: This tutorial is written for versions of Solidity prior to v0.4.13. It relies on the deprecated <code>throw</code> keyword, now replaced by <code>revert()</code>, <code>require()</code>, and <code>assert()</code>. See Solidity documentation for <a href="http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require#error-handling-assert-require-revert-and-exceptions">error handling</a> for more information.</p>
+</p>
+
 <p>Truffle 3 brings forth Solidity unit testing, which means one can now test contracts in Solidity itself. This is a boon to contract developers, as there are several reasons why it&#39;s useful to have Solidity tests in addition to Truffle’s Javascript tests. For us at <a href="https://ujomusic.com/">Ujo</a>, one of our biggest concerns is testing how contracts interact with each other, rather than just testing their interaction from a web3 perspective, and Solidity tests allow us to do that.</p>
 <p>Though Solidity tests can be quite powerful, they do come with some drawbacks. One of those is testing whether or not a function should <code>throw</code> (without breaking the test!), which I&#39;ll show you how to do right now.</p>
 
@@ -152,17 +153,16 @@
       Diving In
     </h2>
   <p>In Solidity, when performing a contract call that produces an error, Solidity automatically rethrows, meaning it will bubble that error up to the caller. However, with a <em>raw</em> call, the behavior is different: one can catch the error and decide what to do from there on out. If it throws (fails), it will return <code>false</code>. If it succeeds, it will return <code>true</code>. Thus, the following calls will produce a different result.</p>
-<pre><code class="lang-solidity">// Returns false
+<pre><code class="language-solidity">// Returns false
 bool result = address.call(bytes4(bytes32(sha3(“functionThatThrows()”))));
 
 // Returns true
-bool result = address.call(bytes4(bytes32(sha3(“functionThatDoesNotThrow()”))));
-</code></pre>
+bool result = address.call(bytes4(bytes32(sha3(“functionThatDoesNotThrow()”))));</code></pre>
 <p>When calls are made this way, even if a sub-call fails, it won’t automatically rethrow.</p>
 <p>In order to test for throws, one can either write out each call in the format above (which is cumbersome), or use a proxy contract to wrap the contract call to a raw call and return whether it succeeded or not.</p>
 <p>For our purposes, let&#39;s look at the example below, similar to a method I saw used by Dapple in a Tester contract. Note that these contracts will likely be placed in separate files within your Truffle project. Here, <code>Thrower</code> is the contract you&#39;re testing to see whether or not certain contracts <code>throw</code>, <code>ThrowProxy</code> is our helper and <code>TestThrower</code> is our test contract.</p>
 <p>The code is as follows:</p>
-<pre><code class="lang-solidity">import &quot;truffle/Assert.sol&quot;;
+<pre><code class="language-solidity">import &quot;truffle/Assert.sol&quot;;
 
 // Proxy contract for testing throws
 contract ThrowProxy {
@@ -209,11 +209,9 @@ contract TestThrower {
 
     Assert.isFalse(r, “Should be false, as it should throw”);
   }
-}
-</code></pre>
+}</code></pre>
 <p>Perhaps the most interesting line is the following:</p>
-<pre><code class="lang-solidity">Thrower(address(throwProxy)).doThrow();
-</code></pre>
+<pre><code class="language-solidity">Thrower(address(throwProxy)).doThrow();</code></pre>
 <p>This is telling Solidity to call the <code>doThrow()</code> function at the <code>throwProxy</code> address. Solidity automatically creates the necessary message data (<code>msg.data</code>) based on this call. Writing it like this, one would assume that at <code>throwProxy</code> there <em>is</em> a Thrower contract, but there isn’t. There&#39;s a proxy instead. The proxy then receives the msg data, and since it doesn’t have a <code>doThrow()</code> function, the fallback function is triggered in its place.</p>
 <p>The fallback function then saves the message data. After that, when executing the proxy, it then forwards the request onwards as a raw call, not a contract call. Since the <code>throw</code> would use up all the gas, the rest of the tests would legitimately OOG, so we restrict the gas sent through when calling the <code>execute()</code> method. Note that enough should be sent through so that it doesn’t OOG legitimately and thus miss the actual throw condition.</p>
 <p>With this proxy, one can still effectively write the interactions as contracts calling other contracts without having to resort to crafting raw calls manually. (Hooray!)</p>
@@ -224,7 +222,7 @@ contract TestThrower {
       Gotchas
     </h2>
   <p>An important caveat here is to recognize the contract caller, <code>msg.sender</code>. If you add a proxy in between, then <code>msg.sender</code> will be the proxy, which could break authorization and permissioning algorithms. If your authorization system allows you to change the owner, you can get around this constraint by setting the proxy to be the contract owner. For example:</p>
-<pre><code class="lang-solidity">// Assume our contract under test has a changeOwner() function
+<pre><code class="language-solidity">// Assume our contract under test has a changeOwner() function
 thrower.changeOwner(address(throwProxy));
 
 // Perform test functions and assertions
@@ -232,12 +230,10 @@ thrower.changeOwner(address(throwProxy));
 
 // Restore previous owner
 Thrower(address(throwProxy)).changeOwner(address(this));
-throwProxy.execute();
-</code></pre>
+throwProxy.execute();</code></pre>
 <p>It’s also important to know that this only tests <code>throw</code>&#39;s at this particular level. For instance, if your contract call structure looked like the following:</p>
-<pre><code>Test -&gt; Proxy -&gt; ContractToTest -&gt; SomeOtherContract -&gt; AnotherContractThatThrows
-</code></pre><p>Then you wouldn’t know where the <code>throw</code> occurred, since SomeOtherContract and ContractToTest could just rethrow.</p>
-<p>It would be prudent to also ensure there isn’t anything faulty in the proxy by creating a second test as a control. This test should be called with the appropriate gas and use the proxy to test a function where _no_ <code>throw</code> occurs, just to make sure the proxy is setup and working as intended.</p>
+<pre><code>Test -&gt; Proxy -&gt; ContractToTest -&gt; SomeOtherContract -&gt; AnotherContractThatThrows</code></pre><p>Then you wouldn’t know where the <code>throw</code> occurred, since SomeOtherContract and ContractToTest could just rethrow.</p>
+<p>It would be prudent to also ensure there isn’t anything faulty in the proxy by creating a second test as a control. This test should be called with the appropriate gas and use the proxy to test a function where <em>no</em> <code>throw</code> occurs, just to make sure the proxy is setup and working as intended.</p>
 <p>Because a <code>throw</code> essentially uses up all gas, one must make doubly sure they catch the <code>throw</code> and <strong>not</strong> a legitimate out-of-gas (OOG) error. As well, take care to manage sending Ether through the proxy (for tests that require it) as that can be difficult as well.</p>
 
     <h2 class="link-markdown">

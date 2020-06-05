@@ -175,7 +175,7 @@
       Building a Truffle-Based Deployment Tool
     </h2>
   <p>The first question is what the configuration file should look like? We determined the &quot;Straw Man&quot; to be, simply, a two-dimensional list of job types and associated contracts specified for deployment. Starting with this, we found another concept we needed to add (&quot;custom-partition&quot;) that is specific to Axcore, relating to the way the node software provisions data across network partitions; certain contracts are provisioned differently from others. In addition to this, we found that the only other concept we needed was a parameter specifying dependencies (&quot;deps&quot;) that linearizes to a certain order to deployment (which may be necessary, for instance, if a given storage address stores reference to another). For concision, we added limited regex support. In the end, we arrived at a yaml-based file looking very much like the below:</p>
-<pre><code class="lang-yaml">version: 0.0.1
+<pre><code class="language-yaml">version: 0.0.1
 setup:
     partitions:
         - custom-partition: *
@@ -190,10 +190,9 @@ upgrade:
         - custom-partition: &quot;*&quot;
     contracts:
         - name: MagmaRegistryFoo
-        - name: MagmaRegistryBar
-</code></pre>
+        - name: MagmaRegistryBar</code></pre>
 <p>In terms of implementation, a truffle exec script reads this configuration file, and for each contract, a) deploys the contract b) performs some basic API configuration and c) installs it in the application through invoking a basic <code>initialization</code> method. The basic top-level run (truffle exec) script looks very much like the below:</p>
-<pre><code class="lang-javascript">const run = async (done) =&gt; {
+<pre><code class="language-javascript">const run = async (done) =&gt; {
     let jobParams = args;
 
         // Configure specific variables for a PROD-like environment:
@@ -211,11 +210,9 @@ upgrade:
         //Run job by deploying and invoking an initialization method on each contract
     await jobInstance.run().catch(e =&gt; done(e));
     done();
-};
-</code></pre>
+};</code></pre>
 <p>A command-line client can specify a given job to run, such as the &quot;upgrade&quot; job specified above. Given the above configuration, the below command would deploy (if necessary) and initialize &quot;MagmaRegistryFooStorage&quot;, followed by &quot;MagmaRegistryBarStorage&quot; from a given artifacts repository:</p>
-<pre><code class="lang-bash">etna --job upgrade --contracts_build_directory /path/to/artifacts
-</code></pre>
+<pre><code class="language-bash">etna --job upgrade --contracts_build_directory /path/to/artifacts</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="future-plans-and-an-announcement"></a>

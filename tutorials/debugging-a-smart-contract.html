@@ -145,7 +145,9 @@
 </p>
 
 <!-- TODO: How is the gas limit set? When/how does an out of gas error occur? -->
+
 <!-- TODO: Link to docs -->
+
 <p>A smart contract in Ethereum is just code. Unlike the &quot;paper&quot; contracts that you find elsewhere, this contract needs to make sense in a very precise manner.</p>
 <p>(And that&#39;s a good thing. Imagine how much clearer real-world contracts would be if they needed to &quot;compile&quot;?)</p>
 <p>If our contracts are not coded correctly, our transactions may fail, which can result in the loss of ether (in the form of gas), not to mention wasted time and effort.</p>
@@ -158,7 +160,7 @@
       A basic smart contract
     </h2>
   <p>One of the most basic, non-trivial, types of smart contract is a <strong>simple storage contract</strong>. (This example was adapted from the <a href="https://solidity.readthedocs.io/en/develop/introduction-to-smart-contracts.html">Solidity documentation</a>.)</p>
-<pre><code class="lang-solidity">pragma solidity ^0.4.17;
+<pre><code class="language-solidity">pragma solidity ^0.4.17;
 
 contract SimpleStorage {
   uint myVariable;
@@ -170,8 +172,7 @@ contract SimpleStorage {
   function get() constant public returns (uint) {
     return myVariable;
   }
-}
-</code></pre>
+}</code></pre>
 <p>This contract does two things:</p>
 <ul>
 <li>Allows you to set a variable (<code>myVariable</code>) to a particular integer value</li>
@@ -187,17 +188,15 @@ contract SimpleStorage {
     </h2>
   <ol>
 <li><p>Create a new directory where we will house our contract locally:</p>
-<pre><code class="lang-shell">mkdir simple-storage
-cd simple-storage
-</code></pre>
+<pre><code class="language-shell">mkdir simple-storage
+cd simple-storage</code></pre>
 </li>
 <li><p>Create a bare Truffle project:</p>
-<pre><code class="lang-shell">truffle init
-</code></pre>
+<pre><code class="language-shell">truffle init</code></pre>
 <p>This will create directories such as <code>contracts/</code> and <code>migrations/</code>, and populate them with files we will use when we deploy our contract to the blockchain.</p>
 </li>
 <li><p>Inside the <code>contracts/</code> directory, create a file called <code>Store.sol</code> with the following content:</p>
-<pre><code class="lang-solidity">pragma solidity ^0.4.17;
+<pre><code class="language-solidity">pragma solidity ^0.4.17;
 
 contract SimpleStorage {
   uint myVariable;
@@ -209,33 +208,28 @@ contract SimpleStorage {
   function get() constant public returns (uint) {
     return myVariable;
   }
-}
-</code></pre>
+}</code></pre>
 <p>This is the contract that we will be debugging. While the full details of this file are beyond the scope of this tutorial, note that there is a contract named <code>SimpleStorage</code> that contains a numeric variable <code>myVariable</code> and two functions: <code>set()</code> and <code>get()</code>. The first function stores a value in that variable and the second queries that value.</p>
 </li>
 <li><p>Inside the <code>migrations/</code> directory, create a file called <code>2_deploy_contracts.js</code> and populate it with the following content:</p>
-<pre><code class="lang-javascript">var SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
+<pre><code class="language-javascript">var SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
 
 module.exports = function(deployer) {
   deployer.deploy(SimpleStorage);
-};
-</code></pre>
+};</code></pre>
 <p>This file is the directive that allows us to deploy the <code>SimpleStorage</code> contract to the blockchain.</p>
 </li>
 <li><p>On the terminal, compile the smart contract:</p>
-<pre><code class="lang-shell">truffle compile
-</code></pre>
+<pre><code class="language-shell">truffle compile</code></pre>
 </li>
 <li><p>Open a second terminal and run <code>truffle develop</code> to start a development blockchain built directly into Truffle that we can use to test our contract:</p>
-<pre><code class="lang-shell">truffle develop
-</code></pre>
+<pre><code class="language-shell">truffle develop</code></pre>
 <p>The console will display a prompt <code>truffle(develop)&gt;</code>. From here, unless otherwise specified, all commands will be typed on this prompt.</p>
 </li>
 <li><p>With the develop console up and running, we can now deploy our contracts to the blockchain by running our migrations:</p>
-<pre><code class="lang-shell">migrate
-</code></pre>
+<pre><code class="language-shell">migrate</code></pre>
 <p>The response should look something like below, though the specific IDs will differ:</p>
-<pre><code class="lang-shell"> Running migration: 1_initial_migration.js
+<pre><code class="language-shell"> Running migration: 1_initial_migration.js
    Replacing Migrations...
    ... 0xe4f911d95904c808a81f28de1e70a377968608348b627a66efa60077a900fb4c
    Migrations: 0x3ed10fd31b3fbb2c262e6ab074dd3c684b8aa06b
@@ -248,8 +242,7 @@ module.exports = function(deployer) {
    SimpleStorage: 0x377bbcae5327695b32a1784e0e13bedc8e078c9c
  Saving successful migration to network...
    ... 0x6e25158c01a403d33079db641cb4d46b6245fd2e9196093d9e5984e45d64a866
- Saving artifacts...
-</code></pre>
+ Saving artifacts...</code></pre>
 </li>
 </ol>
 
@@ -261,23 +254,20 @@ module.exports = function(deployer) {
   <p>The smart contract is now deployed to a test network via <code>truffle develop</code>, which launches a <a href="/docs/getting_started/console">console</a> against <a href="/ganache">Ganache</a>, a local development blockchain built right into Truffle.</p>
 <p>We next want to interact with the smart contract to see how it works when working correctly. We&#39;ll interact using the <code>truffle develop</code> console.</p>
 <p class="alert alert-info">
-<strong>Note</strong>: If you&#39;re wondering why we didn&#39;t need to mine to get the transaction to be secured, the Truffle Develop console already takes care of that for us. If using a different network, you&#39;ll need to make sure you mine to get the transaction on the blockchain.
+<strong>Note</strong>: If you're wondering why we didn't need to mine to get the transaction to be secured, the Truffle Develop console already takes care of that for us. If using a different network, you'll need to make sure you mine to get the transaction on the blockchain.
 </p>
 
 <ol>
 <li><p>In the console where <code>truffle develop</code> is running, run the following command:</p>
-<pre><code class="lang-javascript">SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
-</code></pre>
+<pre><code class="language-javascript">SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});</code></pre>
 <p>This command looks at the SimpleStorage contract, and then calls the <code>get()</code> function as defined inside it. It then returns the output, which is usually rendered as a string, and converts it to a number:</p>
-<pre><code class="lang-javascript">0
-</code></pre>
+<pre><code class="language-javascript">0</code></pre>
 <p>This shows us that our variable, <code>myVariable</code>, is set to <code>0</code>, even though we haven&#39;t set this variable to any value (yet). This is because <strong>variables with integer types are automatically populated with the value of zero in Solidity</strong>, unlike other languages where it might be <code>NULL</code> or <code>undefined</code>.</p>
 </li>
 <li><p>Now let&#39;s run a transaction on our contract. We&#39;ll do this by running the <code>set()</code> function, where we can set our variable value to some other integer. Run the following command:</p>
-<pre><code class="lang-javascript">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
-</code></pre>
+<pre><code class="language-javascript">SimpleStorage.deployed().then(function(instance){return instance.set(4);});</code></pre>
 <p>This sets the variable to <code>4</code>. The output shows some information about the transaction, including the transaction ID (hash), transaction receipt,  and any event logs that were triggered during the course of the transaction:</p>
-<pre><code class="lang-javascript"> { tx: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
+<pre><code class="language-javascript"> { tx: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
    receipt:
     { transactionHash: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
       transactionIndex: 0,
@@ -287,19 +277,16 @@ module.exports = function(deployer) {
       cumulativeGasUsed: 41577,
       contractAddress: null,
       logs: [] },
-   logs: [] }
-</code></pre>
+   logs: [] }</code></pre>
 <p>Most important to us is the transaction ID (listed here both as <code>tx</code> and as <code>transactionHash</code>). We&#39;ll need to copy that value when we start to debug.</p>
 <p class="alert alert-info">
 <strong>Note</strong>: Your transaction IDs will likely be different from what is listed here.
 </p>
 </li>
 <li><p>To verify that the variable has changed values, run the <code>get()</code> function again:</p>
-<pre><code class="lang-javascript">SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
-</code></pre>
+<pre><code class="language-javascript">SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});</code></pre>
 <p>The output should look like this:</p>
-<pre><code class="lang-javascript">4
-</code></pre>
+<pre><code class="language-javascript">4</code></pre>
 </li>
 </ol>
 
@@ -335,12 +322,11 @@ module.exports = function(deployer) {
 <li><p>Open <code>Store.sol</code> from the <code>contracts/</code> directory in a text editor.</p>
 </li>
 <li><p>Replace the <code>set()</code> function with the following:</p>
-<pre><code class="lang-solidity">function set(uint x) public {
+<pre><code class="language-solidity">function set(uint x) public {
   while(true) {
     myVariable = x;
   }
-}
-</code></pre>
+}</code></pre>
 <p>This function will never terminate, because of the <code>while(true)</code> conditional.</p>
 </li>
 </ol>
@@ -353,29 +339,24 @@ module.exports = function(deployer) {
   <p>The Truffle Develop console has the ability to migrate updated contracts without the need to exit and restart the console. And since the <code>migrate</code> command can compile and migrate in one step, we can reset our contract on the blockchain in one step.</p>
 <ol>
 <li><p>In the Truffle Develop console, update the contract:</p>
-<pre><code class="lang-shell">migrate --reset
-</code></pre>
+<pre><code class="language-shell">migrate --reset</code></pre>
 <p>You will see both the compiler output and the migration output.</p>
 </li>
 <li><p>In order to facilitate error hunting, we will open a second console with logging. This will allow us to, for example, see transaction IDs when a transaction fails. In another terminal window, run the following command:</p>
-<pre><code class="lang-shell">truffle develop --log
-</code></pre>
+<pre><code class="language-shell">truffle develop --log</code></pre>
 <p>Leave that window for now and return to the first console.</p>
 </li>
 <li><p>Now we are ready to run that transaction. Run the <code>set()</code> command from above.</p>
-<pre><code class="lang-javascript">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
-</code></pre>
+<pre><code class="language-javascript">SimpleStorage.deployed().then(function(instance){return instance.set(4);});</code></pre>
 <p>An error will display:</p>
-<pre><code>Error: VM Exception while processing transaction: out of gas
-</code></pre><p>Moreover, in the console with the logs, you will see more information:</p>
-<pre><code class="lang-shell"> develop:testrpc eth_sendTransaction +0ms
+<pre><code>Error: VM Exception while processing transaction: out of gas</code></pre><p>Moreover, in the console with the logs, you will see more information:</p>
+<pre><code class="language-shell"> develop:testrpc eth_sendTransaction +0ms
  develop:testrpc  +1s
  develop:testrpc   Transaction: 0xe493340792ab92b95ac40e43dca6bc88fba7fd67191989d59ca30f79320e883f +2ms
  develop:testrpc   Gas usage: 4712388 +11ms
  develop:testrpc   Block Number: 6 +15ms
  develop:testrpc   Runtime Error: out of gas +0ms
- develop:testrpc  +16ms
-</code></pre>
+ develop:testrpc  +16ms</code></pre>
 </li>
 </ol>
 <p>With our failure and our transaction ID, we can now debug the transaction.</p>
@@ -388,8 +369,7 @@ module.exports = function(deployer) {
   <p>Truffle contains a built-in debugger. The command to launch this is <code>debug &lt;Transaction ID&gt;</code> from the Truffle Develop console, or <code>truffle debug &lt;Transaction ID&gt;</code> from the terminal. Let&#39;s launch this now.</p>
 <ol>
 <li><p>In the Truffle Develop console, copy the transaction ID from the logs console and paste it as the argument in the <code>debug</code> command:</p>
-<pre><code class="lang-shell">debug 0xe493340792ab92b95ac40e43dca6bc88fba7fd67191989d59ca30f79320e883f
-</code></pre>
+<pre><code class="language-shell">debug 0xe493340792ab92b95ac40e43dca6bc88fba7fd67191989d59ca30f79320e883f</code></pre>
 <p class="alert alert-info">
 <strong>Note</strong>: Again, your transaction ID will be different from what is listed here.
 </p>
@@ -398,7 +378,7 @@ module.exports = function(deployer) {
 </li>
 </ol>
 <p>   You will see the following output:</p>
-<pre><code class="lang-solidity">   Gathering transaction data...
+<pre><code class="language-solidity">   Gathering transaction data...
 
    Addresses affected:
      0x377bbcae5327695b32a1784e0e13bedc8e078c9c - SimpleStorage
@@ -415,32 +395,29 @@ module.exports = function(deployer) {
    3: contract SimpleStorage {
       ^^^^^^^^^^^^^^^^^^^^^^^
 
-   debug(develop:0xe4933407...)&gt;
-</code></pre>
+   debug(develop:0xe4933407...)&gt;</code></pre>
 <p>   This is an interactive console. You can use the commands listed to interact with the code in different ways.</p>
 <ol>
 <li><p>The most common way to interact with the code is to &quot;step next&quot;, which steps through the code one instruction at a time. Do this by pressing <code>Enter</code> or <code>n</code>:</p>
 <p>The output is as follows:</p>
-<pre><code class="lang-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+<pre><code class="language-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 4:   uint myVariable;
 5:
 6: function set(uint x) public {
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-</code></pre>
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^</code></pre>
 <p>Notice that the program has moved to the next instruction, located on line 6. (The carets point to the exact part of the instruction taking place.)</p>
 </li>
 <li><p>Press <code>Enter</code> again to step to the next instruction:</p>
-<pre><code class="lang-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+<pre><code class="language-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 5:
 6: function set(uint x) public {
 7:   while(true) {
-     ^^^^^^^^^^^^
-</code></pre>
+     ^^^^^^^^^^^^</code></pre>
 </li>
 <li><p>Keep pressing Enter:</p>
-<pre><code class="lang-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+<pre><code class="language-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 5:
 6: function set(uint x) public {
@@ -490,8 +467,7 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 5:
 6: function set(uint x) public {
 7:   while(true) {
-     ^^^^^^^^^^^^
-</code></pre>
+     ^^^^^^^^^^^^</code></pre>
 <p>Notice that the steps eventually repeat. In fact, pressing <code>Enter</code> over and over will repeat those transactions forever (or at least until the transaction runs out of gas). <strong>This tells you where the problem is.</strong></p>
 </li>
 <li><p>Type <code>q</code> to exit the debugger.</p>
@@ -515,11 +491,10 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 <li><p>Open <code>Store.sol</code> again.</p>
 </li>
 <li><p>Replace the <code>set()</code> function with the following:</p>
-<pre><code class="lang-solidity">function set(uint x) public {
+<pre><code class="language-solidity">function set(uint x) public {
   assert(x == 0);
   myVariable = x;
-}
-</code></pre>
+}</code></pre>
 <p>This is the same as the original version, but with an <code>assert()</code> function added, testing to make sure that <code>x == 0</code>. This will be fine until we set that value to something else, and then we&#39;ll have a problem.</p>
 </li>
 </ol>
@@ -532,15 +507,12 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
   <p>Just as before, we&#39;ll reset the contract on the blockchain.</p>
 <ol>
 <li><p>In the Truffle Develop console, reset the contract on the blockchain to its initially deployed state:</p>
-<pre><code class="lang-shell">migrate --reset
-</code></pre>
+<pre><code class="language-shell">migrate --reset</code></pre>
 </li>
 <li><p>Now we are ready to test the new transaction. Run the same command as above:</p>
-<pre><code class="lang-javascript">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
-</code></pre>
+<pre><code class="language-javascript">SimpleStorage.deployed().then(function(instance){return instance.set(4);});</code></pre>
 <p>You will see an error:</p>
-<pre><code>Error: VM Exception while processing transaction: invalid opcode
-</code></pre><p>This means that we have a problem on our hands.</p>
+<pre><code>Error: VM Exception while processing transaction: invalid opcode</code></pre><p>This means that we have a problem on our hands.</p>
 </li>
 <li><p>In the log window, note the transaction ID with that error.</p>
 </li>
@@ -553,8 +525,7 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
     </h4>
   <ol>
 <li><p>Copy the transaction ID and use it as an argument to the <code>debug</code> command:</p>
-<pre><code class="lang-shell">debug 0xe493340792ab92b95ac40e43dca6bc88fba7fd67191989d59ca30f79320e883f
-</code></pre>
+<pre><code class="language-shell">debug 0xe493340792ab92b95ac40e43dca6bc88fba7fd67191989d59ca30f79320e883f</code></pre>
 <p class="alert alert-info">
 <strong>Note</strong>: Again, your transaction ID will be different from what is listed here.
 </p>
@@ -563,18 +534,17 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 </li>
 </ol>
 <p>   Now we are back in the debugger:</p>
-<pre><code class="lang-solidity">   Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+<pre><code class="language-solidity">   Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
    1: pragma solidity ^0.4.17;
    2:
    3: contract SimpleStorage {
       ^^^^^^^^^^^^^^^^^^^^^^^
 
-   debug(develop:0xe4933407...)&gt;
-</code></pre>
+   debug(develop:0xe4933407...)&gt;</code></pre>
 <ol>
 <li><p>Press <code>Enter</code> a few times to step through the code. Eventually, the debugger will halt with an error message:</p>
-<pre><code class="lang-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+<pre><code class="language-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 5:
 6:   function set(uint x) public {
@@ -588,8 +558,7 @@ Transaction halted with a RUNTIME ERROR.
 This is likely due to an intentional halting expression, like
 assert(), require() or revert(). It can also be due to out-of-gas
 exceptions. Please inspect your transaction parameters and
-contract code to determine the meaning of this error.
-</code></pre>
+contract code to determine the meaning of this error.</code></pre>
 <p><strong>It is this last event that is triggering the error.</strong> You can see that it is the <code>assert()</code> that is to blame.</p>
 </li>
 </ol>
@@ -612,7 +581,7 @@ contract code to determine the meaning of this error.
 <li><p>Open <code>Store.sol</code> again.</p>
 </li>
 <li><p>Replace the <code>set()</code> function with the following:</p>
-<pre><code class="lang-solidity">event Odd();
+<pre><code class="language-solidity">event Odd();
 
 event Even();
 
@@ -623,8 +592,7 @@ function set(uint x) public {
   } else {
     Even();
   }
-}
-</code></pre>
+}</code></pre>
 <p>This code introduces two dummy events, <code>Odd()</code> and <code>Even()</code> that are triggered based on a conditional that checks whether <code>x</code> is divisible by <code>2</code>.</p>
 <p>But notice that we have the results flipped. If <code>x</code> is divisible by <code>2</code>, the <code>Odd()</code> event will run.</p>
 </li>
@@ -638,15 +606,13 @@ function set(uint x) public {
   <p>Just as before, we&#39;ll reset the contract on the blockchain.</p>
 <ol>
 <li><p>In the Truffle Develop console, update the contract:</p>
-<pre><code class="lang-shell">migrate --reset
-</code></pre>
+<pre><code class="language-shell">migrate --reset</code></pre>
 <p>You will see both the compiler output and the migration output.</p>
 </li>
 <li><p>Now we are ready to test the new transaction. Run the same command as above:</p>
-<pre><code class="lang-javascript">SimpleStorage.deployed().then(function(instance){return instance.set(4);});
-</code></pre>
+<pre><code class="language-javascript">SimpleStorage.deployed().then(function(instance){return instance.set(4);});</code></pre>
 <p><strong>Note that there is no error here.</strong> The response is given as a transaction ID with details:</p>
-<pre><code class="lang-javascript">{ tx: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
+<pre><code class="language-javascript">{ tx: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
   receipt:
    { transactionHash: &#39;0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42&#39;,
      transactionIndex: 0,
@@ -665,8 +631,7 @@ function set(uint x) public {
        address: &#39;0x377bbcae5327695b32a1784e0e13bedc8e078c9c&#39;,
        type: &#39;mined&#39;,
        event: &#39;Odd&#39;,
-       args: {} } ] }
-</code></pre>
+       args: {} } ] }</code></pre>
 <p>But notice the logs of the transaction show the event <code>Odd</code>. That&#39;s wrong, and so our job is to find out why that&#39;s being invoked.</p>
 </li>
 </ol>
@@ -678,8 +643,7 @@ function set(uint x) public {
     </h4>
   <ol>
 <li><p>Copy that transaction ID and use it as an argument with the <code>debug</code> command:</p>
-<pre><code class="lang-shell">debug 0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42
-</code></pre>
+<pre><code class="language-shell">debug 0x7f799ad56584199db36bd617b77cc1d825ff18714e80da9d2d5a0a9fff5b4d42</code></pre>
 <p class="alert alert-info">
 <strong>Note</strong>: Again, your transaction ID will be different from what is listed here.
 </p>
@@ -687,7 +651,7 @@ function set(uint x) public {
 <p>You will enter the debugger as before.</p>
 </li>
 <li><p>Press <code>Enter</code> multiple times to cycle through the steps. Eventually you will see that the conditional leads to the <code>Odd()</code> event:</p>
-<pre><code class="lang-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
+<pre><code class="language-solidity">Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 
 10:   function set(uint x) public {
 11:     myVariable = x;
@@ -703,8 +667,7 @@ Store.sol | 0x377bbcae5327695b32a1784e0e13bedc8e078c9c:
 13:       Odd();
           ^^^^^
 
-debug(develop:0x7f799ad5...)&gt;
-</code></pre>
+debug(develop:0x7f799ad5...)&gt;</code></pre>
 <p><strong>The problem is revealed.</strong> The conditional is leading to the wrong event.</p>
 </li>
 </ol>

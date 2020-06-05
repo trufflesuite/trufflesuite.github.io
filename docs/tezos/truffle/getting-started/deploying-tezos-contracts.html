@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -206,7 +206,7 @@
           </aside>      
         <div class="col-lg-9 bd-light-cream docs-content">
           <p class="alert alert-danger">
-<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by <a href="https://github.com/trufflesuite/truffle/issues">filing issues on Github</a>.
+<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by [filing issues on Github](https://github.com/trufflesuite/truffle/issues).
 </p>
 
 
@@ -238,8 +238,7 @@
       Command
     </h2>
   <p>To run your migrations, run the following:</p>
-<pre><code class="lang-shell">$ truffle migrate
-</code></pre>
+<pre><code class="language-shell">$ truffle migrate</code></pre>
 <p>This will run all migrations located within your project&#39;s <code>migrations</code> directory. At their simplest, migrations are simply a set of managed deployment scripts.</p>
 
     <h2 class="link-markdown">
@@ -249,13 +248,12 @@
     </h2>
   <p>A simple migration file looks like this:</p>
 <p>Filename: <code>4_example_migration.js</code></p>
-<pre><code class="lang-javascript">var MyContract = artifacts.require(&quot;MyContract&quot;);
+<pre><code class="language-javascript">var MyContract = artifacts.require(&quot;MyContract&quot;);
 
 module.exports = (deployer) =&gt; {
   // deployment steps
   deployer.deploy(MyContract);
-};
-</code></pre>
+};</code></pre>
 <p>Note that the filename is prefixed with a number and is suffixed by a description. The numbered prefix is required to tell Truffle which order to run the scripts. The suffix is purely for human readability and comprehension.</p>
 
     <h3 class="link-markdown">
@@ -267,10 +265,8 @@ module.exports = (deployer) =&gt; {
 <p>Consider this example where two contracts are specified within the same source file:</p>
 <p>Filename: <code>./contracts/SimpleStorage.ligo</code></p>
 <pre><code>function main (const newValue : int;  const storedValue : int) : (list(operation) * int) is
-  block { storedValue := newValue } with ((nil : list(operation)), storedValue)
-</code></pre><p>To interact with this contract, in your deployment script, you&#39;d use <code>artifacts.require()</code> like so:</p>
-<pre><code class="lang-javascript">var SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
-</code></pre>
+  block { storedValue := newValue } with ((nil : list(operation)), storedValue)</code></pre><p>To interact with this contract, in your deployment script, you&#39;d use <code>artifacts.require()</code> like so:</p>
+<pre><code class="language-javascript">var SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="module-exports"></a>
@@ -287,16 +283,15 @@ module.exports = (deployer) =&gt; {
     </h3>
   <p>A full migration script using <code>SimpleStorage</code> would look like the example below. Note that a default value (<code>3</code>) is passed to the deployer&#39;s <code>deploy()</code> function in order to set the contract&#39;s initial state. Note that the type of this second parameter must represent the type of state held in the contract, and should be represented in a form that is convertable from Javascript. More details on this below.   </p>
 <p class="alert alert-warning">
-<strong>Coming from Ethereum?</strong> You&#39;ll notice that LIGO contracts lack constructors. Passing in default values as part of deployment is the only way to set the initial state of a contract. Constructors may be added to LIGO at a later date.
+<strong>Coming from Ethereum?</strong> You'll notice that LIGO contracts lack constructors. Passing in default values as part of deployment is the only way to set the initial state of a contract. Constructors may be added to LIGO at a later date.
 </p>
 
 <p>Filename: <code>./migrations/2_deploy_simple_storage.js</code></p>
-<pre><code class="lang-javascript">const SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
+<pre><code class="language-javascript">const SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
 
 module.exports = (deployer) =&gt; {
   deployer.deploy(SimpleStorage, 3);
-};
-</code></pre>
+};</code></pre>
 <p>From here, you can create new migrations with increasing numbered prefixes to deploy other contracts and perform further deployment steps.</p>
 
     <h2 class="link-markdown">
@@ -305,16 +300,14 @@ module.exports = (deployer) =&gt; {
       Deployer
     </h2>
   <p>Your migration files will use the deployer to stage deployment tasks. As such, you can write deployment tasks synchronously and they&#39;ll be executed in the correct order:</p>
-<pre><code class="lang-javascript">// Stage deploying A before B
+<pre><code class="language-javascript">// Stage deploying A before B
 deployer.deploy(A);
-deployer.deploy(B);
-</code></pre>
+deployer.deploy(B);</code></pre>
 <p>Alternatively, each function on the deployer can be used as a Promise, to queue up deployment tasks that depend on the execution of the previous task:</p>
-<pre><code class="lang-javascript">// Deploy A, then deploy B, passing in A&#39;s newly deployed address
+<pre><code class="language-javascript">// Deploy A, then deploy B, passing in A&#39;s newly deployed address
 deployer.deploy(A).then(function() {
   return deployer.deploy(B, A.address);
-});
-</code></pre>
+});</code></pre>
 <p>It is possible to write your deployment as a single promise chain if you find that syntax to be more clear. The deployer API is discussed at the bottom of this page.</p>
 
     <h2 class="link-markdown">
@@ -324,14 +317,13 @@ deployer.deploy(A).then(function() {
     </h2>
   <p>It is possible to run deployment steps conditionally based on the network being deployed to. This is an advanced feature, so see the <a href="/docs/advanced/networks">Networks</a> section first before continuing.</p>
 <p>To conditionally stage deployment steps, write your migrations so that they accept a second parameter, called <code>network</code>. Example:</p>
-<pre><code class="lang-javascript">module.exports = function(deployer, network) {
+<pre><code class="language-javascript">module.exports = function(deployer, network) {
   if (network == &quot;carthagenet&quot;) {
     // Do something specific to the network named &quot;carthagenet&quot;.
   } else {
     // Perform a different step otherwise.
   }
-}
-</code></pre>
+}</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="available-accounts"></a>
@@ -339,15 +331,14 @@ deployer.deploy(A).then(function() {
       Available accounts
     </h2>
   <p>Migrations are also passed the list of accounts set up in your wallet, for you to use during your deployments.</p>
-<pre><code class="lang-javascript">module.exports = function(deployer, network, accounts) {
+<pre><code class="language-javascript">module.exports = function(deployer, network, accounts) {
   console.log(accounts);
   // =&gt; [ &#39;tz1iGB5P9bZkt356S2PYgAEUWCAuYEvwu152&#39; ]
 
   // Example contract that takes in an owner as its default state.
   // In this case we use the same account we&#39;re using to deploy.
   deployer.deploy(OwnedContract, accounts[0]);
-}
-</code></pre>
+}</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="deployer-api"></a>
@@ -366,7 +357,7 @@ deployer.deploy(A).then(function() {
 <p>The last argument is an optional object that can include the key named <code>overwrite</code>. If <code>overwrite</code> is set to <code>false</code>, the deployer won&#39;t deploy this contract if one has already been deployed. This is useful for certain circumstances where a contract address is provided by an external dependency.</p>
 <p>For more information, please see the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">@truffle/contract</a> documentation.</p>
 <p>Examples:</p>
-<pre><code class="lang-javascript">// Deploy a single contract without any initial state.
+<pre><code class="language-javascript">// Deploy a single contract without any initial state.
 deployer.deploy(A);
 
 // Deploy a single contract with an initial state of 3.
@@ -381,8 +372,7 @@ deployer.deploy(A, {overwrite: false});
 // If it has already been deployed to our target network, we can skip deploying it.
 // This is useful for cases where we _do_ want to deploy that dependency for testing
 // and development networks, but we don&#39;t want to replace it in production.
-deployer.deploy(SomeDependency, {overwrite: false});
-</code></pre>
+deployer.deploy(SomeDependency, {overwrite: false});</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="deployer-then-function-"></a>
@@ -391,7 +381,7 @@ deployer.deploy(SomeDependency, {overwrite: false});
     </h3>
   <p>Just like a promise, run an arbitrary deployment step. Use this to call specific contract functions during your migration to add, edit and reorganize contract data.</p>
 <p>Example:</p>
-<pre><code class="lang-javascript">var a, b;
+<pre><code class="language-javascript">var a, b;
 deployer.then(function() {
   // Create a new version of A programatically, with 3 as the initial state.
   return A.new(3);
@@ -403,8 +393,7 @@ deployer.then(function() {
   b = instance;
   // Send a transaction with the new instance of A&#39;s address using B&#39;s main() function.
   return b.main(a.address);
-});
-</code></pre>
+});</code></pre>
 
 
           <div class="contribute-link">

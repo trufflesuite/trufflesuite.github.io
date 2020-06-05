@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -206,7 +206,7 @@
           </aside>      
         <div class="col-lg-9 bd-light-cream docs-content">
           <p class="alert alert-danger">
-<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by <a href="https://github.com/trufflesuite/truffle/issues">filing issues on Github</a>.
+<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by [filing issues on Github](https://github.com/trufflesuite/truffle/issues).
 </p>
 
 
@@ -236,11 +236,9 @@
       Command
     </h2>
   <p>To run all tests, simply run:</p>
-<pre><code class="lang-shell">$ truffle test
-</code></pre>
+<pre><code class="language-shell">$ truffle test</code></pre>
 <p>Alternatively, you can specify a path to a specific file you want to run, e.g.,</p>
-<pre><code class="lang-shell">$ truffle test ./path/to/test/file.js
-</code></pre>
+<pre><code class="language-shell">$ truffle test ./path/to/test/file.js</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="clean-room-environment"></a>
@@ -311,7 +309,7 @@
     </h3>
   <p>Here&#39;s an example test provided in the <a href="https://github.com/truffle-box/tezos-example-box">Tezos Truffle Box</a>. Note the use of the <code>contract()</code> function and our use of <code>artifacts.require()</code> for interacting directly with our contracts.</p>
 <p>File: <code>./test/simpleStorage.test.js</code></p>
-<pre><code class="lang-javascript">const SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
+<pre><code class="language-javascript">const SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
 
 contract(&#39;SimpleStorage&#39;, () =&gt; {
   it(&quot;...should store the integer 89.&quot;, (done) =&gt; {
@@ -325,21 +323,19 @@ contract(&#39;SimpleStorage&#39;, () =&gt; {
       assert.equal(storedInt, 89, &quot;The integer 89 was not stored.&quot;);
     });    
   });
-});
-</code></pre>
+});</code></pre>
 <p>This test will produce the following output:</p>
 <pre><code>  Contract: SimpleStorage
     √ ...should store the integer 89 (283ms)
 
-  1 passing (283ms)
-</code></pre>
+  1 passing (283ms)</code></pre>
     <h3 class="link-markdown">
       <a class="anchor-target" name="using-async-await"></a>
       <a href="#using-async-await"><i class="fas fa-link"></i></a>
       Using async/await
     </h3>
   <p>Here is a similar example, but using <a href="https://javascript.info/async-await">async/await</a> notation. As you&#39;ll notice, this syntax is much more straightforward.</p>
-<pre><code class="lang-javascript">const SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
+<pre><code class="language-javascript">const SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
 
 contract(&#39;SimpleStorage&#39;, () =&gt; {
   it(&quot;...should store the integer 89.&quot;, async() =&gt; {
@@ -349,8 +345,7 @@ contract(&#39;SimpleStorage&#39;, () =&gt; {
 
     assert.equal(storedInt, 89, &quot;The integer 89 was not stored.&quot;);
   });
-});
-</code></pre>
+});</code></pre>
 <p>This test will produce identical output to the previous example.</p>
 
     <h2 class="link-markdown">
@@ -359,8 +354,7 @@ contract(&#39;SimpleStorage&#39;, () =&gt; {
       Specifying tests
     </h2>
   <p>You can limit the tests being executed to a specific file as follows:</p>
-<pre><code class="lang-shell">truffle test ./test/simpleStorage.js
-</code></pre>
+<pre><code class="language-shell">truffle test ./test/simpleStorage.js</code></pre>
 <p>See the full <a href="/docs/truffle/reference/truffle-commands#test">command reference</a> for more information.</p>
 
     <h2 class="link-markdown">

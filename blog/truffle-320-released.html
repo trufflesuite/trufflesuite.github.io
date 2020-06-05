@@ -162,9 +162,8 @@
 <li><p>Along with the above, <strong>there&#39;s a new way of requiring contract artifacts within your migrations and tests</strong>. The old way still works if your contract names match your Solidity file names, but even if they don&#39;t you can simply require the contract by name:</p>
 </li>
 </ol>
-<pre><code class="lang-javascript">// Assume `ImABigDeal.sol` defines `contract MyContract { ... }`
-var MyContract = artifacts.require(&quot;MyContract&quot;);
-</code></pre>
+<pre><code class="language-javascript">// Assume `ImABigDeal.sol` defines `contract MyContract { ... }`
+var MyContract = artifacts.require(&quot;MyContract&quot;);</code></pre>
 <p>There&#39;s been a lot of bug fixes too. Check out the <a href="https://github.com/trufflesuite/truffle/releases/tag/3.2.0">release notes on Github</a> for a full list of changes, upgrades and fixes.</p>
 
     <h3 class="link-markdown">

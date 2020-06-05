@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -390,7 +390,7 @@
     </h2>
   <p>Contract abstractions are the bread and butter of interacting with Ethereum contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract">@truffle/contract</a> module, and it is this contract abstraction that&#39;s described below.</p>
 <p>In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We&#39;ll use the MetaCoin contract available to you through Truffle Boxes via <code>truffle unbox metacoin</code>.</p>
-<pre><code class="lang-solidity">pragma solidity &gt;=0.4.25 &lt;0.6.0;
+<pre><code class="language-solidity">pragma solidity &gt;=0.4.25 &lt;0.6.0;
 
 import &quot;./ConvertLib.sol&quot;;
 
@@ -423,11 +423,10 @@ contract MetaCoin {
     function getBalance(address addr) public view returns(uint) {
         return balances[addr];
     }
-}
-</code></pre>
+}</code></pre>
 <p>This contract has three methods aside from the constructor (<code>sendCoin</code>, <code>getBalanceInEth</code>, and <code>getBalance</code>). All three methods can be executed as either a transaction or a call.</p>
 <p>Now let&#39;s look at the Javascript object called <code>MetaCoin</code> provided for us by Truffle, as made available in the <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console">Truffle console</a>:</p>
-<pre><code class="lang-javascript">truffle(develop)&gt; let instance = await MetaCoin.deployed()
+<pre><code class="language-javascript">truffle(develop)&gt; let instance = await MetaCoin.deployed()
 truffle(develop)&gt; instance
 
 // outputs:
@@ -438,8 +437,7 @@ truffle(develop)&gt; instance
 // - getBalance: ()
 // - getBalanceInEth: ()
 // - sendCoin: ()
-// ...
-</code></pre>
+// ...</code></pre>
 <p>Notice that the abstraction contains the exact same functions that exist within our contract. It also contains an address which points to the deployed version of the MetaCoin contract.</p>
 
     <h2 class="link-markdown">
@@ -456,9 +454,8 @@ truffle(develop)&gt; instance
     </h3>
   <p>There are three functions on the MetaCoin contract that we can execute. If you analyze each of them, you&#39;ll see that <code>sendCoin</code> is the only function that aims to make changes to the network. The goal of <code>sendCoin</code> is to &quot;send&quot; some Meta coins from one account to the next, and these changes should persist.</p>
 <p>When calling <code>sendCoin</code>, we&#39;ll execute it as a transaction. In the following example, we&#39;ll send 10 Meta coin from one account to another, in a way that persists changes on the network:</p>
-<pre><code class="lang-javascript">truffle(develop)&gt; let accounts = await web3.eth.getAccounts()
-truffle(develop)&gt; instance.sendCoin(accounts[1], 10, {from: accounts[0]})
-</code></pre>
+<pre><code class="language-javascript">truffle(develop)&gt; let accounts = await web3.eth.getAccounts()
+truffle(develop)&gt; instance.sendCoin(accounts[1], 10, {from: accounts[0]})</code></pre>
 <p>There are a few things interesting about the above code:</p>
 <ul>
 <li>We called the abstraction&#39;s <code>sendCoin</code> function directly. This will result in a transaction by default (i.e, writing data) instead of call.</li>
@@ -480,15 +477,14 @@ truffle(develop)&gt; instance.sendCoin(accounts[1], 10, {from: accounts[0]})
       Making a call
     </h3>
   <p>Continuing with MetaCoin, notice the <code>getBalance</code> function is a great candidate for reading data from the network. It doesn&#39;t need to make any changes, as it just returns the MetaCoin balance of the address passed to it. Let&#39;s give it a shot:</p>
-<pre><code class="lang-javascript">truffle(develop)&gt; let balance = await instance.getBalance(accounts[0])
-truffle(develop)&gt; balance.toNumber()
-</code></pre>
+<pre><code class="language-javascript">truffle(develop)&gt; let balance = await instance.getBalance(accounts[0])
+truffle(develop)&gt; balance.toNumber()</code></pre>
 <p>What&#39;s interesting here:</p>
 <ul>
 <li>We received a return value. Note that since the Ethereum network can handle very large numbers, we&#39;re given a <a href="https://github.com/indutny/bn.js/">BN</a> object which we then convert to a number.</li>
 </ul>
 <p class="alert alert-warning">
-<strong>Warning</strong>: We convert the return value to a number because in this example the numbers are small. However, if you try to convert a BN that&#39;s larger than the largest integer supported by Javascript, you&#39;ll likely run into errors or unexpected behavior.
+**Warning**: We convert the return value to a number because in this example the numbers are small. However, if you try to convert a BN that's larger than the largest integer supported by Javascript, you'll likely run into errors or unexpected behavior.
 </p>
 
 
@@ -498,9 +494,8 @@ truffle(develop)&gt; balance.toNumber()
       Processing transaction results
     </h3>
   <p>When you make a transaction, you&#39;re given a <code>result</code> object that gives you a wealth of information about the transaction.</p>
-<pre><code class="lang-javascript">truffle(develop)&gt; let result = await instance.sendCoin(accounts[1], 10, {from: accounts[0]})
-truffle(develop)&gt; result
-</code></pre>
+<pre><code class="language-javascript">truffle(develop)&gt; let result = await instance.sendCoin(accounts[1], 10, {from: accounts[0]})
+truffle(develop)&gt; result</code></pre>
 <p>Specifically, you get the following:</p>
 <ul>
 <li><code>result.tx</code> <em>(string)</em> - Transaction hash</li>
@@ -516,7 +511,7 @@ truffle(develop)&gt; result
     </h3>
   <p>Your contracts can fire events that you can catch to gain more insight into what your contracts are doing. The easiest way to handle events is by processing the <code>logs</code> array contained within <code>result</code> object of the transaction that triggered the event.</p>
 <p>If we explicitly output the first log entry we can see the details of the event that was emitted as part of the <code>sendCoin</code> call (<code>Transfer(msg.sender, receiver, amount);</code>).</p>
-<pre><code class="lang-javascript">truffle(develop)&gt; result.logs[0]
+<pre><code class="language-javascript">truffle(develop)&gt; result.logs[0]
 { logIndex: 0,
   transactionIndex: 0,
   transactionHash: &#39;0x3b33960e99416f687b983d4a6bb628d38bf7855c6249e71d0d16c7930a588cb2&#39;,
@@ -534,8 +529,7 @@ truffle(develop)&gt; result
      __length__: 3,
      _from: &#39;0x8128880DC48cde7e471EF6b99d3877357bb93f01&#39;,
      _to: &#39;0x12B6971f6eb35dD138a03Bd6cBdf9Fc9b9a87d7e&#39;,
-     _value: &lt;BN: a&gt; } }
-</code></pre>
+     _value: &lt;BN: a&gt; } }</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="add-a-new-contract-to-the-network"></a>
@@ -543,10 +537,9 @@ truffle(develop)&gt; result
       Add a new contract to the network
     </h3>
   <p>In all of the above cases, we&#39;ve been using a contract abstraction that has already been deployed. We can deploy our own version to the network using the <code>.new()</code> function:</p>
-<pre><code class="lang-javascript">truffle(develop)&gt; let newInstance = await MetaCoin.new()
+<pre><code class="language-javascript">truffle(develop)&gt; let newInstance = await MetaCoin.new()
 truffle(develop)&gt; newInstance.address
-&#39;0x64307b67314b584b1E3Be606255bd683C835A876&#39;
-</code></pre>
+&#39;0x64307b67314b584b1E3Be606255bd683C835A876&#39;</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="use-a-contract-at-a-specific-address"></a>
@@ -554,8 +547,7 @@ truffle(develop)&gt; newInstance.address
       Use a contract at a specific address
     </h3>
   <p>If you already have an address for a contract, you can create a new abstraction to represent the contract at that address.</p>
-<pre><code class="lang-javascript">let specificInstance = await MetaCoin.at(&quot;0x1234...&quot;);
-</code></pre>
+<pre><code class="language-javascript">let specificInstance = await MetaCoin.at(&quot;0x1234...&quot;);</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="sending-ether-to-a-contract"></a>
@@ -564,15 +556,13 @@ truffle(develop)&gt; newInstance.address
     </h3>
   <p>You may simply want to send Ether directly to a contract, or trigger a contract&#39;s <a href="http://solidity.readthedocs.io/en/develop/contracts.html#fallback-function">fallback function</a>. You can do so using one of the following two options.</p>
 <p>Option 1: Send a transaction directly to a contract via <code>instance.sendTransaction()</code>. This is promisified like all available contract instance functions, and has the same API as <code>web3.eth.sendTransaction</code> but without the callback. The <code>to</code> value will be automatically filled in for you if not specified.</p>
-<pre><code class="lang-javascript">instance.sendTransaction({...}).then(function(result) {
+<pre><code class="language-javascript">instance.sendTransaction({...}).then(function(result) {
   // Same transaction result object as above.
-});
-</code></pre>
+});</code></pre>
 <p>Option 2: There&#39;s also shorthand for just sending Ether directly:</p>
-<pre><code class="lang-javascript">instance.send(web3.utils.toWei(1, &quot;ether&quot;)).then(function(result) {
+<pre><code class="language-javascript">instance.send(web3.utils.toWei(1, &quot;ether&quot;)).then(function(result) {
   // Same result object as above.
-});
-</code></pre>
+});</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="special-methods-on-truffle-contract-objects"></a>
@@ -590,9 +580,8 @@ methods of your contract abstractions:</p>
 probably can guess, estimates the amount of gas that a transaction will require.
 If we wanted to estimate the gas for a transaction, we would call it on the
 contract method itself. It would look something like the following:</p>
-<pre><code class="lang-javascript">const instance = await MyContract.deployed();
-const amountOfGas = await instance.sendTokens.estimateGas(4, myAccount);
-</code></pre>
+<pre><code class="language-javascript">const instance = await MyContract.deployed();
+const amountOfGas = await instance.sendTokens.estimateGas(4, myAccount);</code></pre>
 <p>This will give us an estimate of how much gas it will take to run the
 transaction specified.</p>
 <p>Note that the arguments above (<code>4</code> and <code>myAccount</code>) correspond to whatever the
@@ -611,9 +600,8 @@ like <code>instance.myMethod.sendTransaction()</code>.</p>
 <p>For example, suppose I have a contract instance with the method
 <code>getTokenBalance</code>. I could do the following to force a transaction to take
 place while executing <code>getTokenBalance</code>:</p>
-<pre><code class="lang-javascript">const instance = await MyContract.deployed();
-const result = await instance.getTokenBalance.sendTransaction(myAccount);
-</code></pre>
+<pre><code class="language-javascript">const instance = await MyContract.deployed();
+const result = await instance.getTokenBalance.sendTransaction(myAccount);</code></pre>
 <p>The <code>result</code> variable above will be the same kind of result you would get
 from executing any normal transaction in Truffle. It will contain the
 transaction hash, the logs, etc.</p>
@@ -634,10 +622,9 @@ contract ABI.</p>
 <p>Therefore, some methods may not be accessible through the contract&#39;s
 instance, but their accessors can be invoked explicitly via the <code>.methods</code>
 property of the contract.</p>
-<pre><code class="lang-javascript">const instance = await MyContract.deployed();
+<pre><code class="language-javascript">const instance = await MyContract.deployed();
 instance.methods[&#39;setValue(uint256)&#39;](123);
-instance.methods[&#39;setValue(uint256,uint256)&#39;](11, 55);
-</code></pre>
+instance.methods[&#39;setValue(uint256,uint256)&#39;](11, 55);</code></pre>
 <p>Please see this issue <a href="https://github.com/trufflesuite/truffle/issues/2868">here</a> for more information.</p>
 
     <h2 class="link-markdown">

@@ -141,7 +141,7 @@
       <div class="row justify-content-center">
         <div class="col">
           <p class="alert alert-info">
-<strong>Update</strong>: While this tutorial was originally written for Truffle 3, we have updated it to be fully compatible with newer versions of Truffle. We have kept some of the language unaltered, except where necessary.
+**Update**: While this tutorial was originally written for Truffle 3, we have updated it to be fully compatible with newer versions of Truffle. We have kept some of the language unaltered, except where necessary.
 </p>
 
 <p>Truffle 3 is out and switched to less opinionated build process that allows any build pipeline to be plugged in. We&#39;re going to take advantage of that feature today, and build a frontend app with a custom pipeline.</p>
@@ -173,12 +173,11 @@
       Getting started
     </h2>
   <p>Once you have Truffle installed, run <code>truffle unbox webpack</code> in an <strong>empty</strong> directory to pull down the <a href="/boxes/webpack">Truffle Box</a> for this tutorial. If you&#39;re familiar with the <a href="/boxes/metacoin">MetaCoin Truffle Box</a>), you&#39;ll notice your old friends <code>Metacoin.sol</code> and <code>ConvertLib.sol</code> are there. But now, running <code>truffle build</code> does this:</p>
-<pre><code class="lang-shell">Error building:
+<pre><code class="language-shell">Error building:
 
 No build configuration specified. Can&#39;t build.
 
-Build failed. See above.
-</code></pre>
+Build failed. See above.</code></pre>
 <p>That&#39;s ok! Truffle is getting out of your way and letting you control the build process. Our new process is specified in <code>webpack.config.js</code>. More on this later.</p>
 
     <h2 class="link-markdown">
@@ -187,24 +186,22 @@ Build failed. See above.
       Compile, migrate, and ...
     </h2>
   <p>In order to interact with contracts, we need them deployed on a network! The default network is configured in <code>truffle.js</code>:</p>
-<pre><code class="lang-javascript">networks: {
+<pre><code class="language-javascript">networks: {
   development: {
     host: &#39;127.0.0.1&#39;,
     port: 7545,
     network_id: &#39;*&#39; // Match any network id
   }
-}
-</code></pre>
+}</code></pre>
 <p>This is the default setting for <a href="/docs/ganache/using">Ganache</a>, though you can change this to use any connection you&#39;d like.</p>
 <p class="alert alert-info">
-<strong>Note</strong>: Read more about <a href="/docs/ganache/using">setting up Ganache</a>. You can also use <a href="/docs/getting_started/console">Truffle Develop</a>, which launches a personal blockchain for testing and is built directly into Truffle, no separate installation required.
+**Note**: Read more about [setting up Ganache](/docs/ganache/using). You can also use [Truffle Develop](/docs/getting_started/console), which launches a personal blockchain for testing and is built directly into Truffle, no separate installation required.
 </p>
 
 <p>Let&#39;s get the contracts on the network:</p>
 <p>First run <code>truffle compile</code>. This will compile the <code>.sol</code> contracts into <code>.json</code> artifacts (specified in the <a href="https://github.com/trufflesuite/truffle/tree/master/packages/contract"><code>@truffle/contract</code></a> library). They will appear in <code>build/contracts/*.json</code>. Now we can include contracts in our app with a simple <code>import</code> or <code>require</code> statement:</p>
-<pre><code class="lang-javascript">// Import our contract artifacts and turn them into usable abstractions.
-import metacoin_artifacts from &#39;../../build/contracts/MetaCoin.json&#39;
-</code></pre>
+<pre><code class="language-javascript">// Import our contract artifacts and turn them into usable abstractions.
+import metacoin_artifacts from &#39;../../build/contracts/MetaCoin.json&#39;</code></pre>
 <p>Next, make sure you have a blockchain running, and then run <code>truffle migrate</code>. This will deploy the contracts onto the default network running at <code>127.0.0.1:7545</code>.</p>
 
     <h3 class="link-markdown">
@@ -213,16 +210,15 @@ import metacoin_artifacts from &#39;../../build/contracts/MetaCoin.json&#39;
       ... (webpack) build
     </h3>
   <p>All that&#39;s left is to use webpack to compile the app and place it in the <code>build/</code> folder. A simple <code>npm run dev</code> and we&#39;re done! This will build the app and serve it on <code>http://127.0.0.1:8080</code>. Relevant configs here:</p>
-<pre><code class="lang-javascript">// file: package.json
+<pre><code class="language-javascript">// file: package.json
 ...
   &quot;scripts&quot;: {
     &quot;lint&quot;: &quot;eslint ./&quot;,
     &quot;build&quot;: &quot;webpack&quot;,
     &quot;dev&quot;: &quot;webpack-dev-server&quot;
   },
-...
-</code></pre>
-<pre><code class="lang-javascript">// file: webpack.config.js
+...</code></pre>
+<pre><code class="language-javascript">// file: webpack.config.js
 ...
 entry: &#39;./app/javascripts/app.js&#39;,
 output: {
@@ -235,8 +231,7 @@ plugins: [
     { from: &#39;./app/index.html&#39;, to: &#39;index.html&#39; }
   ])
 ],
-...
-</code></pre>
+...</code></pre>
 <p>You can find more information on webpack concepts on <a href="https://webpack.js.org/concepts/">webpack&#39;s website</a>. Notice we didn&#39;t <em>have</em> to use webpack here, but Truffle comes with a handy webpack demo that gets us started quickly. We <em>could</em> replace the webpack config with a <code>Gruntfile</code>, for instance, and use Grunt instead. Truffle don&#39;t care no mo&#39;.</p>
 
     <h2 class="link-markdown">

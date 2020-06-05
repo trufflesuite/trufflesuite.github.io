@@ -10,8 +10,7 @@ want to expose a button or other widget, can add those to this toolbar.</p>
 to position and style the toolbar rather than having to do that for lots
 of different divs.</p>
 <p>To add/activate the toolbar in your presentation, add this div:</p>
-<pre><code>&lt;div id=&quot;impress-toolbar&quot;&gt;&lt;/div&gt;
-</code></pre><p>Styling the toolbar is left to presentation author. Here&#39;s an example CSS:</p>
+<pre><code>&lt;div id=&quot;impress-toolbar&quot;&gt;&lt;/div&gt;</code></pre><p>Styling the toolbar is left to presentation author. Here&#39;s an example CSS:</p>
 <pre><code>.impress-enabled div#impress-toolbar {
     position: fixed;
     right: 1px;
@@ -20,13 +19,11 @@ of different divs.</p>
 }
 .impress-enabled div#impress-toolbar &gt; span {
     margin-right: 10px;
-}
-</code></pre><p>The <a href="../mouse-timeout/README.md">mouse-timeout</a> plugin can be leveraged to hide
+}</code></pre><p>The <a href="../mouse-timeout/README.md">mouse-timeout</a> plugin can be leveraged to hide
 the toolbar from sight, and only make it visible when mouse is moved.</p>
 <pre><code>body.impress-mouse-timeout div#impress-toolbar {
     display: none;
-}
-</code></pre><p>If you&#39;re writing a plugin and would like to add a widget to the toolbar, see
+}</code></pre><p>If you&#39;re writing a plugin and would like to add a widget to the toolbar, see
 <a href="toolbar.js">the top of the source file for further instructions</a>.</p>
 
     <h2 class="link-markdown">

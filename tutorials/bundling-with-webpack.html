@@ -155,8 +155,7 @@
       Getting Started
     </h2>
   <p>Navigate to your project in the command line, and then install the required dependencies. These dependencies are in addition to any other Webpack-related dependencies your project might have.</p>
-<pre><code class="lang-shell">$ npm install webpack webpack-dev-server truffle-solidity-loader --save-dev
-</code></pre>
+<pre><code class="language-shell">$ npm install webpack webpack-dev-server truffle-solidity-loader --save-dev</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="set-up-your-webpack-configuration"></a>
@@ -164,14 +163,13 @@
       Set up Your Webpack Configuration
     </h2>
   <p>You should already have a webpack configuration for your project. If you don&#39;t, an example configuration file is provided at the bottom of this tutorial. To enable Solidity support, add the <code>truffle-solidity-loader</code> as a plugin within your project:</p>
-<pre><code class="lang-javascript">// your webpack configuration...
+<pre><code class="language-javascript">// your webpack configuration...
 module: {
   loaders: [
     // ...,
     { test: /\.sol/, loader: &#39;truffle-solidity&#39; }
   ]
-}
-</code></pre>
+}</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="remove-default-build-configuration"></a>
@@ -179,7 +177,7 @@ module: {
       Remove Default Build Configuration
     </h2>
   <p>Since you&#39;re using Webpack to build your frontend, you won&#39;t want to use the default Truffle build process as the two processes will conflict. To ensure there are no issues if you or your teammates run <code>truffle build</code>, go ahead and delete the <code>build</code> configuration in your <code>truffle.js</code> file, if it exists.</p>
-<pre><code class="lang-javascript">module.exports = {
+<pre><code class="language-javascript">module.exports = {
   build: {      // Delete this.
     // ...      // and this.
   },            // and this too.
@@ -187,8 +185,7 @@ module: {
     host: &quot;127.0.0.1&quot;,
     port: 8545
   }
-}
-</code></pre>
+}</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="bootstrapping-your-application"></a>
@@ -207,7 +204,7 @@ module: {
       Detecting Web3
     </h3>
   <p>In the past, Truffle bootstrapped applications to look for an open Ethereum node running at <code>http://localhost:8545</code>, but this has proven to be insecure for the user as well as highly unlikely in a real world scenario. Instead, users are most likely to use Metamask or Mist to interact with web applications on the Ethereum network, and you should build your application to support that. Both Metamask and Mist inject a <code>web3</code> object when the page is loading so you can hook into their transaction signing processes. Detecting this <code>web3</code> object easy:</p>
-<pre><code class="lang-javascript">var Web3 = require(&quot;web3&quot;);
+<pre><code class="language-javascript">var Web3 = require(&quot;web3&quot;);
 
 window.addEventListener(&#39;load&#39;, function() {
   // Supports Metamask and Mist, and other wallets that provide &#39;web3&#39;.
@@ -217,8 +214,7 @@ window.addEventListener(&#39;load&#39;, function() {
   } else {
     // No web3 detected. Show an error to the user or use Infura: https://infura.io/
   }
-});
-</code></pre>
+});</code></pre>
 <p>Notice we only use the wallet&#39;s provider and not the whole <code>web3</code> object provided to us. This ensures our application is not dependent on the wallet&#39;s version of Web3, and reduces the surface area in which version errors might occur.</p>
 
     <h3 class="link-markdown">
@@ -228,15 +224,13 @@ window.addEventListener(&#39;load&#39;, function() {
     </h3>
   <p>Provisioning your contract abstractions requires two things: 1) that you include your contracts in your project, and 2) that you set up the Javascript abstractions so that they&#39;re correctly talking to the Ethereum client via Web3.</p>
 <p>When including contracts in your application, the Solidity Loader will resolve all <code>.sol</code> files to their associated contract abstraction, so importing your contracts is simply a matter of performing one of the following within your frontend:</p>
-<pre><code class="lang-javascript">// ES5:
+<pre><code class="language-javascript">// ES5:
 var MyContract = require(&quot;contracts/MyContract.sol&quot;);
 
 // ES6:
-import MyContract from &quot;contracts/MyContract.sol&quot;;
-</code></pre>
+import MyContract from &quot;contracts/MyContract.sol&quot;;</code></pre>
 <p>After making sure your contract is imported, you now need to hook up the <code>web3</code> object you detected above with the contract abstraction provided:</p>
-<pre><code class="lang-javascript">MyContract.setProvider(window.web3.currentProvider);
-</code></pre>
+<pre><code class="language-javascript">MyContract.setProvider(window.web3.currentProvider);</code></pre>
 <p>Finally, you can use the contract abstraction as described within the <a href="/docs/getting_started/contracts">Truffle documentation</a>.</p>
 <p>You can prevent having to perform this provisioning more than once per contract dependency by either setting your contract abstractions to the global object, like <code>window</code>, and provisioning them once when your application loads; or using something like the <a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin">ProvidePlugin</a> to ensure your contract abstractions are available to every file within the bundle (recommended).</p>
 
@@ -246,15 +240,13 @@ import MyContract from &quot;contracts/MyContract.sol&quot;;
       Running Webpack
     </h2>
   <p>From here you can run webpack like normal, via the normal <code>webpack</code> command or the <code>webpack-dev-server</code>, if you have those installed globally on your machine:</p>
-<pre><code class="lang-shell">$ webpack
-$ webpack-dev-server --hot
-</code></pre>
+<pre><code class="language-shell">$ webpack
+$ webpack-dev-server --hot</code></pre>
 <p>Alternatively, you can edit your project&#39;s <code>package.json</code> file to run Wepback from the versions you installed at the beginning of this tutorial:</p>
-<pre><code class="lang-javascript">&quot;scripts&quot;: {
+<pre><code class="language-javascript">&quot;scripts&quot;: {
   &quot;build&quot;: &quot;webpack&quot;,
   &quot;dev&quot;: &quot;webpack-dev-server --hot&quot;
-}
-</code></pre>
+}</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="example-webpack-config"></a>
@@ -262,7 +254,7 @@ $ webpack-dev-server --hot
       Example Webpack Config
     </h2>
   <p>Here&#39;s a very simple Webpack configuration file that uses the Truffle Solidity Loader as well as other plugins. This configration file exists within a React application where its source files exist within the <code>./app</code> directory, and CSS is pulled out using the <code>copy-webpack-plugin</code>. Of course, your dapp&#39;s layout and structure will be different, but this should give you a good example of how the Solidity Loader fits within a simple application.</p>
-<pre><code class="lang-javascript">var webpack = require(&quot;webpack&quot;);
+<pre><code class="language-javascript">var webpack = require(&quot;webpack&quot;);
 var CopyWebpackPlugin = require(&#39;copy-webpack-plugin&#39;);
 var ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;);
 
@@ -291,8 +283,7 @@ module.exports = {
   devServer: {
     stats: &#39;errors-only&#39;,
   }
-};
-</code></pre>
+};</code></pre>
 
 
           <div class="contribute-link">

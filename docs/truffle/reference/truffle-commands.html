@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -349,8 +349,7 @@
       Usage
     </h2>
   <p>All commands are in the following form:</p>
-<pre><code class="lang-shell">truffle &lt;command&gt; [options]
-</code></pre>
+<pre><code class="language-shell">truffle &lt;command&gt; [options]</code></pre>
 <p>Passing no arguments is equivalent to <code>truffle help</code>, which will display a list of all commands and then exit.</p>
 
     <h2 class="link-markdown">
@@ -365,11 +364,10 @@
       build
     </h3>
   <p>Execute build pipeline (if configuration present).</p>
-<pre><code class="lang-shell">truffle build
-</code></pre>
+<pre><code class="language-shell">truffle build</code></pre>
 <p>Requires the <code>build</code> key to be present in the configuration. See the <a href="/docs/getting_started/build">Building your application</a> and <a href="/docs/advanced/build_processes">Build processes</a> sections for more details.</p>
 <p class="alert alert-warning">
-<strong>Alert</strong>: This command is deprecated. Please use third-party build tools like webpack or grunt, or see our <a href="/boxes">Truffle Boxes</a> for an example.
+**Alert**: This command is deprecated. Please use third-party build tools like webpack or grunt, or see our [Truffle Boxes](/boxes) for an example.
 </p>
 
 
@@ -380,8 +378,7 @@
       compile
     </h3>
   <p>Compile contract source files.</p>
-<pre><code class="lang-shell">truffle compile [--list &lt;filter&gt;] [--all] [--network &lt;name&gt;] [--quiet]
-</code></pre>
+<pre><code class="language-shell">truffle compile [--list &lt;filter&gt;] [--all] [--network &lt;name&gt;] [--quiet]</code></pre>
 <p>This will only compile contracts that have changed since the last compile, unless otherwise specified.</p>
 <p>Options:</p>
 <ul>
@@ -396,12 +393,13 @@
       <a href="#config"><i class="fas fa-link"></i></a>
       config
     </h3>
-  <p>Display whether analytics are enabled or disabled and prompt whether to toggle the setting.</p>
-<pre><code class="lang-shell">truffle config [--enable-analytics|--disable-analytics]
-</code></pre>
+  <p>Displays and sets user-level configuration options.</p>
+<pre><code class="language-shell">truffle config [--enable-analytics|--disable-analytics] [[&lt;get|set&gt; &lt;key&gt;] [&lt;value-for-set&gt;]]</code></pre>
 <p>Options:</p>
 <ul>
 <li><code>--enable-analytics|--disable-analytics</code>: Enable or disable analytics.</li>
+<li><code>get</code>: Get a Truffle configuration option value.</li>
+<li><code>set</code>: Set a Truffle configuration option value.</li>
 </ul>
 
     <h3 class="link-markdown">
@@ -410,8 +408,7 @@
       console
     </h3>
   <p>Run a console with contract abstractions and commands available.</p>
-<pre><code class="lang-shell">truffle console [--network &lt;name&gt;] [--verbose-rpc]
-</code></pre>
+<pre><code class="language-shell">truffle console [--network &lt;name&gt;] [--verbose-rpc]</code></pre>
 <p>Spawns an interface to interact with contracts via the command line. Additionally, many Truffle commands are available within the console (without the <code>truffle</code> prefix).</p>
 <p>Requires an external Ethereum client, such as <a href="/docs/ganache/using">Ganache</a> or geth. For a console that creates a development and test environment, use <code>truffle develop</code>.</p>
 <p>See the <a href="/docs/getting_started/console">Using the console</a> section for more details.</p>
@@ -427,8 +424,7 @@
       create
     </h3>
   <p>Helper to create new contracts, migrations and tests.</p>
-<pre><code class="lang-shell">truffle create &lt;artifact_type&gt; &lt;ArtifactName&gt;
-</code></pre>
+<pre><code class="language-shell">truffle create &lt;artifact_type&gt; &lt;ArtifactName&gt;</code></pre>
 <p>Options:</p>
 <ul>
 <li><code>&lt;artifact_type&gt;</code>: Create a new artifact where artifact_type is one of the following: contract, migration or test. The new artifact is created along with one of the following files: <code>contracts/ArtifactName.sol</code>, <code>migrations/####_artifact_name.js</code> or <code>tests/artifact_name.js</code>. (required)</li>
@@ -442,17 +438,12 @@
       debug
     </h3>
   <p>Interactively debug any transaction on the blockchain.</p>
-<pre><code class="lang-shell">truffle debug &lt;transaction_hash&gt;
-</code></pre>
+<pre><code class="language-shell">truffle debug [&lt;transaction_hash&gt;] [--network &lt;network&gt;]</code></pre>
 <p>Will start an interactive debugging session on a particular transaction. Allows you to step through each action and replay. See the <a href="/docs/getting_started/debugging">Debugging your contracts</a> section for more details.</p>
-<p class="alert alert-warning">
-<strong>Alert</strong>: This command is considered experimental.
-</p>
-
-
-<p>Option:</p>
+<p>Options:</p>
 <ul>
-<li><code>&lt;transaction_hash&gt;</code>: Transaction ID to use for debugging. (required)</li>
+<li><code>&lt;transaction_hash&gt;</code>: Transaction ID to use for debugging.  You can omit this to simply start the debugger and then load a transaction later.</li>
+<li><code>--network</code>: The network to connect to.</li>
 </ul>
 
     <h3 class="link-markdown">
@@ -468,8 +459,7 @@
       develop
     </h3>
   <p>Open a console with a development blockchain</p>
-<pre><code class="lang-shell">truffle develop [--log]
-</code></pre>
+<pre><code class="language-shell">truffle develop [--log]</code></pre>
 <p>Spawns a local development blockchain, and allows you to interact with contracts via the command line. Additionally, many Truffle commands are available within the console (without the <code>truffle</code> prefix).</p>
 <p>If you want an interactive console but want to use an existing blockchain, use <code>truffle console</code>.</p>
 <p>See the <a href="/docs/getting_started/console">Using the console</a> section for more details.</p>
@@ -486,8 +476,7 @@ docs for more information about using this option.</li>
       exec
     </h3>
   <p>Execute a JS module within the Truffle environment.</p>
-<pre><code class="lang-shell">truffle exec &lt;script.js&gt; [--network &lt;name&gt;] [--compile]
-</code></pre>
+<pre><code class="language-shell">truffle exec &lt;script.js&gt; [--network &lt;name&gt;] [--compile]</code></pre>
 <p>This will include <code>web3</code>, set the default provider based on the network specified (if any), and include your contracts as global objects while executing the script. Your script must export a function that Truffle can run.</p>
 <p>See the <a href="/docs/getting_started/scripts">Writing external scripts</a> section for more details.</p>
 <p>Options:</p>
@@ -503,8 +492,7 @@ docs for more information about using this option.</li>
       help
     </h3>
   <p>Display a list of all commands or information about a specific command.</p>
-<pre><code class="lang-shell">truffle help [&lt;command&gt;]
-</code></pre>
+<pre><code class="language-shell">truffle help [&lt;command&gt;]</code></pre>
 <p>Option:</p>
 <ul>
 <li><code>&lt;command&gt;</code>: Display usage information about the specified command.</li>
@@ -516,11 +504,10 @@ docs for more information about using this option.</li>
       init
     </h3>
   <p>Initialize new and empty Ethereum project</p>
-<pre><code class="lang-shell">truffle init [--force]
-</code></pre>
+<pre><code class="language-shell">truffle init [--force]</code></pre>
 <p>Creates a new and empty Truffle project within the current working directory.</p>
 <p class="alert alert-warning">
-<strong>Alert</strong>: Older versions of Truffle used <code>truffle init bare</code> to create an empty project. This usage has been deprecated. Those looking for the MetaCoin example that used to be available through <code>truffle init</code> should use <code>truffle unbox MetaCoin</code> instead.
+**Alert**: Older versions of Truffle used `truffle init bare` to create an empty project. This usage has been deprecated. Those looking for the MetaCoin example that used to be available through `truffle init` should use `truffle unbox MetaCoin` instead.
 </p>
 
 <p>Option:</p>
@@ -534,8 +521,7 @@ docs for more information about using this option.</li>
       install
     </h3>
   <p>Install a package from the Ethereum Package Registry.</p>
-<pre><code class="lang-shell">truffle install &lt;package_name&gt;[@&lt;version&gt;]
-</code></pre>
+<pre><code class="language-shell">truffle install &lt;package_name&gt;[@&lt;version&gt;]</code></pre>
 <p>Options:</p>
 <ul>
 <li><code>&lt;package_name&gt;</code>: Name of the package as listed in the Ethereum Package Registry. (required)</li>
@@ -549,8 +535,7 @@ docs for more information about using this option.</li>
       migrate
     </h3>
   <p>Run migrations to deploy contracts.</p>
-<pre><code class="lang-shell">truffle migrate [--reset] [--f &lt;number&gt;] [--to &lt;number&gt;] [--network &lt;name&gt;] [--compile-all] [--verbose-rpc] [--dry-run] [--interactive]
-</code></pre>
+<pre><code class="language-shell">truffle migrate [--reset] [--f &lt;number&gt;] [--to &lt;number&gt;] [--network &lt;name&gt;] [--compile-all] [--verbose-rpc] [--dry-run] [--interactive] [--skip-dry-run] [--describe-json]</code></pre>
 <p>Unless specified, this will run from the last completed migration. See the <a href="/docs/getting_started/migrations">Migrations</a> section for more details.</p>
 <p>Options:</p>
 <ul>
@@ -561,7 +546,9 @@ docs for more information about using this option.</li>
 <li><code>--compile-all</code>: Compile all contracts instead of intelligently choosing which contracts need to be compiled.</li>
 <li><code>--verbose-rpc</code>: Log communication between Truffle and the Ethereum client.</li>
 <li><code>--dry-run</code>: Fork the network specified and only perform a test migration.</li>
+<li><code>--skip-dry-run</code>: Skip the test migration performed before the real migration.</li>
 <li><code>--interactive</code>: Prompt to confirm that the user wants to proceed after the dry run.</li>
+<li><code>--describe-json</code>: Prints additional status messages.</li>
 </ul>
 
     <h3 class="link-markdown">
@@ -570,12 +557,23 @@ docs for more information about using this option.</li>
       networks
     </h3>
   <p>Show addresses for deployed contracts on each network.</p>
-<pre><code class="lang-shell">truffle networks [--clean]
-</code></pre>
+<pre><code class="language-shell">truffle networks [--clean]</code></pre>
 <p>Use this command before publishing your package to see if there are any extraneous network artifacts you don&#39;t want published. With no options specified, this package will simply output the current artifact state.</p>
 <p>Option:</p>
 <ul>
 <li><code>--clean</code>: Remove all network artifacts that aren&#39;t associated with a named network.</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="obtain"></a>
+      <a href="#obtain"><i class="fas fa-link"></i></a>
+      obtain
+    </h3>
+  <p>Fetch and cache a specified compiler.</p>
+<pre><code class="language-shell">truffle obtain [--solc &lt;version&gt;]</code></pre>
+<p>Option:</p>
+<ul>
+<li><code>--solc</code>: Download and cache a version of the solc compiler. (required)</li>
 </ul>
 
     <h3 class="link-markdown">
@@ -584,8 +582,7 @@ docs for more information about using this option.</li>
       opcode
     </h3>
   <p>Print the compiled opcodes for a given contract.</p>
-<pre><code class="lang-shell">truffle opcode &lt;contract_name&gt;
-</code></pre>
+<pre><code class="language-shell">truffle opcode &lt;contract_name&gt;</code></pre>
 <p>Option:</p>
 <ul>
 <li><code>&lt;contract_name&gt;</code>: Name of the contract to print opcodes for. Must be a contract name, not a file name. (required)</li>
@@ -597,8 +594,7 @@ docs for more information about using this option.</li>
       publish
     </h3>
   <p>Publish a package to the Ethereum Package Registry.</p>
-<pre><code class="lang-shell">truffle publish
-</code></pre>
+<pre><code class="language-shell">truffle publish</code></pre>
 <p>All parameters are pulled from your project&#39;s configuration file. Takes no arguments. See the <a href="/docs/getting_started/packages-ethpm">Package Management with EthPM</a> section for more details.</p>
 
     <h3 class="link-markdown">
@@ -607,13 +603,12 @@ docs for more information about using this option.</li>
       run
     </h3>
   <p class="alert alert-warning">
-<strong>Note</strong>: This feature is new and still in a barebones state. Please let us
+**Note**: This feature is new and still in a barebones state. Please let us
 know how we can improve it!
 </p>
 
 <p>Run a third-party plugin command</p>
-<pre><code class="lang-shell">truffle run &lt;command&gt;
-</code></pre>
+<pre><code class="language-shell">truffle run &lt;command&gt;</code></pre>
 <p>Option:</p>
 <ul>
 <li><code>&lt;command&gt;</code>: Name of a command defined by an installed plugin. (required)</li>
@@ -627,16 +622,21 @@ to recognize the plugin. For more information, see <a href="/docs/truffle/gettin
       test
     </h3>
   <p>Run JavaScript and Solidity tests.</p>
-<pre><code class="lang-shell">truffle test [&lt;test_file&gt;] [--compile-all] [--network &lt;name&gt;] [--verbose-rpc] [--show-events]
-</code></pre>
+<pre><code class="language-shell">truffle test [&lt;test_file&gt;] [--compile-all[-debug]] [--network &lt;name&gt;] [--verbose-rpc] [--show-events] [--debug] [--debug-global &lt;identifier&gt;] [--bail] [--stacktrace[-extra]]</code></pre>
 <p>Runs some or all tests within the <code>test/</code> directory as specified. See the section on <a href="/docs/getting_started/testing">Testing your contracts</a> for more information.</p>
 <p>Options:</p>
 <ul>
 <li><code>&lt;test_file&gt;</code>: Name of the test file to be run. Can include path information if the file does not exist in the current directory.</li>
 <li><code>--compile-all</code>: Compile all contracts instead of intelligently choosing which contracts need to be compiled.</li>
+<li><code>--compile-all-debug</code>: Like <code>--compile-all</code>, but compiles contracts in debug mode for extra information.  Has no effect on Solidity &lt;0.6.3.</li>
 <li><code>--network &lt;name&gt;</code>: Specify the network to use, using artifacts specific to that network. Network name must exist in the configuration.</li>
 <li><code>--verbose-rpc</code>: Log communication between Truffle and the Ethereum client.</li>
 <li><code>--show-events</code>: Log all contract events.</li>
+<li><code>--debug</code>: Provides global <code>debug()</code> function for in-test debugging. Usable with Javascript tests only; implies <code>--compile-all</code>.</li>
+<li><code>--debug-global &lt;identifier&gt;</code>: Allows one to rename the <code>debug()</code> function to something else.</li>
+<li><code>--bail</code>: Bail after the first test failure.  May be abbreviated <code>-b</code>.</li>
+<li><code>--stacktrace</code>: Allows for mixed Javascript-and-Solidity stacktraces when a Truffle Contract transaction or deployment reverts.  Does not apply to calls or gas estimates.  Implies <code>--compile-all</code>.  May be abbreviated <code>-t</code>.  Warning: This option is still somewhat experimental.</li>
+<li><code>--stacktrace-extra</code>: Shortcut for <code>--stacktrace --compile-all-debug</code>.</li>
 </ul>
 
     <h3 class="link-markdown">
@@ -645,8 +645,7 @@ to recognize the plugin. For more information, see <a href="/docs/truffle/gettin
       unbox
     </h3>
   <p>Download a Truffle Box, a pre-built Truffle project.</p>
-<pre><code class="lang-shell">truffle unbox &lt;box_name&gt;
-</code></pre>
+<pre><code class="language-shell">truffle unbox &lt;box_name&gt; [--force]</code></pre>
 <p>Downloads a <a href="/boxes">Truffle Box</a> to the current working directory. See the <a href="/boxes">list of available boxes</a>.</p>
 <p>You can also design and create your own boxes!  See the section on <a href="docs/truffle/getting-started/truffle-boxes">Truffle boxes</a> for more information.</p>
 <p>Options:</p>
@@ -661,8 +660,7 @@ to recognize the plugin. For more information, see <a href="/docs/truffle/gettin
       version
     </h3>
   <p>Show version number and exit.</p>
-<pre><code class="lang-shell">truffle version
-</code></pre>
+<pre><code class="language-shell">truffle version</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="watch"></a>
@@ -670,11 +668,10 @@ to recognize the plugin. For more information, see <a href="/docs/truffle/gettin
       watch
     </h3>
   <p>Watch filesystem for changes and rebuild the project automatically.</p>
-<pre><code class="lang-shell">truffle watch
-</code></pre>
+<pre><code class="language-shell">truffle watch</code></pre>
 <p>This command will initiate a watch for changes to contracts, application, and configuration files. When there&#39;s a change, it will rebuild the app as necessary.</p>
 <p class="alert alert-warning">
-<strong>Alert</strong>: This command is deprecated. Please use external tools to watch for filesystem changes and rerun tests.
+**Alert**: This command is deprecated. Please use external tools to watch for filesystem changes and rerun tests.
 </p>
 
 

@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591034288769">
+  <link rel="stylesheet" href="/css/index.css?1591378895616">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -370,11 +370,10 @@
       <span style="text-transform: none;"><code>ignore</code></span> (array)
     </h3>
   <p>An array of files or relative paths you&#39;d like Truffle to ignore when unboxing. Common files include the <code>readme.md</code> or <code>.gitignore</code>. These files will not be copied over from the box&#39;s repo when you unbox.</p>
-<pre><code class="lang-javascript">&quot;ignore&quot;: [
+<pre><code class="language-javascript">&quot;ignore&quot;: [
   &quot;README.md&quot;,
   &quot;.gitignore&quot;
-]
-</code></pre>
+]</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="-span-style-text-transform-none-code-commands-code-span-object-"></a>
@@ -383,15 +382,14 @@
     </h3>
   <p>An object whose key/value pairs are a descriptor and console command respectively. These pairs will be shown to users once your box is successfully unboxed. Think of these as quick instructions.</p>
 <p>For example, consider the object below. We&#39;ve given our users all they need to compile, migrate and test their smart contracts, along with commands for developing the front-end.</p>
-<pre><code class="lang-javascript">&quot;commands&quot;: {
+<pre><code class="language-javascript">&quot;commands&quot;: {
   &quot;Compile&quot;: &quot;truffle compile&quot;,
   &quot;Migrate&quot;: &quot;truffle migrate&quot;,
   &quot;Test contracts&quot;: &quot;truffle test&quot;,
   &quot;Test dapp&quot;: &quot;npm test&quot;,
   &quot;Run dev server&quot;: &quot;npm run start&quot;,
   &quot;Build for production&quot;: &quot;npm run build&quot;
-}
-</code></pre>
+}</code></pre>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="-span-style-text-transform-none-code-hooks-code-span-object-"></a>
@@ -399,10 +397,9 @@
       <span style="text-transform: none;"><code>hooks</code></span> (object)
     </h3>
   <p>An object containing console commands to execute once unboxed. Since we&#39;re working in Node.js, most commonly this will contain <code>npm install</code>.</p>
-<pre><code class="lang-javascript">&quot;hooks&quot;: {
+<pre><code class="language-javascript">&quot;hooks&quot;: {
   &quot;post-unpack&quot;: &quot;npm install&quot;
-}
-</code></pre>
+}</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="images"></a>
