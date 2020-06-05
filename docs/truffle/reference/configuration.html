@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591378895616">
+  <link rel="stylesheet" href="/css/index.css?1591398195760">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -541,6 +541,29 @@
 <pre><code class="language-javascript">mocha: {
   useColors: true
 }</code></pre>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="etherscan"></a>
+      <a href="#etherscan"><i class="fas fa-link"></i></a>
+      etherscan
+    </h3>
+  <p>Configuration options that Truffle will use when attempting to download source code from <a href="https://etherscan.io/">Etherscan</a>.  Has one suboption:</p>
+<ul>
+<li><code>apiKey</code>: The API key to use when retrieving source code from Etherscan.  If omitted, source will be retrieved without an API key, which may be slower.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-javascript">etherscan: {
+  apiKey: &quot;0123456789abcdef0123456789abcdef&quot; //replace this with your API key if you have one
+}</code></pre>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="sourcefetchers"></a>
+      <a href="#sourcefetchers"><i class="fas fa-link"></i></a>
+      sourceFetchers
+    </h3>
+  <p>A list of verified source repositories that Truffle may attempt to download source code from, in the order it should attempt to use them.  (You can omit this and Truffle will use all ones it knows about in its default order.)  Currently the only supported one is <code>&quot;etherscan&quot;</code>.</p>
+<p>Example:</p>
+<pre><code class="language-javascript">sourceFetchers: [&quot;etherscan&quot;]</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="compiler-configuration"></a>

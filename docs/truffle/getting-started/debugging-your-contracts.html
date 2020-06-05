@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591378895616">
+  <link rel="stylesheet" href="/css/index.css?1591398195760">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -356,6 +356,14 @@ Set breakpoints in your JavaScript tests with the new `debug()` global!
 [See below](#in-test-debugging).
 </p>
 
+<p class="alert alert-info m-t-2">
+<strong>
+New in Truffle v5.1.29: `truffle debug --fetch-external`.
+</strong>
+Debug transactions involving contracts not in your project that are verified on [Etherscan](https://etherscan.io/)!
+[See below](#debugging-external-contracts-with-verified-source).
+</p>
+
 
 <p>Debugging a transaction on the blockchain is different than debugging traditional applications (for instance, applications written in C++ or Javascript). When debugging a transaction on the blockchain, you&#39;re not running the code in real-time; instead, you&#39;re stepping over the historical execution of that transaction, and mapping that execution onto its associated code. This gives us many liberties in debugging, in that we can debug any transaction, any time, so long as we have the code and artifacts for the contracts the transaction interacted with. Think of these code and artifacts as akin to the debugging symbols needed by traditional debuggers.</p>
 <p>In order to debug transactions, you&#39;ll need the following:</p>
@@ -419,6 +427,10 @@ read-only calls as well.</p>
 <p>If you simply want to open the debugger to get it ready, so that you can debug a transaction later, you can also simply run:</p>
 <pre><code class="language-shell">$ truffle debug</code></pre>
 <p>Regardless of how you start the debugger, once it is running you are not limited to debugging only the transaction you launched it with; it is possible to unload the current transaction and load a new one, as described below.</p>
+<p>You can specify the network you want to debug on with the <code>--network</code> option:</p>
+<pre><code class="language-shell">$ truffle debug &lt;transaction hash&gt; --network &lt;network&gt;</code></pre>
+<p>And with the <code>--fetch-external</code> option (<a href="#debugging-external-contracts-with-verified-source">see below</a>), you can debug contract instances outside your project that have verified source code on <a href="https://etherscan.io/">Etherscan</a>.  (Support for retrieving code from <a href="https://github.com/ethereum/sourcify">Sourcify</a> as well is planned.)  When using this option, you must specify a transaction hash to debug, and you will not be able to switch transactions from inside the debugger.</p>
+<pre><code class="language-shell">$ truffle debug &lt;transaction hash&gt; --fetch-external --network &lt;network&gt;</code></pre>
 <p class="alert alert-info m-t-2">
 <strong>
 Faster debugger startup:
@@ -432,185 +444,137 @@ startup greatly.
 
 
     <h2 class="link-markdown">
-      <a class="anchor-target" name="debugging-interface"></a>
-      <a href="#debugging-interface"><i class="fas fa-link"></i></a>
-      Debugging interface
+      <a class="anchor-target" name="debugging-external-contracts-with-verified-source"></a>
+      <a href="#debugging-external-contracts-with-verified-source"><i class="fas fa-link"></i></a>
+      Debugging external contracts with verified source
     </h2>
-  <p>Starting the debugger will open an interface familiar to those that have debugged other types of applications. When it starts, you&#39;ll see the following:</p>
-<ul>
-<li>A list of addresses either transacted against or created during the course of this transaction.</li>
-<li>A list of available commands for using the debugger.</li>
-<li>And the initial entry point for the transaction, including contract source file and code preview.</li>
-</ul>
-<p>The <code>enter</code> key is set to perform the last command entered. When the debugger starts, the <code>enter</code> key is set to step to the next logical source code element encountered during execution (i.e., the next expression or statement evaluated by the Ethereum virtual machine). At this point you can press <code>enter</code> to step through the transaction, or enter one of the available commands to analyze the transaction in more detail. The list of commands is detailed below.</p>
+  <p>If you pass the <code>--fetch-external</code> option, the debugger will attempt to download verified source code off of <a href="https://etherscan.io/">Etherscan</a> for any addresses involved in the transaction that it cannot find source code for in your project.  (Support for retrieving code from <a href="https://github.com/ethereum/sourcify">Sourcify</a> as well is planned.)  You can of course debug such transactions without this option, but when stepping through the transaction the external calls to these unrecognized contracts will simply be skipped over.</p>
+<p>This option can also be abbreviated <code>-x</code>.</p>
+<p>If you have an Etherscan API key, you can include it in your configuration file and the debugger will use it when downloading source from Etherscan.  Including this can speed up downloads.</p>
+<p>Example:</p>
+<pre><code class="language-javascript">module.exports = {
+  /* ... rest of truffle-config.js ... */
+  etherscan: {
+    apiKey: &quot;0123456789abcdef0123456789abcdef&quot; //replace this with your API key if you have one
+  }
+}
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-o-step-over"></a>
-      <a href="#-o-step-over"><i class="fas fa-link"></i></a>
-      (o) step over
-    </h3>
-  <p>This command steps over the current line, relative to the position of the statement or expression currently being evaluated in the Solidity source file. Use this command if you don&#39;t want to step into a function call or contract creation on the current line, or if you&#39;d like to quickly jump to a specific point in the source file.</p>
+## Debugging interface
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-i-step-into"></a>
-      <a href="#-i-step-into"><i class="fas fa-link"></i></a>
-      (i) step into
-    </h3>
-  <p>This command steps into the function call or contract creation currently being evaluated. Use this command to jump into the function and quickly start debugging the code that exists there.</p>
+Starting the debugger will open an interface familiar to those that have debugged other types of applications. When it starts, you&#39;ll see the following:
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-u-step-out"></a>
-      <a href="#-u-step-out"><i class="fas fa-link"></i></a>
-      (u) step out
-    </h3>
-  <p>This command steps out of the currently running function. Use this command to quickly get back to the calling function, or end execution of the transaction if this was the entry point of the transaction.</p>
+* A list of addresses either transacted against or created during the course of this transaction.
+* A list of available commands for using the debugger.
+* And the initial entry point for the transaction, including contract source file and code preview.
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-n-step-next"></a>
-      <a href="#-n-step-next"><i class="fas fa-link"></i></a>
-      (n) step next
-    </h3>
-  <p>This command steps to the next logical statement or expression in the source code. For example, evaluating sub expressions will need to occur first before the virtual machine can evaluate the full expression. Use this command if you&#39;d like to analyze each logical item the virtual machine evaluates.</p>
+The `enter` key is set to perform the last command entered. When the debugger starts, the `enter` key is set to step to the next logical source code element encountered during execution (i.e., the next expression or statement evaluated by the Ethereum virtual machine). At this point you can press `enter` to step through the transaction, or enter one of the available commands to analyze the transaction in more detail. The list of commands is detailed below.
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-step-instruction"></a>
-      <a href="#-step-instruction"><i class="fas fa-link"></i></a>
-      (;) step instruction
-    </h3>
-  <p>This command allows you to step through each individual instruction evaluated by the virtual machine. This is useful if you&#39;re interested in understanding the low level bytecode created by the Solidity source code. When you use this command, the debugger will also print out the stack data at the time the instruction was evaluated.  (If additional data displays have been turned on with the <code>p</code> command, those will be shown too.)</p>
-<p>You can also use this command with a numerical argument, to step that many times.</p>
+### (o) step over
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-p-print-instruction"></a>
-      <a href="#-p-print-instruction"><i class="fas fa-link"></i></a>
-      (p) print instruction
-    </h3>
-  <p>This commands prints the current instruction and stack data, but does not step to the next instruction. Use this when you&#39;d like to see the current instruction and stack data after navigating through the transaction with the logical commands described above.</p>
-<p>This command can also print locations other than the stack, if you want to view memory, storage, or calldata.  Simply type <code>p memory</code> to show memory along with the other information, <code>p storage</code> for storage, or <code>p calldata</code> for calldata.  Each of these can also be abbreviated, e.g. <code>p mem</code>; they can also be combined, e.g. <code>p mem sto</code>.</p>
-<p>You can also add these extra locations to the default display with <code>+</code>; e.g., <code>p +mem</code> will make it so that memory will always be displayed when you enter <code>p</code> or <code>;</code>, and <code>p -mem</code> will turn this off.  You can even turn off the stack display with <code>p -sta</code>, or force it to display with <code>p sta</code>.  All of these options can again be combined.</p>
+This command steps over the current line, relative to the position of the statement or expression currently being evaluated in the Solidity source file. Use this command if you don&#39;t want to step into a function call or contract creation on the current line, or if you&#39;d like to quickly jump to a specific point in the source file.
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-h-print-this-help"></a>
-      <a href="#-h-print-this-help"><i class="fas fa-link"></i></a>
-      (h) print this help
-    </h3>
-  <p>Print the list of available commands.</p>
+### (i) step into
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-q-quit"></a>
-      <a href="#-q-quit"><i class="fas fa-link"></i></a>
-      (q) quit
-    </h3>
-  <p>Quit the debugger.</p>
+This command steps into the function call or contract creation currently being evaluated. Use this command to jump into the function and quickly start debugging the code that exists there.
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-r-reset"></a>
-      <a href="#-r-reset"><i class="fas fa-link"></i></a>
-      (r) reset
-    </h3>
-  <p>Reset the debugger to the beginning of the transaction.</p>
+### (u) step out
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-b-set-a-breakpoint"></a>
-      <a href="#-b-set-a-breakpoint"><i class="fas fa-link"></i></a>
-      (b) set a breakpoint
-    </h3>
-  <p>This command allows you to set breakpoints for any line in any of your source files (see <a href="#adding-and-removing-breakpoints">examples</a> below).  These can be given by line number; by relative line number; by line number in a specified source file; or one may simply add a breakpoint at the current point in the code.</p>
-<p>You don&#39;t need a transaction loaded to set breakpoints, although in that case you will have to specify which source file you mean to set it in.</p>
+This command steps out of the currently running function. Use this command to quickly get back to the calling function, or end execution of the transaction if this was the entry point of the transaction.
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-b-remove-a-breakpoint"></a>
-      <a href="#-b-remove-a-breakpoint"><i class="fas fa-link"></i></a>
-      (B) remove a breakpoint
-    </h3>
-  <p>This command allows you to remove any of your existing breakpoints, with the same syntax as for adding them (see <a href="#adding-and-removing-breakpoints">example</a> below).  Type <code>B all</code> to remove all breakpoints.</p>
+### (n) step next
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-c-continue-until-breakpoint"></a>
-      <a href="#-c-continue-until-breakpoint"><i class="fas fa-link"></i></a>
-      (c) continue until breakpoint
-    </h3>
-  <p>This command will cause execution of the code to continue until the next breakpoint is reached or the last line is executed.</p>
+This command steps to the next logical statement or expression in the source code. For example, evaluating sub expressions will need to occur first before the virtual machine can evaluate the full expression. Use this command if you&#39;d like to analyze each logical item the virtual machine evaluates.
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-evaluate-and-print-expression"></a>
-      <a href="#-evaluate-and-print-expression"><i class="fas fa-link"></i></a>
-      (:) evaluate and print expression
-    </h3>
-  <p>This command will evaluate and print the given expression, based on the current variables and their values (see also <code>v</code>).</p>
+### (;) step instruction
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-add-watch-expression"></a>
-      <a href="#-add-watch-expression"><i class="fas fa-link"></i></a>
-      (+) add watch expression
-    </h3>
-  <p>This command will add a watch on a provided expression, based on the following syntax: <code>+:&lt;expression&gt;</code>.</p>
+This command allows you to step through each individual instruction evaluated by the virtual machine. This is useful if you&#39;re interested in understanding the low level bytecode created by the Solidity source code. When you use this command, the debugger will also print out the stack data at the time the instruction was evaluated.  (If additional data displays have been turned on with the `p` command, those will be shown too.)
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-remove-watch-expression"></a>
-      <a href="#-remove-watch-expression"><i class="fas fa-link"></i></a>
-      (-) remove watch expression
-    </h3>
-  <p>This command will remove a watch expression, based on the following syntax: <code>-:&lt;expression&gt;</code>.</p>
+You can also use this command with a numerical argument, to step that many times.
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-list-existing-watch-expressions-and-breakpoints"></a>
-      <a href="#-list-existing-watch-expressions-and-breakpoints"><i class="fas fa-link"></i></a>
-      (?) list existing watch expressions and breakpoints
-    </h3>
-  <p>This command will display a list of all the current watch expressions and breakpoints.</p>
+### (p) print instruction
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-v-display-variables"></a>
-      <a href="#-v-display-variables"><i class="fas fa-link"></i></a>
-      (v) display variables
-    </h3>
-  <p>This command will display the current variables and their values.</p>
+This commands prints the current instruction and stack data, but does not step to the next instruction. Use this when you&#39;d like to see the current instruction and stack data after navigating through the transaction with the logical commands described above.
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-t-unload-transaction"></a>
-      <a href="#-t-unload-transaction"><i class="fas fa-link"></i></a>
-      (T) unload transaction
-    </h3>
-  <p>This command unloads the current transaction so you can load a new one.</p>
+This command can also print locations other than the stack, if you want to view memory, storage, or calldata.  Simply type `p memory` to show memory along with the other information, `p storage` for storage, or `p calldata` for calldata.  Each of these can also be abbreviated, e.g. `p mem`; they can also be combined, e.g. `p mem sto`.
 
-    <h3 class="link-markdown">
-      <a class="anchor-target" name="-t-load-transaction"></a>
-      <a href="#-t-load-transaction"><i class="fas fa-link"></i></a>
-      (t) load transaction
-    </h3>
-  <p>This command loads a new transaction (given by its transaction hash).  Note that if you already have a transaction loaded, you must first explicitly unload it before you can load a new one.</p>
+You can also add these extra locations to the default display with `+`; e.g., `p +mem` will make it so that memory will always be displayed when you enter `p` or `;`, and `p -mem` will turn this off.  You can even turn off the stack display with `p -sta`, or force it to display with `p sta`.  All of these options can again be combined.
 
-    <h2 class="link-markdown">
-      <a class="anchor-target" name="adding-and-removing-breakpoints"></a>
-      <a href="#adding-and-removing-breakpoints"><i class="fas fa-link"></i></a>
-      Adding and removing breakpoints
-    </h2>
-  <p>Below are some examples of adding and removing breakpoints. Note the difference in case between adding (a lowercase &#39;b&#39;) and removing (an uppercase &#39;B&#39;).</p>
-<pre><code>MagicSquare.sol:
+### (h) print this help
 
-11:   event Generated(uint n);
+Print the list of available commands.
+
+### (q) quit
+
+Quit the debugger.
+
+### (r) reset
+
+Reset the debugger to the beginning of the transaction.
+
+### (b) set a breakpoint
+
+This command allows you to set breakpoints for any line in any of your source files (see [examples](#adding-and-removing-breakpoints) below).  These can be given by line number; by relative line number; by line number in a specified source file; or one may simply add a breakpoint at the current point in the code.
+
+You don&#39;t need a transaction loaded to set breakpoints, although in that case you will have to specify which source file you mean to set it in.
+
+### (B) remove a breakpoint
+
+This command allows you to remove any of your existing breakpoints, with the same syntax as for adding them (see [example](#adding-and-removing-breakpoints) below).  Type `B all` to remove all breakpoints.
+
+### (c) continue until breakpoint
+
+This command will cause execution of the code to continue until the next breakpoint is reached or the last line is executed.
+
+### (:) evaluate and print expression
+
+This command will evaluate and print the given expression, based on the current variables and their values (see also `v`).
+
+### (+) add watch expression
+
+This command will add a watch on a provided expression, based on the following syntax: `+:&lt;expression&gt;`.
+
+### (-) remove watch expression
+
+This command will remove a watch expression, based on the following syntax: `-:&lt;expression&gt;`.
+
+### (?) list existing watch expressions and breakpoints
+
+This command will display a list of all the current watch expressions and breakpoints.
+
+### (v) display variables
+
+This command will display the current variables and their values.
+
+### (T) unload transaction
+
+This command unloads the current transaction so you can load a new one.  Not usable in `--fetch-external` mode.
+
+### (t) load transaction
+
+This command loads a new transaction (given by its transaction hash).  Note that if you already have a transaction loaded, you must first explicitly unload it before you can load a new one.  Not usable in `--fetch-external` mode.
+
+## Adding and removing breakpoints
+
+Below are some examples of adding and removing breakpoints. Note the difference in case between adding (a lowercase &#39;b&#39;) and removing (an uppercase &#39;B&#39;).  If you add a breakpoint at a place where the debugger will skip over, it will be automatically moved down to the next point that the debugger might stop.  This does not apply to removing breakpoints.  Use the `?` command to list current breakpoints.
+</code></pre>
+<p>MagicSquare.sol:</p>
+<p>11:   event Generated(uint n);
 12:
 13:   function generateMagicSquare(uint n)
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-debug(develop:0x91c817a1...)&gt; b 23
-Breakpoint added at line 23.
-
-debug(develop:0x91c817a1...)&gt; B 23
-Breakpoint removed at line 23.
-
-debug(develop:0x91c817a1...)&gt; b SquareLib:5
-Breakpoint added at line 5 in SquareLib.sol.
-
-debug(develop:0x91c817a1...)&gt; b +10
-Breakpoint added at line 23.
-
-debug(develop:0x91c817a1...)&gt; b
-Breakpoint added at this point in line 13.
-
-debug(develop:0x91c817a1...)&gt; B all
-Removed all breakpoints.</code></pre>
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
+<p>debug(develop:0x91c817a1...)&gt; b 23
+Breakpoint added at line 23.</p>
+<p>debug(develop:0x91c817a1...)&gt; B 23
+Breakpoint removed at line 23.</p>
+<p>debug(develop:0x91c817a1...)&gt; b SquareLib:5
+Breakpoint added at line 5 in SquareLib.sol.</p>
+<p>debug(develop:0x91c817a1...)&gt; b +10
+Breakpoint added at line 23.</p>
+<p>debug(develop:0x91c817a1...)&gt; b
+Breakpoint added at this point in line 13.</p>
+<p>debug(develop:0x91c817a1...)&gt; B all
+Removed all breakpoints.</p>
+<pre><code></code></pre>
 
           <div class="contribute-link">
             See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/master/src/docs/truffle/getting-started">Edit here &raquo;</a>
