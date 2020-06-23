@@ -12,8 +12,8 @@
 <url> <loc>https://www.truffleframework.com/trufflecon2019.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/trufflecon2020.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/university.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/index.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/careers/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/events/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/press-releases/index.html</loc> </url>
@@ -278,9 +278,9 @@
 <url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/events-page.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/linking-a-truffle-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/unlinking-a-truffle-project.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/creating-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/deleting-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/editing-workspaces.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/creating-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/ethereum.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/loading-existing-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/switching-workspaces.html</loc> </url>
