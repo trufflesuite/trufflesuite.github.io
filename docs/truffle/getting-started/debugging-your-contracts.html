@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1591478297439">
+  <link rel="stylesheet" href="/css/index.css?1592948621773">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -356,6 +356,14 @@ Set breakpoints in your JavaScript tests with the new `debug()` global!
 [See below](#in-test-debugging).
 </p>
 
+<p class="alert alert-info m-t-2">
+<strong>
+New in Truffle v5.1.29: `truffle debug --fetch-external`.
+</strong>
+Debug transactions involving contracts not in your project that are verified on [Etherscan](https://etherscan.io/)!
+[See below](#debugging-external-contracts-with-verified-source).
+</p>
+
 
 <p>Debugging a transaction on the blockchain is different than debugging traditional applications (for instance, applications written in C++ or Javascript). When debugging a transaction on the blockchain, you&#39;re not running the code in real-time; instead, you&#39;re stepping over the historical execution of that transaction, and mapping that execution onto its associated code. This gives us many liberties in debugging, in that we can debug any transaction, any time, so long as we have the code and artifacts for the contracts the transaction interacted with. Think of these code and artifacts as akin to the debugging symbols needed by traditional debuggers.</p>
 <p>In order to debug transactions, you&#39;ll need the following:</p>
@@ -419,6 +427,10 @@ read-only calls as well.</p>
 <p>If you simply want to open the debugger to get it ready, so that you can debug a transaction later, you can also simply run:</p>
 <pre><code class="language-shell">$ truffle debug</code></pre>
 <p>Regardless of how you start the debugger, once it is running you are not limited to debugging only the transaction you launched it with; it is possible to unload the current transaction and load a new one, as described below.</p>
+<p>You can specify the network you want to debug on with the <code>--network</code> option:</p>
+<pre><code class="language-shell">$ truffle debug &lt;transaction hash&gt; --network &lt;network&gt;</code></pre>
+<p>And with the <code>--fetch-external</code> option (<a href="#debugging-external-contracts-with-verified-source">see below</a>), you can debug contract instances outside your project that have verified source code on <a href="https://etherscan.io/">Etherscan</a>.  (Support for retrieving code from <a href="https://github.com/ethereum/sourcify">Sourcify</a> as well is planned.)  When using this option, you must specify a transaction hash to debug, and you will not be able to switch transactions from inside the debugger.</p>
+<pre><code class="language-shell">$ truffle debug &lt;transaction hash&gt; --fetch-external --network &lt;network&gt;</code></pre>
 <p class="alert alert-info m-t-2">
 <strong>
 Faster debugger startup:
@@ -430,6 +442,22 @@ however, the debugger can likely avoid the initial recompile, speeding up
 startup greatly.
 </p>
 
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="debugging-external-contracts-with-verified-source"></a>
+      <a href="#debugging-external-contracts-with-verified-source"><i class="fas fa-link"></i></a>
+      Debugging external contracts with verified source
+    </h2>
+  <p>If you pass the <code>--fetch-external</code> option, the debugger will attempt to download verified source code off of <a href="https://etherscan.io/">Etherscan</a> for any addresses involved in the transaction that it cannot find source code for in your project.  (Support for retrieving code from <a href="https://github.com/ethereum/sourcify">Sourcify</a> as well is planned.)  You can of course debug such transactions without this option, but when stepping through the transaction the external calls to these unrecognized contracts will simply be skipped over.</p>
+<p>This option can also be abbreviated <code>-x</code>.</p>
+<p>If you have an Etherscan API key, you can include it in your configuration file and the debugger will use it when downloading source from Etherscan.  Including this can speed up downloads.</p>
+<p>Example:</p>
+<pre><code class="language-javascript">module.exports = {
+  /* ... rest of truffle-config.js ... */
+  etherscan: {
+    apiKey: &quot;0123456789abcdef0123456789abcdef&quot; //replace this with your API key if you have one
+  }
+}</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="debugging-interface"></a>
@@ -572,21 +600,21 @@ startup greatly.
       <a href="#-t-unload-transaction"><i class="fas fa-link"></i></a>
       (T) unload transaction
     </h3>
-  <p>This command unloads the current transaction so you can load a new one.</p>
+  <p>This command unloads the current transaction so you can load a new one.  Not usable in <code>--fetch-external</code> mode.</p>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="-t-load-transaction"></a>
       <a href="#-t-load-transaction"><i class="fas fa-link"></i></a>
       (t) load transaction
     </h3>
-  <p>This command loads a new transaction (given by its transaction hash).  Note that if you already have a transaction loaded, you must first explicitly unload it before you can load a new one.</p>
+  <p>This command loads a new transaction (given by its transaction hash).  Note that if you already have a transaction loaded, you must first explicitly unload it before you can load a new one.  Not usable in <code>--fetch-external</code> mode.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="adding-and-removing-breakpoints"></a>
       <a href="#adding-and-removing-breakpoints"><i class="fas fa-link"></i></a>
       Adding and removing breakpoints
     </h2>
-  <p>Below are some examples of adding and removing breakpoints. Note the difference in case between adding (a lowercase &#39;b&#39;) and removing (an uppercase &#39;B&#39;).</p>
+  <p>Below are some examples of adding and removing breakpoints. Note the difference in case between adding (a lowercase &#39;b&#39;) and removing (an uppercase &#39;B&#39;).  If you add a breakpoint at a place where the debugger will skip over, it will be automatically moved down to the next point that the debugger might stop.  This does not apply to removing breakpoints.  Use the <code>?</code> command to list current breakpoints.</p>
 <pre><code>MagicSquare.sol:
 
 11:   event Generated(uint n);

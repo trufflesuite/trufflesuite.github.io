@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- HubSpot Forms -->
+  <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5258293.js"></script>
+  <!-- End of HubSpot Embed Code -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Debugging verified external contracts with Truffle Debugger | Blog | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/blog/debugging-verified-external-contracts-with-truffle-debugger" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Debugging verified external contracts with Truffle Debugger | Blog | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Debugging verified external contracts with Truffle Debugger | Blog | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/university">UNIVERSITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Debugging verified external contracts with Truffle Debugger</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2020-6-18&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Harry Altman</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <p>
+    <img class="img-fluid" src="/img/blog/debugging-verified-external-contracts-with-truffle-debugger/blog-header.png" title="Truffle Teams Redesign Banner" alt="Truffle Teams Redesign Banner" />
+    
+  </p>
+<p>Let&#39;s say you&#39;re crafting a clever flashloan transaction that interacts with
+five different DeFi dapps -- but on trying it, it doesn&#39;t work as expected.  You
+open the transaction in Truffle Debugger to get a closer look at what went
+wrong.  But how will you debug a transaction that the debugger doesn&#39;t have the
+source code for?</p>
+<p>Well, new in Truffle release v5.1.29 is the debugger&#39;s <code>--fetch-external</code> flag!
+This new flag tells the debugger to search <a href="https://etherscan.io/contractsVerified">Etherscan&#39;s repository of verified
+contracts</a> and automatically
+download and compile those sources.  As long as all the contracts you&#39;re
+interacting with are verified on Etherscan, you&#39;re good to go!</p>
+<p>This means you&#39;ll be able to debug Mainnet / Görli / Ropsten / etc. transactions
+that interact with external contracts <em>without the need to have external
+contract source code available locally</em>!</p>
+<p>Now, before you get too excited, some caveats apply:</p>
+<ul>
+<li>This only works with Solidity contracts, since @truffle/debugger only supports
+Solidity at this time.</li>
+<li>While using this feature, you won&#39;t be able to load and unload transactions
+in the debugger like normal; you&#39;ll have to quit and restart to change
+transactions.</li>
+<li>In order to be able to use the debugger and have it find the right source to
+download for your network, you&#39;ll need to connect to an archive node that
+offers the <code>debug_traceTransaction</code> JSON RPC method. (See Geth&#39;s <a href="https://github.com/ethereum/go-ethereum/wiki/Management-APIs">Management
+APIs</a>).</li>
+</ul>
+<p>That last one is a pretty big caveat, but <strong>there&#39;s good news here</strong>! Our
+sibling SaaS project, <a href="https://www.trufflesuite.com/teams">Truffle Teams</a>, now
+lets you <a href="https://www.trufflesuite.com/blog/sandbox-forking-with-truffle-teams">simulate live
+networks</a>
+via the free Sandbox feature. This works without requiring you to run your own
+node or to pay for someone else to run their own node, since Truffle Teams
+offers 1 free sandbox per GitHub organization!</p>
+<p>Of course, you&#39;re free to use the debugger with whatever compatible Ethereum
+node you like, including command-line Ganache; but here&#39;s how to use Truffle
+Teams, which offers so much more, for this feature.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="example-debug-ens-in-a-mostly-empty-truffle-project-"></a>
+      <a href="#example-debug-ens-in-a-mostly-empty-truffle-project-"><i class="fas fa-link"></i></a>
+      Example: Debug ENS in a [mostly] empty Truffle project!
+    </h3>
+  <p><a href="/img/blog/debugging-verified-external-contracts-with-truffle-debugger/debug-example1.png" target="_blank"><img width="100%" alt="Click to enlarge" src="/img/blog/debugging-verified-external-contracts-with-truffle-debugger/debug-example1.png">Click to enlarge</a></p>
+<p>This screenshot shows <code>truffle debug</code> stepping through a Görli transaction to the ENS registry. Once you upgrade to Truffle v5.1.29, you can recreate this by doing the following:</p>
+<ol>
+<li><p>Find the <a href="https://goerli.etherscan.io/address/0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e">Görli ENS contract page on
+Etherscan</a>.</p>
+</li>
+<li><p>Find a recent transaction hash. (See <a href="https://goerli.etherscan.io/tx/0x79381a69eb828558f2728900615109eb7bdeb6d216af130142341da15cc6fecd">example from
+screenshot</a>.)</p>
+</li>
+<li><p><a href="https://my.truffleteams.com/">Sign up / login to Truffle Teams</a> and make a
+free Sandbox that forks off Görli. <strong>Note</strong>: At the moment, you&#39;ll have to make
+sure that you manually specify that the Sandbox should use the same network ID
+as the chain it&#39;s forked from (in this case, 5).  In the future, however, this
+step will be handled automatically.  You can read more about Sandboxes in <a href="https://www.trufflesuite.com/blog/sandbox-forking-with-truffle-teams">our
+earlier blog post on the
+subject</a>.</p>
+</li>
+<li><p>Copy your sandbox JSON RPC url to the clipboard.</p>
+</li>
+<li><p>Run <code>truffle init</code> and add this to your new <code>truffle-config.js</code> (replacing <code>&quot;&lt;paste RPC url&gt;&quot;</code> with your clipboard contents from step 4):</p>
+<pre><code class="language-javascript">module.exports = {
+ /* ... rest of truffle-config.js ... */
+ networks: {
+   /* ... rest of networks ... */
+   sandbox: {
+     url: &quot;&lt;paste RPC url&gt;&quot;,
+     network_id: 5
+   }
+ }
+}</code></pre>
+<p>5a. <em>Optional</em>. If you have an <a href="https://etherscan.io/apis">Etherscan API key</a> or
+feel like making one, you can specify that as well in your <code>truffle-config.js</code>
+to speed up downloads:</p>
+<pre><code class="language-javascript">module.exports = {
+ /* ... rest of truffle-config.js ... */
+ etherscan: {
+   // replace this with your API key
+   apiKey: &quot;0123456789abcdef0123456789abcdef&quot;
+ }
+}</code></pre>
+</li>
+<li><p>Copy the transaction hash from step 2 and run the following (replacing
+<code>&lt;transaction hash&gt;</code> with the <code>0x</code>-prefixed transaction hash):</p>
+<pre><code>truffle debug &lt;transaction hash&gt; --network sandbox --fetch-external</code></pre></li>
+</ol>
+<p>And that&#39;s it!  You&#39;re now debugging an ENS transaction in an empty Truffle
+project.  You can step through and set breakpoints; inspect both decoded
+variables and the raw binary state; and get return values, revert messages, and
+stacktraces just like normal.</p>
+<p>Now this example is a minimal one just to show how things work.  But it will
+work just as well in your existing projects on transactions that feature your
+contracts in your project interacting with external verified contracts deployed
+on live networks.</p>
+<p>Right now &quot;verified contracts&quot; just means contracts verified on Etherscan, but
+we&#39;re also looking at supporting the new
+<a href="https://github.com/ethereum/sourcify">Sourcify</a> project, which provides a more
+decentralized alternative to Etherscan&#39;s repository. We plan to add this in an
+upcoming release.  But as of right now, you can use this feature with
+Etherscan&#39;s large library of verified contracts!</p>
+<p>Hope you find this as exciting as we do! Thanks for using Truffle!</p>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/blog">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="https://www.trufflesuite.com/trufflecon2020">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2020</a></li>
+            <li><strong>&copy; Truffle Blockchain Group 2020</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+          <script>
+            hbspt.forms.create({
+               portalId: "5258293",
+               formId: "afcfabf3-e2c3-4a08-aace-ef5c7b13c3d8"
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>
