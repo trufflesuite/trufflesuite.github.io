@@ -42,15 +42,15 @@
   <!-- Facebook OpenGraph -->
   <meta property="og:site_name" content="Truffle Suite" />
   <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
-  <meta property="og:title" content="Announcing Our Parnership with Filecoin - Big Integrations Coming | Blog | Truffle Suite" />
-  <meta property="og:url" content="https://trufflesuite.com/blog/announcing-partnership-with-filecoin" />
+  <meta property="og:title" content="Announcing Collaboration with Filecoin - Big Integrations Coming | Blog | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/blog/announcing-collaboration-with-filecoin" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="Truffle Suite" />
-  <meta name="twitter:title" content="Announcing Our Parnership with Filecoin - Big Integrations Coming | Blog | Truffle Suite" />
+  <meta name="twitter:title" content="Announcing Collaboration with Filecoin - Big Integrations Coming | Blog | Truffle Suite" />
   <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
   <meta name="twitter:creator" content="Truffle Suite" />
   <meta name="twitter:domain" content="trufflesuite.com" />
@@ -58,7 +58,7 @@
   
   <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
     
-  <title>Announcing Our Parnership with Filecoin - Big Integrations Coming | Blog | Truffle Suite</title>
+  <title>Announcing Collaboration with Filecoin - Big Integrations Coming | Blog | Truffle Suite</title>
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
@@ -127,7 +127,7 @@
   <main class="container container-heading container-narrow">
     <div class="row">
       <div class="col">
-        <h1>Announcing Our Parnership with Filecoin - Big Integrations Coming</h1>
+        <h1>Announcing Collaboration with Filecoin - Big Integrations Coming</h1>
         <ul class="list-sm-stacker space-icon mb-0">
           <li><i class="far fa-calendar-alt"></i> 2020-7-7&nbsp;&nbsp;&nbsp;</li>
           <li><i class="far fa-user"></i> Tim Coulter</li>
@@ -141,10 +141,10 @@
       <div class="row justify-content-center">
         <div class="col">
           <p>
-    <img class="img-fluid" src="/img/blog/announcing-partnership-with-filecoin/blog-header.png" title="Filecoin Partnership Banner" alt="Filecoin Partnership Banner" />
+    <img class="img-fluid" src="/img/blog/announcing-collaboration-with-filecoin/blog-header.png" title="Filecoin Collab Banner" alt="Filecoin Collab Banner" />
     
   </p>
-<p>Today we&#39;re announcing an exciting new partnership, aimed at helping developers across the globe create and deploy fully decentralized applications. We&#39;ve teamed up with Filecoin to add support for the Filecoin network into our world class suite of tools. In typical Truffle fashion, we&#39;ll beef up the Truffle command line tool to give you everything you need to deploy directly to Filecoin; and then we&#39;ll add new features to Ganache so that you can easily simulate the Filecoin network during development and testing.</p>
+<p>Today we&#39;re announcing an exciting new collaboration, aimed at helping developers across the globe create and deploy fully decentralized applications. We&#39;ve teamed up with Filecoin to add support for the Filecoin network into our world class suite of tools. In typical Truffle fashion, we&#39;ll beef up the Truffle command line tool to give you everything you need to deploy directly to Filecoin; and then we&#39;ll add new features to Ganache so that you can easily simulate the Filecoin network during development and testing.</p>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="the-decentralized-ideal"></a>
@@ -161,15 +161,19 @@
       Truffle Preserve: Save Your App Data (available today!)
     </h3>
   <p>
-    <img class="img-fluid" src="/img/blog/announcing-partnership-with-filecoin/truffle-preserve.gif" title="Truffle Preserve" alt="Truffle Preserve" />
+    <img class="img-fluid" src="/img/blog/announcing-collaboration-with-filecoin/truffle-preserve.gif" title="Truffle Preserve" alt="Truffle Preserve" />
     
   </p>
 <p>In thinking about our support for Filecoin, the idea of <em>preservation</em> came quickly to mind. We envisioned that preserving application data like Javascript frontends and static assets would be a normal part of the deployment process. So we ran with that idea and added a new command to the Truffle command line tool: <code>truffle preserve</code>.</p>
 <p>Like preserving fruit, Truffle follows a &quot;recipe&quot; to preserve your files. In the gif above, Truffle is using the <code>filecoin</code> recipe, which will ship standard with our new version of Truffle. </p>
 <p><strong>You can use <code>truffle preserve</code> today!</strong> You&#39;ll need to download a special release we created so you can start testing, shown below. Note that our Filecoin integration is very alpha, but we wanted to support all the amazing devs hacking on Filecoin this month during <a href="https://hackfs.com/">HackFS</a>. </p>
-<pre><code>$ npm install -g truffle@preserves</code></pre><p>To use <code>truffle preserve</code>, simply specify the files you want to preserve on the command line, and choose between the <code>--ipfs</code> or <code>--filecoin</code> recipes: </p>
-<pre><code>$ truffle preserve ./path/to/directory --ipfs
-$ truffle preserve ./path/to/directory --filecoin</code></pre><p>By default, <code>truffle preserve</code> comes configured to work with the <a href="https://docs.textile.io/powergate/localnet/">Powergate localnet</a>, though you can change the IPFS and Filecoin connection information by adding the following to your <code>truffle-config.js</code> file: </p>
+<pre><code>$ npm install -g truffle@preserves</code></pre><p>To use <code>truffle preserve</code>, simply specify the files you want to preserve on the command line, and choose between the <code>--filecoin</code> or <code>--ipfs</code> recipes. The <code>filecoin</code> recipe uses the <code>ipfs</code> recipe under the hood. You can choose only the <code>ipfs</code> recipe if you have a different set up!  </p>
+<pre><code class="language-javascript">// Preserve to Filecoin:
+$ truffle preserve ./path/to/directory --filecoin
+
+// Preserve to IPFS only:
+$ truffle preserve ./path/to/directory --ipfs </code></pre>
+<p>By default, <code>truffle preserve</code> comes configured to work with the <a href="https://docs.textile.io/powergate/localnet/">Powergate localnet</a>, though you can change the IPFS and Filecoin connection information by adding the following to your <code>truffle-config.js</code> file: </p>
 <pre><code class="language-javascript">  // ...,
   environments: {
     development: {
@@ -190,7 +194,7 @@ $ truffle preserve ./path/to/directory --filecoin</code></pre><p>By default, <co
     </h3>
   <p>Ganache was built as the sister application to Truffle, to speed up development and testing Ethereum applications. Now that we&#39;ve added support to Truffle, it&#39;s only natural we provide the same highly-modular simulator for Filecoin. Over this summer and into Fall, we plan to create a Filecoin simulation library, as part of <a href="https://github.com/trufflesuite/ganache-core"><code>ganache-core</code></a>. Then later on this Fall/Winter, we&#39;ll follow that up with support in our graphical version of Ganache, below! </p>
 <p>
-    <img class="img-fluid" src="/img/blog/announcing-partnership-with-filecoin/filecoin-flavored-ganache.png" title="Filecoin-flavored Ganache" alt="Filecoin-flavored Ganache" />
+    <img class="img-fluid" src="/img/blog/announcing-collaboration-with-filecoin/filecoin-flavored-ganache.png" title="Filecoin-flavored Ganache" alt="Filecoin-flavored Ganache" />
     
   </p>
 
@@ -199,7 +203,7 @@ $ truffle preserve ./path/to/directory --filecoin</code></pre><p>By default, <co
       <a href="#get-involved-reach-out-"><i class="fas fa-link"></i></a>
       Get involved / Reach out!
     </h3>
-  <p>We&#39;re extremely excited to be working with the Filecoin team and adding support for Filecoin into Truffle&#39;s tooling. If you have questions about our Filecoin integration or our plan for the future, <a href="https://trfl.co/become-a-truffler" target="_blank">join our slack community</a> and get your questions answered. Whether your a new dev or a <a href="https://hackfs.com/">HackFS hacker</a>, we&#39;re happy to help. </p>
+  <p>We&#39;re extremely excited to be working with the Filecoin team and adding support for Filecoin into Truffle&#39;s tooling. If you have questions about our Filecoin integration or our plan for the future, <a href="https://trfl.co/become-a-truffler" target="_blank">join our slack community</a> and get your questions answered. Whether you&#39;re a new dev or a <a href="https://hackfs.com/">HackFS hacker</a>, we&#39;re happy to help. </p>
 
 
           <div class="contribute-link">
