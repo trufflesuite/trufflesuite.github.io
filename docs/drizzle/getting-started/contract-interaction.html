@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1592960858329">
+  <link rel="stylesheet" href="/css/index.css?1594083883603">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -382,7 +382,7 @@ if (state.drizzleStatus.initialized) {
     // Declare this transaction to be observed. We&#39;ll receive the stackId for reference.
     const stackId = drizzle.contracts.SimpleStorage.methods.set.cacheSend(2, {from: &#39;0x3f...&#39;})
 
-    // Use the dataKey to display the transaction status.
+    // Use the stackId to display the transaction status.
     if (state.transactionStack[stackId]) {
         const txHash = state.transactionStack[stackId]
 

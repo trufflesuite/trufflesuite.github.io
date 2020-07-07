@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1592960858329">
+  <link rel="stylesheet" href="/css/index.css?1594083883603">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -372,6 +372,26 @@
     
   </p>
 <p class="text-center">*Ganache Settings*</p>
+
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="configuring-truffle-to-connect-to-ganache"></a>
+      <a href="#configuring-truffle-to-connect-to-ganache"><i class="fas fa-link"></i></a>
+      Configuring Truffle to connect to Ganache
+    </h2>
+  <p>To configure Truffle connect to Ganache, edit <code>truffle-config.js</code> to point
+to the Ganache&#39;s IP and port, e.g.,</p>
+<pre><code>module.exports = {
+  networks: {
+    development: {
+      host: &quot;localhost&quot;,
+      port: 7545,
+      network_id: &quot;1234&quot;
+    }
+    // live: { ... }
+  }
+};</code></pre><p>Then you can run migration commands like <code>truffle migrate --network development</code>.</p>
+
 
           <div class="contribute-link">
             See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/docs/ganache/reference">Edit here &raquo;</a>

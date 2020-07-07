@@ -10715,6 +10715,7 @@ div#hubspot-messages-iframe-container {
 .btn-truffle:hover,
 .btn-ganache:hover,
 .btn-watermelon:hover,
+.btn-youtube:hover,
 .btn-drizzle:hover,
 .btn-eventbrite:hover {
   background: #fff;
@@ -10768,6 +10769,11 @@ div#hubspot-messages-iframe-container {
   color: #fff;
 }
 
+.btn-youtube {
+  background: #3fe0c5;
+  color: #33262a;
+}
+
 .btn-outline-white {
   background: transparent;
   color: #fff;
@@ -10781,6 +10787,17 @@ div#hubspot-messages-iframe-container {
 
 .btn-wrap {
   white-space: normal;
+}
+
+.btn-drizzle-tcon {
+  background: #e911bd;
+  color: #fff;
+}
+
+.btn-tcon {
+  border: none;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
 }
 
 .form-control {
@@ -11013,6 +11030,18 @@ blockquote {
 @media (max-width: 575.98px) {
   .container-heading {
     padding: 3rem 15px;
+    max-height: none;
+  }
+}
+
+.container-heading_alt {
+  padding: 1rem 15px;
+  max-height: 45vh;
+}
+
+@media (max-width: 575.98px) {
+  .container-heading_alt {
+    padding: 1rem 15px;
     max-height: none;
   }
 }

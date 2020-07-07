@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1592960858329">
+  <link rel="stylesheet" href="/css/index.css?1594083883603">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -360,7 +360,7 @@ Set breakpoints in your JavaScript tests with the new `debug()` global!
 <strong>
 New in Truffle v5.1.29: `truffle debug --fetch-external`.
 </strong>
-Debug transactions involving contracts not in your project that are verified on <a href="https://etherscan.io/">Etherscan</a>!
+Debug transactions involving contracts not in your project that are verified on <a href="https://etherscan.io/">Etherscan</a>!  (And as of v5.1.32, it works with <a href="https://github.com/ethereum/sourcify">Sourcify</a> too!)
 <a href="#debugging-external-contracts-with-verified-source">See below</a>.
 </p>
 
@@ -429,7 +429,7 @@ read-only calls as well.</p>
 <p>Regardless of how you start the debugger, once it is running you are not limited to debugging only the transaction you launched it with; it is possible to unload the current transaction and load a new one, as described below.</p>
 <p>You can specify the network you want to debug on with the <code>--network</code> option:</p>
 <pre><code class="language-shell">$ truffle debug &lt;transaction hash&gt; --network &lt;network&gt;</code></pre>
-<p>And with the <code>--fetch-external</code> option (<a href="#debugging-external-contracts-with-verified-source">see below</a>), you can debug contract instances outside your project that have verified source code on <a href="https://etherscan.io/">Etherscan</a>.  (Support for retrieving code from <a href="https://github.com/ethereum/sourcify">Sourcify</a> as well is planned.)  When using this option, you must specify a transaction hash to debug, and you will not be able to switch transactions from inside the debugger.</p>
+<p>And with the <code>--fetch-external</code> option (<a href="#debugging-external-contracts-with-verified-source">see below</a>), you can debug contract instances outside your project that have verified source code on <a href="https://etherscan.io/">Etherscan</a> or <a href="https://github.com/ethereum/sourcify">Sourcify</a>.  When using this option, you must specify a transaction hash to debug, and you will not be able to switch transactions from inside the debugger.</p>
 <pre><code class="language-shell">$ truffle debug &lt;transaction hash&gt; --fetch-external --network &lt;network&gt;</code></pre>
 <p class="alert alert-info m-t-2">
 <strong>
@@ -448,7 +448,7 @@ startup greatly.
       <a href="#debugging-external-contracts-with-verified-source"><i class="fas fa-link"></i></a>
       Debugging external contracts with verified source
     </h2>
-  <p>If you pass the <code>--fetch-external</code> option, the debugger will attempt to download verified source code off of <a href="https://etherscan.io/">Etherscan</a> for any addresses involved in the transaction that it cannot find source code for in your project.  (Support for retrieving code from <a href="https://github.com/ethereum/sourcify">Sourcify</a> as well is planned.)  You can of course debug such transactions without this option, but when stepping through the transaction the external calls to these unrecognized contracts will simply be skipped over.</p>
+  <p>If you pass the <code>--fetch-external</code> option, the debugger will attempt to download verified source code off of <a href="https://etherscan.io/">Etherscan</a> and <a href="https://github.com/ethereum/sourcify">Sourcify</a> for any addresses involved in the transaction that it cannot find source code for in your project.  You can of course debug such transactions without this option, but when stepping through the transaction the external calls to these unrecognized contracts will simply be skipped over.</p>
 <p>This option can also be abbreviated <code>-x</code>.</p>
 <p>If you have an Etherscan API key, you can include it in your configuration file and the debugger will use it when downloading source from Etherscan.  Including this can speed up downloads.</p>
 <p>Example:</p>
