@@ -46,6 +46,10 @@
 <url> <loc>https://www.truffleframework.com/boxes/azure-room-thermostat.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/azure-simple-marketplace.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/nightfall.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/rsk-starter-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/rsk-react-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/rsk-next-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/rsk-react-express-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/drizzle-kaleido-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/truffle-kaleido-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/angulartruffledapp.html</loc> </url>
@@ -71,10 +75,6 @@
 <url> <loc>https://www.truffleframework.com/boxes/react-dapp-boilerplate.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/react-hooks-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/react-uport-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/boxes/rsk-starter-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/boxes/rsk-react-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/boxes/rsk-next-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/boxes/rsk-react-express-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/scoreboard.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/skaledapp.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/svelte-box.html</loc> </url>
@@ -116,6 +116,10 @@
 <url> <loc>https://www.truffleframework.com/staff/azure-room-thermostat.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/azure-simple-marketplace.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/nightfall.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/staff/rsk-starter-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/staff/rsk-react-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/staff/rsk-next-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/staff/rsk-react-express-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/drizzle-kaleido-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/truffle-kaleido-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/angulartruffledapp.html</loc> </url>
@@ -141,10 +145,6 @@
 <url> <loc>https://www.truffleframework.com/staff/react-dapp-boilerplate.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/react-hooks-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/react-uport-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/staff/rsk-starter-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/staff/rsk-react-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/staff/rsk-next-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/staff/rsk-react-express-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/scoreboard.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/skaledapp.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/svelte-box.html</loc> </url>
