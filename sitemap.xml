@@ -219,6 +219,10 @@
 <url> <loc>https://www.truffleframework.com/blog/why-were-organizing-trufflecon-2018.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/you-can-now-make-your-own-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/careers/software-engineer-front-end.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/case-studies/case-study-dish-network.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/case-studies/case-study-microsoft-and-the-world-bank.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/case-studies/case-study-microsoft-xbox.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/case-studies/case-study-seattle-coffee.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/events/webinar-truffle-provable.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/press-releases/truffle-anncounces-microsoft-as-preferred-cloud-and-services-partner.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/press-releases/truffle-announces-2nd-annual-trufflecon.html</loc> </url>
@@ -272,16 +276,6 @@
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/drizzle-options.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/drizzle-state.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/how-data-stays-fresh.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/overview.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/quickstart.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/contracts/contract-monitoring.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/deployments/deploying-contracts.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/deployments/sandboxes.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/getting-started/adding-repositories.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/getting-started/creating-an-account.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/reference/permissions-disclosure.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/testing/external-ci.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/testing/starting-builds.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/corda/cordapps.html</loc> </url>
@@ -306,6 +300,16 @@
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/loading-existing-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/switching-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/the-quickstart-workspace.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/overview.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/quickstart.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/contracts/contract-monitoring.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/deployments/deploying-contracts.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/deployments/sandboxes.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/getting-started/adding-repositories.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/getting-started/creating-an-account.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/reference/permissions-disclosure.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/testing/external-ci.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/testing/starting-builds.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/build-processes.html</loc> </url>
@@ -336,6 +340,7 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/quickstart.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/tezos/truffle/reference/configuring-tezos-projects.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/compiling-tezos-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/creating-a-tezos-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/deploying-tezos-contracts.html</loc> </url>
@@ -345,5 +350,4 @@
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/using-the-console-with-tezos.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/writing-external-scripts-with-tezos.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/writing-tezos-contracts.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/tezos/truffle/reference/configuring-tezos-projects.html</loc> </url>
 </urlset>
