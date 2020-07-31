@@ -307,9 +307,9 @@
 <url> <loc>https://www.truffleframework.com/docs/teams/deployments/sandboxes.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/getting-started/adding-repositories.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/getting-started/creating-an-account.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/reference/permissions-disclosure.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/testing/external-ci.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/testing/starting-builds.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/reference/permissions-disclosure.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/advanced/build-processes.html</loc> </url>

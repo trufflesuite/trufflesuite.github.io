@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1596082333753">
+  <link rel="stylesheet" href="/css/index.css?1596215197276">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -646,14 +646,28 @@ to recognize the plugin. For more information, see <a href="/docs/truffle/gettin
       unbox
     </h3>
   <p>Download a Truffle Box, a pre-built Truffle project.</p>
-<pre><code class="language-shell">truffle unbox &lt;box_name&gt; [--force]</code></pre>
-<p>Downloads a <a href="/boxes">Truffle Box</a> to the current working directory. See the <a href="/boxes">list of available boxes</a>.</p>
-<p>You can also design and create your own boxes!  See the section on <a href="docs/truffle/getting-started/truffle-boxes">Truffle boxes</a> for more information.</p>
+<pre><code class="language-shell">truffle unbox &lt;box_name&gt; [&lt;destination_path&gt;] [--force]</code></pre>
+<p>Downloads a <a href="/boxes">Truffle Box</a> to destination_path if provided. Truffle
+defaults to the current working directory if this argument is not provided.</p>
+<p>See the <a href="/boxes">list of available Truffle boxes</a>.</p>
+<p>You can also design and create your own boxes!  See the section on <a href="docs/truffle/advanced/creating-a-truffle-box">Truffle boxes</a> for more information.</p>
 <p>Options:</p>
 <ul>
 <li><code>&lt;box_name&gt;</code>: Name of the Truffle Box. (required)</li>
 <li><code>--force</code>: Unbox project in the current directory regardless of its state. Be careful, this will potentially overwrite files that exist in the directory.</li>
 </ul>
+<p><strong>Note</strong>: box_name can be one of several formats:</p>
+<ol>
+<li>&lt;truffleBoxName&gt; - like <code>metacoin</code> (see the official Truffle boxes <a href="https://www.trufflesuite.com/boxes">here</a>)</li>
+<li>&lt;gitOrgName/repoName&gt; - like <code>truffle-box/bare-box</code> (your repo will have to
+have the proper structure - see our page on <a href="docs/truffle/advanced/creating-a-truffle-box">creating a Truffle
+Box</a>)</li>
+<li>&lt;urlToGitRepo&gt; - like <code>https://github.com/truffle-box/bare-box</code></li>
+<li>&lt;sshUrlToGitRepo&gt; - like <code>git@github.com:truffle-box/bare-box</code></li>
+</ol>
+<p>Also note that you can add a <code>#</code> followed by a branch name to the end of all
+of the above formats to unbox from a specific branch - for example, you could
+use <code>truffle-box/bare-box#myBranch</code></p>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="version"></a>
