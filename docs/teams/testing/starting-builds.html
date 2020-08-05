@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1596215197276">
+  <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -196,7 +196,9 @@
                   </ul>
                   <h3>Deployments</h3>
                   <ul>
+                      <a href="/docs/teams/deployments/about-deployments"><li>About Deployments</li></a>
                       <a href="/docs/teams/deployments/deploying-contracts"><li>Deploying Contracts</li></a>
+                      <a href="/docs/teams/deployments/graduating-deployments"><li>Graduating Deployments</li></a>
                       <a href="/docs/teams/deployments/sandboxes"><li>Sandboxes</li></a>
                   </ul>
                   <h3>Contracts</h3>
@@ -342,19 +344,19 @@
       Starting Builds
     </h1>
   <p>Builds will start automatically once a new commit is pushed to any branch of a repository added to Truffle Teams. You will see the build queued in both the Truffle Teams interface on the <code>BUILDS</code> page and on GitHub with the commit itself.</p>
-<p>
-    <img class="img-fluid" src="/img/docs/teams/starting-builds-01.png" title="Truffle Teams DATA view" alt="Truffle Teams DATA view" />
-    
-  </p>
-<p>
-    <img class="img-fluid" src="/img/docs/teams/starting-builds-04.png" title="Truffle Teams DATA view" alt="Truffle Teams DATA view" />
-    
-  </p>
+<figure>
+  <img class="figure-shadow mb-2" src="/img/docs/teams/starting-builds-01.png" alt="Build in progress" style="width: 100%">
+</figure>
+
+<figure>
+  <img class="mb-2" src="/img/docs/teams/starting-builds-04.png" alt="GitHub build status">
+</figure>
+
 <p>Click on the Build to see a more detailed view with build output.</p>
-<p>
-    <img class="img-fluid" src="/img/docs/teams/starting-builds-02.png" title="Truffle Teams DATA view" alt="Truffle Teams DATA view" />
-    
-  </p>
+<figure>
+  <img class="figure-shadow mb-2" src="/img/docs/teams/starting-builds-02.png" alt="Details of build in progress" style="width: 100%">
+</figure>
+
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="restarting-builds"></a>
@@ -362,10 +364,9 @@
       Restarting Builds
     </h2>
   <p>If for whatever reason the build failed and you want to restart a build, it is possible to manually retrigger the build by clicking <code>Restart Build</code> next to the specific build on the <code>BUILDS</code> page. Note: the <code>Restart Build</code> button will be disabled for any in progress builds or builds using an external CI provider (such as Travis or Circle) as you would have to restart the build through your external CI providers interface.</p>
-<p>
-    <img class="img-fluid" src="/img/docs/teams/starting-builds-03.png" title="Truffle Teams DATA view" alt="Truffle Teams DATA view" />
-    
-  </p>
+<figure>
+  <img class="figure-shadow mb-2" src="/img/docs/teams/starting-builds-03.png" alt="Successful build" style="width: 100%">
+</figure>
 
 
           <div class="contribute-link">

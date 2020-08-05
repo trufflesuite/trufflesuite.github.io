@@ -62,7 +62,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?1596215197276">
+  <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -196,7 +196,9 @@
                   </ul>
                   <h3>Deployments</h3>
                   <ul>
+                      <a href="/docs/teams/deployments/about-deployments"><li>About Deployments</li></a>
                       <a href="/docs/teams/deployments/deploying-contracts"><li>Deploying Contracts</li></a>
+                      <a href="/docs/teams/deployments/graduating-deployments"><li>Graduating Deployments</li></a>
                       <a href="/docs/teams/deployments/sandboxes"><li>Sandboxes</li></a>
                   </ul>
                   <h3>Contracts</h3>
@@ -348,39 +350,39 @@
       <a href="#adding-contracts-for-monitoring"><i class="fas fa-link"></i></a>
       Adding Contracts for Monitoring
     </h2>
-  <p>To start monitoring, click the <span class="inline-menu-item"><i class="fas fa-table"></i>DATA</span> link in the sidebar and then the <span class="inline-button">UPLOAD ARTIFACT FILES</span> button.</p>
-<p>
-    <img class="img-fluid" src="/img/docs/teams/add-contract-01.png" title="Truffle Teams DATA view" alt="Truffle Teams DATA view" />
-    
-  </p>
+  <p>To start monitoring, click the <span class="inline-menu-item"><i class="far fa-table"></i>MONITORING</span> link in the sidebar and then the <span class="inline-button">UPLOAD ARTIFACT FILES</span> button.</p>
+<figure>
+  <img class="figure-shadow mb-2" src="/img/docs/teams/add-contract-01.png" alt="Blank contract monitoring screen" style="width: 100%">
+</figure>
+
 <p>From there your operating system&#39;s file picker will open. Navigate to your project&#39;s contract build folder and select the artifacts you wish to upload. You can select more than one at at time.</p>
-<p>
-    <img class="img-fluid" src="/img/docs/teams/add-contract-02.png" title="Truffle Teams DATA view" alt="Truffle Teams DATA view" />
-    
-  </p>
+<figure>
+  <img class="figure-shadow mb-2" src="/img/docs/teams/add-contract-02.png" alt="Contract file picker dialog" style="width: 100%">
+</figure>
+
 <p>Select the network where this contract is deployed--we&#39;ll attempt to fill in the address from the artifact file. If the address does not auto-fill, but you&#39;re sure the correct network is selected, you may need to manually add it. Click the <span class="inline-button">NEXT &gt;&gt;</span> button to once you&#39;ve confirmed all the data is correct.</p>
-<p>
-    <img class="img-fluid" src="/img/docs/teams/add-contract-03.png" title="Truffle Teams DATA view" alt="Truffle Teams DATA view" />
-    
-  </p>
+<figure>
+  <img class="figure-shadow mb-2" src="/img/docs/teams/add-contract-03.png" alt="Fill in contract addresses" style="width: 100%">
+</figure>
+
 <p>Truffle Teams will then verify that the contracts exist on the given network at the given addresses. If there are errors shown in this dialog the contracts either exist on a different network or incorrect addresses were given in the last step. Click the <span class="inline-button">CONFIRM &gt;&gt;</span> button to begin uploading the artifacts and hooking up monitoring.</p>
-<p>
-    <img class="img-fluid" src="/img/docs/teams/add-contract-04.png" title="Truffle Teams DATA view" alt="Truffle Teams DATA view" />
-    
-  </p>
+<figure>
+  <img class="figure-shadow mb-2" src="/img/docs/teams/add-contract-04.png" alt="Contract address confirmation" style="width: 100%">
+</figure>
+
 <p>Once the upload is successful and monitoring has begun, you&#39;ll be redirected to the <code>DATA</code> page. From there you can click an individual contract to see more details including successful transactions, failed transactions, and events live.</p>
 <p class="alert alert-info">
 <strong>Note</strong>: Monitoring begins once the contract is added to Truffle Teams and does not currently include historical data from before that point.
 </p>
 
-<p>
-    <img class="img-fluid" src="/img/docs/teams/add-contract-06.png" title="Truffle Teams DATA view" alt="Truffle Teams DATA view" />
-    
-  </p>
-<p>
-    <img class="img-fluid" src="/img/docs/teams/add-contract-07.png" title="Truffle Teams DATA view" alt="Truffle Teams DATA view" />
-    <p class="img-caption">Monitoring detail page showing details, transactions, and events.</p>
-  </p>
+<figure>
+  <img class="figure-shadow mb-2" src="/img/docs/teams/add-contract-05.png" alt="List of newly added contracts" style="width: 100%">
+</figure>
+
+<figure>
+  <img class="figure-shadow mb-2" src="/img/docs/teams/add-contract-06.png" alt="Contract detail page" style="width: 100%">
+  <figcaption class="text-center font-italic">Monitoring detail page showing details, transactions, and events.</figcaption>
+</figure>
 
 
           <div class="contribute-link">
