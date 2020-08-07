@@ -42,15 +42,15 @@
   <!-- Facebook OpenGraph -->
   <meta property="og:site_name" content="Truffle Suite" />
   <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
-  <meta property="og:title" content="Truffle Teams | Overview | Documentation | Truffle Suite" />
-  <meta property="og:url" content="https://trufflesuite.com/docs/teams/overview" />
+  <meta property="og:title" content="Teams | Configuration | Documentation | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/docs/teams/reference/configuration" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="Truffle Suite" />
-  <meta name="twitter:title" content="Truffle Teams | Overview | Documentation | Truffle Suite" />
+  <meta name="twitter:title" content="Teams | Configuration | Documentation | Truffle Suite" />
   <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
   <meta name="twitter:creator" content="Truffle Suite" />
   <meta name="twitter:domain" content="trufflesuite.com" />
@@ -58,7 +58,7 @@
   
   <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
 
-  <title>Truffle Teams | Overview | Documentation | Truffle Suite</title>
+  <title>Teams | Configuration | Documentation | Truffle Suite</title>
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
@@ -339,29 +339,59 @@
             </div>
           </aside>      
         <div class="col-lg-9 bd-light-cream docs-content">
-          <img style="max-width: 500px;" class="mb-3" src="/img/teams-logo-dark.svg" alt="Truffle Teams Logo" />
-<div class="text-center">
-  <a href="http://my.truffleteams.com" class="btn btn-lg btn-truffle"><i class="fab fa-github"></i>&nbsp;&nbsp;SIGN UP WITH GITHUB</a>
-  <a href="https://share.hsforms.com/1OaTglVhGTdWk7spR6nE_AA34pbp" class="btn btn-lg btn-wrap btn-ganache mt-2 mt-md-0"><i class="fas fa-envelope"></i>&nbsp;&nbsp;GET NOTIFIED OF UPDATES &amp; NEW FEATURES</a>
-</div>
-
-
+          
     <h1 class="link-markdown">
-      <a class="anchor-target" name="truffle-teams-overview"></a>
-      <a href="#truffle-teams-overview"><i class="fas fa-link"></i></a>
-      Truffle Teams Overview
+      <a class="anchor-target" name="configuration"></a>
+      <a href="#configuration"><i class="fas fa-link"></i></a>
+      Configuration
     </h1>
-  <p>Manage and monitor the health of your blockchain-enabled application. Truffle integrated. Built for open source and enterprise. Features include:</p>
-<ul>
-<li>Dapp Tracking and Data: Get an overview of test statuses across multiple projects at a glance. Badges give visitors to your repository the assurance your dapp&#39;s contracts pass muster.</li>
-<li>Zero Config Continuous Integration: With no configuration required, test on every commit for maximum confidence in your Solidity code. Truffle Teams removes environmental inconsistencies by providing a unified environment for continuous smart contract testing.</li>
-<li>Automated Deployments: Adding Truffle Teams to your worflow is as easy as pushing to GitHub. Execute tests automatically while freeing up developer time and system resources.</li>
-<li>Smart Contract Management: Monitor a deployed smart contract&#39;s transactions, state, and events. View the build history and current status in the workflow.</li>
-</ul>
+  
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="repository-structure"></a>
+      <a href="#repository-structure"><i class="fas fa-link"></i></a>
+      Repository Structure
+    </h2>
+  <p>Truffle Teams will only build repositories who have a Truffle project at the root of the repository. It looks for a <code>truffle-config.js</code> or <code>truffle.js</code> config in the root directory before building.</p>
+
+    <h4 class="link-markdown">
+      <a class="anchor-target" name="configuring-a-different-location-for-the-truffle-project"></a>
+      <a href="#configuring-a-different-location-for-the-truffle-project"><i class="fas fa-link"></i></a>
+      Configuring a Different Location for the Truffle Project
+    </h4>
+  <p>Truffle Teams doesn&#39;t currently support configuring a subfolder folder for the Truffle project, and Truffle Teams doesn&#39;t currently support more than one Truffle project. We&#39;re evaluating options to give you the ability to configure those.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="environment-variables-amp-secrets"></a>
+      <a href="#environment-variables-amp-secrets"><i class="fas fa-link"></i></a>
+      Environment Variables &amp; Secrets
+    </h2>
+  <p>Truffle Teams currently doesn&#39;t support injecting environment variables and/or secrets into the build or deployment environments. For Builds, checkout <a href="/docs/teams/testing/external-ci">External CI</a> which can enable you use an external CI provider that does have those features with Truffle Teams.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="truffle-config-file"></a>
+      <a href="#truffle-config-file"><i class="fas fa-link"></i></a>
+      Truffle Config File
+    </h2>
+  <p>Truffle Teams makes some assumptions and modifications to your <code>truffle-config.js</code> (or <code>truffle.js</code>) configuration file.</p>
+
+    <h4 class="link-markdown">
+      <a class="anchor-target" name="-code-networks-code-object"></a>
+      <a href="#-code-networks-code-object"><i class="fas fa-link"></i></a>
+      <code>networks</code> Object
+    </h4>
+  <p>When deploying, Truffle Teams ignores any user-provided options in the <code>networks</code> object provided in the config file. Truffle Teams replaces it with a single network that is associated to the network you&#39;re deploying to. The names used for that network config can be seen below; you can also use this reference in your migration script&#39;s <code>network</code> variable. All names are case sensitive.</p>
+<p><strong>Mainnet Ethereum Network:</strong> <code>mainnet</code><br/>
+<strong>Ropsten Ethereum Network:</strong> <code>ropsten</code><br/>
+<strong>Görli Ethereum Network:</strong> <code>goerli</code><br/>
+<strong>Rinkeby Ethereum Network:</strong> <code>rinkeby</code><br/>
+<strong>Kovan Ethereum Network:</strong> <code>kovan</code><br/>
+<strong>Sandbox Network:</strong> Use the name of your Sandbox, except single and double quotation marks are removed. Below are some examples.</p>
+<p><code>truffles-sandbox</code> =&gt; <code>truffles-sandbox</code><br/>
+<code>Truffle&#39;s &quot;Sandbox&quot;</code> =&gt; <code>Truffles Sandbox</code></p>
 
 
           <div class="contribute-link">
-            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/docs/teams">Edit here &raquo;</a>
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/docs/teams/reference">Edit here &raquo;</a>
           </div>        </div>
     </div>
   </main>
