@@ -11863,6 +11863,15 @@ footer h4 {
   margin-left: 1rem;
   display: inline-block;
   vertical-align: middle;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media (max-width: 767px) {
+  .home-container .github-button-wrapper {
+    float: right;
+    margin-right: 0.75rem;
+  }
 }
 
 .home-container h5 {
