@@ -31,6 +31,12 @@
   background-color: #361C5E;
 }
 
+.banner-tcon-white {
+  color: #fff;
+  background-color: #ffffff;
+  align-items: flex-start;
+}
+
 .banner-milk-choc {
   background-color: #5e464d;
 }
@@ -167,6 +173,26 @@
   .banner-trufflecon img:last-of-type {
     display: none;
   }
+}
+
+.banner-trufflecon-swag {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  background-image: url(/img/trufflecon/swag-bg2.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner-trufflecon-swag a {
+  text-decoration: none;
+  color: #58484e;
+}
+
+.banner-trufflecon-swag a:hover {
+  color: #3fe0c5;
+  text-decoration: none;
 }
 
 div#hs-eu-cookie-confirmation {

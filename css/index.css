@@ -10537,6 +10537,12 @@ pre {
   background-color: #361C5E;
 }
 
+.banner-tcon-white {
+  color: #fff;
+  background-color: #ffffff;
+  align-items: flex-start;
+}
+
 .banner-milk-choc {
   background-color: #5e464d;
 }
@@ -10673,6 +10679,26 @@ pre {
   .banner-trufflecon img:last-of-type {
     display: none;
   }
+}
+
+.banner-trufflecon-swag {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  background-image: url(/img/trufflecon/swag-bg2.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner-trufflecon-swag a {
+  text-decoration: none;
+  color: #58484e;
+}
+
+.banner-trufflecon-swag a:hover {
+  color: #3fe0c5;
+  text-decoration: none;
 }
 
 div#hs-eu-cookie-confirmation {
@@ -11332,6 +11358,12 @@ blockquote {
 .navbar .suite-logo {
   height: 2rem;
   margin-right: .75rem;
+}
+
+.navbar .con-logo {
+  height: 1.1rem;
+  margin-right: 0rem;
+  margin-top: -.25em;
 }
 
 .trufflecon-link {
@@ -12532,11 +12564,17 @@ footer h4 {
 
 .trufflecon-heading {
   max-height: none;
+  background-color: #7532D6;
 }
 
 .trufflecon-heading h1 {
-  font-size: 6rem;
+  font-size: 9.5vw;
   letter-spacing: .35em;
+  text-indent: .2em;
+  /* @media (max-width: 991.98px) {
+      font-size: 2.75rem;
+      letter-spacing: .2em;
+    }*/
 }
 
 .trufflecon-heading h1 span {
@@ -12547,13 +12585,6 @@ footer h4 {
   height: 1em;
   margin-top: -.25em;
   margin-right: .35em;
-}
-
-@media (max-width: 991.98px) {
-  .trufflecon-heading h1 {
-    font-size: 2.75rem;
-    letter-spacing: .2em;
-  }
 }
 
 .trufflecon-heading h2 {
@@ -12581,13 +12612,13 @@ footer h4 {
     max-height: none;
   }
   .trufflecon-heading h1 {
-    font-size: 2rem;
+    font-size: 3.2rem;
   }
   .trufflecon-heading h2 {
     font-size: 1.4rem;
   }
   .trufflecon-heading h3 {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -12631,19 +12662,6 @@ blockquote {
   background-size: cover;
   background-position: center center;
   opacity: .3;
-  z-index: -1;
-}
-
-.trufflecon-heading-funky {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: #fff;
-  background-image: url(/img/home/trufflecon-2020-topbanner.svg);
-  background-size: cover;
-  background-position: center center;
   z-index: -1;
 }
 
@@ -12921,6 +12939,13 @@ blockquote {
 
 .alert-slides a {
   color: #58484E;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
 }
 
 .policy-container .c27 {
