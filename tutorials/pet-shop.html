@@ -431,11 +431,14 @@ module.exports = function(deployer) {
 <p>You&#39;ve now written your first smart contract and deployed it to a locally running blockchain. It&#39;s time to interact with our smart contract now to make sure it does what we want.</p>
 
     <h2 class="link-markdown">
-      <a class="anchor-target" name="testing-the-smart-contract"></a>
-      <a href="#testing-the-smart-contract"><i class="fas fa-link"></i></a>
-      Testing the smart contract
+      <a class="anchor-target" name="testing-the-smart-contract-using-solidity"></a>
+      <a href="#testing-the-smart-contract-using-solidity"><i class="fas fa-link"></i></a>
+      Testing the smart contract using Solidity
     </h2>
-  <p>Truffle is very flexible when it comes to smart contract testing, in that tests can be written either in JavaScript or Solidity. In this tutorial, we&#39;ll be writing our tests in Solidity.</p>
+  <details> 
+<summary> Expand This Section </summary>
+Truffle is very flexible when it comes to smart contract testing, in that tests can be written either in JavaScript or Solidity. In this tutorial, we'll be writing our tests in Solidity.
+
 <ol>
 <li><p>Create a new file named <code>TestAdoption.sol</code> in the <code>test/</code> directory.</p>
 </li>
@@ -463,7 +466,7 @@ contract TestAdoption {
 <ul>
 <li><code>Assert.sol</code>: Gives us various assertions to use in our tests. In testing, <strong>an assertion checks for things like equality, inequality or emptiness to return a pass/fail</strong> from our test. <a href="https://github.com/trufflesuite/truffle/blob/master/packages/core/lib/testing/Assert.sol">Here&#39;s a full list of the assertions included with Truffle</a>.</li>
 <li><code>DeployedAddresses.sol</code>: When running tests, Truffle will deploy a fresh instance of the contract being tested to the blockchain. This smart contract gets the address of the deployed contract.</li>
-<li><code>Adoption.sol</code>: The smart contract we want to test.</li>
+<li><code>Adoption</code>: The smart contract we want to test.</li>
 </ul>
 <p class="alert alert-info">
   <strong>Note</strong>: The first two imports are referring to global Truffle files, not a `truffle` directory. You should not see a `truffle` directory inside your `test/` directory.
@@ -534,6 +537,93 @@ function testGetAdopterAddressByPetIdInArray() public {
 </li>
 </ol>
 <p>Note the <strong>memory</strong> attribute on <code>adopters</code>. The memory attribute tells Solidity to temporarily store the value in memory, rather than saving it to the contract&#39;s storage. Since <code>adopters</code> is an array, and we know from the first adoption test that we adopted pet <code>expectedPetId</code>, we compare the testing contracts address with location <code>expectedPetId</code> in the array.</p>
+</details>
+
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="testing-the-smart-contract-using-javascript"></a>
+      <a href="#testing-the-smart-contract-using-javascript"><i class="fas fa-link"></i></a>
+      Testing the smart contract using JavaScript
+    </h2>
+  <details>
+<summary> Expand This Section </summary>
+Truffle is very flexible when it comes to smart contract testing, in that tests can be written either in JavaScript or Solidity. In this tutorial, we'll be writing our tests in Javascript using the Chai and Mocha libraries.<br/>
+
+<ol>
+<li><p>Create a new file named <code>testAdoption.test.js</code> in the <code>test/</code> directory.<br/></p>
+</li>
+<li><p>Add the following content to the <code>testAdoption.test.js</code> file:<br/></p>
+<pre><code>const Adoption = artifacts.require(&quot;Adoption&quot;);
+
+contract(&quot;Adoption&quot;, (accounts) =&gt; {
+ let adoption;
+ let expectedPetId;
+
+ before(async () =&gt; {
+     adoption = await Adoption.deployed();
+ });
+
+ describe(&quot;adopting a pet and retrieving account addresses&quot;, async () =&gt; {
+   before(&quot;adopt a pet using accounts[0]&quot;, async () =&gt; {
+     await adoption.adopt(8, { from: accounts[0] });
+     expectedAdopter = accounts[0];
+   });
+ });
+});
+</code></pre><p>We start the contract by importing : </p>
+<ul>
+<li><code>Adoption</code>: The smart contract we want to test
+We begin our test by importing our <code>Adoption</code> contract using <code>artifacts.require</code>.</li>
+</ul>
+<p><strong>Note</strong>: When writing this test, our callback function take the argument <code>accounts</code>. This provides us with the accounts available on the network when using this test.</p>
+<p>Then, we make use of the <code>before</code> to provide initial setups for the following: </p>
+<ul>
+<li>Adopt a pet with id 8 and assign it to the first account within the test accounts on the network.</li>
+<li>This function later is used to check whether the <code>petId: 8</code> has been adopted by <code>accounts[0]</code>.</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="testing-the-adopt-function"></a>
+      <a href="#testing-the-adopt-function"><i class="fas fa-link"></i></a>
+      Testing the adopt function
+    </h3>
+  <p>To test the <code>adopt</code> function, recall that upon success it returns the given <code>adopter</code>. We can ensure that the adopter based on given petID was returned and is compared with the <code>expectedAdopter</code> within the <code>adopt</code> function.</p>
+<ol>
+<li>Add the following function within the <code>testAdoption.test.js</code> test file, after the declaration of <code>before</code> code block. </li>
+</ol>
+<pre><code>describe(&quot;adopting a pet and retrieving account addresses&quot;, async () =&gt; {
+ before(&quot;adopt a pet using accounts[0]&quot;, async () =&gt; {
+   await adoption.adopt(8, { from: accounts[0] });
+   expectedAdopter = accounts[0];
+ });
+
+ it(&quot;can fetch the address of an owner by pet id&quot;, async () =&gt; {
+   const adopter = await adoption.adopters(8);
+   assert.equal(adopter, expectedAdopter, &quot;The owner of the adopted pet should be the first account.&quot;);
+ });
+});</code></pre><p>Things to notice:</p>
+<ul>
+<li>We call smart contract method <code>adopters</code> to see what address adopted the pet with <code>petID</code> 8.</li>
+<li>Truffle imports <code>Chai</code> for the user so we can use the <code>assert</code> functions. We pass the actual value, the expected value and a failure message (which gets printed to the console if the test does not pass) to <code>assert.equal()</code>.</li>
+</ul>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="testing-retrieval-of-all-pet-owners"></a>
+      <a href="#testing-retrieval-of-all-pet-owners"><i class="fas fa-link"></i></a>
+      Testing retrieval of all pet owners
+    </h3>
+  <p>Since arrays can only return a single value given a single key, we create our own getter for the entire array.</p>
+<ol>
+<li>Add this function below the previously added function in <code>testAdoption.test.js</code>.</li>
+</ol>
+<pre><code>it(&quot;can fetch the collection of all pet owners&#39; addresses&quot;, async () =&gt; {
+ const adopters = await adoption.getAdopters();
+ assert.equal(adopters[8], expectedAdopter, &quot;The owner of the adopted pet should be in the collection.&quot;);
+});</code></pre><p>Since adopters is an array, and we know from the first adoption test that we adopted the pet with <code>petId</code> 8, we are comparing the contract&#39;s address with the address that we expect to find.</p>
+</details>
+
+</li>
+</ol>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="running-the-tests"></a>

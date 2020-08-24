@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://www.truffleframework.com/404.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/b2c-onepager.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/404.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/community.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/drizzle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/ganache.html</loc> </url>
@@ -346,6 +346,7 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/quickstart.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/tezos/truffle/reference/configuring-tezos-projects.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/compiling-tezos-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/creating-a-tezos-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/deploying-tezos-contracts.html</loc> </url>
@@ -355,5 +356,4 @@
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/using-the-console-with-tezos.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/writing-external-scripts-with-tezos.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/writing-tezos-contracts.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/tezos/truffle/reference/configuring-tezos-projects.html</loc> </url>
 </urlset>
