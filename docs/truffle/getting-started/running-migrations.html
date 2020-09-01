@@ -357,7 +357,7 @@
     </h2>
   <p>To run your migrations, run the following:</p>
 <pre><code class="language-shell">$ truffle migrate</code></pre>
-<p>This will run all migrations located within your project&#39;s <code>migrations</code> directory. At their simplest, migrations are simply a set of managed deployment scripts. If your migrations were previously run successfully, <code>truffle migrate</code> will start execution from the last migration that was run, running only newly created migrations. If no new migrations exists, <code>truffle migrate</code> won&#39;t perform any action at all. You can use the <code>--reset</code> option to run all your migrations from the beginning.  Other command options are documented <a href="../reference/truffle-commands#migrate">here</a>. For local testing make sure to have a test blockchain such as <a href="/ganache">Ganache</a> installed and running before executing <code>migrate</code>.</p>
+<p>This will run all migrations located within your project&#39;s <code>migrations</code> directory. At their simplest, migrations are simply a set of managed deployment scripts. If your migrations were previously run successfully, <code>truffle migrate</code> will start execution from the last migration that was run, running only newly created migrations. If no new migrations exists, <code>truffle migrate</code> won&#39;t perform any action at all. You can use the <code>--reset</code> option to run all your migrations from the beginning. Other command options are documented <a href="../reference/truffle-commands#migrate">here</a>. For local testing, make sure to have a test blockchain such as <a href="/ganache">Ganache</a> configured and running before executing <code>truffle migrate</code>. You can also use <code>truffle develop</code> and run your migrations.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="migration-files"></a>
@@ -436,7 +436,7 @@ contract Migrations {
     upgraded.setCompleted(last_completed_migration);
   }
 }</code></pre>
-<p>You must deploy this contract inside your first migration in order to take advantage of the Migrations feature. To do so, create the following migration:</p>
+<p>You must deploy this contract inside your first migration in order to take advantage of the migrations feature.  The following migration is provided by default when creating a new project with <code>truffle init</code>:</p>
 <p>Filename: <code>migrations/1_initial_migration.js</code></p>
 <pre><code class="language-javascript">var Migrations = artifacts.require(&quot;Migrations&quot;);
 

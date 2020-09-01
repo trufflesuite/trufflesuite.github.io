@@ -376,7 +376,7 @@ Debug transactions involving contracts not in your project that are verified on 
 <p>In order to debug transactions, you&#39;ll need the following:</p>
 <ul>
 <li>Truffle 4.0 or above.</li>
-<li>The hash of a transaction on your desired blockchain.</li>
+<li>The hash of a transaction on your desired blockchain.  (If you are using the built-in  blockchain and trying to debug a test execution, you may obtain the hash by running <code>truffle develop --log</code>.)</li>
 <li>The source code and artifacts the transaction encounters.</li>
 </ul>
 <p>Note that it&#39;s okay if your desired transaction resulted in an exception or if it ran out of gas. The transaction still exists on chain, and so you can still debug it!</p>
