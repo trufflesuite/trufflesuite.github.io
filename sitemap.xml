@@ -96,6 +96,7 @@
 <url> <loc>https://www.truffleframework.com/boxes/vue-dark-chocolate.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/vueport-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/zepkit.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/besu-drizzle-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/drizzle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/drizzle-react-native.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/drizzle-vue-box.html</loc> </url>
@@ -166,6 +167,7 @@
 <url> <loc>https://www.truffleframework.com/staff/vue-dark-chocolate.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/vueport-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/zepkit.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/staff/besu-drizzle-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/10-things-we-dont-do-that-make-working-at-truffle-awesome.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/3-ways-enterprises-are-addressing-blockchain-privacy-concerns.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/5-trends-impacting-the-blockchain-developer-experience.html</loc> </url>
@@ -346,7 +348,6 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/quickstart.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/tezos/truffle/reference/configuring-tezos-projects.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/compiling-tezos-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/creating-a-tezos-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/deploying-tezos-contracts.html</loc> </url>
@@ -356,4 +357,5 @@
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/using-the-console-with-tezos.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/writing-external-scripts-with-tezos.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/writing-tezos-contracts.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/tezos/truffle/reference/configuring-tezos-projects.html</loc> </url>
 </urlset>

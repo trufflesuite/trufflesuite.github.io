@@ -2,6 +2,10 @@
   border-radius: .5rem;
 }
 
+.events-container .post-livestream {
+  max-height: 2.4rem;
+}
+
 .hs-form-iframe {
   width: 100% !important;
 }

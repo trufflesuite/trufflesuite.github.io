@@ -10681,6 +10681,25 @@ pre {
   }
 }
 
+.banner-truffle-tcon-2020 {
+  background-color: #3fe0c5;
+  font-weight: bold;
+  text-decoration: none;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-truffle-tcon-2020 a {
+  text-decoration: none;
+  color: #5E464D;
+}
+
+.banner-truffle-tcon-2020 a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .banner-trufflecon-swag {
   color: white;
   font-weight: bold;
@@ -11730,6 +11749,13 @@ footer h4 {
 
 .post-thumbnail {
   border: 4px solid #3fe0c5;
+}
+
+@media screen and (max-width: 767px) {
+  .post-thumbnail {
+    margin: 1rem auto;
+    width: 50%;
+  }
 }
 
 .post-trufflecon-box {
@@ -13131,6 +13157,10 @@ blockquote {
 
 .events-container .post-thumbnail {
   border-radius: .5rem;
+}
+
+.events-container .post-livestream {
+  max-height: 2.4rem;
 }
 
 .hs-form-iframe {

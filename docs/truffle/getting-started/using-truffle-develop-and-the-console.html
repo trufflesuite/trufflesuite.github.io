@@ -353,6 +353,10 @@
 <li><strong>Truffle Console</strong>: A basic interactive console connecting to any Ethereum client</li>
 <li><strong>Truffle Develop</strong>: An interactive console that also spawns a development blockchain</li>
 </ul>
+<p class="alert alert-info">
+**Note**: Your contract names get loaded as variables into the console context. For this reason it is recommended to avoid names that might conflict with Node's native objects like Buffer or String. For updates see the related <a href="https://github.com/trufflesuite/truffle/issues/3329">issue on GitHub</a>.
+</p>
+
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="why-two-different-consoles-"></a>
