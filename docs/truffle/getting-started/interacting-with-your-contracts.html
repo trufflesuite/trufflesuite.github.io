@@ -71,7 +71,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
     <a class="navbar-brand current" href="/">
-      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" />TRUFFLE SUITE
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="d-none d-lg-block">TRUFFLE SUITE</span>
     </a>
   
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -582,6 +582,7 @@ methods of your contract abstractions:</p>
 <li><code>estimateGas</code></li>
 <li><code>sendTransaction</code></li>
 <li><code>call</code></li>
+<li><code>request</code></li>
 </ul>
 <p>The first special method mentioned above is the <code>estimateGas</code> method. This, as you
 probably can guess, estimates the amount of gas that a transaction will require.
@@ -612,11 +613,17 @@ const result = await instance.getTokenBalance.sendTransaction(myAccount);</code>
 <p>The <code>result</code> variable above will be the same kind of result you would get
 from executing any normal transaction in Truffle. It will contain the
 transaction hash, the logs, etc.</p>
-<p>The last method is <code>call</code> and the syntax is exactly the same as for
+<p>The next method is <code>call</code> and the syntax is exactly the same as for
 <code>sendTransaction</code>. If you want to explicitly make a call, you can
 use the <code>call</code> method found on your contract abstraction&#39;s method. So you
 would write something that looks like
 <code>const result = await instance.myMethod.call()</code>.</p>
+<p>The last method is <code>request</code>.  This method does not perform a transaction or
+call, but rather returns an object that can be passed to
+<code>web3.eth.sendTransaction</code> or <code>web3.eth.call</code> if you want to perform the
+transaction or call yourself.  It has the same syntax as the others, and
+like with <code>estimateGas</code>, you can also do <code>Contract.new.request()</code> if you
+want to perform a manual deployment.</p>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="invoking-overloaded-methods"></a>

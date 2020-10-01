@@ -97,6 +97,7 @@
 <url> <loc>https://www.truffleframework.com/boxes/vueport-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/zepkit.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/besu-drizzle-truffle-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/drizzle.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/drizzle-react-native.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/drizzle-vue-box.html</loc> </url>
@@ -168,6 +169,7 @@
 <url> <loc>https://www.truffleframework.com/staff/vueport-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/zepkit.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/besu-drizzle-truffle-box.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/staff/box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/10-things-we-dont-do-that-make-working-at-truffle-awesome.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/3-ways-enterprises-are-addressing-blockchain-privacy-concerns.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/5-trends-impacting-the-blockchain-developer-experience.html</loc> </url>
@@ -251,8 +253,8 @@
 <url> <loc>https://www.truffleframework.com/tutorials/robust-smart-contracts-with-openzeppelin.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/solidity-unit-tests.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/testing-for-throws-in-solidity-tests.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/tutorials/truffle-and-metamask.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/upgrading-from-truffle-2-to-3.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/tutorials/truffle-and-metamask.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/tutorials/using-infura-custom-provider.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/lib/README.html</loc> </url>
