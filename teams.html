@@ -21,6 +21,8 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
+  <meta name="environment" content="">
+
   <!-- Favicon -->
   <link rel="icon" href="/img/favicons/favicon.ico">
 
@@ -62,8 +64,25 @@
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono|Cinzel" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/index.css?cache_buster=1602186864279">
-</head>
+  <link rel="stylesheet" href="/css/index.css?cache_buster=1602559104725">
+
+  <!-- start Mixpanel --><!--<script type="text/javascript">(function(c,a){if(!a.__SV){var b=window;try{var d,m,j,k=b.location,f=k.hash;d=function(a,b){return(m=a.match(RegExp(b+"=([^&]*)")))?m[1]:null};f&&d(f,"state")&&(j=JSON.parse(decodeURIComponent(d(f,"state"))),"mpeditor"===j.action&&(b.sessionStorage.setItem("_mpcehash",f),history.replaceState(j.desiredHash||"",c.title,k.pathname+k.search)))}catch(n){}var l,h;window.mixpanel=a;a._i=[];a.init=function(b,d,g){function c(b,i){var a=i.split(".");2==a.length&&(b=b[a[0]],i=a[1]);b[i]=function(){b.push([i].concat(Array.prototype.slice.call(arguments,
+  0)))}}var e=a;"undefined"!==typeof g?e=a[g]=[]:g="mixpanel";e.people=e.people||[];e.toString=function(b){var a="mixpanel";"mixpanel"!==g&&(a+="."+g);b||(a+=" (stub)");return a};e.people.toString=function(){return e.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+  for(h=0;h<l.length;h++)c(e,l[h]);var f="set set_once union unset remove delete".split(" ");e.get_group=function(){function a(c){b[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));e.push([d,call2])}}for(var b={},d=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<f.length;c++)a(f[c]);return b};a._i.push([b,d,g])};a.__SV=1.2;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+  MIXPANEL_CUSTOM_LIB_URL:"file:"===c.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)}})(document,window.mixpanel||[]);
+  
+  let devPort = '9000';
+  let devToken = 'ef061cba76a9bbc41219d6382fc12f23';
+  let prodToken = 'Production Token';
+  
+  //If the hostname is anything other than your production domain, initialize the Mixpanel library with your Development Token 
+  
+  if (window.location.port.search(devPort) < 0) {
+    mixpanel.init(prodToken);
+  } else {
+      mixpanel.init(devToken);
+  }
+  </script>--><!-- end Mixpanel --></head>
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
@@ -146,9 +165,9 @@
     <div class="row align-items-center mt-2 mt-md-0">
       <div class="col-12">
         <p class="text-center mb-0">
-          <a href="https://my.truffleteams.com" class="btn btn-lg btn-truffle"><i class="fab fa-github"></i>&nbsp;&nbsp;SIGN UP WITH GITHUB</a>
+          <a href="https://my.truffleteams.com" class="btn btn-lg btn-truffle" id="teamsSignUp1"><i class="fab fa-github"></i>&nbsp;&nbsp;SIGN UP WITH GITHUB</a>
           <a href="https://my.truffleteams.com" class="sign-in-link d-block d-md-none">Already have an account? Sign In!</a>
-          <a href="https://share.hsforms.com/1OaTglVhGTdWk7spR6nE_AA34pbp" class="btn btn-lg btn-outline-white btn-wrap mt-5 mt-md-0"><i class="fas fa-envelope"></i>&nbsp;&nbsp;GET NOTIFIED OF UPDATES &amp; NEW FEATURES</a>
+          <a href="https://share.hsforms.com/1OaTglVhGTdWk7spR6nE_AA34pbp" class="btn btn-lg btn-outline-white btn-wrap mt-5 mt-md-0" id="mailingListSignUp"><i class="fas fa-envelope"></i>&nbsp;&nbsp;GET NOTIFIED OF UPDATES &amp; NEW FEATURES</a>
         </p>
       </div>
     </div>
@@ -241,7 +260,7 @@
 
     <div class="row text-center">
       <div class="col-12">
-        <a class="btn btn-lg btn-truffle" href="http://my.truffleteams.com"><i class="fab fa-github"></i>&nbsp;&nbsp;SIGN UP WITH GITHUB</a>
+        <a class="btn btn-lg btn-truffle" id="teamsSignUp2" href="http://my.truffleteams.com"><i class="fab fa-github"></i>&nbsp;&nbsp;SIGN UP WITH GITHUB</a>
       </div>
     </div>
   </main>
@@ -285,7 +304,7 @@
               </p>
             </div>
             <div class="card-footer">
-              <a class="btn btn-lg btn-block align-self-end btn-truffle" href="https://my.truffleteams.com"><i class="fab fa-github"></i>&nbsp;&nbsp;SIGN UP WITH GITHUB</a>
+              <a class="btn btn-lg btn-block align-self-end btn-truffle" id="teamsSignUp3" href="https://my.truffleteams.com"><i class="fab fa-github"></i>&nbsp;&nbsp;SIGN UP WITH GITHUB</a>
             </div>
           </div>
 
@@ -304,7 +323,7 @@
               </p>
             </div>
             <div class="card-footer">
-              <a class="btn btn-lg btn-block align-self-end btn-truffle" href="https://my.truffleteams.com/#/settings"><i class="fab fa-github"></i>&nbsp;&nbsp;START YOUR FREE TRIAL</a>
+              <a class="btn btn-lg btn-block align-self-end btn-truffle" id="teamsSignUp4" href="https://my.truffleteams.com/#/settings"><i class="fab fa-github"></i>&nbsp;&nbsp;START YOUR FREE TRIAL</a>
             </div>
           </div>
 
@@ -320,7 +339,7 @@
               </p>
             </div>
             <div class="card-footer">
-              <a class="btn btn-lg btn-block btn-wrap align-self-end btn-truffle" id="premiumNotifyButton" href="mailto:sales@trufflesuite.com"><i class="far fa-envelope"></i>&nbsp;&nbsp;CONTACT US</a>
+              <a class="btn btn-lg btn-block btn-wrap align-self-end btn-truffle" id="contactSales" href="mailto:sales@trufflesuite.com"><i class="far fa-envelope"></i>&nbsp;&nbsp;CONTACT US</a>
             </div>
           </div>
         </div>
@@ -375,7 +394,7 @@
 
     <div class="row text-center">
       <div class="col-12">
-        <a class="btn btn-lg btn-truffle" href="http://my.truffleteams.com"><i class="fab fa-github"></i>&nbsp;&nbsp;START BUILDING NOW</a>
+        <a class="btn btn-lg btn-truffle" id="teamsSignUp5" href="http://my.truffleteams.com"><i class="fab fa-github"></i>&nbsp;&nbsp;START BUILDING NOW</a>
       </div>
     </div>
 
