@@ -10720,7 +10720,7 @@ pre {
   background-color: #fff;
 }
 
-.banner-tcon-2020 {
+.banner-tcon-2020, .banner-dark-purple {
   color: #fff;
   background-color: #361C5E;
 }
@@ -10762,7 +10762,7 @@ pre {
 
 .banner-light-purple {
   color: #fff;
-  background-color: #361C5E;
+  background-color: #7532D6;
 }
 
 .banner-white {
@@ -10906,6 +10906,13 @@ pre {
 .banner-trufflecon-swag a:hover {
   color: #3fe0c5;
   text-decoration: none;
+}
+
+.banner-trufflecon-poker {
+  background-image: url(/img/trufflecon/green-swirl-plain-centered.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 div#hs-eu-cookie-confirmation {
@@ -11790,6 +11797,14 @@ footer h4 {
 .text-muted {
   color: #e0dad7 !important;
   text-shadow: none;
+}
+
+.text-milk-chocolate {
+  color: #5e464d;
+}
+
+.text-dark-chocolate {
+  color: #33262a;
 }
 
 .banner-light-cream .text-muted {
@@ -12772,7 +12787,6 @@ footer h4 {
 
 .trufflecon-heading {
   max-height: none;
-  background-color: #7532D6;
 }
 
 .trufflecon-heading h1 {
@@ -12896,6 +12910,10 @@ blockquote {
 
 .triangle-tr.cream {
   background: #f8f5f0;
+}
+
+.triangle-tr.purple {
+  border-color: transparent #7532D6 transparent transparent;
 }
 
 .triangle-br {
@@ -13154,6 +13172,15 @@ blockquote {
   position: relative;
   top: -60px;
   visibility: hidden;
+}
+
+.poker-logo {
+  margin: 0 auto;
+}
+
+.btn-poker {
+  display: block;
+  margin: 1rem auto 0 auto;
 }
 
 .policy-container .c27 {

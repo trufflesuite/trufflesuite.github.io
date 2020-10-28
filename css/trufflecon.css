@@ -21,7 +21,6 @@
 
 .trufflecon-heading {
   max-height: none;
-  background-color: #7532D6;
 }
 
 .trufflecon-heading h1 {
@@ -145,6 +144,10 @@ blockquote {
 
 .triangle-tr.cream {
   background: #f8f5f0;
+}
+
+.triangle-tr.purple {
+  border-color: transparent #7532D6 transparent transparent;
 }
 
 .triangle-br {
@@ -403,4 +406,13 @@ blockquote {
   position: relative;
   top: -60px;
   visibility: hidden;
+}
+
+.poker-logo {
+  margin: 0 auto;
+}
+
+.btn-poker {
+  display: block;
+  margin: 1rem auto 0 auto;
 }
