@@ -197,12 +197,12 @@
 <url> <loc>https://www.truffleframework.com/blog/github-repository-moved.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/how-ethical-advertising-will-transform-the-blockchain-industry.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/how-the-arrival-of-web-3-0-is-transforming-traditional-business-models.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/how-to-get-your-boss-to-send-you-to-trufflecon.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/how-were-making-installation-issues-a-thing-of-the-past.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/introducing-truffle-db-part-1.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/introducing-truffle-db-part-2.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/learn-ethereum-the-fun-way-with-our-pet-shop-tutorial.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/one-hundred-documentation-pull-requests.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/blog/how-to-get-your-boss-to-send-you-to-trufflecon.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/open-call-for-contributions-truffle-pegasys-eea-private-transactions.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/removing-installation-issues-continued-testrpc.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/sandbox-forking-with-truffle-teams.html</loc> </url>
@@ -276,10 +276,10 @@
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/toolbar/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/quickstart.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/drizzle/getting-started/contract-interaction.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/drizzle/getting-started/using-drizzles-redux-store.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/react/react-components.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/react/react-integration.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/drizzle/getting-started/contract-interaction.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/drizzle/getting-started/using-drizzles-redux-store.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/drizzle-actions.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/drizzle-options.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/reference/drizzle-state.html</loc> </url>
