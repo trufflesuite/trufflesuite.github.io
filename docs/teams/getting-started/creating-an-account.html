@@ -189,30 +189,57 @@
                 </ul>
                   <h3>Getting Started</h3>
                   <ul>
-                      <a href="/docs/teams/getting-started/creating-an-account"><li>Creating an Account</li></a>
+                      <a href="/docs/teams/getting-started/creating-an-account"><li>Creating an account</li></a>
                       <a href="/docs/teams/getting-started/adding-repositories"><li>Adding Repositories</li></a>
-                      <a href="/docs/teams/getting-started/dashboard"><li>Dashboard</li></a>
                   </ul>
-                  <h3>Testing</h3>
+                  <h3>Account</h3>
                   <ul>
-                      <a href="/docs/teams/testing/starting-builds"><li>Starting Builds</li></a>
-                      <a href="/docs/teams/testing/external-ci"><li>External CI</li></a>
+                      <a href="/docs/teams/account/manage-your-account"><li>Manage your account</li></a>
+                      <a href="/docs/teams/account/switching-accounts"><li>Switching accounts</li></a>
+                      <a href="/docs/teams/account/claim-a-1-month-trial"><li>Claim a 1-month trial</li></a>
+                      <a href="/docs/teams/account/invite-your-team"><li>Invite your team</li></a>
+                      <a href="/docs/teams/account/redeeming-a-coupon"><li>Redeeming a coupon</li></a>
+                  </ul>
+                  <h3>Builds</h3>
+                  <ul>
+                      <a href="/docs/teams/builds/builds-overview"><li>Builds overview</li></a>
+                      <a href="/docs/teams/builds/starting-builds"><li>Starting Builds</li></a>
+                      <a href="/docs/teams/builds/restarting-builds"><li>Restarting Builds</li></a>
+                      <a href="/docs/teams/builds/external-ci"><li>External CI</li></a>
+                  </ul>
+                  <h3>Sandboxes</h3>
+                  <ul>
+                      <a href="/docs/teams/sandboxes/sandboxes-overview"><li>Sandboxes overview</li></a>
+                      <a href="/docs/teams/sandboxes/creating-a-sandbox"><li>Creating a sandbox</li></a>
+                      <a href="/docs/teams/sandboxes/renaming-a-sandbox"><li>Renaming a sandbox</li></a>
+                      <a href="/docs/teams/sandboxes/destroying-a-sandbox"><li>Destroying a sandbox</li></a>
+                      <a href="/docs/teams/sandboxes/sandbox-forking"><li>Sandbox Forking</li></a>
+                      <a href="/docs/teams/sandboxes/usage-with-truffle"><li>Usage with Truffle</li></a>
                   </ul>
                   <h3>Deployments</h3>
                   <ul>
-                      <a href="/docs/teams/deployments/about-deployments"><li>About Deployments</li></a>
-                      <a href="/docs/teams/deployments/deploying-contracts"><li>Deploying Contracts</li></a>
-                      <a href="/docs/teams/deployments/graduating-deployments"><li>Graduating Deployments</li></a>
-                      <a href="/docs/teams/deployments/sandboxes"><li>Sandboxes</li></a>
+                      <a href="/docs/teams/deployments/deployments-overview"><li>Deployments overview</li></a>
+                      <a href="/docs/teams/deployments/creating-a-deployment"><li>Creating a deployment</li></a>
+                      <a href="/docs/teams/deployments/deploying-to-a-sandbox"><li>Deploying to a sandbox</li></a>
+                      <a href="/docs/teams/deployments/contract-monitoring"><li>Contract Monitoring</li></a>
+                      <a href="/docs/teams/deployments/deployment-console"><li>Deployment console</li></a>
+                      <a href="/docs/teams/deployments/graduating-a-deployment"><li>Graduating a deployment</li></a>
+                      <a href="/docs/teams/deployments/archiving-a-deployment"><li>Archiving a deployment</li></a>
                   </ul>
-                  <h3>Contracts</h3>
+                  <h3>Dashboard</h3>
                   <ul>
-                      <a href="/docs/teams/contracts/contract-monitoring"><li>Contract Monitoring</li></a>
+                      <a href="/docs/teams/dashboard/dashboard-overview"><li>Dashboard overview</li></a>
+                      <a href="/docs/teams/dashboard/adding-a-deployment"><li>Adding a deployment</li></a>
+                      <a href="/docs/teams/dashboard/switching-deployments"><li>Switching deployments</li></a>
                   </ul>
                   <h3>Reference</h3>
                   <ul>
                       <a href="/docs/teams/reference/configuration"><li>Configuration</li></a>
                       <a href="/docs/teams/reference/permissions-disclosure"><li>Permissions Disclosure</li></a>
+                  </ul>
+                  <h3>Support</h3>
+                  <ul>
+                      <a href="/docs/teams/support/ask-us-a-question"><li>Ask Us a Question</li></a>
                   </ul>
               </div>
           
@@ -348,18 +375,18 @@
       <a href="#creating-an-account"><i class="fas fa-link"></i></a>
       Creating an Account
     </h1>
-  <p>To start, navigate to <a href="https://my.truffleteams.com" target="_blank">https://my.truffleteams.com</a> (this link will open in a new window). Click on Login with Github. If you&#39;re not already logged in to your GitHub account, Github will prompt you to do so.</p>
-<p>If you are a member of any organizations other than your personal account, you&#39;ll be prompted to select an organization to contiue with installation. Organizations with an existing Truffle Teams installation will have a <code>Configure &gt;</code> link.</p>
+  <p>To start, navigate to <a href="https://my.truffleteams.com" target="_blank">https://my.truffleteams.com</a>. Click on <strong><span class="inline-button"><i class="fab fa-github"></i> LOGIN WITH GITHUB</span></strong>. If you&#39;re not already logged in to your GitHub account, Github will prompt you to do so.</p>
+<p>If you are a member of any organizations other than your personal account, you&#39;ll be prompted to select an organization to contiue with installation. Organizations with an existing Truffle Teams installation will have a <strong>Configure &gt;</strong> link.</p>
 <p>
     <img class="img-fluid" src="/img/docs/teams/install-01.png" title="Truffle Teams DATA view" alt="Truffle Teams DATA view" />
     
   </p>
-<p>Next you&#39;ll be asked for permission to link Truffle Teams to one or more of your GitHub repositories. Select the repositories you wish to add and click continue. Select either <code>All repositories</code> to add all repositories in this account/organization to teams or <code>Only select repositories</code> to select individual repositories from the dropdown.</p>
+<p>Next you&#39;ll be asked for permission to link Truffle Teams to one or more of your GitHub repositories. Select the repositories you wish to add and click continue. Select either <strong>All repositories</strong> to add all repositories in this account/organization to teams or <strong>Only select repositories</strong> to select individual repositories from the dropdown.</p>
 <p class="alert alert-info">
 <strong>Note</strong>: We can always add a repository later if necessary. See the <a href="/docs/teams/getting-started/adding-repositories">Adding Repositories</a> documentation for more informaiton.
 </p>
 
-<p>Finally, click the <code>Install</code> button to install Truffle Teams on the selected repositories and be redirected to the Truffle Teams home page where you&#39;ll find the list of your repositories.</p>
+<p>Finally, click <strong>Install</strong> to install Truffle Teams on the selected repositories and be redirected to the Truffle Teams home page where you&#39;ll find the list of your repositories.</p>
 <p>
     <img class="img-fluid" src="/img/docs/teams/install-03.png" title="Truffle Teams DATA view" alt="Truffle Teams DATA view" />
     

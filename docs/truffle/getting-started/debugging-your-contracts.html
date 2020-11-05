@@ -189,30 +189,57 @@
                 </ul>
                   <h3>Getting Started</h3>
                   <ul>
-                      <a href="/docs/teams/getting-started/creating-an-account"><li>Creating an Account</li></a>
+                      <a href="/docs/teams/getting-started/creating-an-account"><li>Creating an account</li></a>
                       <a href="/docs/teams/getting-started/adding-repositories"><li>Adding Repositories</li></a>
-                      <a href="/docs/teams/getting-started/dashboard"><li>Dashboard</li></a>
                   </ul>
-                  <h3>Testing</h3>
+                  <h3>Account</h3>
                   <ul>
-                      <a href="/docs/teams/testing/starting-builds"><li>Starting Builds</li></a>
-                      <a href="/docs/teams/testing/external-ci"><li>External CI</li></a>
+                      <a href="/docs/teams/account/manage-your-account"><li>Manage your account</li></a>
+                      <a href="/docs/teams/account/switching-accounts"><li>Switching accounts</li></a>
+                      <a href="/docs/teams/account/claim-a-1-month-trial"><li>Claim a 1-month trial</li></a>
+                      <a href="/docs/teams/account/invite-your-team"><li>Invite your team</li></a>
+                      <a href="/docs/teams/account/redeeming-a-coupon"><li>Redeeming a coupon</li></a>
+                  </ul>
+                  <h3>Builds</h3>
+                  <ul>
+                      <a href="/docs/teams/builds/builds-overview"><li>Builds overview</li></a>
+                      <a href="/docs/teams/builds/starting-builds"><li>Starting Builds</li></a>
+                      <a href="/docs/teams/builds/restarting-builds"><li>Restarting Builds</li></a>
+                      <a href="/docs/teams/builds/external-ci"><li>External CI</li></a>
+                  </ul>
+                  <h3>Sandboxes</h3>
+                  <ul>
+                      <a href="/docs/teams/sandboxes/sandboxes-overview"><li>Sandboxes overview</li></a>
+                      <a href="/docs/teams/sandboxes/creating-a-sandbox"><li>Creating a sandbox</li></a>
+                      <a href="/docs/teams/sandboxes/renaming-a-sandbox"><li>Renaming a sandbox</li></a>
+                      <a href="/docs/teams/sandboxes/destroying-a-sandbox"><li>Destroying a sandbox</li></a>
+                      <a href="/docs/teams/sandboxes/sandbox-forking"><li>Sandbox Forking</li></a>
+                      <a href="/docs/teams/sandboxes/usage-with-truffle"><li>Usage with Truffle</li></a>
                   </ul>
                   <h3>Deployments</h3>
                   <ul>
-                      <a href="/docs/teams/deployments/about-deployments"><li>About Deployments</li></a>
-                      <a href="/docs/teams/deployments/deploying-contracts"><li>Deploying Contracts</li></a>
-                      <a href="/docs/teams/deployments/graduating-deployments"><li>Graduating Deployments</li></a>
-                      <a href="/docs/teams/deployments/sandboxes"><li>Sandboxes</li></a>
+                      <a href="/docs/teams/deployments/deployments-overview"><li>Deployments overview</li></a>
+                      <a href="/docs/teams/deployments/creating-a-deployment"><li>Creating a deployment</li></a>
+                      <a href="/docs/teams/deployments/deploying-to-a-sandbox"><li>Deploying to a sandbox</li></a>
+                      <a href="/docs/teams/deployments/contract-monitoring"><li>Contract Monitoring</li></a>
+                      <a href="/docs/teams/deployments/deployment-console"><li>Deployment console</li></a>
+                      <a href="/docs/teams/deployments/graduating-a-deployment"><li>Graduating a deployment</li></a>
+                      <a href="/docs/teams/deployments/archiving-a-deployment"><li>Archiving a deployment</li></a>
                   </ul>
-                  <h3>Contracts</h3>
+                  <h3>Dashboard</h3>
                   <ul>
-                      <a href="/docs/teams/contracts/contract-monitoring"><li>Contract Monitoring</li></a>
+                      <a href="/docs/teams/dashboard/dashboard-overview"><li>Dashboard overview</li></a>
+                      <a href="/docs/teams/dashboard/adding-a-deployment"><li>Adding a deployment</li></a>
+                      <a href="/docs/teams/dashboard/switching-deployments"><li>Switching deployments</li></a>
                   </ul>
                   <h3>Reference</h3>
                   <ul>
                       <a href="/docs/teams/reference/configuration"><li>Configuration</li></a>
                       <a href="/docs/teams/reference/permissions-disclosure"><li>Permissions Disclosure</li></a>
+                  </ul>
+                  <h3>Support</h3>
+                  <ul>
+                      <a href="/docs/teams/support/ask-us-a-question"><li>Ask Us a Question</li></a>
                   </ul>
               </div>
           
@@ -523,6 +550,21 @@ startup greatly.
   <p>This commands prints the current instruction and stack data, but does not step to the next instruction. Use this when you&#39;d like to see the current instruction and stack data after navigating through the transaction with the logical commands described above.</p>
 <p>This command can also print locations other than the stack, if you want to view memory, storage, or calldata.  Simply type <code>p memory</code> to show memory along with the other information, <code>p storage</code> for storage, or <code>p calldata</code> for calldata.  Each of these can also be abbreviated, e.g. <code>p mem</code>; they can also be combined, e.g. <code>p mem sto</code>.</p>
 <p>You can also add these extra locations to the default display with <code>+</code>; e.g., <code>p +mem</code> will make it so that memory will always be displayed when you enter <code>p</code> or <code>;</code>, and <code>p -mem</code> will turn this off.  You can even turn off the stack display with <code>p -sta</code>, or force it to display with <code>p sta</code>.  All of these options can again be combined.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="-g-turn-on-generated-sources"></a>
+      <a href="#-g-turn-on-generated-sources"><i class="fas fa-link"></i></a>
+      (g) turn on generated sources
+    </h3>
+  <p>When using Solidity 0.7.2 or later, you can use this option to allow the debugger to step into the internal assembly routines that Solidity generates.  You can always advance into these with the <code>;</code> command, but this option allows the other debugger commands (<code>n</code>, <code>i</code>, <code>o</code>, <code>u</code>) to step into these routines as well.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="-g-turn-off-generated-sources"></a>
+      <a href="#-g-turn-off-generated-sources"><i class="fas fa-link"></i></a>
+      (G) turn off generated sources
+    </h3>
+  <p>This command undoes the <code>g</code> command, returning the debugger to its default behavior with regard to generated sources.</p>
+<p>Note that when generated sources are turned off, you can still advance into them with the <code>;</code> command; and if a breakpoint is placed in one, continuing with <code>c</code> will still stop on such breakpoints.  In addition, once inside such a routine, the other debugger commands (<code>n</code>, <code>i</code>, <code>o</code>, <code>u</code>) will advance as normal inside of it; they won&#39;t immediately exit it.</p>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="-h-print-this-help"></a>
