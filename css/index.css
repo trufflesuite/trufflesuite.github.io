@@ -10692,6 +10692,11 @@ pre {
   color: red;
 }
 
+.alert-white-inv {
+  border-color: #fff;
+  background: transparent;
+}
+
 .banner {
   height: auto;
   overflow: hidden;
