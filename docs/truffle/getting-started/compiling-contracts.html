@@ -226,6 +226,12 @@
                       <a href="/docs/teams/deployments/graduating-a-deployment"><li>Graduating a deployment</li></a>
                       <a href="/docs/teams/deployments/archiving-a-deployment"><li>Archiving a deployment</li></a>
                   </ul>
+                  <h3>Debugger</h3>
+                  <ul>
+                      <a href="/docs/teams/debugger/debugger-overview"><li>Debugger overview</li></a>
+                      <a href="/docs/teams/debugger/debugging-a-transaction"><li>Debugging a transaction</li></a>
+                      <a href="/docs/teams/debugger/using-the-debugger"><li>Using the debugger</li></a>
+                  </ul>
                   <h3>Dashboard</h3>
                   <ul>
                       <a href="/docs/teams/dashboard/dashboard-overview"><li>Dashboard overview</li></a>
@@ -398,7 +404,7 @@
       <a href="#build-artifacts"><i class="fas fa-link"></i></a>
       Build artifacts
     </h2>
-  <p>Artifacts of your compilation will be placed in the <code>build/contracts/</code> directory, relative to your project root. (This directory will be created if it does not exist.)</p>
+  <p>Artifacts of your compilation will be placed in the <code>build/contracts/</code> directory, relative to your project root. (This directory will be created if it does not exist.) The name of the generated artifact <code>.json</code> files do <strong>not reflect</strong> the name of the <strong>source file</strong> but of the <strong>name of the contract definition</strong>. This means that changing the contract name string in the <code>artifacts.require</code> method to match that of the source file may lead to a <code>Error: Could not find artifacts for {yourContract} from any sources</code> if the contained smart contract definition is named differently.</p>
 <p>These artifacts are integral to the inner workings of Truffle, and they play an important part in the successful deployment of your application. <strong>You should not edit these files</strong> as they&#39;ll be overwritten by contract compilation and deployment.</p>
 
     <h2 class="link-markdown">

@@ -13,8 +13,8 @@
 <url> <loc>https://www.truffleframework.com/trufflecon2020.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/university.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/careers/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/index.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/careers/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/events/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/press-releases/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/index.html</loc> </url>
@@ -98,7 +98,6 @@
 <url> <loc>https://www.truffleframework.com/boxes/vue-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/vue-dark-chocolate.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/vueport-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/boxes/zepkit.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/besu-drizzle-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/wallette.html</loc> </url>
@@ -175,7 +174,6 @@
 <url> <loc>https://www.truffleframework.com/staff/vue-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/vue-dark-chocolate.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/vueport-box.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/staff/zepkit.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/besu-drizzle-truffle-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/wallette.html</loc> </url>
@@ -282,8 +280,8 @@
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/rel/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/skip/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/stop/README.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/devcon5/src/plugins/toolbar/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/substep/README.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/devcon5/src/plugins/toolbar/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/getting-started/contract-interaction.html</loc> </url>
@@ -325,13 +323,16 @@
 <url> <loc>https://www.truffleframework.com/docs/teams/account/manage-your-account.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/account/redeeming-a-coupon.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/account/switching-accounts.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/dashboard/adding-a-deployment.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/dashboard/dashboard-overview.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/dashboard/switching-deployments.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/builds/builds-overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/builds/external-ci.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/builds/restarting-builds.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/builds/starting-builds.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/dashboard/adding-a-deployment.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/dashboard/dashboard-overview.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/dashboard/switching-deployments.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/debugger/debugger-overview.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/debugger/debugging-a-transaction.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/debugger/using-the-debugger.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/deployments/archiving-a-deployment.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/deployments/contract-monitoring.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/deployments/creating-a-deployment.html</loc> </url>
