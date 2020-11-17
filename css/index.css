@@ -11959,7 +11959,25 @@ footer h4 {
   border: 4px solid #3fe0c5;
 }
 
-@media screen and (max-width: 767px) {
+.breakout {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+@media screen and (max-width: 991.98px) {
+  .breakout {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .breakout {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
   .post-thumbnail {
     margin: 1rem auto;
     width: 50%;
@@ -11997,7 +12015,6 @@ footer h4 {
 
 .box-card .card-img-top {
   height: 100px;
-  width: 738px;
 }
 
 .box-single-card .card-body {
