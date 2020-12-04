@@ -346,7 +346,7 @@ BigNumber { s: 1, e: 0, c: [ 2 ] }</code></pre>
 <li>We received a return value. Note that since the Ethereum network can handle very large numbers, we&#39;re given a <a href="https://github.com/MikeMcl/bignumber.js/">BigNumber</a> object which we can then convert to a number. The BigNumber library is used because Tezos can represent larger numbers than are allowed natively by Javascript.</li>
 </ul>
 <p class="alert alert-warning">
-**Warning**: If you try to convert a BigNumber that's larger than the largest integer supported by Javascript, you'll likely run into errors or unexpected behavior. We suggest using BigNumber throughout your application.
+<strong>Warning</strong>: If you try to convert a BigNumber that's larger than the largest integer supported by Javascript, you'll likely run into errors or unexpected behavior. We suggest using BigNumber throughout your application.
 </p>
 
 <p>Note that the data you get back from the <code>storage()</code> function will represent the types and structure of the underlying data stored in your contract. Let&#39;s take a new example we haven&#39;t seen yet:</p>

@@ -392,7 +392,10 @@
     </h2>
   <p>Install Drizzle React-Plugin via npm:</p>
 <pre><code class="language-bash">npm install @drizzle/react-plugin</code></pre>
-<p><strong>Note</strong>: <code>@drizzle/react-plugin</code> requires Requires React v16.3+ for the Context API. You&#39;ll also need the <code>@drizzle/store</code> package, if it isn&#39;t already installed.</p>
+<p class="alert alert-warning">
+<strong>Note</strong>: `@drizzle/react-plugin` requires Requires React v16.3+ for the Context API. You'll also need the `@drizzle/store` package, if it isn't already installed.
+</p>
+
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="getting-started"></a>
@@ -428,23 +431,28 @@ const drizzleOptions = {
 <pre><code class="language-javascript">&lt;DrizzleContext.Provider drizzle={drizzle}&gt;&lt;/DrizzleContext.Provider&gt;</code></pre>
 </li>
 <li><p>Use <code>DrizzleContext.Consumer</code> to consume the drizzle context and pass <code>drizzle</code> and <code>drizzleState</code> to your component. Drizzle also provides prebuilt components via the <code>@drizzle/react-components</code>.</p>
-<p><strong>Note</strong>: We have to check that Drizzle is initialized before fetching data. The <code>initialized</code> variable returns the drizzle store&#39;s initialization status.</p>
-<pre><code class="language-javascript">&lt;DrizzleContext.Provider drizzle={drizzle}&gt;
- &lt;DrizzleContext.Consumer&gt;
-   {drizzleContext =&gt; {
-     const {drizzle, drizzleState, initialized} = drizzleContext;
-
-     if(!initialized) {
-       return &quot;Loading...&quot;
-     }
-
-     return (
-         &lt;MyComponent drizzle={drizzle} drizzleState={drizzleState} /&gt;
-       )
-     }}
- &lt;/DrizzleContext.Consumer&gt;
-&lt;/DrizzleContext.Provider&gt;</code></pre>
 </li>
+</ol>
+<p class="alert alert-warning">
+  <strong>Note</strong>: We have to check that Drizzle is initialized before fetching data. The `initialized` variable returns the drizzle store's initialization status.
+</p>
+
+<pre><code class="language-javascript">  &lt;DrizzleContext.Provider drizzle={drizzle}&gt;
+    &lt;DrizzleContext.Consumer&gt;
+      {drizzleContext =&gt; {
+        const {drizzle, drizzleState, initialized} = drizzleContext;
+
+        if(!initialized) {
+          return &quot;Loading...&quot;
+        }
+
+        return (
+            &lt;MyComponent drizzle={drizzle} drizzleState={drizzleState} /&gt;
+          )
+        }}
+    &lt;/DrizzleContext.Consumer&gt;
+  &lt;/DrizzleContext.Provider&gt;</code></pre>
+<ol>
 <li><p>Fetch contract data by accessing contracts via <code>drizzle</code> and <code>drizzleState</code> in <code>props</code>. For more information on how this works, see <a href="https://github.com/trufflesuite/drizzle#how-data-stays-fresh">How Data Stays Fresh in the Drizzle docs</a>. For more info on the drizzle state, see <a href="https://github.com/trufflesuite/drizzle/tree/develop/packages/store#drizzle-state">state tree docs.</a></p>
 <p>The example below utilizes drizzle&#39;s <code>cacheCall</code> feature, which caches and synchronizes the call with the store. For more information on <code>cacheCall</code> and also <code>cacheSend</code>, see <a href="https://www.trufflesuite.com/docs/drizzle/getting-started/contract-interaction">Contract Interaction</a>.</p>
 <pre><code class="language-javascript">// sample component
@@ -470,9 +478,14 @@ class CacheCallExample extends React.Component {
 }
 
 export default CacheCallExample</code></pre>
-<p><strong>Note</strong>: The contract instances have all the standard web3 properties and methods.</p>
-<pre><code class="language-javascript">drizzle.contracts.SimpleStorage.methods.set(5).send(); // sets SimpleStorage contract&#39;s storedData state variable to uint 5.
-drizzle.contracts.SimpleStorage.methods.storedData.call(); // gets the storedData value</code></pre>
+<p class="alert alert-info">
+<strong>Note</strong>: The contract instances have all the standard web3 properties and methods.
+</p>
+```javascript
+drizzle.contracts.SimpleStorage.methods.set(5).send(); // sets SimpleStorage contract's storedData state variable to uint 5.
+drizzle.contracts.SimpleStorage.methods.storedData.call(); // gets the storedData value
+```
+
 </li>
 </ol>
 

@@ -405,7 +405,7 @@
       Resolving naming conflicts on Windows
     </h3>
   <p class="alert alert-warning">
-**Note**: This only applies to Truffle version 4 and below.
+<strong>Note</strong>: This only applies to Truffle version 4 and below.
 </p>
 
 
@@ -463,6 +463,7 @@
     // skipDryRun: - true if you don&#39;t want to test run the migration locally before the actual migration (default is false)
     // timeoutBlocks: - if a transaction is not mined, keep waiting for this number of blocks (default is 50)
     // deploymentPollingInterval: - duration between checks for completion of deployment transactions
+    // disableConfirmationListener: - true to disable web3&#39;s confirmation listener
   }
 }</code></pre>
 <p>For each network, if unspecified, transaction options will default to the following values:</p>
@@ -522,7 +523,10 @@
     }
   }
 };</code></pre>
-<p><strong>Note</strong>: In addition to specifying a relative path, you can also use globs/regular expressions to selectively compile contracts.</p>
+<p class="alert alert-info">
+<strong>Note</strong>: In addition to specifying a relative path, you can also use globs/regular expressions to selectively compile contracts.
+</p>
+
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="contracts_build_directory"></a>
@@ -641,12 +645,33 @@
           enabled: &lt;boolean&gt;,
           runs: &lt;number&gt;   // Optimize for how many times you intend to run the code
         },
-        evmVersion: &lt;string&gt; // Default: &quot;petersburg&quot;
+        evmVersion: &lt;string&gt; // Default: &quot;istanbul&quot;
+      },
+      modelCheckerSettings: {
+        // contains options for SMTChecker
       }
     }
   }
 }</code></pre>
-<p>For more information, please see the Solidity documentation on <a href="http://solidity.readthedocs.io/en/develop/using-the-compiler.html#compiler-input-and-output-json-description">Compiler Input and Output JSON Description</a>.</p>
+<p>For more information, please see the Solidity documentation on <a href="https://docs.soliditylang.org/en/latest/using-the-compiler.html#input-description">Compiler Input JSON Description</a> for the various possible settings.  Note that customizing <code>stopAfter</code> and <code>outputSelection</code> are not currently supported.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="vyper"></a>
+      <a href="#vyper"><i class="fas fa-link"></i></a>
+      vyper
+    </h3>
+  <p>Vyper compiler settings.  Similar to the <code>solc</code> settings, but not as extensive.  In particular, specifying a Vyper version is not currently supported; your local Vyper installation will always be used.</p>
+<p>Truffle config example:</p>
+<pre><code class="language-javascript">module.exports = {
+  compilers: {
+    vyper: {
+      settings: {
+        evmVersion: &lt;string&gt;
+      }
+    }
+  }
+}</code></pre>
+<p>Currently, only changing the <code>settings</code> is supported for Vyper; see the Vyper documentation on <a href="https://vyper.readthedocs.io/en/stable/compiling-a-contract.html#input-json-description">Compiler Input JSON Description</a> for the possible settings.  However customizing <code>outputSelection</code> is not supported, so currently the only supported setting is <code>evmVersion</code>.</p>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="external-compilers"></a>
@@ -744,7 +769,7 @@ For instance, the following will run <code>./proj/compile-contracts</code> and r
       plugins
     </h2>
   <p class="alert alert-warning">
-**Note**: This feature is new and still in a barebones state. Please let us
+<strong>Note</strong>: This feature is new and still in a barebones state. Please let us
 know how we can improve it!
 </p>
 

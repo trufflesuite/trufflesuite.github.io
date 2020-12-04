@@ -273,8 +273,8 @@
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/extras/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/goto/README.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/devcon5/src/plugins/impressConsole/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/help/README.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/devcon5/src/plugins/impressConsole/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/mobile/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/mouse-timeout/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/navigation-ui/README.html</loc> </url>
@@ -385,7 +385,6 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-javascript.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/testing/writing-tests-in-solidity.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/quickstart.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/tezos/truffle/reference/configuring-tezos-projects.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/compiling-tezos-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/creating-a-tezos-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/deploying-tezos-contracts.html</loc> </url>
@@ -395,4 +394,5 @@
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/using-the-console-with-tezos.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/writing-external-scripts-with-tezos.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/getting-started/writing-tezos-contracts.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/tezos/truffle/reference/configuring-tezos-projects.html</loc> </url>
 </urlset>

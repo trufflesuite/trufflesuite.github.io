@@ -524,7 +524,7 @@ truffle(develop)&gt; balance.toNumber()</code></pre>
 <li>We received a return value. Note that since the Ethereum network can handle very large numbers, we&#39;re given a <a href="https://github.com/indutny/bn.js/">BN</a> object which we then convert to a number.</li>
 </ul>
 <p class="alert alert-warning">
-**Warning**: We convert the return value to a number because in this example the numbers are small. However, if you try to convert a BN that's larger than the largest integer supported by Javascript, you'll likely run into errors or unexpected behavior.
+<strong>Warning</strong>: We convert the return value to a number because in this example the numbers are small. However, if you try to convert a BN that's larger than the largest integer supported by Javascript, you'll likely run into errors or unexpected behavior.
 </p>
 
 
@@ -673,6 +673,28 @@ property of the contract.</p>
 instance.methods[&#39;setValue(uint256)&#39;](123);
 instance.methods[&#39;setValue(uint256,uint256)&#39;](11, 55);</code></pre>
 <p>Please see this issue <a href="https://github.com/trufflesuite/truffle/issues/2868">here</a> for more information.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="using-enumerations"></a>
+      <a href="#using-enumerations"><i class="fas fa-link"></i></a>
+      Using enumerations
+    </h3>
+  <p>Contract abstractions can also be used to access Solidity enumerations defined
+within that contract.  For instance, suppose we have the following Solidity contract:</p>
+<pre><code class="language-solidity">contract ExampleContract {
+  enum ExampleEnum {
+    ExampleOption0,
+    ExampleOption1,
+    ExampleOption2
+  }
+
+  // ...
+}</code></pre>
+<p>One could then use <code>ExampleContract.ExampleEnum.ExampleOption0</code> to access that enum
+value; in this case, that is equal to <code>0</code>, but using this allows one to pass in enums
+to contract methods without having to worry about their numerical value.</p>
+<p>A contract&#39;s enums are also available under <code>.enums</code>, so in this case, one could also
+write <code>ExampleContract.enums.ExampleEnum.ExampleOption0</code>.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="further-reading"></a>
