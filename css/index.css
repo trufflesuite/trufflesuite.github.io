@@ -11030,6 +11030,16 @@ div#hubspot-messages-iframe-container {
   color: #5e464d;
 }
 
+.btn-consensys {
+  background: #2c56dd;
+  color: #fff;
+}
+
+.btn-consensys:hover {
+  background: #fff;
+  color: #2c56dd;
+}
+
 .btn-wrap {
   white-space: normal;
 }
@@ -13236,8 +13246,8 @@ blockquote {
 }
 
 .university {
-  background-color: #3fe0c5;
-  border-bottom: solid 1px #e0dad7;
+  background-color: #f8f5f0;
+  color: #5e464d;
 }
 
 .university h1 {
@@ -13255,7 +13265,7 @@ blockquote {
 
 .university .text-truffle {
   font-size: 4.2rem;
-  border-bottom: dotted 2px white;
+  border-bottom: dotted 2px #5e464d;
   margin-bottom: 0;
   padding-bottom: 0.4rem;
   width: 20.8rem;
