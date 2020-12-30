@@ -475,13 +475,16 @@
       debug
     </h3>
   <p>Interactively debug any transaction on the blockchain.</p>
-<pre><code class="language-shell">truffle debug [&lt;transaction_hash&gt;] [--network &lt;network&gt;] [--fetch-external]</code></pre>
+<pre><code class="language-shell">truffle debug [&lt;transaction_hash&gt;] [--network &lt;network&gt;] [--fetch-external] [--compile-tests|--compile-all|--compile-none]</code></pre>
 <p>Will start an interactive debugging session on a particular transaction. Allows you to step through each action and replay. See the <a href="/docs/getting_started/debugging">Debugging your contracts</a> section for more details.</p>
 <p>Options:</p>
 <ul>
 <li><code>&lt;transaction_hash&gt;</code>: Transaction ID to use for debugging.  You can omit this to simply start the debugger and then load a transaction later.</li>
 <li><code>--network</code>: The network to connect to.</li>
 <li><code>--fetch-external</code>: Allows the debugger to download source from source verification services to debug transactions involving external contracts.  When used, a transaction hash is required.  May be abbreviated <code>-x</code>.</li>
+<li><code>--compile-tests</code>: Allows the debugger to compile <a href="../testing/writing-tests-in-solidity">Solidity test contracts</a>.  Implies <code>--compile-all</code>.</li>
+<li><code>--compile-all</code>: Forces the debugger to recompile all contracts, even when it would otherwise judge doing so unnecessary.  Compilation results are not saved.</li>
+<li><code>--compile-none</code>: Forces the debugger not to recompile contracts, even when it would otherwise judge it necessary.  This option is dangerous and may cause errors.  Please only use this if you are sure a recompilation is not necessary.</li>
 </ul>
 
     <h3 class="link-markdown">

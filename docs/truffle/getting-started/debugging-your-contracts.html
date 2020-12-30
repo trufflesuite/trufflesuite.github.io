@@ -471,7 +471,9 @@ read-only calls as well.</p>
 <pre><code class="language-shell">$ truffle debug</code></pre>
 <p>Regardless of how you start the debugger, once it is running you are not limited to debugging only the transaction you launched it with; it is possible to unload the current transaction and load a new one, as described below.</p>
 <p>You can specify the network you want to debug on with the <code>--network</code> option:</p>
-<pre><code class="language-shell">$ truffle debug &lt;transaction hash&gt; --network &lt;network&gt;</code></pre>
+<pre><code class="language-shell">$ truffle debug [&lt;transaction hash&gt;] --network &lt;network&gt;</code></pre>
+<p>And if you want to debug your <a href="../testing/writing-tests-in-solidity">Solidity test contracts</a>, you can pass the <code>--compile-tests</code> option:</p>
+<pre><code class="language-shell">$ truffle debug [&lt;transaction hash&gt;] --compile-tests</code></pre>
 <p>And with the <code>--fetch-external</code> option (<a href="#debugging-external-contracts-with-verified-source">see below</a>), you can debug contract instances outside your project that have verified source code on <a href="https://etherscan.io/">Etherscan</a> or <a href="https://github.com/ethereum/sourcify">Sourcify</a>.  When using this option, you must specify a transaction hash to debug, and you will not be able to switch transactions from inside the debugger.</p>
 <pre><code class="language-shell">$ truffle debug &lt;transaction hash&gt; --fetch-external --network &lt;network&gt;</code></pre>
 <p class="alert alert-info m-t-2">
