@@ -104,9 +104,6 @@
           <a class="nav-link" href="/docs">DOCS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link trufflecon-link" href="/trufflecon2020">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo"/>N</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="/tutorials">TUTORIALS</a>
         </li>
         <li class="nav-item">
@@ -187,7 +184,7 @@
                   <h3>Getting Started</h3>
                   <ul>
                       <a href="/docs/teams/getting-started/creating-an-account"><li>Creating an account</li></a>
-                      <a href="/docs/teams/getting-started/adding-repositories"><li>Adding Repositories</li></a>
+                      <a href="/docs/teams/getting-started/adding-repositories"><li>Adding repositories</li></a>
                   </ul>
                   <h3>Account</h3>
                   <ul>
@@ -200,8 +197,8 @@
                   <h3>Builds</h3>
                   <ul>
                       <a href="/docs/teams/builds/builds-overview"><li>Builds overview</li></a>
-                      <a href="/docs/teams/builds/starting-builds"><li>Starting Builds</li></a>
-                      <a href="/docs/teams/builds/restarting-builds"><li>Restarting Builds</li></a>
+                      <a href="/docs/teams/builds/starting-builds"><li>Starting builds</li></a>
+                      <a href="/docs/teams/builds/restarting-builds"><li>Restarting builds</li></a>
                       <a href="/docs/teams/builds/external-ci"><li>External CI</li></a>
                   </ul>
                   <h3>Sandboxes</h3>
@@ -210,7 +207,7 @@
                       <a href="/docs/teams/sandboxes/creating-a-sandbox"><li>Creating a sandbox</li></a>
                       <a href="/docs/teams/sandboxes/renaming-a-sandbox"><li>Renaming a sandbox</li></a>
                       <a href="/docs/teams/sandboxes/destroying-a-sandbox"><li>Destroying a sandbox</li></a>
-                      <a href="/docs/teams/sandboxes/sandbox-forking"><li>Sandbox Forking</li></a>
+                      <a href="/docs/teams/sandboxes/sandbox-forking"><li>Sandbox forking</li></a>
                       <a href="/docs/teams/sandboxes/usage-with-truffle"><li>Usage with Truffle</li></a>
                   </ul>
                   <h3>Deployments</h3>
@@ -218,7 +215,8 @@
                       <a href="/docs/teams/deployments/deployments-overview"><li>Deployments overview</li></a>
                       <a href="/docs/teams/deployments/creating-a-deployment"><li>Creating a deployment</li></a>
                       <a href="/docs/teams/deployments/deploying-to-a-sandbox"><li>Deploying to a sandbox</li></a>
-                      <a href="/docs/teams/deployments/contract-monitoring"><li>Contract Monitoring</li></a>
+                      <a href="/docs/teams/deployments/deployment-details"><li>Deployment details</li></a>
+                      <a href="/docs/teams/deployments/contract-monitoring"><li>Contract monitoring</li></a>
                       <a href="/docs/teams/deployments/deployment-console"><li>Deployment console</li></a>
                       <a href="/docs/teams/deployments/graduating-a-deployment"><li>Graduating a deployment</li></a>
                       <a href="/docs/teams/deployments/archiving-a-deployment"><li>Archiving a deployment</li></a>
@@ -229,6 +227,12 @@
                       <a href="/docs/teams/debugger/debugging-a-transaction"><li>Debugging a transaction</li></a>
                       <a href="/docs/teams/debugger/using-the-debugger"><li>Using the debugger</li></a>
                   </ul>
+                  <h3>Contract Manager</h3>
+                  <ul>
+                      <a href="/docs/teams/contract-manager/contract-manager-overview"><li>Contract manager overview</li></a>
+                      <a href="/docs/teams/contract-manager/interacting-with-functions"><li>Interacting with functions</li></a>
+                      <a href="/docs/teams/contract-manager/connecting-to-a-sandbox"><li>Connecting to a sandbox</li></a>
+                  </ul>
                   <h3>Dashboard</h3>
                   <ul>
                       <a href="/docs/teams/dashboard/dashboard-overview"><li>Dashboard overview</li></a>
@@ -238,11 +242,11 @@
                   <h3>Reference</h3>
                   <ul>
                       <a href="/docs/teams/reference/configuration"><li>Configuration</li></a>
-                      <a href="/docs/teams/reference/permissions-disclosure"><li>Permissions Disclosure</li></a>
+                      <a href="/docs/teams/reference/permissions-disclosure"><li>Permissions disclosure</li></a>
                   </ul>
                   <h3>Support</h3>
                   <ul>
-                      <a href="/docs/teams/support/ask-us-a-question"><li>Ask Us a Question</li></a>
+                      <a href="/docs/teams/support/ask-us-a-question"><li>Ask us a question</li></a>
                   </ul>
               </div>
           
@@ -382,35 +386,35 @@
     <h2 class="link-markdown">
       <a class="anchor-target" name="repository-structure"></a>
       <a href="#repository-structure"><i class="fas fa-link"></i></a>
-      Repository Structure
+      Repository structure
     </h2>
   <p>Truffle Teams will only build repositories who have a Truffle project at the root of the repository. It looks for a <code>truffle-config.js</code> or <code>truffle.js</code> config in the root directory before building.</p>
 
     <h4 class="link-markdown">
       <a class="anchor-target" name="configuring-a-different-location-for-the-truffle-project"></a>
       <a href="#configuring-a-different-location-for-the-truffle-project"><i class="fas fa-link"></i></a>
-      Configuring a Different Location for the Truffle Project
+      Configuring a different location for the Truffle project
     </h4>
   <p>Truffle Teams doesn&#39;t currently support configuring a subfolder folder for the Truffle project, and Truffle Teams doesn&#39;t currently support more than one Truffle project. We&#39;re evaluating options to give you the ability to configure those.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="environment-variables-amp-secrets"></a>
       <a href="#environment-variables-amp-secrets"><i class="fas fa-link"></i></a>
-      Environment Variables &amp; Secrets
+      Environment variables &amp; secrets
     </h2>
   <p>Truffle Teams currently doesn&#39;t support injecting environment variables and/or secrets into the build or deployment environments. For Builds, checkout <a href="/docs/teams/testing/external-ci">External CI</a> which can enable you use an external CI provider that does have those features with Truffle Teams.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="truffle-config-file"></a>
       <a href="#truffle-config-file"><i class="fas fa-link"></i></a>
-      Truffle Config File
+      Truffle config file
     </h2>
   <p>Truffle Teams makes some assumptions and modifications to your <code>truffle-config.js</code> (or <code>truffle.js</code>) configuration file.</p>
 
     <h4 class="link-markdown">
       <a class="anchor-target" name="-code-networks-code-object"></a>
       <a href="#-code-networks-code-object"><i class="fas fa-link"></i></a>
-      <code>networks</code> Object
+      <code>networks</code> object
     </h4>
   <p>When deploying, Truffle Teams ignores any user-provided options in the <code>networks</code> object provided in the config file. Truffle Teams replaces it with a single network that is associated to the network you&#39;re deploying to. The names used for that network config can be seen below; you can also use this reference in your migration script&#39;s <code>network</code> variable. All names are case sensitive.</p>
 <p><strong>Mainnet Ethereum Network:</strong> <code>mainnet</code><br/>
@@ -418,8 +422,8 @@
 <strong>Görli Ethereum Network:</strong> <code>goerli</code><br/>
 <strong>Rinkeby Ethereum Network:</strong> <code>rinkeby</code><br/>
 <strong>Kovan Ethereum Network:</strong> <code>kovan</code><br/>
-<strong>Sandbox Network:</strong> Use the name of your Sandbox, except single and double quotation marks are removed. Below are some examples.</p>
-<p><code>truffles-sandbox</code> =&gt; <code>truffles-sandbox</code><br/>
+<strong>Sandbox Network:</strong> Use the name of your Sandbox, except single and double quotation marks are removed. <br />
+<code>truffles-sandbox</code> =&gt; <code>truffles-sandbox</code><br/>
 <code>Truffle&#39;s &quot;Sandbox&quot;</code> =&gt; <code>Truffles Sandbox</code></p>
 
 

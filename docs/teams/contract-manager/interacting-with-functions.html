@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- HubSpot Forms -->
+  <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5258293.js"></script>
+  <!-- End of HubSpot Embed Code -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Teams | Interacting with functions | Documentation | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/docs/teams/contract-manager/interacting-with-functions" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Teams | Interacting with functions | Documentation | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+
+  <title>Teams | Interacting with functions | Documentation | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+      <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="d-none d-lg-block">TRUFFLE SUITE</span>
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">TUTORIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>  
+  <main role="main" class="container-fluid">
+    <!--<div class="row pt-4 pb-4">
+      <div class="col">
+        <form>
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="🔍 Search">
+            </div>
+            <div class="col">
+              <select id="inputState" class="form-control">
+                <option selected>4.1</option>
+                <option>4.0.6</option>
+                <option>4.0.5</option>
+              </select>
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-truffle">SEARCH</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>-->
+
+    
+
+    <div class="row row-docs-main">
+      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). --> 
+
+          <aside class="col-lg-3 docs-sidebar" id="docsSidebar">
+            <h2 class="space-icon d-lg-none text-center" id="docsSidebarToggle"><i class="fas fa-book"></i> SEARCH &amp; CONTENTS</h2>
+          
+            <div class="docs-top-nav">
+              <a href="/docs">
+                <div class="docs-back-button">
+                  <i class="fad fa-arrow-square-left"></i>
+                </div>
+                Ethereum & EVM-based chains
+              </a>
+            </div>
+          
+            <div class="docs-wrapper">
+          
+              <form class="mb-4" id="searchForm">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="searchInput" placeholder="Search">
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-truffle">SEARCH</button>
+                  </div>
+                </div>
+              </form>
+          
+              <a class="toggle-teams suite-link" href="#teamsDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><h2 class="text-truffle">TRUFFLE TEAMS</h2>
+              </a>
+          
+              <div class="collapse teams show" id="teamsDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/teams/overview"><li>Overview</li></a>
+                  <a href="/docs/teams/quickstart"><li>Quickstart</li></a>
+                </ul>
+                  <h3>Getting Started</h3>
+                  <ul>
+                      <a href="/docs/teams/getting-started/creating-an-account"><li>Creating an account</li></a>
+                      <a href="/docs/teams/getting-started/adding-repositories"><li>Adding repositories</li></a>
+                  </ul>
+                  <h3>Account</h3>
+                  <ul>
+                      <a href="/docs/teams/account/manage-your-account"><li>Manage your account</li></a>
+                      <a href="/docs/teams/account/switching-accounts"><li>Switching accounts</li></a>
+                      <a href="/docs/teams/account/claim-a-1-month-trial"><li>Claim a 1-month trial</li></a>
+                      <a href="/docs/teams/account/invite-your-team"><li>Invite your team</li></a>
+                      <a href="/docs/teams/account/redeeming-a-coupon"><li>Redeeming a coupon</li></a>
+                  </ul>
+                  <h3>Builds</h3>
+                  <ul>
+                      <a href="/docs/teams/builds/builds-overview"><li>Builds overview</li></a>
+                      <a href="/docs/teams/builds/starting-builds"><li>Starting builds</li></a>
+                      <a href="/docs/teams/builds/restarting-builds"><li>Restarting builds</li></a>
+                      <a href="/docs/teams/builds/external-ci"><li>External CI</li></a>
+                  </ul>
+                  <h3>Sandboxes</h3>
+                  <ul>
+                      <a href="/docs/teams/sandboxes/sandboxes-overview"><li>Sandboxes overview</li></a>
+                      <a href="/docs/teams/sandboxes/creating-a-sandbox"><li>Creating a sandbox</li></a>
+                      <a href="/docs/teams/sandboxes/renaming-a-sandbox"><li>Renaming a sandbox</li></a>
+                      <a href="/docs/teams/sandboxes/destroying-a-sandbox"><li>Destroying a sandbox</li></a>
+                      <a href="/docs/teams/sandboxes/sandbox-forking"><li>Sandbox forking</li></a>
+                      <a href="/docs/teams/sandboxes/usage-with-truffle"><li>Usage with Truffle</li></a>
+                  </ul>
+                  <h3>Deployments</h3>
+                  <ul>
+                      <a href="/docs/teams/deployments/deployments-overview"><li>Deployments overview</li></a>
+                      <a href="/docs/teams/deployments/creating-a-deployment"><li>Creating a deployment</li></a>
+                      <a href="/docs/teams/deployments/deploying-to-a-sandbox"><li>Deploying to a sandbox</li></a>
+                      <a href="/docs/teams/deployments/deployment-details"><li>Deployment details</li></a>
+                      <a href="/docs/teams/deployments/contract-monitoring"><li>Contract monitoring</li></a>
+                      <a href="/docs/teams/deployments/deployment-console"><li>Deployment console</li></a>
+                      <a href="/docs/teams/deployments/graduating-a-deployment"><li>Graduating a deployment</li></a>
+                      <a href="/docs/teams/deployments/archiving-a-deployment"><li>Archiving a deployment</li></a>
+                  </ul>
+                  <h3>Debugger</h3>
+                  <ul>
+                      <a href="/docs/teams/debugger/debugger-overview"><li>Debugger overview</li></a>
+                      <a href="/docs/teams/debugger/debugging-a-transaction"><li>Debugging a transaction</li></a>
+                      <a href="/docs/teams/debugger/using-the-debugger"><li>Using the debugger</li></a>
+                  </ul>
+                  <h3>Contract Manager</h3>
+                  <ul>
+                      <a href="/docs/teams/contract-manager/contract-manager-overview"><li>Contract manager overview</li></a>
+                      <a href="/docs/teams/contract-manager/interacting-with-functions"><li>Interacting with functions</li></a>
+                      <a href="/docs/teams/contract-manager/connecting-to-a-sandbox"><li>Connecting to a sandbox</li></a>
+                  </ul>
+                  <h3>Dashboard</h3>
+                  <ul>
+                      <a href="/docs/teams/dashboard/dashboard-overview"><li>Dashboard overview</li></a>
+                      <a href="/docs/teams/dashboard/adding-a-deployment"><li>Adding a deployment</li></a>
+                      <a href="/docs/teams/dashboard/switching-deployments"><li>Switching deployments</li></a>
+                  </ul>
+                  <h3>Reference</h3>
+                  <ul>
+                      <a href="/docs/teams/reference/configuration"><li>Configuration</li></a>
+                      <a href="/docs/teams/reference/permissions-disclosure"><li>Permissions disclosure</li></a>
+                  </ul>
+                  <h3>Support</h3>
+                  <ul>
+                      <a href="/docs/teams/support/ask-us-a-question"><li>Ask us a question</li></a>
+                  </ul>
+              </div>
+          
+              <a class="toggle-truffle suite-link" href="#truffleDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
+              </a>
+          
+              <div class="collapse truffle " id="truffleDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/truffle/overview"><li>Overview</li></a>
+                  <a href="/docs/truffle/quickstart"><li>Quickstart</li></a>
+                </ul>
+                  <h3>Getting Started</h3>
+                  <ul>
+                      <a href="/docs/truffle/getting-started/installation"><li>Installation</li></a>
+                      <a href="/docs/truffle/getting-started/creating-a-project"><li>Creating a Project</li></a>
+                      <a href="/docs/truffle/getting-started/compiling-contracts"><li>Compiling Contracts</li></a>
+                      <a href="/docs/truffle/getting-started/running-migrations"><li>Running Migrations</li></a>
+                      <a href="/docs/truffle/getting-started/interacting-with-your-contracts"><li>Interacting with Your Contracts</li></a>
+                      <a href="/docs/truffle/getting-started/truffle-with-metamask"><li>Truffle with MetaMask</li></a>
+                      <a href="/docs/truffle/getting-started/package-management-via-ethpm"><li>Package Management via EthPM</li></a>
+                      <a href="/docs/truffle/getting-started/package-management-via-npm"><li>Package Management via NPM</li></a>
+                      <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
+                      <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
+                      <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
+                  </ul>
+                  <h3>Testing</h3>
+                  <ul>
+                      <a href="/docs/truffle/testing/testing-your-contracts"><li>Testing Your Contracts</li></a>
+                      <a href="/docs/truffle/testing/writing-tests-in-javascript"><li>Writing Tests in JavaScript</li></a>
+                      <a href="/docs/truffle/testing/writing-tests-in-solidity"><li>Writing Tests in Solidity</li></a>
+                  </ul>
+                  <h3>Distributed Ledger Support</h3>
+                  <ul>
+                      <a href="/docs/truffle/distributed-ledger-support/working-with-quorum"><li>Working With Quorum</li></a>
+                      <a href="/docs/truffle/distributed-ledger-support/working-with-hyperledger-evm"><li>Working With Hyperledger EVM</li></a>
+                  </ul>
+                  <h3>Advanced</h3>
+                  <ul>
+                      <a href="/docs/truffle/advanced/networks-and-app-deployment"><li>Networks and App Deployment</li></a>
+                      <a href="/docs/truffle/advanced/build-processes"><li>Build Processes</li></a>
+                      <a href="/docs/truffle/advanced/creating-a-truffle-box"><li>Creating a Truffle Box</li></a>
+                      <a href="/docs/truffle/advanced/event-system"><li>Event System</li></a>
+                      <a href="/docs/truffle/advanced/ethereum-name-service"><li>Ethereum Name Service</li></a>
+                  </ul>
+                  <h3>Reference</h3>
+                  <ul>
+                      <a href="/docs/truffle/reference/choosing-an-ethereum-client"><li>Choosing an Ethereum Client</li></a>
+                      <a href="/docs/truffle/reference/configuration"><li>Configuration</li></a>
+                      <a href="/docs/truffle/reference/contract-abstractions"><li>Contract Abstractions</li></a>
+                      <a href="/docs/truffle/reference/truffle-commands"><li>Truffle Commands</li></a>
+                      <a href="/docs/truffle/reference/contact-the-developers"><li>Contact The Developers</li></a>
+                  </ul>
+              </div>
+          
+              <a class="toggle-ganache suite-link" href="#ganacheDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" /><h2 class="text-ganache">Ganache</h2>
+              </a>
+              
+              <div class="collapse ganache " id="ganacheDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/ganache/overview"><li>Overview</li></a>
+                  <a href="/docs/ganache/quickstart"><li>Quickstart</li></a>
+                </ul>
+                  <h3>Workspaces</h3>
+                  <ul>
+                      <a href="/docs/ganache/workspaces/the-quickstart-workspace"><li>The Quickstart Workspace</li></a>
+                      <a href="/docs/ganache/workspaces/creating-workspaces"><li>Creating Workspaces</li></a>
+                      <a href="/docs/ganache/workspaces/loading-existing-workspaces"><li>Loading Existing Workspaces</li></a>
+                      <a href="/docs/ganache/workspaces/switching-workspaces"><li>Switching Workspaces</li></a>
+                      <a href="/docs/ganache/workspaces/deleting-workspaces"><li>Deleting Workspaces</li></a>
+                      <a href="/docs/ganache/workspaces/editing-workspaces"><li>Editing Workspaces</li></a>
+                  </ul>
+                  <h3>Truffle Projects</h3>
+                  <ul>
+                      <a href="/docs/ganache/truffle-projects/linking-a-truffle-project"><li>Linking a Truffle Project</li></a>
+                      <a href="/docs/ganache/truffle-projects/unlinking-a-truffle-project"><li>Unlinking a Truffle Project</li></a>
+                      <a href="/docs/ganache/truffle-projects/contracts-page"><li>Contracts Page</li></a>
+                      <a href="/docs/ganache/truffle-projects/events-page"><li>Events Page</li></a>
+                      <a href="/docs/ganache/truffle-projects/decoded-transactions"><li>Decoded Transactions</li></a>
+                  </ul>
+                  <h3>Corda</h3>
+                  <ul>
+                      <a href="/docs/ganache/corda/working-with-corda"><li>Working with Corda</li></a>
+                      <a href="/docs/ganache/corda/workspace-overview"><li>Workspace Overview</li></a>
+                      <a href="/docs/ganache/corda/linking-a-corda-project"><li>Linking a Corda Project</li></a>
+                      <a href="/docs/ganache/corda/unlinking-a-corda-project"><li>Unlinking a Corda Project</li></a>
+                      <a href="/docs/ganache/corda/nodes"><li>Nodes</li></a>
+                      <a href="/docs/ganache/corda/transactions"><li>Transactions</li></a>
+                      <a href="/docs/ganache/corda/cordapps"><li>CorDapps</li></a>
+                      <a href="/docs/ganache/corda/shell"><li>Shell</li></a>
+                  </ul>
+                  <h3>Reference</h3>
+                  <ul>
+                      <a href="/docs/ganache/reference/ganache-settings"><li>Ganache Settings</li></a>
+                      <a href="/docs/ganache/reference/workspace-default-configuration"><li>Workspace Default Configuration</li></a>
+                  </ul>
+              </div>
+          
+              <a class="toggle-drizzle suite-link" href="#drizzleDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" /><h2 class="text-drizzle">dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le</h2>
+              </a>
+              
+              <div class="collapse drizzle " id="drizzleDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/drizzle/overview"><li>Overview</li></a>
+                  <a href="/docs/drizzle/quickstart"><li>Quickstart</li></a>
+                </ul>
+                  <h3>Getting Started</h3>
+                  <ul>
+                      <a href="/docs/drizzle/getting-started/using-drizzles-redux-store"><li>Using Drizzle&#x27;s Redux Store</li></a>
+                      <a href="/docs/drizzle/getting-started/contract-interaction"><li>Contract Interaction</li></a>
+                  </ul>
+                  <h3>React</h3>
+                  <ul>
+                      <a href="/docs/drizzle/react/react-integration"><li>React Integration</li></a>
+                      <a href="/docs/drizzle/react/react-components"><li>React Components</li></a>
+                  </ul>
+                  <h3>Reference</h3>
+                  <ul>
+                      <a href="/docs/drizzle/reference/drizzle-options"><li>Drizzle Options</li></a>
+                      <a href="/docs/drizzle/reference/drizzle-state"><li>Drizzle State</li></a>
+                      <a href="/docs/drizzle/reference/drizzle-actions"><li>Drizzle Actions</li></a>
+                      <a href="/docs/drizzle/reference/how-data-stays-fresh"><li>How Data Stays Fresh</li></a>
+                  </ul>
+              </div>
+            </div>
+          </aside>      
+        <div class="col-lg-9 bd-light-cream docs-content">
+          
+    <h1 class="link-markdown">
+      <a class="anchor-target" name="interacting-with-functions"></a>
+      <a href="#interacting-with-functions"><i class="fas fa-link"></i></a>
+      Interacting with functions
+    </h1>
+  <p>Please note this section of the documentation assumes that you have already deployed a contract and navigated to the contract manager. If you have not done so, please take a look at the <a href="/docs/teams/contract-manager/contract-manager-overview">Contract manager overview</a> for more details.</p>
+<p>To interact with a function, click on a function signature from the list of functions within the <strong>Functions</strong> section. If the function accepts parameters, you&#39;ll see an input box for each parameter. We accept valid YAML and/or JSON as inputs.</p>
+<figure class="screenshot">
+  <img class="img-fluid" src="/img/docs/teams/contract-manager-02.png" title="Contract manager functions" alt="Contract manager functions" />
+  <figcaption class="text-center">Contract manager functions</figcaption>
+</figure>
+
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="working-with-structs-as-parameters"></a>
+      <a href="#working-with-structs-as-parameters"><i class="fas fa-link"></i></a>
+      Working with structs as parameters
+    </h3>
+  <p>There are two different ways to input a struct as a parameter: as an array of values or as objects with the keys being the names of the struct fields.</p>
+<p>For example, given this struct:</p>
+<pre><code class="language-javascript">struct Repository {
+    string name;
+    string[2] branches;
+}</code></pre>
+<p>You can input the parameter as an array of values:</p>
+<pre><code class="language-javascript">[&quot;truffle-teams&quot;, [&quot;main&quot;, &quot;chore/update-readme&quot;]];</code></pre>
+<p>Or you can input the parameter as an object:</p>
+<pre><code class="language-javascript">{
+    name: &quot;truffle-teams&quot;,
+    branches: [&quot;main&quot;, &quot;chore/update-readme&quot;]
+}</code></pre>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/docs/teams/contract-manager">Edit here &raquo;</a>
+          </div>        </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="/js/docs.js"></script>
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+  <script src="/js/docs-search.js"></script>
+</body>
+</html>

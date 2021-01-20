@@ -104,9 +104,6 @@
           <a class="nav-link" href="/docs">DOCS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link trufflecon-link" href="/trufflecon2020">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo"/>N</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="/tutorials">TUTORIALS</a>
         </li>
         <li class="nav-item">
@@ -187,7 +184,7 @@
                   <h3>Getting Started</h3>
                   <ul>
                       <a href="/docs/teams/getting-started/creating-an-account"><li>Creating an account</li></a>
-                      <a href="/docs/teams/getting-started/adding-repositories"><li>Adding Repositories</li></a>
+                      <a href="/docs/teams/getting-started/adding-repositories"><li>Adding repositories</li></a>
                   </ul>
                   <h3>Account</h3>
                   <ul>
@@ -200,8 +197,8 @@
                   <h3>Builds</h3>
                   <ul>
                       <a href="/docs/teams/builds/builds-overview"><li>Builds overview</li></a>
-                      <a href="/docs/teams/builds/starting-builds"><li>Starting Builds</li></a>
-                      <a href="/docs/teams/builds/restarting-builds"><li>Restarting Builds</li></a>
+                      <a href="/docs/teams/builds/starting-builds"><li>Starting builds</li></a>
+                      <a href="/docs/teams/builds/restarting-builds"><li>Restarting builds</li></a>
                       <a href="/docs/teams/builds/external-ci"><li>External CI</li></a>
                   </ul>
                   <h3>Sandboxes</h3>
@@ -210,7 +207,7 @@
                       <a href="/docs/teams/sandboxes/creating-a-sandbox"><li>Creating a sandbox</li></a>
                       <a href="/docs/teams/sandboxes/renaming-a-sandbox"><li>Renaming a sandbox</li></a>
                       <a href="/docs/teams/sandboxes/destroying-a-sandbox"><li>Destroying a sandbox</li></a>
-                      <a href="/docs/teams/sandboxes/sandbox-forking"><li>Sandbox Forking</li></a>
+                      <a href="/docs/teams/sandboxes/sandbox-forking"><li>Sandbox forking</li></a>
                       <a href="/docs/teams/sandboxes/usage-with-truffle"><li>Usage with Truffle</li></a>
                   </ul>
                   <h3>Deployments</h3>
@@ -218,7 +215,8 @@
                       <a href="/docs/teams/deployments/deployments-overview"><li>Deployments overview</li></a>
                       <a href="/docs/teams/deployments/creating-a-deployment"><li>Creating a deployment</li></a>
                       <a href="/docs/teams/deployments/deploying-to-a-sandbox"><li>Deploying to a sandbox</li></a>
-                      <a href="/docs/teams/deployments/contract-monitoring"><li>Contract Monitoring</li></a>
+                      <a href="/docs/teams/deployments/deployment-details"><li>Deployment details</li></a>
+                      <a href="/docs/teams/deployments/contract-monitoring"><li>Contract monitoring</li></a>
                       <a href="/docs/teams/deployments/deployment-console"><li>Deployment console</li></a>
                       <a href="/docs/teams/deployments/graduating-a-deployment"><li>Graduating a deployment</li></a>
                       <a href="/docs/teams/deployments/archiving-a-deployment"><li>Archiving a deployment</li></a>
@@ -229,6 +227,12 @@
                       <a href="/docs/teams/debugger/debugging-a-transaction"><li>Debugging a transaction</li></a>
                       <a href="/docs/teams/debugger/using-the-debugger"><li>Using the debugger</li></a>
                   </ul>
+                  <h3>Contract Manager</h3>
+                  <ul>
+                      <a href="/docs/teams/contract-manager/contract-manager-overview"><li>Contract manager overview</li></a>
+                      <a href="/docs/teams/contract-manager/interacting-with-functions"><li>Interacting with functions</li></a>
+                      <a href="/docs/teams/contract-manager/connecting-to-a-sandbox"><li>Connecting to a sandbox</li></a>
+                  </ul>
                   <h3>Dashboard</h3>
                   <ul>
                       <a href="/docs/teams/dashboard/dashboard-overview"><li>Dashboard overview</li></a>
@@ -238,11 +242,11 @@
                   <h3>Reference</h3>
                   <ul>
                       <a href="/docs/teams/reference/configuration"><li>Configuration</li></a>
-                      <a href="/docs/teams/reference/permissions-disclosure"><li>Permissions Disclosure</li></a>
+                      <a href="/docs/teams/reference/permissions-disclosure"><li>Permissions disclosure</li></a>
                   </ul>
                   <h3>Support</h3>
                   <ul>
-                      <a href="/docs/teams/support/ask-us-a-question"><li>Ask Us a Question</li></a>
+                      <a href="/docs/teams/support/ask-us-a-question"><li>Ask us a question</li></a>
                   </ul>
               </div>
           
@@ -378,12 +382,40 @@
       <a href="#deployment-details"><i class="fas fa-link"></i></a>
       Deployment details
     </h1>
-  <p>From the Deployment Details page, you can the associated contracts, addresses, <a href="/docs/teams/contract-monitoring">transactions</a>, and <a href="/docs/teams/deployments/deployment-console">deployment console output</a>.</p>
-<p>To view the Deployment Details page, head to <strong><span class="inline-menu-item"><i class="fal fa-parachute-box"></i>DEPLOYMENTS</span></strong> and click on the deployment name you would like to view.</p>
-<p>If you&#39;re using the <strong>TABLE</strong> view, you can find the deployment name under the <strong>NAME</strong> column.</p>
-<p>If you&#39;re using the <strong>PIPELINE</strong> view, you can find the deployment name in the <strong>Deployment Details</strong> section of the deployment card:</p>
+  <p>From the deployment details page, you can view the associated contracts, addresses, <a href="/docs/teams/contract-monitoring">transactions</a>, and <a href="/docs/teams/deployments/deployment-console">deployment console output</a>.</p>
 <figure>
-  <img class="figure-shadow mb-2" src="/img/docs/teams/deployment-name-on-card.png" alt="Deployment name on deployment card" style="width: 50%">
+  <img class="figure-shadow mb-2" src="/img/docs/teams/deployment-details.png" alt="Deployment details view" style="width: 100%">
+  <figcaption class="text-center font-italic">Deployment details view</figcaption>
+</figure>
+
+<p>Directions for navigating to the deployment detail page differs depending on if you&#39;re using the <a href="#cards-view">cards</a> or <a href="#table-view">table</a> view for deployments.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="cards-view"></a>
+      <a href="#cards-view"><i class="fas fa-link"></i></a>
+      Cards view
+    </h3>
+  <p>To get to the deployment details page, you can click on the deployment name in the <strong>Deployment Details</strong> section of the deployment card.</p>
+<figure>
+  <img class="mb-5" src="/img/docs/teams/deployment-name-on-card.png" alt="Deployment name on deployment card">
+    <figcaption class="text-center font-italic">Deployment card</figcaption>
+</figure>
+
+<p>You can also click on the <strong>+ Contracts</strong> bar on the bottom of the card to see a list of your deployed contracts and their addresses.</p>
+<figure>
+  <img class="mb-5" src="/img/docs/teams/deployment-card-expanded.png" alt="Deployment Card Expanded">
+</figure>
+
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="table-view"></a>
+      <a href="#table-view"><i class="fas fa-link"></i></a>
+      Table View
+    </h3>
+  <p>To view the deployment details page, click on the deployment name under the <strong>NAME</strong> column.</p>
+<figure>
+  <img class="figure-shadow mb-2" src="/img/docs/teams/deployments-table-view.png" alt="Deployments table" style="width: 100%">
+  <figcaption class="text-center font-italic">Deployments table</figcaption>
 </figure>
 
 

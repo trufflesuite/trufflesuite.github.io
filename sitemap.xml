@@ -330,6 +330,9 @@
 <url> <loc>https://www.truffleframework.com/docs/teams/builds/external-ci.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/builds/restarting-builds.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/builds/starting-builds.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/contract-manager/connecting-to-a-sandbox.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/contract-manager/contract-manager-overview.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/contract-manager/interacting-with-functions.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/dashboard/adding-a-deployment.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/dashboard/dashboard-overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/dashboard/switching-deployments.html</loc> </url>

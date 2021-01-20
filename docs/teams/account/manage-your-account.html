@@ -104,9 +104,6 @@
           <a class="nav-link" href="/docs">DOCS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link trufflecon-link" href="/trufflecon2020">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo"/>N</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="/tutorials">TUTORIALS</a>
         </li>
         <li class="nav-item">
@@ -187,7 +184,7 @@
                   <h3>Getting Started</h3>
                   <ul>
                       <a href="/docs/teams/getting-started/creating-an-account"><li>Creating an account</li></a>
-                      <a href="/docs/teams/getting-started/adding-repositories"><li>Adding Repositories</li></a>
+                      <a href="/docs/teams/getting-started/adding-repositories"><li>Adding repositories</li></a>
                   </ul>
                   <h3>Account</h3>
                   <ul>
@@ -200,8 +197,8 @@
                   <h3>Builds</h3>
                   <ul>
                       <a href="/docs/teams/builds/builds-overview"><li>Builds overview</li></a>
-                      <a href="/docs/teams/builds/starting-builds"><li>Starting Builds</li></a>
-                      <a href="/docs/teams/builds/restarting-builds"><li>Restarting Builds</li></a>
+                      <a href="/docs/teams/builds/starting-builds"><li>Starting builds</li></a>
+                      <a href="/docs/teams/builds/restarting-builds"><li>Restarting builds</li></a>
                       <a href="/docs/teams/builds/external-ci"><li>External CI</li></a>
                   </ul>
                   <h3>Sandboxes</h3>
@@ -210,7 +207,7 @@
                       <a href="/docs/teams/sandboxes/creating-a-sandbox"><li>Creating a sandbox</li></a>
                       <a href="/docs/teams/sandboxes/renaming-a-sandbox"><li>Renaming a sandbox</li></a>
                       <a href="/docs/teams/sandboxes/destroying-a-sandbox"><li>Destroying a sandbox</li></a>
-                      <a href="/docs/teams/sandboxes/sandbox-forking"><li>Sandbox Forking</li></a>
+                      <a href="/docs/teams/sandboxes/sandbox-forking"><li>Sandbox forking</li></a>
                       <a href="/docs/teams/sandboxes/usage-with-truffle"><li>Usage with Truffle</li></a>
                   </ul>
                   <h3>Deployments</h3>
@@ -218,7 +215,8 @@
                       <a href="/docs/teams/deployments/deployments-overview"><li>Deployments overview</li></a>
                       <a href="/docs/teams/deployments/creating-a-deployment"><li>Creating a deployment</li></a>
                       <a href="/docs/teams/deployments/deploying-to-a-sandbox"><li>Deploying to a sandbox</li></a>
-                      <a href="/docs/teams/deployments/contract-monitoring"><li>Contract Monitoring</li></a>
+                      <a href="/docs/teams/deployments/deployment-details"><li>Deployment details</li></a>
+                      <a href="/docs/teams/deployments/contract-monitoring"><li>Contract monitoring</li></a>
                       <a href="/docs/teams/deployments/deployment-console"><li>Deployment console</li></a>
                       <a href="/docs/teams/deployments/graduating-a-deployment"><li>Graduating a deployment</li></a>
                       <a href="/docs/teams/deployments/archiving-a-deployment"><li>Archiving a deployment</li></a>
@@ -229,6 +227,12 @@
                       <a href="/docs/teams/debugger/debugging-a-transaction"><li>Debugging a transaction</li></a>
                       <a href="/docs/teams/debugger/using-the-debugger"><li>Using the debugger</li></a>
                   </ul>
+                  <h3>Contract Manager</h3>
+                  <ul>
+                      <a href="/docs/teams/contract-manager/contract-manager-overview"><li>Contract manager overview</li></a>
+                      <a href="/docs/teams/contract-manager/interacting-with-functions"><li>Interacting with functions</li></a>
+                      <a href="/docs/teams/contract-manager/connecting-to-a-sandbox"><li>Connecting to a sandbox</li></a>
+                  </ul>
                   <h3>Dashboard</h3>
                   <ul>
                       <a href="/docs/teams/dashboard/dashboard-overview"><li>Dashboard overview</li></a>
@@ -238,11 +242,11 @@
                   <h3>Reference</h3>
                   <ul>
                       <a href="/docs/teams/reference/configuration"><li>Configuration</li></a>
-                      <a href="/docs/teams/reference/permissions-disclosure"><li>Permissions Disclosure</li></a>
+                      <a href="/docs/teams/reference/permissions-disclosure"><li>Permissions disclosure</li></a>
                   </ul>
                   <h3>Support</h3>
                   <ul>
-                      <a href="/docs/teams/support/ask-us-a-question"><li>Ask Us a Question</li></a>
+                      <a href="/docs/teams/support/ask-us-a-question"><li>Ask us a question</li></a>
                   </ul>
               </div>
           
@@ -380,37 +384,56 @@
     </h1>
   <p>To manage and view your account settings, click on your username or GitHub avatar in the sidebar. Here you can update your plan and billing settings, view and/or manage users (depending on your permissions), and select repositories to use with CI providers of your choice.</p>
 <p>If you&#39;re apart of one or many organizations, a list of the the organizations you belong to will appear in the sidebar. You can click on the organization&#39;s name or or GitHub avatar to view and/or manage the organization&#39;s settings.</p>
+<figure class="screenshot">
+  <img class="img-fluid" src="/img/docs/teams/settings.png" title="Default settings view" alt="Default settings view" />
+  <figcaption class="text-center">Default settings view</figcaption>
+</figure>
+
+<p>There will be three or four tabs to toggle between, depending on your permissions, on the settings page:</p>
+<ol>
+<li><a href="#billing-and-plans">Billing</a></li>
+<li><a href="#builds">Builds</a></li>
+<li><a href="#advanced">Advanced</a></li>
+<li><a href="#users">Users</a> (this tab will only appear if you are a part of an organization)</li>
+</ol>
 
     <h2 class="link-markdown">
-      <a class="anchor-target" name="plans"></a>
-      <a href="#plans"><i class="fas fa-link"></i></a>
-      Plans
+      <a class="anchor-target" name="billing-and-plans"></a>
+      <a href="#billing-and-plans"><i class="fas fa-link"></i></a>
+      Billing and plans
     </h2>
   <p>When you sign up for Truffle Teams you are automatically enrolled in the Free plan. The Free plan comes with unlimited builds, monitoring of unlimited contracts, unlimited deployments to Sandboxes, testnets, and mainnet, and access to 1 Ganache sandbox. However, the Free plan is limited to public repositories.</p>
 <p>You can upgrade to Pro or enterprise plans at anytime. For a Pro plan, you&#39;ll get everything that comes with the Free plan plus private repositories and access to 3 Ganache Sandboxes. <a href="/docs/teams/account/claim-a-1-month-trial">Try out Pro for a free month</a>!</p>
 <p>To upgrade to a Pro plan, click <strong>BILLING &gt; UPGRADE</strong> and you&#39;ll be prompted to enter your billing information and payment method. If you&#39;re interested in our enterprise plan, <a href="mailto:sales@trufflesuite.com" target="_blank" rel="noopener noreferrer" class="sc-dymIpo jtCNSr sc-ktHwxA isqCSL">contact us</a> to get a tailored experience for you and your team.</p>
 <p>If you have subscribed to the Pro plan and for any reason would like to switch back to the Free plan, click <strong>BILLING</strong> then select the <strong>FREE</strong> plan by clicking <strong><span class="inline-button">SWITCH</span></strong>. You will continue to receive Pro services until the end of your billing period.</p>
 
-    <h2 class="link-markdown">
-      <a class="anchor-target" name="users"></a>
-      <a href="#users"><i class="fas fa-link"></i></a>
-      Users
-    </h2>
-  <p>To view user permissions, from your settings click the <strong>USERS</strong> tab. This information can be particularaly useful if you&#39;re part of an organization and need to view your teams permissions.</p>
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="close-your-account"></a>
+      <a href="#close-your-account"><i class="fas fa-link"></i></a>
+      Close your account
+    </h3>
+  <p>If for any reason you would like to close your account, click on <strong>BILLING</strong>, scroll to the bottom of the page to the <strong>Close Account</strong> section. As a forewarning, if you close your account the data associated with your account will become inaccessible. If you&#39;re sure you want to close your account, go ahead and click <strong><span class="inline-button red">I UNDERSTAND, CLOSE MY ACCOUNT</span></strong>. As a security measure, you&#39;ll be prompted to type in your account name and click <strong><span class="inline-button">CLOSE</span></strong> to confirm.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="builds"></a>
       <a href="#builds"><i class="fas fa-link"></i></a>
       Builds
     </h2>
-  <p>To view build settings, click the <strong>BUILDS</strong> tab. Here you can update specific repositories to use external CI providers instead of the Truffle Teams&#39; internal CI test runner. For more information, check out our documentation on  <a href="/docs/teams/testing/external-ci">External CI</a>.</p>
+  <p>The <strong>BUILDS</strong> tab is where you can update specific repositories to use external CI providers instead of the Truffle Teams&#39; internal CI test runner. For more information, check out our documentation on <a href="/docs/teams/testing/external-ci">External CI</a>.</p>
 
     <h2 class="link-markdown">
-      <a class="anchor-target" name="close-your-account"></a>
-      <a href="#close-your-account"><i class="fas fa-link"></i></a>
-      Close your account
+      <a class="anchor-target" name="advanced"></a>
+      <a href="#advanced"><i class="fas fa-link"></i></a>
+      Advanced
     </h2>
-  <p>If for any reason you would like to close your account, click on <strong>BILLING</strong>, scroll to the bottom of the page to the <strong>Close Account</strong> section. As a forewarning, if you close your account the data associated with your account will become inaccessible. If you&#39;re sure you want to close your account, go ahead and click <strong><span class="inline-button red">I UNDERSTAND, CLOSE MY ACCOUNT</span></strong>. As a security measure, you&#39;ll be prompted to type in your account name and click <strong><span class="inline-button">CLOSE</span></strong> to confirm.</p>
+  <p>The advanced tab is where you can opt-in to early access features that are cutting-edge but potentially unstable. If you do decide to opt-in and discover any bugs, please let us know on our <a href="https://spectrum.chat/trufflesuite/truffle-teams">Truffle Teams Spectrum support channel</a>!</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="users"></a>
+      <a href="#users"><i class="fas fa-link"></i></a>
+      Users
+    </h2>
+  <p>The <strong>USERS</strong> tab will only appear if you are a part of an organization. Here you can find a list of users within the organization and their permissions. This information can be particularaly useful if you need to view or manage your teams permissions.</p>
 
 
           <div class="contribute-link">
