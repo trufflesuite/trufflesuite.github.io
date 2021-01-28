@@ -11055,6 +11055,10 @@ div#hubspot-messages-iframe-container {
   text-transform: uppercase;
 }
 
+.card-zendesk .btn-truffle:hover {
+  background: #f8f5f0;
+}
+
 .form-control {
   background-color: #e0dad7;
   border: none;
@@ -12791,9 +12795,8 @@ footer h4 {
 }
 
 .support-heading img {
-  display: block;
-  max-width: 386px;
-  margin: 0 auto;
+  height: 1em;
+  margin-top: -.225em;
 }
 
 .trufflecon-subnav {
