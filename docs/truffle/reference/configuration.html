@@ -462,6 +462,7 @@
     //          - function that returns a web3 provider instance (see below.)
     //          - if specified, host and port are ignored.
     // skipDryRun: - true if you don&#39;t want to test run the migration locally before the actual migration (default is false)
+    // confirmations: - number of confirmations to wait between deployments (default: 0)
     // timeoutBlocks: - if a transaction is not mined, keep waiting for this number of blocks (default is 50)
     // deploymentPollingInterval: - duration between checks for completion of deployment transactions
     // disableConfirmationListener: - true to disable web3&#39;s confirmation listener
@@ -476,6 +477,7 @@
 <li><code>websockets</code>: You will need this enabled to use the <code>confirmations</code> listener or to hear Events using <code>.on</code> or <code>.once</code>.  Default is <code>false</code>.</li>
 <li><code>deploymentPollingInterval</code>: When a smart contract is deployed, this determines how often to check whether the transaction has been completed, specified in milliseconds. Default is <code>4000</code>. Note that this is <em>independent</em> of the polling interval that <code>provider</code> may use. See <a href="https://github.com/trufflesuite/truffle/blob/develop/packages/hdwallet-provider/README.md#instantiation"><code>@truffle/hdwallet-provider</code> documentation</a> if you are using <code>HDWalletProvider</code> and wish to specify a custom <code>pollingInterval</code>.</li>
 </ul>
+<p>Note that it is perfectly fine to set <code>disableConfirmationListener</code> while also setting a value for <code>confirmations</code>; this will not cause hangs during deployment.</p>
 <p>For each network, you can specify <code>host</code> / <code>port</code>, <code>url</code>, or <code>provider</code>, but not more than one. If you need an HTTP provider, we recommend using <code>host</code> and <code>port</code>, or <code>url</code>, while if you need a custom provider such as <code>HDWalletProvider</code>, you must use <code>provider</code>.  The <code>url</code> option also supports WebSockets and SSL. <code>url</code> should include the full url; see the examples below:</p>
 <ul>
 <li><a href="http://127.0.0.1:8545">http://127.0.0.1:8545</a></li>
