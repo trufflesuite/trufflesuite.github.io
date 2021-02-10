@@ -19,6 +19,18 @@
   text-transform: lowercase;
 }
 
+.text-truffle-og {
+  font-family: century-gothic,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.text-truffle-og-em {
+  font-family: century-gothic,sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
 .text-muted {
   color: #e0dad7 !important;
   text-shadow: none;
@@ -34,6 +46,10 @@
 
 .banner-light-cream .text-muted {
   color: #5e464d !important;
+}
+
+.color-teams {
+  color: #8731e8;
 }
 
 .color-truffle {
@@ -148,4 +164,15 @@
 
 .mb-7 {
   margin-bottom: 6rem;
+}
+
+.badge-teams {
+  background: #8731e8;
+  color: #fff;
+  font-size: .9rem;
+  margin-bottom: .5rem;
+}
+
+.pointer-none {
+  pointer-events: none;
 }

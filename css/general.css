@@ -9,6 +9,11 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+body.light {
+  background-color: #f8f5f0;
+  color: #5e464d;
+}
+
 h1, h2, h3 {
   font-family: 'Oswald', sans-serif;
 }

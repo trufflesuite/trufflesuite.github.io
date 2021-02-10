@@ -1,15 +1,5 @@
 .navbar {
   font-family: 'Oswald', sans-serif;
-  background: #33262a;
-  border-bottom: 2px solid #5e464d;
-}
-
-.navbar .dropdown-menu {
-  min-width: 14.5rem;
-}
-
-.navbar a, .navbar-expand-md .navbar-nav .nav-link {
-  color: #fff;
 }
 
 @media (max-width: 767.98px) {
@@ -57,14 +47,52 @@
   margin-left: auto;
 }
 
-.navbar .dropdown-menu {
+.navbar-dark {
+  background: #33262a;
+  border-bottom: 2px solid #5e464d;
+}
+
+.navbar-dark a, .navbar-dark .navbar-expand-md .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-dark .dropdown-menu {
   background: #33262a;
   border-bottom: 2px solid #5e464d;
   border-left: 2px solid #5e464d;
-  border-radius: 0 0 .25rem .25rem;
   border-right: 2px solid #5e464d;
+}
+
+.navbar-dark .navbar-toggler .icon-bar {
+  background: #fff;
+}
+
+.navbar-light {
+  background: #f8f5f0;
+  border-bottom: 2px solid #efe5dc;
+}
+
+.navbar-light a, .navbar-light .navbar-nav .nav-link {
+  color: #33262a;
+  opacity: 1;
+}
+
+.navbar-light .dropdown-menu {
+  background: #f8f5f0;
+  border-bottom: 2px solid #efe5dc;
+  border-left: 2px solid #efe5dc;
+  border-right: 2px solid #efe5dc;
+}
+
+.navbar-light .navbar-toggler .icon-bar {
+  background: #33262a;
+}
+
+.navbar .dropdown-menu {
+  border-radius: 0 0 .25rem .25rem;
   border-top: none;
   margin: 8.5px 0 0 -4px;
+  min-width: 14.5rem;
   padding: 1rem;
 }
 
@@ -115,7 +143,6 @@
   height: 3px;
   width: 25px;
   transition: all .25s ease-in-out;
-  background: #fff;
   transform: none;
 }
 
@@ -167,7 +194,6 @@
 }
 
 .subnav a {
-  color: #fff;
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
   text-transform: uppercase;
 }
@@ -186,7 +212,6 @@
 }
 
 .subnav.scroll {
-  background: #5e464d;
   padding: 0 .5rem 0 0;
 }
 
@@ -203,4 +228,20 @@
   .subnav .btn-eventbrite {
     margin-right: .5rem;
   }
+}
+
+.subnav-dark a {
+  color: #fff;
+}
+
+.subnav-dark.scroll {
+  background: #5e464d;
+}
+
+.subnav-light.scroll {
+  background: #efe5dc;
+}
+
+.subnav-light a {
+  color: #5e464d;
 }
