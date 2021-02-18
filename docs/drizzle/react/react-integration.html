@@ -14,7 +14,7 @@
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
   <![endif]-->
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5258293.js"></script>
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4795067.js"></script>
   <!-- End of HubSpot Embed Code -->  
   <meta charset="utf-8">
   <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
@@ -385,7 +385,7 @@
     </h1>
   <p><code>@drizzle/react-plugin</code> is the official way to integrate Drizzle with your React dapp.</p>
 <p>Check out the <a href="https://github.com/truffle-box/drizzle-box">Drizzle Truffle Box</a> for a complete example or continue reading to create your own setup.</p>
-<p>Also, check out <code>@drizzle/react-components</code> for Drizzle&#39;s <a href="https://github.com/trufflesuite/drizzle/tree/develop/packages/react-components">prebuilt react components</a>.</p>
+<p>Also, check out <code>@drizzle/react-components</code> for Drizzle&#39;s <a href="https://github.com/trufflesuite/drizzle/tree/develop/packages/react-components">codebuilt react components</a>.</p>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="installation"></a>
@@ -394,8 +394,8 @@
     </h2>
   <p>Install Drizzle React-Plugin via npm:</p>
 <pre><code class="language-bash">npm install @drizzle/react-plugin</code></pre>
-<p class="alert alert-warning">
-<strong>Note</strong>: `@drizzle/react-plugin` requires Requires React v16.3+ for the Context API. You'll also need the `@drizzle/store` package, if it isn't already installed.
+<p class="alert alert-info">
+  <i class="fas fa-info-circle"></i> <strong>Note</strong>: <code>@drizzle/react-plugin</code> requires Requires React v16.3+ for the Context API. You'll also need the <code>@drizzle/store</code> package, if it isn't already installed.
 </p>
 
 
@@ -432,11 +432,11 @@ const drizzleOptions = {
 <li><p>Pass the <code>drizzle</code> object to the <code>DrizzleContext.Provider</code> component.</p>
 <pre><code class="language-javascript">&lt;DrizzleContext.Provider drizzle={drizzle}&gt;&lt;/DrizzleContext.Provider&gt;</code></pre>
 </li>
-<li><p>Use <code>DrizzleContext.Consumer</code> to consume the drizzle context and pass <code>drizzle</code> and <code>drizzleState</code> to your component. Drizzle also provides prebuilt components via the <code>@drizzle/react-components</code>.</p>
+<li><p>Use <code>DrizzleContext.Consumer</code> to consume the drizzle context and pass <code>drizzle</code> and <code>drizzleState</code> to your component. Drizzle also provides codebuilt components via the <code>@drizzle/react-components</code>.</p>
 </li>
 </ol>
-<p class="alert alert-warning">
-  <strong>Note</strong>: We have to check that Drizzle is initialized before fetching data. The `initialized` variable returns the drizzle store's initialization status.
+<p class="alert alert-info">
+  <i class="fas fa-info-circle"></i> <strong>Note</strong>: We have to check that Drizzle is initialized before fetching data. The <code>initialized</code> variable returns the drizzle store's initialization status.
 </p>
 
 <pre><code class="language-javascript">  &lt;DrizzleContext.Provider drizzle={drizzle}&gt;
@@ -481,13 +481,11 @@ class CacheCallExample extends React.Component {
 
 export default CacheCallExample</code></pre>
 <p class="alert alert-info">
-<strong>Note</strong>: The contract instances have all the standard web3 properties and methods.
+ <i class="fas fa-info-circle"></i> <strong>Note</strong>: The contract instances have all the standard <code>web3</code> properties and methods.
 </p>
-```javascript
-drizzle.contracts.SimpleStorage.methods.set(5).send(); // sets SimpleStorage contract's storedData state variable to uint 5.
-drizzle.contracts.SimpleStorage.methods.storedData.call(); // gets the storedData value
-```
 
+<pre><code class="language-javascript">drizzle.contracts.SimpleStorage.methods.set(5).send(); // sets SimpleStorage contract&#39;s storedData state variable to uint 5.
+drizzle.contracts.SimpleStorage.methods.storedData.call(); // gets the storedData value</code></pre>
 </li>
 </ol>
 

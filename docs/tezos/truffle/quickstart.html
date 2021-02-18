@@ -14,7 +14,7 @@
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
   <![endif]-->
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5258293.js"></script>
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4795067.js"></script>
   <!-- End of HubSpot Embed Code -->  
   <meta charset="utf-8">
   <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
@@ -294,14 +294,14 @@ $ truffle unbox tezos-example</code></pre>
       <a href="#deploying-contracts"><i class="fas fa-link"></i></a>
       Deploying Contracts
     </h2>
-  <p>For this quick start, we&#39;re going to configure your project to deploy to the <a href="https://tezos.gitlab.io/introduction/test_networks.html#carthagenet">Carthagenet</a> test network for Tezos. This is the quickest way to get started, though as you get familiar with Tezos, you&#39;ll want to set up a local development environment. See the <a href="https://github.com/truffle-box/tezos-example-box#sandbox-management">example box documentation</a> for an example on using a local flextesa sandbox.</p>
+  <p>For this quick start, we&#39;re going to configure your project to deploy to the <a href="https://tezos.gitlab.io/introduction/test_networks.html#delphinet">Delphinet</a> or any other existing <a href="https://tezos.gitlab.io/introduction/test_networks.html">test network</a> for Tezos. This is the quickest way to get started, though as you get familiar with Tezos, you&#39;ll want to set up a local development environment. See the <a href="https://github.com/truffle-box/tezos-example-box#sandbox-management">example box documentation</a> for an example on using a local flextesa sandbox.</p>
 
     <h3 class="link-markdown">
-      <a class="anchor-target" name="configuring-truffle-to-point-to-the-carthage-testnet"></a>
-      <a href="#configuring-truffle-to-point-to-the-carthage-testnet"><i class="fas fa-link"></i></a>
-      Configuring Truffle to point to the Carthage testnet
+      <a class="anchor-target" name="configuring-truffle-to-point-to-the-tezos-testnet"></a>
+      <a href="#configuring-truffle-to-point-to-the-tezos-testnet"><i class="fas fa-link"></i></a>
+      Configuring Truffle to point to the Tezos testnet
     </h3>
-  <p>First, navigate to <a href="https://faucet.tzalpha.net/">https://faucet.tzalpha.net/</a> to get a faucet account. This will create a new account for you on the testnet and fill it with some testnet XTZ. Download the file and save it as <code>faucet.json</code> in the root of your project.</p>
+  <p>First, navigate to <a href="https://faucet.tzalpha.net/">https://faucet.tzalpha.net/</a> to get a faucet account. This will create a new account for you on the testnet and fill it with some testnet XTZ. This account is valid for all Tezos test networks. Download the file and save it as <code>faucet.json</code> in the root of your project.</p>
 <p>Next, replace the box&#39;s <code>truffle-config.js</code> with the following: </p>
 <pre><code class="language-javascript">const { mnemonic, secret, password, email } = require(&quot;./faucet.json&quot;);
 
@@ -310,7 +310,7 @@ module.exports = {
   // for more details on how to specify configuration options!
   networks: {
     development: {
-      host: &quot;https://carthagenet.smartpy.io&quot;,
+      host: &quot;https://delphinet.smartpy.io&quot;,
       port: 443,
       network_id: &quot;*&quot;,
       secret,
@@ -363,7 +363,7 @@ module.exports = {
       <a href="#further-resources"><i class="fas fa-link"></i></a>
       Further Resources
     </h2>
-  <p>If you&#39;ve reached this point, you now have a Truffle project that lets you compile, test, and deploy LIGO contracts to the Carthage Tezos test network. Congrats! This is a great start, but there&#39;s still much to learn. We suggest you check out the following resources to learn more about Tezos, LIGO, and Truffle:</p>
+  <p>If you&#39;ve reached this point, you now have a Truffle project that lets you compile, test, and deploy LIGO contracts to the Tezos test network. Congrats! This is a great start, but there&#39;s still much to learn. We suggest you check out the following resources to learn more about Tezos, LIGO, and Truffle:</p>
 <ul>
 <li><a href="https://ligolang.org/docs/intro/introduction/">LIGO language documentation</a></li>
 <li><a href="https://tezos.gitlab.io/">Tezos documentation</a></li>

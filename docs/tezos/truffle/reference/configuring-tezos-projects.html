@@ -14,7 +14,7 @@
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
   <![endif]-->
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5258293.js"></script>
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4795067.js"></script>
   <!-- End of HubSpot Embed Code -->  
   <meta charset="utf-8">
   <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
@@ -227,7 +227,7 @@ module.exports = {
   // for more details on how to specify configuration options!
   networks: {
     development: {
-      host: &quot;https://carthagenet.smartpy.io&quot;,
+      host: &quot;https://delphinet.smartpy.io&quot;,
       port: 443,
       network_id: &quot;*&quot;,
       secret,
@@ -244,7 +244,7 @@ module.exports = {
       <a href="#configuring-your-project-to-deploy-to-a-public-test-network"><i class="fas fa-link"></i></a>
       Configuring your project to deploy to a public test network
     </h2>
-  <p>The above configuration defines a single development network pointed at the public <a href="https://tezos.gitlab.io/introduction/test_networks.html">CarthageNet</a> test network. You can see how this is set up in context by following our <a href="/docs/tezos/truffle/quickstart">quickstart</a>.</p>
+  <p>The above configuration defines a single development network pointed at the public <a href="https://tezos.gitlab.io/introduction/test_networks.html">Delphinet</a> test network. You can see how this is set up in context by following our <a href="/docs/tezos/truffle/quickstart">quickstart</a>.</p>
 <p>Developing on public test nets can be limiting for a number of reasons (acquiring test net tokens, performance, and internet connectivity, among others). Fortunately, there&#39;s a local solution.</p>
 
     <h2 class="link-markdown">
@@ -275,17 +275,17 @@ module.exports = {
   <p>Specifies which networks are available for deployment during migrations. When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your Tezos client is connected to a specific network, they&#39;ll use the contract artifacts associated that network to simplify app deployment. </p>
 <p>The <code>networks</code> object, shown below, is keyed by a network name and contains a corresponding object that defines the parameters of the network. The <code>networks</code> option is required, as if you have no network configuration, Truffle will not be able to deploy your contracts. The default network configuration provided by the <a href="https://github.com/truffle-box/tezos-example-box">Tezos example Truffle box</a> specifies multiple available networks, including mainnet and the Babylon testnet. To configure Truffle to connect to other networks, simply add more named networks and specify the corresponding network id.</p>
 <p>The network name is used for user interface purposes, such as when running your migrations on a specific network:</p>
-<pre><code class="language-shell">$ truffle migrate --network carthagenet</code></pre>
+<pre><code class="language-shell">$ truffle migrate --network delphinet</code></pre>
 <p>Example:</p>
 <pre><code class="language-javascript">networks: {
   development: {
-    host: &quot;https://carthagenet.smartpy.io&quot;,
+    host: &quot;https://delphinet.smartpy.io&quot;,
     port: 443,
     network_id: &quot;*&quot;,
     type: &quot;tezos&quot;
   },
-  carthagenet: {
-    host: &quot;https://carthagenet.smartpy.io&quot;,
+  delphinet: {
+    host: &quot;https://delphinet.smartpy.io&quot;,
     port: 443,
     network_id: &quot;*&quot;,
     type: &quot;tezos&quot;
