@@ -526,7 +526,7 @@ truffle(develop)&gt; balance.toNumber()</code></pre>
 <li>We received a return value. Note that since the Ethereum network can handle very large numbers, we&#39;re given a <a href="https://github.com/indutny/bn.js/">BN</a> object which we then convert to a number.</li>
 </ul>
 <p class="alert alert-warning">
-<strong>Warning</strong>: We convert the return value to a number because in this example the numbers are small. However, if you try to convert a BN that's larger than the largest integer supported by Javascript, you'll likely run into errors or unexpected behavior.
+<i class="far fa-exclamation-triangle"></i> <strong>Warning</strong>: We convert the return value to a number because in this example the numbers are small. However, if you try to convert a BN that's larger than the largest integer supported by Javascript, you'll likely run into errors or unexpected behavior.
 </p>
 
 
