@@ -47,6 +47,7 @@
 <url> <loc>https://www.truffleframework.com/boxes/azure-room-thermostat.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/azure-simple-marketplace.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/nightfall.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/filecoin.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/rsk-starter-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/rsk-react-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/rsk-next-box.html</loc> </url>
@@ -124,6 +125,7 @@
 <url> <loc>https://www.truffleframework.com/staff/azure-room-thermostat.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/azure-simple-marketplace.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/nightfall.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/staff/filecoin.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/rsk-starter-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/rsk-react-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/rsk-next-box.html</loc> </url>
@@ -281,13 +283,13 @@
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/impressConsole/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/mobile/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/mouse-timeout/README.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/devcon5/src/plugins/navigation-ui/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/progress/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/rel/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/skip/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/stop/README.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/devcon5/src/plugins/substep/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/toolbar/README.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/devcon5/src/plugins/navigation-ui/README.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/devcon5/src/plugins/substep/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/drizzle/getting-started/contract-interaction.html</loc> </url>
