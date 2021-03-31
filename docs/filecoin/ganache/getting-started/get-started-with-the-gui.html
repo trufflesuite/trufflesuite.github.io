@@ -15,12 +15,12 @@
   <![endif]-->
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4795067.js"></script>
-  <!-- End of HubSpot Embed Code -->  
+  <!-- End of HubSpot Embed Code -->
   <meta charset="utf-8">
   <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="/img/favicons/favicon.ico">
 
@@ -42,23 +42,23 @@
   <!-- Facebook OpenGraph -->
   <meta property="og:site_name" content="Truffle Suite" />
   <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
-  <meta property="og:title" content="Truffle | Compiling LIGO contracts | Tezos | Documentation | Truffle Suite" />
-  <meta property="og:url" content="https://trufflesuite.com/docs/tezos/truffle/getting-started/compiling-tezos-contracts" />
+  <meta property="og:title" content="Ganache | Filecoin-flavored GUI | Documentation | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/docs/filecoin/ganache/getting-started/get-started-with-the-gui" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="Truffle Suite" />
-  <meta name="twitter:title" content="Truffle | Compiling LIGO contracts | Tezos | Documentation | Truffle Suite" />
+  <meta name="twitter:title" content="Ganache | Filecoin-flavored GUI | Documentation | Truffle Suite" />
   <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
   <meta name="twitter:creator" content="Truffle Suite" />
   <meta name="twitter:domain" content="trufflesuite.com" />
   <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
-  
+
   <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
 
-  <title>Truffle | Compiling LIGO contracts | Tezos | Documentation | Truffle Suite</title>
+  <title>Ganache | Filecoin-flavored GUI | Documentation | Truffle Suite</title>
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
@@ -121,7 +121,7 @@
         </li>
       </ul>
     </div>
-  </nav>  
+  </nav>
   <main role="main" class="container-fluid">
     <!--<div class="row pt-4 pb-4">
       <div class="col">
@@ -145,10 +145,10 @@
       </div>
     </div>-->
 
-    
+
 
     <div class="row row-docs-main">
-      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). --> 
+      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). -->
 
           <aside class="col-lg-3 docs-sidebar" id="docsSidebar">
             <h2 class="space-icon d-lg-none text-center" id="docsSidebarToggle"><i class="fas fa-book"></i> SEARCH &amp; CONTENTS</h2>
@@ -158,7 +158,7 @@
                 <div class="docs-back-button">
                   <i class="fad fa-arrow-square-left"></i>
                 </div>
-                Tezos
+                Filecoin
               </a>
             </div>
           
@@ -177,78 +177,131 @@
                 <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
               </a>
           
-              <div class="collapse truffle show" id="truffleDocs" data-parent="#docsSidebar">
+              <div class="collapse truffle " id="truffleDocs" data-parent="#docsSidebar">
                 <ul>
-                  <a href="/docs/tezos/truffle/quickstart"><li>Quickstart</li></a>
+                  <a href="/docs/filecoin/truffle/quickstart"><li>Quickstart</li></a>
+                </ul>
+              </div>
+          
+              <a class="toggle-ganache suite-link" href="#ganacheDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" /><h2 class="text-ganache">Ganache</h2>
+              </a>
+          
+              <div class="collapse ganache show" id="ganacheDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/filecoin/ganache/overview"><li>Overview</li></a>
                 </ul>
                   <h3>Getting Started</h3>
                   <ul>
-                      <a href="/docs/tezos/truffle/getting-started/installing-truffle-with-tezos"><li>Installing Truffle with Tezos</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/creating-a-tezos-project"><li>Creating a Tezos project</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/writing-tezos-contracts"><li>Writing Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/compiling-tezos-contracts"><li>Compiling Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/deploying-tezos-contracts"><li>Deploying Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/interacting-with-your-tezos-contracts"><li>Interacting with Your Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/testing-your-tezos-contracts"><li>Testing your Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/using-the-console-with-tezos"><li>Using the Console with Tezos</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/writing-external-scripts-with-tezos"><li>Writing External Scripts with Tezos</li></a>
-                  </ul>
-                  <h3>Reference</h3>
-                  <ul>
-                      <a href="/docs/tezos/truffle/reference/configuring-tezos-projects"><li>Configuring Tezos Projects</li></a>
+                      <a href="/docs/filecoin/ganache/getting-started/get-started-with-the-cli"><li>Get Started with the CLI</li></a>
+                      <a href="/docs/filecoin/ganache/getting-started/get-started-with-the-gui"><li>Get Started with the GUI</li></a>
+                      <a href="/docs/filecoin/ganache/getting-started/get-started-with-nodejs"><li>Get Started with NodeJS</li></a>
                   </ul>
               </div>
           
             </div>
           
-          </aside>      
+          </aside>
         <div class="col-lg-9 bd-light-cream docs-content">
-          <p class="alert alert-danger">
-<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by <a href="https://github.com/trufflesuite/truffle/issues">filing issues on Github</a>.
-</p>
-
-
+          
     <h1 class="link-markdown">
-      <a class="anchor-target" name="compiling-ligo-contracts"></a>
-      <a href="#compiling-ligo-contracts"><i class="fas fa-link"></i></a>
-      Compiling LIGO contracts
+      <a class="anchor-target" name="get-started-with-using-filecoin-flavored-ganache-gui"></a>
+      <a href="#get-started-with-using-filecoin-flavored-ganache-gui"><i class="fas fa-link"></i></a>
+      Get Started With using Filecoin-flavored Ganache GUI
     </h1>
   
     <h2 class="link-markdown">
-      <a class="anchor-target" name="location"></a>
-      <a href="#location"><i class="fas fa-link"></i></a>
-      Location
+      <a class="anchor-target" name="installation"></a>
+      <a href="#installation"><i class="fas fa-link"></i></a>
+      Installation
     </h2>
-  <p>All of your contracts are located in your project&#39;s <code>contracts/</code> directory. Tezos contracts are written in <a href="https://ligolang.org/">LIGO</a>, and all files containing contracts will have a file extension of <code>.ligo</code>. </p>
-<p>With the example Truffle <a href="/docs/tezos/truffle/quickstart">Tezos project</a> (created through <code>truffle unbox tezos-example</code>), you&#39;re given three contracts, <code>Counter.ligo</code>, <code>Migrations.ligo</code>, and <code>SimpleStorage.ligo</code>.</p>
+  <p>Filecoin-flavored Ganache is included in Ganache UI starting in vTODO and later. If you don&#39;t have that version, be sure to update it using the in-app updater or <a href="/docs/ganache/quickstart#1-install-ganache">manually install the latest version</a>.</p>
 
     <h2 class="link-markdown">
-      <a class="anchor-target" name="command"></a>
-      <a href="#command"><i class="fas fa-link"></i></a>
-      Command
+      <a class="anchor-target" name="usage"></a>
+      <a href="#usage"><i class="fas fa-link"></i></a>
+      Usage
     </h2>
-  <p>To compile a Tezos Truffle project, change to the root of the directory where the project is located and then type the following into a terminal:</p>
-<pre><code class="language-shell">truffle compile</code></pre>
-<p>Upon first run, all contracts will be compiled. Upon subsequent runs, Truffle will compile only the contracts that have been changed since the last compile. If you&#39;d like to override this behavior, run the above command with the <code>--all</code> option.</p>
+  <p>First, be sure to select the <strong>FILECOIN</strong> flavor in the dropdown under <strong>QUICKSTART</strong> button on the home screen.</p>
+<img class="img-fluid" style="max-width: min(50rem, 100%);" src="/img/docs/ganache/filecoin/flavor-selection.png" alt="Filecoin Flavor Selection" />
+
+<p>From here, you can click the <strong>QUICKSTART</strong> or <strong>NEW WORKSPACE</strong> buttons. <strong>QUICKSTART</strong> is the quickest way to get started, and you can save the workspace later. You can read more about workspaces in the <a href="/docs/ganache/the-quickstart-workspace">dedicated documentation section</a>.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="accounts"></a>
+      <a href="#accounts"><i class="fas fa-link"></i></a>
+      Accounts
+    </h3>
+  <p>Once Ganache has started, you&#39;ll be presented with the <strong>Accounts</strong> page. Here you can see a list of accounts generated from a random seed and prefunded with some FIL (all <a href="#configuration">configurable</a>). Filecoin-flavor Ganache doesn&#39;t support mnemonics currently, but you can specify the seed in the <a href="#configuration"><strong>Settings</strong></a>.</p>
+<img class="img-fluid" style="max-width: min(50rem, 100%);" src="/img/docs/ganache/filecoin/accounts.png" alt="Filecoin Accounts Page" />
+
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="tipsets"></a>
+      <a href="#tipsets"><i class="fas fa-link"></i></a>
+      Tipsets
+    </h3>
+  <p>The <strong>Tipsets</strong> page shows you a list of the tipsets mined. You can click on a tipset row to see more details, including details of the blocks included in the tipset.</p>
+<img class="img-fluid" style="max-width: min(50rem, 100%);" src="/img/docs/ganache/filecoin/tipsets.png" alt="Filecoin Tipsets Page" />
+
+<img class="img-fluid" style="max-width: min(50rem, 100%);" src="/img/docs/ganache/filecoin/tipset-detail.png" alt="Filecoin Tipset Detail Page" />
+
+<p>If you&#39;re not familiar with using Ganache, then you&#39;ll quickly learn that most of the blocks of information are clickable for more information. Clicking on a block row in the tipset detail page will bring you to the block&#39;s detail page.</p>
+<img class="img-fluid" style="max-width: min(50rem, 100%);" src="/img/docs/ganache/filecoin/block-detail.png" alt="Filecoin Block Detail Page" />
+
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="messages"></a>
+      <a href="#messages"><i class="fas fa-link"></i></a>
+      Messages
+    </h3>
+  <p>The <strong>Messages</strong> page lists the most recent messages.</p>
+<img class="img-fluid" style="max-width: min(50rem, 100%);" src="/img/docs/ganache/filecoin/messages.png" alt="Filecoin Messages Page" />
+
+<p>You can click on a message to see the message&#39;s detail. You can also get to the message detail page from the block detail page available from the <a href="#tipsets">tipset detail page</a>;</p>
+<img class="img-fluid" style="max-width: min(50rem, 100%);" src="/img/docs/ganache/filecoin/message-detail.png" alt="Filecoin Message Detail Page" />
+
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="deals"></a>
+      <a href="#deals"><i class="fas fa-link"></i></a>
+      Deals
+    </h3>
+  <p>The <strong>Deals</strong> page lists all of the storage deals, regardless of state. These are not clickable currently, but this page is a great place to get an overview.</p>
+<img class="img-fluid" style="max-width: min(50rem, 100%);" src="/img/docs/ganache/filecoin/deals.png" alt="Filecoin Deals Page" />
+
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="files"></a>
+      <a href="#files"><i class="fas fa-link"></i></a>
+      Files
+    </h3>
+  <p>The <strong>Files</strong> page lists all of the pinned files within IPFS. If you&#39;re using the <a href="https://docs.filecoin.io/build/examples/network-inspector/overview/">Filecoin Network Inspector sample app</a> to create storage deals, those files automatically get pinned with the <code>ipfs.add()</code> JS function it uses.</p>
+<p>Do note that these are all of your pinned IPFS files, not just those associated with <a href="#deals">storage deals</a>.</p>
+<img class="img-fluid" style="max-width: min(50rem, 100%);" src="/img/docs/ganache/filecoin/files.png" alt="Filecoin Files Page" />
+
+<p>You can also click the <strong>DOWNLOAD</strong> button to save the file to your computer.</p>
 
     <h2 class="link-markdown">
-      <a class="anchor-target" name="build-artifacts"></a>
-      <a href="#build-artifacts"><i class="fas fa-link"></i></a>
-      Build artifacts
+      <a class="anchor-target" name="configuration"></a>
+      <a href="#configuration"><i class="fas fa-link"></i></a>
+      Configuration
     </h2>
-  <p>Artifacts of your compilation will be placed in the <code>build/contracts/</code> directory, relative to your project root. (This directory will be created if it does not exist.)</p>
-<p>These artifacts are integral to the inner workings of Truffle, and they play an important part in the successful deployment of your application. <strong>You should not edit these files</strong> as they&#39;ll be overwritten by contract compilation and deployment.</p>
+  <p>You can get to <strong>Settings</strong> page by pressing the <i class="fas fa-cog"></i> button available in the header bar.</p>
+<img class="img-fluid" style="max-width: min(50rem, 100%);" src="/img/docs/ganache/filecoin/cogwheel-highlight.png" alt="Settings Page Button" />
 
-    <h2 class="link-markdown">
-      <a class="anchor-target" name="all-good-"></a>
-      <a href="#all-good-"><i class="fas fa-link"></i></a>
-      All good?
-    </h2>
-  <p>If you&#39;ve gotten this far, it&#39;s time to deploy. Check out our <a href="/docs/tezos/truffle/getting-started/deploying-tezos-contracts">Deploying Tezos Contracts</a> section for more! </p>
+<p>From here, you&#39;ll see different settings grouped by category.</p>
+<ul>
+<li>The <strong>WORKSPACE</strong> tab just lets you change the workspace name if you&#39;re not using the Quickstart Workspace.</li>
+<li>The <strong>SERVER</strong> tab lets you change the hosts/interfaces and ports for the Lotus and IPFS servers to listen on.</li>
+<li>The <strong>ACCOUNTS &amp; KEYS</strong> tab lets you change the default account FIL balance, number of accounts, and random number generator seed.</li>
+<li>The <strong>MINER</strong> tab allows you to enable/disable the miner as well as set the mining interval or use automining.</li>
+</ul>
+<img class="img-fluid" style="max-width: min(50rem, 100%);" src="/img/docs/ganache/filecoin/settings.gif" alt="Settings Pages Overview" />
 
 
           <div class="contribute-link">
-            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/docs/tezos/truffle/getting-started">Edit here &raquo;</a>
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/docs/filecoin/ganache/getting-started">Edit here &raquo;</a>
           </div>        </div>
     </div>
   </main>

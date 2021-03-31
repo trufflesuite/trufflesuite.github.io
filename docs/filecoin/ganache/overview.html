@@ -15,12 +15,12 @@
   <![endif]-->
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4795067.js"></script>
-  <!-- End of HubSpot Embed Code -->  
+  <!-- End of HubSpot Embed Code -->
   <meta charset="utf-8">
   <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="/img/favicons/favicon.ico">
 
@@ -42,23 +42,23 @@
   <!-- Facebook OpenGraph -->
   <meta property="og:site_name" content="Truffle Suite" />
   <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
-  <meta property="og:title" content="Truffle | Writing External Scripts with Tezos | Documentation | Truffle Suite" />
-  <meta property="og:url" content="https://trufflesuite.com/docs/tezos/truffle/getting-started/writing-external-scripts-with-tezos" />
+  <meta property="og:title" content="Ganache | Working With Filecoin | Documentation | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/docs/filecoin/ganache/overview" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="Truffle Suite" />
-  <meta name="twitter:title" content="Truffle | Writing External Scripts with Tezos | Documentation | Truffle Suite" />
+  <meta name="twitter:title" content="Ganache | Working With Filecoin | Documentation | Truffle Suite" />
   <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
   <meta name="twitter:creator" content="Truffle Suite" />
   <meta name="twitter:domain" content="trufflesuite.com" />
   <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
-  
+
   <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
 
-  <title>Truffle | Writing External Scripts with Tezos | Documentation | Truffle Suite</title>
+  <title>Ganache | Working With Filecoin | Documentation | Truffle Suite</title>
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
@@ -121,7 +121,7 @@
         </li>
       </ul>
     </div>
-  </nav>  
+  </nav>
   <main role="main" class="container-fluid">
     <!--<div class="row pt-4 pb-4">
       <div class="col">
@@ -145,10 +145,10 @@
       </div>
     </div>-->
 
-    
+
 
     <div class="row row-docs-main">
-      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). --> 
+      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). -->
 
           <aside class="col-lg-3 docs-sidebar" id="docsSidebar">
             <h2 class="space-icon d-lg-none text-center" id="docsSidebarToggle"><i class="fas fa-book"></i> SEARCH &amp; CONTENTS</h2>
@@ -158,7 +158,7 @@
                 <div class="docs-back-button">
                   <i class="fad fa-arrow-square-left"></i>
                 </div>
-                Tezos
+                Filecoin
               </a>
             </div>
           
@@ -177,88 +177,50 @@
                 <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><h2 class="text-truffle"><span class="narrow">T</span>RUFFLE</h2>
               </a>
           
-              <div class="collapse truffle show" id="truffleDocs" data-parent="#docsSidebar">
+              <div class="collapse truffle " id="truffleDocs" data-parent="#docsSidebar">
                 <ul>
-                  <a href="/docs/tezos/truffle/quickstart"><li>Quickstart</li></a>
+                  <a href="/docs/filecoin/truffle/quickstart"><li>Quickstart</li></a>
+                </ul>
+              </div>
+          
+              <a class="toggle-ganache suite-link" href="#ganacheDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" /><h2 class="text-ganache">Ganache</h2>
+              </a>
+          
+              <div class="collapse ganache show" id="ganacheDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/filecoin/ganache/overview"><li>Overview</li></a>
                 </ul>
                   <h3>Getting Started</h3>
                   <ul>
-                      <a href="/docs/tezos/truffle/getting-started/installing-truffle-with-tezos"><li>Installing Truffle with Tezos</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/creating-a-tezos-project"><li>Creating a Tezos project</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/writing-tezos-contracts"><li>Writing Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/compiling-tezos-contracts"><li>Compiling Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/deploying-tezos-contracts"><li>Deploying Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/interacting-with-your-tezos-contracts"><li>Interacting with Your Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/testing-your-tezos-contracts"><li>Testing your Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/using-the-console-with-tezos"><li>Using the Console with Tezos</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/writing-external-scripts-with-tezos"><li>Writing External Scripts with Tezos</li></a>
-                  </ul>
-                  <h3>Reference</h3>
-                  <ul>
-                      <a href="/docs/tezos/truffle/reference/configuring-tezos-projects"><li>Configuring Tezos Projects</li></a>
+                      <a href="/docs/filecoin/ganache/getting-started/get-started-with-the-cli"><li>Get Started with the CLI</li></a>
+                      <a href="/docs/filecoin/ganache/getting-started/get-started-with-the-gui"><li>Get Started with the GUI</li></a>
+                      <a href="/docs/filecoin/ganache/getting-started/get-started-with-nodejs"><li>Get Started with NodeJS</li></a>
                   </ul>
               </div>
           
             </div>
           
-          </aside>      
+          </aside>
         <div class="col-lg-9 bd-light-cream docs-content">
-          <p class="alert alert-danger">
-<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by <a href="https://github.com/trufflesuite/truffle/issues">filing issues on Github</a>.
-</p>
-
-
+          
     <h1 class="link-markdown">
-      <a class="anchor-target" name="writing-external-scripts"></a>
-      <a href="#writing-external-scripts"><i class="fas fa-link"></i></a>
-      Writing External Scripts
+      <a class="anchor-target" name="working-with-filecoin"></a>
+      <a href="#working-with-filecoin"><i class="fas fa-link"></i></a>
+      Working With Filecoin
     </h1>
-  <p>Often you may want to run external scripts that interact with your deployed contracts, or in some cases deploy new contracts! Truffle provides an easy way to do this, bootstrapping your contracts based on your desired network and connecting to your Tezos client automatically per your <a href="/docs/tezos/truffle/reference/configuring-tezos-projects">project configuration</a>.</p>
-
-    <h2 class="link-markdown">
-      <a class="anchor-target" name="command"></a>
-      <a href="#command"><i class="fas fa-link"></i></a>
-      Command
-    </h2>
-  <p>To run an external script, perform the following:</p>
-<pre><code class="language-shell">$ truffle exec &lt;path/to/file.js&gt;</code></pre>
-<p>Refer to <a href="/docs/truffle/reference/truffle-commands#exec">Truffle Commands Reference</a> for more information about this command, such as what options it accepts.</p>
-
-    <h2 class="link-markdown">
-      <a class="anchor-target" name="file-structure"></a>
-      <a href="#file-structure"><i class="fas fa-link"></i></a>
-      File structure
-    </h2>
-  <p>In order for external scripts to be run correctly, Truffle expects them to export a function that takes a single parameter as a callback:</p>
-<pre><code class="language-javascript">module.exports = function(callback) {
-  // perform actions
-}</code></pre>
-<p>You can do anything you&#39;d like within this script, so long as the callback is called when the script finishes. The callback accepts an error as its first and only parameter. If an error is provided, execution will halt and the process will return a non-zero exit code.</p>
-
-    <h2 class="link-markdown">
-      <a class="anchor-target" name="artifacts-require-"></a>
-      <a href="#artifacts-require-"><i class="fas fa-link"></i></a>
-      artifacts.require()
-    </h2>
-  <p>Note that the <code>artifacts.require()</code> function <a href="/docs/tezos/truffle/getting-started/deploying-tezos-contracts">available in migrations</a> is also available to you within external scripts. Here&#39;s an example of how you might use it to deploy a new contract outside of Truffle&#39;s migration system:</p>
-<p>Filename: <code>./script.js</code></p>
-<pre><code class="language-javascript">const SimpleStorage = artifacts.require(&quot;SimpleStorage&quot;);
-
-module.exports = callback =&gt; {
-  SimpleStorage.new(3).then((instance) =&gt; {
-    console.log(&quot;New address:&quot;, instance.address);
-    callback();
-  }).catch(callback);
-};</code></pre>
-<p>The output would look like this:</p>
-<pre><code class="language-shell">$ truffle exec ./script.js
-Using network &#39;development&#39;.
-
-New address: KT1JZ8JQ4ziGCsQJcTegNcByYGW32ZhXD217</code></pre>
+  <p>Ganache supports development with <a href="https://filecoin.io">Filecoin</a>, a decentralized storage network with built-in incentives.</p>
+<p>It is highly recommended you checkout the <a href="https://docs.filecoin.io/" rel="noopener nofollow" target="_blank">official Filecoin development documentation</a> before getting started with Filecoin-flavored Ganache.</p>
+<p>The documentation is split up by the various ways you can use Ganache; each page includes requirements, installation, usage, and configuration for each:</p>
+<ul>
+<li><a href="./getting-started/get-started-with-the-cli">CLI</a></li>
+<li><a href="./getting-started/get-started-with-the-gui">GUI</a></li>
+<li><a href="./getting-started/get-started-with-nodejs">NodeJS</a></li>
+</ul>
 
 
           <div class="contribute-link">
-            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/docs/tezos/truffle/getting-started">Edit here &raquo;</a>
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/docs/filecoin/ganache">Edit here &raquo;</a>
           </div>        </div>
     </div>
   </main>

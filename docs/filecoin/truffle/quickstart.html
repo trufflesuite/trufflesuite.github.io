@@ -15,12 +15,12 @@
   <![endif]-->
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4795067.js"></script>
-  <!-- End of HubSpot Embed Code -->  
+  <!-- End of HubSpot Embed Code -->
   <meta charset="utf-8">
   <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="/img/favicons/favicon.ico">
 
@@ -42,23 +42,23 @@
   <!-- Facebook OpenGraph -->
   <meta property="og:site_name" content="Truffle Suite" />
   <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
-  <meta property="og:title" content="Truffle | Writing Tezos Contracts | Tezos | Documentation | Truffle Suite" />
-  <meta property="og:url" content="https://trufflesuite.com/docs/tezos/truffle/getting-started/writing-tezos-contracts" />
+  <meta property="og:title" content="Truffle | Filecoin Quickstart | Documentation | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/docs/filecoin/truffle/quickstart" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="Truffle Suite" />
-  <meta name="twitter:title" content="Truffle | Writing Tezos Contracts | Tezos | Documentation | Truffle Suite" />
+  <meta name="twitter:title" content="Truffle | Filecoin Quickstart | Documentation | Truffle Suite" />
   <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
   <meta name="twitter:creator" content="Truffle Suite" />
   <meta name="twitter:domain" content="trufflesuite.com" />
   <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
-  
+
   <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
 
-  <title>Truffle | Writing Tezos Contracts | Tezos | Documentation | Truffle Suite</title>
+  <title>Truffle | Filecoin Quickstart | Documentation | Truffle Suite</title>
 
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
   <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
@@ -121,7 +121,7 @@
         </li>
       </ul>
     </div>
-  </nav>  
+  </nav>
   <main role="main" class="container-fluid">
     <!--<div class="row pt-4 pb-4">
       <div class="col">
@@ -145,10 +145,10 @@
       </div>
     </div>-->
 
-    
+
 
     <div class="row row-docs-main">
-      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). --> 
+      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). -->
 
           <aside class="col-lg-3 docs-sidebar" id="docsSidebar">
             <h2 class="space-icon d-lg-none text-center" id="docsSidebarToggle"><i class="fas fa-book"></i> SEARCH &amp; CONTENTS</h2>
@@ -158,7 +158,7 @@
                 <div class="docs-back-button">
                   <i class="fad fa-arrow-square-left"></i>
                 </div>
-                Tezos
+                Filecoin
               </a>
             </div>
           
@@ -179,104 +179,118 @@
           
               <div class="collapse truffle show" id="truffleDocs" data-parent="#docsSidebar">
                 <ul>
-                  <a href="/docs/tezos/truffle/quickstart"><li>Quickstart</li></a>
+                  <a href="/docs/filecoin/truffle/quickstart"><li>Quickstart</li></a>
+                </ul>
+              </div>
+          
+              <a class="toggle-ganache suite-link" href="#ganacheDocs" data-toggle="collapse">
+                <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" /><h2 class="text-ganache">Ganache</h2>
+              </a>
+          
+              <div class="collapse ganache " id="ganacheDocs" data-parent="#docsSidebar">
+                <ul>
+                  <a href="/docs/filecoin/ganache/overview"><li>Overview</li></a>
                 </ul>
                   <h3>Getting Started</h3>
                   <ul>
-                      <a href="/docs/tezos/truffle/getting-started/installing-truffle-with-tezos"><li>Installing Truffle with Tezos</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/creating-a-tezos-project"><li>Creating a Tezos project</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/writing-tezos-contracts"><li>Writing Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/compiling-tezos-contracts"><li>Compiling Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/deploying-tezos-contracts"><li>Deploying Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/interacting-with-your-tezos-contracts"><li>Interacting with Your Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/testing-your-tezos-contracts"><li>Testing your Tezos Contracts</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/using-the-console-with-tezos"><li>Using the Console with Tezos</li></a>
-                      <a href="/docs/tezos/truffle/getting-started/writing-external-scripts-with-tezos"><li>Writing External Scripts with Tezos</li></a>
-                  </ul>
-                  <h3>Reference</h3>
-                  <ul>
-                      <a href="/docs/tezos/truffle/reference/configuring-tezos-projects"><li>Configuring Tezos Projects</li></a>
+                      <a href="/docs/filecoin/ganache/getting-started/get-started-with-the-cli"><li>Get Started with the CLI</li></a>
+                      <a href="/docs/filecoin/ganache/getting-started/get-started-with-the-gui"><li>Get Started with the GUI</li></a>
+                      <a href="/docs/filecoin/ganache/getting-started/get-started-with-nodejs"><li>Get Started with NodeJS</li></a>
                   </ul>
               </div>
           
             </div>
           
-          </aside>      
+          </aside>
         <div class="col-lg-9 bd-light-cream docs-content">
-          <p class="alert alert-danger">
-<strong>Tezos support</strong> in Truffle is experimental. Give it a spin, and help us out by <a href="https://github.com/trufflesuite/truffle/issues">filing issues on Github</a>.
-</p>
-
-
+          
     <h1 class="link-markdown">
-      <a class="anchor-target" name="writing-tezos-contracts"></a>
-      <a href="#writing-tezos-contracts"><i class="fas fa-link"></i></a>
-      Writing Tezos Contracts
+      <a class="anchor-target" name="filecoin-quickstart"></a>
+      <a href="#filecoin-quickstart"><i class="fas fa-link"></i></a>
+      Filecoin Quickstart
     </h1>
-  <p>Smart contracts in Tezos are written in the <a href="https://ligolang.org/">LIGO programming language</a>. We recommend you familiarize yourself with the language before continuing. Their documentation is excellent.</p>
-<ul>
-<li><a href="https://ligolang.org/">Main language site</a></li>
-<li><a href="https://ide.ligolang.org/">Online sandbox</a></li>
-<li><a href="https://ligolang.org/docs/intro/introduction/">Documentation</a></li>
-</ul>
-<p class="alert alert-warning">
-<strong>Note!</strong> LIGO supports three different syntaxes out of the box: CamelLIGO, PascalLIGO, and ReasonLIGO. For all examples in this documentation, we use PascalLIGO.
-</p>
-
+  <p>Wanna build apps on Filecoin using Truffle? You&#39;re in the right place.</p>
 
     <h2 class="link-markdown">
-      <a class="anchor-target" name="example-contract-amp-overview"></a>
-      <a href="#example-contract-amp-overview"><i class="fas fa-link"></i></a>
-      Example Contract &amp; Overview
+      <a class="anchor-target" name="ganache"></a>
+      <a href="#ganache"><i class="fas fa-link"></i></a>
+      Ganache
     </h2>
-  <p>All contracts within a Tezos-based Truffle project are stored in the <code>./contracts</code> directory. An example contract looks like the following:</p>
-<pre><code>// variant defining pseudo multi-entrypoint actions
-type action is
-| Increment of int
-| Decrement of int
+  <p>Looking to set up Filecoin-flavored Ganache? Head over to the <a href="../ganache/overview">Ganache-specific documentation</a>.</p>
 
-function add (const a : int ; const b : int) : int is a + b
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="table-of-contents"></a>
+      <a href="#table-of-contents"><i class="fas fa-link"></i></a>
+      Table of Contents
+    </h2>
+  <ol>
+<li><a href="#getting-set-up">Getting set up</a></li>
+<li><a href="#installing-truffle">Installing Truffle</a></li>
+<li><a href="#using-the-filecoin-truffle-box">Using the Filecoin Truffle Box</a></li>
+<li><a href="#further-resources">Further Resources</a></li>
+</ol>
 
-function subtract (const a : int ; const b : int) : int is a - b
-
-// real entrypoint that re-routes the flow based on the action provided
-function main (const p : action ; const s : int) : (list(operation) * int) is 
-  ((nil : list(operation)),
-    case p of
-    | Increment (n) -&gt; add (s, n)
-    | Decrement (n) -&gt; subtract (s, n)
-    end)</code></pre><p>There&#39;s some important takeaways to note when writing LIGO contracts: </p>
-<ul>
-<li>By default, all LIGO contracts have a single entry point called <code>main</code>, expected by Truffle. For multiple entry points, see below. </li>
-<li>The last parameter to the entry point function represents the current state of the contract, and is sent to the function via the underlying protocol. </li>
-<li>All LIGO contracts return two things: A list of further operations the protocol should perform, and the final state of the contract after execution of the entry point.</li>
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="getting-set-up"></a>
+      <a href="#getting-set-up"><i class="fas fa-link"></i></a>
+      Getting Set Up
+    </h2>
+  
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="requirements"></a>
+      <a href="#requirements"><i class="fas fa-link"></i></a>
+      Requirements
+    </h3>
+  <ul>
+<li><a href="https://nodejs.org/">NodeJS</a> v12.13.0 or later</li>
+<li>Windows, Linux or Mac OS X</li>
 </ul>
 
     <h2 class="link-markdown">
-      <a class="anchor-target" name="defining-multiple-entry-points"></a>
-      <a href="#defining-multiple-entry-points"><i class="fas fa-link"></i></a>
-      Defining Multiple Entry Points
+      <a class="anchor-target" name="installing-truffle"></a>
+      <a href="#installing-truffle"><i class="fas fa-link"></i></a>
+      Installing Truffle
     </h2>
-  <p>You&#39;ll notice that the comments in the example contract above suggest there are multiple entry points beyond <code>main()</code>. Conceptually there <em>are</em> multiple entry points -- <code>increment</code> and <code>decrement</code> -- but under the hood, <code>main()</code> is technically the single entery point of the contract. </p>
-<p>To code a contract with multiple entry points that Truffle can take advantage of, you&#39;ll need to follow the example above. Start by defining an enum-like type called <code>action</code> with values relative to the functions being called, and then pass the action as the first value into <code>main()</code>. As you&#39;ll see in the <a href="/docs/tezos/truffle/getting-started/interacting-with-your-tezos-contracts">Interacting With Your Contracts</a> section, if Truffle detects an <code>action</code> type as the first parameter in <code>main()</code>, it&#39;ll treat your contract as though it has multiple entry points, and make those entry points easy to call from outside the blockchain.</p>
+  <p>Truffle&#39;s Filecoin integration works out of the box with the latest Truffle, so no need to install any special versions for it.</p>
+<pre><code>$ npm install -g truffle</code></pre>
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="using-the-filecoin-truffle-box"></a>
+      <a href="#using-the-filecoin-truffle-box"><i class="fas fa-link"></i></a>
+      Using the Filecoin Truffle Box
+    </h2>
+  <p>This quick start uses an already-created project to provide the base Truffle project structure and example contracts.</p>
+<p>In your workspace directory, run the following commands:</p>
+<pre><code>$ mkdir filecoin-example
+$ cd filecoin-example
+$ truffle unbox filecoin</code></pre><p>More specific usage information about the Filecoin Truffle Box can be found in its <a href="https://github.com/truffle-box/filecoin-box">README</a>.</p>
 
     <h2 class="link-markdown">
-      <a class="anchor-target" name="including-other-contracts"></a>
-      <a href="#including-other-contracts"><i class="fas fa-link"></i></a>
-      Including Other Contracts
+      <a class="anchor-target" name="preserving-files-to-ipfs-and-filecoin"></a>
+      <a href="#preserving-files-to-ipfs-and-filecoin"><i class="fas fa-link"></i></a>
+      Preserving files to IPFS and Filecoin
     </h2>
-  <p>Sometimes it&#39;s nice to organize your code in multiple files. Fortunately, the LIGO compiler does this for you. To do so, check out the <a href="https://ligolang.org/docs/advanced/include/">LIGO documentation</a> for more. You&#39;ll still need one contract that contains a <code>main()</code> function, though you can organize other contract code in other files as needed.</p>
+  <p>Truffle offers builtin functionality to preserve any files and directories to IPFS, Filecoin or Textile Buckets through the <code>truffle preserve</code> command. This works with local IPFS / Filecoin nodes, remote nodes and Filecoin-flavored Ganache! Besides this, <code>truffle preserve</code> also has support for <a href="https://docs.textile.io/buckets/">Textile Buckets</a>, which offers a smooth user experience around IPFS and Filecoin.</p>
+<pre><code class="language-shell">$ truffle preserve ./stuff --ipfs
+$ truffle preserve ./stuff --filecoin
+$ truffle preserve ./stuff --buckets</code></pre>
+<p>For extensive documentation on <code>truffle preserve</code> refer to the <a href="/docs/truffle/getting-started/preserving-files-and-content-to-storage-platforms">main Truffle documentation</a>.</p>
 
     <h2 class="link-markdown">
-      <a class="anchor-target" name="how-do-i-compile-"></a>
-      <a href="#how-do-i-compile-"><i class="fas fa-link"></i></a>
-      How do I compile?
+      <a class="anchor-target" name="further-resources"></a>
+      <a href="#further-resources"><i class="fas fa-link"></i></a>
+      Further Resources
     </h2>
-  <p>It&#39;s easy. See the <a href="/docs/tezos/truffle/getting-started/compiling-tezos-contracts">Compiling Tezos Contracts</a> section for more! </p>
+  <p>If you&#39;ve reached this point, you now have a Truffle project that lets you interact with the Filecoin network. Congrats! This is a great start, but there&#39;s still much to learn. We suggest you check out the following resources to learn more about Filecoin, Textile, Ganache, and the entire Truffle Suite:</p>
+<ul>
+<li><a href="https://docs.filecoin.io/">Filecoin documentation</a></li>
+<li><a href="https://docs.textile.io/">Textile documentation</a></li>
+<li><a href="../ganache/overview">Filecoin-flavored Ganache documentation</a></li>
+<li><a href="https://trufflesuite.com/docs">Main Truffle Suite documentation</a></li>
+</ul>
 
 
           <div class="contribute-link">
-            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/docs/tezos/truffle/getting-started">Edit here &raquo;</a>
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/docs/filecoin/truffle">Edit here &raquo;</a>
           </div>        </div>
     </div>
   </main>

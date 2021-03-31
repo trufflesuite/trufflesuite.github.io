@@ -15,12 +15,12 @@
   <![endif]-->
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4795067.js"></script>
-  <!-- End of HubSpot Embed Code -->  
+  <!-- End of HubSpot Embed Code -->
   <meta charset="utf-8">
   <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="/img/favicons/favicon.ico">
 
@@ -55,7 +55,7 @@
   <meta name="twitter:creator" content="Truffle Suite" />
   <meta name="twitter:domain" content="trufflesuite.com" />
   <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
-  
+
   <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
 
   <title>Ganache | Ganache Settings | Documentation | Truffle Suite</title>
@@ -121,7 +121,7 @@
         </li>
       </ul>
     </div>
-  </nav>  
+  </nav>
   <main role="main" class="container-fluid">
     <!--<div class="row pt-4 pb-4">
       <div class="col">
@@ -145,10 +145,10 @@
       </div>
     </div>-->
 
-    
+
 
     <div class="row row-docs-main">
-      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). --> 
+      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). -->
 
           <aside class="col-lg-3 docs-sidebar" id="docsSidebar">
             <h2 class="space-icon d-lg-none text-center" id="docsSidebarToggle"><i class="fas fa-book"></i> SEARCH &amp; CONTENTS</h2>
@@ -273,6 +273,7 @@
                       <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
                       <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
                       <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
+                      <a href="/docs/truffle/getting-started/preserving-files-and-content-to-storage-platforms"><li>Preserving Files and Content to Storage Platforms</li></a>
                   </ul>
                   <h3>Testing</h3>
                   <ul>
@@ -315,6 +316,7 @@
                   <h3>Workspaces</h3>
                   <ul>
                       <a href="/docs/ganache/workspaces/the-quickstart-workspace"><li>The Quickstart Workspace</li></a>
+                      <a href="/docs/ganache/workspaces/ethereum-workspace-overview"><li>Ethereum Workspace Overview</li></a>
                       <a href="/docs/ganache/workspaces/creating-workspaces"><li>Creating Workspaces</li></a>
                       <a href="/docs/ganache/workspaces/loading-existing-workspaces"><li>Loading Existing Workspaces</li></a>
                       <a href="/docs/ganache/workspaces/switching-workspaces"><li>Switching Workspaces</li></a>
@@ -375,7 +377,7 @@
                   </ul>
               </div>
             </div>
-          </aside>      
+          </aside>        
         <div class="col-lg-9 bd-light-cream docs-content">
           
     <h1 class="link-markdown">
@@ -384,31 +386,47 @@
       Ganache Settings
     </h1>
   <p>You can change some features of the generated blockchain through the <strong>Settings</strong> pages, accessed by the gear icon in the top right corner. You&#39;ll also be prompted with the settings screen when created a <a href="/docs/ganache/workspaces/creating-workspaces">New Workspace</a>.</p>
+<p>The settings page will vary depending on whether you&#39;re developing on <a href="#ethereum">Ethereum</a> or <a href="#corda">Corda</a>. After updating your settings, don&#39;t forget to <a href="#save-your-changes">save your changes</a>.</p>
 <p>
     <img class="img-fluid" src="/img/docs/ganache/ganache-settings-gear-icon.png" title="Accessing Ganache Settings" alt="Accessing Ganache Settings" />
     
   </p>
 <p class="text-center">*Accessing Ganache Settings*</p>
 
-<p>We&#39;ve divided the settings into several pages:</p>
-<ul>
-<li><strong>Workspace</strong> sets the workspace name and shows the currently linked Truffle or Corda projects. See our more detailed docs on <a href="/docs/ganache/workspaces/creating-workspaces">creating</a> and <a href="/docs/ganache/workspaces/deleting-workspaces">deleting</a> workspaces for more info.</li>
-<li><strong>Ethereum</strong><ul>
-<li><strong>Server</strong> shows details about the network connection, including hostname, port, network ID, and whether to automatically mine each transaction into a block.</li>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="ethereum"></a>
+      <a href="#ethereum"><i class="fas fa-link"></i></a>
+      Ethereum
+    </h2>
+  <ul>
+<li><strong>Workspace</strong> sets the workspace name and shows the currently linked Truffle projects. See our more detailed docs on <a href="/docs/ganache/workspaces/creating-workspaces">creating</a> and <a href="/docs/ganache/workspaces/deleting-workspaces">deleting</a> workspaces for more info.</li>
+<li><strong>Server</strong> shows details about the network connection, including hostname, port, network ID, and whether to automatically mine each transaction into a block. These connection details need to match your <a href="#configuring-truffle-to-connect-to-ganache">Truffle configuration</a>.</li>
 <li><strong>Accounts &amp; Keys</strong> sets details about the number of accounts created, and whether to use a specific mnemonic or let Ganache generate its own.</li>
 <li><strong>Chain</strong> sets configuration details for the genesis and parameters of the generated blockchain, including gas limit and gas price.</li>
 <li><strong>Advanced</strong> toggles Google Analytics, which is useful for the Ganache team to track usage of the application.</li>
+<li><strong>About</strong> contains information on the currently installed version of Ganache, along with links to our website and the <a href="https://github.com/trufflesuite/ganache">Ganache GitHub repository</a>.</li>
 </ul>
-</li>
-<li><strong>Corda</strong><ul>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="corda"></a>
+      <a href="#corda"><i class="fas fa-link"></i></a>
+      Corda
+    </h2>
+  <ul>
+<li><strong>Workspace</strong> sets the workspace name and shows the currently linked Corda projects. See our more detailed docs on <a href="/docs/ganache/workspaces/creating-workspaces">creating</a> and <a href="/docs/ganache/workspaces/deleting-workspaces">deleting</a> workspaces for more info.</li>
 <li><strong>Nodes</strong> manages the nodes for the network.</li>
 <li><strong>Notaries</strong> manages the notaries for the network.</li>
 <li><strong>Advanced</strong> sets the default PostgreSQL port and toggles Google Analytics, which is useful for the team to improve Ganache based on anonymous usage metrics.</li>
-</ul>
-</li>
 <li><strong>About</strong> contains information on the currently installed version of Ganache, along with links to our website and the <a href="https://github.com/trufflesuite/ganache">Ganache GitHub repository</a>.</li>
 </ul>
-<p>After making changes, you will have to click <strong>Restart</strong> on the application for the changes to take effect.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="save-your-changes"></a>
+      <a href="#save-your-changes"><i class="fas fa-link"></i></a>
+      Save your changes
+    </h2>
+  <p>After making changes, you will have to click <strong>Restart</strong> on the application for the changes to take effect.</p>
 <p>
     <img class="img-fluid" src="/img/docs/ganache/ganache-settings.png" title="Ganache Settings" alt="Ganache Settings" />
     

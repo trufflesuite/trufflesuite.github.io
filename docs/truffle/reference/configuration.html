@@ -15,12 +15,12 @@
   <![endif]-->
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4795067.js"></script>
-  <!-- End of HubSpot Embed Code -->  
+  <!-- End of HubSpot Embed Code -->
   <meta charset="utf-8">
   <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="/img/favicons/favicon.ico">
 
@@ -55,7 +55,7 @@
   <meta name="twitter:creator" content="Truffle Suite" />
   <meta name="twitter:domain" content="trufflesuite.com" />
   <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
-  
+
   <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
 
   <title>Truffle | Configuration | Documentation | Truffle Suite</title>
@@ -121,7 +121,7 @@
         </li>
       </ul>
     </div>
-  </nav>  
+  </nav>
   <main role="main" class="container-fluid">
     <!--<div class="row pt-4 pb-4">
       <div class="col">
@@ -145,10 +145,10 @@
       </div>
     </div>-->
 
-    
+
 
     <div class="row row-docs-main">
-      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). --> 
+      <!-- Show the sidebar *only if* we're not directly under /docs (e.g., index, search). -->
 
           <aside class="col-lg-3 docs-sidebar" id="docsSidebar">
             <h2 class="space-icon d-lg-none text-center" id="docsSidebarToggle"><i class="fas fa-book"></i> SEARCH &amp; CONTENTS</h2>
@@ -273,6 +273,7 @@
                       <a href="/docs/truffle/getting-started/debugging-your-contracts"><li>Debugging Your Contracts</li></a>
                       <a href="/docs/truffle/getting-started/using-truffle-develop-and-the-console"><li>Using Truffle Develop and The Console</li></a>
                       <a href="/docs/truffle/getting-started/writing-external-scripts"><li>Writing External Scripts</li></a>
+                      <a href="/docs/truffle/getting-started/preserving-files-and-content-to-storage-platforms"><li>Preserving Files and Content to Storage Platforms</li></a>
                   </ul>
                   <h3>Testing</h3>
                   <ul>
@@ -315,6 +316,7 @@
                   <h3>Workspaces</h3>
                   <ul>
                       <a href="/docs/ganache/workspaces/the-quickstart-workspace"><li>The Quickstart Workspace</li></a>
+                      <a href="/docs/ganache/workspaces/ethereum-workspace-overview"><li>Ethereum Workspace Overview</li></a>
                       <a href="/docs/ganache/workspaces/creating-workspaces"><li>Creating Workspaces</li></a>
                       <a href="/docs/ganache/workspaces/loading-existing-workspaces"><li>Loading Existing Workspaces</li></a>
                       <a href="/docs/ganache/workspaces/switching-workspaces"><li>Switching Workspaces</li></a>
@@ -375,7 +377,7 @@
                   </ul>
               </div>
             </div>
-          </aside>      
+          </aside>        
         <div class="col-lg-9 bd-light-cream docs-content">
           
     <h1 class="link-markdown">
@@ -779,8 +781,32 @@ know how we can improve it!
 
 <p>Provides Truffle with a list of installed third-party extensions installed as
 NPM package dependencies.</p>
-<p>Truffle plugin support is currently limited to plugins that define custom
-workflow commands. For more information, see <a href="/docs/truffle/getting-started/writing-external-scripts#third-party-plugin-commands">Third-Party Plugin Commands</a>.</p>
+<p>Truffle supports two separate kinds of plugins. The first are <code>run</code> plugins that define a custom workflow command. More information on these can be found under <a href="/docs/truffle/getting-started/writing-external-scripts#third-party-plugin-commands">Third-Party Plugin Commands</a>. The second type of plugins are <code>preserve</code> plugins that define a custom workflow for preserving content using the <code>truffle preserve</code> command. More information on these can be found under <a href="/docs/truffle/getting-started/preserving-files-and-content-to-storage-platforms">Preserving Files and Content to Storage Platforms</a>.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="environments"></a>
+      <a href="#environments"><i class="fas fa-link"></i></a>
+      Environments
+    </h2>
+  <p>Environments are a way to specify different configuration parameters depending on the selected environment. For example, connection to IPFS is often done with a local node or ganache, while in production, it makes sense to connect to Infura. This can be configured with environments.</p>
+<pre><code class="language-js">module.exports = {
+  /* ... rest of truffle-config */
+
+  environments: {
+    /* ... other environments */
+
+    development: {
+      ipfs: {
+        address: &#39;http://localhost:5001
+      }
+    },
+    production: {
+      ipfs: {
+        address: &#39;https://ipfs.infura.io:5001&#39;
+      }
+    }
+  }
+}</code></pre>
 
     <h2 class="link-markdown">
       <a class="anchor-target" name="ethpm-configuration"></a>
