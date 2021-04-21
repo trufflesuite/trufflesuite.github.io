@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- HubSpot Forms -->
+  <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4795067.js"></script>
+  <!-- End of HubSpot Embed Code -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services | Tutorials | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/guides/ethereum-devops-truffle-testrpc-vsts" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services | Tutorials | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services | Guides | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+        <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="d-none d-lg-block">TRUFFLE SUITE</span>
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/guides">GUIDES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorial">TUTORIAL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Ethereum DevOps with Truffle, TestRPC &amp; Visual Studio Team Services</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2016-12-23&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> David Burela</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <p class="alert alert-warning"><i class="far fa-exclamation-triangle"></i> <strong>Archived:</strong> This tutorial has been archived and may not work as expected; versions are out of date, methods and workflows may have changed. We leave these up for historical context and for any universally useful information contained. Use at your own risk!</p>
+
+<div class="alert alert-info">
+  <p class="mb-0"><i class="far fa-info-circle"></i> <strong>Update</strong>: Since this tutorial was published, we have released <a href="/docs/ganache/overview">Ganache</a>, a personal blockchain and a replacement to the TestRPC. We have left this tutorial unaltered, but we highly recommend checking out our <a href="https://www.trufflesuite.com/ganache">Ganache Documentation</a></p>
+</div>
+
+<p>This post was originally published by David Burela on his blog <a href="https://davidburela.wordpress.com/2016/12/23/ethereum-devops-with-truffle-testrpc-visual-studio-team-services/">Burela&#39;s House-o-blog</a>. Big thanks to David for allowing us publish it here!</p>
+<hr>
+<p>I have been working on automating the compilation and testing of Ethereum solidity contracts, via the use of <a href="http://truffleframework.com/">Truffle</a>. I’ve got the test results being published back into the portal, allowing me to see on each commit if my code still compiles and passes my tests.</p>
+<p>I’m assuming you already have a Truffle project locally that you want to automate the continuous builds &amp; testing on. Follow the <a href="/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development">tutorial on installing Truffle &amp; TestRPC on Windows</a>.</p>
+<p>My final system will allow you to run “truffle test” locally to see standard test output, but will modify the test runner on the server to output it as JUnit format.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="the-build-system"></a>
+      <a href="#the-build-system"><i class="fas fa-link"></i></a>
+      The Build system
+    </h2>
+  <p>The system uses the <a href="https://azure.microsoft.com/en-us/services/visual-studio-team-services/">Visual Studio Team Services</a> (VSTS) build engine to automate this. You can sign up for free, and get unlimited private Git repos.</p>
+<p>You can have the code hosted on any Git provider. So either within VSTS itself, or GitHub, BitBucket, etc.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="prepare-truffle-js"></a>
+      <a href="#prepare-truffle-js"><i class="fas fa-link"></i></a>
+      Prepare truffle.js
+    </h2>
+  <p>A pre-step is to define the  test section in the truffle.js file</p>
+<pre><code class="language-javascript">mocha: {
+  reporter: “spec”,
+  reporterOptions: {
+    mochaFile: ‘junitresults.xml’
+  }
+}</code></pre>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="create-a-build-agent"></a>
+      <a href="#create-a-build-agent"><i class="fas fa-link"></i></a>
+      Create a build agent
+    </h2>
+  <p>VSTS does provide hosted build agents, which are generic and can build standard .Net projects, Xamarin, etc. But because we are going to use npm packages installed globally on the box to handle the Truffle builds</p>
+<ul>
+<li>Create a new Windows VM (Can be your own hosted server, or Azure).
+e.g. <a href="https://azure.microsoft.com/en-au/marketplace/partners/microsoft/windowsserver2016datacenter/">Windows Server 2016 Datacentre edition on Azure</a></li>
+<li>Install the VSTS build agent. Instructions at <a href="https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows">https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows</a>
+Note: DON’T select to run service as NT AUTHORITY\NETWORK, this will not work with TestRPC (needs to open ports).
+Run the service as another user, or NT AUTHORITY\SYSTEM</li>
+<li>Install chocolatey
+<a href="https://chocolatey.org/install">https://chocolatey.org/install</a></li>
+<li>Install these chocolatey packages</li>
+</ul>
+<pre><code class="language-shell">$ choco install git -y
+$ choco install nodejs.install –y</code></pre>
+<ul>
+<li>Install npm packages (make sure you open a new PowerShell window so that node is in your path)</li>
+</ul>
+<pre><code class="language-shell">$ npm install -g npm
+$ npm install -g –production windows-build-tools
+$ npm install -g ethereumjs-testrpc
+$ npm install -g truffle
+$ npm install -g mocha
+$ npm install -g mocha-junit-reporter</code></pre>
+<ul>
+<li>Restart the build agent so that all new paths are working</li>
+</ul>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="configure-vsts-build"></a>
+      <a href="#configure-vsts-build"><i class="fas fa-link"></i></a>
+      Configure VSTS build
+    </h2>
+  <p>Create a new variable with the path to where the npm global path is, for the user you installed the npm packages on above:</p>
+<ul>
+<li>variable name: <code>npm.path</code></li>
+<li>variable value: path to npm packages e.g. <code>C:\Users\&lt;user&gt;\AppData\Roaming\npm</code></li>
+</ul>
+<p>
+    <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/12/image5.png" title="image" alt="image" />
+    
+  </p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="add-7-powershell-tasks-and-configure-them-like-this"></a>
+      <a href="#add-7-powershell-tasks-and-configure-them-like-this"><i class="fas fa-link"></i></a>
+      Add 7 PowerShell tasks, and configure them like this
+    </h2>
+  <ul>
+<li>Name: System version information</li>
+<li>Script:</li>
+</ul>
+<pre><code class="language-powershell">#Setting environment paths
+$ENV:Path = $ENV:Path + “;” + $env:npm_path
+npm config set prefix $env:npm_path    #only needs to be set once, will update for user
+
+#DEBUG
+#$env:path
+#npm list -g –depth=0
+#Display system information
+Write-Host “System version information”
+Write-Host -nonewline    “node version: ” ; node -v
+Write-Host -nonewline    “npm version: “; npm -v
+Write-Host -nonewline    “npm prefix: “;  npm prefix -g
+Write-Host -nonewline    “truffle: ” ;    truffle version</code></pre>
+<p>
+    <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/12/image6.png" title="image" alt="image" />
+    
+  </p>
+<ul>
+<li>Name: Config transform &amp; test clean</li>
+<li>Script:</li>
+</ul>
+<pre><code class="language-powershell"># remove old test results
+rm .\junitresults.xml -ea SilentlyContinue 
+
+# Modify the Truffle test runner to use the JUnit reporter
+Rename-Item .\truffle.js .\truffle_temp.js
+cat .\truffle_temp.js | % { $_ -replace ‘reporter: “spec”‘, ‘reporter: “mocha-junit-reporter”‘ } | Out-File -Encoding ASCII .\truffle.js
+rm .\truffle_temp.js</code></pre>
+<p>
+    <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/12/image7.png" title="image" alt="image" />
+    
+  </p>
+<ul>
+<li>Name: Truffle build</li>
+<li>Script:</li>
+</ul>
+<pre><code class="language-powershell">#Setting environment paths
+$ENV:Path = $ENV:Path + “;” + $env:npm_path
+
+#Truffle build
+truffle compile</code></pre>
+<p>
+    <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/12/image8.png" title="image" alt="image" />
+    
+  </p>
+<ul>
+<li>Name: Launch TestRPC</li>
+<li>Script:</li>
+</ul>
+<pre><code class="language-powershell">#Setting environment paths
+$ENV:Path = $ENV:Path + “;” + $env:npm_path
+
+# launch the process
+echo “launching TestRPC”
+$testrpcProcess = Start-Process testrpc -passthru
+
+# persist the PID to disk and display in logs
+$testrpcProcess.Id | Export-CliXml testrpcPID.xml
+cat testrpcPID.xml</code></pre>
+<ul>
+<li>Name: Run Truffle tests</li>
+<li>Script:</li>
+</ul>
+<pre><code class="language-powershell">#Setting environment paths
+$ENV:Path = $ENV:Path + “;” + $env:npm_path
+
+# Run the tests
+truffle test</code></pre>
+<p>
+    <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/12/image10.png" title="image" alt="image" />
+    
+  </p>
+<ul>
+<li>Name: Shutdown TestRPC</li>
+<li>Other Settings: Enable “Always Run” (to make sure it is shutdown if there is an error)</li>
+<li>Script:</li>
+</ul>
+<pre><code class="language-powershell">#Setting environment paths
+$ENV:Path = $ENV:Path + “;” + $env:npm_path
+
+# retrieve the PID and kill the entire processs tree
+cat testrpcPID.xml
+$testrpcPID = Import-CliXml testrpcPID.xml
+taskkill /pid $testrpcPID /F /T</code></pre>
+<p>
+    <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/12/image11.png" title="image" alt="image" />
+    
+  </p>
+<ul>
+<li>Add a new Publish test result</li>
+<li>Test Result Format: JUnit</li>
+<li>Test Result Files: <code>junitresults.xml</code>
+
+    <img class="img-fluid" src="https://davidburela.files.wordpress.com/2016/12/image12.png" title="image" alt="image" />
+    
+  </li>
+</ul>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="future-work"></a>
+      <a href="#future-work"><i class="fas fa-link"></i></a>
+      Future work
+    </h2>
+  <p>Things that I would like to add in the future:</p>
+<ul>
+<li>Figure out how to automate this on a Linux build agent (VSTS supports both Windows &amp; Linux based build agents)</li>
+<li>Automate Release Management to run <code>truffle migrate</code> to push to a <a href="https://azure.microsoft.com/en-us/blog/project-bletchley-blockchain-infrastructure-made-easy/">Bletchley test environment</a></li>
+</ul>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/guides">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="https://www.trufflesuite.com/trufflecon2020">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2020</a></li>
+            <li><strong>&copy; ConsenSys Software Inc. 2021</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+          <!--[if lte IE 8]>
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+          <![endif]-->
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              portalId: "4795067",
+              formId: "d18995c8-32bb-4b2d-bde9-3f49fb3d2837"
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>

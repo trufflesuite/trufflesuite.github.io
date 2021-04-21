@@ -10715,6 +10715,26 @@ pre {
   cursor: pointer;
 }
 
+.light-mode .banner-title {
+  background-color: #efe5dc;
+  color: #33262a;
+}
+
+.dark-mode .banner-title {
+  background-color: #5e464d;
+  color: #ffffff;
+}
+
+.light-mode .banner-body {
+  background-color: #f8f5f0;
+  color: #5e464d;
+}
+
+.dark-mode .banner-body {
+  background-color: #33262a;
+  color: #ffffff;
+}
+
 .banner-light-cream {
   background-color: #f8f5f0;
   color: #5e464d;
@@ -11070,7 +11090,7 @@ div#hubspot-messages-iframe-container {
 }
 
 .form-control {
-  background-color: #e0dad7;
+  background-color: #efe5dc;
   border: none;
 }
 
@@ -12694,13 +12714,13 @@ footer h4 {
   font-style: italic;
 }
 
-.card-tutorial {
+.card-guide {
   position: relative;
   border: none;
   margin-bottom: 2rem;
 }
 
-.card-tutorial::before {
+.card-guide::before {
   content: "";
   position: absolute;
   top: 0;
@@ -12711,23 +12731,23 @@ footer h4 {
   background: #5e464d;
 }
 
-.card-tutorial.truffle::before {
+.card-guide.truffle::before {
   background: #3fe0c5;
 }
 
-.card-tutorial.ganache::before {
+.card-guide.ganache::before {
   background: #e4a663;
 }
 
-.card-tutorial.drizzle::before {
+.card-guide.drizzle::before {
   background: #e911bd;
 }
 
-.card-tutorial.teams::before {
+.card-guide.teams::before {
   background: #8731e8;
 }
 
-.card-tutorial.truffle.ganache::before {
+.card-guide.truffle.ganache::before {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3fe0c5+0,e4a663+100 */
   background: #3fe0c5;
   /* Old browsers */
@@ -12741,7 +12761,7 @@ footer h4 {
   /* IE6-9 */
 }
 
-.card-tutorial.truffle.ganache.drizzle::before {
+.card-guide.truffle.ganache.drizzle::before {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3fe0c5+0,e4a663+50,e911bd+100 */
   background: #3fe0c5;
   /* Old browsers */

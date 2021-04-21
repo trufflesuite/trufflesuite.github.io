@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- HubSpot Forms -->
+  <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4795067.js"></script>
+  <!-- End of HubSpot Embed Code -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Truffle and Metamask | Tutorials | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/guides/truffle-and-metamask" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Truffle and Metamask | Tutorials | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Truffle and Metamask | Guides | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+        <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="d-none d-lg-block">TRUFFLE SUITE</span>
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/guides">GUIDES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorial">TUTORIAL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Truffle and Metamask</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2016-07-01&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Tim Coulter</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <div class="alert alert-info">
+  <p class="mb-0"><strong>Update</strong>: Since this tutorial was published, we have released <a href="/docs/ganache/overview">Ganache</a>, a personal blockchain and a replacement to the TestRPC. We have left this tutorial unaltered, but we highly recommend checking out our <a href="https://www.trufflesuite.com/ganache">Ganache Documentation</a></p>
+</div>
+
+<p>This article was originally written by Dan Finlay and published as a <a href="https://gist.github.com/flyswatter/aea93752fb90322bbe11">github gist</a>. Dan has kindly allowed us to republish it here!</p>
+<hr>
+<p>If you&#39;re interested in building web apps with <a href="https://www.ethereum.org/">the Ethereum blockchain</a>, you may have found <a href="/docs">the Truffle web framework</a> to be a nice fit for your needs.</p>
+<p>For many types of Dapps (Distributed Apps), Truffle does everything you could want:  It compiles your blockchain contracts, injects them into your web app, and can even run a test suite against them!</p>
+<p>This is all great for you, but <em>what about your users?</em> Truffle has some great defaults for users who are willing to run a local <a href="https://github.com/ethereum/wiki/wiki/JSON-RPC">Ethereum JSON RPC server</a> on their computer, but what about your users who just want to sign on and get started?</p>
+<p>With Metamask, all your users need to do is <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?authuser=2">install our Chrome plugin</a>, and they will have their own secure blockchain accounts right there in the convenience of their browsers.</p>
+<p>
+    <img class="img-fluid" src="http://i.imgur.com/oyAvIXZ.png" title="metamask accounts" alt="metamask accounts" />
+    
+  </p>
+<p>Metamask is just a Developer Preview right now, and has not been released to the general public. We don&#39;t recommend putting serious funds in it, but instead encourage you to use it to help prepare your dapps for Ethereum browsers.</p>
+<p>It&#39;s possible your Truffle Dapp is already compatible with Metamask, but if you&#39;re like me, you want to go through your project and see what it&#39;s like from your user&#39;s perspective.</p>
+<p>Just in case you haven&#39;t used Truffle before, I&#39;m going to start by describing how to scaffold a minimal Truffle dapp. If you already have one set up, feel free to scroll ahead!</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="installing-truffle-dependencies"></a>
+      <a href="#installing-truffle-dependencies"><i class="fas fa-link"></i></a>
+      Installing Truffle Dependencies
+    </h2>
+  <p>You&#39;re going to need to have installed <a href="https://nodejs.org/">node.js</a>.</p>
+<p>From there, you need to install truffle (<code>npm install -g truffle</code>).</p>
+<p>Also, you&#39;re going to need to run a local blockchain RPC server to test and develop against. I recommend using <a href="https://github.com/ethereumjs/testrpc">TestRPC</a>, which you install by running <code>npm install -g ethereumjs-testrpc</code>.</p>
+<p>Next let&#39;s make sure we have our <code>testrpc</code> running in the background.  Open your terminal and run the command <code>testrpc</code>. That&#39;s all!  It runs on port <code>8545</code> by default, just like most Ethereum RPCs, and so does Truffle.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="quick-note-on-rpcs"></a>
+      <a href="#quick-note-on-rpcs"><i class="fas fa-link"></i></a>
+      Quick Note on RPCs
+    </h2>
+  <p>Ethereum RPCs can run in a pre-authenticated mode, that allows you to perform transactions without providing any additional credentials. Obviously this would be a dangerous thing to do on the open web, but for local development, it&#39;s the default method that <code>testrpc</code> provides.</p>
+<p>When you first start <code>testrpc</code>, You get a list of initial accounts. These accounts start funded with a whole lot of Ether, so you can practice exchanging funds between accounts.</p>
+<p>When you open a normal Truffle Dapp, it takes advantage of your local authenticated rpc, and has access to its account list. The default Truffle dapp just uses the first account in the list.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="setting-up-a-simple-truffle-dapp"></a>
+      <a href="#setting-up-a-simple-truffle-dapp"><i class="fas fa-link"></i></a>
+      Setting up a Simple Truffle Dapp
+    </h2>
+  <p>Next, let&#39;s generate a basic Truffle dapp. The default result of <code>truffle init</code> is a simple example currency.</p>
+<p>To get it up and running, run these commands:</p>
+<pre><code class="language-shell">mkdir my-money  # Create a folder for your new dapp
+cd my-money     # Move into that folder
+truffle init    # Initialize a default truffle project in that folder
+truffle build   # Compile the dapp
+truffle migrate  # Publish the dapp on the blockchain
+truffle serve   # Host your web interface on port 8080</code></pre>
+<p>We just deployed a simple alt-coin called <code>MetaCoin</code> to our local blockchain, and it&#39;s available to our browser on <code>http://127.0.0.1:8080</code>!</p>
+<p>
+    <img class="img-fluid" src="http://i.imgur.com/Uou5raY.png" title="MetaCoin default" alt="MetaCoin default" />
+    
+  </p>
+<p>If you visit it, you&#39;ll see that by default this new Dapp template signs you in with the first account on your <code>testrpc</code> account list, which happens to be the same account that got pre-populated with 10k shiny new Metacoins! That&#39;s because when you ran <code>truffle migrate</code>, Truffle used your first account as the contract publisher, and the contract says to fund the creator&#39;s account with 10k coins.</p>
+<p><em>If you don&#39;t see any Metacoin in this account, it may be because you have Metamask already installed. Jump down to &quot;Switching between TestRPC and Metamask accounts&quot; below.</em></p>
+<p>You can now send those coins to any account you want, so let&#39;s now set up some Metamask accounts, and then we can fund them!</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="setting-up-metamask"></a>
+      <a href="#setting-up-metamask"><i class="fas fa-link"></i></a>
+      Setting up Metamask
+    </h2>
+  <p>Now you&#39;ll want to install <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?authuser=2">Metamask from the Chrome store</a>.</p>
+<p><em>Metamask is currently not listed on the Chrome store, but you get that link because you&#39;re an early adopter who we want to support.</em></p>
+<p>When first setting up Metamask, you&#39;ll need to provide a password (used to encrypt your wallet).  It is then going to generate a unique twelve-word phrase that you&#39;ll eventually be able to use to recover all your accounts.We haven&#39;t done that yet because this is just a developer preview! Please don&#39;t use Metamask for important things yet!</p>
+<p>By default you get three accounts, all named Wallie. Again, our developer preview is showing. Eventually we&#39;re planning to integrate <a href="https://medium.com/@ConsenSys/uport-the-wallet-is-the-new-browser-b133a83fe73">rich persona management via uPort</a>!).</p>
+<p>To use Metamask with your local development blockchain, you need to point it at your <code>testrpc</code>.</p>
+<p>
+    <img class="img-fluid" src="http://i.imgur.com/D6o2Jq8.png" title="setting metamask testrpc" alt="setting metamask testrpc" />
+    
+  </p>
+<ol>
+<li>Open Metamask</li>
+<li>Click the gear icon in the bottom left</li>
+<li>Enter your <code>testrpc</code> address into the RPC field. It&#39;s probably <code>http://127.0.0.1:8545/</code>.</li>
+</ol>
+<p>Metamask will close at this point to restart itself.</p>
+<p>You can now sign into the dapp with Metamask.</p>
+<ol>
+<li>Open Metamask</li>
+<li>Enter your password</li>
+<li>Select an account</li>
+<li>Reload the Dapp page (some dapps will notice when you change accounts, but this basic one doesn&#39;t)</li>
+</ol>
+<p>You might notice you don&#39;t have any Metacoin in this account. That&#39;s a good thing! It means your new currency isn&#39;t going out to random accounts on the internet!</p>
+<p>To send some Metacoin to one of your Metamask accounts, you&#39;re going to need that account&#39;s address.</p>
+<p>To copy a Metamask account&#39;s address:</p>
+<ol>
+<li>Open Metamask</li>
+<li>Click the details arrow next to the account whose address you want.</li>
+<li>Click the &quot;Copy Address&quot; button.</li>
+</ol>
+<p>You now you have a copy of your address to send to!</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="switching-between-testrpc-and-metamask-accounts"></a>
+      <a href="#switching-between-testrpc-and-metamask-accounts"><i class="fas fa-link"></i></a>
+      Switching Between TestRPC and Metamask Accounts
+    </h2>
+  <p>When Metamask is installed, it intercepts calls and transactions to the Ethereum blockchain, and forwards them to its own RPC (which is currently on the test-network by default).</p>
+<p>Since Metamask is managing ethereum connections when it&#39;s installed, our Chrome browser right now can&#39;t access our <code>testrpc</code> accounts, because those accounts are managed by the <code>testrpc</code> node itself, so we need to open a browser without metamask.</p>
+<p>The easiest way to do this is to open an incognito window.  You can also open another browser.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="funding-your-metamask-account"></a>
+      <a href="#funding-your-metamask-account"><i class="fas fa-link"></i></a>
+      Funding Your Metamask Account
+    </h2>
+  <p>Once you&#39;re connected to your <code>testrpc</code> accounts again, you can send your Metacoin to whoever you please, including your new Metamask accounts.</p>
+<p>You might also notice that your new Metamask accounts don&#39;t have any ether in them. The <code>testrpc</code> initializes the blockchain with just its starting accounts having any balance, so to fund a Metamask account, you need to send some Ether to those accounts from one of your <code>testrpc</code> accounts. (In a future version of TestRPC <a href="https://github.com/ethereumjs/testrpc/issues/23">there will probably be better ways to do this</a>).</p>
+<p>Here&#39;s a simple shell command to tell your <code>testrpc</code> to send 1 ether to your Metamask account.  Let&#39;s assume <code>0x0f91747e3a5df28d81ab30b2d8216c93263c0cf3</code> is the first account in your <code>testrpc</code> list, and <code>0xbbd220f66e989a493c4d48531ea1e283abc385de</code> is one of your Metamask accounts.</p>
+<p><code>1e18</code> is equal to 1 ether, which will be more than enough for our purposes.</p>
+<pre><code class="language-shell">curl -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_sendTransaction&quot;,&quot;params&quot;: [{&quot;from&quot;:&quot;0x0f91747e3a5df28d81ab30b2d8216c93263c0cf3&quot;, &quot;to&quot;:&quot;0xbbd220f66e989a493c4d48531ea1e283abc385de&quot;, &quot;value&quot;: 1e18}], &quot;id&quot;:1}&#39; -X POST http://127.0.0.1:8545/</code></pre>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="synchronizing-accounts-between-metamask-and-testrpc"></a>
+      <a href="#synchronizing-accounts-between-metamask-and-testrpc"><i class="fas fa-link"></i></a>
+      Synchronizing Accounts Between Metamask And Testrpc
+    </h3>
+  <p>If you want to use testrpc/Metamask combination for development purposes, another route to get the accounts in Metamask to be useful with testrpc is to use the HD wallet generation that both support. If you start testrpc it creates 10 different addresses that can be recovered by the supplied mnemonic. The ``testrpc` output show the 10 inital accounts, the 10 private keys for the accounts and the mnemonic to recreate those accounts.</p>
+<pre><code>Available Accounts
+==================
+(0) 0x0b488d56e55996ea868e6bc640a59d10c71ff4e7
+...
+(9) 0x4decace9430b32cfd72ed99656adf80ebf23931d
+
+Private Keys
+==================
+(0) cb99e7dfaf138af48dde4e863f6dca0ab0acfad29f95954f08796f962656d5c8
+...
+(9) 29f734be35466ed5a62d0c7387412bc73d533bc24197cdcf2b8bbac8a982b198
+
+HD Wallet
+==================
+Mnemonic:      rubber negative firm purity helmet barely six asset imitate nephew october pluck
+Base HD Path:  m/44&#39;/60&#39;/0&#39;/0/{account_index}</code></pre><p>If you use that mnemonic in Metamask to <em>restore an existing vault</em> instead of creating a new one Metamask will use the same accounts. Testrpc also support a command line option to supply the mnemonic instead of using a random one. Starting it with <code>testrpc -m &quot;rubber negative firm purity helmet barely six asset imitate nephew october pluck&quot;</code> will give you the same accounts each time. That way you don&#39;t have to setup Metamask every time to use a new mnemonic.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="sending-metacoin-from-metamask-so-meta-"></a>
+      <a href="#sending-metacoin-from-metamask-so-meta-"><i class="fas fa-link"></i></a>
+      Sending Metacoin from Metamask: So Meta!
+    </h2>
+  <p>Now if we connect to our Dapp via Metamask, we should see we have some MetaCoin, and if we look in our Metamask plugin, we should have 1 ether too!</p>
+<p>It&#39;s important that we have ether, because it&#39;s not only a currency for trade, it&#39;s also the currency for processing transactions on the Ethereum blockchain. This processing fee is referred to as &quot;gas&quot;.</p>
+<p>Let&#39;s try sending some Metacoin from one of our Metamask accounts to another.</p>
+<p>First select the account that has the Metacoin and Ether. Now click the details arrow for another account, and copy its address (<code>COPY ADDR</code>).</p>
+<p>
+    <img class="img-fluid" src="http://i.imgur.com/5vbrfuQ.png" title="Metamask account detail view" alt="Metamask account detail view" />
+    
+  </p>
+<p>Paste the address into the Dapp window, along with how much Metacoin you&#39;d like to send, and hit <code>send</code>!</p>
+<p>You should see a notification pop-up, notifying you that you have a transaction to approve in Metamask.</p>
+<p>
+    <img class="img-fluid" src="http://i.imgur.com/pRuKb9v.png" title="Approval notification" alt="Approval notification" />
+    
+  </p>
+<p>You can either click &quot;Approve&quot; on the notification, or open the Metamask pop-up and review the transaction there.</p>
+<p>This is one way that Metamask is a safer Ethereum browsing experience than running your own RPC. While a pre-authenticated RPC automatically approves all requests sent to it, Metamask gives the user an opportunity to review and approve or reject each transaction that&#39;s requested by the dapp. Long term, making transactions easy to intelligently review is an important priority for Ethereum developers.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="wrapping-up"></a>
+      <a href="#wrapping-up"><i class="fas fa-link"></i></a>
+      Wrapping Up
+    </h2>
+  <p>This has been a simple example, but hopefully shows how Truffle and Metamask work together. They are able to pretty much work out of the box! That&#39;s because Truffle helps you write <code>web3</code>-compliant dapps. Web3 is a Javascript API declared by the core Ethereum team, and since it was standardized early, tools that take advantage of its common methods work well together.</p>
+<p>This makes connecting to a Truffle Dapp with Metamask not much harder than connecting via your own RPC, but it&#39;s <strong>a lot</strong> easier for your users.</p>
+<p>That&#39;s because Metamask is a hyper-light client that doesn&#39;t replicate the entire blockchain locally, but it <em>does</em> let users manage their own accounts, so they can casually benefit from the security of private key management, while placing trust for block validation on Metamask&#39;s configured RPC provider.</p>
+<p>We hope this has been a useful introduction to developing with Truffle and Metamask!</p>
+<p>Please, leave a comment or question, <a href="https://github.com/metamask/talk/issues">start a discussion on github</a>, or <a href="https://twitter.com/metamask_io">Tweet at us on Twitter</a>. We&#39;re trying to make Metamask the easiest tool to let anyone benefit from using Distributed Apps on the Ethereum Blockchain.</p>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/guides">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="https://www.trufflesuite.com/trufflecon2020">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2020</a></li>
+            <li><strong>&copy; ConsenSys Software Inc. 2021</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+          <!--[if lte IE 8]>
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+          <![endif]-->
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              portalId: "4795067",
+              formId: "d18995c8-32bb-4b2d-bde9-3f49fb3d2837"
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- HubSpot Forms -->
+  <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4795067.js"></script>
+  <!-- End of HubSpot Embed Code -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Building Robust Smart Contracts with OpenZeppelin | Tutorials | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/guides/robust-smart-contracts-with-openzeppelin" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Building Robust Smart Contracts with OpenZeppelin | Tutorials | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Building Robust Smart Contracts with OpenZeppelin | Guides | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+        <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="d-none d-lg-block">TRUFFLE SUITE</span>
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/guides">GUIDES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorial">TUTORIAL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Building Robust Smart Contracts with OpenZeppelin</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2017-08-03&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Josh Quintal</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <p>
+    <img class="img-fluid" src="/img/tutorials/open-zeppelin/oz-logo.png" title="OpenZeppelin" alt="OpenZeppelin" />
+    
+  </p>
+<p class="alert alert-warning"><i class="far fa-exclamation-triangle"></i> <strong>Archived:</strong> This tutorial has been archived and may not work as expected; versions are out of date, methods and workflows may have changed. We leave these up for historical context and for any universally useful information contained. Use at your own risk!</p>
+
+<p>Smart contracts deployed to the Ethereum mainnet can deal with real money, so having our Solidity code free from errors and highly secure is essential.</p>
+<p><a href="https://zeppelin.solutions/">Zeppelin Solutions</a>, a smart contract auditing service, has recognized this need. Using their experience, they&#39;ve put together a set of vetted smart contracts called <a href="https://openzeppelin.org/">OpenZeppelin</a>.</p>
+<p>We can use and extend these contracts to create more secure dapps in less time. OpenZeppelin comes with a wide array of smart contracts for various important functions (<a href="https://github.com/OpenZeppelin/openzeppelin-solidity">see them all here</a>), but today we&#39;ll be focusing on their token contracts. Specifically, we&#39;ll be extending their <code>StandardToken.sol</code> contract to create our own <a href="https://theethereum.wiki/w/index.php/ERC20_Token_Standard">ERC20</a>-compliant token.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="requirements"></a>
+      <a href="#requirements"><i class="fas fa-link"></i></a>
+      Requirements
+    </h2>
+  <p>This tutorial expects you to have some knowledge of Truffle, Ethereum, and Solidity. If you haven&#39;t gone through our <a href="/tutorials/ethereum-overview">Ethereum overview</a> and our <a href="/tutorials/pet-shop">Pet Shop tutorial</a> yet, those would be great places to start.</p>
+<p>For even more information, please see the following links:</p>
+<ul>
+<li><a href="/docs">Truffle documentation</a></li>
+<li><a href="https://ethereum.org/">Ethereum</a></li>
+<li><a href="https://solidity.readthedocs.io/en/develop/">Solidity documentation</a></li>
+</ul>
+<p>We will primarily be using the command line for this tutorial, so please ensure you have basic familiarity with your operating system&#39;s terminal.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="overview"></a>
+      <a href="#overview"><i class="fas fa-link"></i></a>
+      Overview
+    </h2>
+  <p>In this tutorial we will be covering:</p>
+<ul>
+<li>Unboxing the front-end application</li>
+<li>Creating the &quot;TutorialToken&quot; smart contract</li>
+<li>Compiling and deploying the smart contract</li>
+<li>Interacting with the new token</li>
+</ul>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="unboxing-the-front-end-application"></a>
+      <a href="#unboxing-the-front-end-application"><i class="fas fa-link"></i></a>
+      Unboxing the front-end application
+    </h2>
+  <p>In this tutorial, we are focusing on smart contract creation. To that end, we&#39;ve created the front-end for you in the form of a Truffle Box.</p>
+<ol>
+<li><p>On a terminal, create a project directory and navigate to it:</p>
+<pre><code class="language-shell">mkdir oz-workspace
+cd oz-workspace</code></pre>
+</li>
+<li><p>Unbox the <code>tutorialtoken</code> Truffle Box. This will give us our project template.</p>
+<pre><code class="language-shell">truffle unbox tutorialtoken</code></pre>
+</li>
+<li><p>Next, we&#39;ll install OpenZeppelin. The most recent version of OpenZeppelin can be found as an npm package.</p>
+<pre><code class="language-shell">npm install openzeppelin-solidity</code></pre>
+</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="creating-the-quot-tutorialtoken-quot-smart-contract"></a>
+      <a href="#creating-the-quot-tutorialtoken-quot-smart-contract"><i class="fas fa-link"></i></a>
+      Creating the &quot;TutorialToken&quot; smart contract
+    </h2>
+  <p>With our front-end taken care of, we can focus on the <code>TutorialToken</code> contract.</p>
+<ol>
+<li><p>In the <code>contracts/</code> directory of your Truffle Box, create the file <code>TutorialToken.sol</code> and add the following contents:</p>
+<pre><code class="language-solidity">pragma solidity ^0.4.24;
+
+import &quot;openzeppelin-solidity/contracts/token/ERC20/ERC20.sol&quot;;
+
+contract TutorialToken is ERC20 {
+
+}</code></pre>
+<p>Things to notice:</p>
+<ul>
+<li>Beyond the standard smart contract setup, we import the <code>StandardToken.sol</code> contract and declare our <code>TutorialToken</code>.</li>
+<li>We use <code>is</code> to inherit from the <code>StandardToken</code> contract. Our contract will inherit all variables and functions from the <code>StandardToken</code> contract. Inherited functions and variables can be overwritten by redeclaring them in the new contract.</li>
+</ul>
+</li>
+<li><p>To set our own parameters for the token, we&#39;ll be declaring our own name, symbol, and other details. Add the following content block to the contract (between the curly braces):</p>
+<pre><code class="language-solidity">string public name = &quot;TutorialToken&quot;;
+string public symbol = &quot;TT&quot;;
+uint8 public decimals = 2;
+uint public INITIAL_SUPPLY = 12000;</code></pre>
+<p>Things to notice:</p>
+<ul>
+<li>The <code>name</code> and <code>symbol</code> variables give our token a unique identity.</li>
+<li>The <code>decimals</code> variable determines the degree to which this token can be subdivided. For our example we went with 2 decimal places, similar to dollars and cents.</li>
+<li>The <code>INITIAL_SUPPLY</code> variable determines the number of tokens created when this contract is deployed. In this case, the number is arbitrary.</li>
+</ul>
+</li>
+<li><p>To finish up our contract, we&#39;ll create a constructor function to mint with the <code>totalSupply</code> equal to our declared <code>INITIAL_SUPPLY</code> and give the entire supply to the deploying account&#39;s address. Add this block below the content added in the previous step:</p>
+<pre><code class="language-solidity">constructor() public {
+  _mint(msg.sender, INITIAL_SUPPLY);
+}</code></pre>
+</li>
+</ol>
+<p>Using less than 15 lines of hand-coded Solidity, we&#39;ve created our own Ethereum token!</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="compiling-and-deploying-the-smart-contract"></a>
+      <a href="#compiling-and-deploying-the-smart-contract"><i class="fas fa-link"></i></a>
+      Compiling and deploying the smart contract
+    </h2>
+  <ol>
+<li><p>In the <code>migrations/</code> directory, create the file <code>2_deploy_contracts.js</code> and add the following content:</p>
+<pre><code class="language-javascript">var TutorialToken = artifacts.require(&quot;TutorialToken&quot;);
+
+module.exports = function(deployer) {
+  deployer.deploy(TutorialToken);
+};</code></pre>
+<p>The <code>import</code> statement within our <code>TutorialToken</code> contract will be automatically handled by the compiler, along with any subsequent imports within <code>StandardToken</code>.</p>
+</li>
+<li><p>Now we are ready to compile and deploy your contract to the blockchain. For this tutorial, we will use <a href="/ganache">Ganache</a>, a personal blockchain for Ethereum development you can use to deploy contracts, develop applications, and run tests. If you haven&#39;t already, <a href="/ganache">download Ganache</a> and double click the icon to launch the application. This will generate a blockchain running locally on port 7545.</p>
+<p>
+    <img class="img-fluid" src="/img/tutorials/open-zeppelin/oz-ganache-initial.png" title="Ganache" alt="Ganache" />
+    <p class="img-caption">Ganache</p>
+  </p>
+<p class="alert alert-info">
+  **Note**: Read more about Ganache in the [Truffle documentation](/docs/ganache/using).
+</p>
+</li>
+<li><p>With our blockchain launched, head back to your terminal. Inside your project, run the following command to compile the contract:</p>
+<pre><code class="language-shell">truffle compile</code></pre>
+<p class="alert alert-info">
+  <strong>Note</strong>: If you're on Windows and encountering problems running this command, please see the documentation on [resolving naming conflicts on Windows](/docs/advanced/configuration#resolving-naming-conflicts-on-windows).
+</p>
+</li>
+<li><p>Once the compile has completed, deploy the contract to the blockchain:</p>
+<pre><code class="language-shell">truffle migrate</code></pre>
+<p>You will see output that looks similar to this:</p>
+<pre><code class="language-shell">Using network &#39;development&#39;.
+
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  ... 0xa4470beb31f490e26b9a8b0d677cb7107ae5ef5bf40f8ee59fe040d35ca4f598
+  Migrations: 0x8cdaf0cd259887258bc13a92c0a6da92698644c0
+Saving successful migration to network...
+  ... 0xd7bc86d31bee32fa3988f1c1eabce403a1b5d570340a3a9cdba53a472ee8c956
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+  Deploying TutorialToken...
+  ... 0xcc01dcbe77f79cf4c21e5642bfee50a6db78b7d6dedb9f8b363ec4110e92436d
+  TutorialToken: 0x345ca3e014aaf5dca488057592ee47305d9b3e10
+Saving successful migration to network...
+  ... 0xf36163615f41ef7ed8f4a8f192149a0bf633fe1a2398ce001bf44c43dc7bdda0
+Saving artifacts...</code></pre>
+<p>Ganache will also list these transactions as well.</p>
+<p>
+    <img class="img-fluid" src="/img/tutorials/open-zeppelin/oz-ganache-migrate.png" title="Ganache migration" alt="Ganache migration" />
+    <p class="img-caption">Ganache showing migration transactions.</p>
+  </p>
+</li>
+</ol>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="interacting-with-the-new-token"></a>
+      <a href="#interacting-with-the-new-token"><i class="fas fa-link"></i></a>
+      Interacting with the new token
+    </h2>
+  <p>For this portion of the tutorial, we recommend using <a href="http://metamask.io">MetaMask</a>, a browser extension for Chrome and Firefox. It will allow you to switch between accounts quickly, perfect for testing the ability to transfer our newly created tokens. Our <a href="/tutorials/pet-shop">Pet Shop tutorial</a> has more information about <a href="/tutorials/pet-shop#interacting-with-the-dapp-in-a-browser">configuring MetaMask</a>.</p>
+<p>You will want to enter the mnemonic displayed in Ganache into MetaMask, and make sure that MetaMask is listening to the Custom RPC <code>http://127.0.0.1:7545</code>.</p>
+<p class="alert alert-danger">
+**Warning**: Do not use the Main Network in MetaMask. If you send ether to any account generated from Ganache's default mnemonic, you will lose it all!
+</p>
+
+<ol>
+<li><p>Still in your terminal, run a local web server containing the front-end application:</p>
+<pre><code class="language-shell">npm run dev</code></pre>
+<p>A browser window should automatically open with the interface below:</p>
+<p>
+    <img class="img-fluid" src="/img/tutorials/open-zeppelin/oz-tutorialtoken-initial.png" title="TutorialToken Wallet" alt="TutorialToken Wallet" />
+    <p class="img-caption">TutorialToken wallet</p>
+  </p>
+<p>Our basic dapp shows the TutorialToken balance of the selected account in MetaMask.</p>
+</li>
+<li><p>Now we&#39;ll transfer some TutorialToken tokens to a different account. Ganache, when launched, lists 10 accounts. The first account has the token balance. Pick one of the other accounts (we recommend the second account) and enter it in the &quot;Address&quot; box, and also enter <code>2000</code> in the &quot;Amount&quot; field.</p>
+<p>
+    <img class="img-fluid" src="/img/tutorials/open-zeppelin/oz-transfer-address.png" title="TutorialToken Wallet transfer recipient" alt="TutorialToken Wallet transfer recipient" />
+    <p class="img-caption">TutorialToken wallet transfer recipient</p>
+  </p>
+</li>
+<li><p>Click &quot;Transfer&quot; to initiate the token transfer. MetaMask will intercept the transfer request and display a confirmation. Note that no ether is changing hands, except for the gas used to pay for the transaction.</p>
+<p>
+    <img class="img-fluid" src="/img/tutorials/open-zeppelin/oz-metamask-transfer.png" title="MetaMask transaction confirmation" alt="MetaMask transaction confirmation" />
+    <p class="img-caption">MetaMask transaction confirmation</p>
+  </p>
+</li>
+<li><p>Click &quot;Submit&quot; and the transfer will proceed. If all goes well, you will see a window saying &quot;Transfer successful&quot;. You will also see a record of the transaction in MetaMask, and a new transaction will be displayed at the top of the &quot;Transactions&quot; section in Ganache.</p>
+<p>
+    <img class="img-fluid" src="/img/tutorials/open-zeppelin/oz-ganache-transactions.png" title="Ganache transactions" alt="Ganache transactions" />
+    <p class="img-caption">Ganache transactions</p>
+  </p>
+</li>
+<li><p>Still in MetaMask, switch from the first account to the second one (you may need to select &quot;Create an account&quot; if only one account is in the list.)</p>
+<p>
+    <img class="img-fluid" src="/img/tutorials/open-zeppelin/oz-metamask-account-select.png" title="MetaMask account select" alt="MetaMask account select" />
+    <p class="img-caption">MetaMask account select</p>
+  </p>
+</li>
+<li><p>Now refresh the app in your browser. It will be connected to the currently selected account in MetaMask, and display the amount of tokens (in this case, 2000 TT). This shows that the transfer did in fact succeed.</p>
+<p>
+    <img class="img-fluid" src="/img/tutorials/open-zeppelin/oz-tutorialtoken-final.png" title="TutorialToken transfer success" alt="TutorialToken transfer success" />
+    <p class="img-caption">TutorialToken transfer success</p>
+  </p>
+</li>
+<li><p>Try sending different amount of tokens to different accounts to practice how our dapp (and MetaMask) interacts with the network.</p>
+</li>
+</ol>
+<p>We at Truffle are excited to see companies like Zeppelin Solutions contributing to the standardization and increased security of smart contracts. With OpenZeppelin&#39;s contracts and Truffle&#39;s tools, you have everything you need to start creating industry-standard distributed applications.</p>
+<p>Happy coding!</p>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/guides">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="https://www.trufflesuite.com/trufflecon2020">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2020</a></li>
+            <li><strong>&copy; ConsenSys Software Inc. 2021</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+          <!--[if lte IE 8]>
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+          <![endif]-->
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              portalId: "4795067",
+              formId: "d18995c8-32bb-4b2d-bde9-3f49fb3d2837"
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHT4PS2');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- HubSpot Forms -->
+  <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4795067.js"></script>
+  <!-- End of HubSpot Embed Code -->  
+  <meta charset="utf-8">
+  <meta name="description" content="The Truffle suite of tools make dapp development easier and more consistent.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicons/favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Truffle Suite">
+  <link rel="icon" sizes="192x192" href="/img/favicons/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Truffle Suite">
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8/10 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/favicons/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:site_name" content="Truffle Suite" />
+  <meta property="og:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta property="og:title" content="Take a Dive into Truffle 5 | Blog | Truffle Suite" />
+  <meta property="og:url" content="https://trufflesuite.com/blog/take-a-dive-into-truffle-5" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Truffle Suite" />
+  <meta name="twitter:title" content="Take a Dive into Truffle 5 | Blog | Truffle Suite" />
+  <meta name="twitter:description" content="The Truffle suite of tools make dapp development easier and more consistent." />
+  <meta name="twitter:creator" content="Truffle Suite" />
+  <meta name="twitter:domain" content="trufflesuite.com" />
+  <meta name="twitter:image:src" content="https://truffleframework.com/img/favicons/truffle-share.png" />
+  
+  <meta name="google-site-verification" content="BSgPkMHzw7IxJTpEElNfD8ZZYPzXgOQiTVPzAxAG8-o" />
+    
+  <title>Take a Dive into Truffle 5 | Blog | Truffle Suite</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Oswald|Varela+Round|Roboto+Condensed|Roboto+Mono" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/371f2d7a8a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHT4PS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="primaryNav">
+    <a class="navbar-brand current" href="/">
+        <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="d-none d-lg-block">TRUFFLE SUITE</span>
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="suiteDropdown" href="#" data-toggle="dropdown">SUITE</a>
+  
+          <div class="dropdown-menu">
+            <a class="text-truffle" href="/teams">
+              <img class="suite-logo" src="/img/tt-logomark.svg" alt="Truffle Teams Logo" /><span class="narrow">T</span>RUFFLE TEAMS
+            </a>
+            <a class="text-truffle" href="/truffle">
+              <img class="suite-logo" src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span class="narrow">T</span>RUFFLE
+            </a>
+            <a class="text-ganache" href="/ganache">
+              <img class="suite-logo" src="/img/ganache-logomark.svg" alt="Ganache Logo" />Ganache
+            </a>
+            <a class="text-drizzle" href="/drizzle">
+              <img class="suite-logo" src="/img/drizzle-logomark.svg" alt="Drizzle Logo" />dri<span class="drizzle-z-skew-1">z</span><span class="drizzle-z-skew-2">z</span>le
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">DOCS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/guides">GUIDES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorial">TUTORIAL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/boxes">BOXES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">COMMUNITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container container-heading container-narrow">
+    <div class="row">
+      <div class="col">
+        <h1>Take a Dive into Truffle 5</h1>
+        <ul class="list-sm-stacker space-icon mb-0">
+          <li><i class="far fa-calendar-alt"></i> 2021-4-20&nbsp;&nbsp;&nbsp;</li>
+          <li><i class="far fa-user"></i> Harry Altman, Josh Quintal, Tyler Feickert</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <main class="banner banner-light-cream pt-5 pb-5" role="main">
+    <div class="container container-post">
+      <div class="row justify-content-center">
+        <div class="col">
+          <p>
+    <img class="img-fluid" src="/img/blog/take-a-dive-into-truffle-5/blog-header.png" title="Take a Dive into Truffle 5 Banner" alt="Take a Dive into Truffle 5 Banner" />
+    
+  </p>
+<p>Truffle 5 has had some exciting releases in the flexibilty they provide to your workflow. 🌊 Truffle now offers the ability to detect the version of Solidity in your contracts at compile time and allows for compilation from ABI files. Because of this, wrangling a project whose contracts use multiple version of Solidity is much easier going forward. We&#39;ve also enhanced our testing capabilities with Solidity strack traces and better event decoding, making it much easier to get to the source of an error and get richer information from events. When our projects integrate with existing protocols, it&#39;s a pain to have to deal with those external contracts. Now Truffle makes this easy with the ability to fetch external contracts verified on Etherscan! Vyper support continues to improve with experimental debugging for Vyper contracts, as well as improved import handling for Vyper.</p>
+<p>Did I mention support for <strong>decentralized file storage</strong>?</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="what-39-s-new-in-5-2-and-5-3"></a>
+      <a href="#what-39-s-new-in-5-2-and-5-3"><i class="fas fa-link"></i></a>
+      What&#39;s New in 5.2 and 5.3
+    </h2>
+  
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="ipfs-filecoin-and-textile-bucket-support-via-code-truffle-preserve-code-"></a>
+      <a href="#ipfs-filecoin-and-textile-bucket-support-via-code-truffle-preserve-code-"><i class="fas fa-link"></i></a>
+      IPFS, Filecoin, and Textile Bucket support via <code>truffle preserve</code>
+    </h3>
+  <p>Tests have ran, bugs are squashed, your smart contracts have been deployed successfully to mainnet; life is good. It&#39;s time to make your dapp accessible to the masses! So you... go to a centralized host and spin up the frontend? Something&#39;s definitely off here.</p>
+<p>Enter <code>truffle preserve</code>: You can now use Truffle to upload your static assets to <a href="https://ipfs.io/">IPFS</a>, <a href="https://filecoin.io/">Filecoin</a>, and/or <a href="https://docs.textile.io/buckets/">Textile Buckets</a> for a fully decentralized application across the entire stack!</p>
+<p>Here are some companion pieces to help you get started:</p>
+<ul>
+<li>The <a href="https://github.com/truffle-box/filecoin-box">Filecoin Truffle Box</a> includes a decentralized art gallery to get you started with a fully working project!</li>
+<li><a href="/blog/truffle-and-ganache-now-come-in-filecoin-flavor">The original Filecoin + Truffle &amp; Ganache Blog Post</a></li>
+<li><a href="/docs/truffle/getting-started/preserving-files-and-content-to-storage-platforms"><code>truffle preserve</code> Documentation</a></li>
+</ul>
+<figure>
+  <img class="mb-4 w-100" src="https://github.com/truffle-box/filecoin-box/raw/master/screenshots/sample-ui.png?raw=true" alt="the Filecoin Trufflebox provides you with a Filecoin powred art gallery">
+  <figcaption class="text-center font-italic">Unbox a decentralized art gallery with the Filecoin Truffle Box.</figcaption>
+</figure>
+
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="pragma-compilation"></a>
+      <a href="#pragma-compilation"><i class="fas fa-link"></i></a>
+      Pragma compilation
+    </h3>
+  <p>As of version 5.2.0, Truffle now ships with a fun, experimental setting for compilation: the “pragma” setting. This feature analyzes your Solidity source files for their pragma expressions. It then uses these expressions to figure out which version of the Solidity compiler is required for each given source. This allows your project to compile when it contains multiple Solidity files, each requiring a different version of the Solidity compiler!</p>
+<p>To use this feature, set the Solidity compiler version field in your <code>truffle-config.js</code> as follows:</p>
+<pre><code class="language-javascript">module.exports = {
+  compilers: {
+    solc: {
+      version: “pragma”
+    }
+  },
+  // … the rest of your config goes here
+};</code></pre>
+<p>Now you can run <code>truffle compile</code> and your project will compile!</p>
+<p>To illustrate this feature and the ones below, we have created a <a href="https://github.com/truffle-box/v5.2-example-box">Truffle box for Truffle 5.2</a>.</p>
+<p>In this box you can see how the <code>truffle-config.js</code> is set up to use this new experimental feature. Notice that <code>contracts/MetaCoin.sol</code> requires <code>^0.7.0</code> and how <code>contracts/Conversion.sol</code> requires <code>^0.6.0</code>. When running <code>truffle compile</code> on this example project you should get a printout of all the versions of the Solidity compiler used during compilation. Namely, you should see that both version <code>0.6.12</code> and <code>0.7.6</code> are listed.</p>
+<p>When you use this feature, Truffle will analyze each of your Solidity sources one by one to find the appropriate version of the Solidity compiler for each source. Do note, however, that each source file and all of its imports must be compiled with one version of Solidity; this means there must be a version of the compiler that satisfies all of their pragma expressions.</p>
+
+    <h2 class="link-markdown">
+      <a class="anchor-target" name="things-you-may-have-missed-in-truffle-5-1"></a>
+      <a href="#things-you-may-have-missed-in-truffle-5-1"><i class="fas fa-link"></i></a>
+      Things you may have missed in Truffle 5.1
+    </h2>
+  <p>We’ve added a fair bit over the course of Truffle 5.1 as well, and there’s a good chance you didn’t catch all of it!  We thought this would be a good time to review some of that as well!</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="compilation-of-abi-json-files"></a>
+      <a href="#compilation-of-abi-json-files"><i class="fas fa-link"></i></a>
+      Compilation of abi.json files
+    </h3>
+  <p>Another exciting addition to Truffle is the ability to compile from a contract’s ABI. When you create a JSON source file in your “contracts” directory that contains a contract’s ABI, Truffle will take it, use it to create an interface, and compile it. This might come in handy, for example, when you want to import and use a library that requires a different version of the Solidity compiler than the importing file. You can then simply compile the library and create a new JSON file containing the ABI of the imported library. Under the hood Truffle will compile the ABI into a Solidity interface and create an artifact for it. You will then be able to import the interface into your contract!</p>
+<p>In the v5.2-example-box, consider the <code>contracts/MetaCoin.sol</code> and <code>contracts/Conversion.sol</code>. We would like to import Conversion into the MetaCoin contract to use it but cannot since they require different versions of the Solidity compiler.  To work around this, we have created <code>contracts/IConversion.abi.json</code> which contains the ABI from the compiled Conversion. In this way we can now import the interface into <code>contracts/MetaCoin.sol</code> (see line 4 in the MetaCoin contract) to use it!</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="solidity-stacktraces-in-truffle-test"></a>
+      <a href="#solidity-stacktraces-in-truffle-test"><i class="fas fa-link"></i></a>
+      Solidity stacktraces in Truffle Test
+    </h3>
+  <p>Try running your tests with the <code>--stacktrace</code> option (or <code>-t</code> for short) and get combined Solidity-Javascript stacktraces!  This feature does have some limitations and is still somewhat experimental, but we expect you’ll find it quite useful.  In the future we may add support for Vyper stacktraces as well!  </p>
+<p>And speaking of Vyper...</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="experimental-vyper-debugging"></a>
+      <a href="#experimental-vyper-debugging"><i class="fas fa-link"></i></a>
+      Experimental Vyper debugging
+    </h3>
+  <p>You can now use Truffle Debugger with Vyper!  Support for this is still in its early stages; you won’t be able to inspect variables, I’m afraid.  But you can step through a Vyper transaction, and there will likely be more in the future!</p>
+<p>But perhaps the biggest improvement to the debugger is...</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="debugging-verified-external-contracts"></a>
+      <a href="#debugging-verified-external-contracts"><i class="fas fa-link"></i></a>
+      Debugging verified external contracts
+    </h3>
+  <p>Use the <code>--fetch-external</code> (or <code>-x</code> for short) option with Truffle Debugger and it will automatically download sources for any verified contracts and allow you to step through them!  Contracts can be verified on either Etherscan or Sourcify.  You no longer need to download these yourself and add them to your Truffle project!  You can see <a href="https://www.trufflesuite.com/blog/debugging-verified-external-contracts-with-truffle-debugger">this</a> earlier post for more information.</p>
+<p>###Improved import handling in Vyper</p>
+<p>Here’s another one for our Vyper users; you can now do imports from other projects (via NPM or EthPM) just like in Solidity!</p>
+<p>For instance, suppose <code>examplepackage</code> is an NPM package which is structured as a Truffle project, and you want to import a Vyper contract, <code>VyperContract</code>, from it.  You can now do</p>
+<pre><code class="language-python">from examplepackage.contracts import VyperContract</code></pre>
+<p>or</p>
+<pre><code class="language-python">import examplepackage.contracts.VyperContract as VyperContract</code></pre>
+<p>to import it, much like you could do in Solidity!</p>
+<p>Note that if your own project uses such “absolute” imports as a way to import its own files from the project root -- e.g., if you have a file <code>contracts/subdirectory/Contract1.vy</code> which imports <code>contracts/Contract2.vy</code> via</p>
+<pre><code class="language-python">import Contract2 as Contract2</code></pre>
+<p>then this will work within your own project, but won’t work if other people try to import your <code>Contract1</code>.  We suggest that if you want other people to import contracts from your project, you use explicitly relative imports instead:</p>
+<pre><code class="language-python">from .. import Contract2</code></pre>
+<p>But such imports are now possible.  We hope you’ll find all sorts of uses for this!</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="enumeration-values-in-truffle-contract-objects"></a>
+      <a href="#enumeration-values-in-truffle-contract-objects"><i class="fas fa-link"></i></a>
+      Enumeration values in Truffle Contract objects
+    </h3>
+  <p>When sending a transaction that takes an <code>enum</code>, it’s inconvenient to have to look up the numeric constants that the <code>enum</code> uses.  Well, now, each Truffle Contract constructor object contains enumeration constants, so you don’t need to do that.  Just do</p>
+<pre><code class="language-javascript">contractInstance.exampleMethod(Contract.ExampleEnum.EnumValue);</code></pre>
+<p>and don’t worry about the particular numeric value of <code>EnumValue</code>.  You can also do <code>Contract.enums.ExampleEnum.EnumValue</code>, if you want to be extra-certain.</p>
+<p>Note that it’s not currently possible to access enums declared outside of a contract this way, but we have plans in the future to make using those easier, too!</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="even-more-"></a>
+      <a href="#even-more-"><i class="fas fa-link"></i></a>
+      Even more!
+    </h3>
+  <p>Other things you might have missed include: Improved event decoding in <code>truffle test</code>; being able to use the debugger to step through Yul (assembly) sources generated by Solidity for its own internal subroutines (try the <code>g</code> command!); being able to inspect assembly variables in the debugger; <code>truffle test --bail</code>; <code>truffle create all</code>; and the debugger providing more information upon transaction reversion.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="what-39-s-next-want-to-help-us-build-it-"></a>
+      <a href="#what-39-s-next-want-to-help-us-build-it-"><i class="fas fa-link"></i></a>
+      What&#39;s Next? Want to Help us Build it?
+    </h3>
+  <p>How will you use the new enhancements in Truffle? Let us know what you think about these features on Twitter, and if you have other needs we haven’t met yet.</p>
+<p class="alert alert-info m-t-2">
+<i class="fas fa-info-circle"></i> <strong>WE'RE HIRING!</strong> Why stop at feature requests--cut out the middleman and work with us directly! There are many exciting problems to solve like layer 2 support, mapping decoding, and a revamped deployment system, to name a few. We'd love your help and perspective. <strong><a href="https://consensys.net/open-roles/3004215/">Apply here on ConsenSys' website!</a></strong>
+</p>
+
+
+          <div class="contribute-link">
+            See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/blog">Edit here &raquo;</a>
+          </div>        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img class="truffle-logo" src="/img/truffle-logo-light.svg" alt="Truffle Logo" />
+        </div>
+  
+        <div class="col-12 col-md-5 mb-3 mb-md-0">
+          <ul>
+            <li><a href="mailto:inquiry@trufflesuite.com">CONTACT US</a></li>
+            <li><a href="/policy">PRIVACY POLICY</a></li>
+            <li><a href="/press-releases">PRESS RELEASES</a></li>
+            <li><a href="/staff">STAFF</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="https://github.com/trufflesuite">GITHUB</a></li>
+            <li><a class="trufflecon-link" href="https://www.trufflesuite.com/trufflecon2020">TRUFFLEC<img src="/img/truffle-logomark.svg" alt="Truffle Logo" /><span>O</span>N 2020</a></li>
+            <li><strong>&copy; ConsenSys Software Inc. 2021</strong></li>
+          </ul>
+  
+          <ul class="list-inline h4 ">
+            <li class="list-inline-item mb-0"><a href="https://www.reddit.com/r/truffle"><i class="fab fa-reddit-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://twitter.com/trufflesuite"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.facebook.com/trufflesuite/"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.instagram.com/truffledevsuite/"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.linkedin.com/company/trufflesuite/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item mb-0"><a href="https://www.youtube.com/channel/UCo2cy2Z7_91zPJSrb6NWfSw"><i class="fab fa-youtube-square"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="col-12 col-md-5">
+          <h4>SIGN UP FOR THE TRUFFLE MAILING LIST</h4>
+          <!--[if lte IE 8]>
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+          <![endif]-->
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              portalId: "4795067",
+              formId: "d18995c8-32bb-4b2d-bde9-3f49fb3d2837"
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.2.1.slim.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vendor/prism.js"></script>
+  <script src="/js/markdown-cleanup.js"></script>
+</body>
+</html>
