@@ -625,6 +625,20 @@ deployer.then(function() {
   return b.setA(a.address);
 });</code></pre>
 
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="migrations-with-async-await"></a>
+      <a href="#migrations-with-async-await"><i class="fas fa-link"></i></a>
+      Migrations with async/await
+    </h3>
+  <p>You can also migrate your contracts using <code>async/await</code>:</p>
+<p>Example:</p>
+<pre><code class="language-javascript">module.exports = async function(deployer) {
+  // deploy a contract
+  await deployer.deploy(MyContract);
+  //access information about your deployed contract instance
+  const instance = await MyContract.deployed();
+}</code></pre>
+
 
           <div class="contribute-link">
             See a way to make this page better? <a href="https://github.com/trufflesuite/trufflesuite.com/edit/develop/src/docs/truffle/getting-started">Edit here &raquo;</a>

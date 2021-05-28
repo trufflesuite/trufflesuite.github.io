@@ -417,9 +417,16 @@
       port: 8545,
       network_id: &quot;*&quot; // Match any network id
     }
+  },
+  compilers: {
+    solc: {
+      version: &quot;^0.8.0&quot;
+    }
   }
 };</code></pre>
-<p>The default configuration ships with configuration for a single development network, running on <code>127.0.0.1:8545</code>. There are many other configuration options, detailed below.</p>
+<p>Be sure to check out the <code>truffle-config.js</code> contained by the barebones project that
+<code>truffle init</code> creates. The <code>truffle-config.js</code> contains a handful of commented out
+examples of some configuration options that you might specify/tweak.</p>
 
     <h3 class="link-markdown">
       <a class="anchor-target" name="resolving-naming-conflicts-on-windows"></a>
@@ -460,9 +467,18 @@
       networks
     </h3>
   <p>Specifies which networks are available for deployment during migrations, as well as specific transaction parameters when interacting with each network (such as gas price, from address, etc.). When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your Ethereum client is connected to a specific network, they&#39;ll use the contract artifacts associated that network to simplify app deployment. Networks are identified through Ethereum&#39;s <code>net_version</code> RPC call, as well as blockchain URIs.</p>
-<p>The <code>networks</code> object, shown below, is keyed by a network name and contains a corresponding object that defines the parameters of the network. The <code>networks</code> option is required, as if you have no network configuration, Truffle will not be able to deploy your contracts. The default network configuration provided by <code>truffle init</code> gives you a development network that matches any network it connects to -- this is useful during development, but not suitable for production deployments. To configure Truffle to connect to other networks, simply add more named networks and specify the corresponding network id.</p>
-<p>The network name is used for user interface purposes, such as when running your migrations on a specific network:</p>
+<p>The <code>networks</code> object, shown below, is keyed by network names and each name contains a corresponding
+object that defines the parameters of the network. You will most likely want to provide
+your own network names and configurations to tell Truffle what networks to connect to
+for deployments and testing.</p>
+<p>Once you have defined your networks, you can provide the names as an option for certain
+commands; this is possible during testing or running migrations. You might specify a
+network name during migrations as follows:</p>
 <pre><code class="language-shell">$ truffle migrate --network live</code></pre>
+<p>Note that if no <code>--network</code> option is provided when using commands
+that require a network, Truffle will by default look for a network named &quot;development&quot; in your
+<code>truffle-config.js</code>. It will then use those settings to try and connect. See the
+provided examples below for some guidance on defining your networks.</p>
 <p>Example:</p>
 <pre><code class="language-javascript">networks: {
   development: {
@@ -512,7 +528,7 @@
       <a href="#providers"><i class="fas fa-link"></i></a>
       Providers
     </h4>
-  <p>The following network list consists of a local test network and an Infura-hosted Ropsten network, both provided by HDWalletProvider. Make sure you wrap <code>truffle-hdwallet</code> providers in a function closure as shown below to ensure that only one network is ever connected at a time.</p>
+  <p>The following network list consists of a local test network and an Infura-hosted Ropsten network, both provided by HDWalletProvider. Make sure you wrap <code>@truffle/hdwallet-provider</code> instances in a function closure as shown below to ensure that only one network is ever connected at a time.</p>
 <pre><code class="language-javascript">networks: {
   ropsten: {
     provider: function() {

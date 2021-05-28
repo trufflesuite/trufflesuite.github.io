@@ -12,8 +12,8 @@
 <url> <loc>https://www.truffleframework.com/trufflecon2019.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/trufflecon2020.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/university.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/boxes/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/index.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/careers/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/events/index.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/guides/index.html</loc> </url>
@@ -48,6 +48,7 @@
 <url> <loc>https://www.truffleframework.com/boxes/azure-simple-marketplace.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/nightfall.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/filecoin.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/boxes/polygon.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/rsk-starter-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/rsk-react-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/boxes/rsk-next-box.html</loc> </url>
@@ -126,6 +127,7 @@
 <url> <loc>https://www.truffleframework.com/staff/azure-simple-marketplace.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/nightfall.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/filecoin.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/staff/polygon.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/rsk-starter-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/rsk-react-box.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/staff/rsk-next-box.html</loc> </url>
@@ -232,6 +234,7 @@
 <url> <loc>https://www.truffleframework.com/blog/token-taxonomy-framework.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-320-released.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-and-ganache-now-come-in-filecoin-flavor.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/truffle-and-infura-support-polygon.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-boxes-making-life-sweeter.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-teams-gets-a-new-look.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/truffle-teams-now-supports-private-repositories.html</loc> </url>
