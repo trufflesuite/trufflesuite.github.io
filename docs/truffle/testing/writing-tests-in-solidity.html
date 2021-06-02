@@ -544,7 +544,7 @@ contract TestHooks {
       Testing for exceptions
     </h3>
   <p>You can easily test if your contract should or shouldn&#39;t raise an exception (i.e., for <code>require()</code>/<code>assert()</code>/<code>revert()</code> statements; <code>throw</code> on previous versions of Solidity).</p>
-<p>This topic was first written about by guest writer Simon de la Rouviere in <a href="/tutorials/testing-for-throws-in-solidity-tests">his tutorial Testing for Throws in Truffle Solidity Tests</a>.  N.B. that the tutorial makes heavy use of exceptions via the deprecated keyword <code>throw</code>, replaced by <code>revert()</code>, <code>require()</code>, and <code>assert()</code> starting in Solidity v0.4.13.</p>
+<p>This topic was first written about by guest writer Simon de la Rouviere in <a href="/guides/testing-for-throws-in-solidity-tests">his guide Testing for Throws in Truffle Solidity Tests</a>.  N.B. that the guide makes heavy use of exceptions via the deprecated keyword <code>throw</code>, replaced by <code>revert()</code>, <code>require()</code>, and <code>assert()</code> starting in Solidity v0.4.13.</p>
 <p>Also, since Solidity v0.4.17, a function type member was added to enable you to access a function selector (e.g.: <code>this.f.selector</code>), and so, testing for throws with external calls has been made much easier:</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.0;
 

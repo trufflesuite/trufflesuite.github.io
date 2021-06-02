@@ -706,7 +706,8 @@ to recognize the plugin. For more information, see <a href="/docs/truffle/gettin
     </h3>
   <p>Run JavaScript and Solidity tests.</p>
 <pre><code class="language-shell">truffle test [&lt;test_file&gt;] [--compile-all[-debug]] [--network &lt;name&gt;] [--verbose-rpc] [--show-events] [--debug] [--debug-global &lt;identifier&gt;] [--bail] [--stacktrace[-extra]]</code></pre>
-<p>Runs some or all tests within the <code>test/</code> directory as specified. See the section on <a href="/docs/getting_started/testing">Testing your contracts</a> for more information.</p>
+<p>Runs some or all tests within the <code>test/</code> directory as specified. See the section on <a href="/docs/testing/testing-your-contracts">Testing your contracts</a> for more information.</p>
+<p>The exit status of this command (assuming no internal errors) is equal to the number of failing tests, capped at 255.</p>
 <p>Options:</p>
 <ul>
 <li><code>&lt;test_file&gt;</code>: Name of the test file to be run. Can include path information if the file does not exist in the current directory.</li>
