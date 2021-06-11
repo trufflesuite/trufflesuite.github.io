@@ -227,6 +227,7 @@
 <url> <loc>https://www.truffleframework.com/blog/removing-installation-issues-continued-testrpc.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/sandbox-forking-with-truffle-teams.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/stack-tracing-with-truffle-test.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/blog/sunsetting-truffle-teams.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/take-a-dive-into-truffle-5.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/take-control-of-your-deployments-with-truffle-teams.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/blog/testrpc-is-now-ganache.html</loc> </url>
@@ -287,8 +288,8 @@
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/extras/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/goto/README.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/devcon5/src/plugins/impressConsole/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/help/README.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/devcon5/src/plugins/impressConsole/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/mobile/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/mouse-timeout/README.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/devcon5/src/plugins/navigation-ui/README.html</loc> </url>
@@ -325,8 +326,8 @@
 <url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/events-page.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/linking-a-truffle-project.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/truffle-projects/unlinking-a-truffle-project.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/deleting-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/creating-workspaces.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/deleting-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/editing-workspaces.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/ethereum-workspace-overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/ganache/workspaces/loading-existing-workspaces.html</loc> </url>
@@ -337,8 +338,8 @@
 <url> <loc>https://www.truffleframework.com/docs/teams/account/claim-a-1-month-trial.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/account/invite-your-team.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/account/manage-your-account.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/account/switching-accounts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/account/redeeming-a-coupon.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/account/switching-accounts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/builds/builds-overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/builds/external-ci.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/builds/restarting-builds.html</loc> </url>
@@ -352,12 +353,12 @@
 <url> <loc>https://www.truffleframework.com/docs/teams/debugger/debugger-overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/debugger/debugging-a-transaction.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/debugger/using-the-debugger.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/deployments/contract-monitoring.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/deployments/archiving-a-deployment.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/deployments/contract-monitoring.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/deployments/creating-a-deployment.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/deployments/deploying-to-a-sandbox.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/deployments/deployment-details.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/deployments/deployment-console.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/deployments/deployment-details.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/deployments/deployments-overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/deployments/external-deployments.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/deployments/graduating-a-deployment.html</loc> </url>
@@ -365,13 +366,13 @@
 <url> <loc>https://www.truffleframework.com/docs/teams/getting-started/creating-an-account.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/reference/configuration.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/reference/permissions-disclosure.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/teams/support/ask-us-a-question.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/sandboxes/creating-a-sandbox.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/sandboxes/destroying-a-sandbox.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/sandboxes/renaming-a-sandbox.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/sandboxes/sandbox-forking.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/sandboxes/sandboxes-overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/teams/sandboxes/usage-with-truffle.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/teams/support/ask-us-a-question.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/tezos/truffle/quickstart.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/overview.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/quickstart.html</loc> </url>
@@ -388,8 +389,8 @@
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/installation.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/interacting-with-your-contracts.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/package-management-via-ethpm.html</loc> </url>
-<url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/preserving-files-and-content-to-storage-platforms.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/package-management-via-npm.html</loc> </url>
+<url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/preserving-files-and-content-to-storage-platforms.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/running-migrations.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/truffle-with-metamask.html</loc> </url>
 <url> <loc>https://www.truffleframework.com/docs/truffle/getting-started/using-the-build-pipeline.html</loc> </url>
