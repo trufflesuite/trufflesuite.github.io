@@ -694,6 +694,22 @@ startup greatly.
     </h3>
   <p>This command loads a new transaction (given by its transaction hash).  Note that if you already have a transaction loaded, you must first explicitly unload it before you can load a new one.  Not usable in <code>--fetch-external</code> mode.</p>
 
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="-y-reset-and-advance-to-final-error"></a>
+      <a href="#-y-reset-and-advance-to-final-error"><i class="fas fa-link"></i></a>
+      (y) Reset and advance to final error
+    </h3>
+  <p>This command is only usable at the end of a trace.  It resets the debugger and then advances it to the location of the final error.  If the final error is at the end of the trace, this will have no effect.</p>
+<p>Note: The use of resetting and advancing, rather than directly jumping to the final error, is something of a stopgap due to the debugger not currently moving backwards; this will be changed in the future to jump directly back to the final error.</p>
+
+    <h3 class="link-markdown">
+      <a class="anchor-target" name="-y-reset-and-advance-to-previous-error"></a>
+      <a href="#-y-reset-and-advance-to-previous-error"><i class="fas fa-link"></i></a>
+      (Y) Reset and advance to previous error
+    </h3>
+  <p>This command resets the debugger and then advances to the location of the previous error; unlike <code>y</code>, it can be used from anywhere in the trace.</p>
+<p>Note: The use of resetting and advancing, rather than directly jumping to the final error, is something of a stopgap due to the debugger not currently moving backwards; this will be changed in the future to jump directly back to the final error.</p>
+
     <h2 class="link-markdown">
       <a class="anchor-target" name="adding-and-removing-breakpoints"></a>
       <a href="#adding-and-removing-breakpoints"><i class="fas fa-link"></i></a>

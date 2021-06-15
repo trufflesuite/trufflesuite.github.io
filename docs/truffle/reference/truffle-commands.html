@@ -489,7 +489,7 @@
 <pre><code class="language-shell">truffle create &lt;artifact_type&gt; &lt;ArtifactName&gt;</code></pre>
 <p>Options:</p>
 <ul>
-<li><code>&lt;artifact_type&gt;</code>: Create a new artifact where artifact_type is one of the following: contract, migration or test. The new artifact is created along with one of the following files: <code>contracts/ArtifactName.sol</code>, <code>migrations/####_artifact_name.js</code> or <code>tests/artifact_name.js</code>. (required)</li>
+<li><code>&lt;artifact_type&gt;</code>: Create a new artifact, where <code>artifact_type</code> is one of the following: <code>contract</code>, <code>migration</code>, <code>test</code>, or <code>all</code>. The new artifact is created along with one of the following files: <code>contracts/ArtifactName.sol</code>, <code>migrations/####_artifact_name.js</code> or <code>tests/artifact_name.js</code>.  Using <code>truffle create all</code> will create all three. (required)</li>
 <li><code>&lt;ArtifactName&gt;</code>: Name of new artifact. (required)</li>
 </ul>
 <p>Camel case names of artifacts will be converted to underscore-separated file names for the migrations and tests. Number prefixes for migrations are automatically generated.</p>
