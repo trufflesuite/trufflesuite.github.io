@@ -196,6 +196,12 @@ a:hover {
   transform: skewY(-20deg) translate(-.06em, .26em);
 }
 
+.docs-badges {
+  height: auto;
+  margin-top: .5rem;
+  margin-right: .5rem;
+}
+
 /* bootstrap overrides */
 
 .card {
