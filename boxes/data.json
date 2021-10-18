@@ -7,6 +7,18 @@
   },
   {
     "userOrg": "truffle-box",
+    "displayName": "optimism",
+    "repoName": "optimism-box",
+    "official": true
+  },
+  {
+    "userOrg": "truffle-box",
+    "displayName": "arbitrum",
+    "repoName": "arbitrum-box",
+    "official": true
+  },
+  {
+    "userOrg": "truffle-box",
     "displayName": "drizzle-react-native",
     "repoName": "drizzle-react-native-box",
     "official": true
@@ -130,6 +142,12 @@
     "displayName": "polygon",
     "repoName": "polygon-box",
     "official": true
+  },
+  {
+    "userOrg": "consensys",
+    "displayName": "scribble",
+    "repoName": "scribble-exercise-1",
+    "official": false
   },
   {
     "userOrg": "skalenetwork",

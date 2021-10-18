@@ -291,11 +291,34 @@
 			"layer-2"
 		]
 	},
+	"arbitrum-box": {
+		"description": "Arbitrum Truffle box",
+		"stars": 1,
+		"tags": [
+			"arbitrum"
+		]
+	},
+	"optimism-box": {
+		"description": "Optimism Truffle box",
+		"stars": 1,
+		"tags": [
+			"optimism"
+		]
+	},
 	"polygon-box": {
 		"description": "Polygon Truffle box",
 		"stars": 1,
 		"tags": [
 			"polygon"
+		]
+	},
+	"scribble-exercise-1": {
+		"description": "Scribble",
+		"stars": 1,
+		"tags": [
+			"consensys",
+			"security",
+			"scribble"
 		]
 	},
 	"nuxt-box": {
