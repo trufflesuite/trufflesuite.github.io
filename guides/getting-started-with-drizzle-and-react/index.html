@@ -3,18 +3,23 @@
 <html lang="en" class="no-js">
   <head>
     
+    
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
       
       
-      <link rel="icon" href="/assets/favicon-32x32.png">
+        <link rel="canonical" href="https://trufflesuite.github.io/truffle.dev/guides/getting-started-with-drizzle-and-react/index.html">
+      
+      <link rel="icon" href="../../assets/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
+    <!-- <base href="/" /> -->
+
     
       
-        <title>Index - Truffle Suite</title>
+        <title>Getting Started with Drizzle and React - Truffle Suite</title>
       
     
     
@@ -36,9 +41,9 @@
     
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/bootstrap.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/bootstrap.min.css">
     
-      <link rel="stylesheet" href="/assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
     
       
@@ -80,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setting-up-the-development-environment" class="md-skip">
+        <a href="#getting-started-with-drizzle-and-react" class="md-skip">
           Skip to content
         </a>
       
@@ -90,12 +95,11 @@
         <aside class="md-banner md-announce">
           <div class="md-banner__inner md-announce__inner md-grid md-typeset">
             
-  <a href="https://twitter.com/trufflesuite">
-    For updates follow <strong>@trufflesuite</strong> on
-    <span class="twemoji twitter">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-    </span>
-    <strong>Twitter</strong>
+  <a href="https://bit.ly/3zPGqM1">
+    <strong>Ganache v7 alpha is ready for you to install!</strong> Are you ready for the ~300% faster launch time?
+    <!-- <span class="twemoji twitter">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </span> -->
   </a>
 
           </div>
@@ -107,7 +111,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../index.html" title="Truffle Suite" class="md-header__button md-logo" aria-label="Truffle Suite" data-md-component="logo">
       
-  <img src="/assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -123,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Getting Started with Drizzle and React
             
           </span>
         </div>
@@ -321,7 +325,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -333,7 +339,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../index.html" title="Truffle Suite" class="md-nav__button md-logo" aria-label="Truffle Suite" data-md-component="logo">
       
-  <img src="/assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     Truffle Suite
@@ -2095,7 +2101,7 @@
   
     <li class="md-nav__item">
       <a href="../building-dapps-for-quorum-private-enterprise-blockchains/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2134,7 +2140,7 @@
   
     <li class="md-nav__item">
       <a href="../building-testing-frontend-app-truffle-3/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2173,7 +2179,7 @@
   
     <li class="md-nav__item">
       <a href="../bundling-with-webpack/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2212,7 +2218,7 @@
   
     <li class="md-nav__item">
       <a href="../chain-forking-exploiting-the-dao/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2251,7 +2257,7 @@
   
     <li class="md-nav__item">
       <a href="../configuring-visual-studio-code/index.html" class="md-nav__link">
-        Index
+        Configuring Visual Studio code for Ethereum Blockchain Development
       </a>
     </li>
   
@@ -2290,7 +2296,7 @@
   
     <li class="md-nav__item">
       <a href="../creating-a-cli-with-truffle-3/index.html" class="md-nav__link">
-        Index
+        Creating an Ethereum-enabled command line tool with Truffle 3.0
       </a>
     </li>
   
@@ -2329,7 +2335,7 @@
   
     <li class="md-nav__item">
       <a href="../debugger-variable-inspection/index.html" class="md-nav__link">
-        Index
+        Variable Inspection - Going Deeper with the Truffle Solidity Debugger
       </a>
     </li>
   
@@ -2368,7 +2374,7 @@
   
     <li class="md-nav__item">
       <a href="../debugging-a-smart-contract/index.html" class="md-nav__link">
-        Index
+        Debugging a smart contract
       </a>
     </li>
   
@@ -2407,7 +2413,7 @@
   
     <li class="md-nav__item">
       <a href="../deploying-to-the-live-network/index.html" class="md-nav__link">
-        Index
+        Deploying to the Live Network
       </a>
     </li>
   
@@ -2446,7 +2452,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle-and-contract-events/index.html" class="md-nav__link">
-        Index
+        Drizzle and Contract Events
       </a>
     </li>
   
@@ -2485,7 +2491,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle-and-react-native/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2524,7 +2530,7 @@
   
     <li class="md-nav__item">
       <a href="../ethereum-devops-truffle-testrpc-vsts/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2563,7 +2569,7 @@
   
     <li class="md-nav__item">
       <a href="../ethereum-overview/index.html" class="md-nav__link">
-        Index
+        Ethereum Overview
       </a>
     </li>
   
@@ -2609,20 +2615,24 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Index
+          Getting Started with Drizzle and React
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="index.html" class="md-nav__link md-nav__link--active">
-        Index
+        Getting Started with Drizzle and React
       </a>
       
         
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -2928,13 +2938,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#the-end" class="md-nav__link">
-    The End
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2976,7 +2979,7 @@
   
     <li class="md-nav__item">
       <a href="../how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -3015,7 +3018,7 @@
   
     <li class="md-nav__item">
       <a href="../learn-how-to-deploy-with-truffle-teams/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -3054,7 +3057,7 @@
   
     <li class="md-nav__item">
       <a href="../package-management/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -3093,7 +3096,7 @@
   
     <li class="md-nav__item">
       <a href="../pet-shop/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -3132,7 +3135,7 @@
   
     <li class="md-nav__item">
       <a href="../robust-smart-contracts-with-openzeppelin/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -3171,7 +3174,7 @@
   
     <li class="md-nav__item">
       <a href="../solidity-unit-tests/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -3210,7 +3213,7 @@
   
     <li class="md-nav__item">
       <a href="../testing-for-throws-in-solidity-tests/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -3249,7 +3252,7 @@
   
     <li class="md-nav__item">
       <a href="../truffle-and-metamask/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -3288,7 +3291,7 @@
   
     <li class="md-nav__item">
       <a href="../upgrading-from-truffle-2-to-3/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -3327,7 +3330,7 @@
   
     <li class="md-nav__item">
       <a href="../using-infura-custom-provider/index.html" class="md-nav__link">
-        Index
+        Using Infura (or a custom provider)
       </a>
     </li>
   
@@ -6628,10 +6631,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/10-things-we-dont-do-that-make-working-at-truffle-awesome.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2">
         10 things we dont do that make working at truffle awesome
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="10 things we dont do that make working at truffle awesome" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          10 things we dont do that make working at truffle awesome
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/10-things-we-dont-do-that-make-working-at-truffle-awesome/index.html" class="md-nav__link">
+        10 Things We Don't Do That Make Working at Truffle Awesome
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6640,10 +6670,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/2020-is-finally-over-a-year-end-wrapup.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
         2020 is finally over a year end wrapup
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2020 is finally over a year end wrapup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          2020 is finally over a year end wrapup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/2020-is-finally-over-a-year-end-wrapup/index.html" class="md-nav__link">
+        2020 is Finally Over - A Year End Wrapup
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6652,10 +6709,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/3-ways-enterprises-are-addressing-blockchain-privacy-concerns.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      <label class="md-nav__link" for="__nav_6_4">
         3 ways enterprises are addressing blockchain privacy concerns
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="3 ways enterprises are addressing blockchain privacy concerns" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          3 ways enterprises are addressing blockchain privacy concerns
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/3-ways-enterprises-are-addressing-blockchain-privacy-concerns/index.html" class="md-nav__link">
+        3 Ways Enterprises Are Addressing Blockchain Privacy Concerns
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6664,10 +6748,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/5-trends-impacting-the-blockchain-developer-experience.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
+      
+      <label class="md-nav__link" for="__nav_6_5">
         5 trends impacting the blockchain developer experience
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="5 trends impacting the blockchain developer experience" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          5 trends impacting the blockchain developer experience
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/5-trends-impacting-the-blockchain-developer-experience/index.html" class="md-nav__link">
+        5 Trends Impacting the Blockchain Developer Experience
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6676,10 +6787,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/a-sweet-upgradeable-contract-experience-with-openzeppelin-and-truffle.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
+      
+      <label class="md-nav__link" for="__nav_6_6">
         A sweet upgradeable contract experience with openzeppelin and truffle
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="A sweet upgradeable contract experience with openzeppelin and truffle" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_6">
+          <span class="md-nav__icon md-icon"></span>
+          A sweet upgradeable contract experience with openzeppelin and truffle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/a-sweet-upgradeable-contract-experience-with-openzeppelin-and-truffle/index.html" class="md-nav__link">
+        A Sweet Upgradeable Contract Experience with OpenZeppelin and Truffle
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6688,10 +6826,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/an-easier-way-to-deploy-your-smart-contracts.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" >
+      
+      <label class="md-nav__link" for="__nav_6_7">
         An easier way to deploy your smart contracts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="An easier way to deploy your smart contracts" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_7">
+          <span class="md-nav__icon md-icon"></span>
+          An easier way to deploy your smart contracts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/an-easier-way-to-deploy-your-smart-contracts/index.html" class="md-nav__link">
+        An Easier Way to Deploy Your Smart Contracts
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6700,10 +6865,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/announcing-collaboration-with-filecoin.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_8" type="checkbox" id="__nav_6_8" >
+      
+      <label class="md-nav__link" for="__nav_6_8">
         Announcing collaboration with filecoin
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Announcing collaboration with filecoin" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_8">
+          <span class="md-nav__icon md-icon"></span>
+          Announcing collaboration with filecoin
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/announcing-collaboration-with-filecoin/index.html" class="md-nav__link">
+        Announcing Collaboration with Filecoin - Big Integrations Coming
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6712,10 +6904,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/announcing-full-portable-solidity-debugger.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_9" type="checkbox" id="__nav_6_9" >
+      
+      <label class="md-nav__link" for="__nav_6_9">
         Announcing full portable solidity debugger
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Announcing full portable solidity debugger" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_9">
+          <span class="md-nav__icon md-icon"></span>
+          Announcing full portable solidity debugger
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/announcing-full-portable-solidity-debugger/index.html" class="md-nav__link">
+        Announcing our Fully Featured, Portable Solidity Debugger
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6724,10 +6943,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/axonis-enterprise-use-of-truffle.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_10" type="checkbox" id="__nav_6_10" >
+      
+      <label class="md-nav__link" for="__nav_6_10">
         Axonis enterprise use of truffle
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Axonis enterprise use of truffle" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_10">
+          <span class="md-nav__icon md-icon"></span>
+          Axonis enterprise use of truffle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/axonis-enterprise-use-of-truffle/index.html" class="md-nav__link">
+        Axoni's Enterprise Use of Truffle
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6736,10 +6982,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/best-methods-to-understand-blockchain-if-youre-not-a-developer.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_11" type="checkbox" id="__nav_6_11" >
+      
+      <label class="md-nav__link" for="__nav_6_11">
         Best methods to understand blockchain if youre not a developer
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Best methods to understand blockchain if youre not a developer" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_11">
+          <span class="md-nav__icon md-icon"></span>
+          Best methods to understand blockchain if youre not a developer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/best-methods-to-understand-blockchain-if-youre-not-a-developer/index.html" class="md-nav__link">
+        The Best Methods to Understand Blockchain Technology if You’re Not A Developer
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6748,10 +7021,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/blockchain-will-cure-cancer.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_12" type="checkbox" id="__nav_6_12" >
+      
+      <label class="md-nav__link" for="__nav_6_12">
         Blockchain will cure cancer
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Blockchain will cure cancer" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_12">
+          <span class="md-nav__icon md-icon"></span>
+          Blockchain will cure cancer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/blockchain-will-cure-cancer/index.html" class="md-nav__link">
+        Blockchain Will Cure Cancer
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6760,10 +7060,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/branching-out-announcing-tezos-support-in-truffle.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_13" type="checkbox" id="__nav_6_13" >
+      
+      <label class="md-nav__link" for="__nav_6_13">
         Branching out announcing tezos support in truffle
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Branching out announcing tezos support in truffle" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_13">
+          <span class="md-nav__icon md-icon"></span>
+          Branching out announcing tezos support in truffle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/branching-out-announcing-tezos-support-in-truffle/index.html" class="md-nav__link">
+        Branching Out - Announcing Tezos Support in Truffle
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6772,10 +7099,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/branching-out-phase-2-of-corda-flavored-ganache.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_14" type="checkbox" id="__nav_6_14" >
+      
+      <label class="md-nav__link" for="__nav_6_14">
         Branching out phase 2 of corda flavored ganache
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Branching out phase 2 of corda flavored ganache" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_14">
+          <span class="md-nav__icon md-icon"></span>
+          Branching out phase 2 of corda flavored ganache
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/branching-out-phase-2-of-corda-flavored-ganache/index.html" class="md-nav__link">
+        Branching Out - Phase 2 of Corda-flavored Ganache
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6784,10 +7138,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/bring-your-own-ci-byoci-with-truffle-teams.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_15" type="checkbox" id="__nav_6_15" >
+      
+      <label class="md-nav__link" for="__nav_6_15">
         Bring your own ci byoci with truffle teams
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bring your own ci byoci with truffle teams" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_15">
+          <span class="md-nav__icon md-icon"></span>
+          Bring your own ci byoci with truffle teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/bring-your-own-ci-byoci-with-truffle-teams/index.html" class="md-nav__link">
+        Bring Your Own CI (BYOCI) with Truffle Teams
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6796,10 +7177,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/crytic-continuous-assurance-for-smart-contracts.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_16" type="checkbox" id="__nav_6_16" >
+      
+      <label class="md-nav__link" for="__nav_6_16">
         Crytic continuous assurance for smart contracts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Crytic continuous assurance for smart contracts" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_16">
+          <span class="md-nav__icon md-icon"></span>
+          Crytic continuous assurance for smart contracts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/crytic-continuous-assurance-for-smart-contracts/index.html" class="md-nav__link">
+        Crytic - Continuous Assurance for Smart Contracts
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6808,10 +7216,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/debug-quickly-and-in-context-with-truffle-teams-new-debugger.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_17" type="checkbox" id="__nav_6_17" >
+      
+      <label class="md-nav__link" for="__nav_6_17">
         Debug quickly and in context with truffle teams new debugger
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Debug quickly and in context with truffle teams new debugger" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_17">
+          <span class="md-nav__icon md-icon"></span>
+          Debug quickly and in context with truffle teams new debugger
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/debug-quickly-and-in-context-with-truffle-teams-new-debugger/index.html" class="md-nav__link">
+        Debug Quickly and in Context with Truffle Teams New Debugger
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6820,10 +7255,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/debugging-verified-external-contracts-with-truffle-debugger.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_18" type="checkbox" id="__nav_6_18" >
+      
+      <label class="md-nav__link" for="__nav_6_18">
         Debugging verified external contracts with truffle debugger
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Debugging verified external contracts with truffle debugger" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_18">
+          <span class="md-nav__icon md-icon"></span>
+          Debugging verified external contracts with truffle debugger
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/debugging-verified-external-contracts-with-truffle-debugger/index.html" class="md-nav__link">
+        Debugging verified external contracts with Truffle Debugger
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6832,10 +7294,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/designing-the-ganache-logo.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_19" type="checkbox" id="__nav_6_19" >
+      
+      <label class="md-nav__link" for="__nav_6_19">
         Designing the ganache logo
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Designing the ganache logo" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_19">
+          <span class="md-nav__icon md-icon"></span>
+          Designing the ganache logo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/designing-the-ganache-logo/index.html" class="md-nav__link">
+        Designing the Ganache Logo
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6844,10 +7333,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/develop-using-fluidity-truffle-box.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_20" type="checkbox" id="__nav_6_20" >
+      
+      <label class="md-nav__link" for="__nav_6_20">
         Develop using fluidity truffle box
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Develop using fluidity truffle box" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_20">
+          <span class="md-nav__icon md-icon"></span>
+          Develop using fluidity truffle box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/develop-using-fluidity-truffle-box/index.html" class="md-nav__link">
+        Develop using Fluidity Truffle Box
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6856,10 +7372,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/drizzle-150-a-new-beginning.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_21" type="checkbox" id="__nav_6_21" >
+      
+      <label class="md-nav__link" for="__nav_6_21">
         Drizzle 150 a new beginning
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Drizzle 150 a new beginning" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_21">
+          <span class="md-nav__icon md-icon"></span>
+          Drizzle 150 a new beginning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/drizzle-150-a-new-beginning/index.html" class="md-nav__link">
+        Drizzle 1.5.0 - A new beginning
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6868,10 +7411,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/drizzle-reactive-ethereum-data-for-front-ends.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_22" type="checkbox" id="__nav_6_22" >
+      
+      <label class="md-nav__link" for="__nav_6_22">
         Drizzle reactive ethereum data for front ends
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Drizzle reactive ethereum data for front ends" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_22">
+          <span class="md-nav__icon md-icon"></span>
+          Drizzle reactive ethereum data for front ends
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/drizzle-reactive-ethereum-data-for-front-ends/index.html" class="md-nav__link">
+        Drizzle - Reactive Ethereum Data for Front-ends
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6880,10 +7450,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/drizzle-vue-a-truffle-story.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_23" type="checkbox" id="__nav_6_23" >
+      
+      <label class="md-nav__link" for="__nav_6_23">
         Drizzle vue a truffle story
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Drizzle vue a truffle story" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_23">
+          <span class="md-nav__icon md-icon"></span>
+          Drizzle vue a truffle story
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/drizzle-vue-a-truffle-story/index.html" class="md-nav__link">
+        Drizzle Vue - A Truffle Story
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6892,10 +7489,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/ethereum-gas-exactimation.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_24" type="checkbox" id="__nav_6_24" >
+      
+      <label class="md-nav__link" for="__nav_6_24">
         Ethereum gas exactimation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Ethereum gas exactimation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_24">
+          <span class="md-nav__icon md-icon"></span>
+          Ethereum gas exactimation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/ethereum-gas-exactimation/index.html" class="md-nav__link">
+        Ethereum Gas Exactimation
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6904,10 +7528,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/first-ever-truffle-retreat.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_25" type="checkbox" id="__nav_6_25" >
+      
+      <label class="md-nav__link" for="__nav_6_25">
         First ever truffle retreat
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="First ever truffle retreat" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_25">
+          <span class="md-nav__icon md-icon"></span>
+          First ever truffle retreat
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/first-ever-truffle-retreat/index.html" class="md-nav__link">
+        Our First Ever Truffle Retreat
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6916,10 +7567,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/get-a-birds-eye-view-with-truffle-teams-new-dashboard.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_26" type="checkbox" id="__nav_6_26" >
+      
+      <label class="md-nav__link" for="__nav_6_26">
         Get a birds eye view with truffle teams new dashboard
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Get a birds eye view with truffle teams new dashboard" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_26">
+          <span class="md-nav__icon md-icon"></span>
+          Get a birds eye view with truffle teams new dashboard
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/get-a-birds-eye-view-with-truffle-teams-new-dashboard/index.html" class="md-nav__link">
+        Get a Bird's Eye View with Truffle Teams' New Dashboard
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6928,10 +7606,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/github-repository-moved.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_27" type="checkbox" id="__nav_6_27" >
+      
+      <label class="md-nav__link" for="__nav_6_27">
         Github repository moved
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Github repository moved" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_27">
+          <span class="md-nav__icon md-icon"></span>
+          Github repository moved
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/github-repository-moved/index.html" class="md-nav__link">
+        We've moved our github repo!
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6940,10 +7645,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/how-ethical-advertising-will-transform-the-blockchain-industry.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_28" type="checkbox" id="__nav_6_28" >
+      
+      <label class="md-nav__link" for="__nav_6_28">
         How ethical advertising will transform the blockchain industry
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How ethical advertising will transform the blockchain industry" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_28">
+          <span class="md-nav__icon md-icon"></span>
+          How ethical advertising will transform the blockchain industry
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/how-ethical-advertising-will-transform-the-blockchain-industry/index.html" class="md-nav__link">
+        How Ethical Advertising Will Transform the Blockchain Industry
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6952,10 +7684,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/how-the-arrival-of-web-3-0-is-transforming-traditional-business-models.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_29" type="checkbox" id="__nav_6_29" >
+      
+      <label class="md-nav__link" for="__nav_6_29">
         How the arrival of web 3 0 is transforming traditional business models
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How the arrival of web 3 0 is transforming traditional business models" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_29">
+          <span class="md-nav__icon md-icon"></span>
+          How the arrival of web 3 0 is transforming traditional business models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/how-the-arrival-of-web-3-0-is-transforming-traditional-business-models/index.html" class="md-nav__link">
+        How the Arrival of Web 3.0 is Transforming Traditional Business Models
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6964,10 +7723,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/how-to-get-your-boss-to-send-you-to-trufflecon.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_30" type="checkbox" id="__nav_6_30" >
+      
+      <label class="md-nav__link" for="__nav_6_30">
         How to get your boss to send you to trufflecon
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How to get your boss to send you to trufflecon" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_30">
+          <span class="md-nav__icon md-icon"></span>
+          How to get your boss to send you to trufflecon
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/how-to-get-your-boss-to-send-you-to-trufflecon/index.html" class="md-nav__link">
+        How to get your boss to send you to TruffleCon
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6976,10 +7762,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/how-were-making-installation-issues-a-thing-of-the-past.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_31" type="checkbox" id="__nav_6_31" >
+      
+      <label class="md-nav__link" for="__nav_6_31">
         How were making installation issues a thing of the past
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How were making installation issues a thing of the past" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_31">
+          <span class="md-nav__icon md-icon"></span>
+          How were making installation issues a thing of the past
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/how-were-making-installation-issues-a-thing-of-the-past/index.html" class="md-nav__link">
+        How we're making installation issues a thing of the past
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6988,10 +7801,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/introducing-truffle-db-part-1.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_32" type="checkbox" id="__nav_6_32" >
+      
+      <label class="md-nav__link" for="__nav_6_32">
         Introducing truffle db part 1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Introducing truffle db part 1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_32">
+          <span class="md-nav__icon md-icon"></span>
+          Introducing truffle db part 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/introducing-truffle-db-part-1/index.html" class="md-nav__link">
+        Introducing Truffle DB, Part 1 - Artifact archeology
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7000,10 +7840,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/introducing-truffle-db-part-2.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_33" type="checkbox" id="__nav_6_33" >
+      
+      <label class="md-nav__link" for="__nav_6_33">
         Introducing truffle db part 2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Introducing truffle db part 2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_33">
+          <span class="md-nav__icon md-icon"></span>
+          Introducing truffle db part 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/introducing-truffle-db-part-2/index.html" class="md-nav__link">
+        Introducing Truffle DB, part 2 - 'Weight and Switch'
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7012,10 +7879,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/iterate-faster-with-truffle-teams.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_34" type="checkbox" id="__nav_6_34" >
+      
+      <label class="md-nav__link" for="__nav_6_34">
         Iterate faster with truffle teams
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Iterate faster with truffle teams" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_34">
+          <span class="md-nav__icon md-icon"></span>
+          Iterate faster with truffle teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/iterate-faster-with-truffle-teams/index.html" class="md-nav__link">
+        Iterate Faster with Truffle Teams
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7024,10 +7918,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/learn-ethereum-the-fun-way-with-our-pet-shop-tutorial.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_35" type="checkbox" id="__nav_6_35" >
+      
+      <label class="md-nav__link" for="__nav_6_35">
         Learn ethereum the fun way with our pet shop tutorial
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Learn ethereum the fun way with our pet shop tutorial" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_35">
+          <span class="md-nav__icon md-icon"></span>
+          Learn ethereum the fun way with our pet shop tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/learn-ethereum-the-fun-way-with-our-pet-shop-tutorial/index.html" class="md-nav__link">
+        Learn Ethereum The Fun Way with our Pet Shop Tutorial
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7036,10 +7957,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/one-hundred-documentation-pull-requests.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_36" type="checkbox" id="__nav_6_36" >
+      
+      <label class="md-nav__link" for="__nav_6_36">
         One hundred documentation pull requests
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="One hundred documentation pull requests" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_36">
+          <span class="md-nav__icon md-icon"></span>
+          One hundred documentation pull requests
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/one-hundred-documentation-pull-requests/index.html" class="md-nav__link">
+        One hundred documentation pull requests? Yes please.
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7048,10 +7996,37 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_37" type="checkbox" id="__nav_6_37" >
+      
+      <label class="md-nav__link" for="__nav_6_37">
+        Open call for contributions truffle pegasys eea private transactions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Open call for contributions truffle pegasys eea private transactions" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_37">
+          <span class="md-nav__icon md-icon"></span>
+          Open call for contributions truffle pegasys eea private transactions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../blog/open-call-for-contributions-truffle-pegasys-eea-private-transactions.html" class="md-nav__link">
-        Open call for contributions by Truffle + PegaSys: EEA private transactions
+      <a href="../../blog/open-call-for-contributions-truffle-pegasys-eea-private-transactions/index.html" class="md-nav__link">
+        Open call for contributions by Truffle + PegaSys - EEA private transactions
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7060,10 +8035,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/removing-installation-issues-continued-testrpc.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_38" type="checkbox" id="__nav_6_38" >
+      
+      <label class="md-nav__link" for="__nav_6_38">
         Removing installation issues continued testrpc
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Removing installation issues continued testrpc" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_38">
+          <span class="md-nav__icon md-icon"></span>
+          Removing installation issues continued testrpc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/removing-installation-issues-continued-testrpc/index.html" class="md-nav__link">
+        Removing installation issues, con't - TestRPC
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7072,10 +8074,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/sandbox-forking-with-truffle-teams.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_39" type="checkbox" id="__nav_6_39" >
+      
+      <label class="md-nav__link" for="__nav_6_39">
         Sandbox forking with truffle teams
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sandbox forking with truffle teams" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_39">
+          <span class="md-nav__icon md-icon"></span>
+          Sandbox forking with truffle teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/sandbox-forking-with-truffle-teams/index.html" class="md-nav__link">
+        Simulate Live Networks with Forked Sandboxes
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7084,10 +8113,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/stack-tracing-with-truffle-test.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_40" type="checkbox" id="__nav_6_40" >
+      
+      <label class="md-nav__link" for="__nav_6_40">
         Stack tracing with truffle test
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Stack tracing with truffle test" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_40">
+          <span class="md-nav__icon md-icon"></span>
+          Stack tracing with truffle test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/stack-tracing-with-truffle-test/index.html" class="md-nav__link">
+        Stack Tracing with Truffle Test
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7096,10 +8152,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/sunsetting-truffle-teams.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_41" type="checkbox" id="__nav_6_41" >
+      
+      <label class="md-nav__link" for="__nav_6_41">
         Sunsetting truffle teams
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sunsetting truffle teams" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_41">
+          <span class="md-nav__icon md-icon"></span>
+          Sunsetting truffle teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/sunsetting-truffle-teams/index.html" class="md-nav__link">
+        Sunsetting Truffle Teams
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7108,10 +8191,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/take-a-dive-into-truffle-5.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_42" type="checkbox" id="__nav_6_42" >
+      
+      <label class="md-nav__link" for="__nav_6_42">
         Take a dive into truffle 5
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Take a dive into truffle 5" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_42">
+          <span class="md-nav__icon md-icon"></span>
+          Take a dive into truffle 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/take-a-dive-into-truffle-5/index.html" class="md-nav__link">
+        Take a Dive into Truffle 5
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7120,10 +8230,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/take-control-of-your-deployments-with-truffle-teams.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_43" type="checkbox" id="__nav_6_43" >
+      
+      <label class="md-nav__link" for="__nav_6_43">
         Take control of your deployments with truffle teams
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Take control of your deployments with truffle teams" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_43">
+          <span class="md-nav__icon md-icon"></span>
+          Take control of your deployments with truffle teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/take-control-of-your-deployments-with-truffle-teams/index.html" class="md-nav__link">
+        Take Control of Your Deployments with Truffle Teams
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7132,10 +8269,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/testrpc-is-now-ganache.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_44" type="checkbox" id="__nav_6_44" >
+      
+      <label class="md-nav__link" for="__nav_6_44">
         Testrpc is now ganache
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Testrpc is now ganache" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_44">
+          <span class="md-nav__icon md-icon"></span>
+          Testrpc is now ganache
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/testrpc-is-now-ganache/index.html" class="md-nav__link">
+        TestRPC is now Ganache
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7144,10 +8308,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/the-best-things-to-do-in-seattle-during-trufflecon.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_45" type="checkbox" id="__nav_6_45" >
+      
+      <label class="md-nav__link" for="__nav_6_45">
         The best things to do in seattle during trufflecon
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="The best things to do in seattle during trufflecon" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_45">
+          <span class="md-nav__icon md-icon"></span>
+          The best things to do in seattle during trufflecon
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/the-best-things-to-do-in-seattle-during-trufflecon/index.html" class="md-nav__link">
+        The Best Things to do in Seattle During TruffleCon
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7156,10 +8347,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/the-best-ways-to-contribute-to-truffle.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_46" type="checkbox" id="__nav_6_46" >
+      
+      <label class="md-nav__link" for="__nav_6_46">
         The best ways to contribute to truffle
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="The best ways to contribute to truffle" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_46">
+          <span class="md-nav__icon md-icon"></span>
+          The best ways to contribute to truffle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/the-best-ways-to-contribute-to-truffle/index.html" class="md-nav__link">
+        The Best Ways to Contribute to Truffle
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7168,10 +8386,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/the-blockchain-problem-that-ens-solves.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_47" type="checkbox" id="__nav_6_47" >
+      
+      <label class="md-nav__link" for="__nav_6_47">
         The blockchain problem that ens solves
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="The blockchain problem that ens solves" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_47">
+          <span class="md-nav__icon md-icon"></span>
+          The blockchain problem that ens solves
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/the-blockchain-problem-that-ens-solves/index.html" class="md-nav__link">
+        The Blockchain UI Problem that ENS Solves
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7180,10 +8425,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/token-taxonomy-framework.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_48" type="checkbox" id="__nav_6_48" >
+      
+      <label class="md-nav__link" for="__nav_6_48">
         Token taxonomy framework
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Token taxonomy framework" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_48">
+          <span class="md-nav__icon md-icon"></span>
+          Token taxonomy framework
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/token-taxonomy-framework/index.html" class="md-nav__link">
+        Token Taxonomy Framework
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7192,10 +8464,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-320-released.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_49" type="checkbox" id="__nav_6_49" >
+      
+      <label class="md-nav__link" for="__nav_6_49">
         Truffle 320 released
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle 320 released" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_49">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle 320 released
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-320-released/index.html" class="md-nav__link">
+        Truffle 3.2.0 released
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7204,10 +8503,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-and-ganache-now-come-in-filecoin-flavor.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_50" type="checkbox" id="__nav_6_50" >
+      
+      <label class="md-nav__link" for="__nav_6_50">
         Truffle and ganache now come in filecoin flavor
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle and ganache now come in filecoin flavor" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_50">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle and ganache now come in filecoin flavor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-and-ganache-now-come-in-filecoin-flavor/index.html" class="md-nav__link">
+        Truffle and Ganache now come in Filecoin Flavor
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7216,10 +8542,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-and-infura-support-arbitrum.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_51" type="checkbox" id="__nav_6_51" >
+      
+      <label class="md-nav__link" for="__nav_6_51">
         Truffle and infura support arbitrum
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle and infura support arbitrum" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_51">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle and infura support arbitrum
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-and-infura-support-arbitrum/index.html" class="md-nav__link">
+        Truffle and Infura Now Support Arbitrum
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7228,10 +8581,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-and-infura-support-optimism.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_52" type="checkbox" id="__nav_6_52" >
+      
+      <label class="md-nav__link" for="__nav_6_52">
         Truffle and infura support optimism
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle and infura support optimism" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_52">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle and infura support optimism
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-and-infura-support-optimism/index.html" class="md-nav__link">
+        Truffle and Infura Now Support Optimism
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7240,10 +8620,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-and-infura-support-polygon.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_53" type="checkbox" id="__nav_6_53" >
+      
+      <label class="md-nav__link" for="__nav_6_53">
         Truffle and infura support polygon
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle and infura support polygon" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_53">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle and infura support polygon
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-and-infura-support-polygon/index.html" class="md-nav__link">
+        Truffle and Infura Now Support Polygon
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7252,10 +8659,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-boxes-making-life-sweeter.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_54" type="checkbox" id="__nav_6_54" >
+      
+      <label class="md-nav__link" for="__nav_6_54">
         Truffle boxes making life sweeter
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle boxes making life sweeter" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_54">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle boxes making life sweeter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-boxes-making-life-sweeter/index.html" class="md-nav__link">
+        Truffle Boxes - Making Life Sweeter
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7264,10 +8698,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-teams-gets-a-new-look.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_55" type="checkbox" id="__nav_6_55" >
+      
+      <label class="md-nav__link" for="__nav_6_55">
         Truffle teams gets a new look
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle teams gets a new look" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_55">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle teams gets a new look
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-teams-gets-a-new-look/index.html" class="md-nav__link">
+        Truffle Teams Gets a New Look!
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7276,10 +8737,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-teams-now-supports-private-repositories.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_56" type="checkbox" id="__nav_6_56" >
+      
+      <label class="md-nav__link" for="__nav_6_56">
         Truffle teams now supports private repositories
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle teams now supports private repositories" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_56">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle teams now supports private repositories
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-teams-now-supports-private-repositories/index.html" class="md-nav__link">
+        Truffle Teams Now Supports Private Repositories
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7288,10 +8776,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-v5-has-arrived.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_57" type="checkbox" id="__nav_6_57" >
+      
+      <label class="md-nav__link" for="__nav_6_57">
         Truffle v5 has arrived
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle v5 has arrived" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_57">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle v5 has arrived
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-v5-has-arrived/index.html" class="md-nav__link">
+        Truffle v5 has arrived!
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7300,10 +8815,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/try-new-features-first-with-truffle-teams-early-access.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_58" type="checkbox" id="__nav_6_58" >
+      
+      <label class="md-nav__link" for="__nav_6_58">
         Try new features first with truffle teams early access
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Try new features first with truffle teams early access" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_58">
+          <span class="md-nav__icon md-icon"></span>
+          Try new features first with truffle teams early access
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/try-new-features-first-with-truffle-teams-early-access/index.html" class="md-nav__link">
+        Try New Features First with Truffle Teams Early Access
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7312,10 +8854,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/unwrap-the-corda-flavored-ganache-beta.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_59" type="checkbox" id="__nav_6_59" >
+      
+      <label class="md-nav__link" for="__nav_6_59">
         Unwrap the corda flavored ganache beta
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Unwrap the corda flavored ganache beta" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_59">
+          <span class="md-nav__icon md-icon"></span>
+          Unwrap the corda flavored ganache beta
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/unwrap-the-corda-flavored-ganache-beta/index.html" class="md-nav__link">
+        Unwrap the Corda Flavored Ganache Beta
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7324,22 +8893,76 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_60" type="checkbox" id="__nav_6_60" >
+      
+      <label class="md-nav__link" for="__nav_6_60">
+        Upcoming improvements to encoding and decoding
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Upcoming improvements to encoding and decoding" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_60">
+          <span class="md-nav__icon md-icon"></span>
+          Upcoming improvements to encoding and decoding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../blog/upcoming-improvements-to-encoding-and-decoding.html" class="md-nav__link">
+      <a href="../../blog/upcoming-improvements-to-encoding-and-decoding/index.html" class="md-nav__link">
         Upcoming improvements to encoding and decoding
       </a>
     </li>
   
 
           
+        </ul>
+      </nav>
+    </li>
+  
+
+          
             
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/using-the-ens-integration.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_61" type="checkbox" id="__nav_6_61" >
+      
+      <label class="md-nav__link" for="__nav_6_61">
         Using the ens integration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Using the ens integration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_61">
+          <span class="md-nav__icon md-icon"></span>
+          Using the ens integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/using-the-ens-integration/index.html" class="md-nav__link">
+        Using Truffle's ENS Integration
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7348,10 +8971,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/using-truffle-to-interact-with-chainlink-smart-contracts.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_62" type="checkbox" id="__nav_6_62" >
+      
+      <label class="md-nav__link" for="__nav_6_62">
         Using truffle to interact with chainlink smart contracts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Using truffle to interact with chainlink smart contracts" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_62">
+          <span class="md-nav__icon md-icon"></span>
+          Using truffle to interact with chainlink smart contracts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/using-truffle-to-interact-with-chainlink-smart-contracts/index.html" class="md-nav__link">
+        Using Truffle to interact with Chainlink Smart Contracts
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7360,10 +9010,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/why-i-love-trufflecon.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_63" type="checkbox" id="__nav_6_63" >
+      
+      <label class="md-nav__link" for="__nav_6_63">
         Why i love trufflecon
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Why i love trufflecon" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_63">
+          <span class="md-nav__icon md-icon"></span>
+          Why i love trufflecon
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/why-i-love-trufflecon/index.html" class="md-nav__link">
+        Why I love TruffleCon
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7372,10 +9049,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/why-were-organizing-trufflecon-2018.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_64" type="checkbox" id="__nav_6_64" >
+      
+      <label class="md-nav__link" for="__nav_6_64">
         Why were organizing trufflecon 2018
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Why were organizing trufflecon 2018" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_64">
+          <span class="md-nav__icon md-icon"></span>
+          Why were organizing trufflecon 2018
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/why-were-organizing-trufflecon-2018/index.html" class="md-nav__link">
+        Why We're Organizing TruffleCon 2018
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7384,10 +9088,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/you-can-now-make-your-own-truffle-box.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_65" type="checkbox" id="__nav_6_65" >
+      
+      <label class="md-nav__link" for="__nav_6_65">
         You can now make your own truffle box
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="You can now make your own truffle box" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_65">
+          <span class="md-nav__icon md-icon"></span>
+          You can now make your own truffle box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/you-can-now-make-your-own-truffle-box/index.html" class="md-nav__link">
+        You Can Now Make Your Own Truffle Box
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7396,10 +9127,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/you-decide-pipeline-or-table-view-in-truffle-teams-deployments-manager.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_66" type="checkbox" id="__nav_6_66" >
+      
+      <label class="md-nav__link" for="__nav_6_66">
         You decide pipeline or table view in truffle teams deployments manager
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="You decide pipeline or table view in truffle teams deployments manager" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_66">
+          <span class="md-nav__icon md-icon"></span>
+          You decide pipeline or table view in truffle teams deployments manager
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/you-decide-pipeline-or-table-view-in-truffle-teams-deployments-manager/index.html" class="md-nav__link">
+        You Decide - Pipeline or Table View in Truffle Teams' Refreshed Deployments Manager
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7460,6 +9218,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -7467,6 +9227,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -7772,13 +9534,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#the-end" class="md-nav__link">
-    The End
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -7792,7 +9547,8 @@
               
                 
                 
-                <p>Drizzle is the newest member of the Truffle Suite and our first front-end development tool. At its core, <strong>Drizzle</strong> takes care of synchronizing your contract data, transaction data and more from the blockchain to a Redux store. There are also higher-level abstractions on top of the base <code>drizzle</code> library; tools for React compatibility (<a href="/docs/drizzle/react/react-integration"><code>drizzle-react</code></a>) and a set of ready-to-use React components (<a href="/docs/drizzle/react/react-components"><code>drizzle-react-components</code></a>).</p>
+                <h1 id="getting-started-with-drizzle-and-react">Getting Started with Drizzle and React<a class="headerlink" href="#getting-started-with-drizzle-and-react" title="Permanent link">&para;</a></h1>
+<p>Drizzle is the newest member of the Truffle Suite and our first front-end development tool. At its core, <strong>Drizzle</strong> takes care of synchronizing your contract data, transaction data and more from the blockchain to a Redux store. There are also higher-level abstractions on top of the base <code>drizzle</code> library; tools for React compatibility (<a href="/docs/drizzle/react/react-integration"><code>drizzle-react</code></a>) and a set of ready-to-use React components (<a href="/docs/drizzle/react/react-components"><code>drizzle-react-components</code></a>).</p>
 <p>We're going to focus on the lower levels today, taking you through setting up a Truffle project with React and Drizzle from scratch. This way we can gain the best understanding of how Drizzle works under the hood. With this knowledge, you can leverage the full power of Drizzle with any front-end framework of your choosing, or use the higher-level React abstractions with confidence.</p>
 <p>This will be a very minimal tutorial focused on setting and getting a simple string stored in a contract. It's meant for those with a basic knowledge of Truffle, who have some knowledge of JavaScript and React.js, but who are new to using Drizzle.</p>
 <p class="alert alert-info">
@@ -7812,22 +9568,22 @@
 <li>Write a component to read from Drizzle</li>
 <li>Write a component to write to the smart contract</li>
 </ol>
-<h2 id="setting-up-the-development-environment">Setting up the development environment</h2>
+<h2 id="setting-up-the-development-environment">Setting up the development environment<a class="headerlink" href="#setting-up-the-development-environment" title="Permanent link">&para;</a></h2>
 <p>There are a few technical requirements before we start. Please install the following:</p>
 <ul>
 <li><a href="https://nodejs.org/en/">Node.js v8+ LTS and npm</a> (comes with Node)</li>
 </ul>
-<h3 id="truffle">Truffle</h3>
+<h3 id="truffle">Truffle<a class="headerlink" href="#truffle" title="Permanent link">&para;</a></h3>
 <p>Once we have those installed, we only need one command to install Truffle:</p>
 <div class="highlight"><pre><span></span><code>npm install -g truffle
 </code></pre></div>
 <p>To verify that Truffle is installed properly, type <code>truffle version</code> on a terminal. If you see an error, make sure that your npm modules are added to your path.</p>
-<h3 id="create-react-app">Create-React-App</h3>
+<h3 id="create-react-app">Create-React-App<a class="headerlink" href="#create-react-app" title="Permanent link">&para;</a></h3>
 <p>Finally, since this is a React.js tutorial, we will be creating our React project with <a href="https://github.com/facebook/create-react-app/">Create-React-App</a>.</p>
 <p>You won't have to do anything if you have NPM version 5.2 or above. You can check your NPM version by running <code>npm --version</code>. If you do not, then you will need to install the tool globally with this command:</p>
 <div class="highlight"><pre><span></span><code>npm install -g create-react-app
 </code></pre></div>
-<h2 id="creating-a-truffle-project">Creating a Truffle project</h2>
+<h2 id="creating-a-truffle-project">Creating a Truffle project<a class="headerlink" href="#creating-a-truffle-project" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Truffle initializes in the current directory, so first create a directory in your development folder of choice and then move inside it.</li>
 </ol>
@@ -7840,7 +9596,7 @@
 <div class="highlight"><pre><span></span><code>truffle init
 </code></pre></div>
 <p>Let's take a brief look at the directory structure that was just generated.</p>
-<h3 id="directory-structure">Directory structure</h3>
+<h3 id="directory-structure">Directory structure<a class="headerlink" href="#directory-structure" title="Permanent link">&para;</a></h3>
 <p>The default Truffle directory structure contains the following:</p>
 <ul>
 <li><code>contracts/</code>: Contains the <a href="https://solidity.readthedocs.io/">Solidity</a> source files for our smart contracts. There is an important contract in here called <code>Migrations.sol</code>, which we'll talk about later.</li>
@@ -7848,7 +9604,7 @@
 <li><code>test/</code>: Contains both JavaScript and Solidity tests for our smart contracts.</li>
 <li><code>truffle-config.js</code>: Truffle configuration file.</li>
 </ul>
-<h2 id="writing-our-smart-contract">Writing our smart contract</h2>
+<h2 id="writing-our-smart-contract">Writing our smart contract<a class="headerlink" href="#writing-our-smart-contract" title="Permanent link">&para;</a></h2>
 <p>We'll add a simple smart contract called MyStringStore.</p>
 <ol>
 <li>
@@ -7873,15 +9629,15 @@
 <li>We've created a public string variable named <code>myString</code> and initialized it to "Hello World". This automatically creates a getter (since it's a public variable) so we don't have to write one ourselves.</li>
 <li>We've created a setter method that simply sets the <code>myString</code> variable with whatever string is passed in.</li>
 </ul>
-<h2 id="launching-a-test-blockchain-with-truffle-develop">Launching a test blockchain with Truffle Develop</h2>
+<h2 id="launching-a-test-blockchain-with-truffle-develop">Launching a test blockchain with Truffle Develop<a class="headerlink" href="#launching-a-test-blockchain-with-truffle-develop" title="Permanent link">&para;</a></h2>
 <p>Before we move ahead, let's first launch our test blockchain with the Truffle Develop console.</p>
 <p>Open up a new terminal, navigate to the project directory, and run the following command:</p>
 <div class="highlight"><pre><span></span><code>truffle develop
 </code></pre></div>
 <p>This will spawn a new blockchain that listens on <code>127.0.0.1:9545</code> by default.</p>
-<h2 id="compiling-and-migrating-the-smart-contract">Compiling and migrating the smart contract</h2>
+<h2 id="compiling-and-migrating-the-smart-contract">Compiling and migrating the smart contract<a class="headerlink" href="#compiling-and-migrating-the-smart-contract" title="Permanent link">&para;</a></h2>
 <p>Now we are ready to compile and migrate our contract.</p>
-<h3 id="compilation">Compilation</h3>
+<h3 id="compilation">Compilation<a class="headerlink" href="#compilation" title="Permanent link">&para;</a></h3>
 <p>In the Truffle Develop console, type the following command:</p>
 <div class="highlight"><pre><span></span><code>compile
 </code></pre></div>
@@ -7894,7 +9650,7 @@
 Compiling ./contracts/MyStringStore.sol...
 Writing artifacts to ./build/contracts
 </code></pre></div>
-<h3 id="migration">Migration</h3>
+<h3 id="migration">Migration<a class="headerlink" href="#migration" title="Permanent link">&para;</a></h3>
 <p>Now that we've successfully compiled our contracts, it's time to migrate them to the blockchain!</p>
 <p class="alert alert-info">
   <strong>Note</strong>: Read more about migrations in the [Truffle documentation](/docs/getting_started/migrations).
@@ -7921,7 +9677,7 @@ Writing artifacts to ./build/contracts
 <div class="highlight"><pre><span></span><code>migrate
 </code></pre></div>
 <p>You should see the migrations being executed in order, with the details of each migration listed.</p>
-<h2 id="testing-the-smart-contract">Testing the smart contract</h2>
+<h2 id="testing-the-smart-contract">Testing the smart contract<a class="headerlink" href="#testing-the-smart-contract" title="Permanent link">&para;</a></h2>
 <p>Before we proceed, we should write a couple tests to ensure that our contract works as expected.</p>
 <ol>
 <li>
@@ -7947,7 +9703,7 @@ Writing artifacts to ./build/contracts
   <span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div>
-<h3 id="running-the-tests">Running the tests</h3>
+<h3 id="running-the-tests">Running the tests<a class="headerlink" href="#running-the-tests" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Back in the Truffle Develop console, run the tests:</li>
 </ol>
@@ -7964,7 +9720,7 @@ Contract: MyStringStore
 1 passing (116ms)
 </code></pre></div>
 <p>Awesome! Now we know that the contract actually works.</p>
-<h2 id="creating-our-reactjs-project">Creating our React.js project</h2>
+<h2 id="creating-our-reactjs-project">Creating our React.js project<a class="headerlink" href="#creating-our-reactjs-project" title="Permanent link">&para;</a></h2>
 <p>Now that we are done with the smart contract, we can write our front-end client with React.js! In order to do this, open another terminal, navigate to your project directory, and simply run this command (if you have NPM version 5.2 or above):</p>
 <div class="highlight"><pre><span></span><code>npx create-react-app client
 </code></pre></div>
@@ -7972,7 +9728,7 @@ Contract: MyStringStore
 <div class="highlight"><pre><span></span><code>create-react-app client
 </code></pre></div>
 <p>This should create a <code>client</code> directory in your Truffle project and bootstrap a barebones React.js project for you to start building your front-end with.</p>
-<h2 id="wiring-up-the-front-end-client">Wiring up the front-end client</h2>
+<h2 id="wiring-up-the-front-end-client">Wiring up the front-end client<a class="headerlink" href="#wiring-up-the-front-end-client" title="Permanent link">&para;</a></h2>
 <p>Since Create-React-App's default behavior disallows importing files from outside of the <code>src</code> folder, we need to bring the contracts in our <code>build</code> folder inside <code>src</code>. We can copy and paste them every time we compile our contracts, but a better way is to simply configure Truffle to put the files there.</p>
 <p>In the <code>truffle-config.js</code> file, replace the contents with the following:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">);</span>
@@ -7983,12 +9739,12 @@ Contract: MyStringStore
 </code></pre></div>
 <p>This will make sure to output the contract build artifacts directory inside your React project. But this also means we'll have to restart our Truffle Develop console. Press <code>CTRL + C</code> to exit out of the Truffle Develop console and then start it again with <code>truffle develop</code>.</p>
 <p>From there, make sure you run the <code>compile</code> and <code>migrate</code> commands again so that the new build artifacts will be output into the new folder. If you are encountering issues, try <code>migrate --reset</code> for a clean migration from scratch.</p>
-<h3 id="install-drizzle">Install Drizzle</h3>
+<h3 id="install-drizzle">Install Drizzle<a class="headerlink" href="#install-drizzle" title="Permanent link">&para;</a></h3>
 <p>This is the most delicious part, we install Drizzle. Make sure you are in the <code>client</code> directory and then run the following:</p>
 <div class="highlight"><pre><span></span><code>npm install @drizzle/store
 </code></pre></div>
 <p>And that's it for dependencies! Note that we don't need to install Web3.js or @truffle/contract ourselves. Drizzle contains everything we need to work reactively with our smart contracts.</p>
-<h2 id="wire-up-the-react-app-with-drizzle">Wire up the React app with Drizzle</h2>
+<h2 id="wire-up-the-react-app-with-drizzle">Wire up the React app with Drizzle<a class="headerlink" href="#wire-up-the-react-app-with-drizzle" title="Permanent link">&para;</a></h2>
 <p>Before we go further, let's start our React app by running the follow command inside our <code>client</code> directory:</p>
 <div class="highlight"><pre><span></span><code>npm start
 </code></pre></div>
@@ -7998,7 +9754,7 @@ Contract: MyStringStore
 </p>
 
 <p>If the default Create-React-App page loaded without any issues, you may proceed.</p>
-<h3 id="setup-the-store">Setup the store</h3>
+<h3 id="setup-the-store">Setup the store<a class="headerlink" href="#setup-the-store" title="Permanent link">&para;</a></h3>
 <p>The first thing we need to do is to setup and instantiate the Drizzle store. We are going add the following code to <code>client/src/index.js</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// import drizzle functions and contract artifact</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">Drizzle</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&quot;@drizzle/store&quot;</span><span class="p">;</span>
@@ -8049,9 +9805,9 @@ Contract: MyStringStore
 <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">App</span> <span class="nx">drizzle</span><span class="o">=</span><span class="p">{</span><span class="nx">drizzle</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">));</span>
 </code></pre></div>
 <p>Note again that the <code>drizzle</code> instance is passed into the <code>App</code> component as props.</p>
-<h3 id="wire-up-the-app-component">Wire up the App component</h3>
+<h3 id="wire-up-the-app-component">Wire up the App component<a class="headerlink" href="#wire-up-the-app-component" title="Permanent link">&para;</a></h3>
 <p>Now that we have a <code>drizzle</code> instance to play around with, we can go into <code>client/src/App.js</code> to start working with the React API.</p>
-<h4 id="adding-state-variables">Adding state variables</h4>
+<h4 id="adding-state-variables">Adding state variables<a class="headerlink" href="#adding-state-variables" title="Permanent link">&para;</a></h4>
 <p>First thing we will do is to add the following line inside our App component:</p>
 <div class="highlight"><pre><span></span><code><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">loading</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">drizzleState</span><span class="o">:</span> <span class="kc">null</span> <span class="p">};</span>
 </code></pre></div>
@@ -8060,7 +9816,7 @@ Contract: MyStringStore
 <li><code>loading</code> — Indicates if Drizzle has finished initializing and the app is ready. The initialization process includes instantiating <code>web3</code> and our smart contracts, fetching any available Ethereum accounts and listening (or, in cases where subscriptions are not supported: polling) for new blocks.</li>
 <li><code>drizzleState</code> — This is where we will store the state of the Drizzle store in our top-level component. If we can keep this state variable up-to-date, then we can simply use simple <code>props</code> and <code>state</code> to work with Drizzle (i.e. you don't have to use any Redux or advanced React patterns).</li>
 </ol>
-<h4 id="adding-some-initialization-logic">Adding some initialization logic</h4>
+<h4 id="adding-some-initialization-logic">Adding some initialization logic<a class="headerlink" href="#adding-some-initialization-logic" title="Permanent link">&para;</a></h4>
 <p>Next we will add in our <code>componentDidMount</code> method into the component class so that we can run some initialization logic.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">drizzle</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
@@ -8081,14 +9837,14 @@ Contract: MyStringStore
 <p>First, we grab the <code>drizzle</code> instance from the props, then we call <code>drizzle.store.subscribe</code> and pass in a callback function. This callback function is called whenever the Drizzle store is updated. Note that this store is actually a Redux store under the hood, so this might look familiar if you've used Redux previously.</p>
 <p>Whenever the store is updated, we will try to grab the state with <code>drizzle.store.getState()</code> and then if Drizzle is initialized and ready, we will set <code>loading</code> to false, and also update the <code>drizzleState</code> state variable.</p>
 <p>By doing this, <code>drizzleState</code> will always be up-to-date and we also know exactly when Drizzle is ready so we can use a loading component to let the user know.</p>
-<h5 id="unsubscribing-from-the-store">Unsubscribing from the store</h5>
+<h5 id="unsubscribing-from-the-store">Unsubscribing from the store<a class="headerlink" href="#unsubscribing-from-the-store" title="Permanent link">&para;</a></h5>
 <p>Note that we assign the return value of the <code>subscribe()</code> to a class variable <code>this.unsubscribe</code>. This is because it is always good practice to unsubscribe from any subscriptions you have when the component un-mounts. In order to do this, we save a reference to that subscription (i.e. <code>this.unsubscribe</code>), and inside <code>componentWillUnmount</code>, we have the following:</p>
 <div class="highlight"><pre><span></span><code><span class="nx">componentWillUnmount</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">unsubscribe</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>This will safely unsubscribe when the App component un-mounts so we can prevent any memory leaks.</p>
-<h4 id="replace-the-render-method">Replace the <code>render</code> method</h4>
+<h4 id="replace-the-render-method">Replace the <code>render</code> method<a class="headerlink" href="#replace-the-render-method" title="Permanent link">&para;</a></h4>
 <p>Finally, we can replace the boilerplate render method with something that applies to us better:</p>
 <div class="highlight"><pre><span></span><code><span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">loading</span><span class="p">)</span> <span class="k">return</span> <span class="s2">&quot;Loading Drizzle...&quot;</span><span class="p">;</span>
@@ -8096,7 +9852,7 @@ Contract: MyStringStore
 <span class="p">}</span>
 </code></pre></div>
 <p>In the next section, we will replace "Drizzle is ready" with an actual component that will read from the store. If you refresh your browser and run this app now, you should see "Loading Drizzle..." briefly flash on screen and then subsequently "Drizzle is ready".</p>
-<h3 id="full-component-code">Full component code</h3>
+<h3 id="full-component-code">Full component code<a class="headerlink" href="#full-component-code" title="Permanent link">&para;</a></h3>
 <p>When you are done this section, your <code>App</code> component should look like the following:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nx">App</span> <span class="k">extends</span> <span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">loading</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">drizzleState</span><span class="o">:</span> <span class="kc">null</span> <span class="p">};</span>
@@ -8127,7 +9883,7 @@ Contract: MyStringStore
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="write-a-component-to-read-from-drizzle">Write a component to read from Drizzle</h2>
+<h2 id="write-a-component-to-read-from-drizzle">Write a component to read from Drizzle<a class="headerlink" href="#write-a-component-to-read-from-drizzle" title="Permanent link">&para;</a></h2>
 <p>First, let's create a new file at <code>client/src/ReadString.js</code> and paste in the following:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">React</span> <span class="kr">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
 
@@ -8163,9 +9919,9 @@ Contract: MyStringStore
 </code></pre></div>
 <p>Go back to the browser and open up your console. You should see that the two <code>console.log</code> statements are working and they are displaying both the <code>drizzle</code> instance as well as a <code>drizzleState</code> that is fully initialized.</p>
 <p>What this tells us is that the <code>drizzleState</code> we get in this component will always be fully ready once this component mounts. At this point, you can take some time to explore the <code>drizzle</code> instance object as well as the <code>drizzleState</code> object.</p>
-<h3 id="drizzle-instance-and-drizzlestate"><code>drizzle</code> instance and <code>drizzleState</code></h3>
+<h3 id="drizzle-instance-and-drizzlestate"><code>drizzle</code> instance and <code>drizzleState</code><a class="headerlink" href="#drizzle-instance-and-drizzlestate" title="Permanent link">&para;</a></h3>
 <p>For the most part, <code>drizzleState</code> is there for you to read information from (i.e. contract state variables, return values, transaction status, account data, etc.), whereas the <code>drizzle</code> instance is what you will use to actually get stuff done (i.e. call contract methods, the Web3 instance, etc.).</p>
-<h3 id="wiring-up-the-readstring-component">Wiring up the <code>ReadString</code> component</h3>
+<h3 id="wiring-up-the-readstring-component">Wiring up the <code>ReadString</code> component<a class="headerlink" href="#wiring-up-the-readstring-component" title="Permanent link">&para;</a></h3>
 <p>Now that we have access to our <code>drizzle</code> instance and the <code>drizzleState</code>, we can put in the logic that allows us read the smart contract variable we are interested in. Here is what the full code of <code>ReadString.js</code> should look like:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">React</span> <span class="kr">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
 
@@ -8198,7 +9954,7 @@ Contract: MyStringStore
 <span class="k">export</span> <span class="k">default</span> <span class="nx">ReadString</span><span class="p">;</span>
 </code></pre></div>
 <p>If everything is working, your app should display "Hello World". But first, let's walk through what we did here.</p>
-<h4 id="when-the-component-mounts">When the component mounts</h4>
+<h4 id="when-the-component-mounts">When the component mounts<a class="headerlink" href="#when-the-component-mounts" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">drizzle</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
   <span class="kd">const</span> <span class="nx">contract</span> <span class="o">=</span> <span class="nx">drizzle</span><span class="p">.</span><span class="nx">contracts</span><span class="p">.</span><span class="nx">MyStringStore</span><span class="p">;</span>
@@ -8213,7 +9969,7 @@ Contract: MyStringStore
 <p>When the component mounts, we first grab a reference to the contract we are interested in and assign it to <code>contract</code>.</p>
 <p>We then need to tell Drizzle to keep track of a variable we are interested in. In order to do that, we call the <code>.cacheCall()</code> function on the <code>myString</code> getter method.</p>
 <p>What we get in return is a <code>dataKey</code> that allows us to reference this variable. We save this to the component's state so we can use it later.</p>
-<h4 id="the-render-method">The <code>render</code> method</h4>
+<h4 id="the-render-method">The <code>render</code> method<a class="headerlink" href="#the-render-method" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// get the contract state from drizzleState</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">MyStringStore</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">drizzleState</span><span class="p">.</span><span class="nx">contracts</span><span class="p">;</span>
@@ -8227,13 +9983,13 @@ Contract: MyStringStore
 </code></pre></div>
 <p>From the <code>drizzleState</code>, we grab the slice of the state we are interested in, which in this case is the <code>MyStringStore</code> contract. From there, we use the <code>dataKey</code> we saved from before in order to access the <code>myString</code> variable.</p>
 <p>Finally, we write <code>myString &amp;&amp; myString.value</code> to show the value of the variable if it exists, or nothing otherwise. And in this case, it should show "Hello World" since that is the string the contract is initialized with.</p>
-<h3 id="quick-recap">Quick Recap</h3>
+<h3 id="quick-recap">Quick Recap<a class="headerlink" href="#quick-recap" title="Permanent link">&para;</a></h3>
 <p>The most important thing to get out of this section here is that there are two steps to reading a value with Drizzle:</p>
 <ol>
 <li>First, you need to let Drizzle know what variable you want to watch for. Drizzle will give you a <code>dataKey</code> in return and you need to save it for later reference.</li>
 <li>Second, due to the asynchronous nature of how Drizzle works, you should be watching for changes in <code>drizzleState</code>. Once the variable accessed by the <code>dataKey</code> exists, you will be able to get the value you are interested in.</li>
 </ol>
-<h2 id="write-a-component-to-write-to-the-smart-contract">Write a component to write to the smart contract</h2>
+<h2 id="write-a-component-to-write-to-the-smart-contract">Write a component to write to the smart contract<a class="headerlink" href="#write-a-component-to-write-to-the-smart-contract" title="Permanent link">&para;</a></h2>
 <p>Of course, simply reading a pre-initialized variable is no fun at all; we want something that we can interact with. In this section, we will create an input box where you can type a string of your choice and have it save to the blockchain forever!</p>
 <p>First, let's create a new file <code>client/src/SetString.js</code> and paste in the following:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">React</span> <span class="kr">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
@@ -8310,7 +10066,7 @@ Contract: MyStringStore
 </code></pre></div>
 <p>At this point, the app should work and you should try it out. You should be able to type something into the input text box, hit Enter, and Drizzle's react store will automatically display the new string.</p>
 <p>Next, let's go through <code>SetString.js</code> step-by-step.</p>
-<h3 id="general-structure">General structure</h3>
+<h3 id="general-structure">General structure<a class="headerlink" href="#general-structure" title="Permanent link">&para;</a></h3>
 <p>First let's take a look at the general React.js boilerplate that we need.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nx">SetString</span> <span class="k">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">stackId</span><span class="o">:</span> <span class="kc">null</span> <span class="p">};</span>
@@ -8338,7 +10094,7 @@ Contract: MyStringStore
 </code></pre></div>
 <p>In this component, we will have an input text box for the user to type in a string, and when the Enter key is pressed, the <code>setValue</code> method will be called with the string as a parameter.</p>
 <p>Also, we will display the status of the transaction. The <code>getTxStatus</code> method will return a string displaying the status of the transaction by referencing a <code>stackId</code> state variable (more on this later).</p>
-<h3 id="submitting-the-transaction">Submitting the transaction</h3>
+<h3 id="submitting-the-transaction">Submitting the transaction<a class="headerlink" href="#submitting-the-transaction" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nx">setValue</span> <span class="o">=</span> <span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">drizzle</span><span class="p">,</span> <span class="nx">drizzleState</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
   <span class="kd">const</span> <span class="nx">contract</span> <span class="o">=</span> <span class="nx">drizzle</span><span class="p">.</span><span class="nx">contracts</span><span class="p">.</span><span class="nx">MyStringStore</span><span class="p">;</span>
@@ -8354,7 +10110,7 @@ Contract: MyStringStore
 </code></pre></div>
 <p>We first assign the contract from the <code>drizzle</code> instance into <code>contract</code>, and then we call <code>cacheSend()</code> on the method we are interested in (i.e. <code>set</code>). Then we pass in the string we want to set (i.e. <code>value</code>) as well as our transaction options (in this case, just the <code>from</code> field). Note that we can get our current account address from <code>drizzleState.accounts[0]</code>.</p>
 <p>What we get in return is a <code>stackId</code>, which is a reference to the transaction that we want to execute. Ethereum transactions don't receive a hash until they're broadcast to the network. In case an error occurs before broadcast, Drizzle keeps track of these transactions by giving each it's own ID. Once successfully broadcasted, the <code>stackId</code> will point to the transaction hash, so we save it in our local component state for later usage.</p>
-<h3 id="tracking-transaction-status">Tracking transaction status</h3>
+<h3 id="tracking-transaction-status">Tracking transaction status<a class="headerlink" href="#tracking-transaction-status" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nx">getTxStatus</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="c1">// get the transaction states from the drizzle state</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">transactions</span><span class="p">,</span> <span class="nx">transactionStack</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">drizzleState</span><span class="p">;</span>
@@ -8372,9 +10128,11 @@ Contract: MyStringStore
 <p>Now that we have a <code>stackId</code> saved into our local component state, we can use this to check the status of our transaction. First, we need the <code>transactions</code> and <code>transactionStack</code> slices of state from <code>drizzleState</code>.</p>
 <p>Then, we can get the transaction hash (assigned to <code>txHash</code>) via <code>transactionStack[stackId]</code>. If the hash does not exist, then we know that the transaction has not been broadcasted yet and we return null.</p>
 <p>Otherwise, we display a string to show the status of our transaction. Usually, this will either be "pending" or "success".</p>
-<h1 id="the-end">The End</h1>
+<h1 id="the-end">The End<a class="headerlink" href="#the-end" title="Permanent link">&para;</a></h1>
 <p>Congratulations! You have taken a huge step to understanding how Drizzle works. Of course, this is only the beginning, you can use tools like <a href="https://github.com/trufflesuite/drizzle-react"><code>drizzle-react</code></a> to help you integrate Drizzle into your dapp, reducing the necessary boilerplate that you would have to write.</p>
 <p>Alternatively, you could also bootstrap your Drizzle dapp with our <a href="https://github.com/truffle-box/drizzle-box">Truffle box</a>.</p>
+                
+                  
                 
               
               

@@ -3,18 +3,23 @@
 <html lang="en" class="no-js">
   <head>
     
+    
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
       
       
-      <link rel="icon" href="/assets/favicon-32x32.png">
+        <link rel="canonical" href="https://trufflesuite.github.io/truffle.dev/guides/ethereum-overview/index.html">
+      
+      <link rel="icon" href="../../assets/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
+    <!-- <base href="/" /> -->
+
     
       
-        <title>Index - Truffle Suite</title>
+        <title>Ethereum Overview - Truffle Suite</title>
       
     
     
@@ -36,9 +41,9 @@
     
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/bootstrap.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/bootstrap.min.css">
     
-      <link rel="stylesheet" href="/assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
     
       
@@ -90,12 +95,11 @@
         <aside class="md-banner md-announce">
           <div class="md-banner__inner md-announce__inner md-grid md-typeset">
             
-  <a href="https://twitter.com/trufflesuite">
-    For updates follow <strong>@trufflesuite</strong> on
-    <span class="twemoji twitter">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-    </span>
-    <strong>Twitter</strong>
+  <a href="https://bit.ly/3zPGqM1">
+    <strong>Ganache v7 alpha is ready for you to install!</strong> Are you ready for the ~300% faster launch time?
+    <!-- <span class="twemoji twitter">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </span> -->
   </a>
 
           </div>
@@ -107,7 +111,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../index.html" title="Truffle Suite" class="md-header__button md-logo" aria-label="Truffle Suite" data-md-component="logo">
       
-  <img src="/assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -123,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Ethereum Overview
             
           </span>
         </div>
@@ -321,7 +325,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -333,7 +339,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../index.html" title="Truffle Suite" class="md-nav__button md-logo" aria-label="Truffle Suite" data-md-component="logo">
       
-  <img src="/assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     Truffle Suite
@@ -2095,7 +2101,7 @@
   
     <li class="md-nav__item">
       <a href="../building-dapps-for-quorum-private-enterprise-blockchains/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2134,7 +2140,7 @@
   
     <li class="md-nav__item">
       <a href="../building-testing-frontend-app-truffle-3/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2173,7 +2179,7 @@
   
     <li class="md-nav__item">
       <a href="../bundling-with-webpack/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2212,7 +2218,7 @@
   
     <li class="md-nav__item">
       <a href="../chain-forking-exploiting-the-dao/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2251,7 +2257,7 @@
   
     <li class="md-nav__item">
       <a href="../configuring-visual-studio-code/index.html" class="md-nav__link">
-        Index
+        Configuring Visual Studio code for Ethereum Blockchain Development
       </a>
     </li>
   
@@ -2290,7 +2296,7 @@
   
     <li class="md-nav__item">
       <a href="../creating-a-cli-with-truffle-3/index.html" class="md-nav__link">
-        Index
+        Creating an Ethereum-enabled command line tool with Truffle 3.0
       </a>
     </li>
   
@@ -2329,7 +2335,7 @@
   
     <li class="md-nav__item">
       <a href="../debugger-variable-inspection/index.html" class="md-nav__link">
-        Index
+        Variable Inspection - Going Deeper with the Truffle Solidity Debugger
       </a>
     </li>
   
@@ -2368,7 +2374,7 @@
   
     <li class="md-nav__item">
       <a href="../debugging-a-smart-contract/index.html" class="md-nav__link">
-        Index
+        Debugging a smart contract
       </a>
     </li>
   
@@ -2407,7 +2413,7 @@
   
     <li class="md-nav__item">
       <a href="../deploying-to-the-live-network/index.html" class="md-nav__link">
-        Index
+        Deploying to the Live Network
       </a>
     </li>
   
@@ -2446,7 +2452,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle-and-contract-events/index.html" class="md-nav__link">
-        Index
+        Drizzle and Contract Events
       </a>
     </li>
   
@@ -2485,7 +2491,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle-and-react-native/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2524,7 +2530,7 @@
   
     <li class="md-nav__item">
       <a href="../ethereum-devops-truffle-testrpc-vsts/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2572,12 +2578,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Index
+          Ethereum Overview
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="index.html" class="md-nav__link md-nav__link--active">
-        Index
+        Ethereum Overview
       </a>
       
         
@@ -2648,8 +2654,63 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#what-is-ethereum" class="md-nav__link">
+    What is Ethereum?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-smart-contract" class="md-nav__link">
+    What is a smart contract?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethereum-networks" class="md-nav__link">
+    Ethereum networks
+  </a>
+  
+    <nav class="md-nav" aria-label="Ethereum networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-test-networks" class="md-nav__link">
+    Local test networks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-test-networks" class="md-nav__link">
+    Public test networks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privateenterprise-networks" class="md-nav__link">
+    Private/enterprise networks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decentralized-applications-dapps" class="md-nav__link">
+    Decentralized applications (dapps)
+  </a>
   
 </li>
       
@@ -2694,7 +2755,7 @@
   
     <li class="md-nav__item">
       <a href="../getting-started-with-drizzle-and-react/index.html" class="md-nav__link">
-        Index
+        Getting Started with Drizzle and React
       </a>
     </li>
   
@@ -2733,7 +2794,7 @@
   
     <li class="md-nav__item">
       <a href="../how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2772,7 +2833,7 @@
   
     <li class="md-nav__item">
       <a href="../learn-how-to-deploy-with-truffle-teams/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2811,7 +2872,7 @@
   
     <li class="md-nav__item">
       <a href="../package-management/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2850,7 +2911,7 @@
   
     <li class="md-nav__item">
       <a href="../pet-shop/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2889,7 +2950,7 @@
   
     <li class="md-nav__item">
       <a href="../robust-smart-contracts-with-openzeppelin/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2928,7 +2989,7 @@
   
     <li class="md-nav__item">
       <a href="../solidity-unit-tests/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -2967,7 +3028,7 @@
   
     <li class="md-nav__item">
       <a href="../testing-for-throws-in-solidity-tests/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -3006,7 +3067,7 @@
   
     <li class="md-nav__item">
       <a href="../truffle-and-metamask/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -3045,7 +3106,7 @@
   
     <li class="md-nav__item">
       <a href="../upgrading-from-truffle-2-to-3/index.html" class="md-nav__link">
-        Index
+        Truffle Suite
       </a>
     </li>
   
@@ -3084,7 +3145,7 @@
   
     <li class="md-nav__item">
       <a href="../using-infura-custom-provider/index.html" class="md-nav__link">
-        Index
+        Using Infura (or a custom provider)
       </a>
     </li>
   
@@ -6385,10 +6446,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/10-things-we-dont-do-that-make-working-at-truffle-awesome.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2">
         10 things we dont do that make working at truffle awesome
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="10 things we dont do that make working at truffle awesome" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          10 things we dont do that make working at truffle awesome
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/10-things-we-dont-do-that-make-working-at-truffle-awesome/index.html" class="md-nav__link">
+        10 Things We Don't Do That Make Working at Truffle Awesome
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6397,10 +6485,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/2020-is-finally-over-a-year-end-wrapup.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
         2020 is finally over a year end wrapup
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2020 is finally over a year end wrapup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          2020 is finally over a year end wrapup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/2020-is-finally-over-a-year-end-wrapup/index.html" class="md-nav__link">
+        2020 is Finally Over - A Year End Wrapup
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6409,10 +6524,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/3-ways-enterprises-are-addressing-blockchain-privacy-concerns.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      <label class="md-nav__link" for="__nav_6_4">
         3 ways enterprises are addressing blockchain privacy concerns
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="3 ways enterprises are addressing blockchain privacy concerns" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          3 ways enterprises are addressing blockchain privacy concerns
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/3-ways-enterprises-are-addressing-blockchain-privacy-concerns/index.html" class="md-nav__link">
+        3 Ways Enterprises Are Addressing Blockchain Privacy Concerns
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6421,10 +6563,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/5-trends-impacting-the-blockchain-developer-experience.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
+      
+      <label class="md-nav__link" for="__nav_6_5">
         5 trends impacting the blockchain developer experience
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="5 trends impacting the blockchain developer experience" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          5 trends impacting the blockchain developer experience
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/5-trends-impacting-the-blockchain-developer-experience/index.html" class="md-nav__link">
+        5 Trends Impacting the Blockchain Developer Experience
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6433,10 +6602,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/a-sweet-upgradeable-contract-experience-with-openzeppelin-and-truffle.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
+      
+      <label class="md-nav__link" for="__nav_6_6">
         A sweet upgradeable contract experience with openzeppelin and truffle
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="A sweet upgradeable contract experience with openzeppelin and truffle" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_6">
+          <span class="md-nav__icon md-icon"></span>
+          A sweet upgradeable contract experience with openzeppelin and truffle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/a-sweet-upgradeable-contract-experience-with-openzeppelin-and-truffle/index.html" class="md-nav__link">
+        A Sweet Upgradeable Contract Experience with OpenZeppelin and Truffle
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6445,10 +6641,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/an-easier-way-to-deploy-your-smart-contracts.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" >
+      
+      <label class="md-nav__link" for="__nav_6_7">
         An easier way to deploy your smart contracts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="An easier way to deploy your smart contracts" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_7">
+          <span class="md-nav__icon md-icon"></span>
+          An easier way to deploy your smart contracts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/an-easier-way-to-deploy-your-smart-contracts/index.html" class="md-nav__link">
+        An Easier Way to Deploy Your Smart Contracts
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6457,10 +6680,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/announcing-collaboration-with-filecoin.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_8" type="checkbox" id="__nav_6_8" >
+      
+      <label class="md-nav__link" for="__nav_6_8">
         Announcing collaboration with filecoin
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Announcing collaboration with filecoin" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_8">
+          <span class="md-nav__icon md-icon"></span>
+          Announcing collaboration with filecoin
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/announcing-collaboration-with-filecoin/index.html" class="md-nav__link">
+        Announcing Collaboration with Filecoin - Big Integrations Coming
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6469,10 +6719,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/announcing-full-portable-solidity-debugger.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_9" type="checkbox" id="__nav_6_9" >
+      
+      <label class="md-nav__link" for="__nav_6_9">
         Announcing full portable solidity debugger
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Announcing full portable solidity debugger" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_9">
+          <span class="md-nav__icon md-icon"></span>
+          Announcing full portable solidity debugger
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/announcing-full-portable-solidity-debugger/index.html" class="md-nav__link">
+        Announcing our Fully Featured, Portable Solidity Debugger
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6481,10 +6758,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/axonis-enterprise-use-of-truffle.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_10" type="checkbox" id="__nav_6_10" >
+      
+      <label class="md-nav__link" for="__nav_6_10">
         Axonis enterprise use of truffle
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Axonis enterprise use of truffle" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_10">
+          <span class="md-nav__icon md-icon"></span>
+          Axonis enterprise use of truffle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/axonis-enterprise-use-of-truffle/index.html" class="md-nav__link">
+        Axoni's Enterprise Use of Truffle
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6493,10 +6797,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/best-methods-to-understand-blockchain-if-youre-not-a-developer.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_11" type="checkbox" id="__nav_6_11" >
+      
+      <label class="md-nav__link" for="__nav_6_11">
         Best methods to understand blockchain if youre not a developer
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Best methods to understand blockchain if youre not a developer" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_11">
+          <span class="md-nav__icon md-icon"></span>
+          Best methods to understand blockchain if youre not a developer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/best-methods-to-understand-blockchain-if-youre-not-a-developer/index.html" class="md-nav__link">
+        The Best Methods to Understand Blockchain Technology if You’re Not A Developer
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6505,10 +6836,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/blockchain-will-cure-cancer.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_12" type="checkbox" id="__nav_6_12" >
+      
+      <label class="md-nav__link" for="__nav_6_12">
         Blockchain will cure cancer
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Blockchain will cure cancer" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_12">
+          <span class="md-nav__icon md-icon"></span>
+          Blockchain will cure cancer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/blockchain-will-cure-cancer/index.html" class="md-nav__link">
+        Blockchain Will Cure Cancer
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6517,10 +6875,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/branching-out-announcing-tezos-support-in-truffle.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_13" type="checkbox" id="__nav_6_13" >
+      
+      <label class="md-nav__link" for="__nav_6_13">
         Branching out announcing tezos support in truffle
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Branching out announcing tezos support in truffle" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_13">
+          <span class="md-nav__icon md-icon"></span>
+          Branching out announcing tezos support in truffle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/branching-out-announcing-tezos-support-in-truffle/index.html" class="md-nav__link">
+        Branching Out - Announcing Tezos Support in Truffle
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6529,10 +6914,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/branching-out-phase-2-of-corda-flavored-ganache.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_14" type="checkbox" id="__nav_6_14" >
+      
+      <label class="md-nav__link" for="__nav_6_14">
         Branching out phase 2 of corda flavored ganache
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Branching out phase 2 of corda flavored ganache" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_14">
+          <span class="md-nav__icon md-icon"></span>
+          Branching out phase 2 of corda flavored ganache
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/branching-out-phase-2-of-corda-flavored-ganache/index.html" class="md-nav__link">
+        Branching Out - Phase 2 of Corda-flavored Ganache
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6541,10 +6953,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/bring-your-own-ci-byoci-with-truffle-teams.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_15" type="checkbox" id="__nav_6_15" >
+      
+      <label class="md-nav__link" for="__nav_6_15">
         Bring your own ci byoci with truffle teams
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bring your own ci byoci with truffle teams" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_15">
+          <span class="md-nav__icon md-icon"></span>
+          Bring your own ci byoci with truffle teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/bring-your-own-ci-byoci-with-truffle-teams/index.html" class="md-nav__link">
+        Bring Your Own CI (BYOCI) with Truffle Teams
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6553,10 +6992,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/crytic-continuous-assurance-for-smart-contracts.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_16" type="checkbox" id="__nav_6_16" >
+      
+      <label class="md-nav__link" for="__nav_6_16">
         Crytic continuous assurance for smart contracts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Crytic continuous assurance for smart contracts" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_16">
+          <span class="md-nav__icon md-icon"></span>
+          Crytic continuous assurance for smart contracts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/crytic-continuous-assurance-for-smart-contracts/index.html" class="md-nav__link">
+        Crytic - Continuous Assurance for Smart Contracts
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6565,10 +7031,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/debug-quickly-and-in-context-with-truffle-teams-new-debugger.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_17" type="checkbox" id="__nav_6_17" >
+      
+      <label class="md-nav__link" for="__nav_6_17">
         Debug quickly and in context with truffle teams new debugger
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Debug quickly and in context with truffle teams new debugger" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_17">
+          <span class="md-nav__icon md-icon"></span>
+          Debug quickly and in context with truffle teams new debugger
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/debug-quickly-and-in-context-with-truffle-teams-new-debugger/index.html" class="md-nav__link">
+        Debug Quickly and in Context with Truffle Teams New Debugger
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6577,10 +7070,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/debugging-verified-external-contracts-with-truffle-debugger.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_18" type="checkbox" id="__nav_6_18" >
+      
+      <label class="md-nav__link" for="__nav_6_18">
         Debugging verified external contracts with truffle debugger
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Debugging verified external contracts with truffle debugger" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_18">
+          <span class="md-nav__icon md-icon"></span>
+          Debugging verified external contracts with truffle debugger
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/debugging-verified-external-contracts-with-truffle-debugger/index.html" class="md-nav__link">
+        Debugging verified external contracts with Truffle Debugger
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6589,10 +7109,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/designing-the-ganache-logo.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_19" type="checkbox" id="__nav_6_19" >
+      
+      <label class="md-nav__link" for="__nav_6_19">
         Designing the ganache logo
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Designing the ganache logo" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_19">
+          <span class="md-nav__icon md-icon"></span>
+          Designing the ganache logo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/designing-the-ganache-logo/index.html" class="md-nav__link">
+        Designing the Ganache Logo
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6601,10 +7148,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/develop-using-fluidity-truffle-box.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_20" type="checkbox" id="__nav_6_20" >
+      
+      <label class="md-nav__link" for="__nav_6_20">
         Develop using fluidity truffle box
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Develop using fluidity truffle box" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_20">
+          <span class="md-nav__icon md-icon"></span>
+          Develop using fluidity truffle box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/develop-using-fluidity-truffle-box/index.html" class="md-nav__link">
+        Develop using Fluidity Truffle Box
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6613,10 +7187,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/drizzle-150-a-new-beginning.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_21" type="checkbox" id="__nav_6_21" >
+      
+      <label class="md-nav__link" for="__nav_6_21">
         Drizzle 150 a new beginning
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Drizzle 150 a new beginning" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_21">
+          <span class="md-nav__icon md-icon"></span>
+          Drizzle 150 a new beginning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/drizzle-150-a-new-beginning/index.html" class="md-nav__link">
+        Drizzle 1.5.0 - A new beginning
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6625,10 +7226,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/drizzle-reactive-ethereum-data-for-front-ends.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_22" type="checkbox" id="__nav_6_22" >
+      
+      <label class="md-nav__link" for="__nav_6_22">
         Drizzle reactive ethereum data for front ends
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Drizzle reactive ethereum data for front ends" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_22">
+          <span class="md-nav__icon md-icon"></span>
+          Drizzle reactive ethereum data for front ends
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/drizzle-reactive-ethereum-data-for-front-ends/index.html" class="md-nav__link">
+        Drizzle - Reactive Ethereum Data for Front-ends
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6637,10 +7265,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/drizzle-vue-a-truffle-story.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_23" type="checkbox" id="__nav_6_23" >
+      
+      <label class="md-nav__link" for="__nav_6_23">
         Drizzle vue a truffle story
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Drizzle vue a truffle story" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_23">
+          <span class="md-nav__icon md-icon"></span>
+          Drizzle vue a truffle story
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/drizzle-vue-a-truffle-story/index.html" class="md-nav__link">
+        Drizzle Vue - A Truffle Story
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6649,10 +7304,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/ethereum-gas-exactimation.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_24" type="checkbox" id="__nav_6_24" >
+      
+      <label class="md-nav__link" for="__nav_6_24">
         Ethereum gas exactimation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Ethereum gas exactimation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_24">
+          <span class="md-nav__icon md-icon"></span>
+          Ethereum gas exactimation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/ethereum-gas-exactimation/index.html" class="md-nav__link">
+        Ethereum Gas Exactimation
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6661,10 +7343,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/first-ever-truffle-retreat.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_25" type="checkbox" id="__nav_6_25" >
+      
+      <label class="md-nav__link" for="__nav_6_25">
         First ever truffle retreat
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="First ever truffle retreat" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_25">
+          <span class="md-nav__icon md-icon"></span>
+          First ever truffle retreat
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/first-ever-truffle-retreat/index.html" class="md-nav__link">
+        Our First Ever Truffle Retreat
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6673,10 +7382,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/get-a-birds-eye-view-with-truffle-teams-new-dashboard.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_26" type="checkbox" id="__nav_6_26" >
+      
+      <label class="md-nav__link" for="__nav_6_26">
         Get a birds eye view with truffle teams new dashboard
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Get a birds eye view with truffle teams new dashboard" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_26">
+          <span class="md-nav__icon md-icon"></span>
+          Get a birds eye view with truffle teams new dashboard
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/get-a-birds-eye-view-with-truffle-teams-new-dashboard/index.html" class="md-nav__link">
+        Get a Bird's Eye View with Truffle Teams' New Dashboard
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6685,10 +7421,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/github-repository-moved.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_27" type="checkbox" id="__nav_6_27" >
+      
+      <label class="md-nav__link" for="__nav_6_27">
         Github repository moved
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Github repository moved" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_27">
+          <span class="md-nav__icon md-icon"></span>
+          Github repository moved
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/github-repository-moved/index.html" class="md-nav__link">
+        We've moved our github repo!
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6697,10 +7460,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/how-ethical-advertising-will-transform-the-blockchain-industry.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_28" type="checkbox" id="__nav_6_28" >
+      
+      <label class="md-nav__link" for="__nav_6_28">
         How ethical advertising will transform the blockchain industry
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How ethical advertising will transform the blockchain industry" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_28">
+          <span class="md-nav__icon md-icon"></span>
+          How ethical advertising will transform the blockchain industry
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/how-ethical-advertising-will-transform-the-blockchain-industry/index.html" class="md-nav__link">
+        How Ethical Advertising Will Transform the Blockchain Industry
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6709,10 +7499,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/how-the-arrival-of-web-3-0-is-transforming-traditional-business-models.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_29" type="checkbox" id="__nav_6_29" >
+      
+      <label class="md-nav__link" for="__nav_6_29">
         How the arrival of web 3 0 is transforming traditional business models
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How the arrival of web 3 0 is transforming traditional business models" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_29">
+          <span class="md-nav__icon md-icon"></span>
+          How the arrival of web 3 0 is transforming traditional business models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/how-the-arrival-of-web-3-0-is-transforming-traditional-business-models/index.html" class="md-nav__link">
+        How the Arrival of Web 3.0 is Transforming Traditional Business Models
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6721,10 +7538,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/how-to-get-your-boss-to-send-you-to-trufflecon.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_30" type="checkbox" id="__nav_6_30" >
+      
+      <label class="md-nav__link" for="__nav_6_30">
         How to get your boss to send you to trufflecon
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How to get your boss to send you to trufflecon" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_30">
+          <span class="md-nav__icon md-icon"></span>
+          How to get your boss to send you to trufflecon
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/how-to-get-your-boss-to-send-you-to-trufflecon/index.html" class="md-nav__link">
+        How to get your boss to send you to TruffleCon
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6733,10 +7577,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/how-were-making-installation-issues-a-thing-of-the-past.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_31" type="checkbox" id="__nav_6_31" >
+      
+      <label class="md-nav__link" for="__nav_6_31">
         How were making installation issues a thing of the past
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How were making installation issues a thing of the past" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_31">
+          <span class="md-nav__icon md-icon"></span>
+          How were making installation issues a thing of the past
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/how-were-making-installation-issues-a-thing-of-the-past/index.html" class="md-nav__link">
+        How we're making installation issues a thing of the past
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6745,10 +7616,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/introducing-truffle-db-part-1.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_32" type="checkbox" id="__nav_6_32" >
+      
+      <label class="md-nav__link" for="__nav_6_32">
         Introducing truffle db part 1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Introducing truffle db part 1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_32">
+          <span class="md-nav__icon md-icon"></span>
+          Introducing truffle db part 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/introducing-truffle-db-part-1/index.html" class="md-nav__link">
+        Introducing Truffle DB, Part 1 - Artifact archeology
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6757,10 +7655,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/introducing-truffle-db-part-2.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_33" type="checkbox" id="__nav_6_33" >
+      
+      <label class="md-nav__link" for="__nav_6_33">
         Introducing truffle db part 2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Introducing truffle db part 2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_33">
+          <span class="md-nav__icon md-icon"></span>
+          Introducing truffle db part 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/introducing-truffle-db-part-2/index.html" class="md-nav__link">
+        Introducing Truffle DB, part 2 - 'Weight and Switch'
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6769,10 +7694,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/iterate-faster-with-truffle-teams.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_34" type="checkbox" id="__nav_6_34" >
+      
+      <label class="md-nav__link" for="__nav_6_34">
         Iterate faster with truffle teams
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Iterate faster with truffle teams" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_34">
+          <span class="md-nav__icon md-icon"></span>
+          Iterate faster with truffle teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/iterate-faster-with-truffle-teams/index.html" class="md-nav__link">
+        Iterate Faster with Truffle Teams
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6781,10 +7733,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/learn-ethereum-the-fun-way-with-our-pet-shop-tutorial.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_35" type="checkbox" id="__nav_6_35" >
+      
+      <label class="md-nav__link" for="__nav_6_35">
         Learn ethereum the fun way with our pet shop tutorial
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Learn ethereum the fun way with our pet shop tutorial" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_35">
+          <span class="md-nav__icon md-icon"></span>
+          Learn ethereum the fun way with our pet shop tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/learn-ethereum-the-fun-way-with-our-pet-shop-tutorial/index.html" class="md-nav__link">
+        Learn Ethereum The Fun Way with our Pet Shop Tutorial
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6793,10 +7772,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/one-hundred-documentation-pull-requests.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_36" type="checkbox" id="__nav_6_36" >
+      
+      <label class="md-nav__link" for="__nav_6_36">
         One hundred documentation pull requests
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="One hundred documentation pull requests" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_36">
+          <span class="md-nav__icon md-icon"></span>
+          One hundred documentation pull requests
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/one-hundred-documentation-pull-requests/index.html" class="md-nav__link">
+        One hundred documentation pull requests? Yes please.
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6805,10 +7811,37 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_37" type="checkbox" id="__nav_6_37" >
+      
+      <label class="md-nav__link" for="__nav_6_37">
+        Open call for contributions truffle pegasys eea private transactions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Open call for contributions truffle pegasys eea private transactions" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_37">
+          <span class="md-nav__icon md-icon"></span>
+          Open call for contributions truffle pegasys eea private transactions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../blog/open-call-for-contributions-truffle-pegasys-eea-private-transactions.html" class="md-nav__link">
-        Open call for contributions by Truffle + PegaSys: EEA private transactions
+      <a href="../../blog/open-call-for-contributions-truffle-pegasys-eea-private-transactions/index.html" class="md-nav__link">
+        Open call for contributions by Truffle + PegaSys - EEA private transactions
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6817,10 +7850,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/removing-installation-issues-continued-testrpc.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_38" type="checkbox" id="__nav_6_38" >
+      
+      <label class="md-nav__link" for="__nav_6_38">
         Removing installation issues continued testrpc
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Removing installation issues continued testrpc" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_38">
+          <span class="md-nav__icon md-icon"></span>
+          Removing installation issues continued testrpc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/removing-installation-issues-continued-testrpc/index.html" class="md-nav__link">
+        Removing installation issues, con't - TestRPC
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6829,10 +7889,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/sandbox-forking-with-truffle-teams.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_39" type="checkbox" id="__nav_6_39" >
+      
+      <label class="md-nav__link" for="__nav_6_39">
         Sandbox forking with truffle teams
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sandbox forking with truffle teams" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_39">
+          <span class="md-nav__icon md-icon"></span>
+          Sandbox forking with truffle teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/sandbox-forking-with-truffle-teams/index.html" class="md-nav__link">
+        Simulate Live Networks with Forked Sandboxes
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6841,10 +7928,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/stack-tracing-with-truffle-test.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_40" type="checkbox" id="__nav_6_40" >
+      
+      <label class="md-nav__link" for="__nav_6_40">
         Stack tracing with truffle test
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Stack tracing with truffle test" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_40">
+          <span class="md-nav__icon md-icon"></span>
+          Stack tracing with truffle test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/stack-tracing-with-truffle-test/index.html" class="md-nav__link">
+        Stack Tracing with Truffle Test
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6853,10 +7967,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/sunsetting-truffle-teams.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_41" type="checkbox" id="__nav_6_41" >
+      
+      <label class="md-nav__link" for="__nav_6_41">
         Sunsetting truffle teams
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sunsetting truffle teams" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_41">
+          <span class="md-nav__icon md-icon"></span>
+          Sunsetting truffle teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/sunsetting-truffle-teams/index.html" class="md-nav__link">
+        Sunsetting Truffle Teams
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6865,10 +8006,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/take-a-dive-into-truffle-5.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_42" type="checkbox" id="__nav_6_42" >
+      
+      <label class="md-nav__link" for="__nav_6_42">
         Take a dive into truffle 5
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Take a dive into truffle 5" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_42">
+          <span class="md-nav__icon md-icon"></span>
+          Take a dive into truffle 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/take-a-dive-into-truffle-5/index.html" class="md-nav__link">
+        Take a Dive into Truffle 5
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6877,10 +8045,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/take-control-of-your-deployments-with-truffle-teams.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_43" type="checkbox" id="__nav_6_43" >
+      
+      <label class="md-nav__link" for="__nav_6_43">
         Take control of your deployments with truffle teams
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Take control of your deployments with truffle teams" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_43">
+          <span class="md-nav__icon md-icon"></span>
+          Take control of your deployments with truffle teams
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/take-control-of-your-deployments-with-truffle-teams/index.html" class="md-nav__link">
+        Take Control of Your Deployments with Truffle Teams
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6889,10 +8084,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/testrpc-is-now-ganache.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_44" type="checkbox" id="__nav_6_44" >
+      
+      <label class="md-nav__link" for="__nav_6_44">
         Testrpc is now ganache
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Testrpc is now ganache" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_44">
+          <span class="md-nav__icon md-icon"></span>
+          Testrpc is now ganache
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/testrpc-is-now-ganache/index.html" class="md-nav__link">
+        TestRPC is now Ganache
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6901,10 +8123,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/the-best-things-to-do-in-seattle-during-trufflecon.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_45" type="checkbox" id="__nav_6_45" >
+      
+      <label class="md-nav__link" for="__nav_6_45">
         The best things to do in seattle during trufflecon
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="The best things to do in seattle during trufflecon" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_45">
+          <span class="md-nav__icon md-icon"></span>
+          The best things to do in seattle during trufflecon
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/the-best-things-to-do-in-seattle-during-trufflecon/index.html" class="md-nav__link">
+        The Best Things to do in Seattle During TruffleCon
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6913,10 +8162,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/the-best-ways-to-contribute-to-truffle.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_46" type="checkbox" id="__nav_6_46" >
+      
+      <label class="md-nav__link" for="__nav_6_46">
         The best ways to contribute to truffle
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="The best ways to contribute to truffle" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_46">
+          <span class="md-nav__icon md-icon"></span>
+          The best ways to contribute to truffle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/the-best-ways-to-contribute-to-truffle/index.html" class="md-nav__link">
+        The Best Ways to Contribute to Truffle
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6925,10 +8201,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/the-blockchain-problem-that-ens-solves.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_47" type="checkbox" id="__nav_6_47" >
+      
+      <label class="md-nav__link" for="__nav_6_47">
         The blockchain problem that ens solves
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="The blockchain problem that ens solves" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_47">
+          <span class="md-nav__icon md-icon"></span>
+          The blockchain problem that ens solves
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/the-blockchain-problem-that-ens-solves/index.html" class="md-nav__link">
+        The Blockchain UI Problem that ENS Solves
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6937,10 +8240,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/token-taxonomy-framework.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_48" type="checkbox" id="__nav_6_48" >
+      
+      <label class="md-nav__link" for="__nav_6_48">
         Token taxonomy framework
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Token taxonomy framework" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_48">
+          <span class="md-nav__icon md-icon"></span>
+          Token taxonomy framework
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/token-taxonomy-framework/index.html" class="md-nav__link">
+        Token Taxonomy Framework
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6949,10 +8279,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-320-released.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_49" type="checkbox" id="__nav_6_49" >
+      
+      <label class="md-nav__link" for="__nav_6_49">
         Truffle 320 released
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle 320 released" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_49">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle 320 released
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-320-released/index.html" class="md-nav__link">
+        Truffle 3.2.0 released
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6961,10 +8318,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-and-ganache-now-come-in-filecoin-flavor.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_50" type="checkbox" id="__nav_6_50" >
+      
+      <label class="md-nav__link" for="__nav_6_50">
         Truffle and ganache now come in filecoin flavor
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle and ganache now come in filecoin flavor" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_50">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle and ganache now come in filecoin flavor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-and-ganache-now-come-in-filecoin-flavor/index.html" class="md-nav__link">
+        Truffle and Ganache now come in Filecoin Flavor
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6973,10 +8357,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-and-infura-support-arbitrum.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_51" type="checkbox" id="__nav_6_51" >
+      
+      <label class="md-nav__link" for="__nav_6_51">
         Truffle and infura support arbitrum
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle and infura support arbitrum" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_51">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle and infura support arbitrum
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-and-infura-support-arbitrum/index.html" class="md-nav__link">
+        Truffle and Infura Now Support Arbitrum
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6985,10 +8396,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-and-infura-support-optimism.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_52" type="checkbox" id="__nav_6_52" >
+      
+      <label class="md-nav__link" for="__nav_6_52">
         Truffle and infura support optimism
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle and infura support optimism" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_52">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle and infura support optimism
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-and-infura-support-optimism/index.html" class="md-nav__link">
+        Truffle and Infura Now Support Optimism
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6997,10 +8435,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-and-infura-support-polygon.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_53" type="checkbox" id="__nav_6_53" >
+      
+      <label class="md-nav__link" for="__nav_6_53">
         Truffle and infura support polygon
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle and infura support polygon" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_53">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle and infura support polygon
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-and-infura-support-polygon/index.html" class="md-nav__link">
+        Truffle and Infura Now Support Polygon
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7009,10 +8474,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-boxes-making-life-sweeter.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_54" type="checkbox" id="__nav_6_54" >
+      
+      <label class="md-nav__link" for="__nav_6_54">
         Truffle boxes making life sweeter
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle boxes making life sweeter" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_54">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle boxes making life sweeter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-boxes-making-life-sweeter/index.html" class="md-nav__link">
+        Truffle Boxes - Making Life Sweeter
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7021,10 +8513,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-teams-gets-a-new-look.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_55" type="checkbox" id="__nav_6_55" >
+      
+      <label class="md-nav__link" for="__nav_6_55">
         Truffle teams gets a new look
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle teams gets a new look" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_55">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle teams gets a new look
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-teams-gets-a-new-look/index.html" class="md-nav__link">
+        Truffle Teams Gets a New Look!
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7033,10 +8552,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-teams-now-supports-private-repositories.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_56" type="checkbox" id="__nav_6_56" >
+      
+      <label class="md-nav__link" for="__nav_6_56">
         Truffle teams now supports private repositories
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle teams now supports private repositories" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_56">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle teams now supports private repositories
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-teams-now-supports-private-repositories/index.html" class="md-nav__link">
+        Truffle Teams Now Supports Private Repositories
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7045,10 +8591,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/truffle-v5-has-arrived.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_57" type="checkbox" id="__nav_6_57" >
+      
+      <label class="md-nav__link" for="__nav_6_57">
         Truffle v5 has arrived
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Truffle v5 has arrived" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_57">
+          <span class="md-nav__icon md-icon"></span>
+          Truffle v5 has arrived
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/truffle-v5-has-arrived/index.html" class="md-nav__link">
+        Truffle v5 has arrived!
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7057,10 +8630,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/try-new-features-first-with-truffle-teams-early-access.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_58" type="checkbox" id="__nav_6_58" >
+      
+      <label class="md-nav__link" for="__nav_6_58">
         Try new features first with truffle teams early access
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Try new features first with truffle teams early access" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_58">
+          <span class="md-nav__icon md-icon"></span>
+          Try new features first with truffle teams early access
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/try-new-features-first-with-truffle-teams-early-access/index.html" class="md-nav__link">
+        Try New Features First with Truffle Teams Early Access
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7069,10 +8669,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/unwrap-the-corda-flavored-ganache-beta.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_59" type="checkbox" id="__nav_6_59" >
+      
+      <label class="md-nav__link" for="__nav_6_59">
         Unwrap the corda flavored ganache beta
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Unwrap the corda flavored ganache beta" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_59">
+          <span class="md-nav__icon md-icon"></span>
+          Unwrap the corda flavored ganache beta
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/unwrap-the-corda-flavored-ganache-beta/index.html" class="md-nav__link">
+        Unwrap the Corda Flavored Ganache Beta
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7081,22 +8708,76 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_60" type="checkbox" id="__nav_6_60" >
+      
+      <label class="md-nav__link" for="__nav_6_60">
+        Upcoming improvements to encoding and decoding
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Upcoming improvements to encoding and decoding" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_60">
+          <span class="md-nav__icon md-icon"></span>
+          Upcoming improvements to encoding and decoding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../blog/upcoming-improvements-to-encoding-and-decoding.html" class="md-nav__link">
+      <a href="../../blog/upcoming-improvements-to-encoding-and-decoding/index.html" class="md-nav__link">
         Upcoming improvements to encoding and decoding
       </a>
     </li>
   
 
           
+        </ul>
+      </nav>
+    </li>
+  
+
+          
             
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/using-the-ens-integration.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_61" type="checkbox" id="__nav_6_61" >
+      
+      <label class="md-nav__link" for="__nav_6_61">
         Using the ens integration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Using the ens integration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_61">
+          <span class="md-nav__icon md-icon"></span>
+          Using the ens integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/using-the-ens-integration/index.html" class="md-nav__link">
+        Using Truffle's ENS Integration
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7105,10 +8786,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/using-truffle-to-interact-with-chainlink-smart-contracts.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_62" type="checkbox" id="__nav_6_62" >
+      
+      <label class="md-nav__link" for="__nav_6_62">
         Using truffle to interact with chainlink smart contracts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Using truffle to interact with chainlink smart contracts" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_62">
+          <span class="md-nav__icon md-icon"></span>
+          Using truffle to interact with chainlink smart contracts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/using-truffle-to-interact-with-chainlink-smart-contracts/index.html" class="md-nav__link">
+        Using Truffle to interact with Chainlink Smart Contracts
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7117,10 +8825,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/why-i-love-trufflecon.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_63" type="checkbox" id="__nav_6_63" >
+      
+      <label class="md-nav__link" for="__nav_6_63">
         Why i love trufflecon
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Why i love trufflecon" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_63">
+          <span class="md-nav__icon md-icon"></span>
+          Why i love trufflecon
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/why-i-love-trufflecon/index.html" class="md-nav__link">
+        Why I love TruffleCon
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7129,10 +8864,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/why-were-organizing-trufflecon-2018.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_64" type="checkbox" id="__nav_6_64" >
+      
+      <label class="md-nav__link" for="__nav_6_64">
         Why were organizing trufflecon 2018
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Why were organizing trufflecon 2018" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_64">
+          <span class="md-nav__icon md-icon"></span>
+          Why were organizing trufflecon 2018
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/why-were-organizing-trufflecon-2018/index.html" class="md-nav__link">
+        Why We're Organizing TruffleCon 2018
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7141,10 +8903,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/you-can-now-make-your-own-truffle-box.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_65" type="checkbox" id="__nav_6_65" >
+      
+      <label class="md-nav__link" for="__nav_6_65">
         You can now make your own truffle box
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="You can now make your own truffle box" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_65">
+          <span class="md-nav__icon md-icon"></span>
+          You can now make your own truffle box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/you-can-now-make-your-own-truffle-box/index.html" class="md-nav__link">
+        You Can Now Make Your Own Truffle Box
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7153,10 +8942,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/you-decide-pipeline-or-table-view-in-truffle-teams-deployments-manager.html" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_66" type="checkbox" id="__nav_6_66" >
+      
+      <label class="md-nav__link" for="__nav_6_66">
         You decide pipeline or table view in truffle teams deployments manager
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="You decide pipeline or table view in truffle teams deployments manager" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_66">
+          <span class="md-nav__icon md-icon"></span>
+          You decide pipeline or table view in truffle teams deployments manager
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/you-decide-pipeline-or-table-view-in-truffle-teams-deployments-manager/index.html" class="md-nav__link">
+        You Decide - Pipeline or Table View in Truffle Teams' Refreshed Deployments Manager
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7216,6 +9032,8 @@
               </div>
             
             
+              
+                
               
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
@@ -7288,8 +9106,63 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#what-is-ethereum" class="md-nav__link">
+    What is Ethereum?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-smart-contract" class="md-nav__link">
+    What is a smart contract?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethereum-networks" class="md-nav__link">
+    Ethereum networks
+  </a>
+  
+    <nav class="md-nav" aria-label="Ethereum networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-test-networks" class="md-nav__link">
+    Local test networks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-test-networks" class="md-nav__link">
+    Public test networks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privateenterprise-networks" class="md-nav__link">
+    Private/enterprise networks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decentralized-applications-dapps" class="md-nav__link">
+    Decentralized applications (dapps)
+  </a>
   
 </li>
       
@@ -7306,7 +9179,7 @@
               
                 
                 
-                  <h1>Index</h1>
+                  <h1>Ethereum Overview</h1>
                 
                 <p>You may have heard the terms "blockchain" and "smart contract" floating around, but what do they actually mean? In this tutorial, we'll demystify the jargon, show you practical blockchain solutions, and give you direction on how to create an application that takes advantage of the blockchain.</p>
 <p>This is a high-level overview covering:</p>
@@ -7323,21 +9196,16 @@
 <li>Ethereum networks</li>
 <li>Distributed applications (dapps)</li>
 </ul>
-<h2 id="why-use-a-blockchain">Why use a blockchain?</h2>
+<h2 id="why-use-a-blockchain">Why use a blockchain?<a class="headerlink" href="#why-use-a-blockchain" title="Permanent link">&para;</a></h2>
 <p>Blockchains are used when multiple parties, perhaps located across the world, need to share data and transfer value without trusting each other.</p>
 <p>The financial world describes this trust as the <strong>counterparty risk</strong>: the risk that the other party won't hold up their end of the bargain. Blockchains completely remove the counterparty risk through a revolutionary system of mathematics, cryptography, and peer-to-peer networking.</p>
 <p>Before we go into those details, let's first look at some history and how the need for blockchains arose.</p>
-<h3 id="the-first-databases">The first databases</h3>
+<h3 id="the-first-databases">The first databases<a class="headerlink" href="#the-first-databases" title="Permanent link">&para;</a></h3>
 <p>In the 1960's the first computerized databases emerged. With hardware occupying multiple rooms and the Internet decades away, data naturally existed in central, physical locations. This is a <strong>centralized</strong> approach, meaning the location and accessing of data is controlled by a central authority.</p>
 <p>Centralized systems can be manipulated, from inside or outside, so we have to trust the owners of these systems to have sufficient will and resources to keep their data secure and with integrity. Centralized databases are still the most common today, powering most of our online and offline applications.</p>
 <p>A self-hosted blog is a common example of a centralized database. The owner could potentially edit posts in hindsight or censor users without recourse. Alternately, a hacker could infiltrate the server and commit malicious acts. If there is no database backup, reversing the damage might be impossible.</p>
-<div class="centralized-db-image">
-
-![Centralized Database](/img/tutorials/ethereum-overview/db-server.png "Graphically represented, each arrow crossing a boundary of the main server box is a connection which requires trust")
-
-</div>
-
-<h3 id="the-need-to-share-data">The need to share data</h3>
+<p><img alt="Centralized Database" src="/img/tutorials/ethereum-overview/db-server.png" title="Graphically represented, each arrow crossing a boundary of the main server box is a connection which requires trust" /></p>
+<h3 id="the-need-to-share-data">The need to share data<a class="headerlink" href="#the-need-to-share-data" title="Permanent link">&para;</a></h3>
 <p>Sharing large amounts of data can be expensive and cumbersome. We can ease this burden by distributing data across multiple parties. Reading and writing are controlled by one or more parties within the group and therefore subject to similar corruptions as centralized databases.</p>
 <p>Modern shared databases use techniques to minimize this corruption. Some of these overlap with blockchains. Depending on the shared database system, it may feature:</p>
 <ul>
@@ -7345,7 +9213,7 @@
 <li><strong>Consensus</strong>: For a database to be shared, all parties must agree on its contents. There are various methods of reaching consensus, one of which (proof-of-work) will be discussed below.</li>
 </ul>
 <p>Blockchains use these and take them a step further, solving the problem of trust.</p>
-<h2 id="what-is-a-blockchain">What is a blockchain?</h2>
+<h2 id="what-is-a-blockchain">What is a blockchain?<a class="headerlink" href="#what-is-a-blockchain" title="Permanent link">&para;</a></h2>
 <p>Fundamentally, <strong>a blockchain is a shared database</strong>, consisting of a ledger of transactions. Much like a bank, the ledgers of simple blockchains keep track of currency (in this case, cryptocurrency) ownership. Unlike a centralized bank, everyone has a copy of the ledger and can verify each other's accounts. Each connected device with a copy of the ledger is called a "node".</p>
 <p>Blockchains eliminate the problem of trust that affect other databases in the following ways:</p>
 <ul>
@@ -7353,145 +9221,74 @@
 <li><strong>Extreme fault tolerance</strong>: Fault tolerance is the ability of a system to handle corrupt data. While fault tolerance is not unique to blockchains, it takes the concept to its logical extreme by having <em>every</em> account sharing the database validate its changes.</li>
 <li><strong>Independent verification</strong>: Transactions can be verified by anyone, without a third party. This is sometimes referred to as "disintermediation".</li>
 </ul>
-<h2 id="how-a-blockchain-works">How a blockchain works</h2>
+<h2 id="how-a-blockchain-works">How a blockchain works<a class="headerlink" href="#how-a-blockchain-works" title="Permanent link">&para;</a></h2>
 <p>Now that we have some idea of why blockchains are useful, let's dive deeper into how they work.</p>
 <p>Interactions between accounts in a blockchain network are called "transactions". They can be monetary transactions, such as sending <strong>ether, the cryptocurrency used in Ethereum</strong>. They could also be transmissions of data, such as a comment or user name. A bundle of transactions is called a "block".</p>
 <p>Every account on the blockchain has a unique signature, which lets everyone know which account initiated the transaction. On a public blockchain, anyone can read or write data. Reading data is free, but writing to the public blockchain is not. This cost, known as "gas" and priced in ether, helps discourage spam and pays to secure the network.</p>
-<h3 id="mining">Mining</h3>
+<h3 id="mining">Mining<a class="headerlink" href="#mining" title="Permanent link">&para;</a></h3>
 <p>Any node on the network can take part in securing the network through a process called "mining". Nodes which have opted to be miners compete to solve math problems which secure the contents of a block.</p>
 <p>Since mining requires computing power (not to mention electricity cost), miners can be compensated for their service. The winner of the competition receives some cryptocurrency as a reward. This incentivizes nodes to work to secure the network, preventing too much power from being in the hands of any single miner.</p>
-<h3 id="hashing">Hashing</h3>
+<h3 id="hashing">Hashing<a class="headerlink" href="#hashing" title="Permanent link">&para;</a></h3>
 <p>Once a new block is mined, the other miners are notified and begin verifying and adding this new block to their copies of the chain. This is done through cryptographic hashing (or simply, "hashing"). Hashing is a one-way process which takes in data and gives back a fixed-length string representing that data.</p>
 <p>While the original data can't be reproduced from its hash, the same data will always produce the same hash. Therefore, unverified data can be hashed with the same function and compared to the original. If they are identical, the data is validated.</p>
 <p>Once more than half of the miners have validated the new block, the network has "reached consensus" and the block becomes part of the blockchain permanent history. Now this data can be downloaded by all nodes, with its validity assured.</p>
-<p>Here's the whole process visually:
-</div></p>
-<div class="container text-center">
-<div class="row row-steps justify-content-center">
-<div class="col-lg-4">
-
-![Mining Step 1](/img/tutorials/ethereum-overview/chain-step1.png "1. Bob attempts to send Alice 1 ETH")
-
-</div>
-
-<div class="col-lg-4">
-
-![Mining Step 2](/img/tutorials/ethereum-overview/chain-step2.png "2. Bob and Alice's transaction is combined with other transactions that have occurred since the last block")
-
-</div>
-
-<div class="col-lg-4">
-
-![Mining Step 3](/img/tutorials/ethereum-overview/chain-step3.png "3. Miners compete to validate the block with the new set of transactions")
-
-</div>
-</div>
-
-<div class="row row-steps justify-content-center">
-<div class="col-lg-4">
-
-![Mining Step 4](/img/tutorials/ethereum-overview/chain-step4.png "4. The victorious miner creates a new block and receives a reward")
-
-</div>
-
-<div class="col-lg-4">
-
-![Mining Step 5](/img/tutorials/ethereum-overview/chain-step5.png "5. With the transaction validated, Alice receives 1 ETH")
-
-</div>
-</div>
-</div>
-<div class="container container-narrow container-post">
-<h3><a name="what-is-ethereum" class="anchor" href="#what-is-ethereum"><span class="header-link" style="z-index: 9999995985">&nbsp;</span></a>What is Ethereum?</h3>
-
-<p><strong>Ethereum is a blockchain that allows you to run programs in its trusted environment.</strong> This contrasts with the Bitcoin blockchain, which only allows you to manage cryptocurrency.</p>
-
+<p>Here's the whole process visually:</p>
+<p><img alt="Mining Step 1" src="/img/tutorials/ethereum-overview/chain-step1.png" title="1. Bob attempts to send Alice 1 ETH" /></p>
+<p><img alt="Mining Step 2" src="/img/tutorials/ethereum-overview/chain-step2.png" title="2. Bob and Alice's transaction is combined with other transactions that have occurred since the last block" /></p>
+<p><img alt="Mining Step 3" src="/img/tutorials/ethereum-overview/chain-step3.png" title="3. Miners compete to validate the block with the new set of transactions" /></p>
+<p><img alt="Mining Step 4" src="/img/tutorials/ethereum-overview/chain-step4.png" title="4. The victorious miner creates a new block and receives a reward" /></p>
+<p><img alt="Mining Step 5" src="/img/tutorials/ethereum-overview/chain-step5.png" title="5. With the transaction validated, Alice receives 1 ETH" /></p>
+<h3 id="what-is-ethereum">What is Ethereum?<a class="headerlink" href="#what-is-ethereum" title="Permanent link">&para;</a></h3>
+<p>Ethereum is a blockchain that allows you to run programs in its trusted environment. This contrasts with the Bitcoin blockchain, which only allows you to manage cryptocurrency.</p>
 <p>To this end, Ethereum has a virtual machine, called the Ethereum Virtual Machine (EVM). The EVM allows code to be verified and executed on the blockchain, providing guarantees it will be run the same way on everyone's machine. This code is contained in "smart contracts" (more on these below).</p>
-
 <p>Beyond just tracking account balances, Ethereum maintains the state of the EVM on the blockchain. All nodes process smart contracts to verify the integrity of the contracts and their outputs.</p>
-
-
-<h3><a name="what-is-a-smart-contract" class="anchor" href="#what-is-a-smart-contract"><span class="header-link" style="z-index: 9999995985">&nbsp;</span></a>What is a smart contract?</h3>
-
+<h3 id="what-is-a-smart-contract">What is a smart contract?<a class="headerlink" href="#what-is-a-smart-contract" title="Permanent link">&para;</a></h3>
 <p><strong>A smart contract is code that runs on the EVM.</strong> Smart contracts can accept and store ether, data, or a combination of both. Then, using the logic programmed into the contract, it can distribute that ether to other accounts or even other smart contracts.</p>
-
 <p>Here's a smart contract example with Bob and Alice again. Alice wants to hire Bob to build her a patio, and they are using an escrow contract (a place to store money until a condition is fulfilled) to store their ether before the final transaction.</p>
-
-</div>
-
-<div class="container">
-<div class="row row-steps text-center">
-<div class="col-lg-4">
-
-![Smart Contract Step 1](/img/tutorials/ethereum-overview/smart-contract-step1.png "1. Alice agrees to store her payment for the patio within the escrow contract, and Bob agrees to deposit an equal amount")
-
-</div>
-
-<div class="col-lg-4">
-
-![Smart Contract Step 2](/img/tutorials/ethereum-overview/smart-contract-step2.png "2. Bob completes the patio project and Alice gives the smart contract permission to release the funds")
-
-</div>
-
-<div class="col-lg-4">
-
-![Smart Contract Step 3](/img/tutorials/ethereum-overview/smart-contract-step3.png "3. Bob receives Alice's payment along with his collateral")
-
-</div>
-</div>
-</div>
-<div class="container container-narrow">
-
-(Provisions could be written into the contract code releasing Bob's collateral to Alice if Bob were to fail to build the patio or if he were to perform a poor job.)
-
-**Smart contracts are written in a language called Solidity**. [Solidity](https://solidity.readthedocs.io/) is statically typed, and supports inheritance, libraries, and complex user-defined types, among much else. Solidity syntax is similar to JavaScript.
-
-
-## Ethereum networks
-
-Up to this point we've been describing the main Ethereum public blockchain (or "MainNet"). On the MainNet, data on the chain—including account balances and transactions—are public, and anyone can create a node and begin verifying transactions. Ether on this network has a market value and can be exchanged for other cryptocurrency or fiat currencies like US Dollars.
-
-But there are other networks as well. In fact, anyone can create their own Ethereum network.
-
-### Local test networks
-
-The Ethereum blockchain can be simulated locally for development. Local test networks process transactions instantly and Ether can be distributed as desired. An array of Ethereum simulators exist; we recommend [Ganache](/ganache).
-
-### Public test networks
-
-Developers use public test networks (or testnets) to test Ethereum applications before final deployment to the main network. Ether on these networks is used for testing purposes only and has no value.
-
-There are three public test networks in wide usage:
-
-* **Ropsten**: The official test network, created by [The Ethereum Foundation](https://www.ethereum.org/foundation). Its functionality is similar to the MainNet.
-
-* **Kovan**: A network that uses a consensus method called "proof-of-authority". This means its transactions are validated by select members, leading to a consistent four second block time. The supply of ether on this testnet is also controlled to mitigate spam attacks.
-
-* **Rinkeby**: A testnet also using proof-of-authority, created by The Ethereum Foundation.
-
-### Private/enterprise networks
-
-Private Ethereum networks allow parties to share data without making it publicly accessible. A private blockchain is a good choice for:
-
-* Sharing of sensitive data, such as health care records
-* Scaling to handle higher read/write throughput, due to the smaller network size
-
-An example of a private enterprise blockchain is [Quorum](https://www.jpmorgan.com/country/US/EN/Quorum), originally written by J.P. Morgan. ([Read our blog post on using Truffle with Quorum.](/tutorials/building-dapps-for-quorum-private-enterprise-blockchains))
-
-
-## Decentralized applications (dapps)
-
-**Applications using smart contracts for their processing and/or datastorage are called "decentralized applications", or "dapps".** The user interfaces for these dapps consist of familiar languages such as HTML, CSS, and JavaScript. The application itself can be hosted on a traditional web server or on a decentralized file service such as [Swarm](http://swarm-gateways.net/bzz:/theswarm.eth/) or [IPFS](http://ipfs.io/).
-
-Given the benefits of the Ethereum blockchain, a dapp could be a solution for many industries, including but not limited to:
-
-*   Record keeping
-*   Finance
-*   Supply chains
-*   Real estate
-*   Marketplaces
-
-And what is the best way to create your own dapp, test it, and deploy it to an Ethereum network of your choice? With [Truffle](/docs/getting_started/project), of course.
+<p><img alt="Smart Contract Step 1" src="/img/tutorials/ethereum-overview/smart-contract-step1.png" title="1. Alice agrees to store her payment for the patio within the escrow contract, and Bob agrees to deposit an equal amount" /></p>
+<p><img alt="Smart Contract Step 2" src="/img/tutorials/ethereum-overview/smart-contract-step2.png" title="2. Bob completes the patio project and Alice gives the smart contract permission to release the funds" /></p>
+<p><img alt="Smart Contract Step 3" src="/img/tutorials/ethereum-overview/smart-contract-step3.png" title="3. Bob receives Alice's payment along with his collateral" /></p>
+<p>(Provisions could be written into the contract code releasing Bob's collateral to Alice if Bob were to fail to build the patio or if he were to perform a poor job.)</p>
+<p><strong>Smart contracts are written in a language called Solidity</strong>. <a href="https://solidity.readthedocs.io/">Solidity</a> is statically typed, and supports inheritance, libraries, and complex user-defined types, among much else. Solidity syntax is similar to JavaScript.</p>
+<h2 id="ethereum-networks">Ethereum networks<a class="headerlink" href="#ethereum-networks" title="Permanent link">&para;</a></h2>
+<p>Up to this point we've been describing the main Ethereum public blockchain (or "MainNet"). On the MainNet, data on the chain—including account balances and transactions—are public, and anyone can create a node and begin verifying transactions. Ether on this network has a market value and can be exchanged for other cryptocurrency or fiat currencies like US Dollars.</p>
+<p>But there are other networks as well. In fact, anyone can create their own Ethereum network.</p>
+<h3 id="local-test-networks">Local test networks<a class="headerlink" href="#local-test-networks" title="Permanent link">&para;</a></h3>
+<p>The Ethereum blockchain can be simulated locally for development. Local test networks process transactions instantly and Ether can be distributed as desired. An array of Ethereum simulators exist; we recommend <a href="/ganache">Ganache</a>.</p>
+<h3 id="public-test-networks">Public test networks<a class="headerlink" href="#public-test-networks" title="Permanent link">&para;</a></h3>
+<p>Developers use public test networks (or testnets) to test Ethereum applications before final deployment to the main network. Ether on these networks is used for testing purposes only and has no value.</p>
+<p>There are three public test networks in wide usage:</p>
+<ul>
+<li>
+<p><strong>Ropsten</strong>: The official test network, created by <a href="https://www.ethereum.org/foundation">The Ethereum Foundation</a>. Its functionality is similar to the MainNet.</p>
+</li>
+<li>
+<p><strong>Kovan</strong>: A network that uses a consensus method called "proof-of-authority". This means its transactions are validated by select members, leading to a consistent four second block time. The supply of ether on this testnet is also controlled to mitigate spam attacks.</p>
+</li>
+<li>
+<p><strong>Rinkeby</strong>: A testnet also using proof-of-authority, created by The Ethereum Foundation.</p>
+</li>
+</ul>
+<h3 id="privateenterprise-networks">Private/enterprise networks<a class="headerlink" href="#privateenterprise-networks" title="Permanent link">&para;</a></h3>
+<p>Private Ethereum networks allow parties to share data without making it publicly accessible. A private blockchain is a good choice for:</p>
+<ul>
+<li>Sharing of sensitive data, such as health care records</li>
+<li>Scaling to handle higher read/write throughput, due to the smaller network size</li>
+</ul>
+<p>An example of a private enterprise blockchain is <a href="https://www.jpmorgan.com/country/US/EN/Quorum">Quorum</a>, originally written by J.P. Morgan. (<a href="/tutorials/building-dapps-for-quorum-private-enterprise-blockchains">Read our blog post on using Truffle with Quorum.</a>)</p>
+<h2 id="decentralized-applications-dapps">Decentralized applications (dapps)<a class="headerlink" href="#decentralized-applications-dapps" title="Permanent link">&para;</a></h2>
+<p><strong>Applications using smart contracts for their processing and/or datastorage are called "decentralized applications", or "dapps".</strong> The user interfaces for these dapps consist of familiar languages such as HTML, CSS, and JavaScript. The application itself can be hosted on a traditional web server or on a decentralized file service such as <a href="http://swarm-gateways.net/bzz:/theswarm.eth/">Swarm</a> or <a href="http://ipfs.io/">IPFS</a>.</p>
+<p>Given the benefits of the Ethereum blockchain, a dapp could be a solution for many industries, including but not limited to:</p>
+<ul>
+<li>Record keeping</li>
+<li>Finance</li>
+<li>Supply chains</li>
+<li>Real estate</li>
+<li>Marketplaces</li>
+</ul>
+<p>And what is the best way to create your own dapp, test it, and deploy it to an Ethereum network of your choice? With <a href="/docs/getting_started/project">Truffle</a>, of course.</p>
+                
+                  
                 
               
               
