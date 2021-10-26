@@ -10,8 +10,6 @@
       
       
       
-        <link rel="canonical" href="https://trufflesuite.github.io/truffle.dev/guides/robust-smart-contracts-with-openzeppelin/index.html">
-      
       <link rel="icon" href="../../assets/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
@@ -1382,7 +1380,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/index.html" class="md-nav__link">
-        Drizzle | Overview
+        Overview
       </a>
     </li>
   
@@ -1394,7 +1392,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/quickstart.html" class="md-nav__link">
-        Drizzle | Drizzle Quickstart
+        Drizzle Quickstart
       </a>
     </li>
   
@@ -1427,7 +1425,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/getting-started/contract-interaction.html" class="md-nav__link">
-        Drizzle | Contract Interaction
+        Contract Interaction
       </a>
     </li>
   
@@ -1439,7 +1437,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/getting-started/using-drizzles-redux-store.html" class="md-nav__link">
-        Drizzle | Using Drizzle's Redux Store
+        Using Drizzle's Redux Store
       </a>
     </li>
   
@@ -1478,7 +1476,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/react/react-components.html" class="md-nav__link">
-        Drizzle | React Components
+        React Components
       </a>
     </li>
   
@@ -1490,7 +1488,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/react/react-integration.html" class="md-nav__link">
-        Drizzle | React Integration
+        React Integration
       </a>
     </li>
   
@@ -1529,7 +1527,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/reference/drizzle-actions.html" class="md-nav__link">
-        Drizzle | Drizzle Actions
+        Drizzle Actions
       </a>
     </li>
   
@@ -1541,7 +1539,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/reference/drizzle-options.html" class="md-nav__link">
-        Drizzle | Drizzle Options
+        Drizzle Options
       </a>
     </li>
   
@@ -1553,7 +1551,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/reference/drizzle-state.html" class="md-nav__link">
-        Drizzle | Drizzle State
+        Drizzle State
       </a>
     </li>
   
@@ -1565,7 +1563,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/reference/how-data-stays-fresh.html" class="md-nav__link">
-        Drizzle | How Data Stays Fresh
+        How Data Stays Fresh
       </a>
     </li>
   
@@ -9040,7 +9038,7 @@
 <p><a href="https://zeppelin.solutions/">Zeppelin Solutions</a>, a smart contract auditing service, has recognized this need. Using their experience, they've put together a set of vetted smart contracts called <a href="https://openzeppelin.org/">OpenZeppelin</a>.</p>
 <p>We can use and extend these contracts to create more secure dapps in less time. OpenZeppelin comes with a wide array of smart contracts for various important functions (<a href="https://github.com/OpenZeppelin/openzeppelin-solidity">see them all here</a>), but today we'll be focusing on their token contracts. Specifically, we'll be extending their <code>StandardToken.sol</code> contract to create our own <a href="https://theethereum.wiki/w/index.php/ERC20_Token_Standard">ERC20</a>-compliant token.</p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<p>This tutorial expects you to have some knowledge of Truffle, Ethereum, and Solidity. If you haven't gone through our <a href="/tutorials/ethereum-overview">Ethereum overview</a> and our <a href="/tutorials/pet-shop">Pet Shop tutorial</a> yet, those would be great places to start.</p>
+<p>This tutorial expects you to have some knowledge of Truffle, Ethereum, and Solidity. If you haven't gone through our <a href="/guides/ethereum-overview">Ethereum overview</a> and our <a href="/tutorial">Pet Shop tutorial</a> yet, those would be great places to start.</p>
 <p>For even more information, please see the following links:</p>
 <ul>
 <li><a href="/docs">Truffle documentation</a></li>
@@ -9172,7 +9170,7 @@ Saving artifacts...
 <p>Ganache will also list these transactions as well.</p>
 <p><img alt="Ganache migration" src="/img/tutorials/open-zeppelin/oz-ganache-migrate.png" title="Ganache showing migration transactions." /></p>
 <h2 id="interacting-with-the-new-token">Interacting with the new token<a class="headerlink" href="#interacting-with-the-new-token" title="Permanent link">&para;</a></h2>
-<p>For this portion of the tutorial, we recommend using <a href="http://metamask.io">MetaMask</a>, a browser extension for Chrome and Firefox. It will allow you to switch between accounts quickly, perfect for testing the ability to transfer our newly created tokens. Our <a href="/tutorials/pet-shop">Pet Shop tutorial</a> has more information about <a href="/tutorials/pet-shop#interacting-with-the-dapp-in-a-browser">configuring MetaMask</a>.</p>
+<p>For this portion of the tutorial, we recommend using <a href="http://metamask.io">MetaMask</a>, a browser extension for Chrome and Firefox. It will allow you to switch between accounts quickly, perfect for testing the ability to transfer our newly created tokens. Our <a href="/tutorial">Pet Shop tutorial</a> has more information about <a href="/tutorial#interacting-with-the-dapp-in-a-browser">configuring MetaMask</a>.</p>
 <p>You will want to enter the mnemonic displayed in Ganache into MetaMask, and make sure that MetaMask is listening to the Custom RPC <code>http://127.0.0.1:7545</code>.</p>
 <p class="alert alert-danger">
 **Warning**: Do not use the Main Network in MetaMask. If you send ether to any account generated from Ganache's default mnemonic, you will lose it all!

@@ -10,8 +10,6 @@
       
       
       
-        <link rel="canonical" href="https://trufflesuite.github.io/truffle.dev/guides/ethereum-overview/index.html">
-      
       <link rel="icon" href="../../assets/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
@@ -1382,7 +1380,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/index.html" class="md-nav__link">
-        Drizzle | Overview
+        Overview
       </a>
     </li>
   
@@ -1394,7 +1392,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/quickstart.html" class="md-nav__link">
-        Drizzle | Drizzle Quickstart
+        Drizzle Quickstart
       </a>
     </li>
   
@@ -1427,7 +1425,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/getting-started/contract-interaction.html" class="md-nav__link">
-        Drizzle | Contract Interaction
+        Contract Interaction
       </a>
     </li>
   
@@ -1439,7 +1437,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/getting-started/using-drizzles-redux-store.html" class="md-nav__link">
-        Drizzle | Using Drizzle's Redux Store
+        Using Drizzle's Redux Store
       </a>
     </li>
   
@@ -1478,7 +1476,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/react/react-components.html" class="md-nav__link">
-        Drizzle | React Components
+        React Components
       </a>
     </li>
   
@@ -1490,7 +1488,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/react/react-integration.html" class="md-nav__link">
-        Drizzle | React Integration
+        React Integration
       </a>
     </li>
   
@@ -1529,7 +1527,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/reference/drizzle-actions.html" class="md-nav__link">
-        Drizzle | Drizzle Actions
+        Drizzle Actions
       </a>
     </li>
   
@@ -1541,7 +1539,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/reference/drizzle-options.html" class="md-nav__link">
-        Drizzle | Drizzle Options
+        Drizzle Options
       </a>
     </li>
   
@@ -1553,7 +1551,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/reference/drizzle-state.html" class="md-nav__link">
-        Drizzle | Drizzle State
+        Drizzle State
       </a>
     </li>
   
@@ -1565,7 +1563,7 @@
   
     <li class="md-nav__item">
       <a href="../../docs/drizzle/reference/how-data-stays-fresh.html" class="md-nav__link">
-        Drizzle | How Data Stays Fresh
+        How Data Stays Fresh
       </a>
     </li>
   
@@ -9239,7 +9237,7 @@
 <p><img alt="Mining Step 4" src="/img/tutorials/ethereum-overview/chain-step4.png" title="4. The victorious miner creates a new block and receives a reward" /></p>
 <p><img alt="Mining Step 5" src="/img/tutorials/ethereum-overview/chain-step5.png" title="5. With the transaction validated, Alice receives 1 ETH" /></p>
 <h3 id="what-is-ethereum">What is Ethereum?<a class="headerlink" href="#what-is-ethereum" title="Permanent link">&para;</a></h3>
-<p>Ethereum is a blockchain that allows you to run programs in its trusted environment. This contrasts with the Bitcoin blockchain, which only allows you to manage cryptocurrency.</p>
+<p><strong>Ethereum is a blockchain that allows you to run programs in its trusted environment.</strong> This contrasts with the Bitcoin blockchain, which only allows you to manage cryptocurrency.</p>
 <p>To this end, Ethereum has a virtual machine, called the Ethereum Virtual Machine (EVM). The EVM allows code to be verified and executed on the blockchain, providing guarantees it will be run the same way on everyone's machine. This code is contained in "smart contracts" (more on these below).</p>
 <p>Beyond just tracking account balances, Ethereum maintains the state of the EVM on the blockchain. All nodes process smart contracts to verify the integrity of the contracts and their outputs.</p>
 <h3 id="what-is-a-smart-contract">What is a smart contract?<a class="headerlink" href="#what-is-a-smart-contract" title="Permanent link">&para;</a></h3>
@@ -9247,8 +9245,8 @@
 <p>Here's a smart contract example with Bob and Alice again. Alice wants to hire Bob to build her a patio, and they are using an escrow contract (a place to store money until a condition is fulfilled) to store their ether before the final transaction.</p>
 <p><img alt="Smart Contract Step 1" src="/img/tutorials/ethereum-overview/smart-contract-step1.png" title="1. Alice agrees to store her payment for the patio within the escrow contract, and Bob agrees to deposit an equal amount" /></p>
 <p><img alt="Smart Contract Step 2" src="/img/tutorials/ethereum-overview/smart-contract-step2.png" title="2. Bob completes the patio project and Alice gives the smart contract permission to release the funds" /></p>
-<p><img alt="Smart Contract Step 3" src="/img/tutorials/ethereum-overview/smart-contract-step3.png" title="3. Bob receives Alice's payment along with his collateral" /></p>
-<p>(Provisions could be written into the contract code releasing Bob's collateral to Alice if Bob were to fail to build the patio or if he were to perform a poor job.)</p>
+<p><img alt="Smart Contract Step 3" src="/img/tutorials/ethereum-overview/smart-contract-step3.png" title="3. Bob receives Alice's payment along with his collateral" />
+(Provisions could be written into the contract code releasing Bob's collateral to Alice if Bob were to fail to build the patio or if he were to perform a poor job.)</p>
 <p><strong>Smart contracts are written in a language called Solidity</strong>. <a href="https://solidity.readthedocs.io/">Solidity</a> is statically typed, and supports inheritance, libraries, and complex user-defined types, among much else. Solidity syntax is similar to JavaScript.</p>
 <h2 id="ethereum-networks">Ethereum networks<a class="headerlink" href="#ethereum-networks" title="Permanent link">&para;</a></h2>
 <p>Up to this point we've been describing the main Ethereum public blockchain (or "MainNet"). On the MainNet, data on the chain—including account balances and transactions—are public, and anyone can create a node and begin verifying transactions. Ether on this network has a market value and can be exchanged for other cryptocurrency or fiat currencies like US Dollars.</p>
@@ -9275,9 +9273,9 @@
 <li>Sharing of sensitive data, such as health care records</li>
 <li>Scaling to handle higher read/write throughput, due to the smaller network size</li>
 </ul>
-<p>An example of a private enterprise blockchain is <a href="https://www.jpmorgan.com/country/US/EN/Quorum">Quorum</a>, originally written by J.P. Morgan. (<a href="/tutorials/building-dapps-for-quorum-private-enterprise-blockchains">Read our blog post on using Truffle with Quorum.</a>)</p>
+<p>An example of a private enterprise blockchain is <a href="https://www.jpmorgan.com/country/US/EN/Quorum">Quorum</a>, originally written by J.P. Morgan. (<a href="/docs/truffle/distributed-ledger-support/working-with-quorum">Read our documentation on using Truffle with Quorum.</a>)</p>
 <h2 id="decentralized-applications-dapps">Decentralized applications (dapps)<a class="headerlink" href="#decentralized-applications-dapps" title="Permanent link">&para;</a></h2>
-<p><strong>Applications using smart contracts for their processing and/or datastorage are called "decentralized applications", or "dapps".</strong> The user interfaces for these dapps consist of familiar languages such as HTML, CSS, and JavaScript. The application itself can be hosted on a traditional web server or on a decentralized file service such as <a href="http://swarm-gateways.net/bzz:/theswarm.eth/">Swarm</a> or <a href="http://ipfs.io/">IPFS</a>.</p>
+<p><strong>Applications using smart contracts for their processing and/or datastorage are called "decentralized applications", or "dapps".</strong> The user interfaces for these dapps consist of familiar languages such as HTML, CSS, and JavaScript. The application itself can be hosted on a traditional web server or on a decentralized file service such as <a href="https://swarm-gateways.net/">Swarm</a> or <a href="http://ipfs.io/">IPFS</a>.</p>
 <p>Given the benefits of the Ethereum blockchain, a dapp could be a solution for many industries, including but not limited to:</p>
 <ul>
 <li>Record keeping</li>

@@ -10,8 +10,6 @@
       
       
       
-        <link rel="canonical" href="https://trufflesuite.github.io/truffle.dev/tutorial/index.html">
-      
       <link rel="icon" href="../assets/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
@@ -1382,7 +1380,7 @@
   
     <li class="md-nav__item">
       <a href="../docs/drizzle/index.html" class="md-nav__link">
-        Drizzle | Overview
+        Overview
       </a>
     </li>
   
@@ -1394,7 +1392,7 @@
   
     <li class="md-nav__item">
       <a href="../docs/drizzle/quickstart.html" class="md-nav__link">
-        Drizzle | Drizzle Quickstart
+        Drizzle Quickstart
       </a>
     </li>
   
@@ -1427,7 +1425,7 @@
   
     <li class="md-nav__item">
       <a href="../docs/drizzle/getting-started/contract-interaction.html" class="md-nav__link">
-        Drizzle | Contract Interaction
+        Contract Interaction
       </a>
     </li>
   
@@ -1439,7 +1437,7 @@
   
     <li class="md-nav__item">
       <a href="../docs/drizzle/getting-started/using-drizzles-redux-store.html" class="md-nav__link">
-        Drizzle | Using Drizzle's Redux Store
+        Using Drizzle's Redux Store
       </a>
     </li>
   
@@ -1478,7 +1476,7 @@
   
     <li class="md-nav__item">
       <a href="../docs/drizzle/react/react-components.html" class="md-nav__link">
-        Drizzle | React Components
+        React Components
       </a>
     </li>
   
@@ -1490,7 +1488,7 @@
   
     <li class="md-nav__item">
       <a href="../docs/drizzle/react/react-integration.html" class="md-nav__link">
-        Drizzle | React Integration
+        React Integration
       </a>
     </li>
   
@@ -1529,7 +1527,7 @@
   
     <li class="md-nav__item">
       <a href="../docs/drizzle/reference/drizzle-actions.html" class="md-nav__link">
-        Drizzle | Drizzle Actions
+        Drizzle Actions
       </a>
     </li>
   
@@ -1541,7 +1539,7 @@
   
     <li class="md-nav__item">
       <a href="../docs/drizzle/reference/drizzle-options.html" class="md-nav__link">
-        Drizzle | Drizzle Options
+        Drizzle Options
       </a>
     </li>
   
@@ -1553,7 +1551,7 @@
   
     <li class="md-nav__item">
       <a href="../docs/drizzle/reference/drizzle-state.html" class="md-nav__link">
-        Drizzle | Drizzle State
+        Drizzle State
       </a>
     </li>
   
@@ -1565,7 +1563,7 @@
   
     <li class="md-nav__item">
       <a href="../docs/drizzle/reference/how-data-stays-fresh.html" class="md-nav__link">
-        Drizzle | How Data Stays Fresh
+        How Data Stays Fresh
       </a>
     </li>
   
@@ -9807,7 +9805,7 @@ Compiling your contracts...
   <span class="nx">App</span><span class="p">.</span><span class="nx">web3Provider</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ethereum</span><span class="p">;</span>
   <span class="k">try</span> <span class="p">{</span>
     <span class="c1">// Request account access</span>
-    <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ethereum</span><span class="p">.</span><span class="nx">enable</span><span class="p">();</span>
+    <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ethereum</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span> <span class="nx">method</span><span class="o">:</span> <span class="s2">&quot;eth_requestAccounts&quot;</span> <span class="p">});;</span>
   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// User denied account access...</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;User denied account access&quot;</span><span class="p">)</span>
@@ -9949,6 +9947,10 @@ Compiling your contracts...
 <p>Now we're ready to use our dapp!</p>
 <h3 id="installing-and-configuring-metamask">Installing and configuring MetaMask<a class="headerlink" href="#installing-and-configuring-metamask" title="Permanent link">&para;</a></h3>
 <p>The easiest way to interact with our dapp in a browser is through <a href="https://metamask.io/">MetaMask</a>, a browser extension for both Chrome and Firefox.</p>
+<p class="alert alert-info">
+<strong>Note</strong>: If you already use Metamask, you'll need to switch accounts. Before doing that, make sure that you have your personal secret phrase backed up, since you'll need it to log back into your personal account (This secret phrase should definitely remain secret and you won't be able to access your account without it! Check [MetaMask's Basic Safety and Security Tips](https://metamask.zendesk.com/hc/en-us/articles/360015489591-Basic-Safety-and-Security-Tips-for-MetaMask) for more info.) After having your secret phrase safely backed up, you can safely switch to Ganache's test account. To do this, you can click your account logo and then "Lock". After this you can "import using Secret Recovery Phrase" to insert the Ganache mnemonic.
+</p>
+
 <ol>
 <li>
 <p>Install MetaMask in your browser.</p>
