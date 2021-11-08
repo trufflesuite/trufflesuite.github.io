@@ -1,1553 +1,1353 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/404.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/ipfs-404.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/10-things-we-dont-do-that-make-working-at-truffle-awesome/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/2020-is-finally-over-a-year-end-wrapup/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/3-ways-enterprises-are-addressing-blockchain-privacy-concerns/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/5-trends-impacting-the-blockchain-developer-experience/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/a-sweet-upgradeable-contract-experience-with-openzeppelin-and-truffle/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/an-easier-way-to-deploy-your-smart-contracts/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/announcing-collaboration-with-filecoin/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/announcing-full-portable-solidity-debugger/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/axonis-enterprise-use-of-truffle/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/best-methods-to-understand-blockchain-if-youre-not-a-developer/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/blockchain-will-cure-cancer/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/branching-out-announcing-tezos-support-in-truffle/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/branching-out-phase-2-of-corda-flavored-ganache/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/bring-your-own-ci-byoci-with-truffle-teams/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/crytic-continuous-assurance-for-smart-contracts/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/debug-quickly-and-in-context-with-truffle-teams-new-debugger/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/debugging-verified-external-contracts-with-truffle-debugger/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/designing-the-ganache-logo/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/develop-using-fluidity-truffle-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/drizzle-150-a-new-beginning/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/drizzle-reactive-ethereum-data-for-front-ends/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/drizzle-vue-a-truffle-story/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/ethereum-gas-exactimation/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/first-ever-truffle-retreat/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/get-a-birds-eye-view-with-truffle-teams-new-dashboard/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/github-repository-moved/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/how-ethical-advertising-will-transform-the-blockchain-industry/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/how-the-arrival-of-web-3-0-is-transforming-traditional-business-models/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/how-to-get-your-boss-to-send-you-to-trufflecon/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/how-were-making-installation-issues-a-thing-of-the-past/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/introducing-truffle-db-part-1/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/introducing-truffle-db-part-2/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/iterate-faster-with-truffle-teams/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/learn-ethereum-the-fun-way-with-our-pet-shop-tutorial/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/one-hundred-documentation-pull-requests/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/open-call-for-contributions-truffle-pegasys-eea-private-transactions/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/removing-installation-issues-continued-testrpc/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/sandbox-forking-with-truffle-teams/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/stack-tracing-with-truffle-test/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/sunsetting-truffle-teams/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/take-a-dive-into-truffle-5/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/take-control-of-your-deployments-with-truffle-teams/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/testrpc-is-now-ganache/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/the-best-things-to-do-in-seattle-during-trufflecon/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/the-best-ways-to-contribute-to-truffle/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/the-blockchain-problem-that-ens-solves/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/token-taxonomy-framework/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/truffle-320-released/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/truffle-and-ganache-now-come-in-filecoin-flavor/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/truffle-and-infura-support-arbitrum/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/truffle-and-infura-support-optimism/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/truffle-and-infura-support-polygon/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/truffle-boxes-making-life-sweeter/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/truffle-teams-gets-a-new-look/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/truffle-teams-now-supports-private-repositories/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/truffle-v5-has-arrived/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/try-new-features-first-with-truffle-teams-early-access/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/unwrap-the-corda-flavored-ganache-beta/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/upcoming-improvements-to-encoding-and-decoding/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/using-the-ens-integration/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/using-truffle-to-interact-with-chainlink-smart-contracts/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/why-i-love-trufflecon/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/why-were-organizing-trufflecon-2018/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/you-can-now-make-your-own-truffle-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/blog/you-decide-pipeline-or-table-view-in-truffle-teams-deployments-manager/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/AngularTruffleDapp/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/angular-truffle-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/arbitrum/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/azure-asset-transfer/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/azure-basic-provenance/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/azure-digital-locker/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/azure-hello-blockchain/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/azure-refrigerated-transportation/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/azure-room-thermostat/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/azure-simple-marketplace/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/bazaar-item-listing/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/besu-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/besu-drizzle-truffle-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/blueprint/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/cheshire/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/cita-truffle-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/dappstarter-trufflebox/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/drizzle/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/drizzle-kaleido-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/drizzle-react-native/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/drizzle-truffle-ganache-docker-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/drizzle-tutorial-with-react-hooks/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/eth-vue/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/etherplate/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/express-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/filecoin/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/flashloan-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/fluidity-truffle-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/harmony-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/helloworldbox/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/koa-trufflebox/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/limelabs-angular-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/macroverse-truffle-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/metacoin/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/moonbeam-truffle-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/nightfall/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/nuxt-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/optimism/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/peerai-api/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/pet-shop/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/polygon/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/rapid-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/react/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/react-box-web3-todo/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/react-dapp-boilerplate/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/react_hooks_box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/rsk-next-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/rsk-plant-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/rsk-react-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/rsk-react-express-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/rsk-starter-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/rsk-token-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/scoreboard/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/scribble/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/skale-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/skaledapp/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/svelte-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/tezos-example/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/thunder-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/tomochain-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/truffle-ci-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/truffle-create-react-app/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/truffle-kaleido-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/truffle-next/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/truffle-react-dapp/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/truffle-react-redux/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/truffle-react-ts-template/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/truffle-security/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/truffle-shavings/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/truffle-starter/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/truffle-ts-percel-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/truffle-vue/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/tutorialtoken/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/upgradable-proxy-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/vue-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/vue-dark-chocolate/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/vueport-box/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/vyper-example/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/wallette/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/boxes/webpack/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/case-studies/case-study-dish-network.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/case-studies/case-study-microsoft-and-the-world-bank.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/case-studies/case-study-microsoft-xbox.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/case-studies/case-study-starbucks.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/community/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/dashboard/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/codec/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/drizzle/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/drizzle/quickstart.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/drizzle/getting-started/contract-interaction.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/drizzle/getting-started/using-drizzles-redux-store.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/drizzle/react/react-components.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/drizzle/react/react-integration.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/drizzle/reference/drizzle-actions.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/drizzle/reference/drizzle-options.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/drizzle/reference/drizzle-state.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/drizzle/reference/how-data-stays-fresh.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/filecoin/ganache/overview.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/filecoin/ganache/getting-started/get-started-with-nodejs.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/filecoin/ganache/getting-started/get-started-with-the-cli.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/filecoin/ganache/getting-started/get-started-with-the-gui.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/filecoin/truffle/quickstart.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/quickstart.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/corda/cordapps.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/corda/linking-a-corda-project.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/corda/nodes.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/corda/shell.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/corda/transactions.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/corda/unlinking-a-corda-project.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/corda/working-with-corda.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/corda/workspace-overview.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/reference/ganache-settings.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/reference/workspace-default-configuration.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/truffle-projects/contracts-page.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/truffle-projects/decoded-transactions.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/truffle-projects/events-page.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/truffle-projects/linking-a-truffle-project.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/truffle-projects/unlinking-a-truffle-project.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/workspaces/creating-workspaces.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/workspaces/deleting-workspaces.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/workspaces/editing-workspaces.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/workspaces/ethereum-workspace-overview.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/workspaces/loading-existing-workspaces.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/workspaces/switching-workspaces.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/ganache/workspaces/the-quickstart-workspace.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/overview.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/quickstart.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/account/claim-a-1-month-trial.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/account/invite-your-team.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/account/manage-your-account.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/account/redeeming-a-coupon.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/account/switching-accounts.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/builds/builds-overview.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/builds/external-ci.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/builds/restarting-builds.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/builds/starting-builds.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/contract-manager/connecting-to-a-sandbox.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/contract-manager/contract-manager-overview.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/contract-manager/interacting-with-functions.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/dashboard/adding-a-deployment.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/dashboard/dashboard-overview.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/dashboard/switching-deployments.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/debugger/debugger-overview.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/debugger/debugging-a-transaction.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/debugger/using-the-debugger.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/deployments/archiving-a-deployment.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/deployments/contract-monitoring.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/deployments/creating-a-deployment.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/deployments/deploying-to-a-sandbox.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/deployments/deployment-console.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/deployments/deployment-details.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/deployments/deployments-overview.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/deployments/external-deployments.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/deployments/graduating-a-deployment.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/getting-started/adding-repositories.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/getting-started/creating-an-account.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/reference/configuration.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/reference/permissions-disclosure.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/sandboxes/creating-a-sandbox.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/sandboxes/destroying-a-sandbox.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/sandboxes/renaming-a-sandbox.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/sandboxes/sandbox-forking.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/sandboxes/sandboxes-overview.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/sandboxes/usage-with-truffle.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/teams/support/ask-us-a-question.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/tezos/truffle/quickstart.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/tezos/truffle/getting-started/compiling-tezos-contracts.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/tezos/truffle/getting-started/creating-a-tezos-project.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/tezos/truffle/getting-started/deploying-tezos-contracts.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/tezos/truffle/getting-started/installing-truffle-with-tezos.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/tezos/truffle/getting-started/interacting-with-your-tezos-contracts.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/tezos/truffle/getting-started/testing-your-tezos-contracts.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/tezos/truffle/getting-started/using-the-console-with-tezos.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/tezos/truffle/getting-started/writing-external-scripts-with-tezos.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/tezos/truffle/getting-started/writing-tezos-contracts.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/tezos/truffle/quickstart/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/tezos/truffle/reference/configuring-tezos-projects.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/quickstart.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/advanced/build-processes.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/advanced/creating-a-truffle-box.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/advanced/ethereum-name-service.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/advanced/event-system.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/advanced/networks-and-app-deployment.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/distributed-ledger-support/working-with-hyperledger-evm.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/distributed-ledger-support/working-with-quorum.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/compiling-contracts.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/creating-a-project.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/debugging-your-contracts.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/installation.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/interacting-with-your-contracts.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/package-management-via-ethpm.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/package-management-via-npm.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/preserving-files-and-content-to-storage-platforms.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/running-migrations.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/truffle-with-metamask.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/using-the-build-pipeline.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/using-truffle-develop-and-the-console.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/writing-external-scripts.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/reference/choosing-an-ethereum-client.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/reference/configuration.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/reference/contact-the-developers.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/reference/contract-abstractions.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/reference/truffle-commands.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/testing/testing-your-contracts.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/testing/writing-tests-in-javascript.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/docs/truffle/testing/writing-tests-in-solidity.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/events/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/building-dapps-for-quorum-private-enterprise-blockchains/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/building-testing-frontend-app-truffle-3/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/bundling-with-webpack/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/chain-forking-exploiting-the-dao/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/configuring-visual-studio-code/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/creating-a-cli-with-truffle-3/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/debugger-variable-inspection/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/debugging-a-smart-contract/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/deploying-to-the-live-network/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/drizzle-and-contract-events/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/drizzle-and-react-native/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/ethereum-devops-truffle-testrpc-vsts/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/ethereum-overview/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/getting-started-with-drizzle-and-react/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/learn-how-to-deploy-with-truffle-teams/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/package-management/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/pet-shop/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/robust-smart-contracts-with-openzeppelin/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/solidity-unit-tests/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/testing-for-throws-in-solidity-tests/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/truffle-and-metamask/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/upgrading-from-truffle-2-to-3/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/guides/using-infura-custom-provider/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/policy/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/staff/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/trufflecon2020/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://trufflesuite.github.io/truffle.dev/tutorial/index.html</loc>
-         <lastmod>2021-10-18</lastmod>
+         <loc>None</loc>
+         <lastmod>2021-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

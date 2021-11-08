@@ -435,7 +435,7 @@
   
     <li class="md-nav__item">
       <a href="../docs/truffle/quickstart.html" class="md-nav__link">
-        Quickstart
+        Truffle Quickstart
       </a>
     </li>
   
@@ -492,7 +492,7 @@
   
     <li class="md-nav__item">
       <a href="../docs/truffle/getting-started/debugging-your-contracts.html" class="md-nav__link">
-        Debugging Your Contracts
+        Truffle | Debugging Your Contracts
       </a>
     </li>
   
@@ -9610,7 +9610,7 @@ Truffle is very flexible when it comes to smart contract testing, in that tests 
 <span class="w">  </span><span class="c1">// The id of the pet that will be used for testing</span>
 <span class="w">  </span><span class="kt">uint</span><span class="w"> </span><span class="nv">expectedPetId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">8</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">  </span><span class="c1">//The expected owner of adopted pet is this contract</span>
+<span class="w">  </span><span class="c1">// The expected owner of adopted pet is this contract</span>
 <span class="w">  </span><span class="kt">address</span><span class="w"> </span><span class="nv">expectedAdopter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">);</span><span class="w"></span>
 
 <span class="p">}</span><span class="w"></span>
@@ -9635,7 +9635,7 @@ Then we define three contract-wide variables:
 
 To test the `adopt()` function, recall that upon success it returns the given `petId`. We can ensure an ID was returned and that it's correct by comparing the return value of `adopt()` to the ID we passed in.
 
-1. Add the following function within the `TestAdoption.sol` smart contract, after the declaration of `Adoption`:
+1. Add the following function within the `TestAdoption.sol` smart contract, after the declaration of `expectedPetId`:
 
    <div class="highlight"><pre><span></span><code><span class="c1">// Testing the adopt() function</span>
 <span class="kt">function</span><span class="w"> </span><span class="nv">testUserCanAdoptPet</span><span class="p">()</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span><span class="w"></span>

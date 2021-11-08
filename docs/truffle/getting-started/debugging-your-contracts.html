@@ -10,8 +10,6 @@
       
       
       
-        <link rel="canonical" href="https://trufflesuite.github.io/truffle.dev/docs/truffle/getting-started/debugging-your-contracts.html">
-      
       <link rel="icon" href="../../../assets/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
@@ -19,7 +17,7 @@
 
     
       
-        <title>Debugging Your Contracts - Truffle Suite</title>
+        <title>Truffle | Debugging Your Contracts - Truffle Suite</title>
       
     
     
@@ -127,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Debugging Your Contracts
+              Truffle | Debugging Your Contracts
             
           </span>
         </div>
@@ -439,7 +437,7 @@
   
     <li class="md-nav__item">
       <a href="../quickstart.html" class="md-nav__link">
-        Quickstart
+        Truffle Quickstart
       </a>
     </li>
   
@@ -507,12 +505,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Debugging Your Contracts
+          Truffle | Debugging Your Contracts
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="debugging-your-contracts.html" class="md-nav__link md-nav__link--active">
-        Debugging Your Contracts
+        Truffle | Debugging Your Contracts
       </a>
       
         
@@ -721,6 +719,20 @@
           <li class="md-nav__item">
   <a href="#t-load-transaction" class="md-nav__link">
     (t) load transaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#y-reset-and-advance-to-final-error" class="md-nav__link">
+    (y) Reset and advance to final error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#y-reset-and-advance-to-previous-error" class="md-nav__link">
+    (Y) Reset and advance to previous error
   </a>
   
 </li>
@@ -1627,7 +1639,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/index.html" class="md-nav__link">
-        Drizzle | Overview
+        Overview
       </a>
     </li>
   
@@ -1639,7 +1651,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/quickstart.html" class="md-nav__link">
-        Drizzle | Drizzle Quickstart
+        Drizzle Quickstart
       </a>
     </li>
   
@@ -1672,7 +1684,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/getting-started/contract-interaction.html" class="md-nav__link">
-        Drizzle | Contract Interaction
+        Contract Interaction
       </a>
     </li>
   
@@ -1684,7 +1696,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/getting-started/using-drizzles-redux-store.html" class="md-nav__link">
-        Drizzle | Using Drizzle's Redux Store
+        Using Drizzle's Redux Store
       </a>
     </li>
   
@@ -1723,7 +1735,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/react/react-components.html" class="md-nav__link">
-        Drizzle | React Components
+        React Components
       </a>
     </li>
   
@@ -1735,7 +1747,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/react/react-integration.html" class="md-nav__link">
-        Drizzle | React Integration
+        React Integration
       </a>
     </li>
   
@@ -1774,7 +1786,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/reference/drizzle-actions.html" class="md-nav__link">
-        Drizzle | Drizzle Actions
+        Drizzle Actions
       </a>
     </li>
   
@@ -1786,7 +1798,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/reference/drizzle-options.html" class="md-nav__link">
-        Drizzle | Drizzle Options
+        Drizzle Options
       </a>
     </li>
   
@@ -1798,7 +1810,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/reference/drizzle-state.html" class="md-nav__link">
-        Drizzle | Drizzle State
+        Drizzle State
       </a>
     </li>
   
@@ -1810,7 +1822,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/reference/how-data-stays-fresh.html" class="md-nav__link">
-        Drizzle | How Data Stays Fresh
+        How Data Stays Fresh
       </a>
     </li>
   
@@ -9342,6 +9354,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#y-reset-and-advance-to-final-error" class="md-nav__link">
+    (y) Reset and advance to final error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#y-reset-and-advance-to-previous-error" class="md-nav__link">
+    (Y) Reset and advance to previous error
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -9411,7 +9437,7 @@ any contract operation with <code>debug()</code>, like so:</p>
 your tests as normal until reaching the operation in question. At this point,
 Truffle will interrupt the normal test flow and start the debugger, allowing
 you to set breakpoints, inspect Solidity variables, etc.</p>
-<p>See <a href="/docs/truffle/writing-tests-in-javascript">Writing tests in JavaScript</a>
+<p>See <a href="../testing/writing-tests-in-javascript">Writing tests in JavaScript</a>
 for more information on <code>truffle test</code>, and see
 <a href="/docs/truffle/getting-started/interacting-with-your-contracts">Interacting with your contracts</a>
 to learn about contract operations.</p>
@@ -9525,11 +9551,19 @@ startup greatly.
 <h3 id="list-existing-watch-expressions-and-breakpoints">(?) list existing watch expressions and breakpoints<a class="headerlink" href="#list-existing-watch-expressions-and-breakpoints" title="Permanent link">&para;</a></h3>
 <p>This command will display a list of all the current watch expressions and breakpoints.  It will also report whether generated sources are turned on or off.</p>
 <h3 id="v-display-variables">(v) display variables<a class="headerlink" href="#v-display-variables" title="Permanent link">&para;</a></h3>
-<p>This command will display the current variables and their values.</p>
+<p>This command will display the current variables and their values, but does not step to the next instruction. Use this when you'd like to see the current variables and their values after navigating through the transaction with the logical commands described above.</p>
+<p>This command can also remove variables and their values from the variables display. If you want to remove solidity builtins variables, global constants, contract variables, or local variables, simply type <code>v -builtins</code> to remove solidity builtins along with the other information from the display, <code>v -global</code> for global constants, <code>v -contract</code> for contract variables, or <code>v -local</code> for local variables.  Each of these can also be abbreviated, e.g. <code>v -bui</code>, <code>v -glo</code>, <code>v -con</code>, and <code>v -loc</code>; they can also be combined, e.g. <code>v -bui -glo</code>.</p>
+<p>If variables are removed from the variables display, you can still display them without a sign; e.g., <code>v bui</code> will cause solidity builtins variables to be displayed.  You can also add these variables back in to the display with <code>+</code>; e.g., <code>v +bui</code> will make it so that solidity builtins variables will once again always be displayed when you enter <code>v</code>.  All of these options can again be combined.</p>
 <h3 id="t-unload-transaction">(T) unload transaction<a class="headerlink" href="#t-unload-transaction" title="Permanent link">&para;</a></h3>
 <p>This command unloads the current transaction so you can load a new one.  Not usable in <code>--fetch-external</code> mode.</p>
 <h3 id="t-load-transaction">(t) load transaction<a class="headerlink" href="#t-load-transaction" title="Permanent link">&para;</a></h3>
 <p>This command loads a new transaction (given by its transaction hash).  Note that if you already have a transaction loaded, you must first explicitly unload it before you can load a new one.  Not usable in <code>--fetch-external</code> mode.</p>
+<h3 id="y-reset-and-advance-to-final-error">(y) Reset and advance to final error<a class="headerlink" href="#y-reset-and-advance-to-final-error" title="Permanent link">&para;</a></h3>
+<p>This command is only usable at the end of a trace.  It resets the debugger and then advances it to the location of the final error.  If the final error is at the end of the trace, this will have no effect.</p>
+<p>Note: The use of resetting and advancing, rather than directly jumping to the final error, is something of a stopgap due to the debugger not currently moving backwards; this will be changed in the future to jump directly back to the final error.</p>
+<h3 id="y-reset-and-advance-to-previous-error">(Y) Reset and advance to previous error<a class="headerlink" href="#y-reset-and-advance-to-previous-error" title="Permanent link">&para;</a></h3>
+<p>This command resets the debugger and then advances to the location of the previous error; unlike <code>y</code>, it can be used from anywhere in the trace.</p>
+<p>Note: The use of resetting and advancing, rather than directly jumping to the final error, is something of a stopgap due to the debugger not currently moving backwards; this will be changed in the future to jump directly back to the final error.</p>
 <h2 id="adding-and-removing-breakpoints">Adding and removing breakpoints<a class="headerlink" href="#adding-and-removing-breakpoints" title="Permanent link">&para;</a></h2>
 <p>Below are some examples of adding and removing breakpoints. Note the difference in case between adding (a lowercase 'b') and removing (an uppercase 'B').  If you add a breakpoint at a place where the debugger will skip over, it will be automatically moved down to the next point that the debugger might stop.  This does not apply to removing breakpoints.  Use the <code>?</code> command to list current breakpoints.</p>
 <div class="highlight"><pre><span></span><code>MagicSquare.sol:

@@ -10,8 +10,6 @@
       
       
       
-        <link rel="canonical" href="https://trufflesuite.github.io/truffle.dev/docs/truffle/quickstart.html">
-      
       <link rel="icon" href="../../assets/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
@@ -19,7 +17,7 @@
 
     
       
-        <title>Quickstart - Truffle Suite</title>
+        <title>Truffle Quickstart - Truffle Suite</title>
       
     
     
@@ -127,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quickstart
+              Truffle Quickstart
             
           </span>
         </div>
@@ -448,12 +446,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Quickstart
+          Truffle Quickstart
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="quickstart.html" class="md-nav__link md-nav__link--active">
-        Quickstart
+        Truffle Quickstart
       </a>
       
         
@@ -592,7 +590,7 @@
   
     <li class="md-nav__item">
       <a href="getting-started/debugging-your-contracts.html" class="md-nav__link">
-        Debugging Your Contracts
+        Truffle | Debugging Your Contracts
       </a>
     </li>
   
@@ -1480,7 +1478,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle/index.html" class="md-nav__link">
-        Drizzle | Overview
+        Overview
       </a>
     </li>
   
@@ -1492,7 +1490,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle/quickstart.html" class="md-nav__link">
-        Drizzle | Drizzle Quickstart
+        Drizzle Quickstart
       </a>
     </li>
   
@@ -1525,7 +1523,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle/getting-started/contract-interaction.html" class="md-nav__link">
-        Drizzle | Contract Interaction
+        Contract Interaction
       </a>
     </li>
   
@@ -1537,7 +1535,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle/getting-started/using-drizzles-redux-store.html" class="md-nav__link">
-        Drizzle | Using Drizzle's Redux Store
+        Using Drizzle's Redux Store
       </a>
     </li>
   
@@ -1576,7 +1574,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle/react/react-components.html" class="md-nav__link">
-        Drizzle | React Components
+        React Components
       </a>
     </li>
   
@@ -1588,7 +1586,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle/react/react-integration.html" class="md-nav__link">
-        Drizzle | React Integration
+        React Integration
       </a>
     </li>
   
@@ -1627,7 +1625,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle/reference/drizzle-actions.html" class="md-nav__link">
-        Drizzle | Drizzle Actions
+        Drizzle Actions
       </a>
     </li>
   
@@ -1639,7 +1637,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle/reference/drizzle-options.html" class="md-nav__link">
-        Drizzle | Drizzle Options
+        Drizzle Options
       </a>
     </li>
   
@@ -1651,7 +1649,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle/reference/drizzle-state.html" class="md-nav__link">
-        Drizzle | Drizzle State
+        Drizzle State
       </a>
     </li>
   
@@ -1663,7 +1661,7 @@
   
     <li class="md-nav__item">
       <a href="../drizzle/reference/how-data-stays-fresh.html" class="md-nav__link">
-        Drizzle | How Data Stays Fresh
+        How Data Stays Fresh
       </a>
     </li>
   
@@ -9078,11 +9076,13 @@
                 <h1 id="truffle-quickstart">Truffle Quickstart<a class="headerlink" href="#truffle-quickstart" title="Permanent link">&para;</a></h1>
 <p>This page will take you through the basics of creating a Truffle project and deploying a smart contract to a blockchain.</p>
 <p class="alert alert-info">
-<i class="far fa-info-circle"></i> <strong>Note</strong>: Before you begin, make sure that you read our <a href="/tutorials/ethereum-overview">Ethereum Overview</a> page.
+<i class="far fa-info-circle"></i> <strong>Note</strong>: Before you begin, make sure that you read our <a href="/guides/ethereum-overview">Ethereum Overview</a> page.
 </p>
 
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
-<ol>
+<ul>
+<li><a href="#truffle-quickstart">Truffle Quickstart</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#creating-a-project">Creating a project</a></li>
 <li><a href="#exploring-the-project">Exploring the project</a></li>
 <li><a href="#testing">Testing</a></li>
@@ -9090,7 +9090,8 @@
 <li><a href="#migrating-with-truffle-develop">Migrating with Truffle Develop</a></li>
 <li><a href="#alternative-migrating-with-ganache">Alternative: Migrating with Ganache</a></li>
 <li><a href="#interacting-with-the-contract">Interacting with the contract</a></li>
-</ol>
+<li><a href="#continue-learning">Continue learning</a></li>
+</ul>
 <h2 id="creating-a-project">Creating a project<a class="headerlink" href="#creating-a-project" title="Permanent link">&para;</a></h2>
 <p>To use most Truffle commands, you need to run them against an existing Truffle project. So the first step is to create a Truffle project.</p>
 <p>You can create a bare project template, but for those just getting started, you can use <a href="/boxes">Truffle Boxes</a>, which are example applications and project templates. We'll use the <a href="/boxes/metacoin">MetaCoin box</a>, which creates a token that can be transferred between accounts:</p>
@@ -9150,22 +9151,24 @@
 </ol>
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 <ol>
-<li>On a terminal, run the Solidity test:</li>
+<li>In a terminal, run the Solidity test:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>truffle <span class="nb">test</span> ./test/TestMetaCoin.sol
 </code></pre></div>
 <p>You will see the following output</p>
-<div class="highlight"><pre><span></span><code>  TestMetacoin
-    √ testInitialBalanceUsingDeployedContract (71ms)
-    √ testInitialBalanceWithNewMetaCoin (59ms)
+<div class="highlight"><pre><span></span><code>```
+ TestMetacoin
+   √ testInitialBalanceUsingDeployedContract (71ms)
+   √ testInitialBalanceWithNewMetaCoin (59ms)
 
-  2 passing (794ms)
+ 2 passing (794ms)
 </code></pre></div>
+<p>```</p>
 <p class="alert alert-info">
    <i class="far fa-info-circle"></i> <strong>Note</strong>: If you're on Windows and encountering problems running this command, please see the documentation on <a href="/docs/truffle/reference/configuration#resolving-naming-conflicts-on-windows">resolving naming conflicts on Windows</a>.
    </p>
 
-<p>These tree tests were run against the contract, with descriptions displayed on what the tests are supposed to do.</p>
+<p>These two tests were run against the contract, with descriptions displayed on what the tests are supposed to do.</p>
 <ol>
 <li>Run the JavaScript test:</li>
 </ol>
@@ -9502,7 +9505,7 @@ Summary
 <span class="nx">truffle</span><span class="p">(</span><span class="nx">development</span><span class="p">)</span><span class="o">&gt;</span> <span class="nx">newBalance</span><span class="p">.</span><span class="nx">toNumber</span><span class="p">()</span>
 </code></pre></div>
 <h2 id="continue-learning">Continue learning<a class="headerlink" href="#continue-learning" title="Permanent link">&para;</a></h2>
-<p>This quickstart showed you the basics of the Truffle project lifecycle, but there is much more to learn. Please continue on with the rest of our <a href="/docs">documentation</a> and especially our <a href="/tutorials">tutorials</a> to learn more.</p>
+<p>This quickstart showed you the basics of the Truffle project lifecycle, but there is much more to learn. Please continue on with the rest of our <a href="/docs">documentation</a> and especially our <a href="/guides">guides</a> or <a href="/tutorial">tutorial</a> to learn more.</p>
                 
                   
                 

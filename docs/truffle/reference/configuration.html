@@ -10,8 +10,6 @@
       
       
       
-        <link rel="canonical" href="https://trufflesuite.github.io/truffle.dev/docs/truffle/reference/configuration.html">
-      
       <link rel="icon" href="../../../assets/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
@@ -439,7 +437,7 @@
   
     <li class="md-nav__item">
       <a href="../quickstart.html" class="md-nav__link">
-        Quickstart
+        Truffle Quickstart
       </a>
     </li>
   
@@ -496,7 +494,7 @@
   
     <li class="md-nav__item">
       <a href="../getting-started/debugging-your-contracts.html" class="md-nav__link">
-        Debugging Your Contracts
+        Truffle | Debugging Your Contracts
       </a>
     </li>
   
@@ -941,7 +939,14 @@
     networks
   </a>
   
-    <nav class="md-nav" aria-label="networks">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console" class="md-nav__link">
+    console
+  </a>
+  
+    <nav class="md-nav" aria-label="console">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1631,7 +1636,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/index.html" class="md-nav__link">
-        Drizzle | Overview
+        Overview
       </a>
     </li>
   
@@ -1643,7 +1648,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/quickstart.html" class="md-nav__link">
-        Drizzle | Drizzle Quickstart
+        Drizzle Quickstart
       </a>
     </li>
   
@@ -1676,7 +1681,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/getting-started/contract-interaction.html" class="md-nav__link">
-        Drizzle | Contract Interaction
+        Contract Interaction
       </a>
     </li>
   
@@ -1688,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/getting-started/using-drizzles-redux-store.html" class="md-nav__link">
-        Drizzle | Using Drizzle's Redux Store
+        Using Drizzle's Redux Store
       </a>
     </li>
   
@@ -1727,7 +1732,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/react/react-components.html" class="md-nav__link">
-        Drizzle | React Components
+        React Components
       </a>
     </li>
   
@@ -1739,7 +1744,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/react/react-integration.html" class="md-nav__link">
-        Drizzle | React Integration
+        React Integration
       </a>
     </li>
   
@@ -1778,7 +1783,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/reference/drizzle-actions.html" class="md-nav__link">
-        Drizzle | Drizzle Actions
+        Drizzle Actions
       </a>
     </li>
   
@@ -1790,7 +1795,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/reference/drizzle-options.html" class="md-nav__link">
-        Drizzle | Drizzle Options
+        Drizzle Options
       </a>
     </li>
   
@@ -1802,7 +1807,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/reference/drizzle-state.html" class="md-nav__link">
-        Drizzle | Drizzle State
+        Drizzle State
       </a>
     </li>
   
@@ -1814,7 +1819,7 @@
   
     <li class="md-nav__item">
       <a href="../../drizzle/reference/how-data-stays-fresh.html" class="md-nav__link">
-        Drizzle | How Data Stays Fresh
+        How Data Stays Fresh
       </a>
     </li>
   
@@ -9190,7 +9195,14 @@
     networks
   </a>
   
-    <nav class="md-nav" aria-label="networks">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console" class="md-nav__link">
+    console
+  </a>
+  
+    <nav class="md-nav" aria-label="console">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -9441,8 +9453,10 @@ provided examples below for some guidance on defining your networks.</p>
     <span class="nx">port</span><span class="o">:</span> <span class="mf">80</span><span class="p">,</span>
     <span class="nx">network_id</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>        <span class="c1">// Ethereum public network</span>
     <span class="c1">// optional config values:</span>
-    <span class="c1">// gas</span>
-    <span class="c1">// gasPrice</span>
+    <span class="c1">// gas                  -</span>
+    <span class="c1">// gasPrice             - use gas and gasPrice if creating type 0 transactions</span>
+    <span class="c1">// maxFeePerGas         -</span>
+    <span class="c1">// maxPriorityFeePerGas - use maxFeePerGas and maxPriorityFeePerGas if creating type 2 transactions (https://eips.ethereum.org/EIPS/eip-1559)</span>
     <span class="c1">// from - default address to use for any transaction Truffle makes during migrations</span>
     <span class="c1">// provider - web3 provider instance Truffle should use to talk to the Ethereum network.</span>
     <span class="c1">//          - function that returns a web3 provider instance (see below.)</span>
@@ -9470,6 +9484,40 @@ provided examples below for some guidance on defining your networks.</p>
 - ws://127.0.0.1:8545
 - https://sandbox.truffleteams.com/yoursandboxid
 - wss://sandbox.truffleteams.com/yoursandboxid</p>
+<h3 id="console">console<a class="headerlink" href="#console" title="Permanent link">&para;</a></h3>
+<p>Use this option to configure the console environment. This is the environment you get when using <code>truffle console</code> or <code>truffle develop</code>.</p>
+<ul>
+<li><code>require</code>: Use this to specify a JavaScript module that will be loaded into the console environment at startup. Your module's default
+export must be an object with named keys. Each key will used as a variable name, assigned its value, and be available in the console environment.
+For example, if your JavaScript is <code>module.exports = { myVariable: "three doughnuts please!" }</code> then you will have the variable <code>myVariable</code>
+available in the console with the value <code>"three doughnuts please!"</code>.</li>
+</ul>
+<p>You may specify this option in several ways.
+1. The value of require can be a string path to the target JavaScript file to be loaded.
+2. An object with a <code>path</code> property that is a string path to the JavaScript to be loaded.
+3. An object with a <code>path</code> property that is a string path to the JavaScript to be loaded as well as an <code>as</code> property
+that specifies the namespace where the variables loaded will be available.</p>
+<p>The following are examples of how you can set this property in your <code>truffle-config.js</code>.</p>
+<p>You can set <code>console.require</code> to be a string path.
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">require</span><span class="o">:</span> <span class="s2">&quot;./somePath.js&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>You can alternatively set <code>console.require</code> to an array of objects where you specify a <code>path</code> property.
+Note the use of the optional property <code>as</code> when specifying the path <code>"../../someOtherPath.js"</code>.
+The values loaded from that module will be namespaced under <code>myVariables</code> in the console environment.
+In other words, you will access the loaded variables from that module like <code>myVariables.&lt;myVariableName&gt;</code>.
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">require</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;./somePath.js&quot;</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;../../someOtherPath.js&quot;</span><span class="p">,</span> <span class="kr">as</span><span class="o">:</span> <span class="s2">&quot;myVariables&quot;</span> <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <h4 id="providers">Providers<a class="headerlink" href="#providers" title="Permanent link">&para;</a></h4>
 <p>The following network list consists of a local test network and an Infura-hosted Ropsten network, both provided by HDWalletProvider. Make sure you wrap <code>@truffle/hdwallet-provider</code> instances in a function closure as shown below to ensure that only one network is ever connected at a time.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">networks</span><span class="o">:</span> <span class="p">{</span>
@@ -9576,17 +9624,19 @@ provided examples below for some guidance on defining your networks.</p>
 <h3 id="solc">solc<a class="headerlink" href="#solc" title="Permanent link">&para;</a></h3>
 <p>Solidity compiler settings. Supports optimizer settings for <code>solc</code>, as well as other settings such as debug and metadata settings.</p>
 <p>You may specify...
-+ any solc-js version listed at <a href="http://solc-bin.ethereum.org/bin/list.json">solc-bin</a>. Specify the one you want and Truffle will get it for you.
-+ a natively compiled solc binary (you'll need to install this yourself, links to help below).
-+ a dockerized solc from one of images published <a href="https://hub.docker.com/r/ethereum/solc/tags/">here</a>.
++ any solc-js version (using semver) listed at <a href="http://solc-bin.ethereum.org/bin/list.json">solc-bin</a>. Specify the one you want and Truffle will get it for you.
++ "native" to use a natively compiled solc binary (you'll need to install this yourself, links to help below).
++ a dockerized solc tag from one of images published <a href="https://hub.docker.com/r/ethereum/solc/tags/">here</a>.
 + a path to a locally available solc
++ "pragma" to have Truffle autodetect solc versions from your source files. This can be used to compile using multiple versions of solc.
 + a solc-js parser for faster docker and native compilations</p>
 <p>Truffle config example:</p>
 <p><div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">compilers</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">solc</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">version</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c1">// A version or constraint - Ex. &quot;^0.5.0&quot;</span>
-                         <span class="c1">// Can also be set to &quot;native&quot; to use a native solc</span>
+                         <span class="c1">// Can be set to &quot;native&quot; to use a native solc or</span>
+                         <span class="c1">// &quot;pragma&quot; which attempts to autodetect compiler versions</span>
       <span class="nx">docker</span><span class="o">:</span> <span class="o">&lt;</span><span class="kr">boolean</span><span class="o">&gt;</span><span class="p">,</span> <span class="c1">// Use a version obtained through docker</span>
       <span class="nx">parser</span><span class="o">:</span> <span class="s2">&quot;solcjs&quot;</span><span class="p">,</span>  <span class="c1">// Leverages solc-js purely for speedy parsing</span>
       <span class="nx">settings</span><span class="o">:</span> <span class="p">{</span>
