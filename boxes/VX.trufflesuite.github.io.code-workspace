@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../-contracts-Token/contracts/mocks/ERC165"
+		},
+		{
+			"path": "../../ganache-ui/src/integrations/ethereum/main"
+		},
+		{
+			"path": "../../hermez-node/eth/contracts/abi"
+		},
+		{
+			"path": "../../-contracts-Token/contracts/token/ERC20"
+		}
+	],
+	"settings": {}
+}
