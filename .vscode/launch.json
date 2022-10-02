@@ -26,7 +26,7 @@
             "runtimeArgs": [
                 "--remote-debugging-port=9222"
             ],
-            "url": "c:\\Users\\16157\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.0\\out\\startpage\\index.html", // Provide your project's url to finish configuring
+            "url": "c:\\Users\\16157\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.0\\out\\startpage\\index.html", https://github.com/VersoriumX/trufflesuite.github.io/blob/master/.vscode/launch.json
             "presentation": {
                 "hidden": true
             }
@@ -39,7 +39,7 @@
                 "--headless",
                 "--remote-debugging-port=9222"
             ],
-            "url": "c:\\Users\\16157\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.0\\out\\startpage\\index.html",//127.0.0.1:8545
+            "url": "c:\\Users\\16157\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.0\\out\\startpage\\index.html",//127.0.0.1:30303
             "presentation": {
                 "hidden": true
             }
@@ -48,7 +48,7 @@
             "type": "vscode-edge-devtools.debug",
             "name": "Open Edge DevTools",
             "request": "attach",
-            "url": "c:\\Users\\16157\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.0\\out\\startpage\\index.html", //127.0.0.1:8545
+            "url": "c:\\Users\\16157\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.0\\out\\startpage\\index.html", //127.0.0.1:30303
             "presentation": {
                 "hidden": true
             }
